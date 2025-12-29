@@ -1,13 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ImpactStats } from "@/components/sections/ImpactStats";
+import { ProgramsSection } from "@/components/sections/ProgramsSection";
+import { DigitalBoard } from "@/components/sections/DigitalBoard";
+import { ChaptersSection } from "@/components/sections/ChaptersSection";
+import { CTASection } from "@/components/sections/CTASection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>SCEF - Santos Creations Educational Foundation | Transforming Education Across Africa</title>
+        <meta 
+          name="description" 
+          content="Join SCEF to support scholarships, education awards, inclusive learning, and community chapters across Africa. Together we build sustainable futures through education." 
+        />
+        <meta name="keywords" content="African education, scholarships Africa, NESA Africa, education foundation, Pan-African education, SCEF" />
+        <link rel="canonical" href="https://scef.org" />
+      </Helmet>
+      
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <HeroSection />
+          <ImpactStats />
+          <ProgramsSection />
+          <DigitalBoard />
+          <ChaptersSection />
+          <CTASection />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
