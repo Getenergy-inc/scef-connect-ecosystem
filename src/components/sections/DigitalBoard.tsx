@@ -1,0 +1,191 @@
+import { useState, useEffect } from "react";
+import { Play, Volume2, FileText, Image, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const boardItems = [
+  {
+    id: 1,
+    type: "video",
+    title: "NESA-Africa 2024 Nominations Now Open",
+    description: "Submit your nominations for the most prestigious education awards in Africa.",
+    cta: { text: "Submit Nomination", href: "/programs/nesa-africa" },
+    thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
+  },
+  {
+    id: 2,
+    type: "flyer",
+    title: "EduAid Scholarship Application",
+    description: "Applications for the 2024 scholarship cycle are now open. Don't miss this opportunity!",
+    cta: { text: "Apply Now", href: "/programs/eduaid-africa" },
+    thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
+  },
+  {
+    id: 3,
+    type: "announcement",
+    title: "New Chapter Launched in Ghana",
+    description: "SCEF expands to Accra with the launch of our newest local chapter. Join the movement!",
+    cta: { text: "Join Chapter", href: "/local-chapters" },
+    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800",
+  },
+  {
+    id: 4,
+    type: "audio",
+    title: "It's In Me Radio: Latest Episode",
+    description: "Listen to inspiring stories from educators and students transforming their communities.",
+    cta: { text: "Listen Now", href: "/media/its-in-me-radio" },
+    thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800",
+  },
+];
+
+const typeIcons = {
+  video: Play,
+  audio: Volume2,
+  announcement: FileText,
+  flyer: Image,
+};
+
+const typeColors = {
+  video: "bg-gold text-earth",
+  audio: "bg-terracotta text-cream",
+  announcement: "bg-forest text-cream",
+  flyer: "bg-primary text-primary-foreground",
+};
+
+export const DigitalBoard = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % boardItems.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const activeItem = boardItems[activeIndex];
+  const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons];
+
+  return (
+    <section className="py-24 bg-earth relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-african-pattern opacity-10" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm font-medium mb-4">
+            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+            Live Updates
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4">
+            Digital <span className="text-gradient-gold">Notice Board</span>
+          </h2>
+          <p className="text-cream/70 max-w-2xl mx-auto">
+            Stay updated with the latest announcements, events, and opportunities from SCEF.
+          </p>
+        </div>
+
+        {/* Board Content */}
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream/10 to-transparent backdrop-blur-sm border border-cream/10">
+            {/* Main Display */}
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Image Side */}
+              <div className="relative aspect-video lg:aspect-auto lg:min-h-[400px]">
+                <img
+                  src={activeItem.thumbnail}
+                  alt={activeItem.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-transparent lg:bg-gradient-to-t" />
+                
+                {/* Type Badge */}
+                <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full ${typeColors[activeItem.type as keyof typeof typeColors]} text-xs font-semibold flex items-center gap-2`}>
+                  <TypeIcon className="w-3 h-3" />
+                  {activeItem.type.charAt(0).toUpperCase() + activeItem.type.slice(1)}
+                </div>
+
+                {/* Play Button for Video */}
+                {activeItem.type === "video" && (
+                  <button className="absolute inset-0 flex items-center justify-center group">
+                    <div className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                      <Play className="w-8 h-8 text-earth ml-1" />
+                    </div>
+                  </button>
+                )}
+              </div>
+
+              {/* Content Side */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-cream mb-4">
+                  {activeItem.title}
+                </h3>
+                <p className="text-cream/70 text-lg mb-8 leading-relaxed">
+                  {activeItem.description}
+                </p>
+                <Button variant="hero" size="lg" className="self-start" asChild>
+                  <a href={activeItem.cta.href}>
+                    {activeItem.cta.text}
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
+              <button
+                onClick={() => setActiveIndex((prev) => (prev - 1 + boardItems.length) % boardItems.length)}
+                className="w-10 h-10 rounded-full bg-cream/10 hover:bg-cream/20 flex items-center justify-center transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-cream" />
+              </button>
+              
+              <div className="flex gap-2">
+                {boardItems.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === activeIndex
+                        ? "w-8 bg-gold"
+                        : "w-2 bg-cream/30 hover:bg-cream/50"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={() => setActiveIndex((prev) => (prev + 1) % boardItems.length)}
+                className="w-10 h-10 rounded-full bg-cream/10 hover:bg-cream/20 flex items-center justify-center transition-colors"
+              >
+                <ChevronRight className="w-5 h-5 text-cream" />
+              </button>
+            </div>
+          </div>
+
+          {/* Ticker Items */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            {boardItems.map((item, index) => {
+              const Icon = typeIcons[item.type as keyof typeof typeIcons];
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveIndex(index)}
+                  className={`px-4 py-2 rounded-full border flex items-center gap-2 text-sm transition-all ${
+                    index === activeIndex
+                      ? "bg-gold text-earth border-gold"
+                      : "bg-transparent text-cream/70 border-cream/20 hover:border-cream/40"
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{item.title.slice(0, 25)}...</span>
+                  <span className="sm:hidden">{item.type}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
