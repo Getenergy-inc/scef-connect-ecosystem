@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, Users, BookOpen } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, Users, BookOpen, LogIn, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { 
+    name: "About SCEF", 
+    href: "/about",
+    children: [
+      { name: "Who We Are", href: "/about" },
+      { name: "Vision & Mission", href: "/about/vision" },
+      { name: "Governance", href: "/about/governance" },
+      { name: "Our Divisions", href: "/about/divisions" },
+      { name: "Leadership", href: "/about/leadership" },
+    ]
+  },
   { 
     name: "Programs", 
     href: "/programs",
@@ -16,10 +26,41 @@ const navigation = [
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
       { name: "Women & Girls Education", href: "/programs/women-girls-education" },
       { name: "Special Needs Education", href: "/programs/special-needs-education" },
+      { name: "Education Online Africa", href: "/programs/education-online-africa" },
+      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
+    ]
+  },
+  { 
+    name: "Get Involved", 
+    href: "/get-involved",
+    children: [
+      { name: "Become a Member", href: "/membership" },
+      { name: "Ambassador Program", href: "/ambassador" },
+      { name: "Volunteer", href: "/volunteer" },
+    ]
+  },
+  { 
+    name: "Santos Media", 
+    href: "/media",
+    children: [
+      { name: "NESA Africa TV", href: "/media/nesa-tv" },
+      { name: "It's In Me Radio", href: "/media/radio" },
+      { name: "EduAid Webinars", href: "/media/webinars" },
+      { name: "Education Tourism Show", href: "/media/tourism" },
+      { name: "Media Gallery", href: "/media/gallery" },
     ]
   },
   { name: "Local Chapters", href: "/local-chapters" },
-  { name: "Media", href: "/media" },
+  { 
+    name: "Partnerships", 
+    href: "/partnerships",
+    children: [
+      { name: "CSR Partnerships", href: "/partnerships/csr" },
+      { name: "Become a Partner", href: "/partnerships/apply" },
+      { name: "Our Partners", href: "/partnerships/our-partners" },
+    ]
+  },
+  { name: "Events", href: "/events" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -68,7 +109,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden xl:flex items-center gap-1">
           {navigation.map((item) => (
             <div 
               key={item.name}
@@ -79,19 +120,19 @@ export const Header = () => {
               <Link
                 to={item.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1",
+                  "px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1",
                   scrolled
                     ? "text-foreground hover:text-primary hover:bg-primary/10"
                     : "text-cream/90 hover:text-cream hover:bg-cream/10"
                 )}
               >
                 {item.name}
-                {item.children && <ChevronDown className="w-4 h-4" />}
+                {item.children && <ChevronDown className="w-3 h-3" />}
               </Link>
               
               {/* Dropdown */}
               {item.children && activeDropdown === item.name && (
-                <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-lg border border-border overflow-hidden animate-scale-in">
+                <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-lg border border-border overflow-hidden animate-scale-in z-50">
                   {item.children.map((child) => (
                     <Link
                       key={child.name}
@@ -108,7 +149,13 @@ export const Header = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-2">
+          <Button variant={scrolled ? "ghost" : "heroOutline"} size="sm" asChild>
+            <Link to="/wallet">
+              <Wallet className="w-4 h-4" />
+              Wallet
+            </Link>
+          </Button>
           <Button variant={scrolled ? "outline" : "heroOutline"} size="sm" asChild>
             <Link to="/donate">
               <Heart className="w-4 h-4" />
@@ -116,16 +163,16 @@ export const Header = () => {
             </Link>
           </Button>
           <Button variant={scrolled ? "default" : "hero"} size="sm" asChild>
-            <Link to="/membership">
-              <Users className="w-4 h-4" />
-              Join SCEF
+            <Link to="/auth">
+              <LogIn className="w-4 h-4" />
+              Login
             </Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 rounded-lg transition-colors"
+          className="xl:hidden p-2 rounded-lg transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -138,7 +185,7 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg animate-fade-in">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navigation.map((item) => (
               <div key={item.name}>
@@ -167,15 +214,21 @@ export const Header = () => {
             ))}
             <div className="pt-4 flex flex-col gap-2">
               <Button variant="outline" asChild>
+                <Link to="/wallet" onClick={() => setMobileMenuOpen(false)}>
+                  <Wallet className="w-4 h-4" />
+                  My Wallet
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
                 <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
                   <Heart className="w-4 h-4" />
                   Donate
                 </Link>
               </Button>
               <Button variant="default" asChild>
-                <Link to="/membership" onClick={() => setMobileMenuOpen(false)}>
-                  <Users className="w-4 h-4" />
-                  Become a Member
+                <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                  <LogIn className="w-4 h-4" />
+                  Login / Sign Up
                 </Link>
               </Button>
             </div>
