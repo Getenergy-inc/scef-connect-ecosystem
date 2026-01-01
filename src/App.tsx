@@ -26,6 +26,9 @@ import TDSD from "./pages/divisions/TDSD";
 import OMBDD from "./pages/divisions/OMBDD";
 import SantosMedia from "./pages/divisions/SantosMedia";
 import LCS from "./pages/divisions/LCS";
+import NESAAfrica from "./pages/programs/NESAAfrica";
+import EduAidAfrica from "./pages/programs/EduAidAfrica";
+import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +44,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/programs" element={<Programs />} />
+            <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
+            <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
+            <Route path="/programs/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/local-chapters" element={<LocalChapters />} />
             <Route path="/chapters" element={<Chapters />} />
