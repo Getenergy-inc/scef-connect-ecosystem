@@ -36,7 +36,7 @@ const educationPrograms = [
   {
     icon: Library,
     title: "eLibrary Nigeria",
-    description: "Digital library resources for Nigerian students and educators.",
+    description: "Promoting Nigeria local content e-libraries with searchable books and resources.",
     href: "/programs/elibrary-nigeria",
   },
 ];
