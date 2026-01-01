@@ -79,9 +79,9 @@ const typeIcons = {
 };
 
 const typeColors = {
-  Physical: "bg-forest text-cream",
-  Hybrid: "bg-terracotta text-cream",
-  Online: "bg-gold text-earth",
+  Physical: "bg-scef-blue text-white border-2 border-black",
+  Hybrid: "bg-scef-gold text-scef-blue border-2 border-black",
+  Online: "bg-white text-scef-blue border-2 border-black",
 };
 
 const chapterPathway = [
@@ -132,28 +132,28 @@ const Chapters = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
+          <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
             <div className="absolute inset-0 bg-african-pattern opacity-10" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border-2 border-black">
                   <Globe className="w-4 h-4" />
                   Local Chapters
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  Local Execution, <span className="text-gradient-gold">Continental Governance</span>
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  Local Execution, <span className="text-scef-gold">Continental Governance</span>
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed mb-8">
+                <p className="text-xl text-white/80 leading-relaxed mb-8">
                   SCEF operates compliant local chapters across Africa—online, hybrid, and physical—ensuring community ownership under strong institutional oversight.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button variant="hero" size="lg" asChild>
+                  <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
                     <Link to="/chapters/join">
                       <Users className="w-5 h-5" />
                       Join a Chapter
                     </Link>
                   </Button>
-                  <Button variant="heroOutline" size="lg" asChild>
+                  <Button className="bg-transparent text-white border-2 border-scef-gold hover:bg-scef-gold/20" size="lg" asChild>
                     <Link to="/chapters/create">
                       <Plus className="w-5 h-5" />
                       Create Online Chapter
@@ -165,11 +165,11 @@ const Chapters = () => {
           </section>
 
           {/* Chapter Pathway */}
-          <section className="py-16 bg-card border-b border-border">
+          <section className="py-16 bg-background border-b-2 border-black">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-2">
-                  Chapter <span className="text-gradient-gold">Pathway</span>
+                  Chapter <span className="text-scef-gold">Pathway</span>
                 </h2>
                 <p className="text-muted-foreground">Start online, grow to physical presence</p>
               </div>
@@ -177,9 +177,9 @@ const Chapters = () => {
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 {chapterPathway.map((stage, index) => (
                   <div key={stage.stage} className="relative">
-                    <div className="bg-background rounded-2xl p-6 border border-border h-full">
+                    <div className="bg-card rounded-2xl p-6 border-2 border-black h-full hover:shadow-lg transition-shadow">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
+                        <div className="w-10 h-10 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold border-2 border-black">
                           {index + 1}
                         </div>
                         <h3 className="font-display text-lg font-bold text-foreground">{stage.stage}</h3>
@@ -188,7 +188,7 @@ const Chapters = () => {
                       <ul className="space-y-2">
                         {stage.requirements.map((req, idx) => (
                           <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <CheckCircle2 className="w-3 h-3 text-primary" />
+                            <CheckCircle2 className="w-3 h-3 text-scef-gold" />
                             {req}
                           </li>
                         ))}
@@ -196,7 +196,7 @@ const Chapters = () => {
                     </div>
                     {index < chapterPathway.length - 1 && (
                       <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                        <TrendingUp className="w-8 h-8 text-muted-foreground/30" />
+                        <TrendingUp className="w-8 h-8 text-scef-gold/50" />
                       </div>
                     )}
                   </div>
@@ -206,7 +206,7 @@ const Chapters = () => {
           </section>
 
           {/* Filters */}
-          <section className="py-8 bg-background sticky top-16 z-40 border-b border-border">
+          <section className="py-8 bg-background sticky top-16 z-40 border-b-2 border-black">
             <div className="container mx-auto px-4">
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="relative flex-1">
@@ -216,7 +216,7 @@ const Chapters = () => {
                     placeholder="Search by city, country, or chapter name..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:outline-none transition-colors"
+                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-card border-2 border-black focus:border-scef-blue focus:outline-none transition-colors"
                   />
                 </div>
                 
@@ -225,7 +225,7 @@ const Chapters = () => {
                   <select
                     value={typeFilter}
                     onChange={(e) => setTypeFilter(e.target.value)}
-                    className="px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:outline-none transition-colors"
+                    className="px-4 py-3 rounded-xl bg-card border-2 border-black focus:border-scef-blue focus:outline-none transition-colors"
                   >
                     <option value="all">All Types</option>
                     <option value="Physical">Physical</option>
@@ -238,7 +238,7 @@ const Chapters = () => {
           </section>
 
           {/* Chapters Grid */}
-          <section className="py-16">
+          <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredChapters.map((chapter) => {
@@ -246,7 +246,7 @@ const Chapters = () => {
                   return (
                     <div
                       key={chapter.id}
-                      className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-all duration-500"
+                      className="group bg-card rounded-2xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-500"
                     >
                       <div className="relative h-48 overflow-hidden">
                         <img
@@ -254,7 +254,7 @@ const Chapters = () => {
                           alt={chapter.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/80 to-transparent" />
                         
                         <span className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 ${typeColors[chapter.type as keyof typeof typeColors]}`}>
                           <TypeIcon className="w-3 h-3" />
@@ -263,22 +263,22 @@ const Chapters = () => {
                       </div>
                       
                       <div className="p-6">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
                           {chapter.name}
                         </h3>
                         <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                          <MapPin className="w-4 h-4" />
+                          <MapPin className="w-4 h-4 text-scef-gold" />
                           {chapter.location}
                         </div>
                         <p className="text-muted-foreground text-sm mb-4">
                           {chapter.description}
                         </p>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-primary text-sm font-medium">
+                          <div className="flex items-center gap-2 text-scef-blue text-sm font-medium">
                             <Users className="w-4 h-4" />
                             {chapter.members.toLocaleString()} members
                           </div>
-                          <Button variant="outline" size="sm" asChild>
+                          <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black" size="sm" asChild>
                             <Link to={`/chapters/${chapter.id}`}>
                               Join
                               <ArrowRight className="w-3 h-3" />
@@ -294,7 +294,7 @@ const Chapters = () => {
               {filteredChapters.length === 0 && (
                 <div className="text-center py-16">
                   <p className="text-muted-foreground mb-4">No chapters found matching your search.</p>
-                  <Button variant="outline" onClick={() => { setSearchQuery(""); setTypeFilter("all"); }}>
+                  <Button className="border-2 border-black" variant="outline" onClick={() => { setSearchQuery(""); setTypeFilter("all"); }}>
                     Clear Filters
                   </Button>
                 </div>
@@ -303,15 +303,15 @@ const Chapters = () => {
           </section>
 
           {/* Create Chapter CTA */}
-          <section className="py-20 bg-earth">
+          <section className="py-20 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-6">
-                Start a Chapter in <span className="text-gradient-gold">Your Area</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+                Start a Chapter in <span className="text-scef-gold">Your Area</span>
               </h2>
-              <p className="text-cream/70 max-w-2xl mx-auto mb-8">
+              <p className="text-white/70 max-w-2xl mx-auto mb-8">
                 Don't see a chapter near you? Become a founding member and lead the education transformation movement in your community. Start online—upgrade to physical as you grow.
               </p>
-              <Button variant="hero" size="lg" asChild>
+              <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
                 <Link to="/chapters/create">
                   <Plus className="w-5 h-5" />
                   Create an Online Chapter

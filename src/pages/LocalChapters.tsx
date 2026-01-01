@@ -76,9 +76,9 @@ const typeIcons = {
 };
 
 const typeColors = {
-  Physical: "bg-forest text-cream",
-  Hybrid: "bg-terracotta text-cream",
-  Online: "bg-gold text-earth",
+  Physical: "bg-scef-blue text-white border-2 border-black",
+  Hybrid: "bg-scef-gold text-scef-blue border-2 border-black",
+  Online: "bg-white text-scef-blue border-2 border-black",
 };
 
 const LocalChapters = () => {
@@ -109,18 +109,18 @@ const LocalChapters = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
+          <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
             <div className="absolute inset-0 bg-african-pattern opacity-10" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border-2 border-black">
                   <MapPin className="w-4 h-4" />
                   Local Chapters
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  Join a <span className="text-gradient-gold">Chapter</span>
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  Join a <span className="text-scef-gold">Chapter</span>
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed">
+                <p className="text-xl text-white/80 leading-relaxed">
                   Connect with like-minded individuals in your community. Find a local chapter or start one of your own.
                 </p>
               </div>
@@ -128,7 +128,7 @@ const LocalChapters = () => {
           </section>
 
           {/* Filters */}
-          <section className="py-8 bg-card border-b border-border sticky top-16 z-40">
+          <section className="py-8 bg-background border-b-2 border-black sticky top-16 z-40">
             <div className="container mx-auto px-4">
               <div className="flex flex-col sm:flex-row gap-4">
                 {/* Search */}
@@ -139,7 +139,7 @@ const LocalChapters = () => {
                     placeholder="Search by city, country, or chapter name..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition-colors"
+                    className="w-full pl-12 pr-4 py-3 rounded-xl bg-card border-2 border-black focus:border-scef-blue focus:outline-none transition-colors"
                   />
                 </div>
                 
@@ -149,7 +149,7 @@ const LocalChapters = () => {
                   <select
                     value={typeFilter}
                     onChange={(e) => setTypeFilter(e.target.value)}
-                    className="px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition-colors"
+                    className="px-4 py-3 rounded-xl bg-card border-2 border-black focus:border-scef-blue focus:outline-none transition-colors"
                   >
                     <option value="all">All Types</option>
                     <option value="Physical">Physical</option>
@@ -162,7 +162,7 @@ const LocalChapters = () => {
           </section>
 
           {/* Chapters Grid */}
-          <section className="py-16">
+          <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredChapters.map((chapter) => {
@@ -170,7 +170,7 @@ const LocalChapters = () => {
                   return (
                     <div
                       key={chapter.id}
-                      className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-all duration-500"
+                      className="group bg-card rounded-2xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-500"
                     >
                       {/* Image */}
                       <div className="relative h-48 overflow-hidden">
@@ -179,7 +179,7 @@ const LocalChapters = () => {
                           alt={chapter.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/80 to-transparent" />
                         
                         {/* Type Badge */}
                         <span className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 ${typeColors[chapter.type as keyof typeof typeColors]}`}>
@@ -190,22 +190,22 @@ const LocalChapters = () => {
                       
                       {/* Content */}
                       <div className="p-6">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
                           {chapter.name}
                         </h3>
                         <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                          <MapPin className="w-4 h-4" />
+                          <MapPin className="w-4 h-4 text-scef-gold" />
                           {chapter.location}
                         </div>
                         <p className="text-muted-foreground text-sm mb-4">
                           {chapter.description}
                         </p>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-primary text-sm font-medium">
+                          <div className="flex items-center gap-2 text-scef-blue text-sm font-medium">
                             <Users className="w-4 h-4" />
                             {chapter.members.toLocaleString()} members
                           </div>
-                          <Button variant="outline" size="sm">
+                          <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black" size="sm">
                             Join
                             <ArrowRight className="w-3 h-3" />
                           </Button>
@@ -219,7 +219,7 @@ const LocalChapters = () => {
               {filteredChapters.length === 0 && (
                 <div className="text-center py-16">
                   <p className="text-muted-foreground mb-4">No chapters found matching your search.</p>
-                  <Button variant="outline" onClick={() => { setSearchQuery(""); setTypeFilter("all"); }}>
+                  <Button className="border-2 border-black" variant="outline" onClick={() => { setSearchQuery(""); setTypeFilter("all"); }}>
                     Clear Filters
                   </Button>
                 </div>
@@ -228,16 +228,16 @@ const LocalChapters = () => {
           </section>
 
           {/* Create Chapter CTA */}
-          <section className="py-16 bg-card">
+          <section className="py-16 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
-                <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                  Start a Chapter in Your Area
+                <h2 className="font-display text-3xl font-bold text-white mb-4">
+                  Start a Chapter in <span className="text-scef-gold">Your Area</span>
                 </h2>
-                <p className="text-muted-foreground mb-8">
+                <p className="text-white/70 mb-8">
                   Don't see a chapter near you? Become a founding member and lead the education transformation movement in your community.
                 </p>
-                <Button variant="default" size="lg" asChild>
+                <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
                   <Link to="/local-chapters/create">
                     <Plus className="w-5 h-5" />
                     Start a New Chapter
