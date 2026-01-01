@@ -32,6 +32,7 @@ import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
 import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
 import DigitalLearning from "./pages/programs/DigitalLearning";
+import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />
             <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
             <Route path="/programs/digital-learning" element={<DigitalLearning />} />
+            <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/local-chapters" element={<LocalChapters />} />
             <Route path="/chapters" element={<Chapters />} />
