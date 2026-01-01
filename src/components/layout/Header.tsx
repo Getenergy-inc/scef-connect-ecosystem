@@ -94,8 +94,8 @@ export const Header = () => {
             <span className="font-display font-bold text-xl leading-tight text-scef-gold">
               SCEF
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-white/70">
-              Santos Creations
+            <span className="text-[9px] uppercase tracking-wider text-white/70 leading-tight">
+              Santos Creations Educational Foundation
             </span>
           </div>
         </Link>
