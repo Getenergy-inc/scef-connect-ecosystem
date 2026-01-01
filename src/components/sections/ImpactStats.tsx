@@ -7,28 +7,24 @@ const stats = [
     value: 15000,
     suffix: "+",
     label: "Scholarships Funded",
-    color: "text-gold",
   },
   {
     icon: School,
     value: 250,
     suffix: "+",
     label: "Schools Supported",
-    color: "text-terracotta",
   },
   {
     icon: Users,
     value: 45,
     suffix: "",
     label: "Active Chapters",
-    color: "text-forest",
   },
   {
     icon: Eye,
     value: 2,
     suffix: "M+",
     label: "Media Views",
-    color: "text-gold",
   },
 ];
 
@@ -57,21 +53,21 @@ const CountUp = ({ end, suffix, duration = 2000 }: { end: number; suffix: string
 
 export const ImpactStats = () => {
   return (
-    <section className="relative py-20 bg-card">
+    <section className="relative py-20 bg-scef-blue">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold via-terracotta to-forest" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-scef-gold" />
       
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm font-medium mb-4">
             <TrendingUp className="w-4 h-4" />
             Our Impact
           </div>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Making a <span className="text-gradient-gold">Difference</span> Across Africa
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Making a <span className="text-scef-gold">Difference</span> Across Africa
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto">
             Through the collective efforts of our members, donors, and partners, we're creating lasting change in education.
           </p>
         </div>
@@ -81,24 +77,24 @@ export const ImpactStats = () => {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="group relative bg-background rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg overflow-hidden"
+              className="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-scef-gold/50 transition-all duration-300 hover:bg-white/15 overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background Decoration */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-primary/5 group-hover:scale-150 transition-transform duration-500" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-scef-gold/10 group-hover:scale-150 transition-transform duration-500" />
               
               {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 ${stat.color} group-hover:scale-110 transition-transform`}>
+              <div className="w-14 h-14 rounded-xl bg-scef-gold/20 flex items-center justify-center mb-4 text-scef-gold group-hover:scale-110 transition-transform">
                 <stat.icon className="w-7 h-7" />
               </div>
               
               {/* Value */}
-              <div className={`font-display text-4xl lg:text-5xl font-bold mb-2 ${stat.color}`}>
+              <div className="font-display text-4xl lg:text-5xl font-bold mb-2 text-scef-gold">
                 <CountUp end={stat.value} suffix={stat.suffix} />
               </div>
               
               {/* Label */}
-              <p className="text-muted-foreground font-medium">
+              <p className="text-white/80 font-medium">
                 {stat.label}
               </p>
             </div>

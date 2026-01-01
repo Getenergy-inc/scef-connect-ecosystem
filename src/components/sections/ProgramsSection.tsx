@@ -7,42 +7,36 @@ const educationPrograms = [
     icon: BookOpen,
     title: "EduAid-Africa",
     description: "Scholarships & Funding for underprivileged students across Africa.",
-    color: "bg-gold/10 text-gold border-gold/20",
     href: "/programs/eduaid-africa",
   },
   {
     icon: Home,
     title: "Rebuild My School Africa",
     description: "Infrastructure development rebuilding schools across the continent.",
-    color: "bg-terracotta/10 text-terracotta border-terracotta/20",
     href: "/programs/rebuild-my-school-africa",
   },
   {
     icon: Heart,
     title: "Women & Girls Education",
     description: "Empowering women and girls through education and mentorship.",
-    color: "bg-forest/10 text-forest border-forest/20",
     href: "/programs/women-girls-education",
   },
   {
     icon: Accessibility,
     title: "Special Needs Education",
     description: "Inclusive education ensuring every child has access to learning.",
-    color: "bg-primary/10 text-primary border-primary/20",
     href: "/programs/special-needs-education",
   },
   {
     icon: Globe,
     title: "Digital Learning",
     description: "Modern digital learning platforms and e-resources.",
-    color: "bg-gold/10 text-gold border-gold/20",
     href: "/programs/digital-learning",
   },
   {
     icon: Library,
     title: "eLibrary Nigeria",
     description: "Digital library resources for Nigerian students and educators.",
-    color: "bg-terracotta/10 text-terracotta border-terracotta/20",
     href: "/programs/elibrary-nigeria",
   },
 ];
@@ -90,15 +84,15 @@ export const ProgramsSection = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-4">
               <BookOpen className="w-4 h-4" />
               Programs & Platforms
             </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              What We <span className="text-gradient-gold">Do</span>
+              What We <span className="text-scef-gold">Do</span>
             </h2>
           </div>
-          <Button variant="outline" size="lg" asChild>
+          <Button variant="outline" size="lg" className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white" asChild>
             <Link to="/programs">
               Explore All Programs
               <ArrowRight className="w-4 h-4" />
@@ -114,23 +108,23 @@ export const ProgramsSection = () => {
               <Link
                 key={program.title}
                 to={program.href}
-                className="group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
+                className="group relative bg-card rounded-2xl p-8 border border-border hover:border-scef-blue/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-scef-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className={`relative w-14 h-14 rounded-xl ${program.color} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                  <program.icon className="w-7 h-7" />
+                <div className="relative w-14 h-14 rounded-xl bg-scef-blue/10 border border-scef-blue/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <program.icon className="w-7 h-7 text-scef-blue" />
                 </div>
                 
-                <h3 className="relative font-display text-lg font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="relative font-display text-lg font-bold text-card-foreground mb-2 group-hover:text-scef-blue transition-colors">
                   {program.title}
                 </h3>
                 <p className="relative text-muted-foreground text-sm leading-relaxed mb-4">
                   {program.description}
                 </p>
                 
-                <div className="relative flex items-center gap-2 text-primary text-sm font-medium">
+                <div className="relative flex items-center gap-2 text-scef-blue text-sm font-medium">
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
@@ -144,7 +138,7 @@ export const ProgramsSection = () => {
           {/* Recognition */}
           <div className="bg-card rounded-2xl p-8 border border-border">
             <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-              <Award className="w-5 h-5 text-gold" />
+              <Award className="w-5 h-5 text-scef-gold" />
               Recognition & Research
             </h3>
             <div className="space-y-4">
@@ -152,18 +146,18 @@ export const ProgramsSection = () => {
                 <Link
                   key={program.title}
                   to={program.href}
-                  className="flex items-center justify-between p-4 rounded-xl bg-background border border-border hover:border-primary/30 transition-colors group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-background border border-border hover:border-scef-blue/30 transition-colors group"
                 >
                   <div className="flex items-center gap-3">
-                    <program.icon className="w-5 h-5 text-primary" />
+                    <program.icon className="w-5 h-5 text-scef-blue" />
                     <div>
-                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                      <h4 className="font-semibold text-foreground group-hover:text-scef-blue transition-colors">
                         {program.title}
                       </h4>
                       <p className="text-sm text-muted-foreground">{program.description}</p>
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-scef-blue group-hover:translate-x-1 transition-all" />
                 </Link>
               ))}
             </div>
@@ -172,7 +166,7 @@ export const ProgramsSection = () => {
           {/* Media */}
           <div className="bg-card rounded-2xl p-8 border border-border">
             <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-              <Tv className="w-5 h-5 text-terracotta" />
+              <Tv className="w-5 h-5 text-scef-gold" />
               Media Platforms
             </h3>
             <div className="space-y-4">
@@ -180,18 +174,18 @@ export const ProgramsSection = () => {
                 <Link
                   key={program.title}
                   to={program.href}
-                  className="flex items-center justify-between p-4 rounded-xl bg-background border border-border hover:border-primary/30 transition-colors group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-background border border-border hover:border-scef-blue/30 transition-colors group"
                 >
                   <div className="flex items-center gap-3">
-                    <program.icon className="w-5 h-5 text-terracotta" />
+                    <program.icon className="w-5 h-5 text-scef-blue" />
                     <div>
-                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                      <h4 className="font-semibold text-foreground group-hover:text-scef-blue transition-colors">
                         {program.title}
                       </h4>
                       <p className="text-sm text-muted-foreground">{program.description}</p>
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-scef-blue group-hover:translate-x-1 transition-all" />
                 </Link>
               ))}
             </div>
