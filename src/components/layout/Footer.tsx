@@ -3,28 +3,28 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, B
 
 const footerLinks = {
   about: [
-    { name: "Our Story", href: "/about/history" },
-    { name: "Vision & Mission", href: "/about/vision" },
-    { name: "Governance", href: "/about/governance" },
-    { name: "Partners", href: "/partnerships" },
+    { name: "About SCEF", href: "/about" },
+    { name: "Governance", href: "/governance" },
+    { name: "Divisions", href: "/divisions" },
+    { name: "Partners", href: "/partners" },
   ],
   programs: [
-    { name: "NESA-Africa", href: "/programs/nesa-africa" },
-    { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
-    { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
-    { name: "Women & Girls Education", href: "/programs/women-girls-education" },
+    { name: "All Programs", href: "/programs" },
+    { name: "Certifications", href: "/certifications" },
+    { name: "Media Hub", href: "/media" },
+    { name: "eLibrary Nigeria", href: "/programs" },
   ],
   getInvolved: [
-    { name: "Become a Member", href: "/membership" },
-    { name: "Ambassador Program", href: "/get-involved/ambassador" },
-    { name: "Volunteer", href: "/get-involved/volunteer" },
-    { name: "Local Chapters", href: "/local-chapters" },
+    { name: "Join SCEF", href: "/membership" },
+    { name: "Local Chapters", href: "/chapters" },
+    { name: "Volunteer", href: "/get-involved" },
+    { name: "Donate", href: "/donate" },
   ],
   resources: [
-    { name: "Media Hub", href: "/media" },
-    { name: "Events", href: "/events" },
-    { name: "Resources", href: "/resources" },
+    { name: "GFA Wallet", href: "/wallet" },
+    { name: "Dashboard", href: "/dashboard" },
     { name: "Contact Us", href: "/contact" },
+    { name: "Login", href: "/auth" },
   ],
 };
 
@@ -44,10 +44,10 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Stay Updated with SCEF
+              Build Africa's Education Future With Us
             </h3>
             <p className="text-cream/70 mb-6">
-              Subscribe to our newsletter for the latest updates on our programs, events, and impact stories.
+              Subscribe to our newsletter for the latest updates on programs, events, and impact stories.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
@@ -78,7 +78,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-cream/70 text-sm mb-6 leading-relaxed">
-              Transforming education and building sustainable futures across Africa through advocacy, scholarships, and community empowerment.
+              A pan-African, membership-driven institution governing, funding, certifying, and scaling education programs across Africa and the diaspora.
             </p>
             <div className="space-y-3 text-sm">
               <a href="mailto:info@scef.org" className="flex items-center gap-3 text-cream/70 hover:text-gold transition-colors">
@@ -168,7 +168,7 @@ export const Footer = () => {
               ))}
             </div>
             <p className="text-sm text-cream/50 flex items-center gap-2">
-              Made with <Heart className="w-4 h-4 text-terracotta" /> by SCEF © {new Date().getFullYear()}
+              © {new Date().getFullYear()} Santos Creations Educational Foundation. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-sm text-cream/50">
               <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
