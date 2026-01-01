@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ELibrarySearch } from "@/components/elibrary/ELibrarySearch";
 import { 
   BookOpen, 
   Download, 
@@ -16,7 +17,6 @@ import {
   Headphones,
   GraduationCap,
   ArrowRight,
-  CheckCircle2,
   Star,
   BookMarked,
   Laptop
@@ -197,6 +197,9 @@ const ELibraryNigeria = () => {
             </div>
           </div>
         </section>
+
+        {/* Search Section */}
+        <ELibrarySearch />
 
         {/* Resources Section */}
         <section className="py-16 md:py-24 bg-gray-50">
