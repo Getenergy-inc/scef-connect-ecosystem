@@ -26,14 +26,14 @@ const ELibraryNigeria = () => {
   const resources = [
     {
       icon: BookOpen,
-      title: "E-Books Collection",
-      description: "Over 50,000 digital books across all subjects and grade levels",
+      title: "Local Content E-Books",
+      description: "Nigerian authored books across all subjects and educational levels",
       count: "50,000+"
     },
     {
       icon: FileText,
-      title: "Research Papers",
-      description: "Academic journals and research publications for higher education",
+      title: "International Content",
+      description: "Global academic journals and research publications",
       count: "25,000+"
     },
     {
@@ -156,8 +156,9 @@ const ELibraryNigeria = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
-                Nigeria's largest free digital library, providing unlimited access to educational 
-                resources for students, teachers, and lifelong learners across all 36 states.
+                Promoting Nigeria local content e-libraries. Streamline your search for local 
+                and international content e-libraries, connecting students and educators 
+                to a vast repository of Nigerian-authored resources.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
