@@ -24,35 +24,30 @@ const divisions = [
     title: "Strategic Operations & Business Compliance",
     description: "Governance, compliance, finance oversight",
     icon: Shield,
-    color: "text-gold",
   },
   {
     code: "TDSD",
     title: "Technology & Digital Services",
     description: "Platforms, APIs, AI, ICT training, eLibrary Nigeria",
     icon: Laptop,
-    color: "text-terracotta",
   },
   {
     code: "OMBDD",
     title: "Online Media Business Development",
     description: "Digital growth & sponsorships (strict scope)",
     icon: TrendingUp,
-    color: "text-forest",
   },
   {
     code: "Santos Media",
     title: "Santos Media",
     description: "Broadcasting & content monetization",
     icon: Tv,
-    color: "text-primary",
   },
   {
     code: "LCS",
     title: "Local Chapter Services",
     description: "Onboarding, compliance, upgrades",
     icon: Globe,
-    color: "text-gold",
   },
 ];
 
@@ -81,21 +76,21 @@ const About = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
-            <div className="absolute inset-0 bg-african-pattern opacity-10" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl" />
+          <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-scef-gold/20 rounded-full blur-3xl" />
             
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
                   <Building2 className="w-4 h-4" />
                   About SCEF
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   Institutional Leadership for{" "}
-                  <span className="text-gradient-gold">Africa's Education</span>
+                  <span className="text-scef-gold">Africa's Education</span>
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed">
+                <p className="text-xl text-white/80 leading-relaxed">
                   Santos Creations Educational Foundation (SCEF) is a pan-African, membership-driven education governance and delivery institution. We design, regulate, fund, digitize, certify, recognize, and scale education initiatives across Africa and the diaspora.
                 </p>
               </div>
@@ -107,54 +102,54 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6">
                     <Target className="w-4 h-4" />
                     Why We Exist
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    Replacing Fragmentation with <span className="text-gradient-gold">Structure</span>
+                    Replacing Fragmentation with <span className="text-scef-gold">Structure</span>
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                     Africa's education sector faces fragmentation, weak governance, short-term funding, and limited standards. SCEF exists to replace fragmentation with structure—providing a unified governance framework, digital and financial infrastructure, and compliant local execution.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">Unified governance framework</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">Digital infrastructure</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">Financial systems</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">Local execution</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-terracotta/20 rounded-3xl blur-2xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-scef-gold/20 to-scef-blue/20 rounded-3xl blur-2xl" />
                   <div className="relative bg-background rounded-3xl p-8 border border-border">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-card rounded-2xl p-6 text-center border border-border">
-                        <div className="text-3xl font-display font-bold text-primary mb-1">1997</div>
+                        <div className="text-3xl font-display font-bold text-scef-blue mb-1">1997</div>
                         <p className="text-sm text-muted-foreground">Founded</p>
                       </div>
                       <div className="bg-card rounded-2xl p-6 text-center border border-border">
-                        <div className="text-3xl font-display font-bold text-gold mb-1">2010</div>
+                        <div className="text-3xl font-display font-bold text-scef-gold mb-1">2010</div>
                         <p className="text-sm text-muted-foreground">Registered</p>
                       </div>
                       <div className="bg-card rounded-2xl p-6 text-center border border-border">
-                        <div className="text-3xl font-display font-bold text-terracotta mb-1">54+</div>
+                        <div className="text-3xl font-display font-bold text-scef-blue-light mb-1">54+</div>
                         <p className="text-sm text-muted-foreground">Countries</p>
                       </div>
                       <div className="bg-card rounded-2xl p-6 text-center border border-border">
-                        <div className="text-3xl font-display font-bold text-forest mb-1">50K+</div>
+                        <div className="text-3xl font-display font-bold text-scef-blue mb-1">50K+</div>
                         <p className="text-sm text-muted-foreground">Impacted</p>
                       </div>
                     </div>
@@ -169,8 +164,8 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12">
                 <div className="bg-card rounded-2xl p-10 border border-border">
-                  <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6">
-                    <Eye className="w-7 h-7 text-gold" />
+                  <div className="w-14 h-14 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-6">
+                    <Eye className="w-7 h-7 text-scef-gold" />
                   </div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-4">Our Vision</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
@@ -179,8 +174,8 @@ const About = () => {
                 </div>
                 
                 <div className="bg-card rounded-2xl p-10 border border-border">
-                  <div className="w-14 h-14 rounded-xl bg-terracotta/10 flex items-center justify-center mb-6">
-                    <Target className="w-7 h-7 text-terracotta" />
+                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-6">
+                    <Target className="w-7 h-7 text-scef-blue" />
                   </div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-4">Our Mission</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
@@ -196,13 +191,13 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Strategic <span className="text-gradient-gold">Objectives</span>
+                  Strategic <span className="text-scef-gold">Objectives</span>
                 </h2>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {objectives.map((objective, index) => (
                   <div key={index} className="flex items-start gap-4 bg-background rounded-xl p-6 border border-border">
-                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
                       {index + 1}
                     </div>
                     <p className="text-muted-foreground leading-relaxed">{objective}</p>
@@ -216,20 +211,20 @@ const About = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6">
                   <Shield className="w-4 h-4" />
                   Governance
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Multi-Layer <span className="text-gradient-gold">Governance Structure</span>
+                  Multi-Layer <span className="text-scef-gold">Governance Structure</span>
                 </h2>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 {governanceLayers.map((layer, index) => (
                   <div key={index} className="bg-card rounded-2xl p-6 border border-border text-center">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <span className="font-bold text-primary">{index + 1}</span>
+                    <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mx-auto mb-4">
+                      <span className="font-bold text-scef-blue">{index + 1}</span>
                     </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">{layer.title}</h3>
                     <p className="text-sm text-muted-foreground">{layer.description}</p>
@@ -238,7 +233,7 @@ const About = () => {
               </div>
 
               <div className="text-center">
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" asChild className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white">
                   <Link to="/governance">
                     Full Governance Framework
                     <ArrowRight className="w-4 h-4" />
@@ -253,16 +248,16 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  5 Operational <span className="text-gradient-gold">Divisions</span>
+                  5 Operational <span className="text-scef-gold">Divisions</span>
                 </h2>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {divisions.map((division) => (
-                  <div key={division.code} className="bg-background rounded-2xl p-6 border border-border hover:border-primary/30 transition-colors">
+                  <div key={division.code} className="bg-background rounded-2xl p-6 border border-border hover:border-scef-blue/30 transition-colors">
                     <div className="flex items-center gap-3 mb-4">
-                      <division.icon className={`w-6 h-6 ${division.color}`} />
-                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                      <division.icon className="w-6 h-6 text-scef-blue" />
+                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-scef-gold/10 text-scef-blue">
                         {division.code}
                       </span>
                     </div>
@@ -278,17 +273,17 @@ const About = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold text-sm font-medium mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/10 text-scef-gold text-sm font-medium mb-6">
                   <Award className="w-4 h-4" />
                   Certifications
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Africa Education & Productivity <span className="text-gradient-gold">Certification (AEPC)</span>
+                  Africa Education & Productivity <span className="text-scef-gold">Certification (AEPC)</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                   Hybrid delivery, affiliate partners, licensed exam centres, payments via GFA Wallet.
                 </p>
-                <Button variant="default" size="lg" asChild>
+                <Button variant="default" size="lg" asChild className="bg-scef-blue hover:bg-scef-blue-light">
                   <Link to="/certifications">
                     <GraduationCap className="w-4 h-4" />
                     Certifications Hub
@@ -304,20 +299,20 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Member-Run, Partner-Powered, <span className="text-gradient-gold">Institutionally Governed</span>
+                  Member-Run, Partner-Powered, <span className="text-scef-gold">Institutionally Governed</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                   SCEF is member-run, partner-powered, and institutionally governed.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  <Button variant="default" size="lg" asChild>
+                  <Button variant="default" size="lg" asChild className="bg-scef-blue hover:bg-scef-blue-light">
                     <Link to="/membership">
                       <Users className="w-4 h-4" />
                       Become a Member
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="lg" asChild>
+                  <Button variant="outline" size="lg" asChild className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white">
                     <Link to="/partners">
                       <Handshake className="w-4 h-4" />
                       Partner With SCEF
@@ -329,28 +324,28 @@ const About = () => {
           </section>
 
           {/* Final CTA */}
-          <section className="py-20 bg-earth">
+          <section className="py-20 bg-scef-blue">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-6">
-                Join Africa's Education <span className="text-gradient-gold">Institution</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+                Join Africa's Education <span className="text-scef-gold">Institution</span>
               </h2>
-              <p className="text-cream/70 max-w-2xl mx-auto mb-8">
+              <p className="text-white/70 max-w-2xl mx-auto mb-8">
                 Be part of the movement transforming education across Africa and the diaspora.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button variant="hero" size="lg" asChild>
+                <Button size="lg" asChild className="bg-scef-gold text-scef-blue-dark hover:bg-scef-gold-hover font-semibold">
                   <Link to="/membership">
                     Join SCEF
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
-                <Button variant="heroOutline" size="lg" asChild>
+                <Button size="lg" asChild className="bg-transparent border-2 border-white text-white hover:bg-white/10">
                   <Link to="/wallet/donate">
                     <Heart className="w-4 h-4" />
                     Donate
                   </Link>
                 </Button>
-                <Button variant="heroOutline" size="lg" asChild>
+                <Button size="lg" asChild className="bg-transparent border-2 border-scef-gold text-scef-gold hover:bg-scef-gold/10">
                   <Link to="/auth">
                     Access Dashboard
                   </Link>
