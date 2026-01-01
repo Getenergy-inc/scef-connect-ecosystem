@@ -80,17 +80,17 @@ const Membership = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
+          <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
             <div className="absolute inset-0 bg-african-pattern opacity-10" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl mx-auto text-center">
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center mb-6">
-                  <Users className="w-10 h-10 text-earth" />
+                <div className="w-20 h-20 mx-auto rounded-full bg-scef-gold flex items-center justify-center mb-6 border-2 border-black">
+                  <Users className="w-10 h-10 text-scef-blue" />
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  Join <span className="text-gradient-gold">SCEF</span>
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  Join <span className="text-scef-gold">SCEF</span>
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed">
+                <p className="text-xl text-white/80 leading-relaxed">
                   Become part of Africa's premier education institution. Your membership supports 
                   scholarships, programs, and community chapters across the continent.
                 </p>
@@ -99,13 +99,13 @@ const Membership = () => {
           </section>
 
           {/* Benefits */}
-          <section className="py-16 bg-card">
+          <section className="py-16 bg-muted/30 border-b-2 border-black">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {benefits.map((benefit) => (
-                  <div key={benefit.label} className="text-center p-6 rounded-xl bg-background border border-border">
-                    <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-7 h-7 text-primary" />
+                  <div key={benefit.label} className="text-center p-6 rounded-xl bg-card border-2 border-black hover:shadow-lg transition-shadow">
+                    <div className="w-14 h-14 mx-auto rounded-xl bg-scef-gold/20 flex items-center justify-center mb-4 border-2 border-black">
+                      <benefit.icon className="w-7 h-7 text-scef-blue" />
                     </div>
                     <h3 className="font-display font-bold text-foreground mb-2">{benefit.label}</h3>
                     <p className="text-sm text-muted-foreground">{benefit.desc}</p>
@@ -116,11 +116,11 @@ const Membership = () => {
           </section>
 
           {/* Tiers */}
-          <section className="py-20">
+          <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Choose Your <span className="text-gradient-gold">Membership</span>
+                  Choose Your <span className="text-scef-gold">Membership</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Select the membership tier that best fits your commitment to Africa's education future.
@@ -131,22 +131,22 @@ const Membership = () => {
                 {membershipTiers.map((tier) => (
                   <Card 
                     key={tier.name}
-                    className={`relative cursor-pointer transition-all ${
+                    className={`relative cursor-pointer transition-all border-2 border-black ${
                       selectedTier === tier.name 
-                        ? "border-primary shadow-lg ring-2 ring-primary/20" 
-                        : "hover:border-primary/50"
+                        ? "shadow-xl ring-2 ring-scef-gold bg-scef-blue/5" 
+                        : "hover:shadow-lg hover:border-scef-blue"
                     }`}
                     onClick={() => setSelectedTier(tier.name)}
                   >
                     {tier.popular && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full flex items-center gap-1">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-scef-gold text-scef-blue text-xs font-bold rounded-full flex items-center gap-1 border-2 border-black">
                         <Star className="w-3 h-3" />
                         Recommended
                       </div>
                     )}
                     <CardHeader className="text-center pt-8">
                       <CardTitle className="text-xl">{tier.name}</CardTitle>
-                      <div className="text-3xl font-display font-bold text-primary mt-2">
+                      <div className="text-3xl font-display font-bold text-scef-blue mt-2">
                         {tier.price}
                       </div>
                       <CardDescription className="mt-2">{tier.description}</CardDescription>
@@ -155,7 +155,7 @@ const Membership = () => {
                       <ul className="space-y-3">
                         {tier.features.map((feature) => (
                           <li key={feature} className="flex items-start gap-2 text-sm">
-                            <CheckCircle className="w-4 h-4 text-forest mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-scef-gold mt-0.5 flex-shrink-0" />
                             <span className="text-muted-foreground">{feature}</span>
                           </li>
                         ))}
@@ -166,23 +166,27 @@ const Membership = () => {
               </div>
 
               <div className="text-center mt-12">
-                <Button size="lg" onClick={() => navigate("/auth")}>
+                <Button 
+                  size="lg" 
+                  className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold"
+                  onClick={() => navigate("/auth")}
+                >
                   Continue with {selectedTier}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Already a member? <Link to="/auth" className="text-primary hover:underline">Sign in here</Link>
+                  Already a member? <Link to="/auth" className="text-scef-blue font-medium hover:underline">Sign in here</Link>
                 </p>
               </div>
             </div>
           </section>
 
           {/* What You Get */}
-          <section className="py-20 bg-card">
+          <section className="py-20 bg-muted/30 border-y-2 border-black">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
-                  What Members <span className="text-gradient-gold">Receive</span>
+                  What Members <span className="text-scef-gold">Receive</span>
                 </h2>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
@@ -191,9 +195,9 @@ const Membership = () => {
                     { icon: BookOpen, title: "Learning Resources", desc: "Access exclusive webinars, courses, and educational materials" },
                     { icon: Heart, title: "Direct Impact", desc: "Your membership directly funds scholarships and school programs" },
                   ].map((item) => (
-                    <div key={item.title} className="flex gap-4 p-6 rounded-xl bg-background border border-border">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-6 h-6 text-primary" />
+                    <div key={item.title} className="flex gap-4 p-6 rounded-xl bg-card border-2 border-black hover:shadow-lg transition-shadow">
+                      <div className="w-12 h-12 rounded-xl bg-scef-gold/20 flex items-center justify-center flex-shrink-0 border-2 border-black">
+                        <item.icon className="w-6 h-6 text-scef-blue" />
                       </div>
                       <div>
                         <h3 className="font-display font-bold text-foreground mb-2">{item.title}</h3>
@@ -207,10 +211,10 @@ const Membership = () => {
           </section>
 
           {/* FAQ */}
-          <section className="py-20">
+          <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
-                Frequently Asked <span className="text-gradient-gold">Questions</span>
+                Frequently Asked <span className="text-scef-gold">Questions</span>
               </h2>
               <div className="max-w-2xl mx-auto space-y-6">
                 {[
@@ -231,7 +235,7 @@ const Membership = () => {
                     a: "AGC tokens are automatically credited to your GFA Wallet upon membership activation.",
                   },
                 ].map((faq) => (
-                  <div key={faq.q} className="p-6 bg-card rounded-xl border border-border">
+                  <div key={faq.q} className="p-6 bg-card rounded-xl border-2 border-black hover:shadow-lg transition-shadow">
                     <h3 className="font-medium text-foreground mb-2">{faq.q}</h3>
                     <p className="text-sm text-muted-foreground">{faq.a}</p>
                   </div>
@@ -241,20 +245,24 @@ const Membership = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-20 bg-earth">
+          <section className="py-20 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-4">
-                Ready to Join Africa's Education <span className="text-gold">Movement</span>?
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Join Africa's Education <span className="text-scef-gold">Movement</span>?
               </h2>
-              <p className="text-cream/70 max-w-xl mx-auto mb-8">
+              <p className="text-white/70 max-w-xl mx-auto mb-8">
                 Become a member today and start making an impact on education across the continent.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" onClick={() => navigate("/auth")}>
+                <Button 
+                  size="lg" 
+                  className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold"
+                  onClick={() => navigate("/auth")}
+                >
                   Join SCEF Now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-cream/30 text-cream hover:bg-cream/10" asChild>
+                <Button size="lg" className="bg-transparent text-white border-2 border-scef-gold hover:bg-scef-gold/20" asChild>
                   <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
