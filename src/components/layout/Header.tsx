@@ -20,12 +20,9 @@ const navigation = [
     name: "Programs & Platforms", 
     href: "/programs",
     children: [
+      { name: "All Programs", href: "/programs" },
       { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
-      { name: "Women & Girls Education", href: "/programs/women-girls-education" },
-      { name: "Special Needs Education", href: "/programs/special-needs-education" },
-      { name: "Education Online Africa", href: "/programs/education-online-africa" },
-      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
       { name: "NESA-Africa", href: "/programs/nesa-africa" },
     ]
   },
@@ -46,19 +43,10 @@ const navigation = [
     href: "/chapters",
     children: [
       { name: "Find a Chapter", href: "/chapters" },
-      { name: "Join a Chapter", href: "/chapters/join" },
-      { name: "Create Online Chapter", href: "/chapters/create" },
+      { name: "Local Chapters", href: "/local-chapters" },
     ]
   },
-  { 
-    name: "Media", 
-    href: "/media",
-    children: [
-      { name: "NESA Africa TV", href: "/media/nesa-tv" },
-      { name: "It's In Me Radio", href: "/media/radio" },
-      { name: "EduAid Webinars", href: "/media/webinars" },
-    ]
-  },
+  { name: "Media", href: "/media" },
   { name: "Partners", href: "/partners" },
 ];
 
