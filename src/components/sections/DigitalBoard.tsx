@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Play, Volume2, FileText, Image, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Play, Volume2, FileText, Image, ChevronLeft, ChevronRight, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const boardItems = [
@@ -22,9 +23,9 @@ const boardItems = [
   {
     id: 3,
     type: "announcement",
-    title: "New Chapter Launched in Ghana",
-    description: "SCEF expands to Accra with the launch of our newest local chapter. Join the movement!",
-    cta: { text: "Join Chapter", href: "/local-chapters" },
+    title: "AEPC Certification Program Launch",
+    description: "Africa Education & Productivity Certification now available across 10 countries.",
+    cta: { text: "Learn More", href: "/certifications" },
     thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800",
   },
   {
@@ -77,10 +78,10 @@ export const DigitalBoard = () => {
             Live Updates
           </div>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4">
-            Digital <span className="text-gradient-gold">Notice Board</span>
+            Education Updates • Opportunities • <span className="text-gradient-gold">Events</span>
           </h2>
           <p className="text-cream/70 max-w-2xl mx-auto">
-            Stay updated with the latest announcements, events, and opportunities from SCEF.
+            Real-time announcements, videos, audio clips, flyers, and notices curated by SCEF HQ.
           </p>
         </div>
 
@@ -163,26 +164,14 @@ export const DigitalBoard = () => {
             </div>
           </div>
 
-          {/* Ticker Items */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            {boardItems.map((item, index) => {
-              const Icon = typeIcons[item.type as keyof typeof typeIcons];
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveIndex(index)}
-                  className={`px-4 py-2 rounded-full border flex items-center gap-2 text-sm transition-all ${
-                    index === activeIndex
-                      ? "bg-gold text-earth border-gold"
-                      : "bg-transparent text-cream/70 border-cream/20 hover:border-cream/40"
-                  }`}
-                >
-                  <Icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{item.title.slice(0, 25)}...</span>
-                  <span className="sm:hidden">{item.type}</span>
-                </button>
-              );
-            })}
+          {/* View All CTA */}
+          <div className="mt-8 text-center">
+            <Button variant="heroOutline" size="lg" asChild>
+              <Link to="/updates">
+                View All Updates
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

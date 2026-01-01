@@ -1,49 +1,85 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Radio, Tv, Video, Library } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const programs = [
-  {
-    icon: Award,
-    title: "NESA-Africa",
-    description: "Nigeria Excellence in Secondary Education Awards celebrating academic achievement and leadership across Africa.",
-    color: "bg-gold/10 text-gold border-gold/20",
-    href: "/programs/nesa-africa",
-  },
+const educationPrograms = [
   {
     icon: BookOpen,
     title: "EduAid-Africa",
-    description: "Scholarship and educational support programs providing access to quality education for underprivileged students.",
-    color: "bg-terracotta/10 text-terracotta border-terracotta/20",
+    description: "Scholarships & Funding for underprivileged students across Africa.",
+    color: "bg-gold/10 text-gold border-gold/20",
     href: "/programs/eduaid-africa",
   },
   {
     icon: Home,
     title: "Rebuild My School Africa",
-    description: "Infrastructure development initiative reconstructing and renovating schools across the continent.",
-    color: "bg-forest/10 text-forest border-forest/20",
+    description: "Infrastructure development rebuilding schools across the continent.",
+    color: "bg-terracotta/10 text-terracotta border-terracotta/20",
     href: "/programs/rebuild-my-school-africa",
   },
   {
     icon: Heart,
     title: "Women & Girls Education",
-    description: "Empowering women and girls through education, mentorship, and leadership development programs.",
-    color: "bg-gold/10 text-gold border-gold/20",
+    description: "Empowering women and girls through education and mentorship.",
+    color: "bg-forest/10 text-forest border-forest/20",
     href: "/programs/women-girls-education",
   },
   {
     icon: Accessibility,
     title: "Special Needs Education",
-    description: "Inclusive education initiatives ensuring every child has access to learning opportunities.",
-    color: "bg-terracotta/10 text-terracotta border-terracotta/20",
+    description: "Inclusive education ensuring every child has access to learning.",
+    color: "bg-primary/10 text-primary border-primary/20",
     href: "/programs/special-needs-education",
   },
   {
     icon: Globe,
-    title: "Education Online Africa",
-    description: "Digital learning platforms and e-learning resources making education accessible everywhere.",
-    color: "bg-forest/10 text-forest border-forest/20",
-    href: "/programs/education-online-africa",
+    title: "Digital Learning",
+    description: "Modern digital learning platforms and e-resources.",
+    color: "bg-gold/10 text-gold border-gold/20",
+    href: "/programs/digital-learning",
+  },
+  {
+    icon: Library,
+    title: "eLibrary Nigeria",
+    description: "Digital library resources for Nigerian students and educators.",
+    color: "bg-terracotta/10 text-terracotta border-terracotta/20",
+    href: "/programs/elibrary-nigeria",
+  },
+];
+
+const recognitionPrograms = [
+  {
+    icon: Award,
+    title: "NESA-Africa",
+    description: "New Education Standard Award celebrating excellence.",
+    href: "/programs/nesa-africa",
+  },
+  {
+    icon: BookOpen,
+    title: "Nominee Research Corps",
+    description: "Research-driven nomination processes.",
+    href: "/programs/nominee-research-corps",
+  },
+];
+
+const mediaPrograms = [
+  {
+    icon: Tv,
+    title: "NESA Africa TV",
+    description: "Educational broadcasting platform.",
+    href: "/media/nesa-africa-tv",
+  },
+  {
+    icon: Radio,
+    title: "It's In Me Radio",
+    description: "Inspiring stories from educators.",
+    href: "/media/its-in-me-radio",
+  },
+  {
+    icon: Video,
+    title: "EduAid Webinar Series",
+    description: "Expert-led educational webinars.",
+    href: "/media/eduaid-webinars",
   },
 ];
 
@@ -56,52 +92,110 @@ export const ProgramsSection = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
               <BookOpen className="w-4 h-4" />
-              Our Programs
+              Programs & Platforms
             </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Flagship <span className="text-gradient-gold">Programs</span>
+              What We <span className="text-gradient-gold">Do</span>
             </h2>
           </div>
           <Button variant="outline" size="lg" asChild>
             <Link to="/programs">
-              View All Programs
+              Explore All Programs
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
         </div>
 
-        {/* Programs Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {programs.map((program, index) => (
-            <Link
-              key={program.title}
-              to={program.href}
-              className="group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Hover Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Icon */}
-              <div className={`relative w-16 h-16 rounded-xl ${program.color} border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <program.icon className="w-8 h-8" />
-              </div>
-              
-              {/* Content */}
-              <h3 className="relative font-display text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">
-                {program.title}
-              </h3>
-              <p className="relative text-muted-foreground leading-relaxed mb-6">
-                {program.description}
-              </p>
-              
-              {/* Arrow */}
-              <div className="relative flex items-center gap-2 text-primary font-medium">
-                Learn More
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-              </div>
-            </Link>
-          ))}
+        {/* Education Programs Grid */}
+        <div className="mb-16">
+          <h3 className="font-display text-xl font-bold text-foreground mb-6">Education Programs</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {educationPrograms.map((program, index) => (
+              <Link
+                key={program.title}
+                to={program.href}
+                className="group relative bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className={`relative w-14 h-14 rounded-xl ${program.color} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <program.icon className="w-7 h-7" />
+                </div>
+                
+                <h3 className="relative font-display text-lg font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                  {program.title}
+                </h3>
+                <p className="relative text-muted-foreground text-sm leading-relaxed mb-4">
+                  {program.description}
+                </p>
+                
+                <div className="relative flex items-center gap-2 text-primary text-sm font-medium">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Recognition & Media Row */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Recognition */}
+          <div className="bg-card rounded-2xl p-8 border border-border">
+            <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <Award className="w-5 h-5 text-gold" />
+              Recognition & Research
+            </h3>
+            <div className="space-y-4">
+              {recognitionPrograms.map((program) => (
+                <Link
+                  key={program.title}
+                  to={program.href}
+                  className="flex items-center justify-between p-4 rounded-xl bg-background border border-border hover:border-primary/30 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <program.icon className="w-5 h-5 text-primary" />
+                    <div>
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {program.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{program.description}</p>
+                    </div>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Media */}
+          <div className="bg-card rounded-2xl p-8 border border-border">
+            <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <Tv className="w-5 h-5 text-terracotta" />
+              Media Platforms
+            </h3>
+            <div className="space-y-4">
+              {mediaPrograms.map((program) => (
+                <Link
+                  key={program.title}
+                  to={program.href}
+                  className="flex items-center justify-between p-4 rounded-xl bg-background border border-border hover:border-primary/30 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <program.icon className="w-5 h-5 text-terracotta" />
+                    <div>
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {program.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">{program.description}</p>
+                    </div>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

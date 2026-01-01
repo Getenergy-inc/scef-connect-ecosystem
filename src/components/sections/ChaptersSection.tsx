@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Users, ArrowRight, Globe } from "lucide-react";
+import { MapPin, Users, ArrowRight, Globe, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const featuredChapters = [
@@ -41,37 +41,31 @@ const typeColors = {
 
 export const ChaptersSection = () => {
   return (
-    <section className="py-24 bg-card">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest/10 text-forest text-sm font-medium mb-4">
-              <Globe className="w-4 h-4" />
-              Local Chapters
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Join a <span className="text-gradient-gold">Chapter</span> Near You
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-xl">
-              Connect with like-minded individuals in your community or join our global online chapter to make an impact from anywhere.
-            </p>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest/10 text-forest text-sm font-medium mb-6">
+            <Globe className="w-4 h-4" />
+            Local Chapters
           </div>
-          <Button variant="outline" size="lg" asChild>
-            <Link to="/local-chapters">
-              Browse All Chapters
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Button>
+          
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Local Execution, <span className="text-gradient-gold">Continental Governance</span>
+          </h2>
+          
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            SCEF operates compliant local chapters across Africa—online, hybrid, and physical—ensuring community ownership under strong institutional oversight.
+          </p>
         </div>
 
         {/* Chapters Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {featuredChapters.map((chapter, index) => (
             <Link
               key={chapter.name}
               to="/local-chapters"
-              className="group relative bg-background rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg"
+              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-lg"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
@@ -107,15 +101,19 @@ export const ChaptersSection = () => {
           ))}
         </div>
 
-        {/* Create Chapter CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-4">
-            Don't see a chapter in your area?
-          </p>
-          <Button variant="secondary" size="lg" asChild>
-            <Link to="/local-chapters/create">
-              Start a New Chapter
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button variant="default" size="lg" asChild>
+            <Link to="/chapters/join">
+              <Users className="w-4 h-4" />
+              Join a Chapter
               <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/chapters/create">
+              <Plus className="w-4 h-4" />
+              Create an Online Chapter
             </Link>
           </Button>
         </div>

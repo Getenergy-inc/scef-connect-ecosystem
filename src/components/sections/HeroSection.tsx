@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, Users, MapPin, Play } from "lucide-react";
+import { ArrowRight, Users, Handshake, BookOpen, Building2, Play } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
 
 export const HeroSection = () => {
@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="African children learning in a sunlit classroom"
+          alt="African students engaged in education"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-earth/80 via-earth/70 to-earth/90" />
@@ -23,46 +23,55 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 backdrop-blur-sm border border-cream/20 text-cream/90 text-sm mb-8 animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            Pan-African Education Advocacy Ecosystem
+            Pan-African Education Governance Institution
           </div>
 
           {/* Main Headline */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-cream mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Transforming Education.{" "}
+            Governing Africa's{" "}
             <span className="text-gradient-gold">
-              Building Sustainable Futures
-            </span>{" "}
-            Across Africa.
+              Education Future
+            </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-cream/80 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Join SCEF to support scholarships, change-making awards, inclusive education, community chapters, and continental impact.
+          <p className="text-lg md:text-xl text-cream/80 max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            A pan-African, membership-driven institution governing, funding, certifying, and scaling education programs across Africa and the diaspora.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          {/* Primary CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button variant="hero" size="xl" asChild>
               <Link to="/membership">
                 <Users className="w-5 h-5" />
-                Become a Member
+                Join SCEF
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <Link to="/donate">
-                <Heart className="w-5 h-5" />
-                Donate Now
+              <Link to="/partners">
+                <Handshake className="w-5 h-5" />
+                Partner With Us
               </Link>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
-              <Link to="/local-chapters">
-                <MapPin className="w-5 h-5" />
-                Browse Chapters
+          </div>
+
+          {/* Secondary CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.35s" }}>
+            <Button variant="ghost" size="lg" className="text-cream/80 hover:text-cream hover:bg-cream/10" asChild>
+              <Link to="/programs">
+                <BookOpen className="w-4 h-4" />
+                Explore Programs
+              </Link>
+            </Button>
+            <Button variant="ghost" size="lg" className="text-cream/80 hover:text-cream hover:bg-cream/10" asChild>
+              <Link to="/governance">
+                <Building2 className="w-4 h-4" />
+                View Governance
               </Link>
             </Button>
           </div>
