@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
 import LocalChapters from "./pages/LocalChapters";
+import Chapters from "./pages/Chapters";
 import Media from "./pages/Media";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
@@ -16,6 +17,10 @@ import Donate from "./pages/Donate";
 import Wallet from "./pages/Wallet";
 import GetInvolved from "./pages/GetInvolved";
 import Membership from "./pages/Membership";
+import Governance from "./pages/Governance";
+import Certifications from "./pages/Certifications";
+import Partners from "./pages/Partners";
+import Divisions from "./pages/Divisions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +38,7 @@ const App = () => (
             <Route path="/programs" element={<Programs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/local-chapters" element={<LocalChapters />} />
+            <Route path="/chapters" element={<Chapters />} />
             <Route path="/media" element={<Media />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -40,6 +46,10 @@ const App = () => (
             <Route path="/wallet" element={<Wallet />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/membership" element={<Membership />} />
+            <Route path="/governance" element={<Governance />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/divisions" element={<Divisions />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
