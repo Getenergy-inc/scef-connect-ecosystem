@@ -61,19 +61,19 @@ const mediaPrograms = [
     icon: Tv,
     title: "NESA Africa TV",
     description: "Educational broadcasting platform.",
-    href: "/media/nesa-africa-tv",
+    href: "/media",
   },
   {
     icon: Radio,
     title: "It's In Me Radio",
     description: "Inspiring stories from educators.",
-    href: "/media/its-in-me-radio",
+    href: "/media",
   },
   {
     icon: Video,
     title: "EduAid Webinar Series",
     description: "Expert-led educational webinars.",
-    href: "/media/eduaid-webinars",
+    href: "/media",
   },
 ];
 
@@ -108,13 +108,13 @@ export const ProgramsSection = () => {
               <Link
                 key={program.title}
                 to={program.href}
-                className="group relative bg-card rounded-2xl p-8 border border-border hover:border-scef-blue/30 transition-all duration-500 hover:shadow-lg overflow-hidden"
+                className="group relative bg-card rounded-2xl p-8 border-2 border-black hover:border-scef-gold hover:shadow-lg transition-all duration-500 overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-scef-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="relative w-14 h-14 rounded-xl bg-scef-blue/10 border border-scef-blue/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                  <program.icon className="w-7 h-7 text-scef-blue" />
+                <div className="relative w-14 h-14 rounded-xl bg-scef-blue border-2 border-black flex items-center justify-center mb-5 group-hover:bg-scef-gold transition-colors duration-300">
+                  <program.icon className="w-7 h-7 text-scef-gold group-hover:text-scef-blue-dark transition-colors" />
                 </div>
                 
                 <h3 className="relative font-display text-lg font-bold text-card-foreground mb-2 group-hover:text-scef-blue transition-colors">
@@ -124,7 +124,7 @@ export const ProgramsSection = () => {
                   {program.description}
                 </p>
                 
-                <div className="relative flex items-center gap-2 text-scef-blue text-sm font-medium">
+                <div className="relative flex items-center gap-2 text-scef-gold text-sm font-semibold">
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
