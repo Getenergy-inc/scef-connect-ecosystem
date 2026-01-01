@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, Users, BookOpen, LogIn, Wallet } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -11,57 +11,55 @@ const navigation = [
     href: "/about",
     children: [
       { name: "Who We Are", href: "/about" },
-      { name: "Vision & Mission", href: "/about/vision" },
-      { name: "Governance", href: "/about/governance" },
-      { name: "Our Divisions", href: "/about/divisions" },
-      { name: "Leadership", href: "/about/leadership" },
+      { name: "Vision & Mission", href: "/about#vision" },
+      { name: "Governance", href: "/governance" },
+      { name: "Our Divisions", href: "/divisions" },
     ]
   },
   { 
-    name: "Programs", 
+    name: "Programs & Platforms", 
     href: "/programs",
     children: [
-      { name: "NESA-Africa", href: "/programs/nesa-africa" },
       { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
       { name: "Women & Girls Education", href: "/programs/women-girls-education" },
       { name: "Special Needs Education", href: "/programs/special-needs-education" },
       { name: "Education Online Africa", href: "/programs/education-online-africa" },
       { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
+      { name: "NESA-Africa", href: "/programs/nesa-africa" },
     ]
   },
   { 
-    name: "Get Involved", 
-    href: "/get-involved",
+    name: "Divisions", 
+    href: "/divisions",
     children: [
-      { name: "Become a Member", href: "/membership" },
-      { name: "Ambassador Program", href: "/ambassador" },
-      { name: "Volunteer", href: "/volunteer" },
+      { name: "SOBCD", href: "/divisions/sobcd" },
+      { name: "TDSD", href: "/divisions/tdsd" },
+      { name: "OMBDD", href: "/divisions/ombdd" },
+      { name: "Santos Media", href: "/divisions/santos-media" },
+      { name: "Local Chapter Services", href: "/divisions/lcs" },
+    ]
+  },
+  { name: "Certifications", href: "/certifications" },
+  { 
+    name: "Chapters", 
+    href: "/chapters",
+    children: [
+      { name: "Find a Chapter", href: "/chapters" },
+      { name: "Join a Chapter", href: "/chapters/join" },
+      { name: "Create Online Chapter", href: "/chapters/create" },
     ]
   },
   { 
-    name: "Santos Media", 
+    name: "Media", 
     href: "/media",
     children: [
       { name: "NESA Africa TV", href: "/media/nesa-tv" },
       { name: "It's In Me Radio", href: "/media/radio" },
       { name: "EduAid Webinars", href: "/media/webinars" },
-      { name: "Education Tourism Show", href: "/media/tourism" },
-      { name: "Media Gallery", href: "/media/gallery" },
     ]
   },
-  { name: "Local Chapters", href: "/local-chapters" },
-  { 
-    name: "Partnerships", 
-    href: "/partnerships",
-    children: [
-      { name: "CSR Partnerships", href: "/partnerships/csr" },
-      { name: "Become a Partner", href: "/partnerships/apply" },
-      { name: "Our Partners", href: "/partnerships/our-partners" },
-    ]
-  },
-  { name: "Events", href: "/events" },
-  { name: "Contact", href: "/contact" },
+  { name: "Partners", href: "/partners" },
 ];
 
 export const Header = () => {
@@ -216,19 +214,13 @@ export const Header = () => {
               <Button variant="outline" asChild>
                 <Link to="/wallet" onClick={() => setMobileMenuOpen(false)}>
                   <Wallet className="w-4 h-4" />
-                  My Wallet
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
-                  <Heart className="w-4 h-4" />
-                  Donate
+                  Wallet / Donate
                 </Link>
               </Button>
               <Button variant="default" asChild>
                 <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
                   <LogIn className="w-4 h-4" />
-                  Login / Sign Up
+                  Login / Dashboard
                 </Link>
               </Button>
             </div>
