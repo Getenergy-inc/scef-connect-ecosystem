@@ -10,52 +10,52 @@ import {
 } from "lucide-react";
 
 const objectives = [
-  "Advocate a continuously evolving education standard aligned to global best practice.",
-  "Mobilize and deploy sustainable education funding.",
-  "Expand equitable access—women, girls, special-needs, underserved communities.",
-  "Recognize excellence through awards, research, and certifications.",
-  "Enable grassroots ownership via compliant local chapters.",
-  "Build trust through governance, data, and transparency.",
+  "Advocate for a continuously evolving education standard aligned to global best practices and AU Agenda 2063.",
+  "Mobilize and deploy sustainable education funding through transparent, auditable financial systems.",
+  "Expand equitable access to quality education—prioritizing women, girls, special-needs learners, and underserved communities.",
+  "Recognize and reward excellence through continental awards, applied research, and industry-recognized certifications.",
+  "Enable grassroots ownership and execution via compliant, accountable local chapters across 54+ countries.",
+  "Build institutional trust through layered governance, real-time data, and radical transparency.",
 ];
 
 const divisions = [
   {
     code: "SOBCD",
     title: "Strategic Operations & Business Compliance",
-    description: "Governance, compliance, finance oversight",
+    description: "Governance, compliance, finance oversight, audits, risk management, and institutional integrity.",
     icon: Shield,
   },
   {
     code: "TDSD",
     title: "Technology & Digital Services",
-    description: "Platforms, APIs, AI, ICT training, eLibrary Nigeria",
+    description: "Website, mobile apps, APIs, databases, wallets, AI tools, ICT training, Education Online Africa, eLibrary Nigeria.",
     icon: Laptop,
   },
   {
     code: "OMBDD",
     title: "Online Media Business Development",
-    description: "Digital growth & sponsorships (strict scope)",
+    description: "Digital growth, sponsorships, partnerships, and online revenue development. Strict scope—no expansion beyond mandate.",
     icon: TrendingUp,
   },
   {
     code: "Santos Media",
-    title: "Santos Media",
-    description: "Broadcasting & content monetization",
+    title: "Santos Media Division",
+    description: "NESA Africa TV, It's In Me Radio, EduAid Webinar Series, Education Tourism Show. Broadcasting and content monetization.",
     icon: Tv,
   },
   {
     code: "LCS",
     title: "Local Chapter Services",
-    description: "Onboarding, compliance, upgrades",
+    description: "Chapter onboarding, compliance monitoring, performance tracking, and pathway upgrades (Online → Hybrid → Physical).",
     icon: Globe,
   },
 ];
 
 const governanceLayers = [
-  { title: "Board of Trustees (7)", description: "Fiduciary oversight & integrity" },
-  { title: "Boards of Advisors", description: "Program (5 each) & Chapter (3 each)" },
-  { title: "Regional Boards of Directors", description: "3 per region — Operational governance" },
-  { title: "Local Chapter Presidents", description: "Country execution" },
+  { title: "Board of Trustees (7)", description: "Fiduciary oversight, institutional integrity, and strategic direction" },
+  { title: "Boards of Advisors", description: "Program advisors (5 each) and chapter advisors (3 each) providing domain expertise" },
+  { title: "Regional Boards of Directors", description: "3 per region—operational governance and cross-border coordination" },
+  { title: "Local Chapter Presidents", description: "Country-level execution, community engagement, and compliance reporting" },
 ];
 
 const About = () => {
@@ -87,11 +87,11 @@ const About = () => {
                   About SCEF
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  Institutional Leadership for{" "}
-                  <span className="text-scef-gold">Africa's Education</span>
+                  The Institution Behind{" "}
+                  <span className="text-scef-gold">Africa's Education Transformation</span>
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed">
-                  Santos Creations Educational Foundation (SCEF) is a pan-African, membership-driven education governance and delivery institution. We design, regulate, fund, digitize, certify, recognize, and scale education initiatives across Africa and the diaspora.
+                  Santos Creations Educational Foundation (SCEF) is a pan-African, membership-driven institution that governs, funds, certifies, digitizes, and scales education programs across Africa and the diaspora. We are not a project—we are the platform.
                 </p>
               </div>
             </div>
@@ -107,10 +107,10 @@ const About = () => {
                     Why We Exist
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    Replacing Fragmentation with <span className="text-scef-gold">Structure</span>
+                    Replacing Fragmentation with <span className="text-scef-gold">Institutional Structure</span>
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Africa's education sector faces fragmentation, weak governance, short-term funding, and limited standards. SCEF exists to replace fragmentation with structure—providing a unified governance framework, digital and financial infrastructure, and compliant local execution.
+                    Africa's education sector faces systemic fragmentation: weak governance, short-term funding cycles, limited standards enforcement, and siloed initiatives. SCEF exists to replace this fragmentation with a unified, accountable framework—providing institutional governance, digital infrastructure, transparent financial systems, and compliant local execution across 54+ countries.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-start gap-3">
@@ -169,7 +169,7 @@ const About = () => {
                   </div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-4">Our Vision</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    To build a continuously improving, globally competitive education standard in Africa by 2035.
+                    A continuously improving, globally competitive education ecosystem across Africa—where every learner, educator, and institution operates within a framework of excellence, accountability, and innovation by 2035.
                   </p>
                 </div>
                 
@@ -179,7 +179,7 @@ const About = () => {
                   </div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-4">Our Mission</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    To govern, fund, digitize, recognize, and expand access to quality education through partnerships, innovation, media, certifications, and accountable local chapter systems.
+                    To govern, fund, digitize, certify, and scale quality education across Africa and the diaspora through institutional partnerships, technology innovation, media platforms, industry-recognized certifications, and accountable local chapter systems.
                   </p>
                 </div>
               </div>
@@ -281,7 +281,7 @@ const About = () => {
                   Africa Education & Productivity <span className="text-scef-gold">Certification (AEPC)</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Hybrid delivery, affiliate partners, licensed exam centres, payments via GFA Wallet.
+                  A hybrid certification system combining online delivery with licensed physical exam centers. Integrated with affiliate training partners and the GFA Wallet for seamless, auditable transactions. Designed for workforce readiness and continental recognition.
                 </p>
                 <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
                   <Link to="/certifications">
@@ -299,10 +299,10 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Member-Run, Partner-Powered, <span className="text-scef-gold">Institutionally Governed</span>
+                  Member-Run. Partner-Powered. <span className="text-scef-gold">Institutionally Governed.</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  SCEF is member-run, partner-powered, and institutionally governed.
+                  SCEF operates as a membership-driven institution with tiered engagement pathways for individuals, organizations, and governments. Our governance ensures accountability to members, transparency to donors, and credibility to institutional partners.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
@@ -327,10 +327,10 @@ const About = () => {
           <section className="py-20 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Join Africa's Education <span className="text-scef-gold">Institution</span>
+                Partner with Africa's Education <span className="text-scef-gold">Institution</span>
               </h2>
               <p className="text-white/70 max-w-2xl mx-auto mb-8">
-                Be part of the movement transforming education across Africa and the diaspora.
+                Join governments, foundations, corporations, and institutions across Africa and the diaspora in building a unified, accountable education ecosystem.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold border-2 border-black">

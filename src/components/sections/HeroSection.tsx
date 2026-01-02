@@ -26,20 +26,20 @@ export const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-8 animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-scef-gold animate-pulse" />
-            Pan-African Education Governance Institution
+            Aligned to UN SDG 4, 5, 10, 17 & AU Agenda 2063
           </div>
 
           {/* Main Headline */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-semibold text-white mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Governing Africa's{" "}
+            The Institutional Platform for{" "}
             <span className="text-scef-gold">
-              Education Future
+              Africa's Education
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="font-body text-lg md:text-xl text-white/85 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            A pan-African, membership-driven institution governing, funding, certifying, and scaling education programs across Africa and the diaspora.
+            We govern, fund, certify, digitize, and scale education programs across Africa and the diaspora. One accountable framework. Continental reach. Local execution.
           </p>
 
           {/* Primary CTA Buttons */}
