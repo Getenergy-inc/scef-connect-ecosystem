@@ -8,6 +8,7 @@ import {
   MapPin, Users, Search, Filter, Globe, Building, Wifi, 
   ArrowRight, Plus, CheckCircle2, TrendingUp
 } from "lucide-react";
+import heroImage from "@/assets/hero-chapters.jpg";
 
 const chapters = [
   {
@@ -133,7 +134,8 @@ const Chapters = () => {
         <main>
           {/* Hero */}
           <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
-            <div className="absolute inset-0 bg-african-pattern opacity-10" />
+            <img src={heroImage} alt="SCEF Chapters meeting" className="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/80 to-scef-blue/95" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border-2 border-black">
@@ -148,13 +150,13 @@ const Chapters = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
-                    <Link to="/chapters/join">
+                    <Link to="/membership">
                       <Users className="w-5 h-5" />
                       Join a Chapter
                     </Link>
                   </Button>
                   <Button className="bg-transparent text-white border-2 border-scef-gold hover:bg-scef-gold/20" size="lg" asChild>
-                    <Link to="/chapters/create">
+                    <Link to="/contact">
                       <Plus className="w-5 h-5" />
                       Create Online Chapter
                     </Link>
@@ -279,7 +281,7 @@ const Chapters = () => {
                             {chapter.members.toLocaleString()} members
                           </div>
                           <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black" size="sm" asChild>
-                            <Link to={`/chapters/${chapter.id}`}>
+                            <Link to="/membership">
                               Join
                               <ArrowRight className="w-3 h-3" />
                             </Link>
@@ -312,7 +314,7 @@ const Chapters = () => {
                 Don't see a chapter near you? Become a founding member and lead the education transformation movement in your community. Start online—upgrade to physical as you grow.
               </p>
               <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
-                <Link to="/chapters/create">
+                <Link to="/contact">
                   <Plus className="w-5 h-5" />
                   Create an Online Chapter
                   <ArrowRight className="w-5 h-5" />

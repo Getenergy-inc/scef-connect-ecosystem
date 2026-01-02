@@ -24,32 +24,23 @@ const navigation = [
     ]
   },
   { 
-    name: "Programs & Platforms", 
+    name: "Programs", 
     href: "/programs",
     children: [
       { name: "All Programs", href: "/programs" },
+      { name: "NESA-Africa", href: "/programs/nesa-africa" },
       { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
-      { name: "NESA-Africa", href: "/programs/nesa-africa" },
       { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
+      { name: "Women & Girls Education", href: "/programs/women-girls-education" },
+      { name: "Special Needs Education", href: "/programs/special-needs-education" },
+      { name: "Digital Learning", href: "/programs/digital-learning" },
       { divider: true },
       { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
       { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
       { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
     ]
   },
-  { 
-    name: "Divisions", 
-    href: "/divisions",
-    children: [
-      { name: "SOBCD", href: "/divisions/sobcd" },
-      { name: "TDSD", href: "/divisions/tdsd" },
-      { name: "OMBDD", href: "/divisions/ombdd" },
-      { name: "Santos Media", href: "/divisions/santos-media" },
-      { name: "Local Chapter Services", href: "/divisions/lcs" },
-    ]
-  },
-  { name: "Certifications", href: "/certifications" },
   { 
     name: "Chapters", 
     href: "/chapters",
@@ -58,8 +49,34 @@ const navigation = [
       { name: "Local Chapters", href: "/local-chapters" },
     ]
   },
-  { name: "Media", href: "/media" },
-  { name: "Partners", href: "/partners" },
+  { 
+    name: "Media", 
+    href: "/media",
+    children: [
+      { name: "Santos Media Hub", href: "/media" },
+      { name: "Santos Media Division", href: "/divisions/santos-media" },
+    ]
+  },
+  { 
+    name: "Membership", 
+    href: "/membership",
+    children: [
+      { name: "Join SCEF", href: "/membership" },
+      { name: "Certifications", href: "/certifications" },
+      { name: "Partners", href: "/partners" },
+    ]
+  },
+  { 
+    name: "Donate", 
+    href: "/donate",
+    children: [
+      { name: "Make a Donation", href: "/donate" },
+      { name: "GFA Wallet", href: "/wallet" },
+      { divider: true },
+      { name: "Donate via Paystack", href: "https://paystack.com/pay/scef-donation", external: true },
+      { name: "Donate via Flutterwave", href: "https://flutterwave.com/pay/scef", external: true },
+    ]
+  },
 ];
 
 export const Header = () => {
