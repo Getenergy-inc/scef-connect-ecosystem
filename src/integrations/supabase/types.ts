@@ -211,6 +211,51 @@ export type Database = {
           },
         ]
       }
+      elibrary_resources: {
+        Row: {
+          author: string
+          category: string
+          cover_url: string | null
+          created_at: string
+          description: string | null
+          download_count: number | null
+          id: string
+          is_published: boolean | null
+          resource_type: string
+          resource_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author: string
+          category: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          id?: string
+          is_published?: boolean | null
+          resource_type: string
+          resource_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          category?: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          id?: string
+          is_published?: boolean | null
+          resource_type?: string
+          resource_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           chapter_id: string | null

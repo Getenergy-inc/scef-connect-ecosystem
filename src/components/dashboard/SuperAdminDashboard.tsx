@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { 
   Shield, Users, MapPin, Wallet, Briefcase, 
   ClipboardList, Settings, BarChart3, AlertTriangle,
-  TrendingUp, Globe, Award
+  TrendingUp, Globe, Award, BookOpen
 } from "lucide-react";
 
 interface SuperAdminDashboardProps {
@@ -184,6 +184,7 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
           { icon: Briefcase, label: "Programs", href: "/dashboard/programs", color: "text-terracotta" },
           { icon: Wallet, label: "Wallets", href: "/dashboard/wallets", color: "text-gold" },
           { icon: Award, label: "Roles", href: "/dashboard/roles", color: "text-purple-500" },
+          { icon: BookOpen, label: "eLibrary", href: "/dashboard/elibrary", color: "text-[#0000CD]" },
           { icon: ClipboardList, label: "Audit", href: "/dashboard/audit", color: "text-blue-500" },
           { icon: Settings, label: "CMS", href: "/dashboard/cms", color: "text-muted-foreground" },
         ].map((action) => (
