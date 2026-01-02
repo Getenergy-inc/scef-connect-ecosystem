@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Library, ExternalLink } from "lucide-react";
+import heroImage from "@/assets/hero-programs.jpg";
 
 const programs = [
   {
@@ -47,11 +48,11 @@ const programs = [
   },
   {
     icon: Globe,
-    title: "Education Online Africa",
-    subtitle: "Digital Learning Platforms",
+    title: "Digital Learning",
+    subtitle: "E-Learning Platforms",
     description: "Bridging the digital divide with e-learning platforms and resources that make quality education accessible from anywhere on the continent.",
     features: ["E-Learning Platform", "Digital Resources", "Virtual Classrooms", "Mobile Learning"],
-    href: "/programs/education-online-africa",
+    href: "/programs/digital-learning",
   },
   {
     icon: Library,
@@ -80,7 +81,8 @@ const Programs = () => {
         <main>
           {/* Hero */}
           <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
-            <div className="absolute inset-0 bg-african-pattern opacity-5" />
+            <img src={heroImage} alt="SCEF Programs - African students graduating" className="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/80 to-scef-blue/95" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm mb-6">
