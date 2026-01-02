@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen, ExternalLink } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen, ExternalLink, Library, Award, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-// External platform links
+// External platform links with icons
 const externalPlatforms = [
-  { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true },
-  { name: "NESA.africa", href: "https://nesa.africa", external: true },
-  { name: "EduAid.africa", href: "https://eduaid.africa", external: true },
+  { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true, icon: Library },
+  { name: "NESA.africa", href: "https://nesa.africa", external: true, icon: Award },
+  { name: "EduAid.africa", href: "https://eduaid.africa", external: true, icon: GraduationCap },
 ];
 
 const navigation = [
@@ -215,20 +215,85 @@ export const Header = () => {
                 </Link>
                 {item.children && (
                   <div className="ml-4 space-y-1">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.name}
-                        to={child.href}
-                        className="block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {child.name}
-                      </Link>
+                    {item.children.map((child: any, idx: number) => (
+                      child.divider ? (
+                        <div key={idx} className="border-t border-white/10 my-2" />
+                      ) : child.external ? (
+                        <a
+                          key={child.name}
+                          href={child.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2 text-sm text-scef-gold hover:text-scef-gold/80 transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          {child.name}
+                        </a>
+                      ) : (
+                        <Link
+                          key={child.name}
+                          to={child.href}
+                          className="block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {child.name}
+                        </Link>
+                      )
                     ))}
                   </div>
                 )}
               </div>
             ))}
+
+            {/* External Platforms Section */}
+            <div className="pt-4 border-t border-white/10">
+              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Our Platforms</p>
+              <div className="space-y-1">
+                {externalPlatforms.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <platform.icon className="w-5 h-5 text-scef-gold" />
+                    <span className="font-medium">{platform.name}</span>
+                    <ExternalLink className="w-3 h-3 ml-auto text-white/50" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Donation Buttons */}
+            <div className="pt-4 border-t border-white/10">
+              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Support Our Mission</p>
+              <div className="flex flex-col gap-2 px-4">
+                <a
+                  href="https://paystack.com/pay/scef-donation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-blue text-scef-gold hover:bg-scef-blue-dark border-2 border-scef-gold/30"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Heart className="w-4 h-4" />
+                  Donate with Paystack
+                </a>
+                <a
+                  href="https://flutterwave.com/pay/scef"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-gold text-scef-blue hover:bg-scef-gold-dark border-2 border-scef-blue/30"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Heart className="w-4 h-4" />
+                  Donate with Flutterwave
+                </a>
+              </div>
+            </div>
+
             <div className="pt-4 flex flex-col gap-2">
               <Button 
                 variant="outline" 
