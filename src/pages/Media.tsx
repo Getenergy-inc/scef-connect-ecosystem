@@ -3,12 +3,15 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Play, Radio, Video, Calendar, Image, ArrowRight, ExternalLink } from "lucide-react";
+import { Play, Radio, Video, Calendar, Image, ArrowRight, ExternalLink, Users } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { LiveIndicator } from "@/components/ui/live-indicator";
+import { useLiveStreamStatus } from "@/hooks/useLiveStreamStatus";
 import heroImage from "@/assets/hero-media.jpg";
 
 const mediaChannels = [
   {
+    id: "nesa-tv",
     icon: Video,
     title: "NESA Africa TV",
     description: "Watch inspiring documentaries, event coverage, and success stories from across Africa.",
@@ -16,8 +19,10 @@ const mediaChannels = [
     href: "https://www.youtube.com/@Nesa.africaTV/streams",
     external: true,
     color: "bg-scef-gold/10 text-scef-gold",
+    hasLiveIndicator: true,
   },
   {
+    id: "radio",
     icon: Radio,
     title: "It's In Me Radio",
     description: "Listen to podcasts and radio shows featuring educators, students, and changemakers.",
@@ -25,8 +30,10 @@ const mediaChannels = [
     href: "https://www.elibrarynigeria.com.ng",
     external: true,
     color: "bg-scef-blue/10 text-scef-blue",
+    hasLiveIndicator: false,
   },
   {
+    id: "webinar",
     icon: Calendar,
     title: "EduAid Webinar Series",
     description: "Join live webinars and access recordings on education topics and best practices.",
@@ -34,8 +41,10 @@ const mediaChannels = [
     href: "https://eduaid.africa",
     external: true,
     color: "bg-scef-gold/10 text-scef-gold",
+    hasLiveIndicator: false,
   },
   {
+    id: "tourism",
     icon: Play,
     title: "Education Tourism Show",
     description: "Explore educational institutions and learning centers across Africa.",
@@ -43,6 +52,7 @@ const mediaChannels = [
     href: "https://nesa.africa",
     external: true,
     color: "bg-scef-blue/10 text-scef-blue",
+    hasLiveIndicator: false,
   },
 ];
 
@@ -68,6 +78,7 @@ const featuredContent = [
 ];
 
 const Media = () => {
+  const liveStatus = useLiveStreamStatus();
   return (
     <>
       <Helmet>
@@ -113,12 +124,19 @@ const Media = () => {
                 {mediaChannels.map((channel) => (
                   channel.external ? (
                     <a
-                      key={channel.title}
+                      key={channel.id}
                       href={channel.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-card rounded-2xl p-8 border-2 border-black hover:border-scef-blue/30 transition-all duration-500 hover:shadow-lg"
+                      className="group bg-card rounded-2xl p-8 border-2 border-black hover:border-scef-blue/30 transition-all duration-500 hover:shadow-lg relative"
                     >
+                      {/* Live indicator for NESA TV */}
+                      {channel.hasLiveIndicator && liveStatus.isLive && (
+                        <div className="absolute top-4 right-4">
+                          <LiveIndicator isLive={true} />
+                        </div>
+                      )}
+                      
                       <div className={`w-14 h-14 rounded-xl ${channel.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black`}>
                         <channel.icon className="w-7 h-7" />
                       </div>
@@ -126,17 +144,26 @@ const Media = () => {
                         {channel.title}
                         <ExternalLink className="w-4 h-4 text-scef-gold" />
                       </h3>
-                      <p className="text-muted-foreground mb-6">
+                      <p className="text-muted-foreground mb-4">
                         {channel.description}
                       </p>
+                      
+                      {/* Viewer count when live */}
+                      {channel.hasLiveIndicator && liveStatus.isLive && liveStatus.viewerCount && liveStatus.viewerCount > 0 && (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                          <Users className="w-4 h-4" />
+                          <span>{liveStatus.viewerCount.toLocaleString()} watching now</span>
+                        </div>
+                      )}
+                      
                       <div className="flex items-center gap-2 text-scef-blue font-semibold">
-                        {channel.cta}
+                        {channel.hasLiveIndicator && liveStatus.isLive ? "Watch Live" : channel.cta}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                       </div>
                     </a>
                   ) : (
                     <Link
-                      key={channel.title}
+                      key={channel.id}
                       to={channel.href}
                       className="group bg-card rounded-2xl p-8 border-2 border-black hover:border-scef-blue/30 transition-all duration-500 hover:shadow-lg"
                     >

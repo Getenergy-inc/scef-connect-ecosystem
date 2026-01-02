@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.flutterwave-webhook]
 verify_jwt = false
+
+[functions.youtube-live-status]
+verify_jwt = false
