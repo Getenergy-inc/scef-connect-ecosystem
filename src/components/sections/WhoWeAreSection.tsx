@@ -19,7 +19,7 @@ export const WhoWeAreSection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              SCEF is Africa's institutional platform for education governance, delivery, certification, funding, and recognition. Founded in 1997 and formally registered in 2010, SCEF replaces fragmented initiatives with a single, accountable framework that enables scale, trust, and continuity.
+              Santos Creations Educational Foundation (SCEF) is Africa's institutional platform for education governance, delivery, certification, funding, and recognition. Founded in 1997 and registered in 2010, we replace fragmented initiatives with a unified, accountable framework designed for scale, trust, and continuity. Our mandate spans program design, regulation, funding, digitization, certification, recognition, and continental execution.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
