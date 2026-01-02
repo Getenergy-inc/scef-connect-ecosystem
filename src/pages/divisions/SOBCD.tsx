@@ -9,14 +9,16 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Organizational governance framework development",
-  "Financial oversight and audit coordination",
-  "Legal compliance and regulatory adherence",
-  "Policy development and implementation",
-  "Risk management and mitigation",
-  "Board secretariat functions",
-  "Donor compliance and reporting",
-  "Strategic planning coordination",
+  "Institutional governance framework development and enforcement",
+  "Financial oversight, audit coordination, and fiduciary compliance",
+  "Legal and regulatory adherence across 54+ jurisdictions",
+  "Policy development, review cycles, and institutional reform",
+  "Enterprise risk management and mitigation protocols",
+  "Board secretariat functions and trustee support",
+  "Donor compliance, grant reporting, and accountability assurance",
+  "Strategic planning coordination and performance monitoring",
+  "Anti-corruption and ethics enforcement",
+  "Institutional partnerships and MOU management",
 ];
 
 const SOBCD = () => {
@@ -53,7 +55,7 @@ const SOBCD = () => {
                   Strategic Operations & Business <span className="text-gradient-gold">Compliance</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  The governance backbone ensuring institutional integrity, regulatory compliance, and sustainable operations across all SCEF activities.
+                  The governance backbone of SCEF—ensuring institutional integrity, fiduciary accountability, regulatory compliance, and sustainable operations across all programs, chapters, and partnerships.
                 </p>
               </div>
             </div>
@@ -68,10 +70,10 @@ const SOBCD = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    SOBCD serves as the institutional custodian of SCEF's governance framework, ensuring all programs, chapters, and initiatives operate within established legal, financial, and ethical standards.
+                    SOBCD serves as the institutional custodian of SCEF's governance framework. We ensure that all programs, chapters, divisions, and initiatives operate within established legal, financial, and ethical standards—maintaining the trust that governments, donors, and partners place in the organization.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    We provide strategic oversight that enables scalable growth while maintaining the trust of donors, partners, governments, and beneficiaries across Africa.
+                    Our division provides the strategic oversight and compliance infrastructure that enables scalable, sustainable growth while maintaining the highest standards of accountability. We are the bridge between SCEF's mission and the regulatory, financial, and governance requirements of operating across 54+ African countries and the diaspora.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
@@ -109,13 +111,14 @@ const SOBCD = () => {
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-                Who We <span className="text-gradient-gold">Serve</span>
+                Stakeholders We <span className="text-gradient-gold">Serve</span>
               </h2>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {[
-                  { title: "Board & Leadership", desc: "Secretariat support, policy guidance, and governance coordination" },
-                  { title: "Program Directors", desc: "Compliance frameworks, reporting standards, and risk assessment" },
-                  { title: "Donors & Partners", desc: "Transparent reporting, audit coordination, and accountability assurance" },
+                  { title: "Board of Trustees", desc: "Secretariat support, fiduciary guidance, and governance coordination" },
+                  { title: "Program Directors", desc: "Compliance frameworks, reporting standards, and risk protocols" },
+                  { title: "Donors & Foundations", desc: "Transparent reporting, audit coordination, and grant compliance" },
+                  { title: "Government Partners", desc: "Regulatory adherence, MOU management, and institutional credibility" },
                 ].map((item) => (
                   <div key={item.title} className="text-center p-6 rounded-xl bg-background border border-border">
                     <h3 className="font-display text-lg font-bold text-foreground mb-3">{item.title}</h3>
@@ -130,10 +133,10 @@ const SOBCD = () => {
           <section className="py-20">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                Partner with SOBCD
+                Engage with SOBCD
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                For governance inquiries, compliance consultations, or partnership opportunities, reach out to our team.
+                For governance inquiries, institutional partnerships, compliance consultations, or audit coordination, connect with our division leadership.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
