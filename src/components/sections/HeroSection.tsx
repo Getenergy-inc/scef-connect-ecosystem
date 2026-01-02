@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Handshake, BookOpen, Building2, Play } from "lucide-react";
+import { ArrowRight, Users, Handshake, Building2, Play, Globe } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
 
 export const HeroSection = () => {
@@ -31,28 +31,38 @@ export const HeroSection = () => {
 
           {/* Main Headline */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-semibold text-white mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            The Institutional Platform for{" "}
+            Santos Creations{" "}
             <span className="text-scef-gold">
-              Africa's Education
+              Educational Foundation
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="font-body text-lg md:text-xl text-white/85 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            We govern, fund, certify, digitize, and scale education programs across Africa and the diaspora. One accountable framework. Continental reach. Local execution.
+          <p className="font-body text-lg md:text-xl text-white/85 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            Institutional platform governing pan-African education delivery, certifications, and local chapters since 1997. We establish governance frameworks, enforce compliance standards, and facilitate partnerships across Africa and the diaspora.
           </p>
 
           {/* Primary CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button 
               size="lg" 
-              className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold px-8 py-6 text-base gap-2 shadow-lg hover:shadow-xl transition-all"
+              className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold px-8 py-6 text-base gap-2 shadow-lg hover:shadow-xl transition-all border-2 border-black"
               asChild
             >
               <Link to="/membership">
                 <Users className="w-5 h-5" />
-                Join SCEF
+                Join as Member
                 <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+            <Button 
+              size="lg" 
+              className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold px-8 py-6 text-base gap-2 shadow-lg hover:shadow-xl transition-all border-2 border-black"
+              asChild
+            >
+              <Link to="/local-chapters">
+                <Globe className="w-5 h-5" />
+                Establish Local Chapter
               </Link>
             </Button>
             <Button 
@@ -63,7 +73,7 @@ export const HeroSection = () => {
             >
               <Link to="/partners">
                 <Handshake className="w-5 h-5" />
-                Partner With Us
+                Partner with SCEF
               </Link>
             </Button>
           </div>
@@ -72,7 +82,6 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.35s" }}>
             <Button variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
               <Link to="/programs">
-                <BookOpen className="w-4 h-4" />
                 Explore Programs
               </Link>
             </Button>

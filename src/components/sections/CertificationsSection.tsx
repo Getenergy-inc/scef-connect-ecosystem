@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Award, GraduationCap, MapPin, Users } from "lucide-react";
+import { ArrowRight, Award, GraduationCap, MapPin, Users, Wallet, BarChart3 } from "lucide-react";
 
 export const CertificationsSection = () => {
   return (
@@ -10,35 +10,55 @@ export const CertificationsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
                 <Award className="w-4 h-4" />
-                Certifications
+                Certifications & Productivity
               </div>
               
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Africa Education & Productivity{" "}
-                <span className="text-gradient-gold">Certification (AEPC)</span>
+                <span className="text-scef-gold">Certification (AEPC)</span>
               </h2>
               
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Hybrid, industry-aligned certifications delivered via affiliate training partners and licensed examination centres across Africa—powered by SCEF and delivered through Education Online Africa.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                SCEF issues certifications for education standards, ICT proficiency, and program completion. Our hybrid delivery model combines online learning with licensed physical examination centres across Africa.
               </p>
 
+              <div className="bg-muted/50 rounded-xl p-6 mb-8 border-2 border-black">
+                <h3 className="font-display text-lg font-bold text-foreground mb-4">Productivity Tools</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <Wallet className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm">Digital Wallets</h4>
+                      <p className="text-xs text-muted-foreground">For transparent funding allocation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <BarChart3 className="w-5 h-5 text-scef-blue shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm">AI-Driven Analytics</h4>
+                      <p className="text-xs text-muted-foreground">For outcome measurement</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-4">
-                <Button variant="default" size="lg" asChild>
+                <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" asChild>
                   <Link to="/certifications">
                     <GraduationCap className="w-4 h-4" />
                     View Certifications
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" className="border-2 border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white" asChild>
                   <Link to="/partners/training">
                     <Users className="w-4 h-4" />
                     Become a Training Partner
                   </Link>
                 </Button>
-                <Button variant="ghost" size="lg" asChild>
+                <Button variant="ghost" size="lg" className="text-scef-blue hover:bg-scef-blue/10" asChild>
                   <Link to="/certifications/centres">
                     <MapPin className="w-4 h-4" />
                     Find Exam Centres
@@ -49,40 +69,44 @@ export const CertificationsSection = () => {
 
             {/* Visual Card */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-terracotta/20 rounded-3xl blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-scef-gold/20 to-scef-blue/20 rounded-3xl blur-2xl" />
               
-              <div className="relative bg-gradient-to-br from-earth to-earth/90 rounded-3xl p-8 lg:p-10 overflow-hidden">
-                <div className="absolute inset-0 bg-african-pattern opacity-10" />
+              <div className="relative bg-scef-blue rounded-3xl p-8 lg:p-10 overflow-hidden border-2 border-black">
+                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10" />
                 
                 <div className="relative">
-                  <div className="w-20 h-20 rounded-2xl bg-gold/20 flex items-center justify-center mb-6">
-                    <Award className="w-10 h-10 text-gold" />
+                  <div className="w-20 h-20 rounded-2xl bg-scef-gold/20 flex items-center justify-center mb-6 border-2 border-black">
+                    <Award className="w-10 h-10 text-scef-gold" />
                   </div>
                   
-                  <h3 className="font-display text-2xl font-bold text-cream mb-4">
+                  <h3 className="font-display text-2xl font-bold text-white mb-4">
                     AEPC Certification
                   </h3>
                   
-                  <ul className="space-y-4 text-cream/80">
+                  <ul className="space-y-4 text-white/80">
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-gold" />
+                      <span className="w-2 h-2 rounded-full bg-scef-gold" />
                       Industry-aligned curriculum
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-gold" />
+                      <span className="w-2 h-2 rounded-full bg-scef-gold" />
                       Hybrid delivery model
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-gold" />
+                      <span className="w-2 h-2 rounded-full bg-scef-gold" />
                       Affiliate training partners
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-gold" />
+                      <span className="w-2 h-2 rounded-full bg-scef-gold" />
                       Licensed exam centres
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-gold" />
+                      <span className="w-2 h-2 rounded-full bg-scef-gold" />
                       GFA Wallet payments
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-scef-gold" />
+                      Auditable transactions
                     </li>
                   </ul>
                 </div>
