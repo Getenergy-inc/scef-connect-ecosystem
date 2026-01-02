@@ -162,14 +162,21 @@ const ELibraryNigeria = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8 py-6 border-2 border-black font-semibold"
-                  style={{ backgroundColor: '#FFD700', color: '#000000' }}
+                <a 
+                  href="https://www.elibrarynigeria.com.ng" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                  <BookOpen className="w-5 h-5 mr-2" />
-                  Start Reading Free
-                </Button>
+                  <Button 
+                    size="lg" 
+                    className="text-lg px-8 py-6 border-2 border-black font-semibold"
+                    style={{ backgroundColor: '#FFD700', color: '#000000' }}
+                  >
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Visit eLibrary Nigeria
+                    <Globe className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
                 <Button 
                   size="lg" 
                   variant="outline"
@@ -397,14 +404,20 @@ const ELibraryNigeria = () => {
               Join over 100,000 Nigerian students and educators accessing free educational resources.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="text-lg px-8 py-6 border-2 border-black font-semibold"
-                style={{ backgroundColor: '#FFD700', color: '#000000' }}
+              <a 
+                href="https://www.elibrarynigeria.com.ng" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                Create Free Account
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-6 border-2 border-black font-semibold"
+                  style={{ backgroundColor: '#FFD700', color: '#000000' }}
+                >
+                  Visit eLibrary Nigeria
+                  <Globe className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
               <Link to="/programs">
                 <Button 
                   size="lg" 
