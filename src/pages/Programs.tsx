@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Library } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Library, ExternalLink } from "lucide-react";
 
 const programs = [
   {
@@ -97,9 +97,135 @@ const Programs = () => {
             </div>
           </section>
 
+          {/* External Platforms Section */}
+          <section className="py-16 bg-scef-blue/5 border-y-2 border-border">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                  Our Digital <span className="text-scef-gold">Platforms</span>
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Access our flagship digital platforms delivering education resources and recognition across Africa.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* eLibrary Nigeria */}
+                <a
+                  href="https://www.elibrarynigeria.com.ng"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-card rounded-2xl border-2 border-border p-8 hover:border-scef-blue/30 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center mb-6">
+                    <Library className="w-7 h-7 text-scef-blue" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors flex items-center gap-2">
+                    eLibrary Nigeria
+                    <ExternalLink className="w-4 h-4 text-scef-gold" />
+                  </h3>
+                  <p className="text-sm text-scef-gold font-medium mb-4">elibrarynigeria.com.ng</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    Nigeria's premier digital library platform providing free access to thousands of textbooks, research papers, journals, and educational resources. Supporting students and educators with 24/7 access to quality learning materials across all academic levels.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      50,000+ Free Digital Resources
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Primary to University Materials
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Offline Download Available
+                    </li>
+                  </ul>
+                </a>
+
+                {/* NESA Africa */}
+                <a
+                  href="https://nesa.africa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-card rounded-2xl border-2 border-border p-8 hover:border-scef-blue/30 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center mb-6">
+                    <Award className="w-7 h-7 text-scef-blue" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors flex items-center gap-2">
+                    NESA Africa
+                    <ExternalLink className="w-4 h-4 text-scef-gold" />
+                  </h3>
+                  <p className="text-sm text-scef-gold font-medium mb-4">nesa.africa</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    The Nigeria Excellence in Secondary Education Awards celebrates academic excellence across Africa. Annual recognition program honoring outstanding students, teachers, and schools driving educational transformation continent-wide.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Annual Continental Awards
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Scholarship Opportunities
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Leadership Development
+                    </li>
+                  </ul>
+                </a>
+
+                {/* EduAid Africa */}
+                <a
+                  href="https://eduaid.africa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-card rounded-2xl border-2 border-border p-8 hover:border-scef-blue/30 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center mb-6">
+                    <BookOpen className="w-7 h-7 text-scef-blue" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors flex items-center gap-2">
+                    EduAid Africa
+                    <ExternalLink className="w-4 h-4 text-scef-gold" />
+                  </h3>
+                  <p className="text-sm text-scef-gold font-medium mb-4">eduaid.africa</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    Comprehensive scholarship and educational aid platform connecting underprivileged students with funding opportunities, mentorship programs, and learning resources to break barriers to quality education across Africa.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Merit & Need-Based Scholarships
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Mentorship Network
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-scef-gold" />
+                      Learning Materials Support
+                    </li>
+                  </ul>
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* Programs Grid */}
           <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                  All <span className="text-scef-gold">Programs</span>
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Explore our complete range of education initiatives transforming learning outcomes across Africa.
+                </p>
+              </div>
               <div className="space-y-8">
                 {programs.map((program) => (
                   <div
