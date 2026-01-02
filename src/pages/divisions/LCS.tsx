@@ -9,34 +9,36 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Chapter onboarding and activation",
-  "Compliance monitoring and support",
-  "Chapter governance framework enforcement",
+  "Chapter onboarding, registration, and activation protocols",
+  "Compliance monitoring, audit support, and governance enforcement",
+  "Chapter constitution and governance framework implementation",
   "Upgrade pathway management (Online → Hybrid → Physical)",
-  "Local leadership training and certification",
-  "Resource allocation and support",
-  "Performance tracking and reporting",
-  "Inter-chapter coordination and events",
+  "Local leadership training, certification, and capacity building",
+  "Resource allocation, grant disbursement, and financial oversight",
+  "Performance tracking, KPI monitoring, and impact reporting",
+  "Inter-chapter coordination, regional events, and best practice sharing",
+  "Conflict resolution and disciplinary procedures",
+  "Community engagement standards and brand compliance",
 ];
 
 const chapterTypes = [
   { 
     name: "Online Chapters", 
     icon: Wifi, 
-    desc: "Digital-first communities for remote engagement",
-    features: ["Virtual meetings", "Digital fundraising", "Online events"]
+    desc: "Digital-first communities for remote engagement and virtual participation",
+    features: ["Virtual meetings and events", "Digital fundraising campaigns", "Online volunteer coordination", "Global member participation"]
   },
   { 
     name: "Hybrid Chapters", 
     icon: Globe, 
-    desc: "Combined online and physical presence",
-    features: ["Mixed events", "Local outreach", "Digital tools"]
+    desc: "Combined online and physical presence with community-based activities",
+    features: ["Mixed virtual and in-person events", "Local community outreach", "Digital administration tools", "Grassroots engagement"]
   },
   { 
     name: "Physical Chapters", 
     icon: Building, 
-    desc: "Full local presence with office and staff",
-    features: ["Community office", "Local programs", "Direct impact"]
+    desc: "Full local presence with dedicated office, staff, and community infrastructure",
+    features: ["Community office and facilities", "Local program delivery", "Direct beneficiary impact", "Staff and volunteer teams"]
   },
 ];
 
@@ -74,7 +76,7 @@ const LCS = () => {
                   Local Chapter <span className="text-gradient-gold">Services</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  Empowering grassroots education leadership through compliant, governed, and well-supported local chapters across Africa.
+                  Enabling grassroots education leadership through compliant, governed, and institutionally-supported local chapters across 54+ African countries and the diaspora.
                 </p>
               </div>
             </div>
@@ -89,10 +91,10 @@ const LCS = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    LCS is responsible for the entire lifecycle of SCEF's local chapters—from onboarding new chapters to supporting their growth and ensuring governance compliance.
+                    LCS is responsible for the entire lifecycle of SCEF's local chapter network—from onboarding new chapters to supporting their growth, ensuring governance compliance, and managing upgrade pathways from online to physical presence.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    We enable community ownership under strong institutional oversight, ensuring local chapters deliver SCEF's mission with accountability and impact.
+                    We enable community ownership under strong institutional oversight, ensuring local chapters deliver SCEF's mission with accountability, transparency, and measurable impact. All chapters remain under central HQ governance while operating autonomously within their jurisdictions.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
@@ -130,10 +132,10 @@ const LCS = () => {
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-foreground text-center mb-4">
-                Chapter <span className="text-gradient-gold">Pathway</span>
+                Chapter Development <span className="text-gradient-gold">Pathway</span>
               </h2>
               <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-                Chapters progress through compliance-based upgrades from online to hybrid to physical presence.
+                Chapters progress through compliance-based upgrades from online to hybrid to physical presence. Each upgrade requires demonstrated performance, governance adherence, and HQ approval.
               </p>
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {chapterTypes.map((type, index) => (
@@ -166,13 +168,14 @@ const LCS = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-                Who We <span className="text-gradient-gold">Serve</span>
+                Stakeholders We <span className="text-gradient-gold">Serve</span>
               </h2>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {[
-                  { title: "Aspiring Chapter Leaders", desc: "Onboarding, training, and certification support" },
-                  { title: "Active Chapters", desc: "Ongoing compliance, resources, and growth support" },
-                  { title: "Chapter Members", desc: "Connection to the continental SCEF network" },
+                  { title: "Aspiring Chapter Leaders", desc: "Onboarding guidance, leadership training, and certification support" },
+                  { title: "Active Chapters", desc: "Ongoing compliance support, resources, and growth pathway management" },
+                  { title: "Chapter Members", desc: "Connection to continental network, events, and member benefits" },
+                  { title: "Community Partners", desc: "Local partnership facilitation and community engagement coordination" },
                 ].map((item) => (
                   <div key={item.title} className="text-center p-6 rounded-xl bg-card border border-border">
                     <h3 className="font-display text-lg font-bold text-foreground mb-3">{item.title}</h3>
@@ -187,10 +190,10 @@ const LCS = () => {
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                Start a Chapter
+                Start Your Chapter
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Ready to lead education transformation in your community? Start your chapter journey today.
+                Ready to lead education transformation in your community? Begin your chapter journey with institutional support, training, and resources from day one.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>

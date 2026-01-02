@@ -9,21 +9,23 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "NESA Africa TV production and broadcasting",
-  "It's In Me Radio programming and distribution",
-  "EduAid Webinar Series production",
-  "EduAid Education Tourism Show",
-  "Documentary and educational content creation",
-  "Live event coverage and streaming",
-  "Podcast production and hosting",
-  "Content monetization and licensing",
+  "NESA Africa TV production, broadcasting, and content distribution",
+  "It's In Me Radio programming, podcasts, and audio content",
+  "EduAid Webinar Series live production and post-production",
+  "EduAid Education Tourism Show filming and distribution",
+  "Educational documentary and feature film production",
+  "Live event coverage, streaming, and broadcast services",
+  "Podcast production, hosting, and syndication",
+  "Content licensing, syndication, and monetization",
+  "Media partnerships and co-production agreements",
+  "Archive management and content library curation",
 ];
 
 const channels = [
-  { name: "NESA Africa TV", icon: Tv, desc: "Documentary and award coverage" },
-  { name: "It's In Me Radio", icon: Radio, desc: "Podcasts and education talk shows" },
-  { name: "EduAid Webinar Series", icon: Video, desc: "Live educational webinars" },
-  { name: "Education Tourism Show", icon: Camera, desc: "School tours and features" },
+  { name: "NESA Africa TV", icon: Tv, desc: "Continental television covering NESA Awards, education documentaries, and institutional programming" },
+  { name: "It's In Me Radio", icon: Radio, desc: "Pan-African radio with education talk shows, podcasts, and youth programming" },
+  { name: "EduAid Webinar Series", icon: Video, desc: "Live and on-demand educational webinars featuring experts and thought leaders" },
+  { name: "Education Tourism Show", icon: Camera, desc: "Video features showcasing schools, institutions, and education ecosystems across Africa" },
 ];
 
 const SantosMedia = () => {
@@ -57,10 +59,10 @@ const SantosMedia = () => {
                   Division
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  Santos <span className="text-gradient-gold">Media</span>
+                  Santos <span className="text-gradient-gold">Media</span> Division
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  Africa's voice in education—producing compelling content that inspires, informs, and connects communities across the continent.
+                  Africa's institutional voice in education—producing compelling broadcast content that informs, inspires, and connects communities across the continent and diaspora.
                 </p>
               </div>
             </div>
@@ -75,10 +77,10 @@ const SantosMedia = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    Santos Media is SCEF's broadcasting and content production arm. We create, produce, and distribute educational content across television, radio, and digital platforms.
+                    Santos Media is SCEF's broadcasting and content production division. We create, produce, and distribute institutional-quality educational content across television, radio, and digital platforms—telling Africa's education story to the world.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    From award ceremonies to documentaries, webinars to podcasts—we tell Africa's education story to the world.
+                    From the NESA Africa Awards to educational documentaries, from webinars to podcasts—we operate four distinct media properties serving audiences across 54+ African countries and the global diaspora. Our content is designed for institutional credibility and mass engagement.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
@@ -115,9 +117,12 @@ const SantosMedia = () => {
           {/* Channels */}
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
-              <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-                Our <span className="text-gradient-gold">Channels</span>
+              <h2 className="font-display text-3xl font-bold text-foreground text-center mb-4">
+                Media <span className="text-gradient-gold">Properties</span>
               </h2>
+              <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+                Four distinct media platforms reaching millions of viewers, listeners, and participants across Africa and the diaspora.
+              </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {channels.map((channel) => (
                   <Link 
@@ -140,13 +145,14 @@ const SantosMedia = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-                Who We <span className="text-gradient-gold">Serve</span>
+                Stakeholders We <span className="text-gradient-gold">Serve</span>
               </h2>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {[
-                  { title: "African Audiences", desc: "Educational and inspirational content across platforms" },
-                  { title: "SCEF Programs", desc: "Event coverage, documentaries, and promotional content" },
-                  { title: "Media Partners", desc: "Content licensing and broadcast partnerships" },
+                  { title: "African Audiences", desc: "Educational, inspirational, and institutional content across all platforms" },
+                  { title: "SCEF Programs", desc: "Event coverage, documentaries, promotional content, and brand storytelling" },
+                  { title: "Media Partners", desc: "Content licensing, broadcast partnerships, and co-production opportunities" },
+                  { title: "Advertisers", desc: "Premium placement across television, radio, and digital properties" },
                 ].map((item) => (
                   <div key={item.title} className="text-center p-6 rounded-xl bg-card border border-border">
                     <h3 className="font-display text-lg font-bold text-foreground mb-3">{item.title}</h3>
@@ -161,10 +167,10 @@ const SantosMedia = () => {
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                Watch & Listen
+                Engage with Santos Media
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Explore our media library and stay connected with Africa's education story.
+                Explore our media library, partner on content production, or advertise with Africa's leading education media network.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>

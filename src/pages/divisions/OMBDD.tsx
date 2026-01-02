@@ -9,14 +9,16 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Digital marketing and online presence management",
-  "Sponsorship acquisition and management",
-  "Online revenue generation strategies",
-  "Social media and brand visibility",
-  "Digital advertising campaigns",
-  "Analytics and performance tracking",
-  "Partner outreach and engagement",
-  "Online fundraising initiatives",
+  "Digital marketing strategy and online brand positioning",
+  "Corporate sponsorship acquisition and management",
+  "Online revenue generation and monetization strategies",
+  "Social media management and audience growth",
+  "Digital advertising campaigns and performance optimization",
+  "Analytics, attribution, and ROI reporting",
+  "Partner outreach and digital engagement funnels",
+  "Online fundraising and donor cultivation campaigns",
+  "E-commerce and merchandise revenue development",
+  "Affiliate and referral program management",
 ];
 
 const OMBDD = () => {
@@ -53,7 +55,7 @@ const OMBDD = () => {
                   Online Media Business <span className="text-gradient-gold">Development</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  Driving digital growth, sponsorships, and sustainable revenue to fund SCEF's continental education mission.
+                  Driving sustainable digital revenue, strategic sponsorships, and online growth to fund SCEF's continental education mission across Africa and the diaspora.
                 </p>
               </div>
             </div>
@@ -68,10 +70,10 @@ const OMBDD = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    OMBDD focuses exclusively on digital growth and online revenue generation. We acquire sponsorships, manage digital advertising, and develop online business strategies to sustain SCEF's mission.
+                    OMBDD is SCEF's digital revenue engine. We focus exclusively on online business development—acquiring corporate sponsorships, managing digital advertising, developing e-commerce revenue streams, and executing online fundraising strategies that sustain the institution's continental mission.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    Our scope is strictly limited to online media business development. We do not handle content production (Santos Media) or program delivery (other divisions).
+                    Our scope is strictly limited to online media business development. Content production is the mandate of Santos Media. Platform development belongs to TDSD. Program delivery is managed by respective program teams. This division does not expand beyond its defined scope.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
@@ -123,13 +125,14 @@ const OMBDD = () => {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
-                Who We <span className="text-gradient-gold">Serve</span>
+                Stakeholders We <span className="text-gradient-gold">Serve</span>
               </h2>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {[
-                  { title: "Corporate Sponsors", desc: "Strategic sponsorship packages and brand partnerships" },
-                  { title: "Programs & Initiatives", desc: "Revenue generation and sponsorship acquisition support" },
-                  { title: "SCEF Leadership", desc: "Business development insights and revenue reporting" },
+                  { title: "Corporate Sponsors", desc: "Strategic sponsorship packages, brand partnerships, and visibility opportunities" },
+                  { title: "SCEF Programs", desc: "Revenue generation, sponsorship acquisition, and fundraising campaign support" },
+                  { title: "Advertisers", desc: "Digital advertising placements across SCEF's media properties and platforms" },
+                  { title: "SCEF Leadership", desc: "Business intelligence, revenue forecasting, and growth strategy reporting" },
                 ].map((item) => (
                   <div key={item.title} className="text-center p-6 rounded-xl bg-card border border-border">
                     <h3 className="font-display text-lg font-bold text-foreground mb-3">{item.title}</h3>
@@ -144,10 +147,10 @@ const OMBDD = () => {
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                Sponsor SCEF
+                Become a Sponsor
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Interested in sponsoring SCEF programs or advertising with us? Connect with our business development team.
+                Partner with Africa's leading education institution. Gain visibility across 54+ countries while supporting transformative education programs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
