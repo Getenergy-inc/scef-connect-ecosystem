@@ -13,7 +13,7 @@ const mediaChannels = [
     title: "NESA Africa TV",
     description: "Watch inspiring documentaries, event coverage, and success stories from across Africa.",
     cta: "Watch Now",
-    href: "https://www.youtube.com/@nesaafrica",
+    href: "https://www.youtube.com/@Nesa.africaTV/streams",
     external: true,
     color: "bg-scef-gold/10 text-scef-gold",
   },
@@ -170,7 +170,7 @@ const Media = () => {
                   </h2>
                 </div>
                 <Button variant="outline" className="border-2 border-black" asChild>
-                  <a href="https://www.youtube.com/@nesaafrica" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.youtube.com/@Nesa.africaTV/streams" target="_blank" rel="noopener noreferrer">
                     <Image className="w-4 h-4" />
                     View Gallery
                     <ExternalLink className="w-3 h-3" />
