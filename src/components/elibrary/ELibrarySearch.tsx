@@ -1,4 +1,6 @@
 import { useState, useMemo } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { 
@@ -10,7 +12,8 @@ import {
   Download,
   Eye,
   Filter,
-  X
+  X,
+  Loader2
 } from "lucide-react";
 
 type ResourceType = "ebook" | "journal" | "video" | "audio";
@@ -20,145 +23,26 @@ interface Resource {
   title: string;
   author: string;
   category: string;
-  type: ResourceType;
-  year: number;
-  description: string;
-  downloads: number;
+  resource_type: ResourceType;
+  description: string | null;
+  download_count: number | null;
+  cover_url: string | null;
+  resource_url: string | null;
 }
-
-const sampleResources: Resource[] = [
-  {
-    id: "1",
-    title: "Introduction to Nigerian History",
-    author: "Prof. Adebayo Adekunle",
-    category: "African History",
-    type: "ebook",
-    year: 2023,
-    description: "A comprehensive guide to Nigerian history from pre-colonial times to the present day.",
-    downloads: 12500
-  },
-  {
-    id: "2",
-    title: "Mathematics for JAMB Success",
-    author: "Dr. Chukwu Emmanuel",
-    category: "Secondary Education",
-    type: "ebook",
-    year: 2024,
-    description: "Complete JAMB mathematics preparation guide with solved examples and practice questions.",
-    downloads: 45000
-  },
-  {
-    id: "3",
-    title: "Igbo Language and Culture",
-    author: "Chief Nnamdi Azikiwe Jr.",
-    category: "Nigerian Literature",
-    type: "ebook",
-    year: 2022,
-    description: "Learn the rich traditions and language of the Igbo people of Nigeria.",
-    downloads: 8900
-  },
-  {
-    id: "4",
-    title: "Modern Physics for Universities",
-    author: "Dr. Fatima Hassan",
-    category: "University Resources",
-    type: "journal",
-    year: 2024,
-    description: "Advanced physics concepts for undergraduate and graduate students.",
-    downloads: 15600
-  },
-  {
-    id: "5",
-    title: "English Literature: African Perspectives",
-    author: "Prof. Wole Soyinka Foundation",
-    category: "Nigerian Literature",
-    type: "ebook",
-    year: 2023,
-    description: "Exploring African literary traditions and their influence on world literature.",
-    downloads: 22000
-  },
-  {
-    id: "6",
-    title: "WAEC Chemistry Masterclass",
-    author: "Excellence Education Team",
-    category: "Secondary Education",
-    type: "video",
-    year: 2024,
-    description: "Video tutorials covering all WAEC chemistry topics with practical demonstrations.",
-    downloads: 38000
-  },
-  {
-    id: "7",
-    title: "Yoruba Folktales Collection",
-    author: "Mama Iyalode Cultural Center",
-    category: "Nigerian Literature",
-    type: "audio",
-    year: 2023,
-    description: "Audio recordings of traditional Yoruba folktales for language learning.",
-    downloads: 6700
-  },
-  {
-    id: "8",
-    title: "Basic Computer Skills for Teachers",
-    author: "SCEF Digital Team",
-    category: "Teacher Resources",
-    type: "video",
-    year: 2024,
-    description: "Essential ICT skills training for primary and secondary school teachers.",
-    downloads: 29000
-  },
-  {
-    id: "9",
-    title: "Agricultural Science Practicals",
-    author: "Federal Ministry of Agriculture",
-    category: "Vocational Training",
-    type: "ebook",
-    year: 2023,
-    description: "Hands-on agricultural science guide for vocational students.",
-    downloads: 11200
-  },
-  {
-    id: "10",
-    title: "Primary School Mathematics Workbook",
-    author: "Mrs. Aisha Bello",
-    category: "Primary Education",
-    type: "ebook",
-    year: 2024,
-    description: "Fun and engaging mathematics exercises for primary school pupils.",
-    downloads: 52000
-  },
-  {
-    id: "11",
-    title: "Nigerian Constitution Explained",
-    author: "Law Faculty, University of Lagos",
-    category: "University Resources",
-    type: "journal",
-    year: 2023,
-    description: "An accessible breakdown of the Nigerian constitution for students and citizens.",
-    downloads: 18500
-  },
-  {
-    id: "12",
-    title: "Hausa Language for Beginners",
-    author: "Bayero University Kano",
-    category: "Nigerian Literature",
-    type: "audio",
-    year: 2024,
-    description: "Audio lessons for learning Hausa language from scratch.",
-    downloads: 9800
-  }
-];
 
 const categories = [
   "All Categories",
-  "Primary Education",
-  "Secondary Education", 
-  "University Resources",
-  "Professional Development",
-  "Vocational Training",
-  "Teacher Resources",
-  "Nigerian Literature",
-  "African History"
+  "Literature",
+  "History",
+  "Language",
+  "Agriculture",
+  "Education",
+  "Law",
+  "Health",
+  "Economics",
+  "Culture",
+  "Arts",
+  "Science"
 ];
 
 const resourceTypes = [
@@ -184,22 +68,36 @@ export const ELibrarySearch = () => {
   const [selectedType, setSelectedType] = useState("all");
   const [showFilters, setShowFilters] = useState(false);
 
+  const { data: resources = [], isLoading } = useQuery({
+    queryKey: ['elibrary-resources'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('elibrary_resources')
+        .select('*')
+        .eq('is_published', true)
+        .order('title');
+      
+      if (error) throw error;
+      return data as Resource[];
+    }
+  });
+
   const filteredResources = useMemo(() => {
-    return sampleResources.filter(resource => {
+    return resources.filter(resource => {
       const matchesSearch = searchQuery === "" || 
         resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         resource.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        resource.description.toLowerCase().includes(searchQuery.toLowerCase());
+        (resource.description?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false);
       
       const matchesCategory = selectedCategory === "All Categories" || 
         resource.category === selectedCategory;
       
       const matchesType = selectedType === "all" || 
-        resource.type === selectedType;
+        resource.resource_type === selectedType;
       
       return matchesSearch && matchesCategory && matchesType;
     });
-  }, [searchQuery, selectedCategory, selectedType]);
+  }, [resources, searchQuery, selectedCategory, selectedType]);
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -312,17 +210,31 @@ export const ELibrarySearch = () => {
         {/* Results Count */}
         <div className="max-w-4xl mx-auto mb-6">
           <p className="text-gray-600">
-            Found <span className="font-bold" style={{ color: '#0000CD' }}>{filteredResources.length}</span> resources
-            {hasActiveFilters && " matching your criteria"}
+            {isLoading ? (
+              <span className="flex items-center gap-2">
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Loading resources...
+              </span>
+            ) : (
+              <>
+                Found <span className="font-bold" style={{ color: '#0000CD' }}>{filteredResources.length}</span> resources
+                {hasActiveFilters && " matching your criteria"}
+              </>
+            )}
           </p>
         </div>
 
         {/* Results Grid */}
         <div className="max-w-4xl mx-auto">
-          {filteredResources.length > 0 ? (
+          {isLoading ? (
+            <div className="text-center py-12">
+              <Loader2 className="w-12 h-12 animate-spin text-[#0000CD] mx-auto mb-4" />
+              <p className="text-gray-500">Loading resources...</p>
+            </div>
+          ) : filteredResources.length > 0 ? (
             <div className="space-y-4">
               {filteredResources.map(resource => {
-                const TypeIcon = getTypeIcon(resource.type);
+                const TypeIcon = getTypeIcon(resource.resource_type);
                 return (
                   <div
                     key={resource.id}
@@ -342,7 +254,7 @@ export const ELibrarySearch = () => {
                               {resource.title}
                             </h3>
                             <p className="text-sm text-gray-500 mb-2">
-                              by {resource.author} • {resource.year}
+                              by {resource.author}
                             </p>
                           </div>
                           <span 
@@ -358,7 +270,7 @@ export const ELibrarySearch = () => {
                         <div className="flex items-center gap-4">
                           <span className="text-xs text-gray-400 flex items-center gap-1">
                             <Download className="w-3 h-3" />
-                            {resource.downloads.toLocaleString()} downloads
+                            {(resource.download_count ?? 0).toLocaleString()} downloads
                           </span>
                           <div className="flex gap-2 ml-auto">
                             <Button
