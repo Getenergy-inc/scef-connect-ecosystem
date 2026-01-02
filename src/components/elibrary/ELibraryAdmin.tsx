@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,10 @@ import {
   Headphones,
   Loader2,
   Eye,
-  EyeOff
+  EyeOff,
+  Upload,
+  X,
+  Image
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -89,6 +92,18 @@ const getTypeIcon = (type: ResourceType) => {
   }
 };
 
+const getAcceptedFileTypes = (type: ResourceType) => {
+  switch (type) {
+    case "ebook":
+    case "journal":
+      return ".pdf,.epub,.doc,.docx";
+    case "video":
+      return ".mp4,.webm,.mov,.avi";
+    case "audio":
+      return ".mp3,.wav,.ogg,.m4a";
+  }
+};
+
 const emptyFormData: ResourceFormData = {
   title: "",
   author: "",
@@ -104,6 +119,10 @@ export const ELibraryAdmin = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingResource, setEditingResource] = useState<Resource | null>(null);
   const [formData, setFormData] = useState<ResourceFormData>(emptyFormData);
+  const [isUploadingCover, setIsUploadingCover] = useState(false);
+  const [isUploadingResource, setIsUploadingResource] = useState(false);
+  const coverInputRef = useRef<HTMLInputElement>(null);
+  const resourceInputRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
 
   const { data: resources = [], isLoading } = useQuery({
@@ -118,6 +137,70 @@ export const ELibraryAdmin = () => {
       return data as Resource[];
     }
   });
+
+  const uploadFile = async (file: File, folder: string): Promise<string> => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${folder}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+    
+    const { error: uploadError } = await supabase.storage
+      .from('elibrary')
+      .upload(fileName, file);
+    
+    if (uploadError) throw uploadError;
+    
+    const { data } = supabase.storage
+      .from('elibrary')
+      .getPublicUrl(fileName);
+    
+    return data.publicUrl;
+  };
+
+  const handleCoverUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    if (!file.type.startsWith('image/')) {
+      toast.error("Please select an image file");
+      return;
+    }
+    
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("Image must be less than 5MB");
+      return;
+    }
+    
+    setIsUploadingCover(true);
+    try {
+      const url = await uploadFile(file, 'covers');
+      setFormData({ ...formData, cover_url: url });
+      toast.success("Cover image uploaded");
+    } catch (error: any) {
+      toast.error("Failed to upload cover: " + error.message);
+    } finally {
+      setIsUploadingCover(false);
+    }
+  };
+
+  const handleResourceUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    if (file.size > 100 * 1024 * 1024) {
+      toast.error("File must be less than 100MB");
+      return;
+    }
+    
+    setIsUploadingResource(true);
+    try {
+      const url = await uploadFile(file, 'resources');
+      setFormData({ ...formData, resource_url: url });
+      toast.success("Resource file uploaded");
+    } catch (error: any) {
+      toast.error("Failed to upload resource: " + error.message);
+    } finally {
+      setIsUploadingResource(false);
+    }
+  };
 
   const createMutation = useMutation({
     mutationFn: async (data: ResourceFormData) => {
@@ -244,7 +327,7 @@ export const ELibraryAdmin = () => {
               Add Resource
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-lg">
+          <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle style={{ color: '#0000CD' }}>
                 {editingResource ? "Edit Resource" : "Add New Resource"}
@@ -303,22 +386,114 @@ export const ELibraryAdmin = () => {
                   rows={3}
                 />
               </div>
+              
+              {/* Cover Image Upload */}
               <div>
-                <label className="block text-sm font-medium mb-1">Cover Image URL</label>
-                <Input
-                  value={formData.cover_url}
-                  onChange={(e) => setFormData({ ...formData, cover_url: e.target.value })}
-                  placeholder="https://..."
+                <label className="block text-sm font-medium mb-1">Cover Image</label>
+                <input
+                  ref={coverInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleCoverUpload}
+                  className="hidden"
                 />
+                {formData.cover_url ? (
+                  <div className="relative w-32 h-40 border-2 border-black rounded-lg overflow-hidden">
+                    <img 
+                      src={formData.cover_url} 
+                      alt="Cover" 
+                      className="w-full h-full object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, cover_url: "" })}
+                      className="absolute top-1 right-1 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                ) : (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => coverInputRef.current?.click()}
+                    disabled={isUploadingCover}
+                    className="w-full border-dashed"
+                  >
+                    {isUploadingCover ? (
+                      <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Uploading...</>
+                    ) : (
+                      <><Image className="w-4 h-4 mr-2" /> Upload Cover Image</>
+                    )}
+                  </Button>
+                )}
               </div>
+
+              {/* Resource File Upload */}
               <div>
-                <label className="block text-sm font-medium mb-1">Resource URL</label>
-                <Input
-                  value={formData.resource_url}
-                  onChange={(e) => setFormData({ ...formData, resource_url: e.target.value })}
-                  placeholder="https://..."
+                <label className="block text-sm font-medium mb-1">
+                  Resource File ({formData.resource_type === 'ebook' || formData.resource_type === 'journal' ? 'PDF, EPUB, DOC' : formData.resource_type === 'video' ? 'MP4, WebM' : 'MP3, WAV'})
+                </label>
+                <input
+                  ref={resourceInputRef}
+                  type="file"
+                  accept={getAcceptedFileTypes(formData.resource_type)}
+                  onChange={handleResourceUpload}
+                  className="hidden"
                 />
+                {formData.resource_url ? (
+                  <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+                    <FileText className="w-5 h-5 text-green-600" />
+                    <span className="text-sm text-green-700 flex-1 truncate">
+                      {formData.resource_url.split('/').pop()}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, resource_url: "" })}
+                      className="p-1 text-red-500 hover:text-red-700"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                ) : (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => resourceInputRef.current?.click()}
+                    disabled={isUploadingResource}
+                    className="w-full border-dashed"
+                  >
+                    {isUploadingResource ? (
+                      <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Uploading...</>
+                    ) : (
+                      <><Upload className="w-4 h-4 mr-2" /> Upload Resource File</>
+                    )}
+                  </Button>
+                )}
+                <p className="text-xs text-gray-500 mt-1">Max file size: 100MB</p>
               </div>
+
+              {/* Or enter URL manually */}
+              <div className="text-center text-sm text-gray-500">— or enter URLs manually —</div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-1">Cover URL</label>
+                  <Input
+                    value={formData.cover_url}
+                    onChange={(e) => setFormData({ ...formData, cover_url: e.target.value })}
+                    placeholder="https://..."
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Resource URL</label>
+                  <Input
+                    value={formData.resource_url}
+                    onChange={(e) => setFormData({ ...formData, resource_url: e.target.value })}
+                    placeholder="https://..."
+                  />
+                </div>
+              </div>
+
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"
@@ -340,7 +515,7 @@ export const ELibraryAdmin = () => {
                 </Button>
                 <Button
                   type="submit"
-                  disabled={isPending}
+                  disabled={isPending || isUploadingCover || isUploadingResource}
                   className="flex-1 border-2 border-black"
                   style={{ backgroundColor: '#0000CD', color: 'white' }}
                 >
