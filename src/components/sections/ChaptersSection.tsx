@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Users, ArrowRight, Globe, Plus } from "lucide-react";
+import { MapPin, Users, ArrowRight, Globe, Plus, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const featuredChapters = [
@@ -44,19 +44,30 @@ export const ChaptersSection = () => {
     <section className="py-24 bg-scef-blue">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm font-medium mb-6">
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm font-medium mb-6 border border-white/20">
             <Globe className="w-4 h-4" />
-            Local Chapters
+            Local Chapter Pathway
           </div>
           
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Local Execution, <span className="text-scef-gold">Continental Governance</span>
           </h2>
           
-          <p className="text-lg text-white/70 leading-relaxed">
-            SCEF operates compliant local chapters across Africa—online, hybrid, and physical—ensuring community ownership under strong institutional oversight.
+          <p className="text-lg text-white/80 leading-relaxed mb-6">
+            Local chapters form the operational backbone. Governments and institutions can establish chapters for country-level governance.
           </p>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-left max-w-3xl mx-auto">
+            <div className="flex items-start gap-3 mb-4">
+              <Building2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
+              <h3 className="font-display text-lg font-bold text-white">Chapter Establishment Process</h3>
+            </div>
+            <p className="text-white/70 leading-relaxed text-sm">
+              Apply via portal → Undergo compliance review by SOBCD → Receive onboarding from LCS → Integrate with BoD for regional oversight. 
+              Upgrades enable physical infrastructure with performance metrics tracked quarterly.
+            </p>
+          </div>
         </div>
 
         {/* Chapters Grid */}
@@ -65,7 +76,7 @@ export const ChaptersSection = () => {
             <Link
               key={chapter.name}
               to="/local-chapters"
-              className="group relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-scef-gold/50 transition-all duration-500 hover:bg-white/15"
+              className="group relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border-2 border-white/20 hover:border-scef-gold/50 transition-all duration-500 hover:bg-white/15"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
@@ -103,14 +114,14 @@ export const ChaptersSection = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold/90" asChild>
+          <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold/90 border-2 border-black" asChild>
             <Link to="/chapters/join">
               <Users className="w-4 h-4" />
               Join a Chapter
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+          <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10" asChild>
             <Link to="/chapters/create">
               <Plus className="w-4 h-4" />
               Create an Online Chapter
