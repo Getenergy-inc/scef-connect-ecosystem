@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Play, Radio, Video, Calendar, Image, ArrowRight, ExternalLink } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-media.jpg";
 
 const mediaChannels = [
@@ -83,7 +84,7 @@ const Media = () => {
         <main>
           {/* Hero */}
           <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
-            <img src={heroImage} alt="Santos Media studio" className="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
+            <OptimizedImage src={heroImage} alt="Santos Media studio" className="absolute inset-0 w-full h-full" imgClassName="opacity-30" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/80 to-scef-blue/95" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
@@ -183,11 +184,10 @@ const Media = () => {
                     key={index}
                     className="group relative rounded-2xl overflow-hidden cursor-pointer border-2 border-black"
                   >
-                    <img
+                    <OptimizedImage
                       src={content.thumbnail}
                       alt={content.title}
-                      className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
+                      className="w-full aspect-video group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/90 via-scef-blue/40 to-transparent" />
                     

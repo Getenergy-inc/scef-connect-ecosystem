@@ -8,6 +8,7 @@ import {
   MapPin, Users, Search, Filter, Globe, Building, Wifi, 
   ArrowRight, Plus, CheckCircle2, TrendingUp
 } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-chapters.jpg";
 
 const chapters = [
@@ -134,7 +135,7 @@ const Chapters = () => {
         <main>
           {/* Hero */}
           <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
-            <img src={heroImage} alt="SCEF Chapters meeting" className="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
+            <OptimizedImage src={heroImage} alt="SCEF Chapters meeting" className="absolute inset-0 w-full h-full" imgClassName="opacity-30" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/80 to-scef-blue/95" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
@@ -251,10 +252,10 @@ const Chapters = () => {
                       className="group bg-card rounded-2xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-500"
                     >
                       <div className="relative h-48 overflow-hidden">
-                        <img
+                        <OptimizedImage
                           src={chapter.image}
                           alt={chapter.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full group-hover:scale-110 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/80 to-transparent" />
                         
