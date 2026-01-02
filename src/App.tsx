@@ -14,6 +14,7 @@ import Media from "./pages/Media";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Donate from "./pages/Donate";
+import DonationSuccess from "./pages/DonationSuccess";
 import Wallet from "./pages/Wallet";
 import GetInvolved from "./pages/GetInvolved";
 import Membership from "./pages/Membership";
@@ -64,6 +65,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/donation-success" element={<DonationSuccess />} />
             <Route path="/wallet" element={<Wallet />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/membership" element={<Membership />} />
