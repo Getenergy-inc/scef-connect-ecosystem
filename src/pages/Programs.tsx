@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Library, ExternalLink } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-programs.jpg";
 
 const programs = [
@@ -81,7 +82,7 @@ const Programs = () => {
         <main>
           {/* Hero */}
           <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
-            <img src={heroImage} alt="SCEF Programs - African students graduating" className="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
+            <OptimizedImage src={heroImage} alt="SCEF Programs - African students graduating" className="absolute inset-0 w-full h-full" imgClassName="opacity-30" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/80 to-scef-blue/95" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
