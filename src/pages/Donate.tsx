@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, School, GraduationCap, Users, BookOpen, Globe } from "lucide-react";
+import { Heart, School, GraduationCap, Users, BookOpen, Globe, ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -219,6 +219,33 @@ const Donate = () => {
                         <Heart className="w-5 h-5 mr-2" />
                         {loading ? "Processing..." : `Donate $${selectedAmount || customAmount || 0}`}
                       </Button>
+
+                      {/* Payment Gateway Buttons */}
+                      <div className="pt-4 border-t border-border">
+                        <p className="text-sm text-center text-muted-foreground mb-4">Or donate directly via:</p>
+                        <div className="grid grid-cols-2 gap-3">
+                          <a
+                            href="https://paystack.com/pay/scef-donation"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-blue text-scef-gold hover:bg-scef-blue-dark border-2 border-black"
+                          >
+                            <Heart className="w-4 h-4" />
+                            Paystack
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                          <a
+                            href="https://flutterwave.com/pay/scef"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-gold text-scef-blue hover:bg-scef-gold-dark border-2 border-black"
+                          >
+                            <Heart className="w-4 h-4" />
+                            Flutterwave
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </div>
+                      </div>
 
                       <p className="text-xs text-center text-muted-foreground">
                         By donating, you agree to our terms and privacy policy.
