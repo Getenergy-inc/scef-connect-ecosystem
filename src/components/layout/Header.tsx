@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+// External platform links
+const externalPlatforms = [
+  { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true },
+  { name: "NESA.africa", href: "https://nesa.africa", external: true },
+  { name: "EduAid.africa", href: "https://eduaid.africa", external: true },
+];
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -24,6 +31,11 @@ const navigation = [
       { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
       { name: "NESA-Africa", href: "/programs/nesa-africa" },
+      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
+      { divider: true },
+      { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
+      { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
+      { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
     ]
   },
   { 
@@ -108,14 +120,30 @@ export const Header = () => {
               {/* Dropdown */}
               {item.children && activeDropdown === item.name && (
                 <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.name}
-                      to={child.href}
-                      className="block px-4 py-3 text-sm text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue transition-colors"
-                    >
-                      {child.name}
-                    </Link>
+                  {item.children.map((child: any, idx: number) => (
+                    child.divider ? (
+                      <div key={idx} className="border-t border-gray-200 my-1" />
+                    ) : child.external ? (
+                      <a
+                        key={child.name}
+                        href={child.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
+                        style={{ color: '#0000CD' }}
+                      >
+                        {child.name}
+                        <ExternalLink className="w-3 h-3 text-scef-gold" />
+                      </a>
+                    ) : (
+                      <Link
+                        key={child.name}
+                        to={child.href}
+                        className="block px-4 py-3 text-sm text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue transition-colors"
+                      >
+                        {child.name}
+                      </Link>
+                    )
                   ))}
                 </div>
               )}

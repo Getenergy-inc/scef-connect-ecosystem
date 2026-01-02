@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, BookOpen, Heart } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, BookOpen, Heart, ExternalLink } from "lucide-react";
 
 const projectLinks = [
   { name: "NESA.africa", href: "https://nesa.africa" },
   { name: "EduAid.africa", href: "https://eduaid.africa" },
-  { name: "eLibraryNigeria", href: "https://elibrarynigeria.org" },
-  { name: "Main Site", href: "/" },
+  { name: "eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng" },
+];
+
+const quickLinks = [
+  { name: "Home", href: "/" },
+  { name: "About SCEF", href: "/about" },
+  { name: "Programs", href: "/programs" },
+  { name: "Chapters", href: "/chapters" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -28,45 +35,67 @@ export const Footer = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
           {/* Location & Phone */}
           <div className="space-y-2">
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Contact Info</h4>
             <p className="flex items-center justify-center sm:justify-start gap-2 text-white/90">
               <MapPin className="w-4 h-4 text-scef-gold" />
               Lagos, Nigeria
             </p>
-            <p className="text-white/70 text-sm">+234 803 000 0000</p>
-            <p className="text-white/70 text-sm">+234 809 000 0000</p>
-          </div>
-
-          {/* Email */}
-          <div className="space-y-2">
-            <a href="mailto:info@santoscreations.org" className="flex items-center justify-center sm:justify-start gap-2 text-white/90 hover:text-scef-gold transition-colors">
+            <p className="flex items-center justify-center sm:justify-start gap-2 text-white/70 text-sm">
+              <Phone className="w-4 h-4 text-scef-gold" />
+              +234 8056677770
+            </p>
+            <a href="mailto:info@santoscreations.org" className="flex items-center justify-center sm:justify-start gap-2 text-white/70 text-sm hover:text-scef-gold transition-colors">
               <Mail className="w-4 h-4 text-scef-gold" />
               info@santoscreations.org
             </a>
-            <a href="mailto:support@santoscreations.org" className="block text-white/70 text-sm hover:text-scef-gold transition-colors pl-6">
-              support@santoscreations.org
-            </a>
           </div>
 
-          {/* Projects */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Projects</h4>
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Quick Links</h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.href}
+                    className="text-sm text-white/70 hover:text-scef-gold transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* External Platforms */}
+          <div>
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Our Platforms</h4>
             <ul className="space-y-2">
               {projectLinks.map((link) => (
                 <li key={link.name}>
                   <a 
                     href={link.href} 
-                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-sm text-white/70 hover:text-scef-gold transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
                   >
                     {link.name}
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Tagline */}
+          <div>
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Our Mission</h4>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Governing Africa's Education Future through advocacy, funding, and certification of educational excellence across the continent.
+            </p>
           </div>
         </div>
       </div>
