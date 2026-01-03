@@ -22,6 +22,7 @@ import Governance from "./pages/Governance";
 import Certifications from "./pages/Certifications";
 import Partners from "./pages/Partners";
 import Divisions from "./pages/Divisions";
+import Updates from "./pages/Updates";
 import SOBCD from "./pages/divisions/SOBCD";
 import TDSD from "./pages/divisions/TDSD";
 import OMBDD from "./pages/divisions/OMBDD";
@@ -61,6 +62,7 @@ const App = () => (
             <Route path="/local-chapters" element={<LocalChapters />} />
             <Route path="/chapters" element={<Chapters />} />
             <Route path="/media" element={<Media />} />
+            <Route path="/updates" element={<Updates />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
