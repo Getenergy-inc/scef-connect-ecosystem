@@ -36,6 +36,7 @@ import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
 import DigitalLearning from "./pages/programs/DigitalLearning";
 import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
+import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -66,6 +67,7 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
+            <Route path="/admin/digital-board" element={<DigitalBoardAdminPage />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/donation-success" element={<DonationSuccess />} />
             <Route path="/wallet" element={<Wallet />} />
