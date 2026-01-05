@@ -26,6 +26,29 @@ const socialLinks = [
 export const Footer = () => {
   return (
     <footer className="bg-scef-blue text-white">
+      {/* Program Logos Banner */}
+      <div className="bg-scef-blue-dark border-b border-white/10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap">
+            <img 
+              src="/assets/scef-logo.jpg" 
+              alt="SCEF Logo" 
+              className="h-16 md:h-20 w-auto object-contain drop-shadow-lg"
+            />
+            <img 
+              src="/assets/nesa-africa-logo.jpg" 
+              alt="NESA Africa Logo" 
+              className="h-16 md:h-20 w-auto object-contain drop-shadow-lg rounded-full"
+            />
+            <img 
+              src="/assets/eduaid-africa-logo.jpg" 
+              alt="EduAid Africa Logo" 
+              className="h-16 md:h-20 w-auto object-contain drop-shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="container mx-auto px-4 py-8">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-center text-scef-gold">
