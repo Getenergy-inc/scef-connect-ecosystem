@@ -9,14 +9,11 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Coordinate Board of Trustees meetings and resolutions",
-  "Facilitate communication between governance bodies and executive leadership",
-  "Oversee organizational policy development and implementation",
-  "Manage executive appointments and succession planning",
-  "Ensure governance compliance with legal and regulatory frameworks",
-  "Coordinate strategic planning and institutional direction",
-  "Maintain official records and organizational documentation",
-  "Facilitate inter-divisional coordination and alignment",
+  "Board of Trustees (BoT) coordination and documentation",
+  "Executive office administration",
+  "Governance policies, resolutions, and compliance reporting",
+  "Institutional integrity, ethics, and record keeping",
+  "Liaison between Board, management, and external stakeholders",
 ];
 
 const BGEO = () => {
@@ -51,7 +48,7 @@ const BGEO = () => {
                   Board Governance & <span className="text-gradient-gold">Executive Office</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed mb-4">
-                  The apex governance structure providing strategic oversight, executive leadership, and organizational coordination across all SCEF operations.
+                  Provides institutional leadership, fiduciary oversight, and governance coordination across the Foundation. This structure fits global NGO governance standards and donor expectations.
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gold/20 text-gold border border-gold/30">
                   <Crown className="w-4 h-4" />
@@ -70,7 +67,7 @@ const BGEO = () => {
                     Division <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                    The Board Governance & Executive Office serves as the central coordinating body for SCEF's governance architecture. It ensures that strategic direction flows from the Board of Trustees through to operational divisions, maintaining institutional coherence and accountability at every level.
+                    The Board Governance & Executive Office provides institutional leadership, fiduciary oversight, and governance coordination across the Foundation. This structure fits global NGO governance standards and donor expectations, ensuring strategic direction flows from the Board of Trustees through to operational divisions.
                   </p>
                   
                   <div className="space-y-4">

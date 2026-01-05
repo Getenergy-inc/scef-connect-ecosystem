@@ -9,24 +9,19 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Platform development and maintenance (Web, Mobile, APIs, Databases)",
-  "Education Online Africa e-learning infrastructure",
-  "eLibrary Nigeria digital library systems",
-  "GFA Wallet financial infrastructure and AGC token systems",
-  "AI integration, automation, and intelligent systems",
-  "Cybersecurity, data protection, and privacy compliance",
-  "ICT training curriculum development and delivery",
-  "Technical support for chapters, programs, and partners",
-  "Cloud infrastructure management and scalability",
-  "System integration and third-party API management",
+  "SCEF website, mobile app, dashboards, and CMS",
+  "Education Online Africa (EOA) platform and certification systems",
+  "Digital wallet, databases, APIs, and integrations",
+  "Cybersecurity, data protection, and system scalability",
+  "Digital analytics and performance monitoring",
 ];
 
 const platforms = [
-  { name: "Education Online Africa", desc: "Continental e-learning platform serving students across 54+ countries with courses, certifications, and digital credentials" },
-  { name: "eLibrary Nigeria", desc: "Africa's digital library with free access to educational resources, journals, and research materials" },
-  { name: "GFA Wallet", desc: "Institutional financial infrastructure for donations, membership fees, AGC tokens, and certification payments" },
-  { name: "Chapter Management Portal", desc: "Comprehensive system for local chapter onboarding, compliance tracking, and performance reporting" },
-  { name: "AEPC Certification Platform", desc: "Hybrid certification system with online delivery and licensed physical exam center integration" },
+  { name: "SCEF Website & Mobile App", desc: "Central digital presence with responsive design, mobile app, dashboards, and content management systems" },
+  { name: "Education Online Africa (EOA)", desc: "Continental e-learning platform with certification systems serving students across 54+ countries" },
+  { name: "Digital Wallet & Databases", desc: "Institutional financial infrastructure with APIs and integrations for donations, membership, and payments" },
+  { name: "Cybersecurity & Data Protection", desc: "Enterprise-grade security, data protection protocols, and system scalability infrastructure" },
+  { name: "Analytics & Performance Monitoring", desc: "Digital analytics dashboards for performance monitoring and data-driven decision making" },
 ];
 
 const TDSD = () => {
@@ -63,7 +58,7 @@ const TDSD = () => {
                   Technology & Digital <span className="text-gradient-gold">Services</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  The digital backbone of Africa's education transformation—powering platforms, infrastructure, AI integration, and ICT capacity building across the continent and diaspora.
+                  Designs, builds, and maintains SCEF's digital ecosystem and data infrastructure. Positions SCEF as a modern, scalable education platform.
                 </p>
               </div>
             </div>
@@ -78,10 +73,10 @@ const TDSD = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    TDSD is responsible for all technology initiatives within SCEF—from building and maintaining digital platforms to implementing AI-powered solutions and delivering ICT training programs across Africa. We are the architects of SCEF's digital infrastructure.
+                    TDSD designs, builds, and maintains SCEF's digital ecosystem and data infrastructure. We are responsible for all technology initiatives within SCEF—from building and maintaining digital platforms to ensuring cybersecurity, data protection, and system scalability.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    We bridge the digital divide by creating accessible, scalable, and secure technology solutions that empower educators, students, chapters, and institutions across the continent. Our platforms serve as the operational backbone for every SCEF program.
+                    This division positions SCEF as a modern, scalable education platform. We bridge the digital divide by creating accessible, scalable, and secure technology solutions that empower educators, students, chapters, and institutions across the continent.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[

@@ -9,16 +9,12 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Institutional governance framework development and enforcement",
-  "Financial oversight, audit coordination, and fiduciary compliance",
-  "Legal and regulatory adherence across 54+ jurisdictions",
-  "Policy development, review cycles, and institutional reform",
-  "Enterprise risk management and mitigation protocols",
-  "Board secretariat functions and trustee support",
-  "Donor compliance, grant reporting, and accountability assurance",
-  "Strategic planning coordination and performance monitoring",
-  "Anti-corruption and ethics enforcement",
-  "Institutional partnerships and MOU management",
+  "Operational planning and execution oversight",
+  "Compliance with local, regional, and international regulations",
+  "Risk management and internal controls",
+  "Grant compliance, MoUs, and partnership governance",
+  "Monitoring & Evaluation (M&E) coordination",
+  "Audit readiness and reporting",
 ];
 
 const SOBCD = () => {
@@ -55,7 +51,7 @@ const SOBCD = () => {
                   Strategic Operations & Business <span className="text-gradient-gold">Compliance</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  The governance backbone of SCEF—ensuring institutional integrity, fiduciary accountability, regulatory compliance, and sustainable operations across all programs, chapters, and partnerships.
+                  Ensures SCEF operates legally, ethically, and efficiently across all programs and countries. Critical for grant-makers, embassies, and institutional donors.
                 </p>
               </div>
             </div>
@@ -70,10 +66,10 @@ const SOBCD = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    SOBCD serves as the institutional custodian of SCEF's governance framework. We ensure that all programs, chapters, divisions, and initiatives operate within established legal, financial, and ethical standards—maintaining the trust that governments, donors, and partners place in the organization.
+                    SOBCD ensures SCEF operates legally, ethically, and efficiently across all programs and countries. We ensure that all programs, chapters, divisions, and initiatives operate within established legal, financial, and ethical standards—maintaining the trust that governments, donors, and partners place in the organization.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    Our division provides the strategic oversight and compliance infrastructure that enables scalable, sustainable growth while maintaining the highest standards of accountability. We are the bridge between SCEF's mission and the regulatory, financial, and governance requirements of operating across 54+ African countries and the diaspora.
+                    This division is critical for grant-makers, embassies, and institutional donors. We provide the strategic oversight and compliance infrastructure that enables scalable, sustainable growth while maintaining the highest standards of accountability across 54+ African countries and the diaspora.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
