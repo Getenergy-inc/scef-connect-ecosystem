@@ -10,6 +10,22 @@ import {
 
 const divisions = [
   {
+    code: "BGEO",
+    title: "Board Governance & Executive Office",
+    description: "The apex governance structure providing strategic oversight, executive leadership, and organizational coordination across all SCEF operations.",
+    mandate: "Provide fiduciary oversight, strategic direction, and executive coordination to ensure SCEF achieves its continental education mission.",
+    icon: Building2,
+    color: "primary",
+    responsibilities: [
+      "Board of Trustees coordination",
+      "Executive policy formulation",
+      "Organizational strategy oversight",
+      "Stakeholder governance relations",
+    ],
+    leader: "Organization Secretary",
+    href: "/divisions/bgeo",
+  },
+  {
     code: "SOBCD",
     title: "Strategic Operations & Business Compliance Division",
     description: "The backbone of SCEF's institutional integrity, managing governance, compliance, financial oversight, and strategic operations.",
@@ -22,6 +38,7 @@ const divisions = [
       "Strategic planning and execution",
       "Risk management and governance",
     ],
+    leader: "Director of Operations and Compliance",
     href: "/divisions/sobcd",
   },
   {
@@ -37,6 +54,7 @@ const divisions = [
       "eLibrary Nigeria management",
       "ICT training and support",
     ],
+    leader: "Director of Technology and Digital Innovation",
     href: "/divisions/tdsd",
   },
   {
@@ -52,6 +70,7 @@ const divisions = [
       "Online brand management",
       "Revenue optimization",
     ],
+    leader: "Director of Media Business Development",
     href: "/divisions/ombdd",
   },
   {
@@ -67,11 +86,12 @@ const divisions = [
       "Content production and curation",
       "Media partnership management",
     ],
+    leader: "Director of Santos Media",
     href: "/divisions/santos-media",
   },
   {
     code: "LCS",
-    title: "Local Chapter Services",
+    title: "Local Chapter Services Division",
     description: "Supporting the network of local chapters with onboarding, compliance, upgrades, and operational support.",
     mandate: "Enable grassroots education impact through compliant, well-supported local chapter operations.",
     icon: Globe,
@@ -82,6 +102,7 @@ const divisions = [
       "Chapter upgrade pathways",
       "Member support services",
     ],
+    leader: "Director of Chapter Services and Support",
     href: "/divisions/lcs",
   },
 ];
@@ -97,12 +118,12 @@ const Divisions = () => {
   return (
     <>
       <Helmet>
-        <title>Divisions - SCEF | 5 Operational Divisions</title>
+        <title>Divisions - SCEF | 6 Operational Divisions</title>
         <meta 
           name="description" 
-          content="SCEF operates through 5 specialized divisions: SOBCD (Compliance), TDSD (Technology), OMBDD (Media Business), Santos Media, and Local Chapter Services." 
+          content="SCEF operates through 6 specialized divisions: Board Governance & Executive Office, SOBCD, TDSD, OMBDD, Santos Media, and Local Chapter Services." 
         />
-        <meta name="keywords" content="SCEF divisions, SOBCD, TDSD, OMBDD, Santos Media, Local Chapter Services" />
+        <meta name="keywords" content="SCEF divisions, BGEO, SOBCD, TDSD, OMBDD, Santos Media, Local Chapter Services" />
         <link rel="canonical" href="https://scef.org/divisions" />
       </Helmet>
       
@@ -122,10 +143,10 @@ const Divisions = () => {
                   Organizational Structure
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  5 Operational <span className="text-gradient-gold">Divisions</span>
+                  6 Operational <span className="text-gradient-gold">Divisions</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  SCEF operates through five specialized divisions, each with clear mandates, accountability structures, and operational scope to deliver on our institutional mission.
+                  SCEF operates through six specialized divisions, each with clear mandates, leadership, and operational scope to deliver on our institutional mission.
                 </p>
               </div>
             </div>

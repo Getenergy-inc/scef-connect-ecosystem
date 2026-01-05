@@ -23,6 +23,7 @@ import Certifications from "./pages/Certifications";
 import Partners from "./pages/Partners";
 import Divisions from "./pages/Divisions";
 import Updates from "./pages/Updates";
+import BGEO from "./pages/divisions/BGEO";
 import SOBCD from "./pages/divisions/SOBCD";
 import TDSD from "./pages/divisions/TDSD";
 import OMBDD from "./pages/divisions/OMBDD";
@@ -77,6 +78,7 @@ const App = () => (
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/divisions" element={<Divisions />} />
+            <Route path="/divisions/bgeo" element={<BGEO />} />
             <Route path="/divisions/sobcd" element={<SOBCD />} />
             <Route path="/divisions/tdsd" element={<TDSD />} />
             <Route path="/divisions/ombdd" element={<OMBDD />} />
