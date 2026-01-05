@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Laptop, TrendingUp, Tv, Globe } from "lucide-react";
+import { ArrowRight, Shield, Laptop, TrendingUp, Tv, Globe, Building2 } from "lucide-react";
 
 const divisions = [
+  {
+    code: "BGEO",
+    title: "Board Governance & Executive Office",
+    description: "Apex governance structure providing strategic oversight, executive leadership, and organizational coordination.",
+    icon: Building2,
+    leader: "Organization Secretary",
+    href: "/divisions/bgeo",
+  },
   {
     code: "SOBCD",
     title: "Strategic Operations & Business Compliance Division",
     description: "Oversees governance, compliance, finance, audits, risk management, and institutional integrity.",
     icon: Shield,
+    leader: "Director of Operations and Compliance",
     href: "/divisions/sobcd",
   },
   {
@@ -15,6 +24,7 @@ const divisions = [
     title: "Technology & Digital Services Division",
     description: "Manages websites, mobile apps, APIs, databases, digital wallets, AI tools, ICT training, Education Online Africa, and eLibrary Nigeria.",
     icon: Laptop,
+    leader: "Director of Technology and Digital Innovation",
     href: "/divisions/tdsd",
   },
   {
@@ -22,20 +32,23 @@ const divisions = [
     title: "Online Media Business Development Division",
     description: "Drives digital growth, sponsorships, partnerships, and revenue development.",
     icon: TrendingUp,
+    leader: "Director of Media Business Development",
     href: "/divisions/ombdd",
   },
   {
-    code: "Santos Media",
+    code: "SMD",
     title: "Santos Media Division",
     description: "Operates NESA Africa TV, It's In Me Radio, EduAid Webinar Series, and EduAid Education Tourism Show.",
     icon: Tv,
+    leader: "Director of Santos Media",
     href: "/divisions/santos-media",
   },
   {
     code: "LCS",
-    title: "Local Chapter Services",
+    title: "Local Chapter Services Division",
     description: "Handles chapter onboarding, compliance monitoring, performance tracking, and upgrades from online to physical operations.",
     icon: Globe,
+    leader: "Director of Chapter Services and Support",
     href: "/divisions/lcs",
   },
 ];
@@ -52,11 +65,11 @@ export const DivisionsSection = () => {
           </div>
           
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Five Operational <span className="text-scef-gold">Divisions</span>
+            Six Operational <span className="text-scef-gold">Divisions</span>
           </h2>
           
           <p className="text-lg text-muted-foreground leading-relaxed">
-            SCEF operates through five specialized divisions, each with a clear mandate and accountability framework ensuring coordinated institutional delivery.
+            SCEF operates through six specialized divisions, each with clear leadership and accountability framework ensuring coordinated institutional delivery.
           </p>
         </div>
 
@@ -69,7 +82,7 @@ export const DivisionsSection = () => {
               className="group bg-card rounded-2xl p-6 border-2 border-black hover:border-scef-gold hover:shadow-lg transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 <div className="w-12 h-12 rounded-xl bg-scef-blue flex items-center justify-center border-2 border-black group-hover:bg-scef-gold transition-colors">
                   <division.icon className="w-6 h-6 text-scef-gold group-hover:text-scef-blue-dark transition-colors" />
                 </div>
@@ -81,8 +94,11 @@ export const DivisionsSection = () => {
               <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
                 {division.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-2">
                 {division.description}
+              </p>
+              <p className="text-xs font-medium text-scef-blue mb-4">
+                {division.leader}
               </p>
               
               <div className="flex items-center gap-2 text-scef-gold text-sm font-semibold">
