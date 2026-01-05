@@ -1,18 +1,12 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, BookOpen, Heart, ExternalLink } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const projectLinks = [
   { name: "NESA.africa", href: "https://nesa.africa" },
   { name: "EduAid.africa", href: "https://eduaid.africa" },
   { name: "eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng" },
-];
-
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About SCEF", href: "/about" },
-  { name: "Programs", href: "/programs" },
-  { name: "Chapters", href: "/chapters" },
-  { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -24,8 +18,24 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const { t, isRTL } = useLocale();
+
+  const quickLinks = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('footer.programs'), href: '/programs' },
+    { name: t('footer.chapters'), href: '/local-chapters' },
+    { name: t('footer.contact'), href: '/contact' },
+  ];
+
+  const legalLinks = [
+    { name: t('footer.privacy'), href: '/privacy' },
+    { name: t('footer.terms'), href: '/terms' },
+    { name: t('footer.accessibility'), href: '/accessibility' },
+  ];
+
   return (
-    <footer className="bg-scef-blue text-white">
+    <footer className="bg-scef-blue text-white" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Program Logos Banner */}
       <div className="bg-scef-blue-dark border-b border-white/10">
         <div className="container mx-auto px-4 py-6">
@@ -58,10 +68,10 @@ export const Footer = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
-          {/* Location & Phone */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center sm:text-left">
+          {/* Contact Info */}
           <div className="space-y-2">
-            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Contact Info</h4>
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">{t('footer.contact')}</h4>
             <p className="flex items-center justify-center sm:justify-start gap-2 text-white/90">
               <MapPin className="w-4 h-4 text-scef-gold" />
               Lagos, Nigeria
@@ -113,12 +123,27 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Tagline */}
+          {/* Legal */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Our Mission</h4>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Governing Africa's Education Future through advocacy, funding, and certification of educational excellence across the continent.
-            </p>
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Legal</h4>
+            <ul className="space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.href}
+                    className="text-sm text-white/70 hover:text-scef-gold transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Language */}
+          <div>
+            <h4 className="font-display font-semibold text-lg mb-3 text-scef-gold">Language</h4>
+            <LanguageSwitcher variant="footer" />
           </div>
         </div>
       </div>
