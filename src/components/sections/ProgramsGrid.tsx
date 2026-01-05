@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { siteContent } from "@/config/siteContent";
+import { useState } from "react";
+import { Play, X } from "lucide-react";
 
 export const ProgramsGrid = () => {
   const { programs } = siteContent.homepage;
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
     <section className="py-16 bg-background">
@@ -12,35 +15,72 @@ export const ProgramsGrid = () => {
           Our Programs
         </h2>
 
-        {/* Programs Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {/* Programs Grid - 7 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
           {programs.map((program) => (
-            <Link
-              key={program.id}
-              to={program.href}
-              className="group block"
-            >
+            <div key={program.id} className="group">
               {/* Card */}
               <div className="bg-card rounded-xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-                {/* Image */}
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                {/* Image/Logo */}
+                <Link to={program.href}>
+                  <div className="aspect-square overflow-hidden bg-muted flex items-center justify-center p-2">
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </Link>
 
-                {/* Title */}
-                <div className="p-4">
-                  <h3 className="font-display text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    {program.title}
-                  </h3>
+                {/* Title & Video Button */}
+                <div className="p-3">
+                  <Link to={program.href}>
+                    <h3 className="font-display text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[2.5rem]">
+                      {program.title}
+                    </h3>
+                  </Link>
+                  
+                  {/* Video Play Button */}
+                  {program.video && (
+                    <button
+                      onClick={() => setActiveVideo(program.video!)}
+                      className="mt-2 flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+                    >
+                      <Play className="w-3 h-3" />
+                      Watch Video
+                    </button>
+                  )}
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
+
+        {/* Video Modal */}
+        {activeVideo && (
+          <div 
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setActiveVideo(null)}
+          >
+            <div 
+              className="relative max-w-4xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <video
+                src={activeVideo}
+                controls
+                autoPlay
+                className="w-full rounded-lg"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
