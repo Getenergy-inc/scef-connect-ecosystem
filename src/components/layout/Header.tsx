@@ -102,16 +102,30 @@ export const Header = () => {
       )}
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full bg-scef-gold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-            <BookOpen className="w-6 h-6 text-scef-blue-dark" />
+        {/* Logo with SCEF, NESA, EduAid logos */}
+        <Link to="/" className="flex items-center gap-2 md:gap-3 group">
+          <div className="flex items-center gap-2">
+            <img 
+              src="/assets/scef-logo.jpg" 
+              alt="SCEF Logo" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <img 
+              src="/assets/nesa-africa-logo.jpg" 
+              alt="NESA Africa Logo" 
+              className="h-8 md:h-10 w-auto object-contain rounded-full hidden sm:block"
+            />
+            <img 
+              src="/assets/eduaid-africa-logo.jpg" 
+              alt="EduAid Africa Logo" 
+              className="h-8 md:h-10 w-auto object-contain hidden md:block"
+            />
           </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-xl leading-tight text-scef-gold">
+          <div className="flex flex-col ml-1">
+            <span className="font-display font-bold text-lg md:text-xl leading-tight text-scef-gold">
               SCEF
             </span>
-            <span className="text-[9px] uppercase tracking-wider text-white/70 leading-tight">
+            <span className="text-[9px] uppercase tracking-wider text-white/70 leading-tight hidden lg:block">
               Santos Creations Educational Foundation
             </span>
           </div>
