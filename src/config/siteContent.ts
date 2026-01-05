@@ -68,6 +68,13 @@ export const siteContent = {
     },
     programs: [
       {
+        id: "nesa-africa",
+        title: "NESA-Africa",
+        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600",
+        href: "/programs/nesa-africa",
+        description: "New Education Standard Award recognizing excellence in African education.",
+      },
+      {
         id: "eduaid-africa",
         title: "EduAid-Africa",
         image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=600",
@@ -82,18 +89,11 @@ export const siteContent = {
         description: "Infrastructure development and school rebuilding initiatives.",
       },
       {
-        id: "nesa-tv",
-        title: "NESA TV",
-        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600",
-        href: "/media#nesa-tv",
-        description: "Educational broadcasting and award ceremonies.",
-      },
-      {
-        id: "its-in-me-radio",
-        title: "It's In Me Radio",
-        image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600",
-        href: "/media#its-in-me-radio",
-        description: "Inspiring stories from educators and students.",
+        id: "elibrary-nigeria",
+        title: "eLibrary Nigeria",
+        image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600",
+        href: "/programs/elibrary-nigeria",
+        description: "Digital library resources for Nigerian students and educators.",
       },
     ],
   },
