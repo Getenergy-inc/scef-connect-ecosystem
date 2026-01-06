@@ -1,0 +1,264 @@
+{
+  "nav": {
+    "utility": {
+      "bot": "Conseil des administrateurs (BOT)",
+      "boa": "Conseil consultatif (BOA)",
+      "bod": "Conseil de direction (BOD)",
+      "lcps": "Présidents des chapitres locaux (LCPs)",
+      "management": "Équipe de direction"
+    },
+    "top": {
+      "about": "À propos de SCEF",
+      "work": "Nos Programmes",
+      "chapters": "Chapitres Locaux",
+      "getInvolved": "S'impliquer",
+      "media": "Médias Santos",
+      "search": "Rechercher",
+      "donate": "Faire un don",
+      "signin": "Connexion",
+      "signup": "Inscription",
+      "dashboard": "Tableau de bord"
+    },
+    "dropdown": {
+      "about": {
+        "overview": "Présentation",
+        "history": "Notre histoire",
+        "vision": "Vision 2035",
+        "sustainability": "Durabilité, ODD & Agenda 2063",
+        "governance": "Gouvernance",
+        "divisions": "Nos divisions"
+      },
+      "work": {
+        "nesa": "New Education Standard Award Africa (NESA Africa)",
+        "eduaid": "Education Aid Africa (EduAid Africa)",
+        "rmsa": "Rebuild My School Africa (RMSA)",
+        "eoa": "Education Online Africa (EOA) — Apprentissage & Certification",
+        "awpc": "Africa Workplace Productivity Certification (AWPC)",
+        "womenGirls": "Éducation des femmes et des filles",
+        "specialNeeds": "Soutien à l'éducation spécialisée",
+        "elibrary": "eLibrary Nigeria",
+        "hub": "Tous les programmes"
+      },
+      "chapters": {
+        "browse": "Parcourir les chapitres",
+        "join": "Rejoindre un chapitre",
+        "create": "Créer un chapitre",
+        "upgrade": "Mettre à niveau un chapitre",
+        "leadership": "Postuler comme leader de chapitre (LCP)"
+      },
+      "getInvolved": {
+        "member": "Devenir membre",
+        "ambassador": "Devenir ambassadeur",
+        "volunteer": "Bénévolat",
+        "scholarship": "Demander une bourse",
+        "csr": "Partenariat / CSR",
+        "donate": "Faire un don"
+      },
+      "media": {
+        "hub": "Centre médias",
+        "nesaTv": "NESA Africa TV",
+        "radio": "It's In Me Radio",
+        "webinars": "Webinaires & podcast EduAid Africa",
+        "tourism": "Émission Tourisme éducatif",
+        "volunteer": "Devenir bénévole média"
+      }
+    },
+    "language": {
+      "label": "Langue",
+      "cta": "Changer de langue"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "L'Éducation pour Tous en Afrique — portée par les membres, les chapitres et les partenaires",
+      "subtitle": "SCEF est une fondation panafricaine axée sur l'adhésion, qui fait progresser l'éducation grâce aux bourses, au renouvellement des écoles, aux certifications fiables et au plaidoyer médiatique — avec des chapitres locaux, la diaspora et des partenaires CSR.",
+      "ctaPrimary": "Devenir membre",
+      "ctaDonate": "Faire un don",
+      "ctaAmbassador": "Devenir ambassadeur",
+      "ctaJoinChapter": "Rejoindre un chapitre local"
+    },
+    "quickPath": {
+      "title": "Choisissez votre parcours",
+      "certified": "🎓 Apprendre & se certifier",
+      "joinChapter": "🤝 Rejoindre un chapitre",
+      "donatePartner": "❤️ Donner ou devenir partenaire",
+      "ambassador": "🌍 Devenir ambassadeur"
+    },
+    "board": {
+      "title": "Tableau d'annonces numériques",
+      "desc": "Mises à jour en rotation (vidéo / audio / affiche / texte), gérées par l'Admin et l'équipe média.",
+      "viewAll": "Voir toutes les mises à jour"
+    },
+    "impact": {
+      "title": "Aperçu de l'impact",
+      "cta": "Voir ce que nous faisons ce mois-ci",
+      "metrics": {
+        "scholarships": "Bourses soutenues",
+        "schools": "Écoles rénovées (RMSA)",
+        "womenGirls": "Femmes & filles touchées",
+        "specialNeeds": "Apprenants à besoins spécifiques soutenus",
+        "chapters": "Chapitres actifs",
+        "partners": "Partenaires & donateurs"
+      }
+    },
+    "programs": {
+      "title": "Nos programmes",
+      "groupCore": "Impact principal",
+      "groupAwards": "Prix & reconnaissance",
+      "groupDigital": "Numérique & certification",
+      "ctaAll": "Découvrir tous les programmes"
+    },
+    "eoa": {
+      "title": "Apprendre. Se certifier. Renouveler. Devenir employable.",
+      "body": "Education Online Africa (EOA) est la plateforme d'apprentissage et de certification de SCEF — pour acquérir des compétences pratiques, obtenir des diplômes vérifiables et renouveler tous les 24 mois afin de rester compétitif.",
+      "ctaStart": "Commencer à apprendre",
+      "ctaCertify": "Obtenir une certification (ACDL / AWPC)",
+      "ctaExam": "Portail d'examens",
+      "ctaPartner": "Devenir affilié / centre de test"
+    },
+    "media": {
+      "title": "Médias Santos",
+      "ctaVolunteer": "Devenir bénévole média"
+    },
+    "divisions": {
+      "title": "Comment SCEF fonctionne (6 divisions)"
+    },
+    "chaptersBlock": {
+      "title": "Rejoindre un chapitre local",
+      "body": "Trouvez votre chapitre pays, rejoignez des acteurs du changement et participez à des projets concrets.",
+      "ctaBrowse": "Parcourir",
+      "ctaJoin": "Rejoindre",
+      "ctaCreate": "Créer",
+      "ctaLeader": "Postuler comme leader"
+    },
+    "partnerships": {
+      "title": "Partenariats & gestion de fonds CSR pour l'éducation",
+      "body": "SCEF travaille avec des partenaires de confiance pour financer les bourses, rénover les écoles, étendre l'accès à l'apprentissage et publier l'impact de manière transparente.",
+      "ctaCsr": "Partenariat CSR",
+      "ctaRequest": "Demander une proposition / réunion",
+      "ctaEndorse": "Endosser SCEF / Programmes"
+    },
+    "final": {
+      "title": "Participez à la transformation de l'éducation en Afrique",
+      "ctaJoin": "Devenir membre",
+      "ctaDonate": "Faire un don",
+      "ctaPartner": "Devenir partenaire (CSR)"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "À propos de Santos Creations Educational Foundation (SCEF)",
+      "subtitle": "SCEF est une ONG panafricaine axée sur l'adhésion, qui fait progresser l'Éducation pour Tous via des programmes d'impact, des chapitres locaux, le plaidoyer médiatique, des certifications fiables et des partenariats CSR.",
+      "ctaJoin": "Devenir membre",
+      "ctaDonate": "Faire un don",
+      "ctaAmbassador": "Devenir ambassadeur",
+      "ctaJoinChapter": "Rejoindre un chapitre",
+      "ctaCsr": "Partenariat CSR"
+    },
+    "who": {
+      "title": "Qui nous sommes",
+      "body": "SCEF bâtit un écosystème éducatif connecté — avec une gouvernance structurée, des programmes intégrés et un modèle d'adhésion — pour améliorer l'accès, la qualité, l'inclusion et l'impact mesurable à travers l'Afrique et la diaspora.",
+      "ctaPrograms": "Explorer nos programmes",
+      "ctaUpdates": "Voir les mises à jour"
+    },
+    "objectives": {
+      "title": "Nos 6 objectifs",
+      "items": [
+        "Établir une gouvernance à plusieurs niveaux pour la mise en œuvre de l'éducation.",
+        "Déployer des plateformes numériques pour l'accès et la certification.",
+        "Développer les médias pour la diffusion des connaissances.",
+        "Intégrer et suivre les chapitres locaux pour la conformité.",
+        "Sécuriser le financement et les partenariats avec redevabilité.",
+        "Aligner les opérations sur les ODD de l'ONU et l'Agenda 2063 de l'UA pour l'évolutivité."
+      ],
+      "ctaDownload": "Télécharger le profil SCEF (PDF)"
+    },
+    "history": {
+      "title": "Notre histoire",
+      "body": "SCEF s'est construit au fil du temps pour devenir une plateforme panafricaine axée sur l'adhésion. Aujourd'hui, nous renforçons les systèmes éducatifs grâce à des programmes, des médias, des chapitres locaux et des partenariats responsables.",
+      "ctaGovernance": "Voir la gouvernance"
+    },
+    "vision": {
+      "title": "Vision 2035",
+      "body": "D'ici 2035, SCEF vise à soutenir un standard éducatif en amélioration continue à travers l'Afrique — en renforçant l'action des chapitres, l'inclusion, la certification fiable et le financement éthique avec un reporting crédible.",
+      "ctaJoin": "Devenir membre",
+      "ctaPartner": "Partenariat CSR"
+    },
+    "sustainability": {
+      "title": "Durabilité, ODD & Agenda 2063",
+      "body": "SCEF conçoit ses programmes pour un impact social mesurable, une transparence durable et une inclusion réelle — en alignement avec l'ODD 4, les ODD connexes et l'Agenda 2063 de l'Union Africaine.",
+      "csrFundsTitle": "Gestion de fonds CSR pour l'éducation",
+      "csrFundsBody": "Nous aidons les partenaires à structurer, déployer et suivre des fonds CSR dédiés à l'éducation — avec gouvernance, supervision d'exécution et reporting d'impact.",
+      "ctaCsr": "Partenariat CSR",
+      "ctaRequest": "Demander une proposition / réunion",
+      "ctaEndorse": "Endosser SCEF / Programmes"
+    },
+    "programs": {
+      "title": "Nos 6 programmes",
+      "intro": "SCEF délivre l'impact à travers six programmes phares, conçus pour fonctionner ensemble sur l'accès, la qualité, l'inclusion, les compétences et la reconnaissance.",
+      "cards": {
+        "nesa": "New Education Standard Award Africa (NESA Africa) — Reconnaissance et amplification de l'excellence éducative.",
+        "eduaid": "Education Aid Africa (EduAid Africa) — Bourses, parcours de soutien et financement éducatif.",
+        "rmsa": "Rebuild My School Africa (RMSA) — Renouvellement des écoles et amélioration des environnements d'apprentissage.",
+        "eoa": "Education Online Africa (EOA) — Apprentissage numérique et certification vérifiable.",
+        "womenGirls": "Éducation des femmes et des filles — Interventions ciblées pour l'accès et les résultats.",
+        "specialNeeds": "Soutien à l'éducation spécialisée — Inclusion et accompagnement des apprenants à besoins spécifiques."
+      },
+      "ctaAll": "Découvrir tous les programmes"
+    },
+    "eoaSpotlight": {
+      "title": "Education Online Africa (EOA) : Apprendre. Se certifier. Renouveler.",
+      "body": "EOA aide les apprenants à acquérir des compétences pratiques, obtenir des diplômes vérifiables et renouveler tous les 24 mois. Les parcours incluent ACDL et AWPC, ainsi qu'un portail d'examens avec contrôles d'intégrité.",
+      "ctaStart": "Commencer",
+      "ctaCertify": "Se certifier (ACDL / AWPC)",
+      "ctaAwpc": "AWPC",
+      "ctaExam": "Portail d'examens",
+      "ctaRpl": "Mettre à niveau mon certificat (RPL)",
+      "ctaRenew": "Renouveler mon certificat",
+      "ctaPartner": "Devenir affilié / centre de test"
+    },
+    "divisions": {
+      "title": "Comment SCEF fonctionne (6 divisions)",
+      "items": {
+        "exec": "Gouvernance & Bureau exécutif — Secrétaire exécutif (juridique & gouvernance) + PRO",
+        "sobcd": "SOBCD — Administration, RH, supervision finance, événements, formation, conformité",
+        "tdsd": "TDSD — Web/App, CMS, base de données, sécurité, analytique, systèmes prêts pour wallet",
+        "ombdd": "OMBDD — Communication fundraising, sponsors, croissance, pipeline partenariats",
+        "santosMedia": "Division Santos Media — TV/Radio/Webinaires/Tourisme éducatif",
+        "lcs": "Division Services des chapitres locaux (LCS) — Activation, support, gouvernance, reporting"
+      }
+    },
+    "trust": {
+      "title": "Gouvernance & confiance",
+      "body": "SCEF maintient une gouvernance structurée et une redevabilité par des conseils, des politiques, et des rapports d'impact transparents.",
+      "ctaHub": "Centre de gouvernance",
+      "ctaBot": "Board of Trustees (BOT)",
+      "ctaPolicies": "Politiques & conformité"
+    },
+    "final": {
+      "title": "Rejoignez la transformation de l'éducation en Afrique",
+      "ctaJoin": "Devenir membre",
+      "ctaDonate": "Faire un don",
+      "ctaPartner": "Partenariat CSR"
+    }
+  },
+  "footer": {
+    "columns": {
+      "programs": "Programmes",
+      "media": "Médias",
+      "chapters": "Chapitres locaux",
+      "getInvolved": "S'impliquer",
+      "contact": "Contact"
+    },
+    "legal": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "accessibility": "Accessibilité"
+    },
+    "social": {
+      "label": "Suivez-nous"
+    },
+    "copyright": "© {year} Santos Creations Educational Foundation. Tous droits réservés.",
+    "mission": "Gouverner l'avenir de l'éducation en Afrique par le plaidoyer, le financement et la certification de l'excellence éducative sur le continent."
+  }
+}
