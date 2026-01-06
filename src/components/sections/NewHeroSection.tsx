@@ -2,16 +2,20 @@ import { Link } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
 import { Button } from "@/components/ui/button";
 import { Users, Heart, Award, MapPin, Handshake, ArrowRight } from "lucide-react";
+import heroLanding from "@/assets/hero-landing.png";
 
 export const HeroSection = () => {
   const { t, isRTL } = useLocale();
 
   return (
     <section className="relative min-h-[80vh] flex items-center bg-scef-blue overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-scef-gold/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-scef-blue-light/30 rounded-full blur-3xl" />
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroLanding})` }}
+      />
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-scef-blue/90 via-scef-blue/70 to-transparent" />
       
       <div className="container mx-auto px-4 relative z-10 py-16">
         <div className="max-w-4xl">
