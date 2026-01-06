@@ -49,10 +49,10 @@ const programs = [
   },
   {
     icon: Globe,
-    title: "Digital Learning",
-    subtitle: "E-Learning Platforms",
-    description: "Bridging the digital divide with e-learning platforms and resources that make quality education accessible from anywhere on the continent.",
-    features: ["E-Learning Platform", "Digital Resources", "Virtual Classrooms", "Mobile Learning"],
+    title: "Education Online Africa",
+    subtitle: "Learning & Certification Platform",
+    description: "SCEF's digital learning and certification platform helping learners build practical skills, earn verifiable credentials, and stay job-ready with 24-month renewals.",
+    features: ["E-Learning Platform", "ACDL & AWPC Certifications", "Exam Portal", "Affiliate Test Centers"],
     href: "/programs/digital-learning",
   },
   {
