@@ -95,7 +95,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'gov.bod': 'Board of Directors (BOD)',
     'gov.lcps': 'Local Chapter Presidents (LCPs)',
     'gov.management': 'Management Team',
-    // Hero
+    // Hero (legacy)
     'hero.headline': 'Education for All Across Africa — powered by members, chapters & partners',
     'hero.subtext': 'SCEF is a membership-driven Pan-African foundation advancing education through scholarships, school renewal, trusted certifications & media advocacy — with local chapters, diaspora & CSR partners.',
     'hero.cta.member': 'Join as a Member',
@@ -103,17 +103,79 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.cta.ambassador': 'Become an Ambassador',
     'hero.cta.chapter': 'Join a Local Chapter',
     'hero.cta.partner': 'Partner (CSR)',
-    // Quick Path
+    // Home - Hero
+    'home.hero.title': 'Education for All Across Africa — powered by members, chapters & partners',
+    'home.hero.subtitle': 'SCEF is a membership-driven Pan-African foundation advancing education through scholarships, school renewal, trusted certifications & media advocacy — with local chapters, diaspora & CSR partners.',
+    'home.hero.ctaPrimary': 'Join as a Member',
+    'home.hero.ctaDonate': 'Donate Now',
+    'home.hero.ctaAmbassador': 'Become an Ambassador',
+    'home.hero.ctaJoinChapter': 'Join a Local Chapter',
+    // Home - Quick Path
+    'home.quickPath.title': 'Choose Your Path',
+    'home.quickPath.certified': '🎓 Learn & Get Certified',
+    'home.quickPath.joinChapter': '🤝 Join a Local Chapter',
+    'home.quickPath.donatePartner': '❤️ Donate or Partner',
+    'home.quickPath.ambassador': '🌍 Become an Ambassador',
+    // Home - Digital Board
+    'home.board.title': 'Digital Notice Board',
+    'home.board.desc': 'Rotating updates (video / audio / flyer / text), managed by Admin and media team.',
+    'home.board.viewAll': 'View all updates',
+    // Home - Impact
+    'home.impact.title': 'Impact Snapshot',
+    'home.impact.cta': 'See what we are doing this month',
+    'home.impact.metrics.scholarships': 'Scholarships Supported',
+    'home.impact.metrics.schools': 'Schools Rebuilt (RMSA)',
+    'home.impact.metrics.womenGirls': 'Women & Girls Reached',
+    'home.impact.metrics.specialNeeds': 'Special Needs Supported',
+    'home.impact.metrics.chapters': 'Active Chapters',
+    'home.impact.metrics.partners': 'Partners & Donors',
+    // Home - Programs
+    'home.programs.title': 'Our Programs',
+    'home.programs.groupCore': 'Core Impact',
+    'home.programs.groupAwards': 'Awards & Recognition',
+    'home.programs.groupDigital': 'Digital & Certification',
+    'home.programs.ctaAll': 'Explore all programs',
+    // Home - EOA
+    'home.eoa.title': 'Learn. Certify. Renew. Get Employable.',
+    'home.eoa.body': 'Education Online Africa (EOA) is SCEF\'s learning & certification platform — for practical skills, verifiable credentials & 24-month renewals to stay job-ready.',
+    'home.eoa.ctaStart': 'Start Learning',
+    'home.eoa.ctaCertify': 'Get Certified (ACDL / AWPC)',
+    'home.eoa.ctaExam': 'Examination Portal',
+    'home.eoa.ctaPartner': 'Become Affiliate / Test Center',
+    // Home - Media
+    'home.media.title': 'Santos Media',
+    'home.media.ctaVolunteer': 'Become a Media Volunteer',
+    // Home - Divisions
+    'home.divisions.title': 'How SCEF Works (6 Divisions)',
+    // Home - Chapters Block
+    'home.chaptersBlock.title': 'Join a Local Chapter',
+    'home.chaptersBlock.body': 'Find your country chapter, connect with changemakers, and join impact projects on the ground.',
+    'home.chaptersBlock.ctaBrowse': 'Browse',
+    'home.chaptersBlock.ctaJoin': 'Join',
+    'home.chaptersBlock.ctaCreate': 'Create',
+    'home.chaptersBlock.ctaLeader': 'Apply as Leader',
+    // Home - Partnerships
+    'home.partnerships.title': 'Partnerships & CSR Education Funds Management',
+    'home.partnerships.body': 'SCEF works with trusted partners to fund scholarships, renew schools, extend learning access & publish impact transparently.',
+    'home.partnerships.ctaCsr': 'Partner CSR',
+    'home.partnerships.ctaRequest': 'Request Proposal / Meeting',
+    'home.partnerships.ctaEndorse': 'Endorse SCEF / Programs',
+    // Home - Final CTA
+    'home.final.title': 'Be part of education transformation across Africa',
+    'home.final.ctaJoin': 'Join as a Member',
+    'home.final.ctaDonate': 'Donate',
+    'home.final.ctaPartner': 'Partner (CSR)',
+    // Quick Path (legacy)
     'path.title': 'Choose Your Path',
     'path.learn': '🎓 Learn & Get Certified',
     'path.chapter': '🤝 Join a Local Chapter',
     'path.donate': '❤️ Donate or Partner',
     'path.ambassador': '🌍 Become an Ambassador',
-    // Digital Board
+    // Digital Board (legacy)
     'board.title': 'Digital Notice Board',
     'board.desc': 'Rotating updates (video / audio / flyer / text), managed by Admin and media team.',
     'board.viewAll': 'View all updates',
-    // Impact
+    // Impact (legacy)
     'impact.title': 'Impact Snapshot',
     'impact.cta': 'See what we are doing this month',
     'impact.scholarships': 'Scholarships Supported',
@@ -123,13 +185,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'impact.chapters': 'Active Chapters',
     'impact.partners': 'Partners & Donors',
     'impact.updates': 'Monthly Updates',
-    // Programs
+    // Programs (legacy)
     'programs.title': 'Our Programs',
     'programs.groupCore': 'Core Impact',
     'programs.groupAwards': 'Awards & Recognition',
     'programs.groupDigital': 'Digital & Certification',
     'programs.ctaAll': 'Explore all programs',
-    // EOA
+    // EOA (legacy)
     'eoa.title': 'Learn. Certify. Renew. Get Employable.',
     'eoa.body': 'Education Online Africa (EOA) is SCEF\'s learning & certification platform — for practical skills, verifiable credentials & 24-month renewals to stay job-ready.',
     'eoa.tagline': 'Learn. Certify. Renew. Get Employable.',
@@ -137,29 +199,31 @@ const translations: Record<Locale, Record<string, string>> = {
     'eoa.certify': 'Get Certified (ACDL / AWPC)',
     'eoa.exams': 'Examination Portal',
     'eoa.partner': 'Become Affiliate / Test Center',
-    // Media
+    // Media (legacy)
     'media.title': 'Santos Media',
     'media.ctaVolunteer': 'Become a Media Volunteer',
-    // Divisions
+    // Divisions (legacy)
     'divisions.title': 'How SCEF Works (6 Divisions)',
-    // Chapters Block
+    // Chapters Block (legacy)
     'chaptersBlock.title': 'Join a Local Chapter',
     'chaptersBlock.body': 'Find your country chapter, connect with changemakers, and join impact projects on the ground.',
     'chaptersBlock.ctaBrowse': 'Browse',
     'chaptersBlock.ctaJoin': 'Join',
     'chaptersBlock.ctaCreate': 'Create',
     'chaptersBlock.ctaLeader': 'Apply as Leader',
-    // Partnerships
+    // Partnerships (legacy)
     'partnerships.title': 'Partnerships & CSR Education Funds Management',
     'partnerships.body': 'SCEF works with trusted partners to fund scholarships, renew schools, extend learning access & publish impact transparently.',
     'partnerships.ctaCsr': 'Partner CSR',
     'partnerships.ctaRequest': 'Request Proposal / Meeting',
     'partnerships.ctaEndorse': 'Endorse SCEF / Programs',
-    // Final CTA
+    // Final CTA (legacy)
     'final.title': 'Be part of education transformation across Africa',
     'final.ctaJoin': 'Join as a Member',
     'final.ctaDonate': 'Donate',
     'final.ctaPartner': 'Partner (CSR)',
+    // Nav Get Involved
+    'nav.getInvolved.csr': 'Partner / CSR',
     // About Page
     'about.hero.title': 'About Santos Creations Educational Foundation (SCEF)',
     'about.hero.subtitle': 'SCEF is a membership-driven Pan-African NGO advancing Education for All through impact programs, local chapters, media advocacy, trusted certifications & CSR partnerships.',
@@ -303,7 +367,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'gov.bod': 'Conseil de direction (BOD)',
     'gov.lcps': 'Présidents des chapitres locaux (LCPs)',
     'gov.management': 'Équipe de direction',
-    // Hero
+    // Hero (legacy)
     'hero.headline': "L'Éducation pour Tous en Afrique — portée par les membres, les chapitres et les partenaires",
     'hero.subtext': "SCEF est une fondation panafricaine axée sur l'adhésion, qui fait progresser l'éducation grâce aux bourses, au renouvellement des écoles, aux certifications fiables et au plaidoyer médiatique — avec des chapitres locaux, la diaspora et des partenaires CSR.",
     'hero.cta.member': 'Devenir membre',
@@ -311,17 +375,81 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.cta.ambassador': 'Devenir ambassadeur',
     'hero.cta.chapter': 'Rejoindre un chapitre local',
     'hero.cta.partner': 'Partenaire (RSE)',
-    // Quick Path
+    // Home - Hero
+    'home.hero.title': "L'Éducation pour Tous en Afrique — portée par les membres, les chapitres et les partenaires",
+    'home.hero.subtitle': "SCEF est une fondation panafricaine axée sur l'adhésion, qui fait progresser l'éducation grâce aux bourses, au renouvellement des écoles, aux certifications fiables et au plaidoyer médiatique — avec des chapitres locaux, la diaspora et des partenaires CSR.",
+    'home.hero.ctaPrimary': 'Devenir membre',
+    'home.hero.ctaDonate': 'Faire un don',
+    'home.hero.ctaAmbassador': 'Devenir ambassadeur',
+    'home.hero.ctaJoinChapter': 'Rejoindre un chapitre local',
+    // Home - Quick Path
+    'home.quickPath.title': 'Choisissez votre parcours',
+    'home.quickPath.certified': '🎓 Apprendre & se certifier',
+    'home.quickPath.joinChapter': '🤝 Rejoindre un chapitre',
+    'home.quickPath.donatePartner': '❤️ Donner ou devenir partenaire',
+    'home.quickPath.ambassador': '🌍 Devenir ambassadeur',
+    // Home - Digital Board
+    'home.board.title': "Tableau d'annonces numériques",
+    'home.board.desc': "Mises à jour en rotation (vidéo / audio / affiche / texte), gérées par l'Admin et l'équipe média.",
+    'home.board.viewAll': 'Voir toutes les mises à jour',
+    // Home - Impact
+    'home.impact.title': "Aperçu de l'impact",
+    'home.impact.cta': 'Voir ce que nous faisons ce mois-ci',
+    'home.impact.metrics.scholarships': 'Bourses soutenues',
+    'home.impact.metrics.schools': 'Écoles rénovées (RMSA)',
+    'home.impact.metrics.womenGirls': 'Femmes & filles touchées',
+    'home.impact.metrics.specialNeeds': 'Apprenants à besoins spécifiques soutenus',
+    'home.impact.metrics.chapters': 'Chapitres actifs',
+    'home.impact.metrics.partners': 'Partenaires & donateurs',
+    // Home - Programs
+    'home.programs.title': 'Nos programmes',
+    'home.programs.groupCore': 'Impact principal',
+    'home.programs.groupAwards': 'Prix & reconnaissance',
+    'home.programs.groupDigital': 'Numérique & certification',
+    'home.programs.ctaAll': 'Découvrir tous les programmes',
+    // Home - EOA
+    'home.eoa.title': 'Apprendre. Se certifier. Renouveler. Devenir employable.',
+    'home.eoa.body': "Education Online Africa (EOA) est la plateforme d'apprentissage et de certification de SCEF — pour acquérir des compétences pratiques, obtenir des diplômes vérifiables et renouveler tous les 24 mois afin de rester compétitif.",
+    'home.eoa.ctaStart': 'Commencer à apprendre',
+    'home.eoa.ctaCertify': 'Obtenir une certification (ACDL / AWPC)',
+    'home.eoa.ctaExam': "Portail d'examens",
+    'home.eoa.ctaPartner': 'Devenir affilié / centre de test',
+    // Home - Media
+    'home.media.title': 'Médias Santos',
+    'home.media.ctaVolunteer': 'Devenir bénévole média',
+    // Home - Divisions
+    'home.divisions.title': 'Comment SCEF fonctionne (6 divisions)',
+    // Home - Chapters Block
+    'home.chaptersBlock.title': 'Rejoindre un chapitre local',
+    'home.chaptersBlock.body': 'Trouvez votre chapitre pays, rejoignez des acteurs du changement et participez à des projets concrets.',
+    'home.chaptersBlock.ctaBrowse': 'Parcourir',
+    'home.chaptersBlock.ctaJoin': 'Rejoindre',
+    'home.chaptersBlock.ctaCreate': 'Créer',
+    'home.chaptersBlock.ctaLeader': 'Postuler comme leader',
+    // Home - Partnerships
+    'home.partnerships.title': "Partenariats & gestion de fonds CSR pour l'éducation",
+    'home.partnerships.body': "SCEF travaille avec des partenaires de confiance pour financer les bourses, rénover les écoles, étendre l'accès à l'apprentissage et publier l'impact de manière transparente.",
+    'home.partnerships.ctaCsr': 'Partenariat CSR',
+    'home.partnerships.ctaRequest': 'Demander une proposition / réunion',
+    'home.partnerships.ctaEndorse': 'Endosser SCEF / Programmes',
+    // Home - Final CTA
+    'home.final.title': "Participez à la transformation de l'éducation en Afrique",
+    'home.final.ctaJoin': 'Devenir membre',
+    'home.final.ctaDonate': 'Faire un don',
+    'home.final.ctaPartner': 'Devenir partenaire (CSR)',
+    // Nav Get Involved
+    'nav.getInvolved.csr': 'Partenariat / CSR',
+    // Quick Path (legacy)
     'path.title': 'Choisissez votre parcours',
     'path.learn': '🎓 Apprendre & se certifier',
     'path.chapter': '🤝 Rejoindre un chapitre',
     'path.donate': '❤️ Donner ou devenir partenaire',
     'path.ambassador': '🌍 Devenir ambassadeur',
-    // Digital Board
+    // Digital Board (legacy)
     'board.title': "Tableau d'annonces numériques",
     'board.desc': "Mises à jour en rotation (vidéo / audio / affiche / texte), gérées par l'Admin et l'équipe média.",
     'board.viewAll': 'Voir toutes les mises à jour',
-    // Impact
+    // Impact (legacy)
     'impact.title': "Aperçu de l'impact",
     'impact.cta': 'Voir ce que nous faisons ce mois-ci',
     'impact.scholarships': 'Bourses soutenues',
@@ -331,13 +459,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'impact.chapters': 'Chapitres actifs',
     'impact.partners': 'Partenaires & donateurs',
     'impact.updates': 'Mises à jour mensuelles',
-    // Programs
+    // Programs (legacy)
     'programs.title': 'Nos programmes',
     'programs.groupCore': 'Impact principal',
     'programs.groupAwards': 'Prix & reconnaissance',
     'programs.groupDigital': 'Numérique & certification',
     'programs.ctaAll': 'Découvrir tous les programmes',
-    // EOA
+    // EOA (legacy)
     'eoa.title': 'Apprendre. Se certifier. Renouveler. Devenir employable.',
     'eoa.body': "Education Online Africa (EOA) est la plateforme d'apprentissage et de certification de SCEF — pour acquérir des compétences pratiques, obtenir des diplômes vérifiables et renouveler tous les 24 mois afin de rester compétitif.",
     'eoa.tagline': 'Apprendre. Certifier. Renouveler. Devenir Employable.',
@@ -345,25 +473,25 @@ const translations: Record<Locale, Record<string, string>> = {
     'eoa.certify': 'Obtenir une certification (ACDL / AWPC)',
     'eoa.exams': "Portail d'examens",
     'eoa.partner': 'Devenir affilié / centre de test',
-    // Media
+    // Media (legacy)
     'media.title': 'Médias Santos',
     'media.ctaVolunteer': 'Devenir bénévole média',
-    // Divisions
+    // Divisions (legacy)
     'divisions.title': 'Comment SCEF fonctionne (6 divisions)',
-    // Chapters Block
+    // Chapters Block (legacy)
     'chaptersBlock.title': 'Rejoindre un chapitre local',
     'chaptersBlock.body': 'Trouvez votre chapitre pays, rejoignez des acteurs du changement et participez à des projets concrets.',
     'chaptersBlock.ctaBrowse': 'Parcourir',
     'chaptersBlock.ctaJoin': 'Rejoindre',
     'chaptersBlock.ctaCreate': 'Créer',
     'chaptersBlock.ctaLeader': 'Postuler comme leader',
-    // Partnerships
+    // Partnerships (legacy)
     'partnerships.title': "Partenariats & gestion de fonds CSR pour l'éducation",
     'partnerships.body': "SCEF travaille avec des partenaires de confiance pour financer les bourses, rénover les écoles, étendre l'accès à l'apprentissage et publier l'impact de manière transparente.",
     'partnerships.ctaCsr': 'Partenariat CSR',
     'partnerships.ctaRequest': 'Demander une proposition / réunion',
     'partnerships.ctaEndorse': 'Endosser SCEF / Programmes',
-    // Final CTA
+    // Final CTA (legacy)
     'final.title': "Participez à la transformation de l'éducation en Afrique",
     'final.ctaJoin': 'Devenir membre',
     'final.ctaDonate': 'Faire un don',
@@ -511,7 +639,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'gov.bod': 'مجلس الإدارة (BOD)',
     'gov.lcps': 'رؤساء الفروع المحلية (LCPs)',
     'gov.management': 'فريق الإدارة',
-    // Hero
+    // Hero (legacy)
     'hero.headline': 'التعليم للجميع في أفريقيا — بقيادة الأعضاء والفروع والشركاء',
     'hero.subtext': 'SCEF مؤسسة إفريقية قائمة على العضوية تدعم التعليم عبر المنح الدراسية، تجديد المدارس، الشهادات الموثوقة، والدفاع الإعلامي — بالتعاون مع الفروع المحلية والجاليات في الخارج وشركاء المسؤولية الاجتماعية.',
     'hero.cta.member': 'انضم كعضو',
@@ -519,17 +647,81 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.cta.ambassador': 'كن سفيراً',
     'hero.cta.chapter': 'انضم لفرع محلي',
     'hero.cta.partner': 'شريك (المسؤولية الاجتماعية)',
-    // Quick Path
+    // Home - Hero
+    'home.hero.title': 'التعليم للجميع في أفريقيا — بقيادة الأعضاء والفروع والشركاء',
+    'home.hero.subtitle': 'SCEF مؤسسة إفريقية قائمة على العضوية تدعم التعليم عبر المنح الدراسية، تجديد المدارس، الشهادات الموثوقة، والدفاع الإعلامي — بالتعاون مع الفروع المحلية والجاليات في الخارج وشركاء المسؤولية الاجتماعية.',
+    'home.hero.ctaPrimary': 'انضم كعضو',
+    'home.hero.ctaDonate': 'تبرّع الآن',
+    'home.hero.ctaAmbassador': 'كن سفيراً',
+    'home.hero.ctaJoinChapter': 'انضم لفرع محلي',
+    // Home - Quick Path
+    'home.quickPath.title': 'اختر مسارك',
+    'home.quickPath.certified': '🎓 تعلّم واحصل على شهادة',
+    'home.quickPath.joinChapter': '🤝 انضم لفرع محلي',
+    'home.quickPath.donatePartner': '❤️ تبرّع أو كن شريكاً',
+    'home.quickPath.ambassador': '🌍 كن سفيراً',
+    // Home - Digital Board
+    'home.board.title': 'لوحة الإعلانات الرقمية',
+    'home.board.desc': 'تحديثات متناوبة (فيديو / صوت / ملصق / نص) تُدار عبر الإدارة وفريق الإعلام.',
+    'home.board.viewAll': 'عرض كل التحديثات',
+    // Home - Impact
+    'home.impact.title': 'لمحة عن الأثر',
+    'home.impact.cta': 'شاهد ما نقوم به هذا الشهر',
+    'home.impact.metrics.scholarships': 'المنح المدعومة',
+    'home.impact.metrics.schools': 'المدارس المُجددة (RMSA)',
+    'home.impact.metrics.womenGirls': 'النساء والفتيات المستفيدات',
+    'home.impact.metrics.specialNeeds': 'دعم ذوي الاحتياجات الخاصة',
+    'home.impact.metrics.chapters': 'الفروع النشطة',
+    'home.impact.metrics.partners': 'الشركاء والمتبرعون',
+    // Home - Programs
+    'home.programs.title': 'برامجنا',
+    'home.programs.groupCore': 'الأثر الأساسي',
+    'home.programs.groupAwards': 'الجوائز والتكريم',
+    'home.programs.groupDigital': 'التعلّم الرقمي والشهادات',
+    'home.programs.ctaAll': 'استكشاف كل البرامج',
+    // Home - EOA
+    'home.eoa.title': 'تعلّم. احصل على شهادة. جدّد. كن جاهزاً للعمل.',
+    'home.eoa.body': 'Education Online Africa (EOA) هي منصة SCEF للتعلّم والشهادات — لبناء مهارات عملية، وإصدار شهادات قابلة للتحقق، وتجديدها كل 24 شهراً للحفاظ على الجاهزية المهنية.',
+    'home.eoa.ctaStart': 'ابدأ التعلّم',
+    'home.eoa.ctaCertify': 'احصل على شهادة (ACDL / AWPC)',
+    'home.eoa.ctaExam': 'بوابة الاختبارات',
+    'home.eoa.ctaPartner': 'كن شريكاً/مركز اختبار',
+    // Home - Media
+    'home.media.title': 'إعلام سانتوس',
+    'home.media.ctaVolunteer': 'التطوع الإعلامي',
+    // Home - Divisions
+    'home.divisions.title': 'كيف تعمل SCEF (6 أقسام)',
+    // Home - Chapters Block
+    'home.chaptersBlock.title': 'انضم لفرع محلي',
+    'home.chaptersBlock.body': 'اعثر على فرع بلدك، وتعرّف على صُنّاع التغيير، وشارك في مشاريع ذات أثر حقيقي.',
+    'home.chaptersBlock.ctaBrowse': 'استعراض الفروع',
+    'home.chaptersBlock.ctaJoin': 'انضم',
+    'home.chaptersBlock.ctaCreate': 'أنشئ فرعاً',
+    'home.chaptersBlock.ctaLeader': 'قدّم كقائد',
+    // Home - Partnerships
+    'home.partnerships.title': 'الشراكات وإدارة صناديق التعليم (CSR)',
+    'home.partnerships.body': 'تعمل SCEF مع شركاء موثوقين لتمويل المنح وتجديد المدارس وتوسيع الوصول للتعلّم مع شفافية وتقارير أثر واضحة.',
+    'home.partnerships.ctaCsr': 'شراكة CSR',
+    'home.partnerships.ctaRequest': 'طلب عرض / اجتماع',
+    'home.partnerships.ctaEndorse': 'اعتماد SCEF / البرامج',
+    // Home - Final CTA
+    'home.final.title': 'كن جزءاً من تحول التعليم في أفريقيا',
+    'home.final.ctaJoin': 'انضم كعضو',
+    'home.final.ctaDonate': 'تبرّع',
+    'home.final.ctaPartner': 'كن شريكاً (CSR)',
+    // Nav Get Involved
+    'nav.getInvolved.csr': 'شراكة / المسؤولية الاجتماعية',
+    // Quick Path (legacy)
     'path.title': 'اختر مسارك',
     'path.learn': '🎓 تعلّم واحصل على شهادة',
     'path.chapter': '🤝 انضم لفرع محلي',
     'path.donate': '❤️ تبرّع أو كن شريكاً',
     'path.ambassador': '🌍 كن سفيراً',
-    // Digital Board
+    // Digital Board (legacy)
     'board.title': 'لوحة الإعلانات الرقمية',
     'board.desc': 'تحديثات متناوبة (فيديو / صوت / ملصق / نص) تُدار عبر الإدارة وفريق الإعلام.',
     'board.viewAll': 'عرض كل التحديثات',
-    // Impact
+    // Impact (legacy)
     'impact.title': 'لمحة عن الأثر',
     'impact.cta': 'شاهد ما نقوم به هذا الشهر',
     'impact.scholarships': 'المنح المدعومة',
@@ -539,13 +731,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'impact.chapters': 'الفروع النشطة',
     'impact.partners': 'الشركاء والمتبرعون',
     'impact.updates': 'التحديثات الشهرية',
-    // Programs
+    // Programs (legacy)
     'programs.title': 'برامجنا',
     'programs.groupCore': 'الأثر الأساسي',
     'programs.groupAwards': 'الجوائز والتكريم',
     'programs.groupDigital': 'التعلّم الرقمي والشهادات',
     'programs.ctaAll': 'استكشاف كل البرامج',
-    // EOA
+    // EOA (legacy)
     'eoa.title': 'تعلّم. احصل على شهادة. جدّد. كن جاهزاً للعمل.',
     'eoa.body': 'Education Online Africa (EOA) هي منصة SCEF للتعلّم والشهادات — لبناء مهارات عملية، وإصدار شهادات قابلة للتحقق، وتجديدها كل 24 شهراً للحفاظ على الجاهزية المهنية.',
     'eoa.tagline': 'تعلم. احصل على شهادة. جدد. كن قابلاً للتوظيف.',
@@ -553,25 +745,25 @@ const translations: Record<Locale, Record<string, string>> = {
     'eoa.certify': 'احصل على شهادة (ACDL / AWPC)',
     'eoa.exams': 'بوابة الاختبارات',
     'eoa.partner': 'كن شريكاً/مركز اختبار',
-    // Media
+    // Media (legacy)
     'media.title': 'إعلام سانتوس',
     'media.ctaVolunteer': 'التطوع الإعلامي',
-    // Divisions
+    // Divisions (legacy)
     'divisions.title': 'كيف تعمل SCEF (6 أقسام)',
-    // Chapters Block
+    // Chapters Block (legacy)
     'chaptersBlock.title': 'انضم لفرع محلي',
     'chaptersBlock.body': 'اعثر على فرع بلدك، وتعرّف على صُنّاع التغيير، وشارك في مشاريع ذات أثر حقيقي.',
     'chaptersBlock.ctaBrowse': 'استعراض الفروع',
     'chaptersBlock.ctaJoin': 'انضم',
     'chaptersBlock.ctaCreate': 'أنشئ فرعاً',
     'chaptersBlock.ctaLeader': 'قدّم كقائد',
-    // Partnerships
+    // Partnerships (legacy)
     'partnerships.title': 'الشراكات وإدارة صناديق التعليم (CSR)',
     'partnerships.body': 'تعمل SCEF مع شركاء موثوقين لتمويل المنح وتجديد المدارس وتوسيع الوصول للتعلّم مع شفافية وتقارير أثر واضحة.',
     'partnerships.ctaCsr': 'شراكة CSR',
     'partnerships.ctaRequest': 'طلب عرض / اجتماع',
     'partnerships.ctaEndorse': 'اعتماد SCEF / البرامج',
-    // Final CTA
+    // Final CTA (legacy)
     'final.title': 'كن جزءاً من تحول التعليم في أفريقيا',
     'final.ctaJoin': 'انضم كعضو',
     'final.ctaDonate': 'تبرّع',
@@ -719,7 +911,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'gov.bod': 'Bodi ya Wakurugenzi (BOD)',
     'gov.lcps': 'Marais wa Sura za Mitaa (LCPs)',
     'gov.management': 'Timu ya Uongozi',
-    // Hero
+    // Hero (legacy)
     'hero.headline': 'Elimu kwa Wote Barani Afrika — kwa nguvu ya wanachama, sura na washirika',
     'hero.subtext': 'SCEF ni taasisi ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma elimu kupitia ufadhili wa masomo, uboreshaji wa shule, vyeti vinavyoaminika na utetezi wa vyombo vya habari — kwa kushirikiana na sura za mitaa, diaspora na washirika wa CSR.',
     'hero.cta.member': 'Jiunge kama Mwanachama',
@@ -727,17 +919,81 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.cta.ambassador': 'Kuwa Balozi',
     'hero.cta.chapter': 'Jiunge na Sura ya Mtaa',
     'hero.cta.partner': 'Mshirika (CSR)',
-    // Quick Path
+    // Home - Hero
+    'home.hero.title': 'Elimu kwa Wote Barani Afrika — kwa nguvu ya wanachama, sura na washirika',
+    'home.hero.subtitle': 'SCEF ni taasisi ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma elimu kupitia ufadhili wa masomo, uboreshaji wa shule, vyeti vinavyoaminika na utetezi wa vyombo vya habari — kwa kushirikiana na sura za mitaa, diaspora na washirika wa CSR.',
+    'home.hero.ctaPrimary': 'Jiunge kama Mwanachama',
+    'home.hero.ctaDonate': 'Changia Sasa',
+    'home.hero.ctaAmbassador': 'Kuwa Balozi',
+    'home.hero.ctaJoinChapter': 'Jiunge na Sura ya Mtaa',
+    // Home - Quick Path
+    'home.quickPath.title': 'Chagua njia yako',
+    'home.quickPath.certified': '🎓 Jifunze & Pata Cheti',
+    'home.quickPath.joinChapter': '🤝 Jiunge na Sura',
+    'home.quickPath.donatePartner': '❤️ Changia au Shirikiana',
+    'home.quickPath.ambassador': '🌍 Kuwa Balozi',
+    // Home - Digital Board
+    'home.board.title': 'Ubao wa Matangazo ya Kidijitali',
+    'home.board.desc': 'Taarifa zinazorushwa (video / sauti / bango / maandishi) zinazosimamiwa na Admin na timu ya media.',
+    'home.board.viewAll': 'Tazama taarifa zote',
+    // Home - Impact
+    'home.impact.title': 'Muhtasari wa Athari',
+    'home.impact.cta': 'Tazama tunachofanya mwezi huu',
+    'home.impact.metrics.scholarships': 'Ufadhili wa masomo uliosaidiwa',
+    'home.impact.metrics.schools': 'Shule zilizoboreshwa (RMSA)',
+    'home.impact.metrics.womenGirls': 'Wanawake & wasichana waliofikiwa',
+    'home.impact.metrics.specialNeeds': 'Mahitaji maalum yaliyoungwa mkono',
+    'home.impact.metrics.chapters': 'Sura zinazofanya kazi',
+    'home.impact.metrics.partners': 'Washirika & wachangiaji',
+    // Home - Programs
+    'home.programs.title': 'Programu Zetu',
+    'home.programs.groupCore': 'Athari Kuu',
+    'home.programs.groupAwards': 'Tuzo & Utambuzi',
+    'home.programs.groupDigital': 'Kidijitali & Vyeti',
+    'home.programs.ctaAll': 'Tazama Programu Zote',
+    // Home - EOA
+    'home.eoa.title': 'Jifunze. Pata Cheti. Rudia Uthibitisho. Uwe tayari kazini.',
+    'home.eoa.body': 'Education Online Africa (EOA) ni jukwaa la SCEF la mafunzo na vyeti — kusaidia kujenga ujuzi wa vitendo, kupata vyeti vinavyothibitishwa, na kuvihuisha kila miezi 24 ili kubaki tayari kwa ajira.',
+    'home.eoa.ctaStart': 'Anza Kujifunza',
+    'home.eoa.ctaCertify': 'Pata Cheti (ACDL / AWPC)',
+    'home.eoa.ctaExam': 'Tovuti ya Mitihani',
+    'home.eoa.ctaPartner': 'Kuwa Mshirika/Kituo cha Mtihani',
+    // Home - Media
+    'home.media.title': 'Vyombo vya Habari vya Santos',
+    'home.media.ctaVolunteer': 'Jitolee kwenye Media',
+    // Home - Divisions
+    'home.divisions.title': 'Jinsi SCEF inavyofanya kazi (Idara 6)',
+    // Home - Chapters Block
+    'home.chaptersBlock.title': 'Jiunge na Sura ya Mtaa',
+    'home.chaptersBlock.body': 'Pata sura ya nchi yako, kutana na wachochezi wa mabadiliko, na jiunge na miradi yenye athari halisi.',
+    'home.chaptersBlock.ctaBrowse': 'Tazama Sura',
+    'home.chaptersBlock.ctaJoin': 'Jiunge',
+    'home.chaptersBlock.ctaCreate': 'Anzisha',
+    'home.chaptersBlock.ctaLeader': 'Omba Uongozi',
+    // Home - Partnerships
+    'home.partnerships.title': 'Ushirikiano & Usimamizi wa Mfuko wa Elimu (CSR)',
+    'home.partnerships.body': 'SCEF hufanya kazi na washirika wanaoaminika kufadhili ufadhili wa masomo, kuboresha shule, kupanua upatikanaji wa elimu na kuripoti athari kwa uwazi.',
+    'home.partnerships.ctaCsr': 'Ushirikiano wa CSR',
+    'home.partnerships.ctaRequest': 'Omba Pendekezo / Mkutano',
+    'home.partnerships.ctaEndorse': 'Thibitisha SCEF / Programu',
+    // Home - Final CTA
+    'home.final.title': 'Kuwa sehemu ya mabadiliko ya elimu barani Afrika',
+    'home.final.ctaJoin': 'Jiunge',
+    'home.final.ctaDonate': 'Changia',
+    'home.final.ctaPartner': 'Shirikiana (CSR)',
+    // Nav Get Involved
+    'nav.getInvolved.csr': 'Ushirikiano / CSR',
+    // Quick Path (legacy)
     'path.title': 'Chagua njia yako',
     'path.learn': '🎓 Jifunze & Pata Cheti',
     'path.chapter': '🤝 Jiunge na Sura',
     'path.donate': '❤️ Changia au Shirikiana',
     'path.ambassador': '🌍 Kuwa Balozi',
-    // Digital Board
+    // Digital Board (legacy)
     'board.title': 'Ubao wa Matangazo ya Kidijitali',
     'board.desc': 'Taarifa zinazorushwa (video / sauti / bango / maandishi) zinazosimamiwa na Admin na timu ya media.',
     'board.viewAll': 'Tazama taarifa zote',
-    // Impact
+    // Impact (legacy)
     'impact.title': 'Muhtasari wa Athari',
     'impact.cta': 'Tazama tunachofanya mwezi huu',
     'impact.scholarships': 'Ufadhili wa masomo uliosaidiwa',
@@ -747,13 +1003,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'impact.chapters': 'Sura zinazofanya kazi',
     'impact.partners': 'Washirika & wachangiaji',
     'impact.updates': 'Masasisho ya kila mwezi',
-    // Programs
+    // Programs (legacy)
     'programs.title': 'Programu Zetu',
     'programs.groupCore': 'Athari Kuu',
     'programs.groupAwards': 'Tuzo & Utambuzi',
     'programs.groupDigital': 'Kidijitali & Vyeti',
     'programs.ctaAll': 'Tazama Programu Zote',
-    // EOA
+    // EOA (legacy)
     'eoa.title': 'Jifunze. Pata Cheti. Rudia Uthibitisho. Uwe tayari kazini.',
     'eoa.body': 'Education Online Africa (EOA) ni jukwaa la SCEF la mafunzo na vyeti — kusaidia kujenga ujuzi wa vitendo, kupata vyeti vinavyothibitishwa, na kuvihuisha kila miezi 24 ili kubaki tayari kwa ajira.',
     'eoa.tagline': 'Jifunze. Pata Cheti. Huisha. Kuwa na Ajira.',
@@ -761,25 +1017,25 @@ const translations: Record<Locale, Record<string, string>> = {
     'eoa.certify': 'Pata Cheti (ACDL / AWPC)',
     'eoa.exams': 'Tovuti ya Mitihani',
     'eoa.partner': 'Kuwa Mshirika/Kituo cha Mtihani',
-    // Media
+    // Media (legacy)
     'media.title': 'Vyombo vya Habari vya Santos',
     'media.ctaVolunteer': 'Jitolee kwenye Media',
-    // Divisions
+    // Divisions (legacy)
     'divisions.title': 'Jinsi SCEF inavyofanya kazi (Idara 6)',
-    // Chapters Block
+    // Chapters Block (legacy)
     'chaptersBlock.title': 'Jiunge na Sura ya Mtaa',
     'chaptersBlock.body': 'Pata sura ya nchi yako, kutana na wachochezi wa mabadiliko, na jiunge na miradi yenye athari halisi.',
     'chaptersBlock.ctaBrowse': 'Tazama Sura',
     'chaptersBlock.ctaJoin': 'Jiunge',
     'chaptersBlock.ctaCreate': 'Anzisha',
     'chaptersBlock.ctaLeader': 'Omba Uongozi',
-    // Partnerships
+    // Partnerships (legacy)
     'partnerships.title': 'Ushirikiano & Usimamizi wa Mfuko wa Elimu (CSR)',
     'partnerships.body': 'SCEF hufanya kazi na washirika wanaoaminika kufadhili ufadhili wa masomo, kuboresha shule, kupanua upatikanaji wa elimu na kuripoti athari kwa uwazi.',
     'partnerships.ctaCsr': 'Ushirikiano wa CSR',
     'partnerships.ctaRequest': 'Omba Pendekezo / Mkutano',
     'partnerships.ctaEndorse': 'Thibitisha SCEF / Programu',
-    // Final CTA
+    // Final CTA (legacy)
     'final.title': 'Kuwa sehemu ya mabadiliko ya elimu barani Afrika',
     'final.ctaJoin': 'Jiunge',
     'final.ctaDonate': 'Changia',
@@ -927,7 +1183,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'gov.bod': 'Conselho de Diretores (BOD)',
     'gov.lcps': 'Presidentes de Capítulos Locais (LCPs)',
     'gov.management': 'Equipa de Gestão',
-    // Hero
+    // Hero (legacy)
     'hero.headline': 'Educação para Todos em África — com membros, capítulos e parceiros',
     'hero.subtext': 'A SCEF é uma fundação panafricana orientada por membros que impulsiona a educação através de bolsas, renovação de escolas, certificações confiáveis e advocacia mediática — com capítulos locais, diáspora e parceiros de CSR.',
     'hero.cta.member': 'Tornar-se membro',
@@ -935,17 +1191,81 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.cta.ambassador': 'Tornar-se embaixador',
     'hero.cta.chapter': 'Entrar num capítulo local',
     'hero.cta.partner': 'Parceiro (RSE)',
-    // Quick Path
+    // Home - Hero
+    'home.hero.title': 'Educação para Todos em África — com membros, capítulos e parceiros',
+    'home.hero.subtitle': 'A SCEF é uma fundação panafricana orientada por membros que impulsiona a educação através de bolsas, renovação de escolas, certificações confiáveis e advocacia mediática — com capítulos locais, diáspora e parceiros de CSR.',
+    'home.hero.ctaPrimary': 'Tornar-se membro',
+    'home.hero.ctaDonate': 'Doar agora',
+    'home.hero.ctaAmbassador': 'Tornar-se embaixador',
+    'home.hero.ctaJoinChapter': 'Entrar num capítulo local',
+    // Home - Quick Path
+    'home.quickPath.title': 'Escolha o seu caminho',
+    'home.quickPath.certified': '🎓 Aprender e Certificar',
+    'home.quickPath.joinChapter': '🤝 Entrar num capítulo',
+    'home.quickPath.donatePartner': '❤️ Doar ou Fazer Parceria',
+    'home.quickPath.ambassador': '🌍 Tornar-se embaixador',
+    // Home - Digital Board
+    'home.board.title': 'Quadro de anúncios digitais',
+    'home.board.desc': 'Atualizações rotativas (vídeo / áudio / flyer / texto) geridas por Admin e pela equipa de media.',
+    'home.board.viewAll': 'Ver todas as atualizações',
+    // Home - Impact
+    'home.impact.title': 'Resumo de Impacto',
+    'home.impact.cta': 'Ver o que estamos a fazer este mês',
+    'home.impact.metrics.scholarships': 'Bolsas apoiadas',
+    'home.impact.metrics.schools': 'Escolas renovadas (RMSA)',
+    'home.impact.metrics.womenGirls': 'Mulheres e raparigas alcançadas',
+    'home.impact.metrics.specialNeeds': 'Necessidades especiais apoiadas',
+    'home.impact.metrics.chapters': 'Capítulos ativos',
+    'home.impact.metrics.partners': 'Parceiros e doadores',
+    // Home - Programs
+    'home.programs.title': 'Nossos Programas',
+    'home.programs.groupCore': 'Impacto central',
+    'home.programs.groupAwards': 'Prémios e reconhecimento',
+    'home.programs.groupDigital': 'Digital e certificação',
+    'home.programs.ctaAll': 'Explorar todos os programas',
+    // Home - EOA
+    'home.eoa.title': 'Aprender. Certificar. Renovar. Ser empregável.',
+    'home.eoa.body': 'Education Online Africa (EOA) é a plataforma de aprendizagem e certificação da SCEF — para competências práticas, credenciais verificáveis e renovação a cada 24 meses para manter a relevância no trabalho.',
+    'home.eoa.ctaStart': 'Começar a aprender',
+    'home.eoa.ctaCertify': 'Certificar (ACDL / AWPC)',
+    'home.eoa.ctaExam': 'Portal de exames',
+    'home.eoa.ctaPartner': 'Tornar-se afiliado / centro de teste',
+    // Home - Media
+    'home.media.title': 'Santos Media',
+    'home.media.ctaVolunteer': 'Voluntariado em media',
+    // Home - Divisions
+    'home.divisions.title': 'Como a SCEF funciona (6 divisões)',
+    // Home - Chapters Block
+    'home.chaptersBlock.title': 'Entrar num capítulo local',
+    'home.chaptersBlock.body': 'Encontre o capítulo do seu país, conecte-se com agentes de mudança e participe em projetos reais.',
+    'home.chaptersBlock.ctaBrowse': 'Explorar',
+    'home.chaptersBlock.ctaJoin': 'Entrar',
+    'home.chaptersBlock.ctaCreate': 'Criar',
+    'home.chaptersBlock.ctaLeader': 'Candidatar-se como líder',
+    // Home - Partnerships
+    'home.partnerships.title': 'Parcerias e Gestão de Fundos de Educação (CSR)',
+    'home.partnerships.body': 'A SCEF trabalha com parceiros confiáveis para financiar bolsas, renovar escolas, ampliar o acesso e reportar impacto com transparência.',
+    'home.partnerships.ctaCsr': 'Parceria CSR',
+    'home.partnerships.ctaRequest': 'Solicitar proposta / reunião',
+    'home.partnerships.ctaEndorse': 'Endossar SCEF / Programas',
+    // Home - Final CTA
+    'home.final.title': 'Faça parte da transformação da educação em África',
+    'home.final.ctaJoin': 'Tornar-se membro',
+    'home.final.ctaDonate': 'Doar',
+    'home.final.ctaPartner': 'Parceria (CSR)',
+    // Nav Get Involved
+    'nav.getInvolved.csr': 'Parceria / CSR',
+    // Quick Path (legacy)
     'path.title': 'Escolha o seu caminho',
     'path.learn': '🎓 Aprender e Certificar',
     'path.chapter': '🤝 Entrar num capítulo',
     'path.donate': '❤️ Doar ou Fazer Parceria',
     'path.ambassador': '🌍 Tornar-se embaixador',
-    // Digital Board
+    // Digital Board (legacy)
     'board.title': 'Quadro de anúncios digitais',
     'board.desc': 'Atualizações rotativas (vídeo / áudio / flyer / texto) geridas por Admin e pela equipa de media.',
     'board.viewAll': 'Ver todas as atualizações',
-    // Impact
+    // Impact (legacy)
     'impact.title': 'Resumo de Impacto',
     'impact.cta': 'Ver o que estamos a fazer este mês',
     'impact.scholarships': 'Bolsas apoiadas',
@@ -955,13 +1275,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'impact.chapters': 'Capítulos ativos',
     'impact.partners': 'Parceiros e doadores',
     'impact.updates': 'Atualizações mensais',
-    // Programs
+    // Programs (legacy)
     'programs.title': 'Nossos Programas',
     'programs.groupCore': 'Impacto central',
     'programs.groupAwards': 'Prémios e reconhecimento',
     'programs.groupDigital': 'Digital e certificação',
     'programs.ctaAll': 'Explorar todos os programas',
-    // EOA
+    // EOA (legacy)
     'eoa.title': 'Aprender. Certificar. Renovar. Ser empregável.',
     'eoa.body': 'Education Online Africa (EOA) é a plataforma de aprendizagem e certificação da SCEF — para competências práticas, credenciais verificáveis e renovação a cada 24 meses para manter a relevância no trabalho.',
     'eoa.tagline': 'Aprenda. Certifique. Renove. Seja Empregável.',
@@ -969,25 +1289,25 @@ const translations: Record<Locale, Record<string, string>> = {
     'eoa.certify': 'Certificar (ACDL / AWPC)',
     'eoa.exams': 'Portal de exames',
     'eoa.partner': 'Tornar-se afiliado / centro de teste',
-    // Media
+    // Media (legacy)
     'media.title': 'Santos Media',
     'media.ctaVolunteer': 'Voluntariado em media',
-    // Divisions
+    // Divisions (legacy)
     'divisions.title': 'Como a SCEF funciona (6 divisões)',
-    // Chapters Block
+    // Chapters Block (legacy)
     'chaptersBlock.title': 'Entrar num capítulo local',
     'chaptersBlock.body': 'Encontre o capítulo do seu país, conecte-se com agentes de mudança e participe em projetos reais.',
     'chaptersBlock.ctaBrowse': 'Explorar',
     'chaptersBlock.ctaJoin': 'Entrar',
     'chaptersBlock.ctaCreate': 'Criar',
     'chaptersBlock.ctaLeader': 'Candidatar-se como líder',
-    // Partnerships
+    // Partnerships (legacy)
     'partnerships.title': 'Parcerias e Gestão de Fundos de Educação (CSR)',
     'partnerships.body': 'A SCEF trabalha com parceiros confiáveis para financiar bolsas, renovar escolas, ampliar o acesso e reportar impacto com transparência.',
     'partnerships.ctaCsr': 'Parceria CSR',
     'partnerships.ctaRequest': 'Solicitar proposta / reunião',
     'partnerships.ctaEndorse': 'Endossar SCEF / Programas',
-    // Final CTA
+    // Final CTA (legacy)
     'final.title': 'Faça parte da transformação da educação em África',
     'final.ctaJoin': 'Tornar-se membro',
     'final.ctaDonate': 'Doar',
