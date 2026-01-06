@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen, ExternalLink, Library, Award, GraduationCap } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, Library, Award, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/contexts/LocaleContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-
+import scefLogo from "@/assets/scef-logo.jpg";
 // External platform links with icons
 const externalPlatforms = [
   { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true, icon: Library },
@@ -89,17 +89,11 @@ export const Header = () => {
       <nav className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full bg-scef-gold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-            <BookOpen className="w-6 h-6 text-scef-blue-dark" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-xl leading-tight text-scef-gold">
-              SCEF
-            </span>
-            <span className="text-[9px] uppercase tracking-wider text-white/70 leading-tight">
-              Santos Creations Educational Foundation
-            </span>
-          </div>
+          <img 
+            src={scefLogo} 
+            alt="Santos Creations Educational Foundation" 
+            className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation */}
