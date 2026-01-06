@@ -21,8 +21,11 @@ const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
 export const LocaleProvider = ({ children }: { children: ReactNode }) => {
   const [locale, setLocaleState] = useState<Locale>(() => {
-    const saved = localStorage.getItem('scef-locale');
-    return (saved as Locale) || 'en';
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('scef-locale');
+      return (saved as Locale) || 'en';
+    }
+    return 'en';
   });
 
   const setLocale = (newLocale: Locale) => {
