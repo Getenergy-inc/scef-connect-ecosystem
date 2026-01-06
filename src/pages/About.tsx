@@ -3,62 +3,60 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/contexts/LocaleContext";
 import { 
   Target, Eye, Heart, Users, Award, Globe, ArrowRight, 
   Shield, Building2, Tv, Laptop, TrendingUp, CheckCircle2,
   GraduationCap, Handshake
 } from "lucide-react";
 
-const objectives = [
-  "Advocate for a continuously evolving education standard aligned to global best practices and AU Agenda 2063.",
-  "Mobilize and deploy sustainable education funding through transparent, auditable financial systems.",
-  "Expand equitable access to quality education—prioritizing women, girls, special-needs learners, and underserved communities.",
-  "Recognize and reward excellence through continental awards, applied research, and industry-recognized certifications.",
-  "Enable grassroots ownership and execution via compliant, accountable local chapters across 54+ countries.",
-  "Build institutional trust through layered governance, real-time data, and radical transparency.",
-];
-
 const divisions = [
   {
     code: "SOBCD",
-    title: "Strategic Operations & Business Compliance",
-    description: "Governance, compliance, finance oversight, audits, risk management, and institutional integrity.",
+    titleKey: "about.divisions.items.sobcd",
     icon: Shield,
   },
   {
     code: "TDSD",
-    title: "Technology & Digital Services",
-    description: "Website, mobile apps, APIs, databases, wallets, AI tools, ICT training, Education Online Africa, eLibrary Nigeria.",
+    titleKey: "about.divisions.items.tdsd",
     icon: Laptop,
   },
   {
     code: "OMBDD",
-    title: "Online Media Business Development",
-    description: "Digital growth, sponsorships, partnerships, and online revenue development. Strict scope—no expansion beyond mandate.",
+    titleKey: "about.divisions.items.ombdd",
     icon: TrendingUp,
   },
   {
     code: "Santos Media",
-    title: "Santos Media Division",
-    description: "NESA Africa TV, It's In Me Radio, EduAid Webinar Series, Education Tourism Show. Broadcasting and content monetization.",
+    titleKey: "about.divisions.items.santosMedia",
     icon: Tv,
   },
   {
     code: "LCS",
-    title: "Local Chapter Services",
-    description: "Chapter onboarding, compliance monitoring, performance tracking, and pathway upgrades (Online → Hybrid → Physical).",
+    titleKey: "about.divisions.items.lcs",
     icon: Globe,
   },
 ];
 
-const governanceLayers = [
-  { title: "Board of Trustees (7)", description: "Fiduciary oversight, institutional integrity, and strategic direction" },
-  { title: "Boards of Advisors", description: "Program advisors (5 each) and chapter advisors (3 each) providing domain expertise" },
-  { title: "Regional Boards of Directors", description: "3 per region—operational governance and cross-border coordination" },
-  { title: "Local Chapter Presidents", description: "Country-level execution, community engagement, and compliance reporting" },
-];
-
 const About = () => {
+  const { t } = useLocale();
+
+  const objectives = [
+    t("about.objectives.items.0"),
+    t("about.objectives.items.1"),
+    t("about.objectives.items.2"),
+    t("about.objectives.items.3"),
+    t("about.objectives.items.4"),
+    t("about.objectives.items.5"),
+  ];
+
+  const governanceLayers = [
+    { title: t("nav.utility.bot"), description: "Fiduciary oversight, institutional integrity, and strategic direction" },
+    { title: t("nav.utility.boa"), description: "Program advisors and chapter advisors providing domain expertise" },
+    { title: t("nav.utility.bod"), description: "Operational governance and cross-border coordination" },
+    { title: t("nav.utility.lcps"), description: "Country-level execution, community engagement, and compliance reporting" },
+  ];
+
   return (
     <>
       <Helmet>
@@ -84,51 +82,64 @@ const About = () => {
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border-2 border-black">
                   <Building2 className="w-4 h-4" />
-                  About SCEF
+                  {t("nav.top.about")}
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  The Institution Behind{" "}
-                  <span className="text-scef-gold">Africa's Education Transformation</span>
+                  {t("about.hero.title")}
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed">
-                  Santos Creations Educational Foundation (SCEF) is a pan-African, membership-driven institution that governs, funds, certifies, digitizes, and scales education programs across Africa and the diaspora. We are not a project—we are the platform.
+                  {t("about.hero.subtitle")}
                 </p>
+                <div className="flex flex-wrap gap-4 mt-8">
+                  <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
+                    <Link to="/membership">
+                      {t("about.hero.ctaJoin")}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button size="lg" asChild className="bg-transparent border-2 border-white text-white hover:bg-white/10">
+                    <Link to="/donate">
+                      <Heart className="w-4 h-4" />
+                      {t("about.hero.ctaDonate")}
+                    </Link>
+                  </Button>
+                  <Button size="lg" asChild className="bg-transparent border-2 border-scef-gold text-scef-gold hover:bg-scef-gold/10">
+                    <Link to="/get-involved">
+                      {t("about.hero.ctaAmbassador")}
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Why SCEF */}
+          {/* Who We Are */}
           <section className="py-20 bg-muted/30 border-b-2 border-black">
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
                     <Target className="w-4 h-4" />
-                    Why We Exist
+                    {t("about.who.title")}
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    Replacing Fragmentation with <span className="text-scef-gold">Institutional Structure</span>
+                    {t("about.who.title")}
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Africa's education sector faces systemic fragmentation: weak governance, short-term funding cycles, limited standards enforcement, and siloed initiatives. SCEF exists to replace this fragmentation with a unified, accountable framework—providing institutional governance, digital infrastructure, transparent financial systems, and compliant local execution across 54+ countries.
+                    {t("about.who.body")}
                   </p>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Unified governance framework</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Digital infrastructure</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Financial systems</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-scef-gold shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Local execution</span>
-                    </div>
+                  <div className="flex flex-wrap gap-4">
+                    <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
+                      <Link to="/programs">
+                        {t("about.who.ctaPrograms")}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                    <Button size="lg" asChild className="bg-scef-blue text-white hover:bg-scef-blue-light border-2 border-black font-semibold">
+                      <Link to="/updates">
+                        {t("about.who.ctaUpdates")}
+                      </Link>
+                    </Button>
                   </div>
                 </div>
                 
@@ -167,9 +178,9 @@ const About = () => {
                   <div className="w-14 h-14 rounded-xl bg-scef-gold/20 flex items-center justify-center mb-6 border-2 border-black">
                     <Eye className="w-7 h-7 text-scef-gold" />
                   </div>
-                  <h2 className="font-display text-2xl font-bold text-foreground mb-4">Our Vision</h2>
+                  <h2 className="font-display text-2xl font-bold text-foreground mb-4">{t("about.vision.title")}</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    A continuously improving, globally competitive education ecosystem across Africa—where every learner, educator, and institution operates within a framework of excellence, accountability, and innovation by 2035.
+                    {t("about.vision.body")}
                   </p>
                 </div>
                 
@@ -177,9 +188,9 @@ const About = () => {
                   <div className="w-14 h-14 rounded-xl bg-scef-blue/20 flex items-center justify-center mb-6 border-2 border-black">
                     <Target className="w-7 h-7 text-scef-blue" />
                   </div>
-                  <h2 className="font-display text-2xl font-bold text-foreground mb-4">Our Mission</h2>
+                  <h2 className="font-display text-2xl font-bold text-foreground mb-4">{t("about.history.title")}</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    To govern, fund, digitize, certify, and scale quality education across Africa and the diaspora through institutional partnerships, technology innovation, media platforms, industry-recognized certifications, and accountable local chapter systems.
+                    {t("about.history.body")}
                   </p>
                 </div>
               </div>
@@ -191,7 +202,7 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Strategic <span className="text-scef-gold">Objectives</span>
+                  {t("about.objectives.title")}
                 </h2>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -204,6 +215,14 @@ const About = () => {
                   </div>
                 ))}
               </div>
+              <div className="text-center mt-12">
+                <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
+                  <a href="/scef-profile.pdf" target="_blank" rel="noopener noreferrer">
+                    {t("about.objectives.ctaDownload")}
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </section>
 
@@ -213,10 +232,10 @@ const About = () => {
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
                   <Shield className="w-4 h-4" />
-                  Governance
+                  {t("about.trust.title")}
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Multi-Layer <span className="text-scef-gold">Governance Structure</span>
+                  {t("about.trust.body")}
                 </h2>
               </div>
               
@@ -235,7 +254,7 @@ const About = () => {
               <div className="text-center">
                 <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
                   <Link to="/governance">
-                    Full Governance Framework
+                    {t("about.trust.ctaHub")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
@@ -248,7 +267,7 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  5 Operational <span className="text-scef-gold">Divisions</span>
+                  {t("about.divisions.title")}
                 </h2>
               </div>
               
@@ -261,32 +280,62 @@ const About = () => {
                         {division.code}
                       </span>
                     </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2">{division.title}</h3>
-                    <p className="text-sm text-muted-foreground">{division.description}</p>
+                    <p className="text-sm text-muted-foreground">{t(division.titleKey)}</p>
                   </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* Certifications */}
+          {/* Programs Spotlight */}
           <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
-                  <Award className="w-4 h-4" />
-                  Certifications
-                </div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Africa Education & Productivity <span className="text-scef-gold">Certification (AEPC)</span>
+              <div className="text-center mb-16">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {t("about.programs.title")}
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  A hybrid certification system combining online delivery with licensed physical exam centers. Integrated with affiliate training partners and the GFA Wallet for seamless, auditable transactions. Designed for workforce readiness and continental recognition.
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  {t("about.programs.intro")}
                 </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+                <div className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Award className="w-8 h-8 text-scef-gold mb-4" />
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">NESA Africa</h3>
+                  <p className="text-sm text-muted-foreground">{t("about.programs.cards.nesa")}</p>
+                </div>
+                <div className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Heart className="w-8 h-8 text-scef-blue mb-4" />
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">EduAid Africa</h3>
+                  <p className="text-sm text-muted-foreground">{t("about.programs.cards.eduaid")}</p>
+                </div>
+                <div className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Building2 className="w-8 h-8 text-scef-gold mb-4" />
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">RMSA</h3>
+                  <p className="text-sm text-muted-foreground">{t("about.programs.cards.rmsa")}</p>
+                </div>
+                <div className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Laptop className="w-8 h-8 text-scef-blue mb-4" />
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">EOA</h3>
+                  <p className="text-sm text-muted-foreground">{t("about.programs.cards.eoa")}</p>
+                </div>
+                <div className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Users className="w-8 h-8 text-scef-gold mb-4" />
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Women & Girls</h3>
+                  <p className="text-sm text-muted-foreground">{t("about.programs.cards.womenGirls")}</p>
+                </div>
+                <div className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Globe className="w-8 h-8 text-scef-blue mb-4" />
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Special Needs</h3>
+                  <p className="text-sm text-muted-foreground">{t("about.programs.cards.specialNeeds")}</p>
+                </div>
+              </div>
+
+              <div className="text-center">
                 <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
-                  <Link to="/certifications">
-                    <GraduationCap className="w-4 h-4" />
-                    Certifications Hub
+                  <Link to="/programs">
+                    {t("about.programs.ctaAll")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
@@ -294,30 +343,72 @@ const About = () => {
             </div>
           </section>
 
-          {/* Membership & Partnerships */}
+          {/* EOA Spotlight */}
           <section className="py-20 bg-muted/30 border-y-2 border-black">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
+                  <GraduationCap className="w-4 h-4" />
+                  EOA
+                </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Member-Run. Partner-Powered. <span className="text-scef-gold">Institutionally Governed.</span>
+                  {t("about.eoaSpotlight.title")}
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  SCEF operates as a membership-driven institution with tiered engagement pathways for individuals, organizations, and governments. Our governance ensures accountability to members, transparency to donors, and credibility to institutional partners.
+                  {t("about.eoaSpotlight.body")}
                 </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <div className="flex flex-wrap justify-center gap-4">
                   <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
-                    <Link to="/membership">
-                      <Users className="w-4 h-4" />
-                      Become a Member
+                    <Link to="/programs/eoa">
+                      {t("about.eoaSpotlight.ctaStart")}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
                   <Button size="lg" asChild className="bg-scef-blue text-white hover:bg-scef-blue-light border-2 border-black font-semibold">
-                    <Link to="/partners">
-                      <Handshake className="w-4 h-4" />
-                      Partner With SCEF
+                    <Link to="/programs/eoa#certify">
+                      {t("about.eoaSpotlight.ctaCertify")}
                     </Link>
                   </Button>
+                  <Button size="lg" asChild className="bg-transparent border-2 border-scef-blue text-scef-blue hover:bg-scef-blue/10">
+                    <Link to="/partners">
+                      {t("about.eoaSpotlight.ctaPartner")}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Sustainability */}
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  {t("about.sustainability.title")}
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  {t("about.sustainability.body")}
+                </p>
+                <div className="bg-card rounded-2xl p-8 border-2 border-black mb-8">
+                  <h3 className="font-display text-xl font-bold text-foreground mb-4">
+                    {t("about.sustainability.csrFundsTitle")}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {t("about.sustainability.csrFundsBody")}
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold">
+                      <Link to="/partners">
+                        {t("about.sustainability.ctaCsr")}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                    <Button size="lg" asChild className="bg-scef-blue text-white hover:bg-scef-blue-light border-2 border-black font-semibold">
+                      <Link to="/contact">
+                        {t("about.sustainability.ctaRequest")}
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -327,27 +418,24 @@ const About = () => {
           <section className="py-20 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Partner with Africa's Education <span className="text-scef-gold">Institution</span>
+                {t("about.final.title")}
               </h2>
-              <p className="text-white/70 max-w-2xl mx-auto mb-8">
-                Join governments, foundations, corporations, and institutions across Africa and the diaspora in building a unified, accountable education ecosystem.
-              </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold border-2 border-black">
                   <Link to="/membership">
-                    Join SCEF
+                    {t("about.final.ctaJoin")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
                 <Button size="lg" asChild className="bg-transparent border-2 border-scef-gold text-scef-gold hover:bg-scef-gold/10">
-                  <Link to="/wallet/donate">
+                  <Link to="/donate">
                     <Heart className="w-4 h-4" />
-                    Donate
+                    {t("about.final.ctaDonate")}
                   </Link>
                 </Button>
                 <Button size="lg" asChild className="bg-transparent border-2 border-white text-white hover:bg-white/10">
-                  <Link to="/auth">
-                    Access Dashboard
+                  <Link to="/partners">
+                    {t("about.final.ctaPartner")}
                   </Link>
                 </Button>
               </div>
