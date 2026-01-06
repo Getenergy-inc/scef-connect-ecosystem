@@ -1,3 +1,14 @@
+/**
+ * Digital Board Admin Page
+ * 
+ * SECURITY NOTE: This page performs client-side role checks for UX purposes only.
+ * The actual security is enforced by Row-Level Security (RLS) policies on the
+ * digital_board_items table, which use the is_admin() function to verify admin status
+ * server-side. Even if a malicious user bypasses the client-side redirect, they
+ * cannot perform any CRUD operations without proper admin role in the database.
+ * 
+ * See: RLS policy "Admins can manage board items" on digital_board_items table
+ */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -11,6 +22,12 @@ const DigitalBoardAdminPage = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
+    /**
+     * Client-side access check for UX - redirects non-admins to dashboard.
+     * NOTE: This is NOT a security measure. Security is enforced via RLS policies.
+     * This check exists solely to provide a better user experience by not showing
+     * admin UI to users who cannot perform admin operations.
+     */
     const checkAdminAccess = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       
