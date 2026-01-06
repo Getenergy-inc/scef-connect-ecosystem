@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { HeroScreenshot } from "@/components/sections/HeroScreenshot";
+import { DigitalBoard } from "@/components/sections/DigitalBoard";
 import { ProgramsGrid } from "@/components/sections/ProgramsGrid";
 import { ExploreSection } from "@/components/sections/ExploreSection";
 import { GovernanceSnapshot } from "@/components/sections/GovernanceSnapshot";
@@ -49,6 +50,9 @@ const Index = () => {
         <main>
           {/* Hero with Digital Board */}
           <HeroScreenshot />
+          
+          {/* Digital Board Section */}
+          <DigitalBoard />
           
           {/* Our Programs */}
           <ProgramsGrid />
