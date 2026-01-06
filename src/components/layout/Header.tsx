@@ -87,12 +87,12 @@ export const Header = () => {
       dir={isRTL ? "rtl" : "ltr"}
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        {/* Logo - Responsive sizing */}
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
           <img 
             src={scefLogo} 
             alt="Santos Creations Educational Foundation" 
-            className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
           />
         </Link>
 
