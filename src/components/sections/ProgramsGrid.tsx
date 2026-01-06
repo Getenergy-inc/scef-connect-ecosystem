@@ -17,8 +17,8 @@ export const ProgramsGrid = () => {
           {t('home.programs.title')}
         </h2>
 
-        {/* Programs Grid - 7 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+        {/* Programs Grid - 6 Core Programs */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           {programs.map((program) => (
             <div key={program.id} className="group">
               {/* Card */}

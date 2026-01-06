@@ -92,14 +92,6 @@ export const siteContent = {
         description: "Infrastructure development and school rebuilding initiatives.",
       },
       {
-        id: "elibrary-nigeria",
-        title: "eLibrary Nigeria",
-        image: "/assets/elibrary-nigeria-logo.png",
-        video: "/videos/elibrary-nigeria-promo.mp4",
-        href: "/programs/elibrary-nigeria",
-        description: "Digital library resources for Nigerian students and educators.",
-      },
-      {
         id: "education-online-africa",
         title: "Education Online Africa (EOA)",
         image: "/assets/eoa-logo.png",

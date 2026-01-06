@@ -70,8 +70,16 @@ const App = () => (
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/local-chapters" element={<LocalChapters />} />
+              <Route path="/local-chapters/join" element={<LocalChapters />} />
+              <Route path="/local-chapters/create" element={<LocalChapters />} />
+              <Route path="/local-chapters/upgrade" element={<LocalChapters />} />
+              <Route path="/local-chapters/leadership" element={<LocalChapters />} />
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/media" element={<Media />} />
+              <Route path="/media/nesa-tv" element={<Media />} />
+              <Route path="/media/its-in-me-radio" element={<Media />} />
+              <Route path="/media/eduaid-webinars" element={<Media />} />
+              <Route path="/media/education-tourism-show" element={<Media />} />
               <Route path="/updates" element={<Updates />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/auth/signin" element={<Auth />} />

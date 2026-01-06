@@ -8,9 +8,9 @@ export const ChaptersConversion = () => {
 
   const actions = [
     { key: 'browse', icon: MapPin, href: '/local-chapters', label: t('home.chaptersBlock.ctaBrowse') },
-    { key: 'join', icon: Users, href: '/local-chapters', label: t('home.chaptersBlock.ctaJoin') },
-    { key: 'create', icon: Plus, href: '/local-chapters', label: t('home.chaptersBlock.ctaCreate') },
-    { key: 'leader', icon: Crown, href: '/local-chapters', label: t('home.chaptersBlock.ctaLeader') },
+    { key: 'join', icon: Users, href: '/local-chapters/join', label: t('home.chaptersBlock.ctaJoin') },
+    { key: 'create', icon: Plus, href: '/local-chapters/create', label: t('home.chaptersBlock.ctaCreate') },
+    { key: 'leader', icon: Crown, href: '/local-chapters/leadership', label: t('home.chaptersBlock.ctaLeader') },
   ];
 
   return (

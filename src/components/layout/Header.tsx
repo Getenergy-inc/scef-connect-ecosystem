@@ -46,21 +46,21 @@ export const Header = () => {
       href: '/local-chapters',
       children: [
         { name: t('nav.chapters.browse'), href: '/local-chapters' },
-        { name: t('nav.chapters.join'), href: '/local-chapters' },
-        { name: t('nav.chapters.create'), href: '/local-chapters' },
-        { name: t('nav.chapters.upgrade'), href: '/local-chapters' },
-        { name: t('nav.chapters.leader'), href: '/local-chapters' },
+        { name: t('nav.chapters.join'), href: '/local-chapters/join' },
+        { name: t('nav.chapters.create'), href: '/local-chapters/create' },
+        { name: t('nav.chapters.upgrade'), href: '/local-chapters/upgrade' },
+        { name: t('nav.chapters.leader'), href: '/local-chapters/leadership' },
       ]
     },
     { 
       name: t('nav.involved'), 
       href: '/get-involved',
       children: [
-        { name: t('nav.involved.member'), href: '/membership' },
-        { name: t('nav.involved.ambassador'), href: '/membership' },
-        { name: t('nav.involved.volunteer'), href: '/get-involved' },
-        { name: t('nav.involved.scholarship'), href: '/programs/eduaid-africa' },
-        { name: t('nav.involved.partner'), href: '/partners' },
+        { name: t('nav.involved.member'), href: '/membership/join' },
+        { name: t('nav.involved.ambassador'), href: '/membership/ambassador' },
+        { name: t('nav.involved.volunteer'), href: '/get-involved#volunteer' },
+        { name: t('nav.involved.scholarship'), href: '/programs/eduaid-africa#apply' },
+        { name: t('nav.involved.partner'), href: '/partnerships/csr' },
         { name: t('nav.involved.donate'), href: '/donate' },
       ]
     },
@@ -69,12 +69,12 @@ export const Header = () => {
       href: '/media',
       children: [
         { name: t('nav.media.hub'), href: '/media' },
-        { name: t('nav.media.nesa-tv'), href: '/media' },
-        { name: t('nav.media.radio'), href: '/media' },
-        { name: t('nav.media.webinars'), href: '/media' },
-        { name: t('nav.media.tourism'), href: '/media' },
+        { name: t('nav.media.nesa-tv'), href: '/media/nesa-tv' },
+        { name: t('nav.media.radio'), href: '/media/its-in-me-radio' },
+        { name: t('nav.media.webinars'), href: '/media/eduaid-webinars' },
+        { name: t('nav.media.tourism'), href: '/media/education-tourism-show' },
         { divider: true },
-        { name: t('nav.media.volunteer'), href: '/get-involved' },
+        { name: t('nav.media.volunteer'), href: '/volunteer/media' },
       ]
     },
   ];
