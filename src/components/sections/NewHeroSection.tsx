@@ -8,30 +8,31 @@ export const HeroSection = () => {
   const { t, isRTL } = useLocale();
 
   return (
-    <section className="relative min-h-[80vh] flex items-center bg-scef-blue overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section className="relative min-h-[85vh] flex items-center bg-scef-blue overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat"
         style={{ backgroundImage: `url(${heroLanding})` }}
       />
-      {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-scef-blue/90 via-scef-blue/70 to-transparent" />
+      {/* Multi-layer overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-scef-blue/95 via-scef-blue/80 to-scef-blue/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/60 via-transparent to-scef-blue/70" />
       
-      <div className="container mx-auto px-4 relative z-10 py-16">
-        <div className="max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-24">
+        <div className="max-w-2xl lg:max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border border-white/20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/60 backdrop-blur-sm text-white text-sm mb-8 border border-scef-gold/30 shadow-lg">
             <MapPin className="w-4 h-4 text-scef-gold" />
-            Serving 54+ African Countries & Diaspora
+            <span className="font-medium">Serving 57 African Countries & Diaspora</span>
           </div>
           
           {/* Headline */}
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             {t('hero.headline')}
           </h1>
           
           {/* Subtext */}
-          <p className="text-xl text-white/80 leading-relaxed mb-10 max-w-3xl">
+          <p className="text-lg md:text-xl text-white leading-relaxed mb-10 max-w-2xl drop-shadow-md">
             {t('hero.subtext')}
           </p>
           
