@@ -242,6 +242,227 @@
       "ctaPartner": "Parceria CSR"
     }
   },
+  "governance": {
+    "hero": {
+      "badge": "BGEO — Governança do Conselho e Escritório Executivo",
+      "title": "Governado para Confiança. Estruturado para Escala.",
+      "subtitle": "O Escritório de Governança do Conselho e Executivo (BGEO) é a divisão de governança superior que fornece liderança institucional, supervisão fiduciária e direção estratégica para todas as operações da SCEF em África.",
+      "anchors": {
+        "bot": "Conselho de Curadores",
+        "boa": "Conselho Consultivo",
+        "bod": "Conselho de Diretores",
+        "lcps": "Presidentes de Capítulos Locais",
+        "management": "Equipa de Gestão"
+      }
+    },
+    "bgeo": {
+      "title": "Divisão BGEO",
+      "body": "O Escritório de Governança do Conselho e Executivo serve como o centro nervoso institucional, coordenando atividades do conselho, liderança executiva e garantindo que a SCEF cumpra seu mandato educacional pan-africano com integridade e responsabilidade.",
+      "points": [
+        "Coordenação e governança do conselho",
+        "Liderança e direção executiva",
+        "Supervisão de políticas institucionais",
+        "Engajamento estratégico de stakeholders"
+      ],
+      "whyTitle": "Por que a Governança Importa",
+      "whyBody": "O setor educacional africano sofreu com iniciativas fragmentadas e supervisão fraca. O modelo de governança da SCEF fornece responsabilização clara, tomada de decisão transparente e continuidade institucional.",
+      "metrics": {
+        "trust": "Confiança",
+        "trustDesc": "Integridade fiduciária",
+        "scale": "Escala",
+        "scaleDesc": "Alcance continental",
+        "continuity": "Continuidade",
+        "continuityDesc": "Além dos projetos"
+      }
+    },
+    "layers": {
+      "title": "Estrutura de Governança de Quatro Níveis",
+      "subtitle": "Cada nível tem mandatos claros, linhas de responsabilização e escopo operacional garantindo governança transparente e eficaz.",
+      "level": "Nível",
+      "keyResponsibilities": "Responsabilidades Principais",
+      "bot": {
+        "title": "Conselho de Curadores (BOT)",
+        "count": "7 Membros",
+        "description": "O órgão de governança superior responsável pela supervisão fiduciária, integridade institucional e direção estratégica da Fundação.",
+        "responsibilities": [
+          "Supervisão fiduciária e integridade financeira",
+          "Aprovação e direção de políticas estratégicas",
+          "Nomeação executiva e supervisão de desempenho",
+          "Aplicação de conformidade institucional e ética"
+        ]
+      },
+      "boa": {
+        "title": "Conselhos Consultivos (BOA)",
+        "count": "Programa (5 cada) & Capítulo (3 cada)",
+        "description": "Painéis de especialistas fornecendo orientação especializada sobre entrega de programas e operações de capítulos.",
+        "responsibilities": [
+          "Recomendações estratégicas de programas",
+          "Supervisão de governança de capítulos",
+          "Expertise técnica e de domínio",
+          "Representação e advocacia de stakeholders"
+        ]
+      },
+      "bod": {
+        "title": "Conselhos Regionais de Diretores (BOD)",
+        "count": "3 Por Região",
+        "description": "Governança operacional garantindo execução regional de programas e adesão aos padrões institucionais.",
+        "responsibilities": [
+          "Coordenação de programas regionais",
+          "Tomada de decisão operacional",
+          "Supervisão de alocação de recursos",
+          "Monitoramento de desempenho e relatórios"
+        ]
+      },
+      "lcps": {
+        "title": "Presidentes de Capítulos Locais (LCPs)",
+        "count": "54+ Países",
+        "description": "Liderança no terreno executando programas e gerenciando engajamento comunitário a nível de país.",
+        "responsibilities": [
+          "Execução de programas a nível de país",
+          "Engajamento e mobilização comunitária",
+          "Parcerias locais e advocacia",
+          "Serviços aos membros e suporte de base"
+        ]
+      }
+    },
+    "management": {
+      "title": "Equipa de Gestão Executiva",
+      "subtitle": "A liderança executiva da SCEF supervisiona as seis divisões operacionais, garantindo entrega coordenada do nosso mandato educacional pan-africano.",
+      "roles": {
+        "orgSecretary": {
+          "title": "Secretário da Organização",
+          "mandate": "Jurídico & Governança",
+          "description": "Fornece liderança institucional, assessoria jurídica e garante conformidade de governança em todas as operações da SCEF."
+        },
+        "pro": {
+          "title": "Oficial de Relações Públicas (PRO)",
+          "mandate": "Comunicações & Relações com Stakeholders",
+          "description": "Gere comunicações institucionais, relações com media e estratégias de engajamento de stakeholders."
+        },
+        "operations": {
+          "title": "Diretor de Operações",
+          "mandate": "Liderança SOBCD",
+          "description": "Supervisiona operações estratégicas, conformidade empresarial e gestão de riscos institucionais."
+        },
+        "technology": {
+          "title": "Diretor de Tecnologia",
+          "mandate": "Liderança TDSD",
+          "description": "Lidera infraestrutura digital, desenvolvimento de plataformas e entrega de educação habilitada por tecnologia."
+        },
+        "mediaBusiness": {
+          "title": "Diretor de Negócios de Media",
+          "mandate": "Liderança OMBDD",
+          "description": "Impulsiona crescimento digital, aquisição de patrocínios e desenvolvimento de marca online."
+        },
+        "santosMedia": {
+          "title": "Diretor de Santos Media",
+          "mandate": "Liderança SMD",
+          "description": "Gere transmissão, produção de conteúdo e operações de plataformas de media."
+        },
+        "chapterServices": {
+          "title": "Diretor de Serviços de Capítulos",
+          "mandate": "Liderança LCS",
+          "description": "Apoia capítulos locais com integração, conformidade e orientação operacional."
+        }
+      }
+    },
+    "policies": {
+      "title": "Políticas & Conformidade",
+      "subtitle": "A SCEF mantém políticas de governança abrangentes garantindo transparência, responsabilização e operações éticas.",
+      "items": {
+        "constitution": { "title": "Constituição & Estatutos", "desc": "Documento fundacional de governança" },
+        "ethics": { "title": "Código de Ética", "desc": "Padrões para curadores, funcionários e voluntários" },
+        "financial": { "title": "Política Financeira", "desc": "Padrões de gestão fiscal e relatórios" },
+        "antiCorruption": { "title": "Política Anticorrupção", "desc": "Tolerância zero para fraude e corrupção" },
+        "conflict": { "title": "Conflito de Interesses", "desc": "Protocolos de divulgação e gestão" },
+        "whistleblower": { "title": "Proteção de Denunciantes", "desc": "Mecanismos de denúncia seguros" }
+      }
+    },
+    "contact": {
+      "title": "Contactar a Liderança",
+      "subtitle": "Para questões de governança, discussões de parceria ou engajamento institucional, contacte a nossa equipa de liderança.",
+      "email": "Email",
+      "phone": "Telefone"
+    },
+    "cta": {
+      "title": "Parceria com a Plataforma Educacional de África",
+      "subtitle": "Junte-se a governos, doadores e organizações que já colaboram com a SCEF para transformar a educação em África.",
+      "ctaPartner": "Pedido de Parceria",
+      "ctaDonate": "Apoiar o Nosso Trabalho",
+      "ctaChapter": "Iniciar um Capítulo Local"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "Estrutura Operacional",
+      "title": "Como a SCEF Funciona",
+      "subtitle": "A SCEF está estruturada em seis divisões para fornecer governança, programas, media, capítulos, conformidade e parcerias em escala."
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "Governança do Conselho e Escritório Executivo",
+        "lead": "Secretário da Organização (formação jurídica + função PRO)",
+        "mandate": "Coordenação do conselho, documentação de governança, suporte ao escritório executivo, comunicações institucionais e continuidade de governança."
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "Divisão de Operações Estratégicas e Conformidade Empresarial",
+        "lead": "Diretor de Operações e Conformidade",
+        "mandate": "Admin & RH, supervisão de operações financeiras, gestão de eventos, coordenação de formação, sistemas de conformidade, relatórios operacionais."
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "Divisão de Tecnologia e Serviços Digitais",
+        "lead": "Diretor de Tecnologia e Inovação Digital",
+        "mandate": "Sistemas web/app, bases de dados, segurança, dashboards, sistemas multilingues, desempenho de plataformas e entrega de transformação digital."
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "Divisão de Desenvolvimento de Negócios de Media Online",
+        "lead": "Diretor de Desenvolvimento de Negócios de Media",
+        "mandate": "Comunicações de captação, pipelines de patrocínio, crescimento digital, campanhas, suporte de conversão de parcerias, ativos de engajamento de doadores."
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "Divisão Santos Media",
+        "lead": "Diretor de Santos Media",
+        "mandate": "NESA Africa TV, It's In Me Radio, webinars/podcasts, programa de turismo educativo, operações de conteúdo, padrões editoriais, distribuição de media."
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "Divisão de Serviços de Capítulos Locais",
+        "lead": "Diretor de Serviços e Suporte de Capítulos",
+        "mandate": "Integração, monitoramento, suporte de conformidade, sistemas de relatórios, governança de capítulos locais e ativação escalável de capítulos."
+      }
+    },
+    "ctaJoinChapter": "Entrar num Capítulo Local"
+  },
+  "programs": {
+    "hero": {
+      "badge": "Nosso Trabalho",
+      "title": "Programas & Iniciativas",
+      "subtitle": "A SCEF entrega impacto através de programas principais projetados para trabalhar juntos em acesso, qualidade, inclusão, competências e reconhecimento."
+    },
+    "categories": {
+      "education": {
+        "title": "Programas Educacionais",
+        "subtitle": "Iniciativas principais abordando acesso, qualidade e inclusão na educação em África."
+      },
+      "eoa": {
+        "title": "Education Online Africa",
+        "subtitle": "Aprendizagem digital, certificação e caminhos de empregabilidade para aprendizes africanos e da diáspora."
+      },
+      "recognition": {
+        "title": "Reconhecimento & Prémios",
+        "subtitle": "Celebrando excelência e impulsionando melhoria contínua nos padrões educacionais."
+      },
+      "media": {
+        "title": "Plataformas de Media",
+        "subtitle": "Plataformas de transmissão e conteúdo para advocacia educacional e disseminação de conhecimento."
+      }
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programas",

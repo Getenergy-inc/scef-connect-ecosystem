@@ -242,6 +242,227 @@
       "ctaPartner": "CSR Partnership"
     }
   },
+  "governance": {
+    "hero": {
+      "badge": "BGEO — Board Governance & Executive Office",
+      "title": "Governed for Trust. Structured for Scale.",
+      "subtitle": "The Board Governance & Executive Office (BGEO) is the apex governance division providing institutional leadership, fiduciary oversight, and strategic direction for all SCEF operations across Africa.",
+      "anchors": {
+        "bot": "Board of Trustees",
+        "boa": "Board of Advisors",
+        "bod": "Board of Directors",
+        "lcps": "Local Chapter Presidents",
+        "management": "Management Team"
+      }
+    },
+    "bgeo": {
+      "title": "BGEO Division",
+      "body": "The Board Governance & Executive Office serves as the institutional nerve center, coordinating board activities, executive leadership, and ensuring SCEF delivers on its pan-African education mandate with integrity and accountability.",
+      "points": [
+        "Board coordination and governance",
+        "Executive leadership and direction",
+        "Institutional policy oversight",
+        "Strategic stakeholder engagement"
+      ],
+      "whyTitle": "Why Governance Matters",
+      "whyBody": "Africa's education sector has suffered from fragmented initiatives and weak oversight. SCEF's governance model provides clear accountability, transparent decision-making, and institutional continuity.",
+      "metrics": {
+        "trust": "Trust",
+        "trustDesc": "Fiduciary integrity",
+        "scale": "Scale",
+        "scaleDesc": "Continental reach",
+        "continuity": "Continuity",
+        "continuityDesc": "Beyond projects"
+      }
+    },
+    "layers": {
+      "title": "Four-Layer Governance Structure",
+      "subtitle": "Each layer has clear mandates, accountability lines, and operational scope ensuring transparent and effective governance.",
+      "level": "Level",
+      "keyResponsibilities": "Key Responsibilities",
+      "bot": {
+        "title": "Board of Trustees (BOT)",
+        "count": "7 Members",
+        "description": "The highest governing body responsible for fiduciary oversight, institutional integrity, and strategic direction of the Foundation.",
+        "responsibilities": [
+          "Fiduciary oversight and financial integrity",
+          "Strategic policy approval and direction",
+          "Executive appointment and performance oversight",
+          "Institutional compliance and ethics enforcement"
+        ]
+      },
+      "boa": {
+        "title": "Boards of Advisors (BOA)",
+        "count": "Program (5 each) & Chapter (3 each)",
+        "description": "Expert advisory panels providing specialized guidance on program delivery and chapter operations.",
+        "responsibilities": [
+          "Program strategy recommendations",
+          "Chapter governance oversight",
+          "Technical and domain expertise",
+          "Stakeholder representation and advocacy"
+        ]
+      },
+      "bod": {
+        "title": "Regional Boards of Directors (BOD)",
+        "count": "3 Per Region",
+        "description": "Operational governance ensuring regional program execution and adherence to institutional standards.",
+        "responsibilities": [
+          "Regional program coordination",
+          "Operational decision-making",
+          "Resource allocation oversight",
+          "Performance monitoring and reporting"
+        ]
+      },
+      "lcps": {
+        "title": "Local Chapter Presidents (LCPs)",
+        "count": "54+ Countries",
+        "description": "On-ground leadership executing programs and managing community engagement at country level.",
+        "responsibilities": [
+          "Country-level program execution",
+          "Community engagement and mobilization",
+          "Local partnerships and advocacy",
+          "Member services and grassroots support"
+        ]
+      }
+    },
+    "management": {
+      "title": "Executive Management Team",
+      "subtitle": "SCEF's executive leadership oversees the six operational divisions, ensuring coordinated delivery of our pan-African education mandate.",
+      "roles": {
+        "orgSecretary": {
+          "title": "Organization Secretary",
+          "mandate": "Legal & Governance",
+          "description": "Provides institutional leadership, legal counsel, and ensures governance compliance across all SCEF operations."
+        },
+        "pro": {
+          "title": "Public Relations Officer (PRO)",
+          "mandate": "Communications & Stakeholder Relations",
+          "description": "Manages institutional communications, media relations, and stakeholder engagement strategies."
+        },
+        "operations": {
+          "title": "Director of Operations",
+          "mandate": "SOBCD Leadership",
+          "description": "Oversees strategic operations, business compliance, and institutional risk management."
+        },
+        "technology": {
+          "title": "Director of Technology",
+          "mandate": "TDSD Leadership",
+          "description": "Leads digital infrastructure, platform development, and technology-enabled education delivery."
+        },
+        "mediaBusiness": {
+          "title": "Director of Media Business",
+          "mandate": "OMBDD Leadership",
+          "description": "Drives digital growth, sponsorship acquisition, and online brand development."
+        },
+        "santosMedia": {
+          "title": "Director of Santos Media",
+          "mandate": "SMD Leadership",
+          "description": "Manages broadcasting, content production, and media platform operations."
+        },
+        "chapterServices": {
+          "title": "Director of Chapter Services",
+          "mandate": "LCS Leadership",
+          "description": "Supports local chapters with onboarding, compliance, and operational guidance."
+        }
+      }
+    },
+    "policies": {
+      "title": "Policies & Compliance",
+      "subtitle": "SCEF maintains comprehensive governance policies ensuring transparency, accountability, and ethical operations.",
+      "items": {
+        "constitution": { "title": "Constitution & Bylaws", "desc": "Foundational governance document" },
+        "ethics": { "title": "Code of Ethics", "desc": "Standards for trustees, staff, and volunteers" },
+        "financial": { "title": "Financial Policy", "desc": "Fiscal management and reporting standards" },
+        "antiCorruption": { "title": "Anti-Corruption Policy", "desc": "Zero tolerance for fraud and corruption" },
+        "conflict": { "title": "Conflict of Interest", "desc": "Disclosure and management protocols" },
+        "whistleblower": { "title": "Whistleblower Protection", "desc": "Safe reporting mechanisms" }
+      }
+    },
+    "contact": {
+      "title": "Contact Leadership",
+      "subtitle": "For governance inquiries, partnership discussions, or institutional engagement, reach out to our leadership team.",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "cta": {
+      "title": "Partner with Africa's Education Platform",
+      "subtitle": "Join governments, donors, and organizations already collaborating with SCEF to transform education across Africa.",
+      "ctaPartner": "Partnership Inquiry",
+      "ctaDonate": "Support Our Work",
+      "ctaChapter": "Start a Local Chapter"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "Operational Structure",
+      "title": "How SCEF Works",
+      "subtitle": "SCEF is structured into six divisions to deliver governance, programs, media, chapters, compliance, and partnerships at scale."
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "Board Governance & Executive Office",
+        "lead": "Organization Secretary (Legal background + PRO function)",
+        "mandate": "Board coordination, governance documentation, executive office support, institutional communications, and governance continuity."
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "Strategic Operations & Business Compliance Division",
+        "lead": "Director of Operations and Compliance",
+        "mandate": "Admin & HR, finance operations oversight, events management, internal/external training coordination, compliance systems, operational reporting."
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "Technology & Digital Services Division",
+        "lead": "Director of Technology and Digital Innovation",
+        "mandate": "Website/app systems, databases, security, dashboards, multilingual systems, platform performance, and digital transformation delivery."
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "Online Media Business Development Division",
+        "lead": "Director of Media Business Development",
+        "mandate": "Fundraising communications, sponsorship pipelines, digital growth, campaigns, partnerships conversion support, donor engagement assets."
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "Santos Media Division",
+        "lead": "Director of Santos Media",
+        "mandate": "NESA Africa TV, It's In Me Radio, webinars/podcasts, education tourism show, content operations, editorial standards, media distribution."
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "Local Chapter Services Division",
+        "lead": "Director of Chapter Services and Support",
+        "mandate": "Onboarding, monitoring, compliance support, reporting systems, local chapter governance, and scalable chapter activation."
+      }
+    },
+    "ctaJoinChapter": "Join a Local Chapter"
+  },
+  "programs": {
+    "hero": {
+      "badge": "Our Work",
+      "title": "Programs & Initiatives",
+      "subtitle": "SCEF delivers impact through flagship programs designed to work together on access, quality, inclusion, skills, and recognition."
+    },
+    "categories": {
+      "education": {
+        "title": "Education Programs",
+        "subtitle": "Core initiatives addressing access, quality, and inclusion in education across Africa."
+      },
+      "eoa": {
+        "title": "Education Online Africa",
+        "subtitle": "Digital learning, certification, and employability pathways for Africa and diaspora learners."
+      },
+      "recognition": {
+        "title": "Recognition & Awards",
+        "subtitle": "Celebrating excellence and driving continuous improvement in education standards."
+      },
+      "media": {
+        "title": "Media Platforms",
+        "subtitle": "Broadcasting and content platforms for education advocacy and knowledge dissemination."
+      }
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programs",
