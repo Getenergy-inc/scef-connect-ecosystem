@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Handshake, Globe, Play, ChevronLeft, ChevronRight, ExternalLink, Volume2, FileText, Image } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLocale } from "@/contexts/LocaleContext";
 import heroImage from "@/assets/hero-education.jpg";
 
 const boardItems = [
@@ -54,6 +55,7 @@ const typeColors = {
 };
 
 export const HeroSection = () => {
+  const { t, isRTL } = useLocale();
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -67,7 +69,7 @@ export const HeroSection = () => {
   const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons];
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative min-h-screen flex flex-col overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background with SCEF Blue */}
       <div className="absolute inset-0">
         <img
@@ -93,15 +95,12 @@ export const HeroSection = () => {
 
           {/* Main Headline */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-semibold text-white mb-6 leading-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Santos Creations{" "}
-            <span className="text-scef-gold">
-              Educational Foundation
-            </span>
+            {t("home.hero.title")}
           </h1>
 
           {/* Subheadline */}
           <p className="font-body text-lg md:text-xl text-white/85 max-w-4xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Institutional platform governing pan-African education delivery, certifications, and local chapters since 1997. Aligned with UN SDGs 4,5,10,17 and AU Agenda 2063.
+            {t("home.hero.subtitle")}
           </p>
 
           {/* Primary CTA Buttons */}
@@ -113,7 +112,7 @@ export const HeroSection = () => {
             >
               <Link to="/membership">
                 <Users className="w-5 h-5" />
-                Join as Member
+                {t("home.hero.ctaPrimary")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
@@ -124,7 +123,7 @@ export const HeroSection = () => {
             >
               <Link to="/local-chapters">
                 <Globe className="w-5 h-5" />
-                Establish Local Chapter
+                {t("home.hero.ctaJoinChapter")}
               </Link>
             </Button>
             <Button 
@@ -135,7 +134,7 @@ export const HeroSection = () => {
             >
               <Link to="/partners">
                 <Handshake className="w-5 h-5" />
-                Partner with SCEF
+                {t("home.partnerships.ctaCsr")}
               </Link>
             </Button>
           </div>
