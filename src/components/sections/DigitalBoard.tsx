@@ -2,10 +2,21 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Play, Volume2, FileText, Image, ChevronLeft, ChevronRight, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
-const boardItems = [
+interface BoardItem {
+  id: string;
+  type: string;
+  title: string;
+  description: string;
+  cta: { text: string; href: string };
+  thumbnail: string;
+}
+
+const fallbackItems: BoardItem[] = [
   {
-    id: 1,
+    id: "1",
     type: "video",
     title: "NESA-Africa 2024 Nominations Now Open",
     description: "Submit your nominations for the most prestigious education awards in Africa.",
@@ -13,28 +24,12 @@ const boardItems = [
     thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
   },
   {
-    id: 2,
+    id: "2",
     type: "flyer",
     title: "EduAid Scholarship Application",
     description: "Applications for the 2024 scholarship cycle are now open. Don't miss this opportunity!",
     cta: { text: "Apply Now", href: "/programs/eduaid-africa" },
     thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
-  },
-  {
-    id: 3,
-    type: "announcement",
-    title: "AEPC Certification Program Launch",
-    description: "Africa Education & Productivity Certification now available across 10 countries.",
-    cta: { text: "Learn More", href: "/certifications" },
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800",
-  },
-  {
-    id: 4,
-    type: "audio",
-    title: "It's In Me Radio: Latest Episode",
-    description: "Listen to inspiring stories from educators and students transforming their communities.",
-    cta: { text: "Listen Now", href: "/media/its-in-me-radio" },
-    thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800",
   },
 ];
 
@@ -55,15 +50,54 @@ const typeColors = {
 export const DigitalBoard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const { data: dbItems } = useQuery({
+    queryKey: ["digital-board-items"],
+    queryFn: async () => {
+      const now = new Date().toISOString();
+      const { data, error } = await supabase
+        .from("digital_board_items")
+        .select("*")
+        .eq("is_active", true)
+        .or(`publish_at.is.null,publish_at.lte.${now}`)
+        .or(`expire_at.is.null,expire_at.gte.${now}`)
+        .order("display_order", { ascending: true });
+      
+      if (error) throw error;
+      return data;
+    },
+  });
+
+  // Map database items to component format
+  const boardItems: BoardItem[] = dbItems?.length
+    ? dbItems.map((item) => ({
+        id: item.id,
+        type: item.content_type || "announcement",
+        title: item.title,
+        description: item.content_text || "",
+        cta: { text: item.cta_text || "Learn More", href: item.cta_link || "/updates" },
+        thumbnail: item.content_url || "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
+      }))
+    : fallbackItems;
+
   useEffect(() => {
+    if (boardItems.length === 0) return;
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % boardItems.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [boardItems.length]);
 
-  const activeItem = boardItems[activeIndex];
-  const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons];
+  // Reset index if it's out of bounds
+  useEffect(() => {
+    if (activeIndex >= boardItems.length) {
+      setActiveIndex(0);
+    }
+  }, [activeIndex, boardItems.length]);
+
+  if (boardItems.length === 0) return null;
+
+  const activeItem = boardItems[activeIndex] || boardItems[0];
+  const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons] || FileText;
 
   return (
     <section className="py-24 bg-earth relative overflow-hidden">
@@ -100,7 +134,7 @@ export const DigitalBoard = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-transparent lg:bg-gradient-to-t" />
                 
                 {/* Type Badge */}
-                <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full ${typeColors[activeItem.type as keyof typeof typeColors]} text-xs font-semibold flex items-center gap-2`}>
+                <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full ${typeColors[activeItem.type as keyof typeof typeColors] || "bg-primary text-primary-foreground"} text-xs font-semibold flex items-center gap-2`}>
                   <TypeIcon className="w-3 h-3" />
                   {activeItem.type.charAt(0).toUpperCase() + activeItem.type.slice(1)}
                 </div>
