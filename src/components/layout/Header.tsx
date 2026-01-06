@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, LogIn, UserPlus, Search, Wallet, ExternalLink } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogIn, UserPlus, Search, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/contexts/LocaleContext";
 import { TopUtilityNav } from "./TopUtilityNav";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header = () => {
   const { t, isRTL } = useLocale();
@@ -177,6 +178,7 @@ export const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden xl:flex items-center gap-2">
+            <LanguageSwitcher variant="header" />
             <Button 
               variant="ghost" 
               size="icon" 
@@ -268,26 +270,31 @@ export const Header = () => {
                 </div>
               ))}
 
-              <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
-                <Button 
-                  variant="outline" 
-                  className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark w-full"
-                  asChild
-                >
-                  <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
-                    <LogIn className="w-4 h-4" />
-                    {t('nav.signin')} / {t('nav.signup')}
-                  </Link>
-                </Button>
-                <Button 
-                  className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold w-full"
-                  asChild
-                >
-                  <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
-                    <Heart className="w-4 h-4" />
-                    {t('nav.donate')}
-                  </Link>
-                </Button>
+              <div className="pt-4 border-t border-white/10 space-y-4">
+                <div className="flex justify-center">
+                  <LanguageSwitcher variant="inline" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Button 
+                    variant="outline" 
+                    className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark w-full"
+                    asChild
+                  >
+                    <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                      <LogIn className="w-4 h-4" />
+                      {t('nav.signin')} / {t('nav.signup')}
+                    </Link>
+                  </Button>
+                  <Button 
+                    className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold w-full"
+                    asChild
+                  >
+                    <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
+                      <Heart className="w-4 h-4" />
+                      {t('nav.donate')}
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
