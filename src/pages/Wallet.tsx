@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
+import { logger } from "@/lib/logger";
 import { 
   Wallet as WalletIcon, Plus, ArrowUpRight, ArrowDownLeft, 
   CreditCard, Coins, History, RefreshCw 
@@ -49,7 +50,7 @@ const Wallet = () => {
       if (error) throw error;
       setWallet(data);
     } catch (error) {
-      console.error("Error fetching wallet:", error);
+      logger.error("Error fetching wallet:", error);
     } finally {
       setLoading(false);
     }

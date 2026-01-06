@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
+import { logger } from "@/lib/logger";
 import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { MemberDashboard } from "@/components/dashboard/MemberDashboard";
 import { AmbassadorDashboard } from "@/components/dashboard/AmbassadorDashboard";
@@ -53,7 +54,7 @@ const Dashboard = () => {
       if (error) throw error;
       setProfile(data);
     } catch (error) {
-      console.error("Error fetching profile:", error);
+      logger.error("Error fetching profile:", error);
     } finally {
       setLoading(false);
     }
