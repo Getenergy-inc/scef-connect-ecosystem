@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
 import { GraduationCap, School, Users, Eye, TrendingUp } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
-const stats = [
+const getStats = (t: (key: string) => string) => [
   {
     icon: GraduationCap,
     value: 15000,
     suffix: "+",
-    label: "Scholarships Funded",
+    label: t("home.impact.metrics.scholarships"),
   },
   {
     icon: School,
     value: 250,
     suffix: "+",
-    label: "Schools Supported",
+    label: t("home.impact.metrics.schools"),
   },
   {
     icon: Users,
     value: 45,
     suffix: "",
-    label: "Active Chapters",
+    label: t("home.impact.metrics.chapters"),
   },
   {
     icon: Eye,
     value: 2,
     suffix: "M+",
-    label: "Media Views",
+    label: t("home.impact.metrics.partners"),
   },
 ];
 
@@ -52,8 +53,11 @@ const CountUp = ({ end, suffix, duration = 2000 }: { end: number; suffix: string
 };
 
 export const ImpactStats = () => {
+  const { t, isRTL } = useLocale();
+  const stats = getStats(t);
+
   return (
-    <section className="relative py-20 bg-scef-blue">
+    <section className="relative py-20 bg-scef-blue" dir={isRTL ? "rtl" : "ltr"}>
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-scef-gold" />
       
@@ -62,13 +66,13 @@ export const ImpactStats = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm font-medium mb-4">
             <TrendingUp className="w-4 h-4" />
-            Our Impact
+            {t("home.impact.title")}
           </div>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Making a <span className="text-scef-gold">Difference</span> Across Africa
+            {t("home.impact.cta")}
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Through the collective efforts of our members, donors, and partners, we're creating lasting change in education.
+            {t("home.hero.subtitle")}
           </p>
         </div>
 
