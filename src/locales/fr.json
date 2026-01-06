@@ -463,6 +463,251 @@
       }
     }
   },
+  "membership": {
+    "hero": {
+      "badge": "Rejoindre SCEF",
+      "title": "Devenir membre",
+      "subtitle": "Rejoignez une communauté panafricaine de transformateurs de l'éducation. En tant que membre SCEF, vous accédez aux programmes, chapitres, certifications et opportunités pour façonner l'avenir éducatif de l'Afrique."
+    },
+    "benefits": {
+      "title": "Avantages membres",
+      "items": {
+        "network": "Accès à un réseau panafricain d'éducateurs et d'acteurs du changement",
+        "programs": "Accès prioritaire aux programmes et certifications SCEF",
+        "chapters": "Rejoindre ou diriger des chapitres locaux dans votre pays",
+        "events": "Invitations à des événements et webinaires exclusifs",
+        "resources": "Accès à la bibliothèque numérique et aux ressources d'apprentissage",
+        "recognition": "Reconnaissance et prix pour les contributions"
+      }
+    },
+    "types": {
+      "title": "Types d'adhésion",
+      "individual": {
+        "title": "Membre individuel",
+        "description": "Pour les professionnels, étudiants et éducateurs passionnés par la transformation de l'éducation en Afrique."
+      },
+      "institutional": {
+        "title": "Membre institutionnel",
+        "description": "Pour les écoles, universités et organisations alignées sur la mission de SCEF."
+      },
+      "ambassador": {
+        "title": "Ambassadeur",
+        "description": "Pour les leaders qui défendent les programmes de SCEF et nous représentent dans leurs communautés."
+      }
+    },
+    "cta": {
+      "join": "Rejoindre maintenant",
+      "ambassador": "Devenir ambassadeur",
+      "institutional": "Adhésion institutionnelle"
+    }
+  },
+  "donate": {
+    "hero": {
+      "badge": "Soutenir l'éducation",
+      "title": "Donnez pour transformer l'éducation",
+      "subtitle": "Votre contribution finance directement les bourses, la rénovation des écoles, l'accès à l'apprentissage numérique et les programmes qui changent des vies en Afrique."
+    },
+    "impact": {
+      "title": "Votre impact",
+      "items": {
+        "scholarships": "Financer des bourses pour les étudiants dans le besoin",
+        "schools": "Rénover et reconstruire des écoles à travers l'Afrique",
+        "digital": "Fournir un accès à l'apprentissage numérique aux communautés défavorisées",
+        "women": "Soutenir les initiatives d'éducation des femmes et des filles",
+        "special": "Permettre les programmes d'éducation spécialisée"
+      }
+    },
+    "options": {
+      "title": "Façons de donner",
+      "oneTime": "Don unique",
+      "monthly": "Don mensuel",
+      "corporate": "Partenariat entreprise/CSR",
+      "inkind": "Dons en nature"
+    },
+    "transparency": {
+      "title": "Transparence et responsabilité",
+      "body": "SCEF maintient une responsabilité financière stricte avec des rapports d'impact réguliers, des états audités et une allocation transparente des fonds."
+    },
+    "cta": {
+      "donate": "Faire un don",
+      "partner": "Partenariat CSR",
+      "contact": "Nous contacter"
+    }
+  },
+  "partners": {
+    "hero": {
+      "badge": "Partenariats",
+      "title": "Devenir partenaire de SCEF",
+      "subtitle": "Rejoignez les gouvernements, entreprises, fondations et ONG qui collaborent avec SCEF pour transformer l'éducation à travers l'Afrique avec un impact mesurable."
+    },
+    "types": {
+      "title": "Types de partenariat",
+      "csr": {
+        "title": "Gestion de fonds d'éducation CSR",
+        "description": "Nous aidons les entreprises à structurer, déployer et suivre leurs fonds CSR pour l'éducation avec gouvernance, supervision et rapports d'impact."
+      },
+      "institutional": {
+        "title": "Partenariats institutionnels",
+        "description": "Collaborer avec les écoles, universités et organismes gouvernementaux pour développer les programmes éducatifs."
+      },
+      "funding": {
+        "title": "Partenaires de financement",
+        "description": "Fondations et donateurs soutenant les programmes de SCEF par des subventions et contributions."
+      },
+      "technical": {
+        "title": "Partenaires techniques",
+        "description": "Fournisseurs de technologie et de services permettant les plateformes numériques et les opérations de SCEF."
+      }
+    },
+    "process": {
+      "title": "Processus de partenariat",
+      "steps": {
+        "inquiry": "Soumettre une demande de partenariat",
+        "discussion": "Discussion initiale et alignement",
+        "proposal": "Développement de proposition personnalisée",
+        "agreement": "Accord de partenariat",
+        "implementation": "Mise en œuvre et reporting"
+      }
+    },
+    "cta": {
+      "inquiry": "Demande de partenariat",
+      "proposal": "Demander une proposition",
+      "meeting": "Planifier une réunion"
+    }
+  },
+  "chapters": {
+    "hero": {
+      "badge": "Chapitres locaux",
+      "title": "Chapitres locaux SCEF",
+      "subtitle": "Notre réseau de chapitres locaux porte la mission de SCEF aux communautés à travers l'Afrique et la diaspora, activant la transformation éducative de base."
+    },
+    "about": {
+      "title": "À propos des chapitres locaux",
+      "body": "Les chapitres locaux SCEF sont des unités communautaires qui exécutent les programmes, engagent les parties prenantes et génèrent un impact éducatif au niveau local. Chaque chapitre opère sous la gouvernance SCEF avec le soutien de la Division des services aux chapitres locaux."
+    },
+    "types": {
+      "title": "Types de chapitres",
+      "physical": "Chapitres physiques",
+      "hybrid": "Chapitres hybrides",
+      "online": "Chapitres en ligne"
+    },
+    "activities": {
+      "title": "Activités des chapitres",
+      "items": {
+        "programs": "Exécuter les programmes SCEF localement",
+        "events": "Organiser des événements et ateliers éducatifs",
+        "advocacy": "Plaider pour les standards éducatifs",
+        "fundraising": "Collecte de fonds et partenariats locaux",
+        "membership": "Recrutement et soutien des membres"
+      }
+    },
+    "cta": {
+      "browse": "Parcourir les chapitres",
+      "join": "Rejoindre un chapitre",
+      "create": "Créer un chapitre",
+      "leader": "Postuler comme leader de chapitre"
+    }
+  },
+  "media": {
+    "hero": {
+      "badge": "Santos Media",
+      "title": "Division Santos Media",
+      "subtitle": "Le bras média de SCEF diffuse du contenu éducatif, célèbre l'excellence et plaide pour la transformation de l'éducation à travers l'Afrique."
+    },
+    "platforms": {
+      "title": "Nos plateformes",
+      "nesaTv": {
+        "title": "NESA Africa TV",
+        "description": "Diffusion de l'excellence éducative, cérémonies de remise de prix et contenu éducatif à travers l'Afrique."
+      },
+      "radio": {
+        "title": "It's In Me Radio",
+        "description": "Contenu audio présentant des histoires éducatives, interviews et programmes de plaidoyer."
+      },
+      "webinars": {
+        "title": "Webinaires et Podcast EduAid Africa",
+        "description": "Webinaires éducatifs, panels d'experts et séries de podcasts sur des sujets éducatifs."
+      },
+      "tourism": {
+        "title": "Émission Tourisme éducatif",
+        "description": "Présentation des institutions éducatives et destinations d'apprentissage à travers l'Afrique."
+      }
+    },
+    "volunteer": {
+      "title": "Bénévoles média",
+      "body": "Rejoignez notre équipe média en tant que créateur de contenu bénévole, présentateur ou support technique."
+    },
+    "cta": {
+      "watch": "Regarder NESA TV",
+      "listen": "Écouter la Radio",
+      "volunteer": "Devenir bénévole média"
+    }
+  },
+  "getInvolved": {
+    "hero": {
+      "badge": "S'impliquer",
+      "title": "Rejoignez le mouvement",
+      "subtitle": "Il existe de nombreuses façons de contribuer à la mission de SCEF de transformer l'éducation à travers l'Afrique. Trouvez votre voie et faites un impact."
+    },
+    "options": {
+      "member": {
+        "title": "Devenir membre",
+        "description": "Rejoignez notre communauté panafricaine de défenseurs de l'éducation et d'acteurs du changement."
+      },
+      "ambassador": {
+        "title": "Devenir ambassadeur",
+        "description": "Défendez les programmes de SCEF et représentez-nous dans votre communauté et vos réseaux."
+      },
+      "volunteer": {
+        "title": "Bénévolat",
+        "description": "Contribuez vos compétences et votre temps pour soutenir les programmes et opérations de SCEF."
+      },
+      "chapter": {
+        "title": "Rejoindre un chapitre",
+        "description": "Connectez-vous avec des acteurs locaux du changement et participez à un impact communautaire."
+      },
+      "donate": {
+        "title": "Faire un don",
+        "description": "Soutenez les bourses, la rénovation des écoles et les programmes éducatifs à travers l'Afrique."
+      },
+      "partner": {
+        "title": "Devenir partenaire",
+        "description": "Collaborez via CSR, partenariats institutionnels ou parrainage de programmes."
+      }
+    },
+    "cta": {
+      "explore": "Explorer les options",
+      "contact": "Nous contacter"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Nous contacter",
+      "title": "Entrez en contact",
+      "subtitle": "Des questions sur SCEF, nos programmes ou comment vous impliquer ? Nous serions ravis de vous entendre."
+    },
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer le message"
+    },
+    "info": {
+      "title": "Coordonnées",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "address": "Adresse"
+    },
+    "departments": {
+      "title": "Départements",
+      "general": "Demandes générales",
+      "partnerships": "Partenariats et CSR",
+      "membership": "Adhésion",
+      "media": "Médias et presse",
+      "chapters": "Chapitres locaux"
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programmes",
@@ -480,6 +725,6 @@
       "label": "Suivez-nous"
     },
     "copyright": "© {year} Santos Creations Educational Foundation. Tous droits réservés.",
-    "mission": "Gouverner l'avenir de l'éducation en Afrique par le plaidoyer, le financement et la certification de l'excellence éducative sur le continent."
+    "mission": "Gouverner l'avenir de l'éducation en Afrique par le plaidoyer, le financement et la certification de l'excellence éducative à travers le continent."
   }
 }
