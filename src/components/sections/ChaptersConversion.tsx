@@ -7,10 +7,10 @@ export const ChaptersConversion = () => {
   const { t } = useLocale();
 
   const actions = [
-    { key: 'browse', icon: MapPin, href: '/local-chapters', label: t('nav.chapters.browse') },
-    { key: 'join', icon: Users, href: '/local-chapters', label: t('nav.chapters.join') },
-    { key: 'create', icon: Plus, href: '/local-chapters', label: t('nav.chapters.create') },
-    { key: 'leader', icon: Crown, href: '/local-chapters', label: t('nav.chapters.leader') },
+    { key: 'browse', icon: MapPin, href: '/local-chapters', label: t('home.chaptersBlock.ctaBrowse') },
+    { key: 'join', icon: Users, href: '/local-chapters', label: t('home.chaptersBlock.ctaJoin') },
+    { key: 'create', icon: Plus, href: '/local-chapters', label: t('home.chaptersBlock.ctaCreate') },
+    { key: 'leader', icon: Crown, href: '/local-chapters', label: t('home.chaptersBlock.ctaLeader') },
   ];
 
   return (
@@ -18,10 +18,10 @@ export const ChaptersConversion = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            {t('nav.chapters')}
+            {t('home.chaptersBlock.title')}
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto">
-            Join or create a local chapter to bring SCEF's mission to your community. Chapters operate across 54+ African countries and the diaspora.
+            {t('home.chaptersBlock.body')}
           </p>
         </div>
 

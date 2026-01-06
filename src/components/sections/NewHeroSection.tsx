@@ -28,12 +28,12 @@ export const HeroSection = () => {
           
           {/* Headline */}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            {t('hero.headline')}
+            {t('home.hero.title')}
           </h1>
           
           {/* Subtext */}
           <p className="text-lg md:text-xl text-white leading-relaxed mb-10 max-w-2xl drop-shadow-md">
-            {t('hero.subtext')}
+            {t('home.hero.subtitle')}
           </p>
           
           {/* Primary CTAs */}
@@ -45,7 +45,7 @@ export const HeroSection = () => {
             >
               <Link to="/membership">
                 <Users className="w-5 h-5" />
-                {t('hero.cta.member')}
+                {t('home.hero.ctaPrimary')}
               </Link>
             </Button>
             <Button
@@ -56,7 +56,7 @@ export const HeroSection = () => {
             >
               <Link to="/donate">
                 <Heart className="w-5 h-5" />
-                {t('hero.cta.donate')}
+                {t('home.hero.ctaDonate')}
               </Link>
             </Button>
           </div>
@@ -68,7 +68,7 @@ export const HeroSection = () => {
               className="flex items-center gap-2 text-scef-gold hover:text-scef-gold-light transition-colors"
             >
               <Award className="w-4 h-4" />
-              {t('hero.cta.ambassador')}
+              {t('home.hero.ctaAmbassador')}
               <ArrowRight className="w-3 h-3" />
             </Link>
             <Link 
@@ -76,7 +76,7 @@ export const HeroSection = () => {
               className="flex items-center gap-2 text-white/80 hover:text-scef-gold transition-colors"
             >
               <MapPin className="w-4 h-4" />
-              {t('hero.cta.chapter')}
+              {t('home.hero.ctaJoinChapter')}
               <ArrowRight className="w-3 h-3" />
             </Link>
             <Link 
@@ -84,7 +84,7 @@ export const HeroSection = () => {
               className="flex items-center gap-2 text-white/80 hover:text-scef-gold transition-colors"
             >
               <Handshake className="w-4 h-4" />
-              {t('hero.cta.partner')}
+              {t('nav.getInvolved.csr')}
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>

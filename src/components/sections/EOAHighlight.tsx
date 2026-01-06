@@ -16,9 +16,9 @@ export const EOAHighlight = () => {
             </div>
             <div>
               <h3 className="font-display text-xl md:text-2xl font-bold text-white">
-                Education Online Africa (EOA)
+                {t('home.eoa.title')}
               </h3>
-              <p className="text-scef-gold font-medium">{t('eoa.tagline')}</p>
+              <p className="text-scef-gold font-medium text-sm max-w-md">{t('home.eoa.body')}</p>
             </div>
           </div>
           
@@ -29,7 +29,7 @@ export const EOAHighlight = () => {
             >
               <Link to="/programs/digital-learning">
                 <GraduationCap className="w-4 h-4" />
-                {t('eoa.start')}
+                {t('home.eoa.ctaStart')}
               </Link>
             </Button>
             <Button
@@ -39,7 +39,7 @@ export const EOAHighlight = () => {
             >
               <Link to="/programs/digital-learning#awpc">
                 <Award className="w-4 h-4" />
-                AWPC
+                {t('home.eoa.ctaCertify')}
               </Link>
             </Button>
             <Button
@@ -49,7 +49,7 @@ export const EOAHighlight = () => {
             >
               <Link to="/certifications">
                 <FileText className="w-4 h-4" />
-                {t('eoa.exams')}
+                {t('home.eoa.ctaExam')}
               </Link>
             </Button>
           </div>
