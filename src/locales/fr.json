@@ -242,6 +242,227 @@
       "ctaPartner": "Partenariat CSR"
     }
   },
+  "governance": {
+    "hero": {
+      "badge": "BGEO — Gouvernance du conseil et bureau exécutif",
+      "title": "Gouverné pour la confiance. Structuré pour l'échelle.",
+      "subtitle": "Le Bureau de Gouvernance et Exécutif (BGEO) est la division de gouvernance suprême assurant le leadership institutionnel, la surveillance fiduciaire et la direction stratégique de toutes les opérations SCEF en Afrique.",
+      "anchors": {
+        "bot": "Conseil des administrateurs",
+        "boa": "Conseil consultatif",
+        "bod": "Conseil de direction",
+        "lcps": "Présidents des chapitres locaux",
+        "management": "Équipe de direction"
+      }
+    },
+    "bgeo": {
+      "title": "Division BGEO",
+      "body": "Le Bureau de Gouvernance et Exécutif sert de centre névralgique institutionnel, coordonnant les activités du conseil, le leadership exécutif et veillant à ce que SCEF remplisse son mandat éducatif panafricain avec intégrité et responsabilité.",
+      "points": [
+        "Coordination et gouvernance du conseil",
+        "Leadership et direction exécutive",
+        "Supervision des politiques institutionnelles",
+        "Engagement stratégique des parties prenantes"
+      ],
+      "whyTitle": "Pourquoi la gouvernance compte",
+      "whyBody": "Le secteur éducatif africain a souffert d'initiatives fragmentées et d'une supervision faible. Le modèle de gouvernance de SCEF offre une responsabilité claire, une prise de décision transparente et une continuité institutionnelle.",
+      "metrics": {
+        "trust": "Confiance",
+        "trustDesc": "Intégrité fiduciaire",
+        "scale": "Échelle",
+        "scaleDesc": "Portée continentale",
+        "continuity": "Continuité",
+        "continuityDesc": "Au-delà des projets"
+      }
+    },
+    "layers": {
+      "title": "Structure de gouvernance à quatre niveaux",
+      "subtitle": "Chaque niveau a des mandats clairs, des lignes de responsabilité et une portée opérationnelle garantissant une gouvernance transparente et efficace.",
+      "level": "Niveau",
+      "keyResponsibilities": "Responsabilités clés",
+      "bot": {
+        "title": "Conseil des administrateurs (BOT)",
+        "count": "7 Membres",
+        "description": "L'organe de gouvernance suprême responsable de la surveillance fiduciaire, de l'intégrité institutionnelle et de la direction stratégique de la Fondation.",
+        "responsibilities": [
+          "Surveillance fiduciaire et intégrité financière",
+          "Approbation et direction des politiques stratégiques",
+          "Nomination et supervision de la performance des cadres",
+          "Application de la conformité institutionnelle et de l'éthique"
+        ]
+      },
+      "boa": {
+        "title": "Conseils consultatifs (BOA)",
+        "count": "Programme (5 chacun) & Chapitre (3 chacun)",
+        "description": "Panels d'experts offrant des conseils spécialisés sur la mise en œuvre des programmes et les opérations des chapitres.",
+        "responsibilities": [
+          "Recommandations stratégiques sur les programmes",
+          "Supervision de la gouvernance des chapitres",
+          "Expertise technique et sectorielle",
+          "Représentation et plaidoyer des parties prenantes"
+        ]
+      },
+      "bod": {
+        "title": "Conseils régionaux de direction (BOD)",
+        "count": "3 Par région",
+        "description": "Gouvernance opérationnelle assurant l'exécution régionale des programmes et le respect des normes institutionnelles.",
+        "responsibilities": [
+          "Coordination des programmes régionaux",
+          "Prise de décision opérationnelle",
+          "Supervision de l'allocation des ressources",
+          "Suivi et reporting des performances"
+        ]
+      },
+      "lcps": {
+        "title": "Présidents des chapitres locaux (LCPs)",
+        "count": "54+ Pays",
+        "description": "Leadership sur le terrain exécutant les programmes et gérant l'engagement communautaire au niveau national.",
+        "responsibilities": [
+          "Exécution des programmes au niveau national",
+          "Engagement et mobilisation communautaire",
+          "Partenariats locaux et plaidoyer",
+          "Services aux membres et soutien de base"
+        ]
+      }
+    },
+    "management": {
+      "title": "Équipe de direction exécutive",
+      "subtitle": "Le leadership exécutif de SCEF supervise les six divisions opérationnelles, assurant la livraison coordonnée de notre mandat éducatif panafricain.",
+      "roles": {
+        "orgSecretary": {
+          "title": "Secrétaire d'organisation",
+          "mandate": "Juridique & Gouvernance",
+          "description": "Assure le leadership institutionnel, le conseil juridique et la conformité de la gouvernance dans toutes les opérations SCEF."
+        },
+        "pro": {
+          "title": "Responsable des relations publiques (PRO)",
+          "mandate": "Communications & Relations parties prenantes",
+          "description": "Gère les communications institutionnelles, les relations médias et les stratégies d'engagement des parties prenantes."
+        },
+        "operations": {
+          "title": "Directeur des opérations",
+          "mandate": "Direction SOBCD",
+          "description": "Supervise les opérations stratégiques, la conformité commerciale et la gestion des risques institutionnels."
+        },
+        "technology": {
+          "title": "Directeur de la technologie",
+          "mandate": "Direction TDSD",
+          "description": "Dirige l'infrastructure numérique, le développement de plateformes et la livraison éducative par la technologie."
+        },
+        "mediaBusiness": {
+          "title": "Directeur du développement média",
+          "mandate": "Direction OMBDD",
+          "description": "Pilote la croissance numérique, l'acquisition de sponsors et le développement de la marque en ligne."
+        },
+        "santosMedia": {
+          "title": "Directeur de Santos Media",
+          "mandate": "Direction SMD",
+          "description": "Gère la diffusion, la production de contenu et les opérations des plateformes média."
+        },
+        "chapterServices": {
+          "title": "Directeur des services aux chapitres",
+          "mandate": "Direction LCS",
+          "description": "Soutient les chapitres locaux avec l'intégration, la conformité et le guidance opérationnelle."
+        }
+      }
+    },
+    "policies": {
+      "title": "Politiques & Conformité",
+      "subtitle": "SCEF maintient des politiques de gouvernance complètes assurant transparence, responsabilité et opérations éthiques.",
+      "items": {
+        "constitution": { "title": "Constitution & Statuts", "desc": "Document fondateur de gouvernance" },
+        "ethics": { "title": "Code d'éthique", "desc": "Normes pour administrateurs, personnel et bénévoles" },
+        "financial": { "title": "Politique financière", "desc": "Normes de gestion fiscale et reporting" },
+        "antiCorruption": { "title": "Politique anti-corruption", "desc": "Tolérance zéro pour fraude et corruption" },
+        "conflict": { "title": "Conflit d'intérêts", "desc": "Protocoles de divulgation et gestion" },
+        "whistleblower": { "title": "Protection des lanceurs d'alerte", "desc": "Mécanismes de signalement sécurisés" }
+      }
+    },
+    "contact": {
+      "title": "Contacter le leadership",
+      "subtitle": "Pour les questions de gouvernance, les discussions de partenariat ou l'engagement institutionnel, contactez notre équipe de direction.",
+      "email": "Email",
+      "phone": "Téléphone"
+    },
+    "cta": {
+      "title": "Partenariat avec la plateforme éducative africaine",
+      "subtitle": "Rejoignez les gouvernements, donateurs et organisations qui collaborent déjà avec SCEF pour transformer l'éducation en Afrique.",
+      "ctaPartner": "Demande de partenariat",
+      "ctaDonate": "Soutenir notre travail",
+      "ctaChapter": "Créer un chapitre local"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "Structure opérationnelle",
+      "title": "Comment SCEF fonctionne",
+      "subtitle": "SCEF est structuré en six divisions pour fournir gouvernance, programmes, médias, chapitres, conformité et partenariats à grande échelle."
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "Gouvernance du conseil et bureau exécutif",
+        "lead": "Secrétaire d'organisation (formation juridique + fonction PRO)",
+        "mandate": "Coordination du conseil, documentation de gouvernance, support bureau exécutif, communications institutionnelles et continuité de gouvernance."
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "Division Opérations stratégiques et conformité",
+        "lead": "Directeur des opérations et de la conformité",
+        "mandate": "Admin & RH, supervision des opérations financières, gestion des événements, coordination des formations, systèmes de conformité, reporting opérationnel."
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "Division Technologie et services numériques",
+        "lead": "Directeur de la technologie et de l'innovation numérique",
+        "mandate": "Systèmes web/app, bases de données, sécurité, tableaux de bord, systèmes multilingues, performance des plateformes et transformation numérique."
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "Division Développement média en ligne",
+        "lead": "Directeur du développement média",
+        "mandate": "Communications de collecte de fonds, pipelines de sponsoring, croissance numérique, campagnes, support conversion partenariats, actifs d'engagement donateurs."
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "Division Santos Media",
+        "lead": "Directeur de Santos Media",
+        "mandate": "NESA Africa TV, It's In Me Radio, webinaires/podcasts, émission tourisme éducatif, opérations de contenu, normes éditoriales, distribution média."
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "Division Services aux chapitres locaux",
+        "lead": "Directeur des services et support aux chapitres",
+        "mandate": "Intégration, suivi, support conformité, systèmes de reporting, gouvernance des chapitres locaux et activation évolutive des chapitres."
+      }
+    },
+    "ctaJoinChapter": "Rejoindre un chapitre local"
+  },
+  "programs": {
+    "hero": {
+      "badge": "Notre travail",
+      "title": "Programmes & Initiatives",
+      "subtitle": "SCEF délivre l'impact à travers des programmes phares conçus pour travailler ensemble sur l'accès, la qualité, l'inclusion, les compétences et la reconnaissance."
+    },
+    "categories": {
+      "education": {
+        "title": "Programmes éducatifs",
+        "subtitle": "Initiatives principales abordant l'accès, la qualité et l'inclusion dans l'éducation à travers l'Afrique."
+      },
+      "eoa": {
+        "title": "Education Online Africa",
+        "subtitle": "Apprentissage numérique, certification et parcours d'employabilité pour les apprenants africains et de la diaspora."
+      },
+      "recognition": {
+        "title": "Reconnaissance & Prix",
+        "subtitle": "Célébrer l'excellence et stimuler l'amélioration continue des standards éducatifs."
+      },
+      "media": {
+        "title": "Plateformes média",
+        "subtitle": "Plateformes de diffusion et de contenu pour le plaidoyer éducatif et la dissémination des connaissances."
+      }
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programmes",

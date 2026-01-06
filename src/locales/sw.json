@@ -242,6 +242,227 @@
       "ctaPartner": "Shirikiana (CSR)"
     }
   },
+  "governance": {
+    "hero": {
+      "badge": "BGEO — Utawala wa Bodi na Ofisi ya Utendaji",
+      "title": "Inaongozwa kwa Uaminifu. Imepangwa kwa Ukuaji.",
+      "subtitle": "Ofisi ya Utawala wa Bodi na Utendaji (BGEO) ni kitengo cha utawala cha juu kinachotoa uongozi wa kitaasisi, usimamizi wa fedha na mwelekeo mkakati kwa shughuli zote za SCEF barani Afrika.",
+      "anchors": {
+        "bot": "Bodi ya Wadhamini",
+        "boa": "Bodi ya Washauri",
+        "bod": "Bodi ya Wakurugenzi",
+        "lcps": "Marais wa Sura za Mitaa",
+        "management": "Timu ya Uongozi"
+      }
+    },
+    "bgeo": {
+      "title": "Kitengo cha BGEO",
+      "body": "Ofisi ya Utawala wa Bodi na Utendaji hutumika kama kitovu cha kitaasisi, kuratibu shughuli za bodi, uongozi wa utendaji na kuhakikisha SCEF inatimiza dhamana yake ya elimu ya Afrika kwa uadilifu na uwajibikaji.",
+      "points": [
+        "Uratibu na utawala wa bodi",
+        "Uongozi na mwelekeo wa utendaji",
+        "Usimamizi wa sera za kitaasisi",
+        "Ushirikiano mkakati wa wadau"
+      ],
+      "whyTitle": "Kwa nini Utawala ni Muhimu",
+      "whyBody": "Sekta ya elimu ya Afrika imekuwa na mipango iliyotawanyika na usimamizi dhaifu. Mfumo wa utawala wa SCEF unatoa uwajibikaji wazi, maamuzi ya uwazi na mwendelezo wa kitaasisi.",
+      "metrics": {
+        "trust": "Uaminifu",
+        "trustDesc": "Uadilifu wa fedha",
+        "scale": "Ukubwa",
+        "scaleDesc": "Kufikia bara",
+        "continuity": "Mwendelezo",
+        "continuityDesc": "Zaidi ya miradi"
+      }
+    },
+    "layers": {
+      "title": "Muundo wa Utawala wa Ngazi Nne",
+      "subtitle": "Kila ngazi ina mamlaka wazi, mistari ya uwajibikaji na upeo wa uendeshaji unaohakikisha utawala wa uwazi na ufanisi.",
+      "level": "Ngazi",
+      "keyResponsibilities": "Majukumu Makuu",
+      "bot": {
+        "title": "Bodi ya Wadhamini (BOT)",
+        "count": "Wajumbe 7",
+        "description": "Chombo cha juu cha utawala kinachohusika na usimamizi wa fedha, uadilifu wa kitaasisi na mwelekeo mkakati wa Taasisi.",
+        "responsibilities": [
+          "Usimamizi wa fedha na uadilifu wa kifedha",
+          "Kuidhinisha sera za mkakati na mwelekeo",
+          "Uteuzi wa watendaji na usimamizi wa utendaji",
+          "Utekelezaji wa utii wa kitaasisi na maadili"
+        ]
+      },
+      "boa": {
+        "title": "Bodi za Washauri (BOA)",
+        "count": "Programu (5 kila moja) & Sura (3 kila moja)",
+        "description": "Paneli za wataalam zinazotoa mwongozo maalum kuhusu utekelezaji wa programu na shughuli za sura.",
+        "responsibilities": [
+          "Mapendekezo ya mkakati wa programu",
+          "Usimamizi wa utawala wa sura",
+          "Utaalamu wa kiufundi na sekta",
+          "Uwakilishi na utetezi wa wadau"
+        ]
+      },
+      "bod": {
+        "title": "Bodi za Wakurugenzi wa Kikanda (BOD)",
+        "count": "3 Kwa Kanda",
+        "description": "Utawala wa uendeshaji unaohakikisha utekelezaji wa programu za kikanda na kufuata viwango vya kitaasisi.",
+        "responsibilities": [
+          "Uratibu wa programu za kikanda",
+          "Maamuzi ya uendeshaji",
+          "Usimamizi wa ugawaji wa rasilimali",
+          "Ufuatiliaji wa utendaji na kuripoti"
+        ]
+      },
+      "lcps": {
+        "title": "Marais wa Sura za Mitaa (LCPs)",
+        "count": "Nchi 54+",
+        "description": "Uongozi wa ardhini unaotekeleza programu na kusimamia ushiriki wa jamii katika ngazi ya nchi.",
+        "responsibilities": [
+          "Utekelezaji wa programu katika ngazi ya nchi",
+          "Ushiriki na uhamasishaji wa jamii",
+          "Ushirikiano wa mitaa na utetezi",
+          "Huduma kwa wanachama na msaada wa msingi"
+        ]
+      }
+    },
+    "management": {
+      "title": "Timu ya Uongozi wa Utendaji",
+      "subtitle": "Uongozi wa utendaji wa SCEF unasimamia idara sita za uendeshaji, kuhakikisha utekelezaji ulioratibiwa wa dhamana yetu ya elimu ya Afrika.",
+      "roles": {
+        "orgSecretary": {
+          "title": "Katibu wa Shirika",
+          "mandate": "Kisheria & Utawala",
+          "description": "Hutoa uongozi wa kitaasisi, ushauri wa kisheria na kuhakikisha utii wa utawala katika shughuli zote za SCEF."
+        },
+        "pro": {
+          "title": "Afisa wa Mawasiliano ya Umma (PRO)",
+          "mandate": "Mawasiliano & Mahusiano ya Wadau",
+          "description": "Anasimamia mawasiliano ya kitaasisi, uhusiano na vyombo vya habari na mikakati ya kushirikiana na wadau."
+        },
+        "operations": {
+          "title": "Mkurugenzi wa Shughuli",
+          "mandate": "Uongozi wa SOBCD",
+          "description": "Anasimamia shughuli za mkakati, utii wa biashara na usimamizi wa hatari za kitaasisi."
+        },
+        "technology": {
+          "title": "Mkurugenzi wa Teknolojia",
+          "mandate": "Uongozi wa TDSD",
+          "description": "Anaongoza miundombinu ya kidijitali, maendeleo ya jukwaa na utoaji wa elimu kwa teknolojia."
+        },
+        "mediaBusiness": {
+          "title": "Mkurugenzi wa Biashara ya Vyombo vya Habari",
+          "mandate": "Uongozi wa OMBDD",
+          "description": "Anasukuma ukuaji wa kidijitali, upatikanaji wa udhamini na maendeleo ya chapa mtandaoni."
+        },
+        "santosMedia": {
+          "title": "Mkurugenzi wa Santos Media",
+          "mandate": "Uongozi wa SMD",
+          "description": "Anasimamia utangazaji, uzalishaji wa maudhui na shughuli za jukwaa la vyombo vya habari."
+        },
+        "chapterServices": {
+          "title": "Mkurugenzi wa Huduma za Sura",
+          "mandate": "Uongozi wa LCS",
+          "description": "Anasaidia sura za mitaa kwa uanzishaji, utii na mwongozo wa uendeshaji."
+        }
+      }
+    },
+    "policies": {
+      "title": "Sera & Utii",
+      "subtitle": "SCEF inadumisha sera za kina za utawala zinazohakikisha uwazi, uwajibikaji na shughuli za kimaadili.",
+      "items": {
+        "constitution": { "title": "Katiba & Sheria Ndogo", "desc": "Hati ya msingi ya utawala" },
+        "ethics": { "title": "Kanuni za Maadili", "desc": "Viwango kwa wadhamini, wafanyakazi na watu wa kujitolea" },
+        "financial": { "title": "Sera ya Fedha", "desc": "Viwango vya usimamizi wa fedha na kuripoti" },
+        "antiCorruption": { "title": "Sera ya Kupambana na Rushwa", "desc": "Kuvumilia sifuri kwa udanganyifu na rushwa" },
+        "conflict": { "title": "Mgongano wa Maslahi", "desc": "Itifaki za ufunuo na usimamizi" },
+        "whistleblower": { "title": "Ulinzi wa Wapiga Kengele", "desc": "Taratibu salama za kuripoti" }
+      }
+    },
+    "contact": {
+      "title": "Wasiliana na Uongozi",
+      "subtitle": "Kwa maswali ya utawala, majadiliano ya ushirikiano au ushiriki wa kitaasisi, wasiliana na timu yetu ya uongozi.",
+      "email": "Barua pepe",
+      "phone": "Simu"
+    },
+    "cta": {
+      "title": "Shirikiana na Jukwaa la Elimu la Afrika",
+      "subtitle": "Jiunge na serikali, wafadhili na mashirika yanayoshirikiana tayari na SCEF kubadilisha elimu barani Afrika.",
+      "ctaPartner": "Ulizo wa Ushirikiano",
+      "ctaDonate": "Unga Mkono Kazi Yetu",
+      "ctaChapter": "Anzisha Sura ya Mtaa"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "Muundo wa Uendeshaji",
+      "title": "Jinsi SCEF Inavyofanya Kazi",
+      "subtitle": "SCEF imepangwa katika idara sita kutoa utawala, programu, vyombo vya habari, sura, utii na ushirikiano kwa kiwango kikubwa."
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "Utawala wa Bodi na Ofisi ya Utendaji",
+        "lead": "Katibu wa Shirika (asili ya kisheria + kazi ya PRO)",
+        "mandate": "Uratibu wa bodi, nyaraka za utawala, msaada wa ofisi ya utendaji, mawasiliano ya kitaasisi na mwendelezo wa utawala."
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "Idara ya Shughuli za Mkakati na Utii wa Biashara",
+        "lead": "Mkurugenzi wa Shughuli na Utii",
+        "mandate": "Utawala na HR, usimamizi wa shughuli za fedha, usimamizi wa matukio, uratibu wa mafunzo, mifumo ya utii, kuripoti uendeshaji."
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "Idara ya Teknolojia na Huduma za Kidijitali",
+        "lead": "Mkurugenzi wa Teknolojia na Ubunifu wa Kidijitali",
+        "mandate": "Mifumo ya tovuti/app, hifadhidata, usalama, dashibodi, mifumo ya lugha nyingi, utendaji wa jukwaa na utoaji wa mabadiliko ya kidijitali."
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "Idara ya Maendeleo ya Biashara ya Vyombo vya Habari Mtandaoni",
+        "lead": "Mkurugenzi wa Maendeleo ya Biashara ya Vyombo vya Habari",
+        "mandate": "Mawasiliano ya kukusanya fedha, mstari wa udhamini, ukuaji wa kidijitali, kampeni, msaada wa kubadilisha ushirikiano, mali za kushirikiana na wafadhili."
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "Idara ya Santos Media",
+        "lead": "Mkurugenzi wa Santos Media",
+        "mandate": "NESA Africa TV, It's In Me Radio, webinar/podcast, kipindi cha utalii wa elimu, shughuli za maudhui, viwango vya uhariri, usambazaji wa vyombo vya habari."
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "Idara ya Huduma za Sura za Mitaa",
+        "lead": "Mkurugenzi wa Huduma na Msaada wa Sura",
+        "mandate": "Uanzishaji, ufuatiliaji, msaada wa utii, mifumo ya kuripoti, utawala wa sura za mitaa na uanzishaji wa sura unaoweza kupanuliwa."
+      }
+    },
+    "ctaJoinChapter": "Jiunge na Sura ya Mtaa"
+  },
+  "programs": {
+    "hero": {
+      "badge": "Kazi Yetu",
+      "title": "Programu & Mipango",
+      "subtitle": "SCEF huleta athari kupitia programu kuu zilizoundwa kufanya kazi pamoja kuhusu upatikanaji, ubora, ujumuishaji, ujuzi na utambuzi."
+    },
+    "categories": {
+      "education": {
+        "title": "Programu za Elimu",
+        "subtitle": "Mipango kuu inayoshughulikia upatikanaji, ubora na ujumuishaji katika elimu barani Afrika."
+      },
+      "eoa": {
+        "title": "Education Online Africa",
+        "subtitle": "Mafunzo ya kidijitali, vyeti na njia za kuajiriwa kwa wanafunzi wa Afrika na diaspora."
+      },
+      "recognition": {
+        "title": "Utambuzi & Tuzo",
+        "subtitle": "Kusherehekea ubora na kusukuma uboreshaji endelevu katika viwango vya elimu."
+      },
+      "media": {
+        "title": "Majukwaa ya Vyombo vya Habari",
+        "subtitle": "Majukwaa ya utangazaji na maudhui kwa utetezi wa elimu na usambazaji wa maarifa."
+      }
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programu",
