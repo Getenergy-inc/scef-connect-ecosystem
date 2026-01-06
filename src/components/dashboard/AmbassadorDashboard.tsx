@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { WalletWidget } from "./WalletWidget";
+import { VerificationStatus } from "./VerificationStatus";
 import { 
   Flag, Users, Wallet, TrendingUp, Target, 
   Award, BarChart3, ArrowUpRight, Calendar
@@ -78,6 +80,15 @@ export const AmbassadorDashboard = ({ profile, user }: AmbassadorDashboardProps)
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* Wallet & Verification Status */}
+      <div className="grid lg:grid-cols-2 gap-6">
+        <WalletWidget />
+        <VerificationStatus 
+          emailVerified={!!user?.email}
+          profileComplete={!!(profile?.first_name && profile?.last_name)}
+        />
       </div>
 
       {/* Two Column Layout */}
