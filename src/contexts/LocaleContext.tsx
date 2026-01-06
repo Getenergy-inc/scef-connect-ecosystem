@@ -56,8 +56,16 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// Default context for when LocaleProvider hasn't mounted yet (prevents HMR issues)
+const defaultContext: LocaleContextType = {
+  locale: 'en',
+  setLocale: () => {},
+  t: (key: string) => key,
+  isRTL: false,
+};
+
 export const useLocale = () => {
   const context = useContext(LocaleContext);
-  if (!context) throw new Error('useLocale must be used within LocaleProvider');
-  return context;
+  // Return default context during initial render / HMR to prevent crashes
+  return context ?? defaultContext;
 };
