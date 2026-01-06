@@ -2,17 +2,19 @@ import { Link } from "react-router-dom";
 import { siteContent } from "@/config/siteContent";
 import { useState } from "react";
 import { Play, X } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export const ProgramsGrid = () => {
   const { programs } = siteContent.homepage;
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const { t } = useLocale();
 
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-10">
-          Our Programs
+          {t('home.programs.title')}
         </h2>
 
         {/* Programs Grid - 7 items */}
