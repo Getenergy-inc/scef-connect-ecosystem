@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useLocale } from "@/contexts/LocaleContext";
 import { 
   MapPin, Users, Search, Filter, Globe, Building, Wifi, 
   ArrowRight, Plus, CheckCircle2, TrendingUp
@@ -86,25 +87,8 @@ const typeColors = {
   Online: "bg-white text-scef-blue border-2 border-black",
 };
 
-const chapterPathway = [
-  {
-    stage: "Online",
-    description: "Start with a virtual presence and build your community",
-    requirements: ["5 founding members", "Approved leadership", "Completed training"],
-  },
-  {
-    stage: "Hybrid",
-    description: "Combine online and occasional in-person meetings",
-    requirements: ["25+ active members", "Regular activities", "Local partnerships"],
-  },
-  {
-    stage: "Physical",
-    description: "Full in-person operations with dedicated space",
-    requirements: ["100+ members", "Sustainable funding", "Registered locally"],
-  },
-];
-
 const Chapters = () => {
+  const { t } = useLocale();
   const [searchQuery, setSearchQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
 
@@ -117,13 +101,31 @@ const Chapters = () => {
     return matchesSearch && matchesType;
   });
 
+  const chapterPathway = [
+    {
+      stage: "Online",
+      description: t("nav.dropdown.chapters.create"),
+      requirements: ["5 founding members", "Approved leadership", "Completed training"],
+    },
+    {
+      stage: "Hybrid",
+      description: t("nav.dropdown.chapters.upgrade"),
+      requirements: ["25+ active members", "Regular activities", "Local partnerships"],
+    },
+    {
+      stage: "Physical",
+      description: t("nav.dropdown.chapters.browse"),
+      requirements: ["100+ members", "Sustainable funding", "Registered locally"],
+    },
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Chapters - SCEF | Local Execution, Continental Governance</title>
+        <title>{t("nav.top.chapters")} - SCEF</title>
         <meta 
           name="description" 
-          content="SCEF operates compliant local chapters across Africa—online, hybrid, and physical—ensuring community ownership under strong institutional oversight." 
+          content={t("home.chaptersBlock.body")} 
         />
         <meta name="keywords" content="SCEF chapters, local chapters Africa, education community, join chapter" />
         <link rel="canonical" href="https://scef.org/chapters" />
@@ -141,25 +143,25 @@ const Chapters = () => {
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border-2 border-black">
                   <Globe className="w-4 h-4" />
-                  Local Chapters
+                  {t("nav.top.chapters")}
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  Local Execution, <span className="text-scef-gold">Continental Governance</span>
+                  {t("home.chaptersBlock.title")}
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed mb-8">
-                  SCEF operates compliant local chapters across Africa—online, hybrid, and physical—ensuring community ownership under strong institutional oversight.
+                  {t("home.chaptersBlock.body")}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
                     <Link to="/membership">
                       <Users className="w-5 h-5" />
-                      Join a Chapter
+                      {t("home.chaptersBlock.ctaJoin")}
                     </Link>
                   </Button>
                   <Button className="bg-transparent text-white border-2 border-scef-gold hover:bg-scef-gold/20" size="lg" asChild>
                     <Link to="/contact">
                       <Plus className="w-5 h-5" />
-                      Create Online Chapter
+                      {t("home.chaptersBlock.ctaCreate")}
                     </Link>
                   </Button>
                 </div>
@@ -172,9 +174,9 @@ const Chapters = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-2">
-                  Chapter <span className="text-scef-gold">Pathway</span>
+                  {t("nav.dropdown.chapters.upgrade")}
                 </h2>
-                <p className="text-muted-foreground">Start online, grow to physical presence</p>
+                <p className="text-muted-foreground">{t("home.chaptersBlock.body")}</p>
               </div>
               
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -216,7 +218,7 @@ const Chapters = () => {
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                   <input
                     type="text"
-                    placeholder="Search by city, country, or chapter name..."
+                    placeholder={t("nav.top.search")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pl-12 pr-4 py-3 rounded-xl bg-card border-2 border-black focus:border-scef-blue focus:outline-none transition-colors"
@@ -283,7 +285,7 @@ const Chapters = () => {
                           </div>
                           <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black" size="sm" asChild>
                             <Link to="/membership">
-                              Join
+                              {t("home.chaptersBlock.ctaJoin")}
                               <ArrowRight className="w-3 h-3" />
                             </Link>
                           </Button>
@@ -309,15 +311,15 @@ const Chapters = () => {
           <section className="py-20 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Start a Chapter in <span className="text-scef-gold">Your Area</span>
+                {t("home.chaptersBlock.ctaCreate")}
               </h2>
               <p className="text-white/70 max-w-2xl mx-auto mb-8">
-                Don't see a chapter near you? Become a founding member and lead the education transformation movement in your community. Start online—upgrade to physical as you grow.
+                {t("home.chaptersBlock.body")}
               </p>
               <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" size="lg" asChild>
                 <Link to="/contact">
                   <Plus className="w-5 h-5" />
-                  Create an Online Chapter
+                  {t("home.chaptersBlock.ctaCreate")}
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
