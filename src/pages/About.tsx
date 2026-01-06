@@ -114,7 +114,7 @@ const About = () => {
           </section>
 
           {/* Who We Are */}
-          <section className="py-20 bg-muted/30 border-b-2 border-black">
+          <section id="who-we-are" className="py-20 bg-muted/30 border-b-2 border-black">
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -170,8 +170,8 @@ const About = () => {
             </div>
           </section>
 
-          {/* Vision & Mission */}
-          <section className="py-20 bg-background">
+          {/* Vision & History */}
+          <section id="vision" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12">
                 <div className="bg-card rounded-2xl p-10 border-2 border-black hover:shadow-lg transition-shadow">
@@ -198,7 +198,7 @@ const About = () => {
           </section>
 
           {/* Objectives */}
-          <section className="py-20 bg-muted/30 border-y-2 border-black">
+          <section id="objectives" className="py-20 bg-muted/30 border-y-2 border-black">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -227,7 +227,7 @@ const About = () => {
           </section>
 
           {/* Governance */}
-          <section className="py-20 bg-background">
+          <section id="governance" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
@@ -263,7 +263,7 @@ const About = () => {
           </section>
 
           {/* Operations / Divisions */}
-          <section className="py-20 bg-muted/30 border-y-2 border-black">
+          <section id="divisions" className="py-20 bg-muted/30 border-y-2 border-black">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -288,7 +288,7 @@ const About = () => {
           </section>
 
           {/* Programs Spotlight */}
-          <section className="py-20 bg-background">
+          <section id="programs" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -380,7 +380,7 @@ const About = () => {
           </section>
 
           {/* Sustainability */}
-          <section className="py-20 bg-background">
+          <section id="sustainability" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">

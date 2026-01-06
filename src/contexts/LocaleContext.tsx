@@ -431,6 +431,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.eoa.ctaStart': 'Commencer à apprendre',
     'home.eoa.ctaCertify': 'Obtenir une certification (ACDL / AWPC)',
     'home.eoa.ctaExam': "Portail d'examens",
+    'home.eoa.ctaRpl': 'Mettre à niveau (RPL)',
+    'home.eoa.ctaRenew': 'Renouveler le certificat',
+    'home.eoa.ctaAffiliate': 'Devenir affilié / centre de test',
     'home.eoa.ctaPartner': 'Devenir affilié / centre de test',
     // Home - Media
     'home.media.title': 'Médias Santos',
@@ -716,6 +719,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.eoa.ctaStart': 'ابدأ التعلّم',
     'home.eoa.ctaCertify': 'احصل على شهادة (ACDL / AWPC)',
     'home.eoa.ctaExam': 'بوابة الاختبارات',
+    'home.eoa.ctaRpl': 'ترقية الشهادة (RPL)',
+    'home.eoa.ctaRenew': 'تجديد الشهادة',
+    'home.eoa.ctaAffiliate': 'كن شريكاً/مركز اختبار',
     'home.eoa.ctaPartner': 'كن شريكاً/مركز اختبار',
     // Home - Media
     'home.media.title': 'إعلام سانتوس',
@@ -1001,6 +1007,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.eoa.ctaStart': 'Anza Kujifunza',
     'home.eoa.ctaCertify': 'Pata Cheti (ACDL / AWPC)',
     'home.eoa.ctaExam': 'Tovuti ya Mitihani',
+    'home.eoa.ctaRpl': 'Boresha Cheti (RPL)',
+    'home.eoa.ctaRenew': 'Huisha Cheti',
+    'home.eoa.ctaAffiliate': 'Kuwa Mshirika/Kituo cha Mtihani',
     'home.eoa.ctaPartner': 'Kuwa Mshirika/Kituo cha Mtihani',
     // Home - Media
     'home.media.title': 'Vyombo vya Habari vya Santos',
@@ -1286,6 +1295,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.eoa.ctaStart': 'Começar a aprender',
     'home.eoa.ctaCertify': 'Certificar (ACDL / AWPC)',
     'home.eoa.ctaExam': 'Portal de exames',
+    'home.eoa.ctaRpl': 'Atualizar Certificado (RPL)',
+    'home.eoa.ctaRenew': 'Renovar Certificado',
+    'home.eoa.ctaAffiliate': 'Tornar-se afiliado / centro de teste',
     'home.eoa.ctaPartner': 'Tornar-se afiliado / centro de teste',
     // Home - Media
     'home.media.title': 'Santos Media',

@@ -41,6 +41,22 @@ import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
 import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
 import NotFound from "./pages/NotFound";
 
+// Media sub-pages
+import NesaTV from "./pages/media/NesaTV";
+import ItsInMeRadio from "./pages/media/ItsInMeRadio";
+import EduAidWebinars from "./pages/media/EduAidWebinars";
+import EducationTourismShow from "./pages/media/EducationTourismShow";
+
+// Partnership pages
+import CSRPartnership from "./pages/partnerships/CSRPartnership";
+import RequestProposal from "./pages/partnerships/RequestProposal";
+import Endorse from "./pages/partnerships/Endorse";
+
+// Chapter pages
+import JoinChapter from "./pages/chapters/JoinChapter";
+import CreateChapter from "./pages/chapters/CreateChapter";
+import ChapterLeadership from "./pages/chapters/ChapterLeadership";
+
 // Static pages
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -67,19 +83,20 @@ const App = () => (
               <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />
               <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
+              <Route path="/programs/education-online-africa" element={<DigitalLearning />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/local-chapters" element={<LocalChapters />} />
-              <Route path="/local-chapters/join" element={<LocalChapters />} />
-              <Route path="/local-chapters/create" element={<LocalChapters />} />
+              <Route path="/local-chapters/join" element={<JoinChapter />} />
+              <Route path="/local-chapters/create" element={<CreateChapter />} />
               <Route path="/local-chapters/upgrade" element={<LocalChapters />} />
-              <Route path="/local-chapters/leadership" element={<LocalChapters />} />
+              <Route path="/local-chapters/leadership" element={<ChapterLeadership />} />
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/media" element={<Media />} />
-              <Route path="/media/nesa-tv" element={<Media />} />
-              <Route path="/media/its-in-me-radio" element={<Media />} />
-              <Route path="/media/eduaid-webinars" element={<Media />} />
-              <Route path="/media/education-tourism-show" element={<Media />} />
+              <Route path="/media/nesa-tv" element={<NesaTV />} />
+              <Route path="/media/its-in-me-radio" element={<ItsInMeRadio />} />
+              <Route path="/media/eduaid-webinars" element={<EduAidWebinars />} />
+              <Route path="/media/education-tourism-show" element={<EducationTourismShow />} />
               <Route path="/updates" element={<Updates />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/auth/signin" element={<Auth />} />
@@ -104,9 +121,9 @@ const App = () => (
               <Route path="/volunteer/apply" element={<GetInvolved />} />
               <Route path="/volunteer/media" element={<GetInvolved />} />
               <Route path="/scholarships/apply" element={<EduAidAfrica />} />
-              <Route path="/partnerships/csr" element={<Partners />} />
-              <Route path="/partnerships/request" element={<Contact />} />
-              <Route path="/partnerships/endorse" element={<Partners />} />
+              <Route path="/partnerships/csr" element={<CSRPartnership />} />
+              <Route path="/partnerships/request" element={<RequestProposal />} />
+              <Route path="/partnerships/endorse" element={<Endorse />} />
               <Route path="/governance" element={<Governance />} />
               <Route path="/governance/bot" element={<Governance />} />
               <Route path="/governance/boa" element={<Governance />} />
