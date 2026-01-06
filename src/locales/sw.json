@@ -463,13 +463,258 @@
       }
     }
   },
+  "membership": {
+    "hero": {
+      "badge": "Jiunge na SCEF",
+      "title": "Kuwa Mwanachama",
+      "subtitle": "Jiunge na jamii ya pana-Afrika ya wabadilishaji wa elimu. Kama mwanachama wa SCEF, unapata upatikanaji wa programu, sura, vyeti na fursa za kuunda mustakabali wa elimu wa Afrika."
+    },
+    "benefits": {
+      "title": "Faida za Uanachama",
+      "items": {
+        "network": "Upatikanaji wa mtandao wa pana-Afrika wa walimu na wachochezi wa mabadiliko",
+        "programs": "Kipaumbele cha upatikanaji wa programu na vyeti vya SCEF",
+        "chapters": "Jiunge au ongoza sura za mitaa katika nchi yako",
+        "events": "Mialiko ya matukio na webinar za kipekee",
+        "resources": "Upatikanaji wa maktaba ya kidijitali na rasilimali za kujifunza",
+        "recognition": "Utambuzi na tuzo kwa michango"
+      }
+    },
+    "types": {
+      "title": "Aina za Uanachama",
+      "individual": {
+        "title": "Mwanachama Binafsi",
+        "description": "Kwa wataalamu, wanafunzi na walimu wenye shauku ya kubadilisha elimu barani Afrika."
+      },
+      "institutional": {
+        "title": "Mwanachama wa Kitaasisi",
+        "description": "Kwa shule, vyuo vikuu na mashirika yanayolingana na dhamana ya SCEF."
+      },
+      "ambassador": {
+        "title": "Balozi",
+        "description": "Kwa viongozi wanaounga mkono programu za SCEF na kutuwakilisha katika jamii zao."
+      }
+    },
+    "cta": {
+      "join": "Jiunge Sasa",
+      "ambassador": "Kuwa Balozi",
+      "institutional": "Uanachama wa Kitaasisi"
+    }
+  },
+  "donate": {
+    "hero": {
+      "badge": "Saidia Elimu",
+      "title": "Changia Kubadilisha Elimu",
+      "subtitle": "Mchango wako unafadhili moja kwa moja ufadhili wa masomo, uboreshaji wa shule, upatikanaji wa kujifunza kidijitali na programu zinazobadilisha maisha kote Afrika."
+    },
+    "impact": {
+      "title": "Athari Yako",
+      "items": {
+        "scholarships": "Fadhili ufadhili wa masomo kwa wanafunzi wanaohitaji",
+        "schools": "Boresha na jenga upya shule kote Afrika",
+        "digital": "Toa upatikanaji wa kujifunza kidijitali kwa jamii zilizotengwa",
+        "women": "Saidia mipango ya elimu ya wanawake na wasichana",
+        "special": "Wezesha programu za elimu kwa mahitaji maalum"
+      }
+    },
+    "options": {
+      "title": "Njia za Kutoa",
+      "oneTime": "Mchango wa Mara Moja",
+      "monthly": "Utoaji wa Kila Mwezi",
+      "corporate": "Ushirikiano wa Kampuni/CSR",
+      "inkind": "Michango ya Vitu"
+    },
+    "transparency": {
+      "title": "Uwazi & Uwajibikaji",
+      "body": "SCEF inadumisha uwajibikaji mkali wa fedha na ripoti za athari za mara kwa mara, taarifa zilizokaguliwa na ugawaji wazi wa fedha."
+    },
+    "cta": {
+      "donate": "Changia Sasa",
+      "partner": "Ushirikiano wa CSR",
+      "contact": "Wasiliana Nasi"
+    }
+  },
+  "partners": {
+    "hero": {
+      "badge": "Ushirikiano",
+      "title": "Shirikiana na SCEF",
+      "subtitle": "Jiunge na serikali, makampuni, taasisi na mashirika yanayoshirikiana na SCEF kubadilisha elimu kote Afrika kwa athari inayopimika."
+    },
+    "types": {
+      "title": "Aina za Ushirikiano",
+      "csr": {
+        "title": "Usimamizi wa Mfuko wa Elimu wa CSR",
+        "description": "Tunasaidia makampuni kupanga, kusambaza na kufuatilia fedha za CSR za elimu kwa utawala, usimamizi na ripoti za athari."
+      },
+      "institutional": {
+        "title": "Ushirikiano wa Kitaasisi",
+        "description": "Kushirikiana na shule, vyuo vikuu na vyombo vya serikali kupanua programu za elimu."
+      },
+      "funding": {
+        "title": "Washirika wa Ufadhili",
+        "description": "Taasisi na wafadhili wanaounga mkono programu za SCEF kupitia misaada na michango."
+      },
+      "technical": {
+        "title": "Washirika wa Kiufundi",
+        "description": "Watoa teknolojia na huduma wanaowezesha majukwaa ya kidijitali na shughuli za SCEF."
+      }
+    },
+    "process": {
+      "title": "Mchakato wa Ushirikiano",
+      "steps": {
+        "inquiry": "Tuma ulizo wa ushirikiano",
+        "discussion": "Majadiliano ya awali na ulinganifu",
+        "proposal": "Uandaaji wa pendekezo maalum",
+        "agreement": "Makubaliano ya ushirikiano",
+        "implementation": "Utekelezaji na kuripoti"
+      }
+    },
+    "cta": {
+      "inquiry": "Ulizo wa Ushirikiano",
+      "proposal": "Omba Pendekezo",
+      "meeting": "Panga Mkutano"
+    }
+  },
+  "chapters": {
+    "hero": {
+      "badge": "Sura za Mitaa",
+      "title": "Sura za Mitaa za SCEF",
+      "subtitle": "Mtandao wetu wa sura za mitaa unaleta dhamana ya SCEF kwa jamii kote Afrika na diaspora, kuwezesha mabadiliko ya elimu ya msingi."
+    },
+    "about": {
+      "title": "Kuhusu Sura za Mitaa",
+      "body": "Sura za Mitaa za SCEF ni vitengo vya kijamii vinavyotekeleza programu, kushirikisha wadau na kuleta athari ya elimu katika ngazi ya mtaa. Kila sura inafanya kazi chini ya utawala wa SCEF na msaada kutoka Idara ya Huduma za Sura za Mitaa."
+    },
+    "types": {
+      "title": "Aina za Sura",
+      "physical": "Sura za Kimwili",
+      "hybrid": "Sura za Mseto",
+      "online": "Sura za Mtandaoni"
+    },
+    "activities": {
+      "title": "Shughuli za Sura",
+      "items": {
+        "programs": "Tekeleza programu za SCEF ndani ya mtaa",
+        "events": "Andaa matukio na warsha za elimu",
+        "advocacy": "Tetea viwango vya elimu",
+        "fundraising": "Kuchangisha fedha na ushirikiano wa mtaa",
+        "membership": "Kuajiri na kusaidia wanachama"
+      }
+    },
+    "cta": {
+      "browse": "Tazama Sura",
+      "join": "Jiunge na Sura",
+      "create": "Anzisha Sura",
+      "leader": "Omba kama Kiongozi wa Sura"
+    }
+  },
+  "media": {
+    "hero": {
+      "badge": "Santos Media",
+      "title": "Idara ya Santos Media",
+      "subtitle": "Mkono wa vyombo vya habari wa SCEF unatangaza maudhui ya elimu, kusherehekea ubora na kutetea mabadiliko ya elimu kote Afrika."
+    },
+    "platforms": {
+      "title": "Majukwaa Yetu",
+      "nesaTv": {
+        "title": "NESA Africa TV",
+        "description": "Kutangaza ubora wa elimu, sherehe za tuzo na maudhui ya elimu kote Afrika."
+      },
+      "radio": {
+        "title": "It's In Me Radio",
+        "description": "Maudhui ya sauti yanayoonyesha hadithi za elimu, mahojiano na programu za utetezi."
+      },
+      "webinars": {
+        "title": "Webinar na Podcast za EduAid Africa",
+        "description": "Webinar za elimu, paneli za wataalam na mfululizo wa podcast kuhusu mada za elimu."
+      },
+      "tourism": {
+        "title": "Kipindi cha Utalii wa Elimu",
+        "description": "Kuonyesha taasisi za elimu na maeneo ya kujifunza kote Afrika."
+      }
+    },
+    "volunteer": {
+      "title": "Wanaojitolea kwenye Media",
+      "body": "Jiunge na timu yetu ya media kama mtengenezaji wa maudhui wa kujitolea, mtangazaji au msaada wa kiufundi."
+    },
+    "cta": {
+      "watch": "Tazama NESA TV",
+      "listen": "Sikiliza Radio",
+      "volunteer": "Kuwa Mwanaojitolea wa Media"
+    }
+  },
+  "getInvolved": {
+    "hero": {
+      "badge": "Jiunge Nasi",
+      "title": "Jiunge na Harakati",
+      "subtitle": "Kuna njia nyingi za kuchangia dhamana ya SCEF ya kubadilisha elimu kote Afrika. Pata njia yako na fanya athari."
+    },
+    "options": {
+      "member": {
+        "title": "Kuwa Mwanachama",
+        "description": "Jiunge na jamii yetu ya pana-Afrika ya watetezi wa elimu na wachochezi wa mabadiliko."
+      },
+      "ambassador": {
+        "title": "Kuwa Balozi",
+        "description": "Unga mkono programu za SCEF na utuwakilishe katika jamii na mitandao yako."
+      },
+      "volunteer": {
+        "title": "Jitolee",
+        "description": "Changia ujuzi na muda wako kusaidia programu na shughuli za SCEF."
+      },
+      "chapter": {
+        "title": "Jiunge na Sura",
+        "description": "Ungana na wachochezi wa mabadiliko wa mtaa na ushiriki katika athari ya kijamii."
+      },
+      "donate": {
+        "title": "Changia",
+        "description": "Saidia ufadhili wa masomo, uboreshaji wa shule na programu za elimu kote Afrika."
+      },
+      "partner": {
+        "title": "Shirikiana Nasi",
+        "description": "Shirikiana kupitia CSR, ushirikiano wa kitaasisi au ufadhili wa programu."
+      }
+    },
+    "cta": {
+      "explore": "Tazama Chaguzi",
+      "contact": "Wasiliana Nasi"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Wasiliana Nasi",
+      "title": "Wasiliana",
+      "subtitle": "Una maswali kuhusu SCEF, programu zetu au jinsi ya kushiriki? Tungependa kusikia kutoka kwako."
+    },
+    "form": {
+      "name": "Jina Kamili",
+      "email": "Barua pepe",
+      "subject": "Somo",
+      "message": "Ujumbe",
+      "submit": "Tuma Ujumbe"
+    },
+    "info": {
+      "title": "Maelezo ya Mawasiliano",
+      "email": "Barua pepe",
+      "phone": "Simu",
+      "address": "Anwani"
+    },
+    "departments": {
+      "title": "Idara",
+      "general": "Maswali ya Jumla",
+      "partnerships": "Ushirikiano na CSR",
+      "membership": "Uanachama",
+      "media": "Vyombo vya Habari na Magazeti",
+      "chapters": "Sura za Mitaa"
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programu",
-      "media": "Media",
+      "media": "Vyombo vya Habari",
       "chapters": "Sura za Mitaa",
       "getInvolved": "Jiunge Nasi",
-      "contact": "Wasiliana"
+      "contact": "Mawasiliano"
     },
     "legal": {
       "privacy": "Faragha",
@@ -480,6 +725,6 @@
       "label": "Tufuate"
     },
     "copyright": "© {year} Santos Creations Educational Foundation. Haki zote zimehifadhiwa.",
-    "mission": "Kusimamia Mustakabali wa Elimu Afrika kupitia utetezi, ufadhili, na uthibitisho wa ubora wa elimu kote barani."
+    "mission": "Kusimamia Mustakabali wa Elimu wa Afrika kupitia utetezi, ufadhili na uthibitisho wa ubora wa elimu kote barani."
   }
 }

@@ -463,6 +463,251 @@
       }
     }
   },
+  "membership": {
+    "hero": {
+      "badge": "Join SCEF",
+      "title": "Become a Member",
+      "subtitle": "Join a pan-African community of education changemakers. As a SCEF member, you gain access to programs, chapters, certifications, and opportunities to shape Africa's education future."
+    },
+    "benefits": {
+      "title": "Member Benefits",
+      "items": {
+        "network": "Access to a pan-African network of educators and changemakers",
+        "programs": "Priority access to SCEF programs and certifications",
+        "chapters": "Join or lead local chapters in your country",
+        "events": "Invitations to exclusive events and webinars",
+        "resources": "Access to eLibrary and learning resources",
+        "recognition": "Recognition and awards for contributions"
+      }
+    },
+    "types": {
+      "title": "Membership Types",
+      "individual": {
+        "title": "Individual Member",
+        "description": "For professionals, students, and educators passionate about transforming education in Africa."
+      },
+      "institutional": {
+        "title": "Institutional Member",
+        "description": "For schools, universities, and organizations aligned with SCEF's mission."
+      },
+      "ambassador": {
+        "title": "Ambassador",
+        "description": "For leaders who champion SCEF's programs and represent us in their communities."
+      }
+    },
+    "cta": {
+      "join": "Join Now",
+      "ambassador": "Become an Ambassador",
+      "institutional": "Institutional Membership"
+    }
+  },
+  "donate": {
+    "hero": {
+      "badge": "Support Education",
+      "title": "Donate to Transform Education",
+      "subtitle": "Your contribution directly funds scholarships, school renewals, digital learning access, and programs that change lives across Africa."
+    },
+    "impact": {
+      "title": "Your Impact",
+      "items": {
+        "scholarships": "Fund scholarships for students in need",
+        "schools": "Renew and rebuild schools across Africa",
+        "digital": "Provide digital learning access to underserved communities",
+        "women": "Support women and girls education initiatives",
+        "special": "Enable special needs education programs"
+      }
+    },
+    "options": {
+      "title": "Ways to Give",
+      "oneTime": "One-Time Donation",
+      "monthly": "Monthly Giving",
+      "corporate": "Corporate/CSR Partnership",
+      "inkind": "In-Kind Donations"
+    },
+    "transparency": {
+      "title": "Transparency & Accountability",
+      "body": "SCEF maintains strict financial accountability with regular impact reports, audited statements, and transparent fund allocation."
+    },
+    "cta": {
+      "donate": "Donate Now",
+      "partner": "CSR Partnership",
+      "contact": "Contact Us"
+    }
+  },
+  "partners": {
+    "hero": {
+      "badge": "Partnerships",
+      "title": "Partner with SCEF",
+      "subtitle": "Join governments, corporations, foundations, and NGOs collaborating with SCEF to transform education across Africa with measurable impact."
+    },
+    "types": {
+      "title": "Partnership Types",
+      "csr": {
+        "title": "CSR Education Fund Management",
+        "description": "We help corporations structure, deploy, and track CSR funds for education with governance, oversight, and impact reporting."
+      },
+      "institutional": {
+        "title": "Institutional Partnerships",
+        "description": "Collaborate with schools, universities, and government bodies to scale education programs."
+      },
+      "funding": {
+        "title": "Funding Partners",
+        "description": "Foundations and donors supporting SCEF's programs through grants and contributions."
+      },
+      "technical": {
+        "title": "Technical Partners",
+        "description": "Technology and service providers enabling SCEF's digital platforms and operations."
+      }
+    },
+    "process": {
+      "title": "Partnership Process",
+      "steps": {
+        "inquiry": "Submit partnership inquiry",
+        "discussion": "Initial discussion and alignment",
+        "proposal": "Custom proposal development",
+        "agreement": "Partnership agreement",
+        "implementation": "Implementation and reporting"
+      }
+    },
+    "cta": {
+      "inquiry": "Partnership Inquiry",
+      "proposal": "Request Proposal",
+      "meeting": "Schedule Meeting"
+    }
+  },
+  "chapters": {
+    "hero": {
+      "badge": "Local Chapters",
+      "title": "SCEF Local Chapters",
+      "subtitle": "Our network of local chapters brings SCEF's mission to communities across Africa and the diaspora, activating grassroots education transformation."
+    },
+    "about": {
+      "title": "About Local Chapters",
+      "body": "SCEF Local Chapters are community-based units that execute programs, engage stakeholders, and drive education impact at the local level. Each chapter operates under SCEF governance with support from the Local Chapter Services Division."
+    },
+    "types": {
+      "title": "Chapter Types",
+      "physical": "Physical Chapters",
+      "hybrid": "Hybrid Chapters",
+      "online": "Online Chapters"
+    },
+    "activities": {
+      "title": "Chapter Activities",
+      "items": {
+        "programs": "Execute SCEF programs locally",
+        "events": "Organize education events and workshops",
+        "advocacy": "Advocate for education standards",
+        "fundraising": "Local fundraising and partnerships",
+        "membership": "Member recruitment and support"
+      }
+    },
+    "cta": {
+      "browse": "Browse Chapters",
+      "join": "Join a Chapter",
+      "create": "Start a Chapter",
+      "leader": "Apply as Chapter Leader"
+    }
+  },
+  "media": {
+    "hero": {
+      "badge": "Santos Media",
+      "title": "Santos Media Division",
+      "subtitle": "SCEF's media arm broadcasts education content, celebrates excellence, and advocates for education transformation across Africa."
+    },
+    "platforms": {
+      "title": "Our Platforms",
+      "nesaTv": {
+        "title": "NESA Africa TV",
+        "description": "Broadcasting education excellence, award ceremonies, and educational content across Africa."
+      },
+      "radio": {
+        "title": "It's In Me Radio",
+        "description": "Audio content featuring education stories, interviews, and advocacy programming."
+      },
+      "webinars": {
+        "title": "EduAid Africa Webinars & Podcast",
+        "description": "Educational webinars, expert panels, and podcast series on education topics."
+      },
+      "tourism": {
+        "title": "Education Tourism Show",
+        "description": "Showcasing educational institutions and learning destinations across Africa."
+      }
+    },
+    "volunteer": {
+      "title": "Media Volunteers",
+      "body": "Join our media team as a volunteer content creator, presenter, or technical support."
+    },
+    "cta": {
+      "watch": "Watch NESA TV",
+      "listen": "Listen to Radio",
+      "volunteer": "Become Media Volunteer"
+    }
+  },
+  "getInvolved": {
+    "hero": {
+      "badge": "Get Involved",
+      "title": "Join the Movement",
+      "subtitle": "There are many ways to contribute to SCEF's mission of transforming education across Africa. Find your path and make an impact."
+    },
+    "options": {
+      "member": {
+        "title": "Become a Member",
+        "description": "Join our pan-African community of education advocates and changemakers."
+      },
+      "ambassador": {
+        "title": "Become an Ambassador",
+        "description": "Champion SCEF's programs and represent us in your community and networks."
+      },
+      "volunteer": {
+        "title": "Volunteer",
+        "description": "Contribute your skills and time to support SCEF's programs and operations."
+      },
+      "chapter": {
+        "title": "Join a Chapter",
+        "description": "Connect with local changemakers and participate in community-driven impact."
+      },
+      "donate": {
+        "title": "Donate",
+        "description": "Support scholarships, school renewals, and education programs across Africa."
+      },
+      "partner": {
+        "title": "Partner with Us",
+        "description": "Collaborate through CSR, institutional partnerships, or program sponsorship."
+      }
+    },
+    "cta": {
+      "explore": "Explore Options",
+      "contact": "Contact Us"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Contact Us",
+      "title": "Get in Touch",
+      "subtitle": "Have questions about SCEF, our programs, or how to get involved? We'd love to hear from you."
+    },
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "departments": {
+      "title": "Departments",
+      "general": "General Inquiries",
+      "partnerships": "Partnerships & CSR",
+      "membership": "Membership",
+      "media": "Media & Press",
+      "chapters": "Local Chapters"
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programs",
