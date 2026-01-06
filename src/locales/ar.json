@@ -57,10 +57,20 @@
       "media": {
         "hub": "مركز الإعلام",
         "nesaTv": "NESA Africa TV",
+        "nesaAwardsTv": "NESA Awards TV",
+        "platinumShow": "عرض Platinum Recognition",
+        "africaIcon": "جوائز Africa Icon Blue Garnet",
+        "goldCertificate": "جوائز Gold Certificate",
+        "blueGarnetGala": "حفل Blue Garnet Gala",
         "radio": "It's In Me Radio",
-        "webinars": "ندوات وبودكاست EduAid Africa",
+        "webinars": "ندوات وبودكاست EduAid",
         "tourism": "برنامج السياحة التعليمية",
-        "volunteer": "التطوع الإعلامي"
+        "volunteer": "التطوع الإعلامي",
+        "mediaCms": "نظام إدارة المحتوى للإعلام",
+        "mediaLibrary": "تحميلات مكتبة الوسائط",
+        "mediaSeries": "سلاسل وقوائم تشغيل",
+        "mediaSchedule": "الجدولة والنشر",
+        "awardsScheduleAdmin": "جدول NESA Awards TV"
       }
     },
     "language": {
@@ -177,7 +187,8 @@
       "ctaDonate": "تبرّع",
       "ctaAmbassador": "كن سفيراً",
       "ctaJoinChapter": "انضم لفرع",
-      "ctaCsr": "شراكة CSR"
+      "ctaCsr": "شراكة CSR",
+      "ctaMedia": "شاهد إعلام SCEF"
     },
     "who": {
       "title": "من نحن",

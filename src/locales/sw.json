@@ -57,10 +57,20 @@
       "media": {
         "hub": "Kituo cha Vyombo vya Habari",
         "nesaTv": "NESA Africa TV",
+        "nesaAwardsTv": "NESA Awards TV",
+        "platinumShow": "Platinum Recognition Show",
+        "africaIcon": "Africa Icon Blue Garnet Awards",
+        "goldCertificate": "Gold Certificate Awards",
+        "blueGarnetGala": "Blue Garnet Gala",
         "radio": "It's In Me Radio",
-        "webinars": "Webinar & Podcast ya EduAid Africa",
+        "webinars": "Webinars & Podcast za EduAid",
         "tourism": "Kipindi cha Utalii wa Elimu",
-        "volunteer": "Jitolee kwenye Vyombo vya Habari"
+        "volunteer": "Jitolee kwenye Media",
+        "mediaCms": "CMS ya Vyombo vya Habari",
+        "mediaLibrary": "Upakiaji wa Maktaba ya Media",
+        "mediaSeries": "Mifululizo & Orodha za Kucheza",
+        "mediaSchedule": "Ratiba & Chapisha",
+        "awardsScheduleAdmin": "Ratiba ya NESA Awards TV"
       }
     },
     "language": {
@@ -177,7 +187,8 @@
       "ctaDonate": "Changia",
       "ctaAmbassador": "Kuwa Balozi",
       "ctaJoinChapter": "Jiunge na Sura",
-      "ctaCsr": "Ushirikiano wa CSR"
+      "ctaCsr": "Ushirikiano wa CSR",
+      "ctaMedia": "Tazama SCEF Media"
     },
     "who": {
       "title": "Sisi ni nani",
