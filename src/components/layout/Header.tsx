@@ -1,170 +1,258 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, LogIn, UserPlus, Search, ExternalLink } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen, ExternalLink, Library, Award, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useLocale } from "@/contexts/LocaleContext";
-import { TopUtilityNav } from "./TopUtilityNav";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+
+// External platform links with icons
+const externalPlatforms = [
+  { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true, icon: Library },
+  { name: "NESA.africa", href: "https://nesa.africa", external: true, icon: Award },
+  { name: "EduAid.africa", href: "https://eduaid.africa", external: true, icon: GraduationCap },
+];
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { 
+    name: "About SCEF", 
+    href: "/about",
+    children: [
+      { name: "Who We Are", href: "/about" },
+      { name: "Vision & Mission", href: "/about#vision" },
+      { name: "Governance", href: "/governance" },
+      { name: "Our Divisions", href: "/divisions" },
+    ]
+  },
+  { 
+    name: "Programs", 
+    href: "/programs",
+    children: [
+      { name: "All Programs", href: "/programs" },
+      { name: "NESA-Africa", href: "/programs/nesa-africa" },
+      { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
+      { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
+      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
+      { name: "Women & Girls Education", href: "/programs/women-girls-education" },
+      { name: "Special Needs Education", href: "/programs/special-needs-education" },
+      { name: "Digital Learning", href: "/programs/digital-learning" },
+      { divider: true },
+      { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
+      { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
+      { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
+    ]
+  },
+  { 
+    name: "Chapters", 
+    href: "/chapters",
+    children: [
+      { name: "Find a Chapter", href: "/chapters" },
+      { name: "Local Chapters", href: "/local-chapters" },
+    ]
+  },
+  { 
+    name: "Media", 
+    href: "/media",
+    children: [
+      { name: "Santos Media Hub", href: "/media" },
+      { name: "Santos Media Division", href: "/divisions/santos-media" },
+    ]
+  },
+  { 
+    name: "Membership", 
+    href: "/membership",
+    children: [
+      { name: "Join SCEF", href: "/membership" },
+      { name: "Certifications", href: "/certifications" },
+      { name: "Partners", href: "/partners" },
+    ]
+  },
+  { 
+    name: "Donate", 
+    href: "/donate",
+    children: [
+      { name: "Make a Donation", href: "/donate" },
+      { name: "GFA Wallet", href: "/wallet" },
+      { divider: true },
+      { name: "Donate via Paystack", href: "https://paystack.com/pay/scef-donation", external: true },
+      { name: "Donate via Flutterwave", href: "https://flutterwave.com/pay/scef", external: true },
+    ]
+  },
+];
 
 export const Header = () => {
-  const { t, isRTL } = useLocale();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  const navigation = [
-    { 
-      name: t('nav.about'), 
-      href: '/about',
-      children: [
-        { name: t('nav.about.overview'), href: '/about' },
-        { name: t('nav.about.history'), href: '/about#history' },
-        { name: t('nav.about.vision'), href: '/about#vision' },
-        { name: t('nav.about.sustainability'), href: '/about#sustainability' },
-        { name: t('nav.about.governance'), href: '/governance' },
-        { name: t('nav.about.divisions'), href: '/divisions' },
-      ]
-    },
-    { 
-      name: t('nav.programs'), 
-      href: '/programs',
-      children: [
-        { name: t('nav.programs.nesa'), href: '/programs/nesa-africa' },
-        { name: t('nav.programs.eduaid'), href: '/programs/eduaid-africa' },
-        { name: t('nav.programs.rmsa'), href: '/programs/rebuild-my-school-africa' },
-        { name: t('nav.programs.eoa'), href: '/programs/education-online-africa' },
-        { name: t('nav.programs.awpc'), href: '/programs/education-online-africa#awpc' },
-        { name: t('nav.programs.women'), href: '/programs/women-girls-education' },
-        { name: t('nav.programs.special'), href: '/programs/special-needs-education' },
-        { divider: true },
-        { name: t('nav.programs.hub'), href: '/programs' },
-      ]
-    },
-    { 
-      name: t('nav.chapters'), 
-      href: '/local-chapters',
-      children: [
-        { name: t('nav.chapters.browse'), href: '/local-chapters' },
-        { name: t('nav.chapters.join'), href: '/local-chapters/join' },
-        { name: t('nav.chapters.create'), href: '/local-chapters/create' },
-        { name: t('nav.chapters.upgrade'), href: '/local-chapters/upgrade' },
-        { name: t('nav.chapters.leader'), href: '/local-chapters/leadership' },
-      ]
-    },
-    { 
-      name: t('nav.involved'), 
-      href: '/get-involved',
-      children: [
-        { name: t('nav.involved.member'), href: '/membership/join' },
-        { name: t('nav.involved.ambassador'), href: '/membership/ambassador' },
-        { name: t('nav.involved.volunteer'), href: '/get-involved#volunteer' },
-        { name: t('nav.involved.scholarship'), href: '/programs/eduaid-africa#apply' },
-        { name: t('nav.involved.partner'), href: '/partnerships/csr' },
-        { name: t('nav.involved.donate'), href: '/donate' },
-      ]
-    },
-    { 
-      name: t('nav.media'), 
-      href: '/media',
-      children: [
-        { name: t('nav.media.hub'), href: '/media' },
-        { name: t('nav.media.nesa-tv'), href: '/media/nesa-tv' },
-        { name: t('nav.media.radio'), href: '/media/its-in-me-radio' },
-        { name: t('nav.media.webinars'), href: '/media/eduaid-webinars' },
-        { name: t('nav.media.tourism'), href: '/media/education-tourism-show' },
-        { divider: true },
-        { name: t('nav.media.volunteer'), href: '/volunteer/media' },
-      ]
-    },
-  ];
-
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <>
-      <TopUtilityNav />
-      <header
-        className={cn(
-          "sticky top-0 left-0 right-0 z-50 transition-all duration-300",
-          scrolled
-            ? "bg-scef-blue shadow-lg py-2"
-            : "bg-scef-blue py-3"
-        )}
-        dir={isRTL ? 'rtl' : 'ltr'}
-      >
-        <nav className="container mx-auto px-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 md:gap-3 group">
-            <div className="flex items-center gap-2">
-              <img 
-                src="/assets/scef-logo.jpg" 
-                alt="SCEF Logo" 
-                className="h-10 md:h-12 w-auto object-contain"
-              />
-              <img 
-                src="/assets/nesa-africa-logo.jpg" 
-                alt="NESA Africa Logo" 
-                className="h-8 md:h-10 w-auto object-contain rounded-full hidden sm:block"
-              />
-              <img 
-                src="/assets/eduaid-africa-logo.jpg" 
-                alt="EduAid Africa Logo" 
-                className="h-8 md:h-10 w-auto object-contain hidden md:block"
-              />
-            </div>
-            <div className="flex flex-col ml-1">
-              <span className="font-display font-bold text-lg md:text-xl leading-tight text-scef-gold">
-                SCEF
-              </span>
-              <span className="text-[9px] uppercase tracking-wider text-white/70 leading-tight hidden lg:block">
-                Santos Creations Educational Foundation
-              </span>
-            </div>
-          </Link>
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        scrolled
+          ? "bg-scef-blue shadow-lg py-2"
+          : "bg-scef-blue/95 backdrop-blur-sm py-4"
+      )}
+    >
+      <nav className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 rounded-full bg-scef-gold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <BookOpen className="w-6 h-6 text-scef-blue-dark" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-bold text-xl leading-tight text-scef-gold">
+              SCEF
+            </span>
+            <span className="text-[9px] uppercase tracking-wider text-white/70 leading-tight">
+              Santos Creations Educational Foundation
+            </span>
+          </div>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-1">
-            {navigation.map((item) => (
-              <div 
-                key={item.name}
-                className="relative"
-                onMouseEnter={() => item.children && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+        {/* Desktop Navigation */}
+        <div className="hidden xl:flex items-center gap-1">
+          {navigation.map((item) => (
+            <div 
+              key={item.name}
+              className="relative"
+              onMouseEnter={() => item.children && setActiveDropdown(item.name)}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link
+                to={item.href}
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 text-white hover:text-scef-gold hover:bg-white/10"
               >
+                {item.name}
+                {item.children && <ChevronDown className="w-3 h-3" />}
+              </Link>
+              
+              {/* Dropdown */}
+              {item.children && activeDropdown === item.name && (
+                <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50">
+                  {item.children.map((child: any, idx: number) => (
+                    child.divider ? (
+                      <div key={idx} className="border-t border-gray-200 my-1" />
+                    ) : child.external ? (
+                      <a
+                        key={child.name}
+                        href={child.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
+                        style={{ color: '#0000CD' }}
+                      >
+                        {child.name}
+                        <ExternalLink className="w-3 h-3 text-scef-gold" />
+                      </a>
+                    ) : (
+                      <Link
+                        key={child.name}
+                        to={child.href}
+                        className="block px-4 py-3 text-sm text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue transition-colors"
+                      >
+                        {child.name}
+                      </Link>
+                    )
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="hidden xl:flex items-center gap-2">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="text-white hover:text-scef-gold hover:bg-white/10"
+            asChild
+          >
+            <Link to="/wallet">
+              <Wallet className="w-4 h-4" />
+              Wallet
+            </Link>
+          </Button>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+            asChild
+          >
+            <Link to="/donate">
+              <Heart className="w-4 h-4" />
+              Donate
+            </Link>
+          </Button>
+          <Button 
+            size="sm" 
+            className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
+            asChild
+          >
+            <Link to="/auth">
+              <LogIn className="w-4 h-4" />
+              Login
+            </Link>
+          </Button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="xl:hidden p-2 rounded-lg transition-colors"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? (
+            <X className="w-6 h-6 text-white" />
+          ) : (
+            <Menu className="w-6 h-6 text-white" />
+          )}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-scef-blue-dark border-b border-white/10 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
+          <div className="container mx-auto px-4 py-4 space-y-2">
+            {navigation.map((item) => (
+              <div key={item.name}>
                 <Link
                   to={item.href}
-                  className="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 text-white hover:text-scef-gold hover:bg-white/10"
+                  className="block px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                  {item.children && <ChevronDown className="w-3 h-3" />}
                 </Link>
-                
-                {item.children && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden z-50">
+                {item.children && (
+                  <div className="ml-4 space-y-1">
                     {item.children.map((child: any, idx: number) => (
                       child.divider ? (
-                        <div key={idx} className="border-t border-gray-200 my-1" />
+                        <div key={idx} className="border-t border-white/10 my-2" />
                       ) : child.external ? (
                         <a
                           key={child.name}
                           href={child.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-scef-gold/10 transition-colors text-scef-blue"
+                          className="flex items-center gap-2 px-4 py-2 text-sm text-scef-gold hover:text-scef-gold/80 transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
                         >
+                          <ExternalLink className="w-3 h-3" />
                           {child.name}
-                          <ExternalLink className="w-3 h-3 text-scef-gold" />
                         </a>
                       ) : (
                         <Link
                           key={child.name}
                           to={child.href}
-                          className="block px-4 py-3 text-sm text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue transition-colors"
+                          className="block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
                         >
                           {child.name}
                         </Link>
@@ -174,132 +262,79 @@ export const Header = () => {
                 )}
               </div>
             ))}
-          </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden xl:flex items-center gap-2">
-            <LanguageSwitcher variant="header" />
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="text-white hover:text-scef-gold hover:bg-white/10"
-              asChild
-            >
-              <Link to="/search">
-                <Search className="w-4 h-4" />
-              </Link>
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="text-white hover:text-scef-gold hover:bg-white/10"
-              asChild
-            >
-              <Link to="/auth">
-                <LogIn className="w-4 h-4" />
-                {t('nav.signin')}
-              </Link>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
-              asChild
-            >
-              <Link to="/auth">
-                <UserPlus className="w-4 h-4" />
-                {t('nav.signup')}
-              </Link>
-            </Button>
-            <Button 
-              size="sm" 
-              className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
-              asChild
-            >
-              <Link to="/donate">
-                <Heart className="w-4 h-4" />
-                {t('nav.donate')}
-              </Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="xl:hidden p-2 rounded-lg transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
-            ) : (
-              <Menu className="w-6 h-6 text-white" />
-            )}
-          </button>
-        </nav>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="xl:hidden absolute top-full left-0 right-0 bg-scef-blue-dark border-b border-white/10 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
-            <div className="container mx-auto px-4 py-4 space-y-2">
-              {navigation.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="block px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors font-medium"
+            {/* External Platforms Section */}
+            <div className="pt-4 border-t border-white/10">
+              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Our Platforms</p>
+              <div className="space-y-1">
+                {externalPlatforms.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.name}
-                  </Link>
-                  {item.children && (
-                    <div className="ml-4 space-y-1">
-                      {item.children.map((child: any, idx: number) => (
-                        child.divider ? (
-                          <div key={idx} className="border-t border-white/10 my-2" />
-                        ) : (
-                          <Link
-                            key={child.name}
-                            to={child.href}
-                            className="block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {child.name}
-                          </Link>
-                        )
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-
-              <div className="pt-4 border-t border-white/10 space-y-4">
-                <div className="flex justify-center">
-                  <LanguageSwitcher variant="inline" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <Button 
-                    variant="outline" 
-                    className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark w-full"
-                    asChild
-                  >
-                    <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
-                      <LogIn className="w-4 h-4" />
-                      {t('nav.signin')} / {t('nav.signup')}
-                    </Link>
-                  </Button>
-                  <Button 
-                    className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold w-full"
-                    asChild
-                  >
-                    <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
-                      <Heart className="w-4 h-4" />
-                      {t('nav.donate')}
-                    </Link>
-                  </Button>
-                </div>
+                    <platform.icon className="w-5 h-5 text-scef-gold" />
+                    <span className="font-medium">{platform.name}</span>
+                    <ExternalLink className="w-3 h-3 ml-auto text-white/50" />
+                  </a>
+                ))}
               </div>
             </div>
+
+            {/* Donation Buttons */}
+            <div className="pt-4 border-t border-white/10">
+              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Support Our Mission</p>
+              <div className="flex flex-col gap-2 px-4">
+                <a
+                  href="https://paystack.com/pay/scef-donation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-blue text-scef-gold hover:bg-scef-blue-dark border-2 border-scef-gold/30"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Heart className="w-4 h-4" />
+                  Donate with Paystack
+                </a>
+                <a
+                  href="https://flutterwave.com/pay/scef"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-gold text-scef-blue hover:bg-scef-gold-dark border-2 border-scef-blue/30"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Heart className="w-4 h-4" />
+                  Donate with Flutterwave
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-4 flex flex-col gap-2">
+              <Button 
+                variant="outline" 
+                className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+                asChild
+              >
+                <Link to="/wallet" onClick={() => setMobileMenuOpen(false)}>
+                  <Wallet className="w-4 h-4" />
+                  Wallet / Donate
+                </Link>
+              </Button>
+              <Button 
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
+                asChild
+              >
+                <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                  <LogIn className="w-4 h-4" />
+                  Login / Dashboard
+                </Link>
+              </Button>
+            </div>
           </div>
-        )}
-      </header>
-    </>
+        </div>
+      )}
+    </header>
   );
 };

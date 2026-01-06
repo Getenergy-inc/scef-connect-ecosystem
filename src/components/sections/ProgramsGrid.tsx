@@ -2,23 +2,21 @@ import { Link } from "react-router-dom";
 import { siteContent } from "@/config/siteContent";
 import { useState } from "react";
 import { Play, X } from "lucide-react";
-import { useLocale } from "@/contexts/LocaleContext";
 
 export const ProgramsGrid = () => {
   const { programs } = siteContent.homepage;
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
-  const { t } = useLocale();
 
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-10">
-          {t('home.programs.title')}
+          Our Programs
         </h2>
 
-        {/* Programs Grid - 6 Core Programs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        {/* Programs Grid - 7 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
           {programs.map((program) => (
             <div key={program.id} className="group">
               {/* Card */}

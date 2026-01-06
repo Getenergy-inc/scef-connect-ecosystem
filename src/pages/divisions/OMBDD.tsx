@@ -9,11 +9,16 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Digital marketing and growth strategy",
-  "Sponsorship acquisition and CSR engagement",
-  "Fundraising campaigns and donor communications",
-  "Brand positioning and audience development",
-  "Business development for programs and media assets",
+  "Digital marketing strategy and online brand positioning",
+  "Corporate sponsorship acquisition and management",
+  "Online revenue generation and monetization strategies",
+  "Social media management and audience growth",
+  "Digital advertising campaigns and performance optimization",
+  "Analytics, attribution, and ROI reporting",
+  "Partner outreach and digital engagement funnels",
+  "Online fundraising and donor cultivation campaigns",
+  "E-commerce and merchandise revenue development",
+  "Affiliate and referral program management",
 ];
 
 const OMBDD = () => {
@@ -50,7 +55,7 @@ const OMBDD = () => {
                   Online Media Business <span className="text-gradient-gold">Development</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  Drives visibility, partnerships, sponsorships, and revenue growth through digital engagement. This is the revenue and partnership engine of SCEF.
+                  Driving sustainable digital revenue, strategic sponsorships, and online growth to fund SCEF's continental education mission across Africa and the diaspora.
                 </p>
               </div>
             </div>
@@ -65,10 +70,10 @@ const OMBDD = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    OMBDD drives visibility, partnerships, sponsorships, and revenue growth through digital engagement. We focus on digital marketing and growth strategy, sponsorship acquisition and CSR engagement, fundraising campaigns and donor communications.
+                    OMBDD is SCEF's digital revenue engine. We focus exclusively on online business development—acquiring corporate sponsorships, managing digital advertising, developing e-commerce revenue streams, and executing online fundraising strategies that sustain the institution's continental mission.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    This is the revenue and partnership engine of SCEF. We handle brand positioning and audience development, as well as business development for programs and media assets. Content production is the mandate of Santos Media—separated to protect editorial independence and credibility.
+                    Our scope is strictly limited to online media business development. Content production is the mandate of Santos Media. Platform development belongs to TDSD. Program delivery is managed by respective program teams. This division does not expand beyond its defined scope.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[

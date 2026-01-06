@@ -27,21 +27,14 @@ export const MainNavbar = () => {
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Brand Lockup with Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src="/assets/scef-logo.jpg" 
-              alt="SCEF Logo" 
-              className="h-10 md:h-12 w-auto"
-            />
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-lg md:text-xl text-white leading-tight group-hover:text-scef-gold transition-colors">
-                {siteContent.brand.name}
-              </span>
-              <span className="text-xs text-white/70 leading-tight hidden sm:block">
-                {siteContent.brand.tagline}
-              </span>
-            </div>
+          {/* Brand Lockup */}
+          <Link to="/" className="flex flex-col group">
+            <span className="font-display font-bold text-xl md:text-2xl text-white leading-tight group-hover:text-scef-gold transition-colors">
+              {siteContent.brand.name}
+            </span>
+            <span className="text-xs md:text-sm text-white/70 leading-tight">
+              {siteContent.brand.tagline}
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

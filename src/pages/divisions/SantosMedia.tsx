@@ -9,18 +9,23 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "NESA Africa TV",
-  "It's In Me Radio",
-  "EduAid Africa Webinars & Podcast",
-  "Education Tourism & Impact Stories",
-  "Content production, broadcast standards, and editorial integrity",
+  "NESA Africa TV production, broadcasting, and content distribution",
+  "It's In Me Radio programming, podcasts, and audio content",
+  "EduAid Webinar Series live production and post-production",
+  "EduAid Education Tourism Show filming and distribution",
+  "Educational documentary and feature film production",
+  "Live event coverage, streaming, and broadcast services",
+  "Podcast production, hosting, and syndication",
+  "Content licensing, syndication, and monetization",
+  "Media partnerships and co-production agreements",
+  "Archive management and content library curation",
 ];
 
 const channels = [
   { name: "NESA Africa TV", icon: Tv, desc: "Continental television covering NESA Awards, education documentaries, and institutional programming" },
   { name: "It's In Me Radio", icon: Radio, desc: "Pan-African radio with education talk shows, podcasts, and youth programming" },
-  { name: "EduAid Africa Webinars & Podcast", icon: Video, desc: "Live and on-demand educational webinars and podcasts featuring experts and thought leaders" },
-  { name: "Education Tourism & Impact Stories", icon: Camera, desc: "Video features showcasing schools, institutions, and education ecosystems across Africa" },
+  { name: "EduAid Webinar Series", icon: Video, desc: "Live and on-demand educational webinars featuring experts and thought leaders" },
+  { name: "Education Tourism Show", icon: Camera, desc: "Video features showcasing schools, institutions, and education ecosystems across Africa" },
 ];
 
 const SantosMedia = () => {
@@ -57,7 +62,7 @@ const SantosMedia = () => {
                   Santos <span className="text-gradient-gold">Media</span> Division
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  Produces and manages all SCEF-owned media platforms and education storytelling. Separated from OMBDD to protect editorial independence and credibility.
+                  Africa's institutional voice in education—producing compelling broadcast content that informs, inspires, and connects communities across the continent and diaspora.
                 </p>
               </div>
             </div>
@@ -72,10 +77,10 @@ const SantosMedia = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    Santos Media produces and manages all SCEF-owned media platforms and education storytelling. We create, produce, and distribute institutional-quality educational content across television, radio, and digital platforms—telling Africa's education story to the world.
+                    Santos Media is SCEF's broadcasting and content production division. We create, produce, and distribute institutional-quality educational content across television, radio, and digital platforms—telling Africa's education story to the world.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    Separated from OMBDD to protect editorial independence and credibility. From the NESA Africa Awards to educational documentaries, from webinars to podcasts—we operate four distinct media properties serving audiences across 54+ African countries and the global diaspora.
+                    From the NESA Africa Awards to educational documentaries, from webinars to podcasts—we operate four distinct media properties serving audiences across 54+ African countries and the global diaspora. Our content is designed for institutional credibility and mass engagement.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[

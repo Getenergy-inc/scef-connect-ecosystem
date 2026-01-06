@@ -9,11 +9,16 @@ import {
 } from "lucide-react";
 
 const responsibilities = [
-  "Chapter onboarding, activation, and capacity building",
-  "Leadership training and compliance support",
-  "Chapter dashboards, reporting, and performance tracking",
-  "Coordination of grassroots implementation of SCEF programs",
-  "Community engagement and feedback loops",
+  "Chapter onboarding, registration, and activation protocols",
+  "Compliance monitoring, audit support, and governance enforcement",
+  "Chapter constitution and governance framework implementation",
+  "Upgrade pathway management (Online → Hybrid → Physical)",
+  "Local leadership training, certification, and capacity building",
+  "Resource allocation, grant disbursement, and financial oversight",
+  "Performance tracking, KPI monitoring, and impact reporting",
+  "Inter-chapter coordination, regional events, and best practice sharing",
+  "Conflict resolution and disciplinary procedures",
+  "Community engagement standards and brand compliance",
 ];
 
 const chapterTypes = [
@@ -71,7 +76,7 @@ const LCS = () => {
                   Local Chapter <span className="text-gradient-gold">Services</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  Builds, supports, and monitors SCEF local chapters across Africa and the diaspora. Ensures decentralised impact with central accountability.
+                  Enabling grassroots education leadership through compliant, governed, and institutionally-supported local chapters across 54+ African countries and the diaspora.
                 </p>
               </div>
             </div>
@@ -86,10 +91,10 @@ const LCS = () => {
                     Our <span className="text-gradient-gold">Mandate</span>
                   </h2>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    LCS builds, supports, and monitors SCEF local chapters across Africa and the diaspora. We are responsible for the entire lifecycle of SCEF's local chapter network—from onboarding new chapters to supporting their growth with leadership training and compliance support.
+                    LCS is responsible for the entire lifecycle of SCEF's local chapter network—from onboarding new chapters to supporting their growth, ensuring governance compliance, and managing upgrade pathways from online to physical presence.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    This division ensures decentralised impact with central accountability. We manage chapter dashboards, reporting, and performance tracking while coordinating grassroots implementation of SCEF programs with community engagement and feedback loops.
+                    We enable community ownership under strong institutional oversight, ensuring local chapters deliver SCEF's mission with accountability, transparency, and measurable impact. All chapters remain under central HQ governance while operating autonomously within their jurisdictions.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[

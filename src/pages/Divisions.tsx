@@ -10,106 +10,78 @@ import {
 
 const divisions = [
   {
-    code: "BGEO",
-    title: "Board Governance & Executive Office",
-    description: "Provides institutional leadership, fiduciary oversight, and governance coordination across the Foundation.",
-    mandate: "Provides institutional leadership, fiduciary oversight, and governance coordination across the Foundation.",
-    icon: Building2,
-    color: "primary",
-    responsibilities: [
-      "Board of Trustees (BoT) coordination and documentation",
-      "Executive office administration",
-      "Governance policies, resolutions, and compliance reporting",
-      "Institutional integrity, ethics, and record keeping",
-      "Liaison between Board, management, and external stakeholders",
-    ],
-    leader: "Organization Secretary",
-    href: "/divisions/bgeo",
-  },
-  {
     code: "SOBCD",
     title: "Strategic Operations & Business Compliance Division",
-    description: "Ensures SCEF operates legally, ethically, and efficiently across all programs and countries.",
-    mandate: "Ensures SCEF operates legally, ethically, and efficiently across all programs and countries.",
+    description: "The backbone of SCEF's institutional integrity, managing governance, compliance, financial oversight, and strategic operations.",
+    mandate: "Ensure fiduciary integrity, regulatory compliance, and operational excellence across all SCEF activities.",
     icon: Shield,
     color: "gold",
     responsibilities: [
-      "Operational planning and execution oversight",
-      "Compliance with local, regional, and international regulations",
-      "Risk management and internal controls",
-      "Grant compliance, MoUs, and partnership governance",
-      "Monitoring & Evaluation (M&E) coordination",
-      "Audit readiness and reporting",
+      "Financial management and auditing",
+      "Regulatory compliance and reporting",
+      "Strategic planning and execution",
+      "Risk management and governance",
     ],
-    leader: "Director of Operations and Compliance",
     href: "/divisions/sobcd",
   },
   {
     code: "TDSD",
     title: "Technology & Digital Services Division",
-    description: "Designs, builds, and maintains SCEF's digital ecosystem and data infrastructure.",
-    mandate: "Designs, builds, and maintains SCEF's digital ecosystem and data infrastructure.",
+    description: "Powering SCEF's digital infrastructure, platforms, and technology-enabled education delivery.",
+    mandate: "Build and maintain technology platforms that enable scalable, accessible education across Africa.",
     icon: Laptop,
     color: "terracotta",
     responsibilities: [
-      "SCEF website, mobile app, dashboards, and CMS",
-      "Education Online Africa (EOA) platform and certification systems",
-      "Digital wallet, databases, APIs, and integrations",
-      "Cybersecurity, data protection, and system scalability",
-      "Digital analytics and performance monitoring",
+      "Platform development and maintenance",
+      "Education Online Africa operations",
+      "eLibrary Nigeria management",
+      "ICT training and support",
     ],
-    leader: "Director of Technology and Digital Innovation",
     href: "/divisions/tdsd",
   },
   {
     code: "OMBDD",
     title: "Online Media Business Development Division",
-    description: "Drives visibility, partnerships, sponsorships, and revenue growth through digital engagement.",
-    mandate: "Drives visibility, partnerships, sponsorships, and revenue growth through digital engagement.",
+    description: "Managing digital growth, online presence, and sponsorship acquisition within defined institutional scope.",
+    mandate: "Drive sustainable digital growth and sponsorship revenue while maintaining institutional brand standards.",
     icon: TrendingUp,
     color: "forest",
     responsibilities: [
-      "Digital marketing and growth strategy",
-      "Sponsorship acquisition and CSR engagement",
-      "Fundraising campaigns and donor communications",
-      "Brand positioning and audience development",
-      "Business development for programs and media assets",
+      "Digital marketing and growth",
+      "Sponsorship acquisition",
+      "Online brand management",
+      "Revenue optimization",
     ],
-    leader: "Director of Media Business Development",
     href: "/divisions/ombdd",
   },
   {
     code: "SMD",
     title: "Santos Media Division",
-    description: "Produces and manages all SCEF-owned media platforms and education storytelling.",
-    mandate: "Produces and manages all SCEF-owned media platforms and education storytelling.",
+    description: "Broadcasting, content production, and media platform operations across NESA Africa TV, It's In Me Radio, and other channels.",
+    mandate: "Produce and distribute high-quality educational content that inspires, informs, and mobilizes audiences across Africa.",
     icon: Tv,
     color: "primary",
     responsibilities: [
-      "NESA Africa TV",
-      "It's In Me Radio",
-      "EduAid Africa Webinars & Podcast",
-      "Education Tourism & Impact Stories",
-      "Content production, broadcast standards, and editorial integrity",
+      "NESA Africa TV operations",
+      "It's In Me Radio programming",
+      "Content production and curation",
+      "Media partnership management",
     ],
-    leader: "Director of Santos Media",
     href: "/divisions/santos-media",
   },
   {
     code: "LCS",
-    title: "Local Chapter Services Division",
-    description: "Builds, supports, and monitors SCEF local chapters across Africa and the diaspora.",
-    mandate: "Builds, supports, and monitors SCEF local chapters across Africa and the diaspora.",
+    title: "Local Chapter Services",
+    description: "Supporting the network of local chapters with onboarding, compliance, upgrades, and operational support.",
+    mandate: "Enable grassroots education impact through compliant, well-supported local chapter operations.",
     icon: Globe,
     color: "gold",
     responsibilities: [
-      "Chapter onboarding, activation, and capacity building",
-      "Leadership training and compliance support",
-      "Chapter dashboards, reporting, and performance tracking",
-      "Coordination of grassroots implementation of SCEF programs",
-      "Community engagement and feedback loops",
+      "Chapter onboarding and training",
+      "Compliance monitoring",
+      "Chapter upgrade pathways",
+      "Member support services",
     ],
-    leader: "Director of Chapter Services and Support",
     href: "/divisions/lcs",
   },
 ];
@@ -125,12 +97,12 @@ const Divisions = () => {
   return (
     <>
       <Helmet>
-        <title>Divisions - SCEF | 6 Operational Divisions</title>
+        <title>Divisions - SCEF | 5 Operational Divisions</title>
         <meta 
           name="description" 
-          content="SCEF operates through 6 specialized divisions: Board Governance & Executive Office, SOBCD, TDSD, OMBDD, Santos Media, and Local Chapter Services." 
+          content="SCEF operates through 5 specialized divisions: SOBCD (Compliance), TDSD (Technology), OMBDD (Media Business), Santos Media, and Local Chapter Services." 
         />
-        <meta name="keywords" content="SCEF divisions, BGEO, SOBCD, TDSD, OMBDD, Santos Media, Local Chapter Services" />
+        <meta name="keywords" content="SCEF divisions, SOBCD, TDSD, OMBDD, Santos Media, Local Chapter Services" />
         <link rel="canonical" href="https://scef.org/divisions" />
       </Helmet>
       
@@ -150,10 +122,10 @@ const Divisions = () => {
                   Organizational Structure
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  6 Operational <span className="text-gradient-gold">Divisions</span>
+                  5 Operational <span className="text-gradient-gold">Divisions</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed">
-                  SCEF operates through six specialized divisions, each with clear mandates, leadership, and operational scope to deliver on our institutional mission.
+                  SCEF operates through five specialized divisions, each with clear mandates, accountability structures, and operational scope to deliver on our institutional mission.
                 </p>
               </div>
             </div>
