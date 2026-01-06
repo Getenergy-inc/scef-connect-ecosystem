@@ -68,6 +68,30 @@
       "cta": "Mudar idioma"
     }
   },
+  "cta": {
+    "joinMember": "Tornar-se Membro",
+    "donateNow": "Doar Agora",
+    "becomeAmbassador": "Tornar-se Embaixador",
+    "joinChapter": "Entrar em um Capítulo Local",
+    "partnerCsr": "Parceria / CSR",
+    "watchMedia": "Assistir SCEF Media",
+    "watchLive": "Assistir ao vivo",
+    "watchReplay": "Assistir replay",
+    "viewSchedule": "Ver agenda completa",
+    "uploadMedia": "Enviar mídia",
+    "saveDraft": "Salvar rascunho",
+    "publish": "Publicar",
+    "schedule": "Agendar"
+  },
+  "labels": {
+    "countdown": "Contagem regressiva",
+    "featured": "Destaque",
+    "latest": "Mais recentes",
+    "language": "Idioma",
+    "region": "Região",
+    "status": "Status",
+    "priority": "Prioridade"
+  },
   "home": {
     "hero": {
       "title": "Educação para Todos em África — com membros, capítulos e parceiros",

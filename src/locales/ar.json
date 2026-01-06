@@ -68,6 +68,30 @@
       "cta": "تغيير اللغة"
     }
   },
+  "cta": {
+    "joinMember": "انضم كعضو",
+    "donateNow": "تبرّع الآن",
+    "becomeAmbassador": "كن سفيراً",
+    "joinChapter": "انضم لفرع محلي",
+    "partnerCsr": "شراكة / CSR",
+    "watchMedia": "شاهد إعلام SCEF",
+    "watchLive": "شاهد مباشرة",
+    "watchReplay": "شاهد الإعادة",
+    "viewSchedule": "عرض الجدول الكامل",
+    "uploadMedia": "رفع وسائط",
+    "saveDraft": "حفظ كمسودة",
+    "publish": "نشر",
+    "schedule": "جدولة"
+  },
+  "labels": {
+    "countdown": "العدّ التنازلي",
+    "featured": "مميّز",
+    "latest": "الأحدث",
+    "language": "اللغة",
+    "region": "المنطقة",
+    "status": "الحالة",
+    "priority": "الأولوية"
+  },
   "home": {
     "hero": {
       "title": "التعليم للجميع في أفريقيا — بقيادة الأعضاء والفروع والشركاء",
