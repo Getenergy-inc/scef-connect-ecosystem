@@ -30,9 +30,9 @@ export const PartnershipsTrust = () => {
               asChild
               className="bg-scef-gold text-scef-blue hover:bg-scef-gold-dark font-semibold border-2 border-black"
             >
-              <Link to="/partners">
+              <Link to="/partnerships/csr">
                 <Handshake className="w-4 h-4" />
-                Partner with Us
+                {t('home.partnerships.ctaCsr')}
               </Link>
             </Button>
             <Button
@@ -41,9 +41,9 @@ export const PartnershipsTrust = () => {
               asChild
               className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white font-semibold border-2"
             >
-              <Link to="/contact">
+              <Link to="/partnerships/request">
                 <FileText className="w-4 h-4" />
-                Request Proposal
+                {t('home.partnerships.ctaRequest')}
               </Link>
             </Button>
             <Button
@@ -52,9 +52,9 @@ export const PartnershipsTrust = () => {
               asChild
               className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white font-semibold border-2"
             >
-              <Link to="/partners#endorse">
+              <Link to="/partnerships/endorse">
                 <Award className="w-4 h-4" />
-                Endorse SCEF
+                {t('home.partnerships.ctaEndorse')}
               </Link>
             </Button>
           </div>

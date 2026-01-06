@@ -141,7 +141,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.eoa.ctaStart': 'Start Learning',
     'home.eoa.ctaCertify': 'Get Certified (ACDL / AWPC)',
     'home.eoa.ctaExam': 'Examination Portal',
-    'home.eoa.ctaPartner': 'Become Affiliate / Test Center',
+    'home.eoa.ctaRpl': 'Upgrade Certificate (RPL)',
+    'home.eoa.ctaRenew': 'Renew Certificate',
+    'home.eoa.ctaAffiliate': 'Become Affiliate / Test Centre',
     // Home - Media
     'home.media.title': 'Santos Media',
     'home.media.ctaVolunteer': 'Become a Media Volunteer',
