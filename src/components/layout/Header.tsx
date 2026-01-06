@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Heart, LogIn, Wallet, BookOpen, ExternalLink, Library, Award, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/contexts/LocaleContext";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 // External platform links with icons
 const externalPlatforms = [
@@ -11,78 +13,60 @@ const externalPlatforms = [
   { name: "EduAid.africa", href: "https://eduaid.africa", external: true, icon: GraduationCap },
 ];
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { 
-    name: "About SCEF", 
-    href: "/about",
-    children: [
-      { name: "Who We Are", href: "/about" },
-      { name: "Vision & Mission", href: "/about#vision" },
-      { name: "Governance", href: "/governance" },
-      { name: "Our Divisions", href: "/divisions" },
-    ]
-  },
-  { 
-    name: "Programs", 
-    href: "/programs",
-    children: [
-      { name: "All Programs", href: "/programs" },
-      { name: "NESA-Africa", href: "/programs/nesa-africa" },
-      { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
-      { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
-      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
-      { name: "Women & Girls Education", href: "/programs/women-girls-education" },
-      { name: "Special Needs Education", href: "/programs/special-needs-education" },
-      { name: "Digital Learning", href: "/programs/digital-learning" },
-      { divider: true },
-      { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
-      { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
-      { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
-    ]
-  },
-  { 
-    name: "Chapters", 
-    href: "/chapters",
-    children: [
-      { name: "Find a Chapter", href: "/chapters" },
-      { name: "Local Chapters", href: "/local-chapters" },
-    ]
-  },
-  { 
-    name: "Media", 
-    href: "/media",
-    children: [
-      { name: "Santos Media Hub", href: "/media" },
-      { name: "Santos Media Division", href: "/divisions/santos-media" },
-    ]
-  },
-  { 
-    name: "Membership", 
-    href: "/membership",
-    children: [
-      { name: "Join SCEF", href: "/membership" },
-      { name: "Certifications", href: "/certifications" },
-      { name: "Partners", href: "/partners" },
-    ]
-  },
-  { 
-    name: "Donate", 
-    href: "/donate",
-    children: [
-      { name: "Make a Donation", href: "/donate" },
-      { name: "GFA Wallet", href: "/wallet" },
-      { divider: true },
-      { name: "Donate via Paystack", href: "https://paystack.com/pay/scef-donation", external: true },
-      { name: "Donate via Flutterwave", href: "https://flutterwave.com/pay/scef", external: true },
-    ]
-  },
-];
-
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { t, isRTL } = useLocale();
+
+  const navigation = [
+    { name: t("nav.top.about"), href: "/about", key: "about",
+      children: [
+        { name: t("nav.dropdown.about.overview"), href: "/about" },
+        { name: t("nav.dropdown.about.history"), href: "/about#history" },
+        { name: t("nav.dropdown.about.vision"), href: "/about#vision" },
+        { name: t("nav.dropdown.about.governance"), href: "/governance" },
+        { name: t("nav.dropdown.about.divisions"), href: "/divisions" },
+      ]
+    },
+    { name: t("nav.top.work"), href: "/programs", key: "work",
+      children: [
+        { name: t("nav.dropdown.work.hub"), href: "/programs" },
+        { name: t("nav.dropdown.work.nesa"), href: "/programs/nesa-africa" },
+        { name: t("nav.dropdown.work.eduaid"), href: "/programs/eduaid-africa" },
+        { name: t("nav.dropdown.work.rmsa"), href: "/programs/rebuild-my-school-africa" },
+        { name: t("nav.dropdown.work.elibrary"), href: "/programs/elibrary-nigeria" },
+        { name: t("nav.dropdown.work.womenGirls"), href: "/programs/women-girls-education" },
+        { name: t("nav.dropdown.work.specialNeeds"), href: "/programs/special-needs-education" },
+        { name: t("nav.dropdown.work.eoa"), href: "/programs/digital-learning" },
+        { divider: true },
+        { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
+        { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
+        { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
+      ]
+    },
+    { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
+      children: [
+        { name: t("nav.dropdown.chapters.browse"), href: "/chapters" },
+        { name: t("nav.dropdown.chapters.join"), href: "/local-chapters" },
+      ]
+    },
+    { name: t("nav.top.media"), href: "/media", key: "media",
+      children: [
+        { name: t("nav.dropdown.media.hub"), href: "/media" },
+        { name: "Santos Media Division", href: "/divisions/santos-media" },
+      ]
+    },
+    { name: t("nav.top.getInvolved"), href: "/get-involved", key: "getInvolved",
+      children: [
+        { name: t("nav.dropdown.getInvolved.member"), href: "/membership" },
+        { name: t("nav.dropdown.getInvolved.ambassador"), href: "/get-involved" },
+        { name: t("nav.dropdown.getInvolved.volunteer"), href: "/get-involved#volunteer" },
+        { name: t("nav.dropdown.getInvolved.csr"), href: "/partners" },
+        { name: t("nav.dropdown.getInvolved.donate"), href: "/donate" },
+      ]
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,6 +84,7 @@ export const Header = () => {
           ? "bg-scef-blue shadow-lg py-2"
           : "bg-scef-blue/95 backdrop-blur-sm py-4"
       )}
+      dir={isRTL ? "rtl" : "ltr"}
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -121,9 +106,9 @@ export const Header = () => {
         <div className="hidden xl:flex items-center gap-1">
           {navigation.map((item) => (
             <div 
-              key={item.name}
+              key={item.key}
               className="relative"
-              onMouseEnter={() => item.children && setActiveDropdown(item.name)}
+              onMouseEnter={() => item.children && setActiveDropdown(item.key)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link
@@ -135,8 +120,11 @@ export const Header = () => {
               </Link>
               
               {/* Dropdown */}
-              {item.children && activeDropdown === item.name && (
-                <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50">
+              {item.children && activeDropdown === item.key && (
+                <div className={cn(
+                  "absolute top-full mt-1 w-64 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50",
+                  isRTL ? "right-0" : "left-0"
+                )}>
                   {item.children.map((child: any, idx: number) => (
                     child.divider ? (
                       <div key={idx} className="border-t border-gray-200 my-1" />
@@ -170,6 +158,7 @@ export const Header = () => {
 
         {/* CTA Buttons */}
         <div className="hidden xl:flex items-center gap-2">
+          <LanguageSwitcher />
           <Button 
             variant="ghost" 
             size="sm" 
@@ -178,7 +167,7 @@ export const Header = () => {
           >
             <Link to="/wallet">
               <Wallet className="w-4 h-4" />
-              Wallet
+              {t("nav.top.donate")}
             </Link>
           </Button>
           <Button 
@@ -189,7 +178,7 @@ export const Header = () => {
           >
             <Link to="/donate">
               <Heart className="w-4 h-4" />
-              Donate
+              {t("nav.top.donate")}
             </Link>
           </Button>
           <Button 
@@ -199,22 +188,25 @@ export const Header = () => {
           >
             <Link to="/auth">
               <LogIn className="w-4 h-4" />
-              Login
+              {t("nav.top.signin")}
             </Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="xl:hidden p-2 rounded-lg transition-colors"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? (
-            <X className="w-6 h-6 text-white" />
-          ) : (
-            <Menu className="w-6 h-6 text-white" />
-          )}
-        </button>
+        <div className="xl:hidden flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            className="p-2 rounded-lg transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -222,7 +214,7 @@ export const Header = () => {
         <div className="xl:hidden absolute top-full left-0 right-0 bg-scef-blue-dark border-b border-white/10 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navigation.map((item) => (
-              <div key={item.name}>
+              <div key={item.key}>
                 <Link
                   to={item.href}
                   className="block px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors font-medium"
@@ -231,7 +223,7 @@ export const Header = () => {
                   {item.name}
                 </Link>
                 {item.children && (
-                  <div className="ml-4 space-y-1">
+                  <div className={cn("space-y-1", isRTL ? "mr-4" : "ml-4")}>
                     {item.children.map((child: any, idx: number) => (
                       child.divider ? (
                         <div key={idx} className="border-t border-white/10 my-2" />
@@ -278,7 +270,7 @@ export const Header = () => {
                   >
                     <platform.icon className="w-5 h-5 text-scef-gold" />
                     <span className="font-medium">{platform.name}</span>
-                    <ExternalLink className="w-3 h-3 ml-auto text-white/50" />
+                    <ExternalLink className={cn("w-3 h-3 text-white/50", isRTL ? "mr-auto" : "ml-auto")} />
                   </a>
                 ))}
               </div>
@@ -319,7 +311,7 @@ export const Header = () => {
               >
                 <Link to="/wallet" onClick={() => setMobileMenuOpen(false)}>
                   <Wallet className="w-4 h-4" />
-                  Wallet / Donate
+                  {t("nav.top.donate")}
                 </Link>
               </Button>
               <Button 
@@ -328,7 +320,7 @@ export const Header = () => {
               >
                 <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
                   <LogIn className="w-4 h-4" />
-                  Login / Dashboard
+                  {t("nav.top.signin")} / {t("nav.top.dashboard")}
                 </Link>
               </Button>
             </div>
