@@ -20,34 +20,46 @@ const objectives = [
 
 const divisions = [
   {
+    code: "BGEO",
+    title: "Board Governance & Executive Office",
+    description: "Board coordination, governance documentation, executive office support, institutional communications, and governance continuity.",
+    icon: Shield,
+    link: "/governance",
+  },
+  {
     code: "SOBCD",
     title: "Strategic Operations & Business Compliance",
-    description: "Governance, compliance, finance oversight, audits, risk management, and institutional integrity.",
-    icon: Shield,
+    description: "Admin & HR, finance operations oversight, events management, internal/external training coordination, compliance systems, operational reporting.",
+    icon: Building2,
+    link: "/divisions/sobcd",
   },
   {
     code: "TDSD",
     title: "Technology & Digital Services",
-    description: "Website, mobile apps, APIs, databases, wallets, AI tools, ICT training, Education Online Africa, eLibrary Nigeria.",
+    description: "Website/app systems, databases, security, dashboards, multilingual systems, platform performance, and digital transformation delivery.",
     icon: Laptop,
+    link: "/divisions/tdsd",
   },
   {
     code: "OMBDD",
     title: "Online Media Business Development",
-    description: "Digital growth, sponsorships, partnerships, and online revenue development. Strict scope—no expansion beyond mandate.",
+    description: "Fundraising communications, sponsorship pipelines, digital growth, campaigns, partnerships conversion support, donor engagement assets.",
     icon: TrendingUp,
+    link: "/divisions/ombdd",
   },
   {
     code: "Santos Media",
     title: "Santos Media Division",
-    description: "NESA Africa TV, It's In Me Radio, EduAid Webinar Series, Education Tourism Show. Broadcasting and content monetization.",
+    description: "NESA Africa TV, It's In Me Radio, webinars/podcasts, education tourism show, content operations, editorial standards, media distribution.",
     icon: Tv,
+    link: "/divisions/santos-media",
   },
   {
     code: "LCS",
     title: "Local Chapter Services",
-    description: "Chapter onboarding, compliance monitoring, performance tracking, and pathway upgrades (Online → Hybrid → Physical).",
+    description: "Onboarding, monitoring, compliance support, reporting systems, local chapter governance, and scalable chapter activation.",
     icon: Globe,
+    link: "/divisions/lcs",
   },
 ];
 
@@ -248,22 +260,32 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  5 Operational <span className="text-scef-gold">Divisions</span>
+                  6 Operational <span className="text-scef-gold">Divisions</span>
                 </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  SCEF is structured into six divisions to deliver governance, programs, media, chapters, compliance, and partnerships at scale.
+                </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {divisions.map((division) => (
-                  <div key={division.code} className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg transition-shadow">
+                  <Link 
+                    key={division.code} 
+                    to={division.link}
+                    className="bg-card rounded-2xl p-6 border-2 border-black hover:shadow-lg hover:border-scef-gold transition-all group"
+                  >
                     <div className="flex items-center gap-3 mb-4">
-                      <division.icon className="w-6 h-6 text-scef-blue" />
+                      <division.icon className="w-6 h-6 text-scef-blue group-hover:text-scef-gold transition-colors" />
                       <span className="text-xs font-semibold px-2 py-1 rounded-full bg-scef-gold text-scef-blue border-2 border-black">
                         {division.code}
                       </span>
                     </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2">{division.title}</h3>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-scef-gold transition-colors">{division.title}</h3>
                     <p className="text-sm text-muted-foreground">{division.description}</p>
-                  </div>
+                    <div className="mt-4 flex items-center gap-2 text-sm text-scef-blue group-hover:text-scef-gold transition-colors">
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
