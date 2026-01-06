@@ -12,7 +12,7 @@
       "work": "Our Work (Programs)",
       "chapters": "Local Chapters",
       "getInvolved": "Get Involved",
-      "media": "Santos Media",
+      "media": "SCEF Media",
       "search": "Search",
       "donate": "Donate",
       "signin": "Sign In",
@@ -57,16 +57,50 @@
       "media": {
         "hub": "Media Hub",
         "nesaTv": "NESA Africa TV",
+        "nesaAwardsTv": "NESA Awards TV",
+        "platinumShow": "Platinum Recognition Show",
+        "africaIcon": "Africa Icon Blue Garnet Awards",
+        "goldCertificate": "Gold Certificate Awards",
+        "blueGarnetGala": "Blue Garnet Gala",
         "radio": "It's In Me Radio",
-        "webinars": "EduAid Africa Webinars & Podcast",
+        "webinars": "EduAid Webinars & Podcast",
         "tourism": "Education Tourism Show",
-        "volunteer": "Become Media Volunteer"
+        "volunteer": "Become Media Volunteer",
+        "mediaCms": "Media CMS",
+        "mediaLibrary": "Media Library Uploads",
+        "mediaSeries": "Series & Playlists",
+        "mediaSchedule": "Schedule & Publish",
+        "awardsScheduleAdmin": "NESA Awards TV Schedule"
       }
     },
     "language": {
       "label": "Language",
       "cta": "Change language"
     }
+  },
+  "cta": {
+    "joinMember": "Join as a Member",
+    "donateNow": "Donate Now",
+    "becomeAmbassador": "Become an Ambassador",
+    "joinChapter": "Join a Local Chapter",
+    "partnerCsr": "Partner / CSR",
+    "watchMedia": "Watch SCEF Media",
+    "watchLive": "Watch Live",
+    "watchReplay": "Watch Replay",
+    "viewSchedule": "View Full Schedule",
+    "uploadMedia": "Upload Media",
+    "saveDraft": "Save Draft",
+    "publish": "Publish",
+    "schedule": "Schedule"
+  },
+  "labels": {
+    "countdown": "Countdown",
+    "featured": "Featured",
+    "latest": "Latest",
+    "language": "Language",
+    "region": "Region",
+    "status": "Status",
+    "priority": "Priority"
   },
   "home": {
     "hero": {
@@ -148,30 +182,32 @@
   "about": {
     "hero": {
       "title": "About Santos Creations Educational Foundation (SCEF)",
-      "subtitle": "SCEF is a pan-African membership-driven NGO advancing Education for All through impact programs, local chapters, media advocacy, trusted certifications, and CSR partnerships.",
-      "ctaJoin": "Become a Member",
-      "ctaDonate": "Donate",
-      "ctaAmbassador": "Become Ambassador",
-      "ctaJoinChapter": "Join a Chapter",
-      "ctaCsr": "CSR Partnership"
+      "subtitle": "SCEF is a membership-driven Pan-African education foundation strengthening education delivery through governance systems, digital access and certification, media knowledge dissemination, compliant local chapters, accountable funding partnerships, and scalable impact aligned with the UN SDGs and AU Agenda 2063.",
+      "ctaJoin": "Join as a Member",
+      "ctaDonate": "Donate Now",
+      "ctaAmbassador": "Become an Ambassador",
+      "ctaJoinChapter": "Join a Local Chapter",
+      "ctaCsr": "Partner / CSR",
+      "ctaMedia": "Watch SCEF Media"
     },
     "who": {
       "title": "Who We Are",
-      "body": "SCEF builds a connected education ecosystem — with layered governance, integrated programs, and a membership model — to improve access, quality, inclusion, and measurable impact across Africa and the diaspora.",
-      "ctaPrograms": "Explore Programs",
-      "ctaUpdates": "View Updates"
+      "body": "Santos Creations Educational Foundation (SCEF) builds a structured, continent-wide education ecosystem that helps education grow in quality, reach, and accountability. We connect people, programs, platforms, partners, and local chapters to deliver measurable learning outcomes, trusted credentials, and sustainable education support across Africa and the diaspora.",
+      "ctaPrograms": "Explore Our Work",
+      "ctaUpdates": "See Live Updates"
     },
     "objectives": {
-      "title": "Our 6 Objectives",
+      "title": "Our 6 Core Objectives",
       "items": [
-        "Establish multi-layer governance for education delivery.",
+        "Establish layered governance for education delivery.",
         "Deploy digital platforms for access and certification.",
         "Develop media for knowledge dissemination.",
-        "Onboard and track local chapters for compliance.",
+        "Onboard and monitor local chapters for compliance.",
         "Secure funding and partnerships with accountability.",
-        "Align operations to UN SDGs and AU Agenda 2063 for scalability."
+        "Align operations with UN SDGs and AU Agenda 2063 for scalability."
       ],
-      "ctaDownload": "Download SCEF Profile (PDF)"
+      "ctaDownload": "Download SCEF Profile (PDF)",
+      "ctaGovernance": "Governance Hub"
     },
     "history": {
       "title": "Our History",
@@ -610,9 +646,9 @@
   },
   "media": {
     "hero": {
-      "badge": "Santos Media",
-      "title": "Santos Media Division",
-      "subtitle": "SCEF's media arm broadcasts education content, celebrates excellence, and advocates for education transformation across Africa."
+      "badge": "SCEF Media",
+      "title": "SCEF Media — Knowledge Dissemination Engine",
+      "subtitle": "SCEF Media supports Objective 3 by publishing verified education content and storytelling across Africa and the diaspora—through video, radio programs, webinars, podcasts, documentaries, and education tourism content."
     },
     "platforms": {
       "title": "Our Platforms",
@@ -620,12 +656,22 @@
         "title": "NESA Africa TV",
         "description": "Broadcasting education excellence, award ceremonies, and educational content across Africa."
       },
+      "nesaAwardsTv": {
+        "title": "NESA Awards TV",
+        "description": "Four major NESA Awards TV programs with countdowns, live links, and replays.",
+        "shows": {
+          "platinum": "Platinum Recognition Show",
+          "africaIcon": "Africa Icon Blue Garnet Awards",
+          "goldCertificate": "Gold Certificate Awards",
+          "blueGarnetGala": "Blue Garnet Gala"
+        }
+      },
       "radio": {
         "title": "It's In Me Radio",
         "description": "Audio content featuring education stories, interviews, and advocacy programming."
       },
       "webinars": {
-        "title": "EduAid Africa Webinars & Podcast",
+        "title": "EduAid Webinars & Podcast",
         "description": "Educational webinars, expert panels, and podcast series on education topics."
       },
       "tourism": {
@@ -638,9 +684,12 @@
       "body": "Join our media team as a volunteer content creator, presenter, or technical support."
     },
     "cta": {
+      "hub": "Media Hub",
       "watch": "Watch NESA TV",
+      "watchAwards": "Watch NESA Awards TV",
       "listen": "Listen to Radio",
-      "volunteer": "Become Media Volunteer"
+      "volunteer": "Become Media Volunteer",
+      "viewSchedule": "View Full Schedule"
     }
   },
   "getInvolved": {

@@ -68,6 +68,30 @@
       "cta": "Badilisha lugha"
     }
   },
+  "cta": {
+    "joinMember": "Jiunge kama Mwanachama",
+    "donateNow": "Changia Sasa",
+    "becomeAmbassador": "Kuwa Balozi",
+    "joinChapter": "Jiunge na Sura ya Mtaa",
+    "partnerCsr": "Ushirikiano / CSR",
+    "watchMedia": "Tazama SCEF Media",
+    "watchLive": "Tazama Moja kwa Moja",
+    "watchReplay": "Tazama Marudio",
+    "viewSchedule": "Tazama Ratiba Kamili",
+    "uploadMedia": "Pakia Media",
+    "saveDraft": "Hifadhi Rasimu",
+    "publish": "Chapisha",
+    "schedule": "Panga Ratiba"
+  },
+  "labels": {
+    "countdown": "Kaunta ya Muda",
+    "featured": "Iliyoangaziwa",
+    "latest": "Mpya zaidi",
+    "language": "Lugha",
+    "region": "Kanda",
+    "status": "Hali",
+    "priority": "Kipaumbele"
+  },
   "home": {
     "hero": {
       "title": "Elimu kwa Wote Barani Afrika — kwa nguvu ya wanachama, sura na washirika",

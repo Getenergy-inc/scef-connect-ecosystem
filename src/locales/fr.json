@@ -68,6 +68,30 @@
       "cta": "Changer de langue"
     }
   },
+  "cta": {
+    "joinMember": "Rejoindre comme membre",
+    "donateNow": "Faire un don",
+    "becomeAmbassador": "Devenir ambassadeur",
+    "joinChapter": "Rejoindre un chapitre local",
+    "partnerCsr": "Partenariat / CSR",
+    "watchMedia": "Regarder SCEF Media",
+    "watchLive": "Regarder en direct",
+    "watchReplay": "Voir le replay",
+    "viewSchedule": "Voir le programme complet",
+    "uploadMedia": "Téléverser un média",
+    "saveDraft": "Enregistrer comme brouillon",
+    "publish": "Publier",
+    "schedule": "Planifier"
+  },
+  "labels": {
+    "countdown": "Compte à rebours",
+    "featured": "À la une",
+    "latest": "Derniers",
+    "language": "Langue",
+    "region": "Région",
+    "status": "Statut",
+    "priority": "Priorité"
+  },
   "home": {
     "hero": {
       "title": "L'Éducation pour Tous en Afrique — portée par les membres, les chapitres et les partenaires",
