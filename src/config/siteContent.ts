@@ -28,8 +28,6 @@ export const siteContent = {
         { name: "Special Needs Education", href: "/programs/special-needs-education" },
         { name: "Education Online Africa", href: "/programs/digital-learning" },
         { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
-        { divider: true },
-        { name: "Media Platforms", href: "/media" },
       ]
     },
     { 
@@ -50,6 +48,25 @@ export const siteContent = {
         { name: "Volunteer", href: "/get-involved#volunteer" },
         { name: "Partner with Us", href: "/partners" },
         { name: "Donate", href: "/donate" },
+      ]
+    },
+    {
+      name: "SCEF Media",
+      href: "/media",
+      children: [
+        { name: "Media Hub", href: "/media" },
+        { divider: true },
+        { name: "NESA Africa TV", href: "/media/nesa-tv" },
+        { name: "NESA Awards TV", href: "/media/nesa-awards-tv" },
+        { divider: true },
+        { name: "Platinum Recognition Show", href: "/media/nesa-awards-tv/platinum" },
+        { name: "Africa Icon Blue Garnet Awards", href: "/media/nesa-awards-tv/africa-icon" },
+        { name: "Gold Certificate Awards", href: "/media/nesa-awards-tv/gold-certificate" },
+        { name: "Blue Garnet Gala", href: "/media/nesa-awards-tv/blue-garnet-gala" },
+        { divider: true },
+        { name: "It's In Me Radio", href: "/media/its-in-me-radio" },
+        { name: "EduAid Webinars & Podcast", href: "/media/eduaid-webinars" },
+        { name: "Education Tourism Show", href: "/media/education-tourism-show" },
       ]
     },
   ],

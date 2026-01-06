@@ -55,12 +55,22 @@
         "donate": "Doar"
       },
       "media": {
-        "hub": "Centro de media",
+        "hub": "Central de Mídia",
         "nesaTv": "NESA Africa TV",
+        "nesaAwardsTv": "NESA Awards TV",
+        "platinumShow": "Platinum Recognition Show",
+        "africaIcon": "Africa Icon Blue Garnet Awards",
+        "goldCertificate": "Gold Certificate Awards",
+        "blueGarnetGala": "Blue Garnet Gala",
         "radio": "It's In Me Radio",
-        "webinars": "Webinars e Podcast EduAid Africa",
-        "tourism": "Programa de Turismo Educativo",
-        "volunteer": "Voluntariado em media"
+        "webinars": "Webinars & Podcast EduAid",
+        "tourism": "Programa de Turismo Educacional",
+        "volunteer": "Voluntariado em media",
+        "mediaCms": "CMS de Mídia",
+        "mediaLibrary": "Uploads da Biblioteca de Mídia",
+        "mediaSeries": "Séries & Playlists",
+        "mediaSchedule": "Agendar & Publicar",
+        "awardsScheduleAdmin": "Agenda do NESA Awards TV"
       }
     },
     "language": {
@@ -177,7 +187,8 @@
       "ctaDonate": "Doar",
       "ctaAmbassador": "Tornar-se embaixador",
       "ctaJoinChapter": "Entrar num capítulo",
-      "ctaCsr": "Parceria CSR"
+      "ctaCsr": "Parceria CSR",
+      "ctaMedia": "Assistir SCEF Media"
     },
     "who": {
       "title": "Quem somos",
