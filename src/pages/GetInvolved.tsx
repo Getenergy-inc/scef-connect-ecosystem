@@ -4,65 +4,68 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLocale } from "@/contexts/LocaleContext";
 import { Users, Award, HandHeart, ArrowRight, CheckCircle } from "lucide-react";
 
-const involvementOptions = [
-  {
-    id: "member",
-    title: "Become a Member",
-    description: "Join the SCEF family and be part of Africa's largest education advocacy network.",
-    icon: Users,
-    benefits: [
-      "Access to exclusive programs and events",
-      "Voting rights in NESA Awards",
-      "Connect with chapters nationwide",
-      "Receive impact reports",
-      "Member dashboard access",
-    ],
-    cta: "Join Now",
-    href: "/membership",
-    color: "from-gold to-gold-light",
-  },
-  {
-    id: "ambassador",
-    title: "Ambassador Program",
-    description: "Represent SCEF in your community and lead education advocacy initiatives.",
-    icon: Award,
-    benefits: [
-      "Leadership training and certification",
-      "Official SCEF ambassador title",
-      "Priority event invitations",
-      "Networking opportunities",
-      "Recognition in media",
-    ],
-    cta: "Apply Now",
-    href: "/ambassador",
-    color: "from-terracotta to-terracotta-light",
-  },
-  {
-    id: "volunteer",
-    title: "Volunteer With Us",
-    description: "Contribute your time and skills to support our educational programs.",
-    icon: HandHeart,
-    benefits: [
-      "Flexible commitment options",
-      "Skills development",
-      "Certificate of appreciation",
-      "Volunteer network access",
-      "Make direct impact",
-    ],
-    cta: "Get Started",
-    href: "/volunteer",
-    color: "from-forest to-forest-light",
-  },
-];
-
 const GetInvolved = () => {
+  const { t } = useLocale();
+
+  const involvementOptions = [
+    {
+      id: "member",
+      title: t("nav.dropdown.getInvolved.member"),
+      description: t("about.hero.subtitle"),
+      icon: Users,
+      benefits: [
+        t("membership.benefits.learning") || "Access to exclusive programs and events",
+        t("membership.benefits.voting") || "Voting rights in NESA Awards",
+        t("membership.benefits.chapters") || "Connect with chapters nationwide",
+        t("membership.benefits.impact") || "Receive impact reports",
+        "Member dashboard access",
+      ],
+      cta: t("home.hero.ctaPrimary"),
+      href: "/membership",
+      color: "from-gold to-gold-light",
+    },
+    {
+      id: "ambassador",
+      title: t("nav.dropdown.getInvolved.ambassador"),
+      description: t("home.hero.ctaAmbassador"),
+      icon: Award,
+      benefits: [
+        "Leadership training and certification",
+        "Official SCEF ambassador title",
+        "Priority event invitations",
+        "Networking opportunities",
+        "Recognition in media",
+      ],
+      cta: t("home.hero.ctaAmbassador"),
+      href: "/ambassador",
+      color: "from-terracotta to-terracotta-light",
+    },
+    {
+      id: "volunteer",
+      title: t("nav.dropdown.getInvolved.volunteer"),
+      description: t("home.media.ctaVolunteer"),
+      icon: HandHeart,
+      benefits: [
+        "Flexible commitment options",
+        "Skills development",
+        "Certificate of appreciation",
+        "Volunteer network access",
+        "Make direct impact",
+      ],
+      cta: t("nav.dropdown.getInvolved.volunteer"),
+      href: "/volunteer",
+      color: "from-forest to-forest-light",
+    },
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Get Involved | SCEF - Join Africa's Education Movement</title>
-        <meta name="description" content="Join SCEF as a member, ambassador, or volunteer. Be part of transforming education across Africa." />
+        <title>{t("nav.top.getInvolved")} - SCEF</title>
+        <meta name="description" content={t("about.hero.subtitle")} />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -73,11 +76,10 @@ const GetInvolved = () => {
           <section className="bg-gradient-to-br from-earth to-earth/90 text-cream py-20">
             <div className="container mx-auto px-4 text-center">
               <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                Get Involved with <span className="text-gold">SCEF</span>
+                {t("nav.top.getInvolved")}
               </h1>
               <p className="text-lg text-cream/80 max-w-2xl mx-auto">
-                There are many ways to contribute to Africa's education transformation. 
-                Find the path that's right for you.
+                {t("about.hero.subtitle")}
               </p>
             </div>
           </section>
@@ -122,14 +124,13 @@ const GetInvolved = () => {
           <section className="py-16 bg-muted/50">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                Not Sure Where to Start?
+                {t("home.final.title")}
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Contact us and we'll help you find the perfect way to contribute based on your interests, 
-                skills, and availability.
+                {t("about.hero.subtitle")}
               </p>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">{t("footer.contact")}</Link>
               </Button>
             </div>
           </section>

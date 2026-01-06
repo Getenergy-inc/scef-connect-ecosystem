@@ -3,89 +3,92 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/contexts/LocaleContext";
 import { Play, Radio, Video, Calendar, Image, ArrowRight, ExternalLink, Users } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LiveIndicator } from "@/components/ui/live-indicator";
 import { useLiveStreamStatus } from "@/hooks/useLiveStreamStatus";
 import heroImage from "@/assets/hero-media.jpg";
 
-const mediaChannels = [
-  {
-    id: "nesa-tv",
-    icon: Video,
-    title: "NESA Africa TV",
-    description: "Watch inspiring documentaries, event coverage, and success stories from across Africa.",
-    cta: "Watch Now",
-    href: "https://www.youtube.com/@Nesa.africaTV/streams",
-    external: true,
-    color: "bg-scef-gold/10 text-scef-gold",
-    hasLiveIndicator: true,
-  },
-  {
-    id: "radio",
-    icon: Radio,
-    title: "It's In Me Radio",
-    description: "Listen to podcasts and radio shows featuring educators, students, and changemakers.",
-    cta: "Listen Now",
-    href: "https://www.elibrarynigeria.com.ng",
-    external: true,
-    color: "bg-scef-blue/10 text-scef-blue",
-    hasLiveIndicator: false,
-  },
-  {
-    id: "webinar",
-    icon: Calendar,
-    title: "EduAid Webinar Series",
-    description: "Join live webinars and access recordings on education topics and best practices.",
-    cta: "View Schedule",
-    href: "https://eduaid.africa",
-    external: true,
-    color: "bg-scef-gold/10 text-scef-gold",
-    hasLiveIndicator: false,
-  },
-  {
-    id: "tourism",
-    icon: Play,
-    title: "Education Tourism Show",
-    description: "Explore educational institutions and learning centers across Africa.",
-    cta: "Explore",
-    href: "https://nesa.africa",
-    external: true,
-    color: "bg-scef-blue/10 text-scef-blue",
-    hasLiveIndicator: false,
-  },
-];
-
-const featuredContent = [
-  {
-    type: "video",
-    title: "NESA Awards 2024 Highlights",
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600",
-    duration: "15:30",
-  },
-  {
-    type: "podcast",
-    title: "Education Innovation in Nigeria",
-    thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600",
-    duration: "45:00",
-  },
-  {
-    type: "video",
-    title: "Rebuild My School: Ghana Story",
-    thumbnail: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600",
-    duration: "22:15",
-  },
-];
-
 const Media = () => {
+  const { t } = useLocale();
   const liveStatus = useLiveStreamStatus();
+
+  const mediaChannels = [
+    {
+      id: "nesa-tv",
+      icon: Video,
+      title: t("nav.dropdown.media.nesaTv"),
+      description: t("home.media.title"),
+      cta: "Watch Now",
+      href: "https://www.youtube.com/@Nesa.africaTV/streams",
+      external: true,
+      color: "bg-scef-gold/10 text-scef-gold",
+      hasLiveIndicator: true,
+    },
+    {
+      id: "radio",
+      icon: Radio,
+      title: t("nav.dropdown.media.radio"),
+      description: t("home.media.title"),
+      cta: "Listen Now",
+      href: "https://www.elibrarynigeria.com.ng",
+      external: true,
+      color: "bg-scef-blue/10 text-scef-blue",
+      hasLiveIndicator: false,
+    },
+    {
+      id: "webinar",
+      icon: Calendar,
+      title: t("nav.dropdown.media.webinars"),
+      description: t("home.media.title"),
+      cta: "View Schedule",
+      href: "https://eduaid.africa",
+      external: true,
+      color: "bg-scef-gold/10 text-scef-gold",
+      hasLiveIndicator: false,
+    },
+    {
+      id: "tourism",
+      icon: Play,
+      title: t("nav.dropdown.media.tourism"),
+      description: t("home.media.title"),
+      cta: "Explore",
+      href: "https://nesa.africa",
+      external: true,
+      color: "bg-scef-blue/10 text-scef-blue",
+      hasLiveIndicator: false,
+    },
+  ];
+
+  const featuredContent = [
+    {
+      type: "video",
+      title: "NESA Awards 2024 Highlights",
+      thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600",
+      duration: "15:30",
+    },
+    {
+      type: "podcast",
+      title: "Education Innovation in Nigeria",
+      thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600",
+      duration: "45:00",
+    },
+    {
+      type: "video",
+      title: "Rebuild My School: Ghana Story",
+      thumbnail: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600",
+      duration: "22:15",
+    },
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Santos Media - SCEF | TV, Radio & Educational Content</title>
+        <title>{t("nav.top.media")} - SCEF</title>
         <meta 
           name="description" 
-          content="Explore SCEF's media hub featuring NESA Africa TV, It's In Me Radio, webinars, and educational content from across Africa." 
+          content={t("home.media.title")} 
         />
       </Helmet>
       
@@ -101,13 +104,13 @@ const Media = () => {
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 border-2 border-black">
                   <Play className="w-4 h-4" />
-                  Santos Media
+                  {t("nav.top.media")}
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  Media <span className="text-scef-gold">Hub</span>
+                  {t("nav.dropdown.media.hub")}
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed">
-                  Inspiring stories, educational content, and the voices driving change in African education.
+                  {t("home.media.title")}
                 </p>
               </div>
             </div>
@@ -117,7 +120,7 @@ const Media = () => {
           <section className="py-20 bg-muted/30 border-y-2 border-black">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-foreground mb-12 text-center">
-                Our <span className="text-scef-gold">Channels</span>
+                {t("nav.dropdown.media.hub")}
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -193,7 +196,7 @@ const Media = () => {
               <div className="flex justify-between items-end mb-12">
                 <div>
                   <h2 className="font-display text-3xl font-bold text-foreground">
-                    Featured <span className="text-scef-gold">Content</span>
+                    {t("home.media.title")}
                   </h2>
                 </div>
                 <Button variant="outline" className="border-2 border-black" asChild>
@@ -244,15 +247,15 @@ const Media = () => {
           <section className="py-20 bg-scef-blue border-t-2 border-black">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl font-bold text-white mb-4">
-                Share Your <span className="text-scef-gold">Story</span>
+                {t("home.media.ctaVolunteer")}
               </h2>
               <p className="text-white/70 max-w-2xl mx-auto mb-8">
-                Have inspiring content about education in Africa? Submit your videos, podcasts, or stories to be featured on Santos Media.
+                {t("home.media.title")}
               </p>
               <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" asChild>
                 <Link to="/contact">
                   <ExternalLink className="w-4 h-4" />
-                  Submit Content
+                  {t("home.media.ctaVolunteer")}
                 </Link>
               </Button>
             </div>

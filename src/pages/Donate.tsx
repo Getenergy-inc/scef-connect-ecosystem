@@ -7,20 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLocale } from "@/contexts/LocaleContext";
 import { Heart, School, GraduationCap, Users, BookOpen, Globe, ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const donationAmounts = [25, 50, 100, 250, 500, 1000];
 
-const causes = [
-  { id: "general", name: "General Fund", icon: Heart, description: "Support all SCEF initiatives" },
-  { id: "scholarships", name: "Scholarships", icon: GraduationCap, description: "Fund student education" },
-  { id: "schools", name: "Rebuild Schools", icon: School, description: "Infrastructure development" },
-  { id: "chapters", name: "Local Chapters", icon: Users, description: "Community programs" },
-];
-
 const Donate = () => {
+  const { t } = useLocale();
   const [selectedAmount, setSelectedAmount] = useState<number | null>(100);
   const [customAmount, setCustomAmount] = useState("");
   const [selectedCause, setSelectedCause] = useState("general");
@@ -30,13 +25,20 @@ const Donate = () => {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const causes = [
+    { id: "general", name: t("donate.causes.general") || "General Fund", icon: Heart, description: t("donate.causes.generalDesc") || "Support all SCEF initiatives" },
+    { id: "scholarships", name: t("donate.causes.scholarships") || "Scholarships", icon: GraduationCap, description: t("donate.causes.scholarshipsDesc") || "Fund student education" },
+    { id: "schools", name: t("donate.causes.schools") || "Rebuild Schools", icon: School, description: t("donate.causes.schoolsDesc") || "Infrastructure development" },
+    { id: "chapters", name: t("donate.causes.chapters") || "Local Chapters", icon: Users, description: t("donate.causes.chaptersDesc") || "Community programs" },
+  ];
+
   const handleDonate = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     const amount = selectedAmount || parseFloat(customAmount);
     if (!amount || amount <= 0) {
-      toast.error("Please enter a valid donation amount");
+      toast.error(t("donate.errors.invalidAmount") || "Please enter a valid donation amount");
       setLoading(false);
       return;
     }
@@ -53,7 +55,7 @@ const Donate = () => {
 
       if (error) throw error;
 
-      toast.success("Thank you for your donation! You will receive a confirmation email shortly.");
+      toast.success(t("donate.success") || "Thank you for your donation! You will receive a confirmation email shortly.");
       
       // Reset form
       setSelectedAmount(100);
@@ -62,7 +64,7 @@ const Donate = () => {
       setDonorEmail("");
       setMessage("");
     } catch (error: any) {
-      toast.error("Failed to process donation. Please try again.");
+      toast.error(t("donate.errors.failed") || "Failed to process donation. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -71,8 +73,8 @@ const Donate = () => {
   return (
     <>
       <Helmet>
-        <title>Donate | SCEF - Support Education Across Africa</title>
-        <meta name="description" content="Make a donation to SCEF and help transform education across Africa. Support scholarships, school infrastructure, and community programs." />
+        <title>{t("nav.top.donate")} - SCEF</title>
+        <meta name="description" content={t("donate.hero.subtitle") || "Make a donation to SCEF and help transform education across Africa."} />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -86,10 +88,10 @@ const Donate = () => {
                 <Heart className="w-10 h-10 text-earth" />
               </div>
               <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                Fund Education. <span className="text-gold">Change Lives.</span>
+                {t("donate.hero.title") || "Fund Education. Change Lives."}
               </h1>
               <p className="text-lg text-cream/80 max-w-2xl mx-auto">
-                Your donation directly supports scholarships, school infrastructure, and educational programs across Africa.
+                {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
               </p>
             </div>
           </section>
@@ -100,7 +102,7 @@ const Donate = () => {
               <div className="max-w-4xl mx-auto grid md:grid-cols-5 gap-8">
                 {/* Cause Selection */}
                 <div className="md:col-span-2 space-y-4">
-                  <h2 className="font-display text-xl font-bold text-foreground mb-4">Choose a Cause</h2>
+                  <h2 className="font-display text-xl font-bold text-foreground mb-4">{t("donate.chooseCause") || "Choose a Cause"}</h2>
                   {causes.map((cause) => (
                     <button
                       key={cause.id}
@@ -129,14 +131,14 @@ const Donate = () => {
                 {/* Form */}
                 <Card className="md:col-span-3">
                   <CardHeader>
-                    <CardTitle>Make a Donation</CardTitle>
-                    <CardDescription>All donations are tax-deductible where applicable.</CardDescription>
+                    <CardTitle>{t("donate.formTitle") || "Make a Donation"}</CardTitle>
+                    <CardDescription>{t("donate.formDesc") || "All donations are tax-deductible where applicable."}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleDonate} className="space-y-6">
                       {/* Amount Selection */}
                       <div className="space-y-3">
-                        <Label>Select Amount (USD)</Label>
+                        <Label>{t("donate.selectAmount") || "Select Amount (USD)"}</Label>
                         <div className="grid grid-cols-3 gap-2">
                           {donationAmounts.map((amount) => (
                             <button
@@ -160,7 +162,7 @@ const Donate = () => {
                           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
                           <Input
                             type="number"
-                            placeholder="Custom amount"
+                            placeholder={t("donate.customAmount") || "Custom amount"}
                             value={customAmount}
                             onChange={(e) => {
                               setCustomAmount(e.target.value);
@@ -174,7 +176,7 @@ const Donate = () => {
                       {/* Donor Info */}
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label htmlFor="donorName">Your Name</Label>
+                          <Label htmlFor="donorName">{t("donate.yourName") || "Your Name"}</Label>
                           <Input
                             id="donorName"
                             value={donorName}
@@ -184,7 +186,7 @@ const Donate = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="donorEmail">Email Address</Label>
+                          <Label htmlFor="donorEmail">{t("donate.email") || "Email Address"}</Label>
                           <Input
                             id="donorEmail"
                             type="email"
@@ -195,12 +197,12 @@ const Donate = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="message">Message (Optional)</Label>
+                          <Label htmlFor="message">{t("donate.message") || "Message (Optional)"}</Label>
                           <Textarea
                             id="message"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
-                            placeholder="Leave a message of support..."
+                            placeholder={t("donate.messagePlaceholder") || "Leave a message of support..."}
                             rows={3}
                           />
                         </div>
@@ -211,18 +213,18 @@ const Donate = () => {
                             onChange={(e) => setIsAnonymous(e.target.checked)}
                             className="rounded border-border"
                           />
-                          <span className="text-sm text-muted-foreground">Make my donation anonymous</span>
+                          <span className="text-sm text-muted-foreground">{t("donate.anonymous") || "Make my donation anonymous"}</span>
                         </label>
                       </div>
 
                       <Button type="submit" size="lg" className="w-full" disabled={loading}>
                         <Heart className="w-5 h-5 mr-2" />
-                        {loading ? "Processing..." : `Donate $${selectedAmount || customAmount || 0}`}
+                        {loading ? (t("donate.processing") || "Processing...") : `${t("nav.top.donate")} $${selectedAmount || customAmount || 0}`}
                       </Button>
 
                       {/* Payment Gateway Buttons */}
                       <div className="pt-4 border-t border-border">
-                        <p className="text-sm text-center text-muted-foreground mb-4">Or donate directly via:</p>
+                        <p className="text-sm text-center text-muted-foreground mb-4">{t("donate.orDonateVia") || "Or donate directly via:"}</p>
                         <div className="grid grid-cols-2 gap-3">
                           <a
                             href="https://paystack.com/pay/scef-donation"
@@ -248,7 +250,7 @@ const Donate = () => {
                       </div>
 
                       <p className="text-xs text-center text-muted-foreground">
-                        By donating, you agree to our terms and privacy policy.
+                        {t("donate.terms") || "By donating, you agree to our terms and privacy policy."}
                       </p>
                     </form>
                   </CardContent>
@@ -261,14 +263,14 @@ const Donate = () => {
           <section className="py-16 bg-muted/50">
             <div className="container mx-auto px-4">
               <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
-                Your Impact
+                {t("home.impact.title")}
               </h2>
               <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 {[
-                  { value: "$2M+", label: "Raised" },
-                  { value: "5,000+", label: "Students Supported" },
-                  { value: "150+", label: "Schools Rebuilt" },
-                  { value: "25+", label: "Countries Reached" },
+                  { value: "$2M+", label: t("donate.stats.raised") || "Raised" },
+                  { value: "5,000+", label: t("home.impact.metrics.scholarships") },
+                  { value: "150+", label: t("home.impact.metrics.schools") },
+                  { value: "25+", label: t("home.impact.metrics.chapters") },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center p-6 bg-background rounded-xl">
                     <p className="font-display text-3xl font-bold text-primary">{stat.value}</p>

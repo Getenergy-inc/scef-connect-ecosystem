@@ -3,118 +3,11 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/contexts/LocaleContext";
 import { 
   Shield, Users, Building2, Globe, ArrowRight, CheckCircle2, 
   Briefcase, Scale, FileText, Mail, Phone
 } from "lucide-react";
-
-const governanceLayers = [
-  {
-    id: "bot",
-    level: 1,
-    title: "Board of Trustees (BOT)",
-    count: "7 Members",
-    description: "The highest governing body responsible for fiduciary oversight, institutional integrity, and strategic direction of the Foundation.",
-    responsibilities: [
-      "Fiduciary oversight and financial integrity",
-      "Strategic policy approval and direction",
-      "Executive appointment and performance oversight",
-      "Institutional compliance and ethics enforcement",
-    ],
-    icon: Shield,
-    color: "gold",
-  },
-  {
-    id: "boa",
-    level: 2,
-    title: "Boards of Advisors (BOA)",
-    count: "Program (5 each) & Chapter (3 each)",
-    description: "Expert advisory panels providing specialized guidance on program delivery and chapter operations.",
-    responsibilities: [
-      "Program strategy recommendations",
-      "Chapter governance oversight",
-      "Technical and domain expertise",
-      "Stakeholder representation and advocacy",
-    ],
-    icon: Users,
-    color: "terracotta",
-  },
-  {
-    id: "bod",
-    level: 3,
-    title: "Regional Boards of Directors (BOD)",
-    count: "3 Per Region",
-    description: "Operational governance ensuring regional program execution and adherence to institutional standards.",
-    responsibilities: [
-      "Regional program coordination",
-      "Operational decision-making",
-      "Resource allocation oversight",
-      "Performance monitoring and reporting",
-    ],
-    icon: Building2,
-    color: "forest",
-  },
-  {
-    id: "lcps",
-    level: 4,
-    title: "Local Chapter Presidents (LCPs)",
-    count: "54+ Countries",
-    description: "On-ground leadership executing programs and managing community engagement at country level.",
-    responsibilities: [
-      "Country-level program execution",
-      "Community engagement and mobilization",
-      "Local partnerships and advocacy",
-      "Member services and grassroots support",
-    ],
-    icon: Globe,
-    color: "primary",
-  },
-];
-
-const executiveOffice = [
-  {
-    role: "Organization Secretary",
-    mandate: "Legal & Governance",
-    description: "Provides institutional leadership, legal counsel, and ensures governance compliance across all SCEF operations.",
-    icon: Scale,
-  },
-  {
-    role: "Public Relations Officer (PRO)",
-    mandate: "Communications & Stakeholder Relations",
-    description: "Manages institutional communications, media relations, and stakeholder engagement strategies.",
-    icon: Users,
-  },
-  {
-    role: "Director of Operations",
-    mandate: "SOBCD Leadership",
-    description: "Oversees strategic operations, business compliance, and institutional risk management.",
-    icon: Briefcase,
-  },
-  {
-    role: "Director of Technology",
-    mandate: "TDSD Leadership",
-    description: "Leads digital infrastructure, platform development, and technology-enabled education delivery.",
-    icon: Building2,
-  },
-  {
-    role: "Director of Media Business",
-    mandate: "OMBDD Leadership",
-    description: "Drives digital growth, sponsorship acquisition, and online brand development.",
-    icon: Globe,
-  },
-  {
-    role: "Director of Santos Media",
-    mandate: "SMD Leadership",
-    description: "Manages broadcasting, content production, and media platform operations.",
-    icon: FileText,
-  },
-  {
-    role: "Director of Chapter Services",
-    mandate: "LCS Leadership",
-    description: "Supports local chapters with onboarding, compliance, and operational guidance.",
-    icon: Users,
-  },
-];
 
 const colorClasses = {
   gold: "bg-gold/10 text-gold border-gold/20",
@@ -123,14 +16,66 @@ const colorClasses = {
   primary: "bg-primary/10 text-primary border-primary/20",
 };
 
+const layerIcons = {
+  bot: Shield,
+  boa: Users,
+  bod: Building2,
+  lcps: Globe,
+};
+
+const layerColors = {
+  bot: "gold",
+  boa: "terracotta",
+  bod: "forest",
+  lcps: "primary",
+};
+
+const managementIcons = {
+  orgSecretary: Scale,
+  pro: Users,
+  operations: Briefcase,
+  technology: Building2,
+  mediaBusiness: Globe,
+  santosMedia: FileText,
+  chapterServices: Users,
+};
+
 const Governance = () => {
+  const { t } = useLocale();
+
+  const governanceLayers = [
+    { id: "bot", level: 1 },
+    { id: "boa", level: 2 },
+    { id: "bod", level: 3 },
+    { id: "lcps", level: 4 },
+  ];
+
+  const managementRoles = [
+    "orgSecretary",
+    "pro",
+    "operations",
+    "technology",
+    "mediaBusiness",
+    "santosMedia",
+    "chapterServices",
+  ];
+
+  const policyKeys = [
+    "constitution",
+    "ethics",
+    "financial",
+    "antiCorruption",
+    "conflict",
+    "whistleblower",
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Governance & Executive Office - SCEF | BGEO Division</title>
+        <title>{t("governance.hero.title")} - SCEF | BGEO Division</title>
         <meta 
           name="description" 
-          content="SCEF's Board Governance & Executive Office (BGEO) provides institutional leadership, fiduciary oversight, and strategic direction for pan-African education transformation." 
+          content={t("governance.hero.subtitle")} 
         />
         <meta name="keywords" content="SCEF governance, BGEO, Board of Trustees, education governance Africa, institutional oversight" />
         <link rel="canonical" href="https://scef.org/governance" />
@@ -149,30 +94,29 @@ const Governance = () => {
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
                   <Shield className="w-4 h-4" />
-                  BGEO — Board Governance & Executive Office
+                  {t("governance.hero.badge")}
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
-                  Governed for <span className="text-gradient-gold">Trust</span>.{" "}
-                  Structured for <span className="text-gradient-gold">Scale</span>.
+                  {t("governance.hero.title").split('.')[0]}. <span className="text-gradient-gold">{t("governance.hero.title").split('.')[1]}</span>
                 </h1>
                 <p className="text-xl text-cream/80 leading-relaxed mb-8">
-                  The Board Governance & Executive Office (BGEO) is the apex governance division providing institutional leadership, fiduciary oversight, and strategic direction for all SCEF operations across Africa.
+                  {t("governance.hero.subtitle")}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a href="#bot" className="px-4 py-2 bg-cream/10 hover:bg-cream/20 text-cream rounded-lg text-sm font-medium transition-colors">
-                    Board of Trustees
+                    {t("governance.hero.anchors.bot")}
                   </a>
                   <a href="#boa" className="px-4 py-2 bg-cream/10 hover:bg-cream/20 text-cream rounded-lg text-sm font-medium transition-colors">
-                    Board of Advisors
+                    {t("governance.hero.anchors.boa")}
                   </a>
                   <a href="#bod" className="px-4 py-2 bg-cream/10 hover:bg-cream/20 text-cream rounded-lg text-sm font-medium transition-colors">
-                    Board of Directors
+                    {t("governance.hero.anchors.bod")}
                   </a>
                   <a href="#lcps" className="px-4 py-2 bg-cream/10 hover:bg-cream/20 text-cream rounded-lg text-sm font-medium transition-colors">
-                    Local Chapter Presidents
+                    {t("governance.hero.anchors.lcps")}
                   </a>
                   <a href="#management" className="px-4 py-2 bg-cream/10 hover:bg-cream/20 text-cream rounded-lg text-sm font-medium transition-colors">
-                    Management Team
+                    {t("governance.hero.anchors.management")}
                   </a>
                 </div>
               </div>
@@ -186,47 +130,37 @@ const Governance = () => {
                 <div className="grid md:grid-cols-2 gap-8 mb-12">
                   <div>
                     <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                      BGEO <span className="text-gradient-gold">Division</span>
+                      {t("governance.bgeo.title").split(' ')[0]} <span className="text-gradient-gold">{t("governance.bgeo.title").split(' ').slice(1).join(' ')}</span>
                     </h2>
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      The Board Governance & Executive Office serves as the institutional nerve center, coordinating board activities, executive leadership, and ensuring SCEF delivers on its pan-African education mandate with integrity and accountability.
+                      {t("governance.bgeo.body")}
                     </p>
                     <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold" />
-                        <span className="text-foreground">Board coordination and governance</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold" />
-                        <span className="text-foreground">Executive leadership and direction</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold" />
-                        <span className="text-foreground">Institutional policy oversight</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold" />
-                        <span className="text-foreground">Strategic stakeholder engagement</span>
-                      </div>
+                      {[0, 1, 2, 3].map((idx) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-gold" />
+                          <span className="text-foreground">{t(`governance.bgeo.points.${idx}`)}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="bg-background rounded-2xl border border-border p-8">
-                    <h3 className="font-display text-xl font-bold text-foreground mb-4">Why Governance Matters</h3>
+                    <h3 className="font-display text-xl font-bold text-foreground mb-4">{t("governance.bgeo.whyTitle")}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                      Africa's education sector has suffered from fragmented initiatives and weak oversight. SCEF's governance model provides clear accountability, transparent decision-making, and institutional continuity.
+                      {t("governance.bgeo.whyBody")}
                     </p>
                     <div className="grid grid-cols-3 gap-4 text-center">
                       <div>
-                        <div className="text-2xl font-display font-bold text-gold">Trust</div>
-                        <p className="text-xs text-muted-foreground">Fiduciary integrity</p>
+                        <div className="text-2xl font-display font-bold text-gold">{t("governance.bgeo.metrics.trust")}</div>
+                        <p className="text-xs text-muted-foreground">{t("governance.bgeo.metrics.trustDesc")}</p>
                       </div>
                       <div>
-                        <div className="text-2xl font-display font-bold text-terracotta">Scale</div>
-                        <p className="text-xs text-muted-foreground">Continental reach</p>
+                        <div className="text-2xl font-display font-bold text-terracotta">{t("governance.bgeo.metrics.scale")}</div>
+                        <p className="text-xs text-muted-foreground">{t("governance.bgeo.metrics.scaleDesc")}</p>
                       </div>
                       <div>
-                        <div className="text-2xl font-display font-bold text-forest">Continuity</div>
-                        <p className="text-xs text-muted-foreground">Beyond projects</p>
+                        <div className="text-2xl font-display font-bold text-forest">{t("governance.bgeo.metrics.continuity")}</div>
+                        <p className="text-xs text-muted-foreground">{t("governance.bgeo.metrics.continuityDesc")}</p>
                       </div>
                     </div>
                   </div>
@@ -240,16 +174,19 @@ const Governance = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Four-Layer <span className="text-gradient-gold">Governance Structure</span>
+                  {t("governance.layers.title").split(' ').slice(0, 2).join(' ')} <span className="text-gradient-gold">{t("governance.layers.title").split(' ').slice(2).join(' ')}</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Each layer has clear mandates, accountability lines, and operational scope ensuring transparent and effective governance.
+                  {t("governance.layers.subtitle")}
                 </p>
               </div>
 
               <div className="space-y-8">
                 {governanceLayers.map((layer) => {
-                  const colors = colorClasses[layer.color as keyof typeof colorClasses];
+                  const Icon = layerIcons[layer.id as keyof typeof layerIcons];
+                  const color = layerColors[layer.id as keyof typeof layerColors];
+                  const colors = colorClasses[color as keyof typeof colorClasses];
+                  
                   return (
                     <div
                       key={layer.level}
@@ -261,16 +198,16 @@ const Governance = () => {
                         <div className="p-8 lg:p-10 flex items-start gap-6">
                           <div className="flex flex-col items-center">
                             <div className={`w-16 h-16 rounded-xl ${colors} border flex items-center justify-center mb-3`}>
-                              <layer.icon className="w-8 h-8" />
+                              <Icon className="w-8 h-8" />
                             </div>
-                            <span className="text-xs font-semibold text-muted-foreground">Level {layer.level}</span>
+                            <span className="text-xs font-semibold text-muted-foreground">{t("governance.layers.level")} {layer.level}</span>
                           </div>
                           <div>
                             <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                              {layer.title}
+                              {t(`governance.layers.${layer.id}.title`)}
                             </h3>
                             <span className="inline-block px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground">
-                              {layer.count}
+                              {t(`governance.layers.${layer.id}.count`)}
                             </span>
                           </div>
                         </div>
@@ -278,18 +215,18 @@ const Governance = () => {
                         {/* Description */}
                         <div className="p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-border">
                           <p className="text-muted-foreground leading-relaxed">
-                            {layer.description}
+                            {t(`governance.layers.${layer.id}.description`)}
                           </p>
                         </div>
 
                         {/* Responsibilities */}
                         <div className="p-8 lg:p-10 bg-muted/30 border-t lg:border-t-0 lg:border-l border-border">
-                          <h4 className="font-semibold text-foreground mb-4">Key Responsibilities</h4>
+                          <h4 className="font-semibold text-foreground mb-4">{t("governance.layers.keyResponsibilities")}</h4>
                           <ul className="space-y-2">
-                            {layer.responsibilities.map((resp, idx) => (
+                            {[0, 1, 2, 3].map((idx) => (
                               <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                                 <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                                {resp}
+                                {t(`governance.layers.${layer.id}.responsibilities.${idx}`)}
                               </li>
                             ))}
                           </ul>
@@ -307,31 +244,34 @@ const Governance = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Executive <span className="text-gradient-gold">Management Team</span>
+                  {t("governance.management.title").split(' ').slice(0, 1).join(' ')} <span className="text-gradient-gold">{t("governance.management.title").split(' ').slice(1).join(' ')}</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  SCEF's executive leadership oversees the six operational divisions, ensuring coordinated delivery of our pan-African education mandate.
+                  {t("governance.management.subtitle")}
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {executiveOffice.map((exec, index) => (
-                  <div 
-                    key={index}
-                    className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
-                      <exec.icon className="w-6 h-6 text-primary" />
+                {managementRoles.map((roleKey) => {
+                  const Icon = managementIcons[roleKey as keyof typeof managementIcons];
+                  return (
+                    <div 
+                      key={roleKey}
+                      className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="font-display font-bold text-foreground mb-1">{t(`governance.management.roles.${roleKey}.title`)}</h3>
+                      <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-gold/10 text-gold mb-3">
+                        {t(`governance.management.roles.${roleKey}.mandate`)}
+                      </span>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {t(`governance.management.roles.${roleKey}.description`)}
+                      </p>
                     </div>
-                    <h3 className="font-display font-bold text-foreground mb-1">{exec.role}</h3>
-                    <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-gold/10 text-gold mb-3">
-                      {exec.mandate}
-                    </span>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {exec.description}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -342,26 +282,19 @@ const Governance = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    Policies & <span className="text-gradient-gold">Compliance</span>
+                    {t("governance.policies.title").split(' ')[0]} & <span className="text-gradient-gold">{t("governance.policies.title").split(' ').slice(-1)}</span>
                   </h2>
                   <p className="text-muted-foreground">
-                    SCEF maintains comprehensive governance policies ensuring transparency, accountability, and ethical operations.
+                    {t("governance.policies.subtitle")}
                   </p>
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    { title: "Constitution & Bylaws", desc: "Foundational governance document" },
-                    { title: "Code of Ethics", desc: "Standards for trustees, staff, and volunteers" },
-                    { title: "Financial Policy", desc: "Fiscal management and reporting standards" },
-                    { title: "Anti-Corruption Policy", desc: "Zero tolerance for fraud and corruption" },
-                    { title: "Conflict of Interest", desc: "Disclosure and management protocols" },
-                    { title: "Whistleblower Protection", desc: "Safe reporting mechanisms" },
-                  ].map((policy, idx) => (
-                    <div key={idx} className="bg-card rounded-xl border border-border p-6 hover:border-primary/30 transition-colors">
+                  {policyKeys.map((key) => (
+                    <div key={key} className="bg-card rounded-xl border border-border p-6 hover:border-primary/30 transition-colors">
                       <FileText className="w-8 h-8 text-gold mb-3" />
-                      <h3 className="font-semibold text-foreground mb-1">{policy.title}</h3>
-                      <p className="text-sm text-muted-foreground">{policy.desc}</p>
+                      <h3 className="font-semibold text-foreground mb-1">{t(`governance.policies.items.${key}.title`)}</h3>
+                      <p className="text-sm text-muted-foreground">{t(`governance.policies.items.${key}.desc`)}</p>
                     </div>
                   ))}
                 </div>
@@ -372,21 +305,24 @@ const Governance = () => {
           {/* Contact Leadership */}
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Contact <span className="text-gradient-gold">Leadership</span>
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {t("governance.contact.title")}
                 </h2>
-                <p className="text-muted-foreground mb-8">
-                  For governance inquiries, partnership discussions, or institutional matters, reach our executive office.
+                <p className="text-muted-foreground mb-12">
+                  {t("governance.contact.subtitle")}
                 </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
-                  <div className="flex items-center justify-center gap-2 text-foreground">
-                    <Mail className="w-5 h-5 text-gold" />
-                    <span>governance@scef.org</span>
+                
+                <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+                  <div className="bg-background rounded-xl border border-border p-6">
+                    <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
+                    <h3 className="font-semibold text-foreground mb-2">{t("governance.contact.email")}</h3>
+                    <a href="mailto:governance@scef.org" className="text-primary hover:underline">governance@scef.org</a>
                   </div>
-                  <div className="flex items-center justify-center gap-2 text-foreground">
-                    <Phone className="w-5 h-5 text-gold" />
-                    <span>+234 (0) 800 SCEF GOV</span>
+                  <div className="bg-background rounded-xl border border-border p-6">
+                    <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
+                    <h3 className="font-semibold text-foreground mb-2">{t("governance.contact.phone")}</h3>
+                    <a href="tel:+2341234567890" className="text-primary hover:underline">+234 123 456 7890</a>
                   </div>
                 </div>
               </div>
@@ -394,24 +330,30 @@ const Governance = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-20 bg-earth">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-6">
-                Partner with an Accountable <span className="text-gradient-gold">Institution</span>
+          <section className="py-20 bg-gradient-to-br from-earth to-earth/90 relative overflow-hidden">
+            <div className="absolute inset-0 bg-african-pattern opacity-10" />
+            <div className="container mx-auto px-4 relative z-10 text-center">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-4">
+                {t("governance.cta.title")}
               </h2>
-              <p className="text-cream/70 max-w-2xl mx-auto mb-8">
-                Our governance structure provides the transparency and accountability that governments, donors, and corporate partners require.
+              <p className="text-cream/80 max-w-2xl mx-auto mb-8">
+                {t("governance.cta.subtitle")}
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/partners">
-                    Partner With Us
+                    {t("governance.cta.ctaPartner")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/divisions">
-                    View All Divisions
+                  <Link to="/donate">
+                    {t("governance.cta.ctaDonate")}
+                  </Link>
+                </Button>
+                <Button variant="heroOutline" size="lg" asChild>
+                  <Link to="/local-chapters">
+                    {t("governance.cta.ctaChapter")}
                   </Link>
                 </Button>
               </div>
