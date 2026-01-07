@@ -41,49 +41,43 @@ export const MainNavbar = () => {
           <div className="hidden lg:flex items-center gap-1">
             {siteContent.navLinks.map((item) => (
               <div
-                key={item.label}
+                key={item.name}
                 className="relative"
-                onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
+                onMouseEnter={() => item.children && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
-                  to={item.href || "#"}
+                  to={item.href}
                   className="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-1 text-white hover:text-scef-gold"
                 >
-                  {item.label}
-                  {item.dropdown && <ChevronDown className="w-3.5 h-3.5" />}
+                  {item.name}
+                  {item.children && <ChevronDown className="w-3.5 h-3.5" />}
                 </Link>
 
                 {/* Dropdown */}
-                {item.dropdown && activeDropdown === item.label && (
+                {item.children && activeDropdown === item.name && (
                   <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-border overflow-hidden animate-fade-in z-50">
-                    {item.dropdown.map((child: any, idx: number) =>
+                    {item.children.map((child: any, idx: number) =>
                       child.divider ? (
                         <div key={idx} className="border-t border-border my-1" />
                       ) : child.external ? (
                         <a
-                          key={child.label}
+                          key={child.name}
                           href={child.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={cn(
-                            "flex items-center justify-between px-4 py-3 text-sm text-foreground hover:bg-muted transition-colors",
-                            child.highlight && "bg-primary/5 text-primary font-semibold"
-                          )}
+                          className="flex items-center justify-between px-4 py-3 text-sm text-foreground hover:bg-muted transition-colors"
                         >
-                          {child.label}
+                          {child.name}
                           <ExternalLink className="w-3 h-3 text-muted-foreground" />
                         </a>
                       ) : (
                         <Link
-                          key={child.label}
+                          key={child.name}
                           to={child.href}
-                          className={cn(
-                            "block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors",
-                            child.highlight && "bg-primary/5 text-primary font-semibold"
-                          )}
+                          className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
                         >
-                          {child.label}
+                          {child.name}
                         </Link>
                       )
                     )}
@@ -121,30 +115,27 @@ export const MainNavbar = () => {
         <div className="lg:hidden bg-scef-blue-dark border-t border-white/10 animate-fade-in max-h-[80vh] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {siteContent.navLinks.map((item) => (
-              <div key={item.label}>
+              <div key={item.name}>
                 <Link
-                  to={item.href || "#"}
+                  to={item.href}
                   className="block px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors font-medium"
-                  onClick={() => !item.dropdown && setMobileMenuOpen(false)}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item.label}
+                  {item.name}
                 </Link>
-                {item.dropdown && (
+                {item.children && (
                   <div className="ml-4 space-y-1 mt-1">
-                    {item.dropdown.map((child: any, idx: number) =>
+                    {item.children.map((child: any, idx: number) =>
                       child.divider ? (
                         <div key={idx} className="border-t border-white/10 my-2" />
                       ) : (
                         <Link
-                          key={child.label}
+                          key={child.name}
                           to={child.href}
-                          className={cn(
-                            "block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors",
-                            child.highlight && "text-scef-gold font-semibold"
-                          )}
+                          className="block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          {child.label}
+                          {child.name}
                         </Link>
                       )
                     )}
@@ -159,7 +150,7 @@ export const MainNavbar = () => {
                 className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold border-2 border-black"
                 asChild
               >
-                <Link to="/membership/join" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/membership" onClick={() => setMobileMenuOpen(false)}>
                   Join as a Member
                 </Link>
               </Button>
@@ -168,7 +159,7 @@ export const MainNavbar = () => {
                 className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
                 asChild
               >
-                <Link to="/membership/ambassador" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/get-involved" onClick={() => setMobileMenuOpen(false)}>
                   Become Ambassador
                 </Link>
               </Button>

@@ -42,7 +42,7 @@ const typeIcons = {
 
 export const HeroScreenshot = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { hero, digitalBoard } = siteContent;
+  const { hero, digitalBoard } = siteContent.homepage;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -71,12 +71,9 @@ export const HeroScreenshot = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Headline and CTAs */}
           <div className="max-w-2xl">
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-8">
               {hero.headline}
             </h1>
-            <p className="text-lg text-white/80 mb-8">
-              {hero.subtext}
-            </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -86,7 +83,7 @@ export const HeroScreenshot = () => {
                 asChild
               >
                 <Link to={hero.primaryCta.href}>
-                  {hero.primaryCta.label}
+                  {hero.primaryCta.text}
                 </Link>
               </Button>
               <Button
@@ -96,7 +93,7 @@ export const HeroScreenshot = () => {
                 asChild
               >
                 <Link to={hero.secondaryCta.href}>
-                  {hero.secondaryCta.label}
+                  {hero.secondaryCta.text}
                 </Link>
               </Button>
             </div>
