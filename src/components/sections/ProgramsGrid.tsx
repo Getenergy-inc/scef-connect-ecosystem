@@ -1,11 +1,23 @@
 import { Link } from "react-router-dom";
 import { siteContent } from "@/config/siteContent";
 import { useState } from "react";
-import { Play, X } from "lucide-react";
+import { Play, X, BookOpen, Building, Award, Heart, Monitor, Briefcase, Accessibility, Library } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
+const iconMap: Record<string, React.ElementType> = {
+  BookOpen,
+  Building,
+  Award,
+  Heart,
+  Monitor,
+  Briefcase,
+  Accessibility,
+  Library,
+};
+
 export const ProgramsGrid = () => {
-  const { programs } = siteContent.homepage;
+  const { programs } = siteContent;
+  const allPrograms = [...programs.core, ...programs.digital];
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const { t, isRTL } = useLocale();
 
@@ -17,45 +29,42 @@ export const ProgramsGrid = () => {
           {t("home.programs.title")}
         </h2>
 
-        {/* Programs Grid - 7 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
-          {programs.map((program) => (
-            <div key={program.id} className="group">
-              {/* Card */}
-              <div className="bg-card rounded-xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-                {/* Image/Logo */}
-                <Link to={program.href}>
-                  <div className="aspect-square overflow-hidden bg-muted flex items-center justify-center p-2">
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </Link>
-
-                {/* Title & Video Button */}
-                <div className="p-3">
+        {/* Programs Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {allPrograms.map((program) => {
+            const IconComponent = iconMap[program.icon] || BookOpen;
+            return (
+              <div key={program.title} className="group">
+                {/* Card */}
+                <div className="bg-card rounded-xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col">
+                  {/* Icon Header */}
                   <Link to={program.href}>
-                    <h3 className="font-display text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[2.5rem]">
-                      {program.title}
-                    </h3>
+                    <div className="aspect-video overflow-hidden bg-primary/10 flex items-center justify-center">
+                      <IconComponent className="w-16 h-16 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    </div>
                   </Link>
-                  
-                  {/* Video Play Button */}
-                  {program.video && (
-                    <button
-                      onClick={() => setActiveVideo(program.video!)}
-                      className="mt-2 flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+
+                  {/* Content */}
+                  <div className="p-4 flex-1 flex flex-col">
+                    <Link to={program.href}>
+                      <h3 className="font-display text-base font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                        {program.title}
+                      </h3>
+                    </Link>
+                    <p className="text-sm text-muted-foreground line-clamp-3 flex-1">
+                      {program.description}
+                    </p>
+                    <Link 
+                      to={program.href}
+                      className="mt-3 text-sm text-primary font-medium hover:underline inline-flex items-center gap-1"
                     >
-                      <Play className="w-3 h-3" />
-                      Watch Video
-                    </button>
-                  )}
+                      Learn More →
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Video Modal */}
