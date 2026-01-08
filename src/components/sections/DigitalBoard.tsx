@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Play, Volume2, FileText, Image, ChevronLeft, ChevronRight, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 
 interface BoardItem {
@@ -49,6 +49,7 @@ const typeColors = {
 
 export const DigitalBoard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const queryClient = useQueryClient();
 
   const { data: dbItems } = useQuery({
     queryKey: ["digital-board-items"],
@@ -66,6 +67,28 @@ export const DigitalBoard = () => {
       return data;
     },
   });
+
+  // Subscribe to realtime changes
+  useEffect(() => {
+    const channel = supabase
+      .channel('digital-board-realtime')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'digital_board_items',
+        },
+        () => {
+          queryClient.invalidateQueries({ queryKey: ["digital-board-items"] });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [queryClient]);
 
   // Map database items to component format
   const boardItems: BoardItem[] = dbItems?.length
