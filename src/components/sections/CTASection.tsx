@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, ArrowRight, Handshake, Mail } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export const CTASection = () => {
+  const { t, isRTL } = useLocale();
+
   return (
-    <section className="py-24 bg-scef-blue relative overflow-hidden">
+    <section className="py-24 bg-scef-blue relative overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
       
@@ -16,10 +19,10 @@ export const CTASection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Build Africa's Education Future <span className="text-scef-gold">With Us</span>
+            {t("home.final.title")}
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Join governments, foundations, corporations, and institutions across Africa and the diaspora in building a unified, accountable education ecosystem.
+            {t("home.hero.subtitle")}
           </p>
         </div>
 
@@ -32,15 +35,15 @@ export const CTASection = () => {
             </div>
             
             <h3 className="font-display text-2xl font-bold text-white mb-3">
-              Join SCEF
+              {t("home.final.ctaJoin")}
             </h3>
             <p className="text-white/70 mb-6 leading-relaxed">
-              Become a member of Africa's premier education governance institution.
+              {t("about.hero.subtitle")}
             </p>
             
             <Button size="lg" className="w-full bg-scef-gold text-scef-blue hover:bg-scef-gold/90 border-2 border-black" asChild>
               <Link to="/membership">
-                Join Now
+                {t("home.final.ctaJoin")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -53,15 +56,15 @@ export const CTASection = () => {
             </div>
             
             <h3 className="font-display text-2xl font-bold text-white mb-3">
-              Partner With Us
+              {t("home.final.ctaPartner")}
             </h3>
             <p className="text-white/70 mb-6 leading-relaxed">
-              Collaborate with SCEF to scale education impact across the continent.
+              {t("home.partnerships.body")}
             </p>
             
             <Button size="lg" variant="outline" className="w-full border-2 border-white text-white hover:bg-white/10" asChild>
               <Link to="/partners">
-                Explore Partnerships
+                {t("about.hero.ctaCsr")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -74,15 +77,15 @@ export const CTASection = () => {
             </div>
             
             <h3 className="font-display text-2xl font-bold text-white mb-3">
-              Donate Securely
+              {t("home.final.ctaDonate")}
             </h3>
             <p className="text-white/70 mb-6 leading-relaxed">
-              Support scholarships, school rebuilding, and education programs.
+              {t("donate.hero.subtitle")}
             </p>
             
             <Button size="lg" variant="outline" className="w-full border-2 border-white text-white hover:bg-white/10" asChild>
               <Link to="/wallet/donate">
-                Donate Now
+                {t("cta.donateNow")}
                 <Heart className="w-4 h-4" />
               </Link>
             </Button>
@@ -95,21 +98,21 @@ export const CTASection = () => {
             <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
               <Link to="/contact">
                 <Mail className="w-4 h-4" />
-                Contact SCEF
+                {t("footer.contact")}
               </Link>
             </Button>
             <span className="text-white/40 hidden sm:inline">|</span>
             <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
               <Link to="/wallet/donate">
                 <Heart className="w-4 h-4" />
-                Donate Securely
+                {t("cta.donateNow")}
               </Link>
             </Button>
             <span className="text-white/40 hidden sm:inline">|</span>
             <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
               <Link to="/auth">
                 <Users className="w-4 h-4" />
-                Access Member Portal
+                {t("nav.top.dashboard")}
               </Link>
             </Button>
           </div>

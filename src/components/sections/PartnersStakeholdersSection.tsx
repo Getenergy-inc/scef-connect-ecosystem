@@ -4,72 +4,75 @@ import {
   ArrowRight, Building2, Heart, Briefcase, GraduationCap, 
   Tv, Users, Globe, UserCircle, BookOpen 
 } from "lucide-react";
-
-const stakeholders = [
-  {
-    icon: Building2,
-    title: "Governments",
-    description: "Collaborate on policy alignment and chapter establishment for national education governance.",
-  },
-  {
-    icon: Heart,
-    title: "Donors & Foundations",
-    description: "Fund scalable programs with audited financial oversight via SOBCD.",
-  },
-  {
-    icon: Briefcase,
-    title: "Corporations & CSR",
-    description: "Partner through OMBDD for sponsorships and revenue-integrated initiatives.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Training Institutions & Exam Centres",
-    description: "Integrate certifications and digital platforms via TDSD.",
-  },
-  {
-    icon: Tv,
-    title: "Media Partners",
-    description: "Co-develop content with Santos Media Division.",
-  },
-  {
-    icon: Users,
-    title: "Volunteers (incl. NRC)",
-    description: "Join via membership portal for program support.",
-  },
-  {
-    icon: UserCircle,
-    title: "Members & Ambassadors",
-    description: "Access governance roles and productivity tools.",
-  },
-  {
-    icon: Globe,
-    title: "Local Chapters",
-    description: "Receive LCS support for compliance and operations.",
-  },
-  {
-    icon: BookOpen,
-    title: "Learners & Beneficiaries",
-    description: "Benefit from certified programs and digital access.",
-  },
-];
+import { useLocale } from "@/contexts/LocaleContext";
 
 export const PartnersStakeholdersSection = () => {
+  const { t, isRTL } = useLocale();
+
+  const stakeholders = [
+    {
+      icon: Building2,
+      titleKey: "partners.stakeholders.governments.title",
+      descriptionKey: "partners.stakeholders.governments.description",
+    },
+    {
+      icon: Heart,
+      titleKey: "partners.stakeholders.donors.title",
+      descriptionKey: "partners.stakeholders.donors.description",
+    },
+    {
+      icon: Briefcase,
+      titleKey: "partners.stakeholders.corporations.title",
+      descriptionKey: "partners.stakeholders.corporations.description",
+    },
+    {
+      icon: GraduationCap,
+      titleKey: "partners.stakeholders.institutions.title",
+      descriptionKey: "partners.stakeholders.institutions.description",
+    },
+    {
+      icon: Tv,
+      titleKey: "partners.stakeholders.media.title",
+      descriptionKey: "partners.stakeholders.media.description",
+    },
+    {
+      icon: Users,
+      titleKey: "partners.stakeholders.volunteers.title",
+      descriptionKey: "partners.stakeholders.volunteers.description",
+    },
+    {
+      icon: UserCircle,
+      titleKey: "partners.stakeholders.members.title",
+      descriptionKey: "partners.stakeholders.members.description",
+    },
+    {
+      icon: Globe,
+      titleKey: "partners.stakeholders.chapters.title",
+      descriptionKey: "partners.stakeholders.chapters.description",
+    },
+    {
+      icon: BookOpen,
+      titleKey: "partners.stakeholders.learners.title",
+      descriptionKey: "partners.stakeholders.learners.description",
+    },
+  ];
+
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
             <Users className="w-4 h-4" />
-            Partners & Stakeholders
+            {t("home.partnerships.title")}
           </div>
           
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Who We <span className="text-scef-gold">Work With</span>
+            {t("partners.hero.title")}
           </h2>
           
           <p className="text-lg text-muted-foreground leading-relaxed">
-            SCEF serves a diverse ecosystem of stakeholders, each with clear engagement pathways and accountability structures.
+            {t("partners.hero.subtitle")}
           </p>
         </div>
 
@@ -77,7 +80,7 @@ export const PartnersStakeholdersSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto mb-12">
           {stakeholders.map((stakeholder, index) => (
             <div
-              key={stakeholder.title}
+              key={stakeholder.titleKey}
               className="group bg-card rounded-xl p-5 border-2 border-black hover:border-scef-gold hover:shadow-lg transition-all duration-300"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
@@ -87,10 +90,10 @@ export const PartnersStakeholdersSection = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-base font-bold text-foreground mb-1">
-                    {stakeholder.title}
+                    {t(stakeholder.titleKey)}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    {stakeholder.description}
+                    {t(stakeholder.descriptionKey)}
                   </p>
                 </div>
               </div>
@@ -102,13 +105,13 @@ export const PartnersStakeholdersSection = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" asChild>
             <Link to="/partners">
-              Explore Partnerships
+              {t("about.hero.ctaCsr")}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
           <Button size="lg" variant="outline" className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white border-2" asChild>
             <Link to="/membership">
-              Join as Member
+              {t("about.hero.ctaJoin")}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>

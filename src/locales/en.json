@@ -609,6 +609,44 @@
       "inquiry": "Partnership Inquiry",
       "proposal": "Request Proposal",
       "meeting": "Schedule Meeting"
+    },
+    "stakeholders": {
+      "governments": {
+        "title": "Governments",
+        "description": "Collaborate on policy alignment and chapter establishment for national education governance."
+      },
+      "donors": {
+        "title": "Donors & Foundations",
+        "description": "Fund scalable programs with audited financial oversight via SOBCD."
+      },
+      "corporations": {
+        "title": "Corporations & CSR",
+        "description": "Partner through OMBDD for sponsorships and revenue-integrated initiatives."
+      },
+      "institutions": {
+        "title": "Training Institutions & Exam Centres",
+        "description": "Integrate certifications and digital platforms via TDSD."
+      },
+      "media": {
+        "title": "Media Partners",
+        "description": "Co-develop content with Santos Media Division."
+      },
+      "volunteers": {
+        "title": "Volunteers (incl. NRC)",
+        "description": "Join via membership portal for program support."
+      },
+      "members": {
+        "title": "Members & Ambassadors",
+        "description": "Access governance roles and productivity tools."
+      },
+      "chapters": {
+        "title": "Local Chapters",
+        "description": "Receive LCS support for compliance and operations."
+      },
+      "learners": {
+        "title": "Learners & Beneficiaries",
+        "description": "Benefit from certified programs and digital access."
+      }
     }
   },
   "chapters": {

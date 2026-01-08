@@ -608,6 +608,44 @@
       "inquiry": "Ulizo wa Ushirikiano",
       "proposal": "Omba Pendekezo",
       "meeting": "Panga Mkutano"
+    },
+    "stakeholders": {
+      "governments": {
+        "title": "Serikali",
+        "description": "Kushirikiana katika ulinganifu wa sera na uanzishaji wa sura za utawala wa elimu ya kitaifa."
+      },
+      "donors": {
+        "title": "Wafadhili na Taasisi",
+        "description": "Kufadhili programu zinazopanuka na usimamizi wa kifedha uliokaguliwa kupitia SOBCD."
+      },
+      "corporations": {
+        "title": "Makampuni na CSR",
+        "description": "Kushirikiana kupitia OMBDD kwa ufadhili na miradi iliyounganishwa na mapato."
+      },
+      "institutions": {
+        "title": "Taasisi za Mafunzo na Vituo vya Mitihani",
+        "description": "Kuunganisha vyeti na majukwaa ya kidijitali kupitia TDSD."
+      },
+      "media": {
+        "title": "Washirika wa Vyombo vya Habari",
+        "description": "Kuendeleza maudhui pamoja na Kitengo cha Santos Media."
+      },
+      "volunteers": {
+        "title": "Wafanyakazi wa Kujitolea (pamoja na NRC)",
+        "description": "Jiunge kupitia lango la wanachama kwa msaada wa programu."
+      },
+      "members": {
+        "title": "Wanachama na Mabalozi",
+        "description": "Kupata majukumu ya utawala na zana za tija."
+      },
+      "chapters": {
+        "title": "Sura za Mitaa",
+        "description": "Kupokea msaada wa LCS kwa kufuata sheria na uendeshaji."
+      },
+      "learners": {
+        "title": "Wanafunzi na Wanufaika",
+        "description": "Kunufaika na programu zilizoidhinishwa na ufikiaji wa kidijitali."
+      }
     }
   },
   "chapters": {

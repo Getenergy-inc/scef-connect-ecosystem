@@ -608,6 +608,44 @@
       "inquiry": "Demande de partenariat",
       "proposal": "Demander une proposition",
       "meeting": "Planifier une réunion"
+    },
+    "stakeholders": {
+      "governments": {
+        "title": "Gouvernements",
+        "description": "Collaborer sur l'alignement des politiques et l'établissement de chapitres pour la gouvernance éducative nationale."
+      },
+      "donors": {
+        "title": "Donateurs & Fondations",
+        "description": "Financer des programmes évolutifs avec une surveillance financière auditée via SOBCD."
+      },
+      "corporations": {
+        "title": "Entreprises & RSE",
+        "description": "Partenariat via OMBDD pour les parrainages et initiatives intégrées aux revenus."
+      },
+      "institutions": {
+        "title": "Institutions de formation & Centres d'examen",
+        "description": "Intégrer les certifications et plateformes numériques via TDSD."
+      },
+      "media": {
+        "title": "Partenaires médias",
+        "description": "Co-développer du contenu avec la Division Santos Media."
+      },
+      "volunteers": {
+        "title": "Bénévoles (incl. NRC)",
+        "description": "Rejoindre via le portail membres pour le support des programmes."
+      },
+      "members": {
+        "title": "Membres & Ambassadeurs",
+        "description": "Accéder aux rôles de gouvernance et outils de productivité."
+      },
+      "chapters": {
+        "title": "Chapitres locaux",
+        "description": "Recevoir le support LCS pour la conformité et les opérations."
+      },
+      "learners": {
+        "title": "Apprenants & Bénéficiaires",
+        "description": "Bénéficier des programmes certifiés et de l'accès numérique."
+      }
     }
   },
   "chapters": {
