@@ -608,6 +608,44 @@
       "inquiry": "Pedido de Parceria",
       "proposal": "Solicitar Proposta",
       "meeting": "Agendar Reunião"
+    },
+    "stakeholders": {
+      "governments": {
+        "title": "Governos",
+        "description": "Colaborar no alinhamento de políticas e estabelecimento de capítulos para governança educacional nacional."
+      },
+      "donors": {
+        "title": "Doadores & Fundações",
+        "description": "Financiar programas escaláveis com supervisão financeira auditada via SOBCD."
+      },
+      "corporations": {
+        "title": "Empresas & RSC",
+        "description": "Parceria através do OMBDD para patrocínios e iniciativas integradas de receita."
+      },
+      "institutions": {
+        "title": "Instituições de Formação & Centros de Exame",
+        "description": "Integrar certificações e plataformas digitais via TDSD."
+      },
+      "media": {
+        "title": "Parceiros de Mídia",
+        "description": "Co-desenvolver conteúdo com a Divisão Santos Media."
+      },
+      "volunteers": {
+        "title": "Voluntários (incl. NRC)",
+        "description": "Junte-se via portal de membros para suporte de programas."
+      },
+      "members": {
+        "title": "Membros & Embaixadores",
+        "description": "Acesse funções de governança e ferramentas de produtividade."
+      },
+      "chapters": {
+        "title": "Capítulos Locais",
+        "description": "Receba suporte LCS para conformidade e operações."
+      },
+      "learners": {
+        "title": "Alunos & Beneficiários",
+        "description": "Beneficie-se de programas certificados e acesso digital."
+      }
     }
   },
   "chapters": {

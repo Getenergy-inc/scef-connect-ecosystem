@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Play, ChevronLeft, ChevronRight, ExternalLink, Volume2, FileText, Image } from "lucide-react";
 import { siteContent } from "@/config/siteContent";
 import heroImage from "@/assets/hero-education.jpg";
+import { useLocale } from "@/contexts/LocaleContext";
 
 // Digital Board Items (will be replaced by CMS data)
 const boardItems = [
@@ -42,7 +43,8 @@ const typeIcons = {
 
 export const HeroScreenshot = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { hero, digitalBoard } = siteContent.homepage;
+  const { digitalBoard } = siteContent.homepage;
+  const { t, isRTL } = useLocale();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -55,7 +57,7 @@ export const HeroScreenshot = () => {
   const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons];
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -72,7 +74,7 @@ export const HeroScreenshot = () => {
           {/* Left Side - Headline and CTAs */}
           <div className="max-w-2xl">
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-8">
-              {hero.headline}
+              {t("home.hero.title")}
             </h1>
 
             {/* CTA Buttons */}
@@ -82,8 +84,8 @@ export const HeroScreenshot = () => {
                 className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-bold px-8 py-6 text-base rounded-lg border-2 border-black shadow-lg"
                 asChild
               >
-                <Link to={hero.primaryCta.href}>
-                  {hero.primaryCta.text}
+                <Link to="/membership">
+                  {t("home.hero.ctaPrimary")}
                 </Link>
               </Button>
               <Button
@@ -92,8 +94,8 @@ export const HeroScreenshot = () => {
                 className="bg-white hover:bg-white/90 text-scef-blue-dark font-bold px-8 py-6 text-base rounded-lg border-2 border-black shadow-lg"
                 asChild
               >
-                <Link to={hero.secondaryCta.href}>
-                  {hero.secondaryCta.text}
+                <Link to="/donate">
+                  {t("home.hero.ctaDonate")}
                 </Link>
               </Button>
             </div>
@@ -106,13 +108,13 @@ export const HeroScreenshot = () => {
               <div className="bg-scef-blue-darker/80 px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-scef-gold animate-pulse" />
-                  <span className="text-white text-sm font-semibold">Live Updates</span>
+                  <span className="text-white text-sm font-semibold">{t("home.board.title")}</span>
                 </div>
                 <Link
                   to="/updates"
                   className="text-white/70 hover:text-scef-gold text-xs font-medium transition-colors"
                 >
-                  View All
+                  {t("home.board.viewAll")}
                 </Link>
               </div>
 

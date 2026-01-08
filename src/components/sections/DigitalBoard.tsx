@@ -4,6 +4,7 @@ import { Play, Volume2, FileText, Image, ChevronLeft, ChevronRight, ExternalLink
 import { Button } from "@/components/ui/button";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { useLocale } from "@/contexts/LocaleContext";
 
 interface BoardItem {
   id: string;
@@ -50,6 +51,7 @@ const typeColors = {
 export const DigitalBoard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const queryClient = useQueryClient();
+  const { t, isRTL } = useLocale();
 
   const { data: dbItems } = useQuery({
     queryKey: ["digital-board-items"],
@@ -97,7 +99,7 @@ export const DigitalBoard = () => {
         type: item.content_type || "announcement",
         title: item.title,
         description: item.content_text || "",
-        cta: { text: item.cta_text || "Learn More", href: item.cta_link || "/updates" },
+        cta: { text: item.cta_text || t("home.board.viewAll"), href: item.cta_link || "/updates" },
         thumbnail: item.content_url || "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
       }))
     : fallbackItems;
@@ -123,7 +125,7 @@ export const DigitalBoard = () => {
   const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons] || FileText;
 
   return (
-    <section className="py-24 bg-earth relative overflow-hidden">
+    <section className="py-24 bg-earth relative overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-african-pattern opacity-10" />
       
@@ -132,13 +134,13 @@ export const DigitalBoard = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm font-medium mb-4">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            Live Updates
+            {t("home.board.title")}
           </div>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4">
-            Education Updates • Opportunities • <span className="text-gradient-gold">Events</span>
+            {t("home.board.title")} • <span className="text-gradient-gold">{t("labels.latest")}</span>
           </h2>
           <p className="text-cream/70 max-w-2xl mx-auto">
-            Real-time announcements, videos, audio clips, flyers, and notices curated by SCEF HQ.
+            {t("home.board.desc")}
           </p>
         </div>
 
@@ -225,7 +227,7 @@ export const DigitalBoard = () => {
           <div className="mt-8 text-center">
             <Button variant="heroOutline" size="lg" asChild>
               <Link to="/updates">
-                View All Updates
+                {t("home.board.viewAll")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>

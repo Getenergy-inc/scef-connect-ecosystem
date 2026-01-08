@@ -8,22 +8,25 @@ import { ExploreSection } from "@/components/sections/ExploreSection";
 import { GovernanceSnapshot } from "@/components/sections/GovernanceSnapshot";
 import { PartnersStakeholdersSection } from "@/components/sections/PartnersStakeholdersSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { useLocale } from "@/contexts/LocaleContext";
 
 const Index = () => {
+  const { t } = useLocale();
+  
   return (
     <>
       <Helmet>
-        <title>SCEF - Santos Creations Educational Foundation | Governing Africa's Education Future</title>
+        <title>{t("home.hero.title")} - SCEF</title>
         <meta 
           name="description" 
-          content="Achieving Education for All in 57 African Countries – Driven by Membership, Diaspora Strength, CSR Partnerships, and Grassroots Empowerment." 
+          content={t("home.hero.subtitle")} 
         />
         <meta name="keywords" content="African education, SCEF, education governance, Pan-African, scholarships Africa, NESA Africa, AEPC certification" />
         <link rel="canonical" href="https://scef.org" />
         
         {/* Open Graph */}
         <meta property="og:title" content="SCEF - Santos Creations Educational Foundation" />
-        <meta property="og:description" content="Institutional platform governing pan-African education delivery, certifications, and local chapters since 1997." />
+        <meta property="og:description" content={t("home.hero.subtitle")} />
         <meta property="og:type" content="website" />
         
         {/* Structured Data */}
