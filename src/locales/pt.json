@@ -100,9 +100,58 @@
     "language": "Idioma",
     "region": "Região",
     "status": "Status",
-    "priority": "Prioridade"
+    "priority": "Prioridade",
+    "video": "Vídeo",
+    "audio": "Áudio",
+    "announcement": "Anúncio",
+    "flyer": "Flyer",
+    "watchVideo": "Assistir vídeo",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "goToSlide": "Ir para o slide"
+  },
+  "footer": {
+    "organization": "Santos Creations Educational Foundation",
+    "location": "Lagos, Nigéria",
+    "copyright": "Todos os direitos reservados.",
+    "columns": {
+      "contact": "Contato",
+      "programs": "Links Rápidos",
+      "media": "Nossas Plataformas",
+      "getInvolved": "Envolva-se"
+    },
+    "social": {
+      "label": "Conecte-se conosco"
+    },
+    "legal": {
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Serviço",
+      "accessibility": "Acessibilidade"
+    }
   },
   "home": {
+    "board": {
+      "title": "Quadro de anúncios digitais",
+      "desc": "Atualizações rotativas (vídeo / áudio / flyer / texto) geridas por Admin e pela equipa de media.",
+      "viewAll": "Ver todas as atualizações",
+      "fallback": {
+        "nesa": {
+          "title": "Nomeações NESA-Africa 2025 abertas",
+          "description": "Submeta nomeações para os mais prestigiados prémios de educação em África.",
+          "cta": "Submeter Nomeação"
+        },
+        "eduaid": {
+          "title": "Candidaturas a bolsas EduAid",
+          "description": "O ciclo de bolsas 2025 está a aceitar candidaturas.",
+          "cta": "Candidatar-se Agora"
+        },
+        "aepc": {
+          "title": "Lançamento da Certificação AEPC",
+          "description": "Certificação Africa Education & Productivity agora disponível.",
+          "cta": "Saber Mais"
+        }
+      }
+    },
     "hero": {
       "title": "Educação para Todos em África — com membros, capítulos e parceiros",
       "subtitle": "A SCEF é uma fundação panafricana orientada por membros que impulsiona a educação através de bolsas, renovação de escolas, certificações confiáveis e advocacia mediática — com capítulos locais, diáspora e parceiros de CSR.",
@@ -117,11 +166,6 @@
       "joinChapter": "🤝 Entrar num capítulo",
       "donatePartner": "❤️ Doar ou Fazer Parceria",
       "ambassador": "🌍 Tornar-se embaixador"
-    },
-    "board": {
-      "title": "Quadro de anúncios digitais",
-      "desc": "Atualizações rotativas (vídeo / áudio / flyer / texto) geridas por Admin e pela equipa de media.",
-      "viewAll": "Ver todas as atualizações"
     },
     "impact": {
       "title": "Resumo de Impacto",
@@ -357,8 +401,26 @@
           "Engajamento e mobilização comunitária",
           "Parcerias locais e advocacia",
           "Serviços aos membros e suporte de base"
-        ]
+      ]
+    },
+    "snapshot": {
+      "bot": {
+        "subtitle": "Sede SCEF",
+        "approves": ["Direção estratégica", "Aprovação de orçamento", "Nomeações seniores"]
+      },
+      "boa": {
+        "subtitle": "Programas & Capítulos",
+        "approves": ["Orientação política", "Estratégia de parceria", "Revisão de desempenho"]
+      },
+      "bod": {
+        "subtitle": "Operações Regionais",
+        "approves": ["Orçamentos regionais", "Aprovações de capítulos", "Execução de programas"]
+      },
+      "lcps": {
+        "subtitle": "Liderança do País",
+        "approves": ["Programas locais", "Atividades dos membros", "Alcance comunitário"]
       }
+    }
     },
     "management": {
       "title": "Equipa de Gestão Executiva",

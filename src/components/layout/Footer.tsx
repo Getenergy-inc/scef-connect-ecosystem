@@ -33,7 +33,7 @@ export const Footer = () => {
       {/* Header */}
       <div className="container mx-auto px-4 py-8">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-center text-scef-gold">
-          Santos Creations Educational Foundation
+          {t("footer.organization")}
         </h2>
       </div>
 
@@ -53,7 +53,7 @@ export const Footer = () => {
               isRTL ? "justify-end sm:justify-start flex-row-reverse" : "justify-center sm:justify-start"
             )}>
               <MapPin className="w-4 h-4 text-scef-gold" />
-              Lagos, Nigeria
+              {t("footer.location")}
             </p>
             <p className={cn(
               "flex items-center gap-2 text-white/70 text-sm",
@@ -189,7 +189,7 @@ export const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
           <p className="text-sm text-white/50 text-center font-body">
-            © 2026 Santos Creations Educational Foundation. All rights reserved.
+            © {new Date().getFullYear()} {t("footer.organization")}. {t("footer.copyright")}
           </p>
         </div>
       </div>

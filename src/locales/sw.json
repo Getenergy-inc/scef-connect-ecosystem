@@ -100,9 +100,58 @@
     "language": "Lugha",
     "region": "Kanda",
     "status": "Hali",
-    "priority": "Kipaumbele"
+    "priority": "Kipaumbele",
+    "video": "Video",
+    "audio": "Sauti",
+    "announcement": "Tangazo",
+    "flyer": "Bango",
+    "watchVideo": "Tazama Video",
+    "previous": "Iliyotangulia",
+    "next": "Inayofuata",
+    "goToSlide": "Nenda kwenye slaidi"
+  },
+  "footer": {
+    "organization": "Santos Creations Educational Foundation",
+    "location": "Lagos, Nigeria",
+    "copyright": "Haki zote zimehifadhiwa.",
+    "columns": {
+      "contact": "Wasiliana",
+      "programs": "Viungo vya Haraka",
+      "media": "Majukwaa Yetu",
+      "getInvolved": "Jiunge Nasi"
+    },
+    "social": {
+      "label": "Ungana nasi"
+    },
+    "legal": {
+      "privacy": "Sera ya Faragha",
+      "terms": "Masharti ya Huduma",
+      "accessibility": "Upatikanaji"
+    }
   },
   "home": {
+    "board": {
+      "title": "Ubao wa Matangazo ya Kidijitali",
+      "desc": "Taarifa zinazorushwa (video / sauti / bango / maandishi) zinazosimamiwa na Admin na timu ya media.",
+      "viewAll": "Tazama taarifa zote",
+      "fallback": {
+        "nesa": {
+          "title": "Mapendekezo ya NESA-Africa 2025 Yamefunguliwa",
+          "description": "Tuma mapendekezo kwa tuzo za elimu zinazoheshimika zaidi barani Afrika.",
+          "cta": "Tuma Pendekezo"
+        },
+        "eduaid": {
+          "title": "Maombi ya Ufadhili wa EduAid",
+          "description": "Mzunguko wa ufadhili wa 2025 unakubali maombi sasa.",
+          "cta": "Omba Sasa"
+        },
+        "aepc": {
+          "title": "Uzinduzi wa Cheti cha AEPC",
+          "description": "Cheti cha Africa Education & Productivity kinapatikana sasa.",
+          "cta": "Jifunze Zaidi"
+        }
+      }
+    },
     "hero": {
       "title": "Elimu kwa Wote Barani Afrika — kwa nguvu ya wanachama, sura na washirika",
       "subtitle": "SCEF ni taasisi ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma elimu kupitia ufadhili wa masomo, uboreshaji wa shule, vyeti vinavyoaminika na utetezi wa vyombo vya habari — kwa kushirikiana na sura za mitaa, diaspora na washirika wa CSR.",
@@ -117,11 +166,6 @@
       "joinChapter": "🤝 Jiunge na Sura",
       "donatePartner": "❤️ Changia au Shirikiana",
       "ambassador": "🌍 Kuwa Balozi"
-    },
-    "board": {
-      "title": "Ubao wa Matangazo ya Kidijitali",
-      "desc": "Taarifa zinazorushwa (video / sauti / bango / maandishi) zinazosimamiwa na Admin na timu ya media.",
-      "viewAll": "Tazama taarifa zote"
     },
     "impact": {
       "title": "Muhtasari wa Athari",
@@ -357,8 +401,26 @@
           "Ushiriki na uhamasishaji wa jamii",
           "Ushirikiano wa mitaa na utetezi",
           "Huduma kwa wanachama na msaada wa msingi"
-        ]
+      ]
+    },
+    "snapshot": {
+      "bot": {
+        "subtitle": "Makao Makuu ya SCEF",
+        "approves": ["Mwelekeo mkakati", "Kuidhinisha bajeti", "Uteuzi wa viongozi"]
+      },
+      "boa": {
+        "subtitle": "Programu & Sura",
+        "approves": ["Mwongozo wa sera", "Mkakati wa ushirikiano", "Mapitio ya utendaji"]
+      },
+      "bod": {
+        "subtitle": "Shughuli za Kikanda",
+        "approves": ["Bajeti za kikanda", "Uidhinishaji wa sura", "Utekelezaji wa programu"]
+      },
+      "lcps": {
+        "subtitle": "Uongozi wa Nchi",
+        "approves": ["Programu za mitaa", "Shughuli za wanachama", "Kufikia jamii"]
       }
+    }
     },
     "management": {
       "title": "Timu ya Uongozi wa Utendaji",

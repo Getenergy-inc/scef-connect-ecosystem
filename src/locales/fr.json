@@ -100,9 +100,58 @@
     "language": "Langue",
     "region": "Région",
     "status": "Statut",
-    "priority": "Priorité"
+    "priority": "Priorité",
+    "video": "Vidéo",
+    "audio": "Audio",
+    "announcement": "Annonce",
+    "flyer": "Affiche",
+    "watchVideo": "Regarder la vidéo",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "goToSlide": "Aller à la diapositive"
+  },
+  "footer": {
+    "organization": "Santos Creations Educational Foundation",
+    "location": "Lagos, Nigeria",
+    "copyright": "Tous droits réservés.",
+    "columns": {
+      "contact": "Contact",
+      "programs": "Liens rapides",
+      "media": "Nos plateformes",
+      "getInvolved": "S'impliquer"
+    },
+    "social": {
+      "label": "Suivez-nous"
+    },
+    "legal": {
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "accessibility": "Accessibilité"
+    }
   },
   "home": {
+    "board": {
+      "title": "Tableau d'annonces numériques",
+      "desc": "Mises à jour en rotation (vidéo / audio / affiche / texte), gérées par l'Admin et l'équipe média.",
+      "viewAll": "Voir toutes les mises à jour",
+      "fallback": {
+        "nesa": {
+          "title": "Nominations NESA-Africa 2025 ouvertes",
+          "description": "Soumettez vos nominations pour les prix d'éducation les plus prestigieux d'Afrique.",
+          "cta": "Soumettre une nomination"
+        },
+        "eduaid": {
+          "title": "Candidatures aux bourses EduAid",
+          "description": "Le cycle de bourses 2025 accepte maintenant les candidatures.",
+          "cta": "Postuler maintenant"
+        },
+        "aepc": {
+          "title": "Lancement de la certification AEPC",
+          "description": "Certification Africa Education & Productivity maintenant disponible.",
+          "cta": "En savoir plus"
+        }
+      }
+    },
     "hero": {
       "title": "L'Éducation pour Tous en Afrique — portée par les membres, les chapitres et les partenaires",
       "subtitle": "SCEF est une fondation panafricaine axée sur l'adhésion, qui fait progresser l'éducation grâce aux bourses, au renouvellement des écoles, aux certifications fiables et au plaidoyer médiatique — avec des chapitres locaux, la diaspora et des partenaires CSR.",
@@ -117,11 +166,6 @@
       "joinChapter": "🤝 Rejoindre un chapitre",
       "donatePartner": "❤️ Donner ou devenir partenaire",
       "ambassador": "🌍 Devenir ambassadeur"
-    },
-    "board": {
-      "title": "Tableau d'annonces numériques",
-      "desc": "Mises à jour en rotation (vidéo / audio / affiche / texte), gérées par l'Admin et l'équipe média.",
-      "viewAll": "Voir toutes les mises à jour"
     },
     "impact": {
       "title": "Aperçu de l'impact",
@@ -357,8 +401,26 @@
           "Engagement et mobilisation communautaire",
           "Partenariats locaux et plaidoyer",
           "Services aux membres et soutien de base"
-        ]
+      ]
+    },
+    "snapshot": {
+      "bot": {
+        "subtitle": "Siège SCEF",
+        "approves": ["Direction stratégique", "Approbation du budget", "Nominations seniors"]
+      },
+      "boa": {
+        "subtitle": "Programmes & Chapitres",
+        "approves": ["Orientation politique", "Stratégie de partenariat", "Revue de performance"]
+      },
+      "bod": {
+        "subtitle": "Opérations régionales",
+        "approves": ["Budgets régionaux", "Approbations de chapitres", "Exécution des programmes"]
+      },
+      "lcps": {
+        "subtitle": "Leadership pays",
+        "approves": ["Programmes locaux", "Activités des membres", "Engagement communautaire"]
       }
+    }
     },
     "management": {
       "title": "Équipe de direction exécutive",
