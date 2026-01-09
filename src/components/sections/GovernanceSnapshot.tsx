@@ -10,40 +10,40 @@ export const GovernanceSnapshot = () => {
     {
       icon: Shield,
       titleKey: "governance.layers.bot.title",
-      subtitle: "SCEF HQ",
+      subtitleKey: "governance.snapshot.bot.subtitle",
       descriptionKey: "governance.layers.bot.description",
       countKey: "governance.layers.bot.count",
-      approves: ["Strategic direction", "Budget approval", "Senior appointments"],
+      approvesKeys: ["governance.snapshot.bot.approves.0", "governance.snapshot.bot.approves.1", "governance.snapshot.bot.approves.2"],
       color: "bg-scef-gold/10 text-scef-gold border-scef-gold/30",
       iconBg: "bg-scef-gold text-scef-blue-dark",
     },
     {
       icon: Users,
       titleKey: "governance.layers.boa.title",
-      subtitle: "Programs & Chapters",
+      subtitleKey: "governance.snapshot.boa.subtitle",
       descriptionKey: "governance.layers.boa.description",
       countKey: "governance.layers.boa.count",
-      approves: ["Policy guidance", "Partnership strategy", "Performance review"],
+      approvesKeys: ["governance.snapshot.boa.approves.0", "governance.snapshot.boa.approves.1", "governance.snapshot.boa.approves.2"],
       color: "bg-primary/10 text-primary border-primary/30",
       iconBg: "bg-primary text-primary-foreground",
     },
     {
       icon: Building2,
       titleKey: "governance.layers.bod.title",
-      subtitle: "Regional Operations",
+      subtitleKey: "governance.snapshot.bod.subtitle",
       descriptionKey: "governance.layers.bod.description",
       countKey: "governance.layers.bod.count",
-      approves: ["Regional budgets", "Chapter approvals", "Program execution"],
+      approvesKeys: ["governance.snapshot.bod.approves.0", "governance.snapshot.bod.approves.1", "governance.snapshot.bod.approves.2"],
       color: "bg-scef-gold/10 text-scef-gold border-scef-gold/30",
       iconBg: "bg-scef-gold text-scef-blue-dark",
     },
     {
       icon: Globe,
       titleKey: "governance.layers.lcps.title",
-      subtitle: "Country Leadership",
+      subtitleKey: "governance.snapshot.lcps.subtitle",
       descriptionKey: "governance.layers.lcps.description",
       countKey: "governance.layers.lcps.count",
-      approves: ["Local programs", "Member activities", "Community outreach"],
+      approvesKeys: ["governance.snapshot.lcps.approves.0", "governance.snapshot.lcps.approves.1", "governance.snapshot.lcps.approves.2"],
       color: "bg-primary/10 text-primary border-primary/30",
       iconBg: "bg-primary text-primary-foreground",
     },
@@ -86,7 +86,7 @@ export const GovernanceSnapshot = () => {
                 {t(layer.titleKey)}
               </h3>
               <p className="text-sm text-muted-foreground font-medium mb-3">
-                {layer.subtitle}
+                {t(layer.subtitleKey)}
               </p>
               
               {/* Count Badge */}
@@ -101,10 +101,10 @@ export const GovernanceSnapshot = () => {
               
               {/* Approves List */}
               <div className="space-y-2">
-                {layer.approves.map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-xs text-muted-foreground">
+                {layer.approvesKeys.map((key) => (
+                  <div key={key} className="flex items-center gap-2 text-xs text-muted-foreground">
                     <CheckCircle className="w-3.5 h-3.5 text-scef-gold flex-shrink-0" />
-                    {item}
+                    {t(key)}
                   </div>
                 ))}
               </div>

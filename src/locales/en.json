@@ -100,9 +100,58 @@
     "language": "Language",
     "region": "Region",
     "status": "Status",
-    "priority": "Priority"
+    "priority": "Priority",
+    "video": "Video",
+    "audio": "Audio",
+    "announcement": "Announcement",
+    "flyer": "Flyer",
+    "watchVideo": "Watch Video",
+    "previous": "Previous",
+    "next": "Next",
+    "goToSlide": "Go to slide"
+  },
+  "footer": {
+    "organization": "Santos Creations Educational Foundation",
+    "location": "Lagos, Nigeria",
+    "copyright": "All rights reserved.",
+    "columns": {
+      "contact": "Contact",
+      "programs": "Quick Links",
+      "media": "Our Platforms",
+      "getInvolved": "Get Involved"
+    },
+    "social": {
+      "label": "Connect with us"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "accessibility": "Accessibility"
+    }
   },
   "home": {
+    "board": {
+      "title": "Digital Announcements Board",
+      "desc": "Rotating updates (video / audio / flyer / text) managed by Admin and media team.",
+      "viewAll": "View all updates",
+      "fallback": {
+        "nesa": {
+          "title": "NESA-Africa 2025 Nominations Open",
+          "description": "Submit nominations for Africa's most prestigious education awards.",
+          "cta": "Submit Nomination"
+        },
+        "eduaid": {
+          "title": "EduAid Scholarship Applications",
+          "description": "2025 scholarship cycle now accepting applications.",
+          "cta": "Apply Now"
+        },
+        "aepc": {
+          "title": "AEPC Certification Launch",
+          "description": "Africa Education & Productivity Certification now available.",
+          "cta": "Learn More"
+        }
+      }
+    },
     "hero": {
       "title": "Education for All in Africa — powered by members, chapters, and partners",
       "subtitle": "SCEF is a pan-African membership-driven foundation advancing education through scholarships, school renewal, trusted certifications, and media advocacy — with local chapters, diaspora, and CSR partners.",
@@ -117,11 +166,6 @@
       "joinChapter": "🤝 Join a Chapter",
       "donatePartner": "❤️ Donate or Partner",
       "ambassador": "🌍 Become an Ambassador"
-    },
-    "board": {
-      "title": "Digital Announcements Board",
-      "desc": "Rotating updates (video / audio / flyer / text) managed by Admin and media team.",
-      "viewAll": "View all updates"
     },
     "impact": {
       "title": "Impact Snapshot",
@@ -358,8 +402,26 @@
           "Community engagement and mobilization",
           "Local partnerships and advocacy",
           "Member services and grassroots support"
-        ]
+      ]
+    },
+    "snapshot": {
+      "bot": {
+        "subtitle": "SCEF HQ",
+        "approves": ["Strategic direction", "Budget approval", "Senior appointments"]
+      },
+      "boa": {
+        "subtitle": "Programs & Chapters",
+        "approves": ["Policy guidance", "Partnership strategy", "Performance review"]
+      },
+      "bod": {
+        "subtitle": "Regional Operations",
+        "approves": ["Regional budgets", "Chapter approvals", "Program execution"]
+      },
+      "lcps": {
+        "subtitle": "Country Leadership",
+        "approves": ["Local programs", "Member activities", "Community outreach"]
       }
+    }
     },
     "management": {
       "title": "Executive Management Team",

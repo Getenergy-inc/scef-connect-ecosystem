@@ -15,21 +15,21 @@ interface BoardItem {
   thumbnail: string;
 }
 
-const fallbackItems: BoardItem[] = [
+const getFallbackItems = (t: (key: string) => string): BoardItem[] => [
   {
     id: "1",
     type: "video",
-    title: "NESA-Africa 2024 Nominations Now Open",
-    description: "Submit your nominations for the most prestigious education awards in Africa.",
-    cta: { text: "Submit Nomination", href: "/programs/nesa-africa" },
+    title: t("home.board.fallback.nesa.title"),
+    description: t("home.board.fallback.nesa.description"),
+    cta: { text: t("home.board.fallback.nesa.cta"), href: "/programs/nesa-africa" },
     thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
   },
   {
     id: "2",
     type: "flyer",
-    title: "EduAid Scholarship Application",
-    description: "Applications for the 2024 scholarship cycle are now open. Don't miss this opportunity!",
-    cta: { text: "Apply Now", href: "/programs/eduaid-africa" },
+    title: t("home.board.fallback.eduaid.title"),
+    description: t("home.board.fallback.eduaid.description"),
+    cta: { text: t("home.board.fallback.eduaid.cta"), href: "/programs/eduaid-africa" },
     thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
   },
 ];
@@ -102,7 +102,17 @@ export const DigitalBoard = () => {
         cta: { text: item.cta_text || t("home.board.viewAll"), href: item.cta_link || "/updates" },
         thumbnail: item.content_url || "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
       }))
-    : fallbackItems;
+    : getFallbackItems(t);
+
+  const getTypeLabel = (type: string) => {
+    const labels: Record<string, string> = {
+      video: t("labels.video"),
+      audio: t("labels.audio"),
+      announcement: t("labels.announcement"),
+      flyer: t("labels.flyer"),
+    };
+    return labels[type] || type.charAt(0).toUpperCase() + type.slice(1);
+  };
 
   useEffect(() => {
     if (boardItems.length === 0) return;
@@ -161,7 +171,7 @@ export const DigitalBoard = () => {
                 {/* Type Badge */}
                 <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full ${typeColors[activeItem.type as keyof typeof typeColors] || "bg-primary text-primary-foreground"} text-xs font-semibold flex items-center gap-2`}>
                   <TypeIcon className="w-3 h-3" />
-                  {activeItem.type.charAt(0).toUpperCase() + activeItem.type.slice(1)}
+                  {getTypeLabel(activeItem.type)}
                 </div>
 
                 {/* Play Button for Video */}

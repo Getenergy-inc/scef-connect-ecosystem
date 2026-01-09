@@ -49,7 +49,7 @@ export const ProgramsGrid = () => {
                       className="mt-2 flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
                     >
                       <Play className="w-3 h-3" />
-                      Watch Video
+                      {t("labels.watchVideo")}
                     </button>
                   )}
                 </div>
