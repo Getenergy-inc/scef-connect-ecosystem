@@ -24,6 +24,8 @@ import Certifications from "./pages/Certifications";
 import Partners from "./pages/Partners";
 import Divisions from "./pages/Divisions";
 import Updates from "./pages/Updates";
+import Reports from "./pages/Reports";
+import CaseStudies from "./pages/CaseStudies";
 import SOBCD from "./pages/divisions/SOBCD";
 import TDSD from "./pages/divisions/TDSD";
 import OMBDD from "./pages/divisions/OMBDD";
@@ -66,6 +68,8 @@ const App = () => (
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/media" element={<Media />} />
               <Route path="/updates" element={<Updates />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
