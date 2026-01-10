@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 import { cn } from "@/lib/utils";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const TopUtilityNav = () => {
   const { t, isRTL } = useLocale();
@@ -18,20 +19,23 @@ export const TopUtilityNav = () => {
     <div className="bg-scef-blue-darker text-white/80 text-xs" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
         {/* Desktop: Horizontal links */}
-        <div className="hidden md:flex items-center justify-center gap-1 py-2">
-          {utilityLinks.map((link, index) => (
-            <span key={link.name} className="flex items-center">
-              <Link
-                to={link.href}
-                className="px-3 py-1 hover:text-scef-gold transition-colors font-medium"
-              >
-                {link.name}
-              </Link>
-              {index < utilityLinks.length - 1 && (
-                <span className="text-white/30">|</span>
-              )}
-            </span>
-          ))}
+        <div className="hidden md:flex items-center justify-between py-2">
+          <div className="flex items-center gap-1">
+            {utilityLinks.map((link, index) => (
+              <span key={link.name} className="flex items-center">
+                <Link
+                  to={link.href}
+                  className="px-3 py-1 hover:text-scef-gold transition-colors font-medium"
+                >
+                  {link.name}
+                </Link>
+                {index < utilityLinks.length - 1 && (
+                  <span className="text-white/30">|</span>
+                )}
+              </span>
+            ))}
+          </div>
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile: Horizontal scroll */}
