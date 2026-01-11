@@ -226,22 +226,110 @@
   "about": {
     "hero": {
       "title": "Kuhusu Santos Creations Educational Foundation (SCEF)",
-      "subtitle": "SCEF ni asasi ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma Elimu kwa Wote kupitia programu zenye athari, sura za mitaa, media, vyeti vinavyoaminika na ushirikiano wa CSR.",
-      "ctaJoin": "Jiunge kama Mwanachama",
+      "subtitle": "SCEF ni taasisi ya elimu ya pana-Afrika inayoendeshwa kwa uanachama inayoimarisha utoaji wa elimu kupitia mifumo ya utawala, upatikanaji wa kidijitali na vyeti, sura za mitaa zinazofuata vigezo, na ushirikiano unaowajibika unaofuatana na UN SDGs na AU Agenda 2063.",
+      "tagline": "Kujenga kiwango cha elimu kinachokua kila wakati barani Afrika.",
+      "description": "SCEF ni taasisi ya elimu ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma Elimu kwa Wote kupitia utawala, sura za mitaa, mafunzo ya kidijitali, utayari wa kazi wa TVET, elimu shirikishi, na ushirikiano unaowazi.",
+      "regionBadge": "Afrika ya Kikanda • Diaspora ya Afrika",
+      "trustLine": "Ilianzishwa 1997 • Ilisajiliwa 2010 • Inafuatana na SDG 4 + Ajenda 2063 • Utawala wa HQ + utekelezaji wa sura",
+      "ctaJoin": "Jiunge na SCEF",
       "ctaDonate": "Changia",
+      "ctaPartner": "Kuwa Mshirika",
       "ctaAmbassador": "Kuwa Balozi",
-      "ctaJoinChapter": "Jiunge na Sura",
+      "ctaJoinChapter": "Jiunge na Sura ya Mtaa",
       "ctaCsr": "Ushirikiano wa CSR",
       "ctaMedia": "Tazama SCEF Media"
     },
+    "quickNav": {
+      "whoWeAre": "Sisi ni nani",
+      "whyWeExist": "Kwa nini tupo",
+      "whatWeDo": "Tunafanya nini",
+      "tvetInclusion": "TVET na Ujumuishi",
+      "objectives": "Malengo",
+      "howWeWork": "Jinsi tunavyofanya kazi",
+      "impact": "Athari",
+      "sustainability": "Uendelevu",
+      "getInvolved": "Jiunge Nasi",
+      "faqs": "Maswali Yanayoulizwa Sana"
+    },
+    "missionSnapshot": {
+      "standards": {
+        "title": "Viwango na Utambuzi",
+        "subtitle": "NESA-Africa",
+        "point1": "Tuzo za utambuzi kwa walimu",
+        "point2": "Programu za viwango vya ubora"
+      },
+      "scholarships": {
+        "title": "Ufadhili na Fedha",
+        "subtitle": "EduAid-Africa",
+        "point1": "Njia za udhamini wa wanafunzi",
+        "point2": "Programu za ushirikiano wa CSR"
+      },
+      "inclusion": {
+        "title": "Ujumuishi na Upatikanaji",
+        "subtitle": "Wanawake na Wasichana + Mahitaji Maalum",
+        "point1": "Msaada wa mafunzo ya usaidizi",
+        "point2": "Utetezi wa elimu ya wasichana"
+      }
+    },
     "who": {
-      "title": "Sisi ni nani",
-      "body": "SCEF hujenga mfumo uliounganishwa wa elimu—kwa utawala wa ngazi nyingi, programu zilizounganishwa na uanachama—ili kuboresha upatikanaji, ubora, ujumuishi na athari inayopimika Afrika na diaspora.",
-      "ctaPrograms": "Tazama Programu",
+      "badge": "Sisi ni nani",
+      "title": "Mfumo wa Athari ya Elimu Uliopangwa",
+      "body": "Santos Creations Educational Foundation (SCEF) ni mfumo wa athari ya elimu uliopangwa—ulioundwa kusaidia mifumo ya elimu kuboreshwa, kupanuliwa, na kudumisha uwajibikaji. Tunaunganisha sura za mitaa, washirika, majukwaa ya kidijitali, na utetezi wa vyombo vya habari kutoa matokeo yanayopimika katika:",
+      "outcomes": [
+        "Msaada wa shule na miundombinu",
+        "Ufadhili na msaada wa wanafunzi",
+        "TVET na utayari wa kazi",
+        "Msaada wa elimu kwa mahitaji maalum",
+        "Elimu ya wanawake na wasichana",
+        "Utambuzi wa ubora wa elimu (NESA-Africa)"
+      ],
+      "ctaPrograms": "Chunguza Programu Zetu",
+      "ctaChapter": "Jiunge na Sura",
+      "ctaDonate": "Changia Sasa",
       "ctaUpdates": "Tazama Taarifa"
     },
+    "whyWeExist": {
+      "title": "Kwa nini tupo",
+      "intro": "Barani Afrika, mafunzo bado yanakabiliwa na:",
+      "challenges": [
+        "Mazingira ya shule yasiyo salama au yasiyojitosheleza",
+        "Upatikanaji mdogo wa mafunzo ya ujuzi na maabara za TVET",
+        "Mapungufu ya ujumuishi kwa wanafunzi wenye ulemavu",
+        "Vikwazo vya fedha na uwajibikaji mdogo",
+        "Njia finyu kutoka kwa mafunzo hadi kazi bora"
+      ],
+      "solution": "SCEF ipo kubadilisha hilo",
+      "solutionDesc": "—kwa kujenga mfano wa utekelezaji unaounga mkono utawala na unaoendeshwa na sura, unaofanya mabadiliko ya elimu yapimike, kuwa shirikishi, na kupanuliwa."
+    },
+    "whatWeDo": {
+      "title": "Tunafanya nini",
+      "intro": "Programu kuu zilizobuniwa kufanya kazi pamoja juu ya upatikanaji, ubora, ujumuishi, ujuzi, na utambuzi.",
+      "learnMore": "Jifunze zaidi",
+      "ctaApply": "Omba / Shiriki",
+      "ctaPartner": "Mshirika / Mdhamini",
+      "ctaDonate": "Changia Programu"
+    },
+    "tvetSpotlight": {
+      "badge": "Mwanga",
+      "title": "TVET, Ujuzi, na Elimu Shirikishi: Mafunzo ya Vitendo kwa Kila Mwanafunzi",
+      "intro": "Tunaamini elimu lazima iwaandae wanafunzi kwa maisha—kupitia ujuzi, kujiamini, na fursa, si vyeti peke yake. SCEF inasaidia njia zinazofuatana na TVET na mazingira ya mafunzo shirikishi yanayowezesha:",
+      "empowerPoints": [
+        "Wanafunzi wanaojenga ujuzi halisi (kiufundi, kidijitali, ufundi)",
+        "Wanafunzi wenye mahitaji maalum kupata zana za msaada",
+        "Jamii zinazounda vituo vya mafunzo ya vitendo vilivyounganishwa na fursa za mtaa"
+      ],
+      "whatLooksLike": "Hivi ndivyo inavyoonekana:",
+      "tvetSupport": "Msaada wa TVET:",
+      "tvetSupportDesc": "vifaa vya kuanzia, miunganisho ya mafunzo, njia za vyeti vya ujuzi wa kidijitali",
+      "inclusiveAccess": "Upatikanaji shirikishi:",
+      "inclusiveAccessDesc": "utetezi wa visaidizi vya mafunzo, maudhui yanayopatikana, msaada wa walimu shirikishi",
+      "outcomesFocus": "Kuzingatia matokeo:",
+      "outcomesFocusDesc": "ujuzi wa kuajiriwa, utayari wa ujasiriamali, uundaji wa thamani ya jamii",
+      "ctaTvet": "Saidia Maabara ya TVET / Darasa Shirikishi",
+      "ctaCsr": "Ushirikiano wa CSR wa Ujuzi"
+    },
     "objectives": {
-      "title": "Malengo yetu 6",
+      "title": "Malengo Yetu 6 ya Msingi",
       "items": [
         "Kuanzisha utawala wa ngazi nyingi kwa utoaji wa elimu.",
         "Kusambaza majukwaa ya kidijitali kwa upatikanaji na uthibitisho wa vyeti.",
@@ -250,38 +338,90 @@
         "Kupata ufadhili na ushirikiano kwa uwajibikaji.",
         "Kulinganisha shughuli na UN SDGs na AU Agenda 2063 kwa ukuaji na upanuzi."
       ],
+      "ctaGovernance": "Tembelea Kituo cha Utawala",
+      "ctaDivisions": "Tazama Idara Zetu",
       "ctaDownload": "Pakua Wasifu wa SCEF (PDF)"
     },
-    "history": {
-      "title": "Historia yetu",
-      "body": "SCEF imejengwa kwa hatua hadi kuwa jukwaa la pana-Afrika linaloendeshwa na uanachama—likisaidia mifumo ya elimu kupitia programu, media, sura za mitaa na ushirikiano unaowajibika.",
-      "ctaGovernance": "Tazama Utawala"
+    "divisionsSection": {
+      "title": "Jinsi SCEF Inavyofanya Kazi (Idara Sita)",
+      "subtitle": "Muundo wetu wa uendeshaji unahakikisha utekelezaji ulioratibiwa wa programu, utawala, na ushirikiano wa wadau.",
+      "ctaChapter": "Jiunge na Sura ya Mtaa",
+      "ctaVolunteer": "Jitolee / Fanya Mafunzo"
     },
-    "vision": {
-      "title": "Dira 2035",
-      "body": "Kufikia 2035, SCEF inalenga kusaidia viwango vya elimu vinavyokua kila wakati—kwa kuimarisha sura za mitaa, ujumuishi, vyeti vinavyoaminika na ufadhili wa maadili wenye taarifa za athari.",
-      "ctaJoin": "Jiunge",
-      "ctaPartner": "Ushirikiano wa CSR"
+    "impact": {
+      "title": "Athari na Uwajibikaji",
+      "subtitle": "Matokeo yanayopimika na ripoti wazi kwa wadau wote.",
+      "stats": {
+        "countries": "Nchi/Kanda",
+        "chapters": "Sura Zinazofanya Kazi",
+        "learners": "Wanafunzi Waliosaidiwa",
+        "schools": "Shule Zilizosaidiwa",
+        "scholarships": "Ufadhili",
+        "mediaReach": "Ufikio wa Media"
+      },
+      "ctaProfile": "Pakua Wasifu wa Shirika",
+      "ctaReports": "Tazama Ripoti na Masomo ya Kesi",
+      "ctaUpdates": "Tazama Taarifa za Wakati Halisi"
     },
     "sustainability": {
-      "title": "Uendelevu, SDGs & Ajenda 2063",
-      "body": "SCEF hubuni programu kwa athari inayopimika, uwazi wa muda mrefu na ujumuishi—ikiendana na SDG 4, SDGs zinazohusiana na AU Agenda 2063.",
+      "title": "Uendelevu na Ulinganifu",
+      "body": "SCEF inalinganisha programu na SDG 4 na matokeo ya SDGs pana, na inasaidia upanuzi wa kiwango cha Afrika kupitia AU Agenda 2063. Mbinu yetu inaweka kipaumbele:",
+      "priorities": {
+        "inclusion": { "label": "Ujumuishi", "desc": "Wasichana na wanafunzi wenye ulemavu" },
+        "ownership": { "label": "Umiliki wa mtaa", "desc": "Utekelezaji wa sura" },
+        "transparency": { "label": "Ripoti wazi", "desc": "Tayari kwa washirika" },
+        "outcomes": { "label": "Matokeo yanayopimika", "desc": "Msaada wa mafunzo unaotegemea ushahidi" }
+      },
       "csrFundsTitle": "Usimamizi wa Mfuko wa Elimu (CSR)",
       "csrFundsBody": "Tunasaidia washirika kupanga na kusimamia fedha za CSR za elimu—kwa utawala, usimamizi wa utekelezaji na ripoti za athari.",
       "ctaCsr": "Ushirikiano wa CSR",
+      "ctaSponsor": "Dhamini Programu",
       "ctaRequest": "Omba Pendekezo / Mkutano",
       "ctaEndorse": "Thibitisha SCEF / Programu"
     },
+    "getInvolved": {
+      "title": "Jiunge Nasi",
+      "subtitle": "Chagua njia yako",
+      "pathways": {
+        "member": { "title": "Jiunge kama Mwanachama", "desc": "Kuwa sehemu ya harakati" },
+        "ambassador": { "title": "Kuwa Balozi", "desc": "Wakilisha SCEF, hamasisha msaada, fuatilia athari" },
+        "partner": { "title": "Mshirika/CSR", "desc": "Fadhili miradi inayopimika kwa uwajibikaji" },
+        "donate": { "title": "Changia", "desc": "Saidia mwanafunzi, shule, au utetezi wa media" }
+      },
+      "reassurance": "Unaweza kuanza kidogo—uanachama, mchango wa mara moja, au kujiunga na sura yako ya mtaa."
+    },
+    "faqs": {
+      "title": "Maswali Yanayoulizwa Sana",
+      "items": [
+        {
+          "q": "SCEF inafanya nini tofauti?",
+          "a": "Utawala + sura + majukwaa ya kidijitali + utetezi wa media—yaliyounganishwa katika mfumo mmoja unaowajibika. Hatufadhili tu miradi; tunajenga mifumo ya elimu endelevu yenye matokeo yanayopimika."
+        },
+        {
+          "q": "Je, ninaweza kusaidia TVET au elimu maalum moja kwa moja?",
+          "a": "Ndiyo. Chagua programu na uchangie/shirikiana kwa njia maalum (msaada wa maabara ya TVET au msaada wa mafunzo shirikishi). 100% ya fedha zilizotengwa zinaenda kwa mpango wako uliochagua na ripoti wazi."
+        },
+        {
+          "q": "Je, mnafanya kazi kote nchini?",
+          "a": "Ndiyo—kupitia sura za mitaa zilizopangwa na ushirikiano wa diaspora. Tunafanya kazi katika nchi 54+ za Afrika na jamii za diaspora, kila moja ikiwa na uongozi wa mtaa unaofuatana na viwango vya utawala wa SCEF."
+        },
+        {
+          "q": "Washirika wanafuatiliaje athari?",
+          "a": "Kupitia ripoti za kina, taarifa za kidijitali kupitia Ubao wetu wa Kidijitali, na dashibodi za programu. Washirika wa CSR wanapata taarifa za athari za kila robo mwaka na ripoti zilizokaguliwa za kila mwaka."
+        }
+      ]
+    },
     "programs": {
-      "title": "Programu zetu 6",
-      "intro": "SCEF huleta athari kupitia programu sita kuu zilizoundwa kufanya kazi pamoja kwenye upatikanaji, ubora, ujumuishi, ujuzi na utambuzi.",
+      "title": "Programu Zetu 6",
+      "intro": "SCEF huleta athari kupitia programu sita kuu zilizoundwa kufanya kazi pamoja juu ya upatikanaji, ubora, ujumuishi, ujuzi, na utambuzi.",
       "cards": {
         "nesa": "New Education Standard Award Africa (NESA Africa) — Kutambua na kukuza ubora wa elimu.",
         "eduaid": "Education Aid Africa (EduAid Africa) — Ufadhili wa masomo na njia za msaada.",
         "rmsa": "Rebuild My School Africa (RMSA) — Uboreshaji wa shule na mazingira ya kujifunzia.",
         "eoa": "Education Online Africa (EOA) — Mafunzo ya kidijitali na vyeti vinavyothibitishwa.",
         "womenGirls": "Elimu ya Wanawake na Wasichana — Msaada maalum kwa upatikanaji na matokeo.",
-        "specialNeeds": "Msaada wa Elimu kwa Mahitaji Maalum — Ujumuishi na msaada kwa wanafunzi."
+        "specialNeeds": "Msaada wa Elimu kwa Mahitaji Maalum — Ujumuishi na msaada kwa wanafunzi.",
+        "elibrary": "eLibrary Nigeria — Rasilimali za mafunzo za bure na zilizochaguliwa."
       },
       "ctaAll": "Tazama Programu Zote"
     },
@@ -308,17 +448,29 @@
       }
     },
     "trust": {
-      "title": "Utawala & uaminifu",
+      "title": "Utawala & Uaminifu",
       "body": "SCEF ina utawala uliopangwa na uwajibikaji kupitia bodi, sera na ripoti za athari zilizo wazi.",
       "ctaHub": "Kituo cha Utawala",
       "ctaBot": "Bodi ya Wadhamini (BOT)",
       "ctaPolicies": "Sera & Utii"
     },
+    "history": {
+      "title": "Historia Yetu",
+      "body": "SCEF imejengwa kwa hatua hadi kuwa jukwaa la pana-Afrika linaloendeshwa na uanachama—likisaidia mifumo ya elimu kupitia programu, media, sura za mitaa na ushirikiano unaowajibika.",
+      "ctaGovernance": "Tazama Utawala"
+    },
+    "vision": {
+      "title": "Dira 2035",
+      "body": "Kufikia 2035, SCEF inalenga kusaidia viwango vya elimu vinavyokua kila wakati—kwa kuimarisha sura za mitaa, ujumuishi, vyeti vinavyoaminika na ufadhili wa maadili wenye taarifa za athari.",
+      "ctaJoin": "Jiunge",
+      "ctaPartner": "Ushirikiano wa CSR"
+    },
     "final": {
-      "title": "Jiunge na mabadiliko ya elimu barani Afrika",
+      "title": "Kuwa sehemu ya mabadiliko ya elimu barani Afrika.",
       "ctaJoin": "Jiunge",
       "ctaDonate": "Changia",
-      "ctaPartner": "Shirikiana (CSR)"
+      "ctaPartner": "Kuwa Mshirika",
+      "ctaMedia": "Tazama SCEF Media"
     }
   },
   "governance": {
