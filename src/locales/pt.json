@@ -226,22 +226,110 @@
   "about": {
     "hero": {
       "title": "Sobre a Santos Creations Educational Foundation (SCEF)",
-      "subtitle": "A SCEF é uma ONG panafricana baseada em membros que promove Educação para Todos através de programas de impacto, capítulos locais, media, certificações confiáveis e parcerias de CSR.",
-      "ctaJoin": "Tornar-se membro",
+      "subtitle": "A SCEF é uma fundação de educação panafricana baseada em membros que fortalece a entrega de educação através de sistemas de governança, acesso digital e certificação, capítulos locais conformes e parcerias responsáveis alinhadas aos ODS da ONU e à Agenda 2063 da UA.",
+      "tagline": "Construindo um padrão educacional em crescimento contínuo em África.",
+      "description": "A SCEF é uma fundação de educação panafricana baseada em membros que promove Educação para Todos através da governança, capítulos locais, aprendizagem digital, preparação para o trabalho TVET, educação inclusiva e parcerias transparentes.",
+      "regionBadge": "África Regional • Diáspora Africana",
+      "trustLine": "Fundada 1997 • Registada 2010 • Alinhada com ODS 4 + Agenda 2063 • Governança HQ + entrega por capítulos",
+      "ctaJoin": "Juntar-se à SCEF",
       "ctaDonate": "Doar",
-      "ctaAmbassador": "Tornar-se embaixador",
-      "ctaJoinChapter": "Entrar num capítulo",
+      "ctaPartner": "Tornar-se Parceiro",
+      "ctaAmbassador": "Tornar-se Embaixador",
+      "ctaJoinChapter": "Entrar num Capítulo Local",
       "ctaCsr": "Parceria CSR",
       "ctaMedia": "Assistir SCEF Media"
     },
+    "quickNav": {
+      "whoWeAre": "Quem Somos",
+      "whyWeExist": "Por que Existimos",
+      "whatWeDo": "O que Fazemos",
+      "tvetInclusion": "TVET e Inclusão",
+      "objectives": "Objetivos",
+      "howWeWork": "Como Trabalhamos",
+      "impact": "Impacto",
+      "sustainability": "Sustentabilidade",
+      "getInvolved": "Envolva-se",
+      "faqs": "FAQs"
+    },
+    "missionSnapshot": {
+      "standards": {
+        "title": "Padrões e Reconhecimento",
+        "subtitle": "NESA-Africa",
+        "point1": "Prémios de reconhecimento para educadores",
+        "point2": "Programas de benchmarking de qualidade"
+      },
+      "scholarships": {
+        "title": "Bolsas e Financiamento",
+        "subtitle": "EduAid-Africa",
+        "point1": "Caminhos de patrocínio de aprendizes",
+        "point2": "Programas de parceria CSR"
+      },
+      "inclusion": {
+        "title": "Inclusão e Acesso",
+        "subtitle": "Mulheres e Raparigas + Necessidades Especiais",
+        "point1": "Apoio à aprendizagem assistida",
+        "point2": "Advocacia pela educação de raparigas"
+      }
+    },
     "who": {
-      "title": "Quem somos",
-      "body": "A SCEF constrói um ecossistema educacional conectado — com governança em camadas, programas integrados e modelo de membros — para melhorar acesso, qualidade, inclusão e impacto mensurável em África e na diáspora.",
-      "ctaPrograms": "Explorar programas",
-      "ctaUpdates": "Ver atualizações"
+      "badge": "Quem Somos",
+      "title": "Um Ecossistema de Impacto Educacional Estruturado",
+      "body": "A Santos Creations Educational Foundation (SCEF) é um ecossistema de impacto educacional estruturado—construído para ajudar os sistemas educacionais a melhorar, escalar e manter a responsabilização. Conectamos capítulos locais, parceiros, plataformas digitais e advocacia mediática para entregar resultados mensuráveis em:",
+      "outcomes": [
+        "Apoio a escolas e infraestrutura",
+        "Bolsas e apoio a aprendizes",
+        "TVET e preparação para o trabalho",
+        "Apoio à educação para necessidades especiais",
+        "Educação de mulheres e raparigas",
+        "Reconhecimento da qualidade educacional (NESA-Africa)"
+      ],
+      "ctaPrograms": "Explorar Nossos Programas",
+      "ctaChapter": "Entrar num Capítulo",
+      "ctaDonate": "Doar Agora",
+      "ctaUpdates": "Ver Atualizações"
+    },
+    "whyWeExist": {
+      "title": "Por que Existimos",
+      "intro": "Em toda a África, a aprendizagem ainda é limitada por:",
+      "challenges": [
+        "Ambientes escolares inseguros ou mal equipados",
+        "Fraco acesso a formação de competências e laboratórios TVET",
+        "Lacunas na inclusão de aprendizes com deficiência",
+        "Restrições de financiamento e baixa responsabilização",
+        "Caminhos limitados da aprendizagem para trabalho decente"
+      ],
+      "solution": "A SCEF existe para mudar isso",
+      "solutionDesc": "—construindo um modelo de entrega apoiado pela governança e impulsionado por capítulos que torna a transformação educacional mensurável, inclusiva e escalável."
+    },
+    "whatWeDo": {
+      "title": "O que Fazemos",
+      "intro": "Programas-chave concebidos para trabalhar juntos em acesso, qualidade, inclusão, competências e reconhecimento.",
+      "learnMore": "Saber mais",
+      "ctaApply": "Candidatar-se / Participar",
+      "ctaPartner": "Parceiro / Patrocinador",
+      "ctaDonate": "Doar para um Programa"
+    },
+    "tvetSpotlight": {
+      "badge": "Destaque",
+      "title": "TVET, Competências e Educação Inclusiva: Aprendizagem Prática para Cada Aprendiz",
+      "intro": "Acreditamos que a educação deve preparar os aprendizes para a vida—através de competências, confiança e oportunidade, não apenas certificados. A SCEF apoia caminhos alinhados com TVET e ambientes de aprendizagem inclusivos que empoderam:",
+      "empowerPoints": [
+        "Aprendizes desenvolvendo competências do mundo real (técnicas, digitais, vocacionais)",
+        "Estudantes com necessidades especiais acedendo a ferramentas de apoio",
+        "Comunidades criando centros de aprendizagem prática ligados a oportunidades locais"
+      ],
+      "whatLooksLike": "Como isto se traduz:",
+      "tvetSupport": "Apoio TVET:",
+      "tvetSupportDesc": "equipamento inicial, ligações de formação, caminhos de certificação em competências digitais",
+      "inclusiveAccess": "Acesso inclusivo:",
+      "inclusiveAccessDesc": "advocacia por auxiliares de aprendizagem, conteúdo acessível, apoio a professores inclusivos",
+      "outcomesFocus": "Foco em resultados:",
+      "outcomesFocusDesc": "competências de empregabilidade, preparação para empreendedorismo, criação de valor comunitário",
+      "ctaTvet": "Apoiar um Laboratório TVET / Sala Inclusiva",
+      "ctaCsr": "Parceria CSR de Competências"
     },
     "objectives": {
-      "title": "Nossos 6 objetivos",
+      "title": "Os Nossos 6 Objetivos Fundamentais",
       "items": [
         "Estabelecer governança em camadas para a entrega da educação.",
         "Implantar plataformas digitais para acesso e certificação.",
@@ -250,30 +338,81 @@
         "Garantir financiamento e parcerias com responsabilização.",
         "Alinhar operações aos ODS da ONU e à Agenda 2063 da UA para escalabilidade."
       ],
+      "ctaGovernance": "Visitar Centro de Governança",
+      "ctaDivisions": "Ver Nossas Divisões",
       "ctaDownload": "Baixar Perfil da SCEF (PDF)"
     },
-    "history": {
-      "title": "Nossa história",
-      "body": "A SCEF foi construída ao longo do tempo como uma plataforma panafricana baseada em membros — apoiando sistemas educacionais através de programas, media, capítulos locais e parcerias responsáveis.",
-      "ctaGovernance": "Ver governança"
+    "divisionsSection": {
+      "title": "Como a SCEF Funciona (Seis Divisões)",
+      "subtitle": "A nossa estrutura operacional garante entrega coordenada de programas, governança e engajamento de stakeholders.",
+      "ctaChapter": "Entrar num Capítulo Local",
+      "ctaVolunteer": "Voluntariado / Estágio"
     },
-    "vision": {
-      "title": "Visão 2035",
-      "body": "Até 2035, a SCEF pretende apoiar um padrão educacional em crescimento contínuo — fortalecendo capítulos, inclusão, certificação confiável e financiamento ético com relatórios de impacto credíveis.",
-      "ctaJoin": "Tornar-se membro",
-      "ctaPartner": "Parceria CSR"
+    "impact": {
+      "title": "Impacto e Responsabilização",
+      "subtitle": "Resultados mensuráveis e relatórios transparentes para todos os stakeholders.",
+      "stats": {
+        "countries": "Países/Regiões",
+        "chapters": "Capítulos Ativos",
+        "learners": "Aprendizes Apoiados",
+        "schools": "Escolas Apoiadas",
+        "scholarships": "Bolsas",
+        "mediaReach": "Alcance de Media"
+      },
+      "ctaProfile": "Baixar Perfil Organizacional",
+      "ctaReports": "Ver Relatórios e Estudos de Caso",
+      "ctaUpdates": "Ver Atualizações em Tempo Real"
     },
     "sustainability": {
-      "title": "Sustentabilidade, ODS & Agenda 2063",
-      "body": "A SCEF desenha programas para impacto social mensurável, transparência de longo prazo e inclusão — alinhados ao ODS 4, ODS relacionados e à Agenda 2063 da União Africana.",
+      "title": "Sustentabilidade e Alinhamento",
+      "body": "A SCEF alinha programas com o ODS 4 e resultados mais amplos dos ODS, e apoia a escalabilidade em toda a África através da Agenda 2063 da UA. A nossa abordagem prioriza:",
+      "priorities": {
+        "inclusion": { "label": "Inclusão", "desc": "Raparigas e aprendizes com deficiência" },
+        "ownership": { "label": "Propriedade local", "desc": "Entrega por capítulos" },
+        "transparency": { "label": "Relatórios transparentes", "desc": "Pronto para parceiros" },
+        "outcomes": { "label": "Resultados mensuráveis", "desc": "Apoio à aprendizagem baseado em evidências" }
+      },
       "csrFundsTitle": "Gestão de Fundos de Educação (CSR)",
-      "csrFundsBody": "Apoiamos parceiros a estruturar e gerir fundos de CSR para educação — com governança, supervisão de execução e relatórios de impacto.",
+      "csrFundsBody": "Apoiamos parceiros a estruturar e gerir fundos de CSR para educação—com governança, supervisão de execução e relatórios de impacto.",
       "ctaCsr": "Parceria CSR",
-      "ctaRequest": "Solicitar proposta / reunião",
+      "ctaSponsor": "Patrocinar um Programa",
+      "ctaRequest": "Solicitar Proposta / Reunião",
       "ctaEndorse": "Endossar SCEF / Programas"
     },
+    "getInvolved": {
+      "title": "Envolva-se",
+      "subtitle": "Escolha o seu caminho",
+      "pathways": {
+        "member": { "title": "Tornar-se Membro", "desc": "Faça parte do movimento" },
+        "ambassador": { "title": "Tornar-se Embaixador", "desc": "Represente a SCEF, mobilize apoio, acompanhe impacto" },
+        "partner": { "title": "Parceiro/CSR", "desc": "Financie projetos mensuráveis com responsabilização" },
+        "donate": { "title": "Doar", "desc": "Apoie um aprendiz, escola ou advocacia mediática" }
+      },
+      "reassurance": "Pode começar pequeno—adesão, doação única ou juntar-se ao seu capítulo local."
+    },
+    "faqs": {
+      "title": "FAQs",
+      "items": [
+        {
+          "q": "O que a SCEF faz de diferente?",
+          "a": "Governança + capítulos + plataformas digitais + advocacia mediática—integrados num sistema responsável. Não apenas financiamos projetos; construímos ecossistemas educacionais sustentáveis com resultados mensuráveis."
+        },
+        {
+          "q": "Posso apoiar TVET ou educação especial diretamente?",
+          "a": "Sim. Escolha um programa e doe/faça parceria para um caminho específico (apoio a laboratórios TVET ou apoio à aprendizagem inclusiva). 100% dos fundos designados vão para a sua iniciativa escolhida com relatórios transparentes."
+        },
+        {
+          "q": "Trabalham em vários países?",
+          "a": "Sim—através de capítulos locais estruturados e engajamento da diáspora. Operamos em 54+ países africanos e comunidades da diáspora, cada um com liderança local alinhada aos padrões de governança da SCEF."
+        },
+        {
+          "q": "Como os parceiros acompanham o impacto?",
+          "a": "Através de relatórios detalhados, atualizações digitais via nosso Quadro Digital e dashboards de programas. Parceiros CSR recebem declarações de impacto trimestrais e relatórios auditados anuais."
+        }
+      ]
+    },
     "programs": {
-      "title": "Nossos 6 programas",
+      "title": "Os Nossos 6 Programas",
       "intro": "A SCEF entrega impacto através de seis programas-chave concebidos para funcionar juntos em acesso, qualidade, inclusão, competências e reconhecimento.",
       "cards": {
         "nesa": "New Education Standard Award Africa (NESA Africa) — Reconhecer e ampliar a excelência educacional.",
@@ -281,9 +420,10 @@
         "rmsa": "Rebuild My School Africa (RMSA) — Renovação de escolas e melhoria do ambiente de aprendizagem.",
         "eoa": "Education Online Africa (EOA) — Aprendizagem digital e certificação verificável.",
         "womenGirls": "Educação de Mulheres e Raparigas — Intervenções focadas em acesso e resultados.",
-        "specialNeeds": "Apoio à Educação Especial — Inclusão e suporte aos aprendizes."
+        "specialNeeds": "Apoio à Educação Especial — Inclusão e suporte aos aprendizes.",
+        "elibrary": "eLibrary Nigeria — Recursos de aprendizagem gratuitos e selecionados."
       },
-      "ctaAll": "Explorar todos os programas"
+      "ctaAll": "Explorar Todos os Programas"
     },
     "eoaSpotlight": {
       "title": "Education Online Africa (EOA): Aprender. Certificar. Renovar.",
@@ -291,13 +431,13 @@
       "ctaStart": "Começar",
       "ctaCertify": "Certificar (ACDL / AWPC)",
       "ctaAwpc": "AWPC",
-      "ctaExam": "Portal de exames",
-      "ctaRpl": "Atualizar meu certificado (RPL)",
-      "ctaRenew": "Renovar meu certificado",
-      "ctaPartner": "Tornar-se afiliado / centro de teste"
+      "ctaExam": "Portal de Exames",
+      "ctaRpl": "Atualizar Meu Certificado (RPL)",
+      "ctaRenew": "Renovar Meu Certificado",
+      "ctaPartner": "Tornar-se Afiliado / Centro de Teste"
     },
     "divisions": {
-      "title": "Como a SCEF funciona (6 divisões)",
+      "title": "Como a SCEF Funciona (6 Divisões)",
       "items": {
         "exec": "Governança e Escritório Executivo — Secretário Executivo (Legal e Governança) + PRO",
         "sobcd": "SOBCD — Administração, RH, supervisão financeira, eventos, formação, conformidade",
@@ -308,17 +448,29 @@
       }
     },
     "trust": {
-      "title": "Governança e confiança",
+      "title": "Governança e Confiança",
       "body": "A SCEF mantém governança estruturada e responsabilização através de conselhos, políticas e relatórios de impacto transparentes.",
-      "ctaHub": "Centro de governança",
+      "ctaHub": "Centro de Governança",
       "ctaBot": "Conselho de Curadores (BOT)",
-      "ctaPolicies": "Políticas e conformidade"
+      "ctaPolicies": "Políticas e Conformidade"
+    },
+    "history": {
+      "title": "Nossa História",
+      "body": "A SCEF foi construída ao longo do tempo como uma plataforma panafricana baseada em membros—apoiando sistemas educacionais através de programas, media, capítulos locais e parcerias responsáveis.",
+      "ctaGovernance": "Ver Governança"
+    },
+    "vision": {
+      "title": "Visão 2035",
+      "body": "Até 2035, a SCEF pretende apoiar um padrão educacional em crescimento contínuo—fortalecendo capítulos, inclusão, certificação confiável e financiamento ético com relatórios de impacto credíveis.",
+      "ctaJoin": "Tornar-se Membro",
+      "ctaPartner": "Parceria CSR"
     },
     "final": {
-      "title": "Junte-se à transformação da educação em África",
-      "ctaJoin": "Tornar-se membro",
+      "title": "Faça parte da transformação da educação em África.",
+      "ctaJoin": "Juntar-se",
       "ctaDonate": "Doar",
-      "ctaPartner": "Parceria CSR"
+      "ctaPartner": "Tornar-se Parceiro",
+      "ctaMedia": "Assistir SCEF Media"
     }
   },
   "governance": {
