@@ -5,11 +5,15 @@ import fr from '@/locales/fr.json';
 import ar from '@/locales/ar.json';
 import sw from '@/locales/sw.json';
 import pt from '@/locales/pt.json';
+import es from '@/locales/es.json';
+import de from '@/locales/de.json';
+import ru from '@/locales/ru.json';
+import zh from '@/locales/zh.json';
 
-export type Locale = 'en' | 'fr' | 'ar' | 'sw' | 'pt';
+export type Locale = 'en' | 'fr' | 'ar' | 'sw' | 'pt' | 'es' | 'de' | 'ru' | 'zh';
 
 // Using Record with any to allow for slight translation mismatches during development
-const translations: Record<Locale, Record<string, any>> = { en, fr, ar, sw, pt };
+const translations: Record<Locale, Record<string, any>> = { en, fr, ar, sw, pt, es, de, ru, zh };
 
 interface LocaleContextType {
   locale: Locale;

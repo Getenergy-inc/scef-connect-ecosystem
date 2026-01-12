@@ -1,0 +1,367 @@
+{
+  "nav": {
+    "utility": {
+      "bot": "董事会 (BOT)",
+      "boa": "顾问委员会 (BOA)",
+      "bod": "理事会 (BOD)",
+      "lcps": "地方分会主席 (LCPs)",
+      "management": "管理团队"
+    },
+    "top": {
+      "about": "关于 SCEF",
+      "work": "我们的工作（项目）",
+      "chapters": "地方分会",
+      "getInvolved": "参与",
+      "media": "SCEF 媒体",
+      "search": "搜索",
+      "donate": "捐赠",
+      "signin": "登录",
+      "signup": "注册",
+      "dashboard": "控制面板"
+    },
+    "dropdown": {
+      "about": {
+        "overview": "概述",
+        "history": "我们的历史",
+        "vision": "2035愿景",
+        "sustainability": "可持续性、可持续发展目标与2063议程",
+        "governance": "治理",
+        "divisions": "我们的部门"
+      },
+      "work": {
+        "nesa": "非洲新教育标准奖 (NESA 非洲)",
+        "eduaid": "非洲教育援助 (EduAid 非洲)",
+        "rmsa": "重建我的非洲学校 (RMSA)",
+        "eoa": "非洲在线教育 (EOA) — 学习与认证",
+        "awpc": "非洲职场生产力认证 (AWPC)",
+        "womenGirls": "女性与女童教育",
+        "specialNeeds": "特殊需求教育支持",
+        "elibrary": "尼日利亚电子图书馆",
+        "hub": "所有项目"
+      },
+      "chapters": {
+        "browse": "浏览分会",
+        "join": "加入分会",
+        "create": "创建分会",
+        "upgrade": "升级分会",
+        "leadership": "申请分会主席 (LCP)"
+      },
+      "getInvolved": {
+        "member": "成为会员",
+        "ambassador": "成为大使",
+        "volunteer": "志愿服务",
+        "scholarship": "申请奖学金",
+        "csr": "合作伙伴 / CSR",
+        "donate": "捐赠"
+      },
+      "media": {
+        "hub": "媒体中心",
+        "nesaTv": "NESA 非洲电视",
+        "nesaAwardsTv": "NESA 颁奖电视",
+        "platinumShow": "白金认可秀",
+        "africaIcon": "非洲偶像蓝石榴奖",
+        "goldCertificate": "金证书奖",
+        "blueGarnetGala": "蓝石榴晚会",
+        "radio": "It's In Me 广播",
+        "webinars": "EduAid 网络研讨会与播客",
+        "tourism": "教育旅游节目",
+        "volunteer": "成为媒体志愿者",
+        "mediaCms": "媒体 CMS",
+        "mediaLibrary": "媒体库上传",
+        "mediaSeries": "系列与播放列表",
+        "mediaSchedule": "日程与发布",
+        "awardsScheduleAdmin": "NESA 颁奖电视日程"
+      }
+    },
+    "language": {
+      "label": "语言",
+      "cta": "更改语言"
+    }
+  },
+  "cta": {
+    "joinMember": "成为会员",
+    "donateNow": "立即捐赠",
+    "becomeAmbassador": "成为大使",
+    "joinChapter": "加入地方分会",
+    "partnerCsr": "合作伙伴 / CSR",
+    "watchMedia": "观看 SCEF 媒体",
+    "watchLive": "观看直播",
+    "watchReplay": "观看回放",
+    "viewSchedule": "查看完整日程",
+    "uploadMedia": "上传媒体",
+    "saveDraft": "保存草稿",
+    "publish": "发布",
+    "schedule": "安排"
+  },
+  "labels": {
+    "countdown": "倒计时",
+    "featured": "精选",
+    "latest": "最新",
+    "language": "语言",
+    "region": "地区",
+    "status": "状态",
+    "priority": "优先级",
+    "video": "视频",
+    "audio": "音频",
+    "announcement": "公告",
+    "flyer": "传单",
+    "watchVideo": "观看视频",
+    "previous": "上一个",
+    "next": "下一个",
+    "goToSlide": "转到幻灯片"
+  },
+  "footer": {
+    "organization": "桑托斯创作教育基金会",
+    "location": "尼日利亚拉各斯",
+    "copyright": "版权所有。",
+    "columns": {
+      "contact": "联系",
+      "programs": "快速链接",
+      "media": "我们的平台",
+      "getInvolved": "参与"
+    },
+    "social": {
+      "label": "与我们联系"
+    },
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "accessibility": "无障碍访问"
+    },
+    "mission": "通过倡导、资助和认证整个非洲大陆的教育卓越，引领非洲教育的未来。"
+  },
+  "home": {
+    "hero": {
+      "title": "非洲全民教育 — 由会员、分会和合作伙伴驱动",
+      "subtitle": "SCEF 是一个由会员驱动的泛非基金会，通过奖学金、学校更新、可信认证和媒体倡导推进教育 — 与地方分会、侨民和 CSR 合作伙伴合作。",
+      "ctaPrimary": "成为会员",
+      "ctaDonate": "立即捐赠",
+      "ctaAmbassador": "成为大使",
+      "ctaJoinChapter": "加入地方分会"
+    },
+    "impact": {
+      "title": "影响概览",
+      "metrics": {
+        "scholarships": "支持的奖学金",
+        "schools": "更新的学校 (RMSA)",
+        "womenGirls": "覆盖的女性和女童",
+        "specialNeeds": "支持的特殊需求",
+        "chapters": "活跃分会",
+        "partners": "合作伙伴和捐赠者"
+      }
+    },
+    "programs": {
+      "title": "我们的项目",
+      "ctaAll": "探索所有项目"
+    },
+    "final": {
+      "title": "成为非洲教育转型的一部分",
+      "ctaJoin": "成为会员",
+      "ctaDonate": "捐赠",
+      "ctaPartner": "合作伙伴 (CSR)"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "关于桑托斯创作教育基金会 (SCEF)",
+      "subtitle": "SCEF 是一个由会员驱动的泛非教育基金会，通过治理系统、数字访问和认证、媒体知识传播、合规的地方分会、负责任的资助合作伙伴关系以及与联合国可持续发展目标和非盟2063议程一致的可扩展影响力，加强教育交付。",
+      "tagline": "在非洲建立持续增长的教育标准。",
+      "description": "SCEF 是一个由会员驱动的泛非教育基金会，通过治理、地方分会、数字学习、职业技术教育准备、包容性教育和透明合作伙伴关系推进全民教育。",
+      "regionBadge": "非洲地区 • 非洲侨民",
+      "trustLine": "成立于1997年 • 注册于2010年 • 与SDG 4 + 非盟2063议程一致 • 总部主导的治理 + 分会驱动的交付",
+      "ctaJoin": "加入 SCEF",
+      "ctaDonate": "捐赠",
+      "ctaPartner": "与我们合作",
+      "ctaAmbassador": "成为大使",
+      "ctaJoinChapter": "加入地方分会",
+      "ctaCsr": "合作伙伴 / CSR",
+      "ctaMedia": "观看 SCEF 媒体"
+    },
+    "quickNav": {
+      "whoWeAre": "我们是谁",
+      "whyWeExist": "我们为何存在",
+      "whatWeDo": "我们做什么",
+      "tvetInclusion": "职业技术教育与包容",
+      "objectives": "目标",
+      "howWeWork": "我们如何工作",
+      "impact": "影响",
+      "sustainability": "可持续性",
+      "getInvolved": "参与",
+      "faqs": "常见问题"
+    },
+    "missionSnapshot": {
+      "standards": {
+        "title": "标准与认可",
+        "subtitle": "NESA-非洲",
+        "point1": "教育工作者认可奖",
+        "point2": "质量基准项目"
+      },
+      "scholarships": {
+        "title": "奖学金与资助",
+        "subtitle": "EduAid-非洲",
+        "point1": "学习者赞助途径",
+        "point2": "CSR 合作伙伴项目"
+      },
+      "inclusion": {
+        "title": "包容与获取",
+        "subtitle": "女性与女童 + 特殊需求",
+        "point1": "辅助学习支持",
+        "point2": "女童教育倡导"
+      }
+    },
+    "who": {
+      "badge": "我们是谁",
+      "title": "结构化的教育影响生态系统",
+      "body": "桑托斯创作教育基金会 (SCEF) 是一个结构化的教育影响生态系统——旨在帮助教育系统改进、扩展和保持问责。我们连接地方分会、合作伙伴、数字平台和媒体倡导，以在以下领域实现可衡量的成果：",
+      "outcomes": [
+        "学校支持与基础设施",
+        "奖学金与学习者支持",
+        "职业技术教育和就业准备",
+        "特殊需求教育支持",
+        "女性与女童教育",
+        "教育质量认可 (NESA-非洲)"
+      ],
+      "ctaPrograms": "探索我们的项目",
+      "ctaChapter": "加入分会",
+      "ctaDonate": "立即捐赠"
+    },
+    "whyWeExist": {
+      "title": "我们为何存在",
+      "intro": "在整个非洲，学习仍然受到以下限制：",
+      "challenges": [
+        "不安全或设备不足的学校环境",
+        "技能培训和职业技术教育实验室访问不足",
+        "残疾学习者的包容性差距",
+        "资金限制和问责不足",
+        "从学习到体面工作的途径有限"
+      ],
+      "solution": "SCEF 的存在就是为了改变这一切",
+      "solutionDesc": "——通过建立一个由治理支持、分会驱动的交付模式，使教育转型可衡量、包容和可扩展。"
+    },
+    "objectives": {
+      "title": "我们的6个核心目标",
+      "items": [
+        "建立分层治理以实现教育交付。",
+        "部署数字平台以实现访问和认证。",
+        "发展媒体以传播知识。",
+        "引入和监督地方分会以确保合规。",
+        "以问责方式确保资金和合作伙伴关系。",
+        "使运营与联合国可持续发展目标和非盟2063议程保持一致以实现可扩展性。"
+      ],
+      "ctaGovernance": "访问治理中心",
+      "ctaDivisions": "查看我们的部门"
+    },
+    "faqs": {
+      "title": "常见问题",
+      "items": [
+        {
+          "q": "SCEF 有何不同？",
+          "a": "治理 + 分会 + 数字平台 + 媒体倡导——整合成一个负责任的系统。我们不仅仅资助项目；我们建立具有可衡量成果的可持续教育生态系统。"
+        },
+        {
+          "q": "我可以直接支持职业技术教育或特殊需求教育吗？",
+          "a": "是的。选择一个项目并捐赠/合作到特定轨道（职业技术教育实验室支持或包容性学习支持）。100%的指定资金将用于您选择的倡议，并提供透明报告。"
+        },
+        {
+          "q": "你们在不同国家开展工作吗？",
+          "a": "是的——通过结构化的地方分会和侨民参与。我们在54多个非洲国家和侨民社区开展工作，每个都有与SCEF治理标准一致的当地领导。"
+        },
+        {
+          "q": "合作伙伴如何追踪影响？",
+          "a": "通过详细报告、我们数字公告板的数字更新和项目仪表板。CSR合作伙伴收到季度影响报表和年度审计报告。"
+        }
+      ]
+    },
+    "final": {
+      "title": "成为非洲教育转型的一部分。",
+      "ctaJoin": "加入",
+      "ctaDonate": "捐赠",
+      "ctaPartner": "合作",
+      "ctaMedia": "观看 SCEF 媒体"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "运营结构",
+      "title": "SCEF 如何运作",
+      "subtitle": "SCEF 分为六个部门，以大规模交付治理、项目、媒体、分会、合规和合作伙伴关系。"
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "董事会治理与执行办公室",
+        "lead": "组织秘书（法律背景 + 公关职能）",
+        "mandate": "董事会协调、治理文档、执行办公室支持、机构沟通和治理连续性。"
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "战略运营与业务合规部",
+        "lead": "运营与合规总监",
+        "mandate": "行政与人力资源、财务运营监督、活动管理、内部/外部培训协调、合规系统、运营报告。"
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "技术与数字服务部",
+        "lead": "技术与数字创新总监",
+        "mandate": "网站/应用系统、数据库、安全、仪表板、多语言系统、平台性能和数字转型交付。"
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "在线媒体业务发展部",
+        "lead": "媒体业务发展总监",
+        "mandate": "筹款沟通、赞助渠道、数字增长、活动、合作伙伴转化支持、捐赠者参与资产。"
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "桑托斯媒体部",
+        "lead": "桑托斯媒体总监",
+        "mandate": "NESA 非洲电视、It's In Me 广播、网络研讨会/播客、教育旅游节目、内容运营、编辑标准、媒体分发。"
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "地方分会服务部",
+        "lead": "分会服务与支持总监",
+        "mandate": "入职、监督、合规支持、报告系统、地方分会治理和可扩展的分会激活。"
+      }
+    },
+    "ctaJoinChapter": "加入地方分会"
+  },
+  "donate": {
+    "hero": {
+      "badge": "支持教育",
+      "title": "捐赠以转变教育",
+      "subtitle": "您的贡献直接资助奖学金、学校更新、数字学习访问和改变整个非洲生活的项目。"
+    },
+    "cta": {
+      "donate": "立即捐赠",
+      "partner": "CSR 合作伙伴",
+      "contact": "联系我们"
+    }
+  },
+  "membership": {
+    "hero": {
+      "badge": "加入 SCEF",
+      "title": "成为会员",
+      "subtitle": "加入由教育变革者组成的泛非社区。作为 SCEF 会员，您可以获得项目、分会、认证和塑造非洲教育未来的机会。"
+    },
+    "cta": {
+      "join": "立即加入",
+      "ambassador": "成为大使",
+      "institutional": "机构会员资格"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "联系我们",
+      "title": "取得联系",
+      "subtitle": "对 SCEF、我们的项目或如何参与有疑问？我们很乐意听取您的意见。"
+    },
+    "form": {
+      "name": "全名",
+      "email": "电子邮件地址",
+      "subject": "主题",
+      "message": "消息",
+      "submit": "发送消息"
+    }
+  }
+}
