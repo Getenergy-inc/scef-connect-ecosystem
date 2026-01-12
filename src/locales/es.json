@@ -1,0 +1,367 @@
+{
+  "nav": {
+    "utility": {
+      "bot": "Junta de Fideicomisarios (BOT)",
+      "boa": "Junta de Asesores (BOA)",
+      "bod": "Junta de Directores (BOD)",
+      "lcps": "Presidentes de Capítulos Locales (LCPs)",
+      "management": "Equipo de Gestión"
+    },
+    "top": {
+      "about": "Acerca de SCEF",
+      "work": "Nuestro Trabajo (Programas)",
+      "chapters": "Capítulos Locales",
+      "getInvolved": "Participa",
+      "media": "SCEF Media",
+      "search": "Buscar",
+      "donate": "Donar",
+      "signin": "Iniciar Sesión",
+      "signup": "Registrarse",
+      "dashboard": "Panel"
+    },
+    "dropdown": {
+      "about": {
+        "overview": "Resumen",
+        "history": "Nuestra Historia",
+        "vision": "Visión 2035",
+        "sustainability": "Sostenibilidad, ODS y Agenda 2063",
+        "governance": "Gobernanza",
+        "divisions": "Nuestras Divisiones"
+      },
+      "work": {
+        "nesa": "Premio Nuevo Estándar Educativo África (NESA África)",
+        "eduaid": "Ayuda Educativa África (EduAid África)",
+        "rmsa": "Reconstruye Mi Escuela África (RMSA)",
+        "eoa": "Educación en Línea África (EOA) — Aprendizaje y Certificación",
+        "awpc": "Certificación de Productividad Laboral África (AWPC)",
+        "womenGirls": "Educación de Mujeres y Niñas",
+        "specialNeeds": "Apoyo a Educación con Necesidades Especiales",
+        "elibrary": "eLibrary Nigeria",
+        "hub": "Todos los Programas"
+      },
+      "chapters": {
+        "browse": "Explorar Capítulos",
+        "join": "Unirse a un Capítulo",
+        "create": "Iniciar un Capítulo",
+        "upgrade": "Actualizar Capítulo",
+        "leadership": "Aplicar como Líder de Capítulo (LCP)"
+      },
+      "getInvolved": {
+        "member": "Convertirse en Miembro",
+        "ambassador": "Convertirse en Embajador",
+        "volunteer": "Voluntariado",
+        "scholarship": "Solicitar Beca",
+        "csr": "Asociación / RSC",
+        "donate": "Donar"
+      },
+      "media": {
+        "hub": "Centro de Medios",
+        "nesaTv": "NESA África TV",
+        "nesaAwardsTv": "NESA Awards TV",
+        "platinumShow": "Platinum Recognition Show",
+        "africaIcon": "Africa Icon Blue Garnet Awards",
+        "goldCertificate": "Gold Certificate Awards",
+        "blueGarnetGala": "Blue Garnet Gala",
+        "radio": "It's In Me Radio",
+        "webinars": "Webinars y Podcast EduAid",
+        "tourism": "Programa de Turismo Educativo",
+        "volunteer": "Voluntario de Medios",
+        "mediaCms": "CMS de Medios",
+        "mediaLibrary": "Biblioteca de Medios",
+        "mediaSeries": "Series y Listas",
+        "mediaSchedule": "Programación y Publicación",
+        "awardsScheduleAdmin": "Programación NESA Awards TV"
+      }
+    },
+    "language": {
+      "label": "Idioma",
+      "cta": "Cambiar idioma"
+    }
+  },
+  "cta": {
+    "joinMember": "Unirse como Miembro",
+    "donateNow": "Donar Ahora",
+    "becomeAmbassador": "Convertirse en Embajador",
+    "joinChapter": "Unirse a un Capítulo Local",
+    "partnerCsr": "Asociación / RSC",
+    "watchMedia": "Ver SCEF Media",
+    "watchLive": "Ver en Vivo",
+    "watchReplay": "Ver Repetición",
+    "viewSchedule": "Ver Programación Completa",
+    "uploadMedia": "Subir Medios",
+    "saveDraft": "Guardar Borrador",
+    "publish": "Publicar",
+    "schedule": "Programar"
+  },
+  "labels": {
+    "countdown": "Cuenta Regresiva",
+    "featured": "Destacado",
+    "latest": "Más Reciente",
+    "language": "Idioma",
+    "region": "Región",
+    "status": "Estado",
+    "priority": "Prioridad",
+    "video": "Video",
+    "audio": "Audio",
+    "announcement": "Anuncio",
+    "flyer": "Folleto",
+    "watchVideo": "Ver Video",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "goToSlide": "Ir a diapositiva"
+  },
+  "footer": {
+    "organization": "Fundación Educativa Santos Creations",
+    "location": "Lagos, Nigeria",
+    "copyright": "Todos los derechos reservados.",
+    "columns": {
+      "contact": "Contacto",
+      "programs": "Enlaces Rápidos",
+      "media": "Nuestras Plataformas",
+      "getInvolved": "Participa"
+    },
+    "social": {
+      "label": "Conéctate con nosotros"
+    },
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "accessibility": "Accesibilidad"
+    },
+    "mission": "Gobernando el futuro educativo de África a través de la defensa, financiación y certificación de la excelencia educativa en todo el continente."
+  },
+  "home": {
+    "hero": {
+      "title": "Educación para Todos en África — impulsada por miembros, capítulos y socios",
+      "subtitle": "SCEF es una fundación panafricana impulsada por miembros que avanza la educación a través de becas, renovación escolar, certificaciones confiables y defensa mediática — con capítulos locales, diáspora y socios de RSC.",
+      "ctaPrimary": "Convertirse en Miembro",
+      "ctaDonate": "Donar Ahora",
+      "ctaAmbassador": "Convertirse en Embajador",
+      "ctaJoinChapter": "Unirse a un Capítulo Local"
+    },
+    "impact": {
+      "title": "Resumen de Impacto",
+      "metrics": {
+        "scholarships": "Becas apoyadas",
+        "schools": "Escuelas renovadas (RMSA)",
+        "womenGirls": "Mujeres y niñas alcanzadas",
+        "specialNeeds": "Necesidades especiales apoyadas",
+        "chapters": "Capítulos activos",
+        "partners": "Socios y donantes"
+      }
+    },
+    "programs": {
+      "title": "Nuestros Programas",
+      "ctaAll": "Explorar Todos los Programas"
+    },
+    "final": {
+      "title": "Sé parte de la transformación educativa en África",
+      "ctaJoin": "Convertirse en Miembro",
+      "ctaDonate": "Donar",
+      "ctaPartner": "Asociación (RSC)"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Acerca de Santos Creations Educational Foundation (SCEF)",
+      "subtitle": "SCEF es una fundación educativa panafricana impulsada por miembros que fortalece la entrega educativa a través de sistemas de gobernanza, acceso digital y certificación, difusión de conocimiento mediático, capítulos locales conformes, asociaciones de financiación responsable e impacto escalable alineado con los ODS de la ONU y la Agenda 2063 de la UA.",
+      "tagline": "Construyendo un estándar educativo continuo y en constante crecimiento en África.",
+      "description": "SCEF es una fundación educativa panafricana impulsada por miembros que promueve la Educación para Todos a través de gobernanza, capítulos locales, aprendizaje digital, preparación laboral en FP, educación inclusiva y asociaciones transparentes.",
+      "regionBadge": "África Regional • Diáspora Africana",
+      "trustLine": "Fundada 1997 • Registrada 2010 • Alineada con ODS 4 + Agenda 2063 UA • Gobernanza liderada por HQ + entrega impulsada por capítulos",
+      "ctaJoin": "Unirse a SCEF",
+      "ctaDonate": "Donar",
+      "ctaPartner": "Asociarse con Nosotros",
+      "ctaAmbassador": "Convertirse en Embajador",
+      "ctaJoinChapter": "Unirse a un Capítulo Local",
+      "ctaCsr": "Asociación / RSC",
+      "ctaMedia": "Ver SCEF Media"
+    },
+    "quickNav": {
+      "whoWeAre": "Quiénes Somos",
+      "whyWeExist": "Por Qué Existimos",
+      "whatWeDo": "Qué Hacemos",
+      "tvetInclusion": "FP e Inclusión",
+      "objectives": "Objetivos",
+      "howWeWork": "Cómo Trabajamos",
+      "impact": "Impacto",
+      "sustainability": "Sostenibilidad",
+      "getInvolved": "Participa",
+      "faqs": "Preguntas Frecuentes"
+    },
+    "missionSnapshot": {
+      "standards": {
+        "title": "Estándares y Reconocimiento",
+        "subtitle": "NESA-África",
+        "point1": "Premios de reconocimiento para educadores",
+        "point2": "Programas de evaluación comparativa de calidad"
+      },
+      "scholarships": {
+        "title": "Becas y Financiación",
+        "subtitle": "EduAid-África",
+        "point1": "Vías de patrocinio de estudiantes",
+        "point2": "Programas de asociación RSC"
+      },
+      "inclusion": {
+        "title": "Inclusión y Acceso",
+        "subtitle": "Mujeres y Niñas + Necesidades Especiales",
+        "point1": "Apoyo de aprendizaje asistivo",
+        "point2": "Defensa de la educación de niñas"
+      }
+    },
+    "who": {
+      "badge": "Quiénes Somos",
+      "title": "Un Ecosistema Estructurado de Impacto Educativo",
+      "body": "Santos Creations Educational Foundation (SCEF) es un ecosistema estructurado de impacto educativo—construido para ayudar a los sistemas educativos a mejorar, escalar y mantenerse responsables. Conectamos capítulos locales, socios, plataformas digitales y defensa mediática para entregar resultados medibles en:",
+      "outcomes": [
+        "Apoyo e infraestructura escolar",
+        "Becas y apoyo al estudiante",
+        "Preparación laboral y FP",
+        "Apoyo a educación con necesidades especiales",
+        "Educación de mujeres y niñas",
+        "Reconocimiento de calidad educativa (NESA-África)"
+      ],
+      "ctaPrograms": "Explorar Nuestros Programas",
+      "ctaChapter": "Unirse a un Capítulo",
+      "ctaDonate": "Donar Ahora"
+    },
+    "whyWeExist": {
+      "title": "Por Qué Existimos",
+      "intro": "En toda África, el aprendizaje sigue limitado por:",
+      "challenges": [
+        "Entornos escolares inseguros o mal equipados",
+        "Acceso deficiente a formación en habilidades y laboratorios de FP",
+        "Brechas en la inclusión para estudiantes con discapacidades",
+        "Restricciones de financiación y baja responsabilidad",
+        "Vías limitadas del aprendizaje al trabajo decente"
+      ],
+      "solution": "SCEF existe para cambiar eso",
+      "solutionDesc": "—construyendo un modelo de entrega respaldado por gobernanza y impulsado por capítulos que hace que la transformación educativa sea medible, inclusiva y escalable."
+    },
+    "objectives": {
+      "title": "Nuestros 6 Objetivos Principales",
+      "items": [
+        "Establecer gobernanza en capas para la entrega educativa.",
+        "Desplegar plataformas digitales para acceso y certificación.",
+        "Desarrollar medios para la difusión del conocimiento.",
+        "Incorporar y monitorear capítulos locales para el cumplimiento.",
+        "Asegurar financiación y asociaciones con responsabilidad.",
+        "Alinear operaciones con los ODS de la ONU y la Agenda 2063 de la UA para la escalabilidad."
+      ],
+      "ctaGovernance": "Visitar Centro de Gobernanza",
+      "ctaDivisions": "Ver Nuestras Divisiones"
+    },
+    "faqs": {
+      "title": "Preguntas Frecuentes",
+      "items": [
+        {
+          "q": "¿Qué hace SCEF de manera diferente?",
+          "a": "Gobernanza + capítulos + plataformas digitales + defensa mediática—integrados en un sistema responsable. No solo financiamos proyectos; construimos ecosistemas educativos sostenibles con resultados medibles."
+        },
+        {
+          "q": "¿Puedo apoyar la FP o educación con necesidades especiales directamente?",
+          "a": "Sí. Elige un programa y dona/asóciate a una pista específica (apoyo a laboratorio de FP o apoyo de aprendizaje inclusivo). El 100% de los fondos designados va a tu iniciativa elegida con informes transparentes."
+        },
+        {
+          "q": "¿Trabajan en todos los países?",
+          "a": "Sí—a través de capítulos locales estructurados y compromiso con la diáspora. Operamos en más de 54 países africanos y comunidades de la diáspora, cada uno con liderazgo local alineado con los estándares de gobernanza de SCEF."
+        },
+        {
+          "q": "¿Cómo rastrean el impacto los socios?",
+          "a": "A través de informes detallados, actualizaciones digitales a través de nuestro Panel Digital y paneles de programas. Los socios de RSC reciben declaraciones de impacto trimestrales e informes anuales auditados."
+        }
+      ]
+    },
+    "final": {
+      "title": "Sé parte de la transformación educativa de África.",
+      "ctaJoin": "Unirse",
+      "ctaDonate": "Donar",
+      "ctaPartner": "Asociarse",
+      "ctaMedia": "Ver SCEF Media"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "Estructura Operativa",
+      "title": "Cómo Trabaja SCEF",
+      "subtitle": "SCEF está estructurado en seis divisiones para entregar gobernanza, programas, medios, capítulos, cumplimiento y asociaciones a escala."
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "Gobernanza de Junta y Oficina Ejecutiva",
+        "lead": "Secretario de Organización (Antecedentes legales + función de RRP)",
+        "mandate": "Coordinación de junta, documentación de gobernanza, apoyo a oficina ejecutiva, comunicaciones institucionales y continuidad de gobernanza."
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "División de Operaciones Estratégicas y Cumplimiento Empresarial",
+        "lead": "Director de Operaciones y Cumplimiento",
+        "mandate": "Admin y RRHH, supervisión de operaciones financieras, gestión de eventos, coordinación de formación interna/externa, sistemas de cumplimiento, informes operativos."
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "División de Tecnología y Servicios Digitales",
+        "lead": "Director de Tecnología e Innovación Digital",
+        "mandate": "Sistemas web/app, bases de datos, seguridad, paneles, sistemas multilingües, rendimiento de plataforma y entrega de transformación digital."
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "División de Desarrollo Empresarial de Medios en Línea",
+        "lead": "Director de Desarrollo Empresarial de Medios",
+        "mandate": "Comunicaciones de recaudación de fondos, pipelines de patrocinio, crecimiento digital, campañas, soporte de conversión de asociaciones, activos de compromiso de donantes."
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "División Santos Media",
+        "lead": "Director de Santos Media",
+        "mandate": "NESA África TV, It's In Me Radio, webinars/podcasts, programa de turismo educativo, operaciones de contenido, estándares editoriales, distribución de medios."
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "División de Servicios de Capítulos Locales",
+        "lead": "Director de Servicios y Soporte de Capítulos",
+        "mandate": "Incorporación, monitoreo, soporte de cumplimiento, sistemas de informes, gobernanza de capítulos locales y activación escalable de capítulos."
+      }
+    },
+    "ctaJoinChapter": "Unirse a un Capítulo Local"
+  },
+  "donate": {
+    "hero": {
+      "badge": "Apoya la Educación",
+      "title": "Dona para Transformar la Educación",
+      "subtitle": "Tu contribución financia directamente becas, renovaciones escolares, acceso a aprendizaje digital y programas que cambian vidas en toda África."
+    },
+    "cta": {
+      "donate": "Donar Ahora",
+      "partner": "Asociación RSC",
+      "contact": "Contáctanos"
+    }
+  },
+  "membership": {
+    "hero": {
+      "badge": "Únete a SCEF",
+      "title": "Conviértete en Miembro",
+      "subtitle": "Únete a una comunidad panafricana de agentes de cambio educativo. Como miembro de SCEF, obtienes acceso a programas, capítulos, certificaciones y oportunidades para dar forma al futuro educativo de África."
+    },
+    "cta": {
+      "join": "Unirse Ahora",
+      "ambassador": "Convertirse en Embajador",
+      "institutional": "Membresía Institucional"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Contáctanos",
+      "title": "Ponte en Contacto",
+      "subtitle": "¿Tienes preguntas sobre SCEF, nuestros programas o cómo participar? Nos encantaría saber de ti."
+    },
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  }
+}

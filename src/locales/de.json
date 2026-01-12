@@ -1,0 +1,367 @@
+{
+  "nav": {
+    "utility": {
+      "bot": "Kuratorium (BOT)",
+      "boa": "Beirat (BOA)",
+      "bod": "Vorstand (BOD)",
+      "lcps": "Präsidenten der Ortsverbände (LCPs)",
+      "management": "Managementteam"
+    },
+    "top": {
+      "about": "Über SCEF",
+      "work": "Unsere Arbeit (Programme)",
+      "chapters": "Ortsverbände",
+      "getInvolved": "Mitmachen",
+      "media": "SCEF Medien",
+      "search": "Suche",
+      "donate": "Spenden",
+      "signin": "Anmelden",
+      "signup": "Registrieren",
+      "dashboard": "Dashboard"
+    },
+    "dropdown": {
+      "about": {
+        "overview": "Überblick",
+        "history": "Unsere Geschichte",
+        "vision": "Vision 2035",
+        "sustainability": "Nachhaltigkeit, SDGs & Agenda 2063",
+        "governance": "Governance",
+        "divisions": "Unsere Abteilungen"
+      },
+      "work": {
+        "nesa": "New Education Standard Award Afrika (NESA Afrika)",
+        "eduaid": "Education Aid Afrika (EduAid Afrika)",
+        "rmsa": "Rebuild My School Afrika (RMSA)",
+        "eoa": "Education Online Afrika (EOA) — Lernen & Zertifizierung",
+        "awpc": "Africa Workplace Productivity Certification (AWPC)",
+        "womenGirls": "Frauen- und Mädchenbildung",
+        "specialNeeds": "Förderung bei besonderen Bedürfnissen",
+        "elibrary": "eLibrary Nigeria",
+        "hub": "Alle Programme"
+      },
+      "chapters": {
+        "browse": "Ortsverbände durchsuchen",
+        "join": "Einem Ortsverband beitreten",
+        "create": "Ortsverband gründen",
+        "upgrade": "Ortsverband aufwerten",
+        "leadership": "Als Ortsverbandspräsident bewerben (LCP)"
+      },
+      "getInvolved": {
+        "member": "Mitglied werden",
+        "ambassador": "Botschafter werden",
+        "volunteer": "Freiwilligenarbeit",
+        "scholarship": "Stipendium beantragen",
+        "csr": "Partnerschaft / CSR",
+        "donate": "Spenden"
+      },
+      "media": {
+        "hub": "Medienzentrum",
+        "nesaTv": "NESA Afrika TV",
+        "nesaAwardsTv": "NESA Awards TV",
+        "platinumShow": "Platinum Recognition Show",
+        "africaIcon": "Africa Icon Blue Garnet Awards",
+        "goldCertificate": "Gold Certificate Awards",
+        "blueGarnetGala": "Blue Garnet Gala",
+        "radio": "It's In Me Radio",
+        "webinars": "EduAid Webinare & Podcast",
+        "tourism": "Bildungstourismus-Show",
+        "volunteer": "Medienfreiwilliger werden",
+        "mediaCms": "Medien-CMS",
+        "mediaLibrary": "Medienbibliothek-Uploads",
+        "mediaSeries": "Serien & Playlisten",
+        "mediaSchedule": "Zeitplan & Veröffentlichung",
+        "awardsScheduleAdmin": "NESA Awards TV Zeitplan"
+      }
+    },
+    "language": {
+      "label": "Sprache",
+      "cta": "Sprache ändern"
+    }
+  },
+  "cta": {
+    "joinMember": "Als Mitglied beitreten",
+    "donateNow": "Jetzt spenden",
+    "becomeAmbassador": "Botschafter werden",
+    "joinChapter": "Ortsverband beitreten",
+    "partnerCsr": "Partnerschaft / CSR",
+    "watchMedia": "SCEF Medien ansehen",
+    "watchLive": "Live ansehen",
+    "watchReplay": "Wiederholung ansehen",
+    "viewSchedule": "Vollständigen Zeitplan ansehen",
+    "uploadMedia": "Medien hochladen",
+    "saveDraft": "Entwurf speichern",
+    "publish": "Veröffentlichen",
+    "schedule": "Planen"
+  },
+  "labels": {
+    "countdown": "Countdown",
+    "featured": "Empfohlen",
+    "latest": "Neueste",
+    "language": "Sprache",
+    "region": "Region",
+    "status": "Status",
+    "priority": "Priorität",
+    "video": "Video",
+    "audio": "Audio",
+    "announcement": "Ankündigung",
+    "flyer": "Flyer",
+    "watchVideo": "Video ansehen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "goToSlide": "Zur Folie gehen"
+  },
+  "footer": {
+    "organization": "Santos Creations Educational Foundation",
+    "location": "Lagos, Nigeria",
+    "copyright": "Alle Rechte vorbehalten.",
+    "columns": {
+      "contact": "Kontakt",
+      "programs": "Schnelllinks",
+      "media": "Unsere Plattformen",
+      "getInvolved": "Mitmachen"
+    },
+    "social": {
+      "label": "Verbinden Sie sich mit uns"
+    },
+    "legal": {
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "accessibility": "Barrierefreiheit"
+    },
+    "mission": "Die Zukunft der Bildung in Afrika durch Advocacy, Finanzierung und Zertifizierung von Bildungsexzellenz auf dem gesamten Kontinent gestalten."
+  },
+  "home": {
+    "hero": {
+      "title": "Bildung für alle in Afrika — unterstützt von Mitgliedern, Ortsverbänden und Partnern",
+      "subtitle": "SCEF ist eine panafrikanische mitgliedergetriebene Stiftung, die Bildung durch Stipendien, Schulerneuerung, vertrauenswürdige Zertifizierungen und Medienadvokatur fördert — mit Ortsverbänden, Diaspora und CSR-Partnern.",
+      "ctaPrimary": "Mitglied werden",
+      "ctaDonate": "Jetzt spenden",
+      "ctaAmbassador": "Botschafter werden",
+      "ctaJoinChapter": "Ortsverband beitreten"
+    },
+    "impact": {
+      "title": "Wirkungsübersicht",
+      "metrics": {
+        "scholarships": "Unterstützte Stipendien",
+        "schools": "Erneuerte Schulen (RMSA)",
+        "womenGirls": "Erreichte Frauen und Mädchen",
+        "specialNeeds": "Unterstützte besondere Bedürfnisse",
+        "chapters": "Aktive Ortsverbände",
+        "partners": "Partner und Spender"
+      }
+    },
+    "programs": {
+      "title": "Unsere Programme",
+      "ctaAll": "Alle Programme erkunden"
+    },
+    "final": {
+      "title": "Werden Sie Teil der Bildungstransformation in Afrika",
+      "ctaJoin": "Mitglied werden",
+      "ctaDonate": "Spenden",
+      "ctaPartner": "Partnerschaft (CSR)"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Über Santos Creations Educational Foundation (SCEF)",
+      "subtitle": "SCEF ist eine panafrikanische mitgliedergetriebene Bildungsstiftung, die die Bildungsbereitstellung durch Governance-Systeme, digitalen Zugang und Zertifizierung, mediale Wissensvermittlung, konforme Ortsverbände, verantwortungsvolle Finanzierungspartnerschaften und skalierbaren Impact stärkt, ausgerichtet an den UN-SDGs und der AU Agenda 2063.",
+      "tagline": "Einen kontinuierlich wachsenden Bildungsstandard in Afrika aufbauen.",
+      "description": "SCEF ist eine panafrikanische mitgliedergetriebene Bildungsstiftung, die Bildung für alle durch Governance, Ortsverbände, digitales Lernen, berufliche Arbeitsfähigkeit, inklusive Bildung und transparente Partnerschaften fördert.",
+      "regionBadge": "Regionales Afrika • Diaspora Afrika",
+      "trustLine": "Gegründet 1997 • Registriert 2010 • Ausgerichtet an SDG 4 + AU Agenda 2063 • HQ-geführte Governance + ortsverbandsgetriebene Umsetzung",
+      "ctaJoin": "SCEF beitreten",
+      "ctaDonate": "Spenden",
+      "ctaPartner": "Mit uns partnern",
+      "ctaAmbassador": "Botschafter werden",
+      "ctaJoinChapter": "Ortsverband beitreten",
+      "ctaCsr": "Partnerschaft / CSR",
+      "ctaMedia": "SCEF Medien ansehen"
+    },
+    "quickNav": {
+      "whoWeAre": "Wer wir sind",
+      "whyWeExist": "Warum wir existieren",
+      "whatWeDo": "Was wir tun",
+      "tvetInclusion": "Berufsbildung & Inklusion",
+      "objectives": "Ziele",
+      "howWeWork": "Wie wir arbeiten",
+      "impact": "Wirkung",
+      "sustainability": "Nachhaltigkeit",
+      "getInvolved": "Mitmachen",
+      "faqs": "FAQ"
+    },
+    "missionSnapshot": {
+      "standards": {
+        "title": "Standards & Anerkennung",
+        "subtitle": "NESA-Afrika",
+        "point1": "Anerkennungspreise für Pädagogen",
+        "point2": "Qualitäts-Benchmarking-Programme"
+      },
+      "scholarships": {
+        "title": "Stipendien & Finanzierung",
+        "subtitle": "EduAid-Afrika",
+        "point1": "Lernenden-Förderungspfade",
+        "point2": "CSR-Partnerschaftsprogramme"
+      },
+      "inclusion": {
+        "title": "Inklusion & Zugang",
+        "subtitle": "Frauen & Mädchen + Besondere Bedürfnisse",
+        "point1": "Unterstützung für assistives Lernen",
+        "point2": "Advocacy für Mädchenbildung"
+      }
+    },
+    "who": {
+      "badge": "Wer wir sind",
+      "title": "Ein strukturiertes Bildungs-Impact-Ökosystem",
+      "body": "Santos Creations Educational Foundation (SCEF) ist ein strukturiertes Bildungs-Impact-Ökosystem—aufgebaut, um Bildungssystemen zu helfen, sich zu verbessern, zu skalieren und verantwortlich zu bleiben. Wir verbinden Ortsverbände, Partner, digitale Plattformen und Medienadvokatur, um messbare Ergebnisse zu liefern in:",
+      "outcomes": [
+        "Schulunterstützung & Infrastruktur",
+        "Stipendien & Lernenden-Unterstützung",
+        "Berufsbildung und Arbeitsfähigkeit",
+        "Unterstützung bei besonderen Bedürfnissen",
+        "Frauen- und Mädchenbildung",
+        "Anerkennung von Bildungsqualität (NESA-Afrika)"
+      ],
+      "ctaPrograms": "Unsere Programme erkunden",
+      "ctaChapter": "Ortsverband beitreten",
+      "ctaDonate": "Jetzt spenden"
+    },
+    "whyWeExist": {
+      "title": "Warum wir existieren",
+      "intro": "In ganz Afrika ist Lernen immer noch begrenzt durch:",
+      "challenges": [
+        "Unsichere oder schlecht ausgestattete Schulumgebungen",
+        "Schlechter Zugang zu Berufsausbildung und Berufsbildungslaboren",
+        "Lücken in der Inklusion für Lernende mit Behinderungen",
+        "Finanzierungsbeschränkungen und geringe Verantwortlichkeit",
+        "Begrenzte Wege vom Lernen zu guter Arbeit"
+      ],
+      "solution": "SCEF existiert, um das zu ändern",
+      "solutionDesc": "—durch den Aufbau eines governance-gestützten, ortsverbandsgetriebenen Umsetzungsmodells, das Bildungstransformation messbar, inklusiv und skalierbar macht."
+    },
+    "objectives": {
+      "title": "Unsere 6 Kernziele",
+      "items": [
+        "Geschichtete Governance für Bildungsbereitstellung etablieren.",
+        "Digitale Plattformen für Zugang und Zertifizierung bereitstellen.",
+        "Medien für Wissensvermittlung entwickeln.",
+        "Ortsverbände für Compliance einbinden und überwachen.",
+        "Finanzierung und Partnerschaften mit Verantwortlichkeit sichern.",
+        "Operationen an UN-SDGs und AU Agenda 2063 für Skalierbarkeit ausrichten."
+      ],
+      "ctaGovernance": "Governance-Hub besuchen",
+      "ctaDivisions": "Unsere Abteilungen ansehen"
+    },
+    "faqs": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "q": "Was macht SCEF anders?",
+          "a": "Governance + Ortsverbände + digitale Plattformen + Medienadvokatur—integriert in ein verantwortliches System. Wir finanzieren nicht nur Projekte; wir bauen nachhaltige Bildungsökosysteme mit messbaren Ergebnissen auf."
+        },
+        {
+          "q": "Kann ich Berufsbildung oder Bildung bei besonderen Bedürfnissen direkt unterstützen?",
+          "a": "Ja. Wählen Sie ein Programm und spenden/partnern Sie für einen spezifischen Track (Berufsbildungslabor-Unterstützung oder inklusives Lernen). 100% der zugewiesenen Mittel gehen an Ihre gewählte Initiative mit transparenter Berichterstattung."
+        },
+        {
+          "q": "Arbeiten Sie länderübergreifend?",
+          "a": "Ja—durch strukturierte Ortsverbände und Diaspora-Engagement. Wir sind in über 54 afrikanischen Ländern und Diaspora-Gemeinschaften aktiv, jeweils mit lokaler Führung, die an SCEF-Governance-Standards ausgerichtet ist."
+        },
+        {
+          "q": "Wie verfolgen Partner die Wirkung?",
+          "a": "Durch detaillierte Berichte, digitale Updates über unser Digital Board und Programm-Dashboards. CSR-Partner erhalten vierteljährliche Wirkungsberichte und jährliche geprüfte Berichte."
+        }
+      ]
+    },
+    "final": {
+      "title": "Werden Sie Teil der Bildungstransformation Afrikas.",
+      "ctaJoin": "Beitreten",
+      "ctaDonate": "Spenden",
+      "ctaPartner": "Partnern",
+      "ctaMedia": "SCEF Medien ansehen"
+    }
+  },
+  "divisions": {
+    "hero": {
+      "badge": "Operative Struktur",
+      "title": "Wie SCEF arbeitet",
+      "subtitle": "SCEF ist in sechs Abteilungen strukturiert, um Governance, Programme, Medien, Ortsverbände, Compliance und Partnerschaften im großen Maßstab zu liefern."
+    },
+    "items": {
+      "bgeo": {
+        "code": "BGEO",
+        "title": "Vorstandsgovernance & Geschäftsführung",
+        "lead": "Organisationssekretär (Juristischer Hintergrund + PRO-Funktion)",
+        "mandate": "Vorstandskoordination, Governance-Dokumentation, Unterstützung der Geschäftsführung, institutionelle Kommunikation und Governance-Kontinuität."
+      },
+      "sobcd": {
+        "code": "SOBCD",
+        "title": "Abteilung Strategischer Betrieb & Geschäfts-Compliance",
+        "lead": "Direktor für Betrieb und Compliance",
+        "mandate": "Verwaltung & HR, Finanzbetriebs-Aufsicht, Veranstaltungsmanagement, interne/externe Schulungskoordination, Compliance-Systeme, operative Berichterstattung."
+      },
+      "tdsd": {
+        "code": "TDSD",
+        "title": "Abteilung Technologie & Digitale Dienste",
+        "lead": "Direktor für Technologie und digitale Innovation",
+        "mandate": "Website/App-Systeme, Datenbanken, Sicherheit, Dashboards, mehrsprachige Systeme, Plattformleistung und digitale Transformationslieferung."
+      },
+      "ombdd": {
+        "code": "OMBDD",
+        "title": "Abteilung Online-Medien-Geschäftsentwicklung",
+        "lead": "Direktor für Medien-Geschäftsentwicklung",
+        "mandate": "Fundraising-Kommunikation, Sponsoring-Pipelines, digitales Wachstum, Kampagnen, Partnerschafts-Konversionsunterstützung, Spender-Engagement-Assets."
+      },
+      "santosMedia": {
+        "code": "Santos Media",
+        "title": "Santos Media Abteilung",
+        "lead": "Direktor von Santos Media",
+        "mandate": "NESA Afrika TV, It's In Me Radio, Webinare/Podcasts, Bildungstourismus-Show, Content-Operationen, redaktionelle Standards, Medienvertrieb."
+      },
+      "lcs": {
+        "code": "LCS",
+        "title": "Abteilung Ortsverband-Dienste",
+        "lead": "Direktor für Ortsverband-Dienste und Support",
+        "mandate": "Onboarding, Überwachung, Compliance-Support, Berichtssysteme, Ortsverband-Governance und skalierbare Ortsverband-Aktivierung."
+      }
+    },
+    "ctaJoinChapter": "Ortsverband beitreten"
+  },
+  "donate": {
+    "hero": {
+      "badge": "Bildung unterstützen",
+      "title": "Spenden Sie für Bildungstransformation",
+      "subtitle": "Ihr Beitrag finanziert direkt Stipendien, Schulerneuerungen, digitalen Lernzugang und Programme, die Leben in ganz Afrika verändern."
+    },
+    "cta": {
+      "donate": "Jetzt spenden",
+      "partner": "CSR-Partnerschaft",
+      "contact": "Kontaktieren Sie uns"
+    }
+  },
+  "membership": {
+    "hero": {
+      "badge": "SCEF beitreten",
+      "title": "Mitglied werden",
+      "subtitle": "Treten Sie einer panafrikanischen Gemeinschaft von Bildungs-Changemakern bei. Als SCEF-Mitglied erhalten Sie Zugang zu Programmen, Ortsverbänden, Zertifizierungen und Möglichkeiten, die Bildungszukunft Afrikas zu gestalten."
+    },
+    "cta": {
+      "join": "Jetzt beitreten",
+      "ambassador": "Botschafter werden",
+      "institutional": "Institutionelle Mitgliedschaft"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Kontaktieren Sie uns",
+      "title": "Kontakt aufnehmen",
+      "subtitle": "Haben Sie Fragen zu SCEF, unseren Programmen oder wie Sie sich beteiligen können? Wir freuen uns von Ihnen zu hören."
+    },
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Nachricht senden"
+    }
+  }
+}

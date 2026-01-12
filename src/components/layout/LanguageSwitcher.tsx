@@ -14,6 +14,10 @@ const languages: { code: Locale; name: string; nativeName: string }[] = [
   { code: "ar", name: "Arabic", nativeName: "العربية" },
   { code: "sw", name: "Swahili", nativeName: "Kiswahili" },
   { code: "pt", name: "Portuguese", nativeName: "Português" },
+  { code: "es", name: "Spanish", nativeName: "Español" },
+  { code: "de", name: "German", nativeName: "Deutsch" },
+  { code: "ru", name: "Russian", nativeName: "Русский" },
+  { code: "zh", name: "Chinese", nativeName: "中文" },
 ];
 
 export const LanguageSwitcher = () => {
