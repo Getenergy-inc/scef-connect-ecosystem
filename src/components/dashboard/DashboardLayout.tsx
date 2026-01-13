@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { 
   BookOpen, LogOut, Bell, Settings, Home, User, Wallet, 
   Heart, MapPin, Award, Users, LayoutDashboard, Shield,
-  Briefcase, Flag, ClipboardList, MessageSquare, BarChart3
+  Briefcase, Flag, ClipboardList, MessageSquare, BarChart3,
+  Search, CreditCard, ChevronDown, FileText
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -63,14 +65,14 @@ const roleNavItems: Record<string, NavItem[]> = {
     { icon: BarChart3, label: "Reports", href: "/dashboard/reports" },
   ],
   super_admin: [
-    { icon: LayoutDashboard, label: "Overview", href: "/dashboard" },
-    { icon: Shield, label: "System Control", href: "/dashboard/system" },
-    { icon: Users, label: "All Users", href: "/dashboard/users" },
-    { icon: MapPin, label: "All Chapters", href: "/dashboard/chapters" },
-    { icon: Briefcase, label: "All Programs", href: "/dashboard/programs" },
-    { icon: Wallet, label: "Wallet Governance", href: "/dashboard/wallets" },
-    { icon: ClipboardList, label: "Audit Logs", href: "/dashboard/audit" },
-    { icon: Settings, label: "CMS", href: "/dashboard/cms" },
+    { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
+    { icon: MapPin, label: "Local Chapters", href: "/dashboard/chapters" },
+    { icon: Briefcase, label: "Projects", href: "/dashboard/programs" },
+    { icon: Award, label: "Scholarships & Grants", href: "/dashboard/scholarships" },
+    { icon: Wallet, label: "Wallet & Transactions", href: "/dashboard/wallets" },
+    { icon: Users, label: "Users & Profiles", href: "/dashboard/users" },
+    { icon: FileText, label: "Reports", href: "/dashboard/reports" },
+    { icon: Settings, label: "Settings", href: "/dashboard/settings" },
   ],
 };
 
@@ -95,21 +97,40 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
     navigate("/");
   };
 
+  const isSuperAdmin = role === "super_admin";
+
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen bg-muted/30 flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-card border-r border-border hidden md:flex flex-col">
+      <aside className={cn(
+        "hidden md:flex flex-col border-r border-border",
+        isSuperAdmin ? "w-64 bg-[#1e3a5f]" : "w-64 bg-card"
+      )}>
         {/* Logo */}
-        <div className="p-6 border-b border-border">
+        <div className={cn(
+          "p-5 border-b",
+          isSuperAdmin ? "border-white/10" : "border-border"
+        )}>
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-earth" />
+            <div className={cn(
+              "w-10 h-10 rounded-lg flex items-center justify-center font-display font-bold text-sm",
+              isSuperAdmin ? "bg-[#c9a227] text-[#1e3a5f]" : "bg-gradient-to-br from-gold to-gold-light text-earth"
+            )}>
+              SCEF
             </div>
             <div>
-              <span className="font-display font-bold text-foreground">SCEF</span>
-              <div className={cn("text-xs px-2 py-0.5 rounded-full mt-0.5 inline-block", badge.className)}>
-                {badge.label}
-              </div>
+              <span className={cn(
+                "font-display font-bold text-sm",
+                isSuperAdmin ? "text-white" : "text-foreground"
+              )}>
+                Santos Creations
+              </span>
+              <p className={cn(
+                "text-xs",
+                isSuperAdmin ? "text-white/60" : "text-muted-foreground"
+              )}>
+                Educational Foundation
+              </p>
             </div>
           </Link>
         </div>
@@ -124,9 +145,13 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
                 to={item.href}
                 className={cn(
                   "flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
-                  isActive 
-                    ? "bg-primary text-primary-foreground" 
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  isSuperAdmin 
+                    ? isActive 
+                      ? "bg-white/20 text-white" 
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
+                    : isActive 
+                      ? "bg-primary text-primary-foreground" 
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
               >
                 <item.icon className="w-5 h-5" />
@@ -136,18 +161,47 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
           })}
         </nav>
 
+        {/* Admin Dropdown for Super Admin */}
+        {isSuperAdmin && (
+          <div className="px-4 pb-2">
+            <Link
+              to="/dashboard/admin"
+              className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-white/70 hover:bg-white/10 hover:text-white transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                <Shield className="w-5 h-5" />
+                Admin
+              </div>
+              <ChevronDown className="w-4 h-4" />
+            </Link>
+          </div>
+        )}
+
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-border space-y-1">
+        <div className={cn(
+          "p-4 border-t space-y-1",
+          isSuperAdmin ? "border-white/10" : "border-border"
+        )}>
           <Link
             to="/"
-            className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            className={cn(
+              "flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
+              isSuperAdmin 
+                ? "text-white/70 hover:bg-white/10 hover:text-white"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            )}
           >
             <Home className="w-5 h-5" />
             Back to Site
           </Link>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors"
+            className={cn(
+              "w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
+              isSuperAdmin 
+                ? "text-white/70 hover:bg-red-500/20 hover:text-red-300"
+                : "text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+            )}
           >
             <LogOut className="w-5 h-5" />
             Logout
@@ -158,21 +212,61 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Top Header */}
-        <header className="h-16 bg-card border-b border-border flex items-center justify-between px-6">
-          <h1 className="font-display text-xl font-bold text-foreground">{title}</h1>
+        <header className={cn(
+          "h-16 flex items-center justify-between px-6 border-b",
+          isSuperAdmin ? "bg-[#1e3a5f] border-white/10" : "bg-card border-border"
+        )}>
+          {/* Search Bar */}
+          <div className="flex items-center gap-4 flex-1">
+            <div className="relative max-w-md w-full">
+              <Search className={cn(
+                "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4",
+                isSuperAdmin ? "text-white/50" : "text-muted-foreground"
+              )} />
+              <Input 
+                placeholder="Search..." 
+                className={cn(
+                  "pl-9 w-full",
+                  isSuperAdmin 
+                    ? "bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40"
+                    : ""
+                )}
+              />
+            </div>
+          </div>
           
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+            {/* AGC Balance Indicator */}
+            {isSuperAdmin && (
+              <div className="hidden sm:flex items-center gap-2 bg-white/10 rounded-lg px-3 py-1.5 text-white">
+                <CreditCard className="w-4 h-4" />
+                <span className="text-sm font-semibold">1,230.000 AGC</span>
+              </div>
+            )}
+            
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className={cn(
+                isSuperAdmin ? "text-white/70 hover:text-white hover:bg-white/10" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
               <Bell className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-              <Settings className="w-5 h-5" />
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className={cn(
+                isSuperAdmin ? "text-white/70 hover:text-white hover:bg-white/10" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <User className="w-5 h-5" />
             </Button>
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-6 overflow-auto">
+        <main className="flex-1 p-6 overflow-auto bg-muted/30">
           {children}
         </main>
       </div>
