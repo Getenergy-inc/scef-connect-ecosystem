@@ -996,6 +996,409 @@
       "contact": "Wasiliana Nasi"
     }
   },
+  "ambassador": {
+    "hero": {
+      "badge": "Programu ya Mabalozi wa SCEF",
+      "title": "Kuwa Balozi wa SCEF",
+      "subtitle": "Jiunge na mtandao wetu wa kimataifa wa mabalozi wanaounda mustakabali wa elimu barani Afrika. Wakilisha SCEF katika eneo lako na usaidie kueneza dhamira yetu.",
+      "ctaApply": "Omba Sasa",
+      "ctaLearn": "Jifunze Zaidi"
+    },
+    "role": {
+      "title": "Mabalozi Wanafanya Nini?",
+      "subtitle": "Mabalozi wa SCEF ni watetezi wenye shauku ambao wanawakilisha dhamira yetu katika jamii na mitandao yao.",
+      "items": [
+        "Kuwakilisha SCEF katika matukio na mikutano katika eneo lako",
+        "Kuongeza ufahamu kuhusu masuala ya mabadiliko ya elimu",
+        "Kuunganisha SCEF na washirika na wadau wanaowezekana",
+        "Kushiriki hadithi za athari na taarifa za programu na mitandao yako",
+        "Kushiriki katika mipango ya sura za kikanda"
+      ]
+    },
+    "benefits": {
+      "title": "Faida za Balozi",
+      "subtitle": "Kujiunga na mtandao wetu wa mabalozi kunakupa fursa za kipekee za kukua na kuungana.",
+      "network": {
+        "title": "Mtandao wa Kimataifa",
+        "description": "Ungana na viongozi wa elimu na waanzilishi wa mabadiliko kote Afrika na zaidi."
+      },
+      "recognition": {
+        "title": "Utambuzi",
+        "description": "Pokea utambuzi rasmi na vyeti kwa mchango wako."
+      },
+      "events": {
+        "title": "Matukio ya Kipekee",
+        "description": "Upatikanaji wa matukio ya VIP, webinars na mikutano ya mipango ya kimkakati."
+      },
+      "development": {
+        "title": "Maendeleo ya Kibinafsi",
+        "description": "Endeleza ujuzi katika uongozi, utetezi na usimamizi wa jamii."
+      }
+    },
+    "requirements": {
+      "title": "Nani Anaweza Kuomba?",
+      "subtitle": "Tunatafuta watu wenye shauku ya elimu na maendeleo ya Afrika.",
+      "items": [
+        "Shauku ya mabadiliko ya elimu barani Afrika",
+        "Uwepo wa kazi katika elimu au maendeleo ya jamii",
+        "Ujuzi mzuri wa mawasiliano na mitandao",
+        "Kujitolea kwa saa 5-10 kwa mwezi",
+        "Hadhi ya kitaalamu au jamii katika eneo lako"
+      ]
+    },
+    "form": {
+      "title": "Omba Kuwa Balozi",
+      "subtitle": "Jaza fomu hapa chini. Timu yetu itakagua ombi lako na kujibu ndani ya siku 7 za kazi.",
+      "fullName": "Jina Kamili",
+      "email": "Barua pepe",
+      "phone": "Nambari ya Simu",
+      "country": "Nchi",
+      "countryPlaceholder": "mf., Nigeria, Kenya, Ghana",
+      "profession": "Taaluma / Jukumu",
+      "professionPlaceholder": "mf., Mwalimu, Mkurugenzi wa NGO",
+      "linkedin": "Profaili ya LinkedIn",
+      "linkedinPlaceholder": "https://linkedin.com/in/...",
+      "motivation": "Kwa nini unataka kuwa Balozi wa SCEF?",
+      "motivationPlaceholder": "Shiriki shauku yako ya elimu na jinsi utakavyochangia...",
+      "experience": "Uzoefu Husika",
+      "experiencePlaceholder": "Eleza uzoefu wako katika elimu, maendeleo ya jamii au utetezi...",
+      "submit": "Tuma Ombi",
+      "submitting": "Inatumwa...",
+      "success": "Ombi la balozi limetumwa! Tutakagua na kujibu ndani ya siku 7 za kazi."
+    },
+    "otherWays": {
+      "title": "Njia Nyingine za Kushiriki",
+      "member": {
+        "title": "Jiunge kama Mwanachama",
+        "description": "Kuwa sehemu ya jamii yetu inayokua ya watetezi wa elimu."
+      },
+      "chapter": {
+        "title": "Jiunge na Sura",
+        "description": "Ungana na wanachama wa SCEF katika nchi au eneo lako."
+      },
+      "donate": {
+        "title": "Changia",
+        "description": "Saidia programu za elimu kote Afrika."
+      }
+    }
+  },
+  "partnerWithUs": {
+    "hero": {
+      "badge": "SDG 4 • Iliyolinganishwa na Ajenda 2063 ya AU",
+      "title": "Shirikiana na SCEF",
+      "subtitle": "Jiunge na mfumo wa elimu unaokua wa Afrika. Shirikiana nasi kutoa athari inayopimika na endelevu kupitia programu zilizothibitishwa na uwajibikaji wa wazi.",
+      "ctaStart": "Anza Mazungumzo ya Ushirikiano",
+      "ctaProfile": "Tazama Profaili Yetu"
+    },
+    "why": {
+      "title": "Kwa Nini Ushirikiane na SCEF?",
+      "subtitle": "Tunatoa njia iliyopangwa na inayowajibika ya uwekezaji wa elimu na matokeo yanayopimika.",
+      "verified": {
+        "title": "Athari Iliyothibitishwa",
+        "description": "Miradi yote imethibitishwa na ufuatiliaji wa hatua, usimamizi wa malipo na uandikaji wa matokeo."
+      },
+      "esg": {
+        "title": "Ripoti za ESG/SDG",
+        "description": "Ripoti zilizo tayari kwa washirika zilizolinganishwa na mifumo ya uendelevu wa kimataifa na viwango vya utii."
+      },
+      "scale": {
+        "title": "Upeo wa Kiafrika",
+        "description": "Utoaji unaoongozwa na sura katika kanda tano za Afrika pamoja na mtandao wa diaspora."
+      }
+    },
+    "pathways": {
+      "title": "Njia za Ushirikiano",
+      "subtitle": "Chagua mfano wa ushirikiano unaofuata malengo na uwezo wa shirika lako.",
+      "corporate": {
+        "title": "Mshirika wa Kampuni",
+        "description": "Programu za CSR, ushirikishaji wa wafanyakazi na ulinganishaji wa chapa na athari ya elimu",
+        "benefits": [
+          "Usimamizi wa Fedha za CSR kwa Elimu",
+          "Ripoti za athari zilizolinganishwa na ESG/SDG",
+          "Programu za kujitolea za wafanyakazi",
+          "Kuonekana kwa chapa kwenye majukwaa ya SCEF"
+        ]
+      },
+      "institutional": {
+        "title": "Mshirika wa Taasisi",
+        "description": "Shule, vyuo vikuu na vyombo vya elimu vinavyoshirikiana juu ya viwango na programu",
+        "benefits": [
+          "Njia za utambuzi wa NESA",
+          "Msaada wa ulinganishaji wa mitaala",
+          "Fursa za kubadilishana wanafunzi",
+          "Mipango ya utafiti wa pamoja"
+        ]
+      },
+      "funding": {
+        "title": "Mshirika wa Ufadhili",
+        "description": "Wakfu, mashirika ya kimataifa na wafadhili wanaosaidia uingiliaji wa elimu unaoweza kupanuliwa",
+        "benefits": [
+          "Bomba la miradi iliyothibitishwa",
+          "Mifumo ya kufuatilia malipo",
+          "Ripoti za matokeo za robo mwaka",
+          "Kuonekana moja kwa moja kwa athari"
+        ]
+      },
+      "technical": {
+        "title": "Mshirika wa Kiufundi",
+        "description": "Watoa teknolojia na mashirika ya huduma yanayowezesha mabadiliko ya kidijitali",
+        "benefits": [
+          "Fursa za kuunganisha jukwaa",
+          "Masuluhisho ya kidijitali ya chapa ya pamoja",
+          "Ushiriki katika maabara ya uvumbuzi",
+          "Majukumu ya ushauri wa kiufundi"
+        ]
+      }
+    },
+    "csr": {
+      "title": "Usimamizi wa Fedha za CSR kwa Elimu",
+      "description": "SCEF hutoa huduma kamili za usimamizi wa CSR kwa makampuni na taasisi zinazotaka kutumia fedha za elimu kwa uwajibikaji na athari inayopimika.",
+      "benefits": [
+        "Utambuzi na uthibitisho wa miradi",
+        "Ufuatiliaji wa malipo kulingana na hatua",
+        "Ripoti za athari na matokeo za robo mwaka",
+        "Uandikaji wa ulinganishaji wa ESG/SDG",
+        "Utambuzi na chapa ya mshirika"
+      ],
+      "cta": "Chunguza Ushirikiano wa CSR"
+    },
+    "impact": {
+      "chapters": "Mtandao wa Sura",
+      "countries": "Nchi Zilizofikiwa",
+      "recognition": "Programu za Utambuzi",
+      "learners": "Wanafunzi Waliosaidlwa"
+    },
+    "form": {
+      "title": "Anza Mazungumzo",
+      "subtitle": "Tuambie kuhusu shirika lako na jinsi unavyopenda kuwa mshirika. Timu yetu ya ushirikiano itajibu ndani ya saa 48.",
+      "organizationName": "Jina la Shirika",
+      "contactName": "Jina la Mawasiliano",
+      "email": "Barua pepe",
+      "phone": "Simu",
+      "interest": "Shauku ya Ushirikiano",
+      "message": "Tuambie kuhusu malengo yako ya ushirikiano",
+      "messagePlaceholder": "Shiriki malengo ya shirika lako, jinsi unavyopenda kuwa mshirika na SCEF, na programu au maeneo yoyote maalum unayoyapendezea...",
+      "submit": "Tuma Swali la Ushirikiano",
+      "submitting": "Inatumwa...",
+      "success": "Swali la ushirikiano limetumwa! Tutawasiliana nawe ndani ya saa 48.",
+      "error": "Imeshindwa kutuma swali. Tafadhali jaribu tena."
+    }
+  },
+  "organizationalProfile": {
+    "hero": {
+      "badge": "Rasilimali za Washirika",
+      "title": "Profaili ya Shirika",
+      "subtitle": "Santos Creations Educational Foundation (SCEF) — Taasisi ya elimu ya Ki-Afrika inayoendeshwa na wanachama inayoendeleza Elimu kwa Wote.",
+      "download": "Pakua Profaili Kamili (PDF)"
+    },
+    "facts": {
+      "founded": "Ilianzishwa",
+      "registered": "Ilisajiliwa",
+      "headquarters": "Makao Makuu",
+      "alignment": "Ulinganisho"
+    },
+    "mission": {
+      "title": "Dhamira Yetu",
+      "description": "Kujenga kiwango cha elimu kinachoendelea na kukua barani Afrika kupitia mifano ya utoaji inayoungwa mkono na utawala na inayoongozwa na sura ambayo hufanya mabadiliko ya elimu yapimike, kuwa shirikishi na kupanuliwa."
+    },
+    "vision": {
+      "title": "Maono Yetu",
+      "description": "Mfumo wa elimu wa Ki-Afrika ambapo kila mwanafunzi ana upatikanaji wa elimu bora, njia za ujuzi zilizothibitishwa na mifumo ya msaada endelevu iliyolinganishwa na SDG 4 na Ajenda 2063 ya AU."
+    },
+    "programs": {
+      "title": "Programu Kuu",
+      "subtitle": "Programu zilizounganishwa zilizobuniwa kufanya kazi pamoja kwa athari kamili ya elimu.",
+      "learnMore": "Jifunze Zaidi"
+    },
+    "structure": {
+      "title": "Muundo wa Shirika",
+      "subtitle": "Idara sita za uendeshaji zinazohakikisha utoaji ulioratibiwa wa programu na utawala.",
+      "viewAll": "Tazama Idara Zote"
+    },
+    "partnership": {
+      "title": "Faida za Ushirikiano",
+      "subtitle": "SCEF hutoa njia zilizopangwa kwa mashirika kushiriki na mabadiliko ya elimu kupitia ushirikiano uliothibitishwa na unaowajibika.",
+      "benefits": [
+        "Bomba la miradi iliyothibitishwa na ufuatiliaji wa hatua",
+        "Ripoti za athari zilizolinganishwa na ESG/SDG",
+        "Huduma za Usimamizi wa Fedha za CSR kwa Elimu",
+        "Programu za utambuzi na chapa ya mshirika",
+        "Upatikanaji wa mtandao wa sura za Ki-Afrika",
+        "Uandikaji wa matokeo wa robo mwaka"
+      ],
+      "partner": {
+        "title": "Uko Tayari Kushirikiana?",
+        "subtitle": "Anza mazungumzo na timu yetu ya ushirikiano."
+      },
+      "support": {
+        "title": "Saidia Elimu",
+        "subtitle": "Fanya athari moja kwa moja kupitia programu zetu zilizothibitishwa."
+      }
+    },
+    "cta": {
+      "title": "Jiunge na Mfumo wa SCEF",
+      "subtitle": "Iwe kama mwanachama, mshirika au msaidizi — kuna njia kwako kuchangia mabadiliko ya elimu barani Afrika.",
+      "join": "Jiunge na SCEF",
+      "learn": "Jifunze Zaidi Kutuhusu"
+    }
+  },
+  "inclusionAccess": {
+    "hero": {
+      "badge": "Programu za Elimu Shirikishi za SCEF",
+      "title": "Ujumuishi & Upatikanaji",
+      "subtitle": "Kuhakikisha kila mwanafunzi ana fursa ya kufanikiwa kupitia msaada unaolengwa kwa wanawake, wasichana na wanafunzi wenye mahitaji maalum.",
+      "ctaDonate": "Changia kwa Elimu Shirikishi",
+      "ctaPartner": "Shirikiana kwa Ujumuishi"
+    },
+    "pillars": {
+      "title": "Nguzo za Programu",
+      "subtitle": "Mbinu yetu ya elimu shirikishi inashughulikia vipengele vingi vya upatikanaji na msaada.",
+      "womenGirls": {
+        "title": "Elimu ya Wanawake na Wasichana",
+        "description": "Uingiliaji unaolengwa kuondoa vikwazo na kuunda njia za wasichana na wanawake kupata elimu bora.",
+        "initiatives": [
+          "Programu za ufadhili kwa wasichana",
+          "Utetezi wa mazingira ya mafunzo salama",
+          "Mipango ya wanawake katika STEM",
+          "Mitandao ya ushauri kwa wanawake vijana"
+        ]
+      },
+      "specialNeeds": {
+        "title": "Msaada wa Elimu kwa Mahitaji Maalum",
+        "description": "Mifumo ya elimu shirikishi inayokubali wanafunzi wenye ulemavu na mahitaji ya kujifunza ya aina mbalimbali.",
+        "initiatives": [
+          "Utoaji wa teknolojia ya msaada",
+          "Mafunzo ya walimu kwa madarasa shirikishi",
+          "Nyenzo za kujifunza zinazoweza kupatikana",
+          "Ushirikiano na shule za mahitaji maalum"
+        ]
+      },
+      "visualHearing": {
+        "title": "Msaada wa Kuona na Kusikia",
+        "description": "Rasilimali maalum kwa wanafunzi wenye ulemavu wa kuona na kusikia.",
+        "initiatives": [
+          "Nyenzo za kujifunza kwa Braille",
+          "Mafunzo ya watafsiri wa lugha ya ishara",
+          "Usambazaji wa vifaa vya msaada",
+          "Maudhui ya kidijitali yanayopatikana"
+        ]
+      },
+      "learning": {
+        "title": "Utetezi wa Matatizo ya Kujifunza",
+        "description": "Msaada kwa wanafunzi wenye dyslexia, ADHD, autism na tofauti nyingine za kujifunza.",
+        "initiatives": [
+          "Programu za uchunguzi wa mapema",
+          "Msaada wa kujifunza maalum",
+          "Uhamasishaji wa wazazi na walimu",
+          "Mpango wa elimu wa kibinafsi"
+        ]
+      }
+    },
+    "impact": {
+      "girlsEnrolled": "Wasichana Waliosajiliwa",
+      "specialNeeds": "Wanafunzi wa Mahitaji Maalum",
+      "countries": "Nchi Zinazofanya Kazi",
+      "resources": "Rasilimali Zilizoundwa"
+    },
+    "approach": {
+      "title": "Mbinu Yetu",
+      "subtitle": "Programu za elimu shirikishi za SCEF zimebuniwa kushughulikia vikwazo vya kimfumo na kuunda njia endelevu kwa wanafunzi wote.",
+      "items": [
+        "Utambuzi wa wanafunzi wanaohitaji msaada katika ngazi ya jamii",
+        "Ushirikiano na taasisi na wataalam maalum",
+        "Mafunzo ya walimu na ujenzi wa uwezo",
+        "Miundombinu na nyenzo za kujifunza zinazoweza kupatikana",
+        "Utetezi wa sera za elimu shirikishi"
+      ]
+    },
+    "programs": {
+      "title": "Programu Zinazohusiana",
+      "subtitle": "Chunguza programu zetu maalum za elimu shirikishi."
+    },
+    "cta": {
+      "title": "Saidia Elimu Shirikishi",
+      "subtitle": "Mchango wako unatusaidia kufikia wanafunzi wengi zaidi wanaohitaji msaada maalum.",
+      "donate": "Changia Sasa",
+      "partner": "Kuwa Mshirika"
+    }
+  },
+  "joinOnline": {
+    "hero": {
+      "badge": "Mtandao wa Sura za Mtandaoni",
+      "title": "Jiunge na Sura ya Mtaa Mtandaoni",
+      "subtitle": "Ungana na jamii ya elimu ya nchi yako — iwe wewe ni mkazi, uko diaspora au rafiki wa nchi.",
+      "note": "Sura za mtandaoni ni sehemu ya kuingia katika mtandao wa SCEF. Zinapokua, zinaweza kugeuka kuwa sura za mseto au za kimwili."
+    },
+    "steps": {
+      "selectCountry": "Chagua Nchi",
+      "chooseRole": "Chagua Jukumu Lako",
+      "yourLocation": "Mahali Ulipo"
+    },
+    "step1": {
+      "title": "Chagua Nchi Yako",
+      "subtitle": "Chagua nchi ya Kiafrika ambayo unataka kujiunga na sura yake. Kila nchi ina jamii yake ya sura ya mtandaoni.",
+      "searchPlaceholder": "Tafuta nchi...",
+      "noResults": "Hakuna nchi zilizopatikana zinazolingana"
+    },
+    "step2": {
+      "title": "Utashiriki Vipi?",
+      "subtitle": "Chagua uhusiano wako na {country}. Hii inaamua jukumu lako na faida katika sura.",
+      "changeCountry": "← Badilisha nchi",
+      "benefits": "Faida"
+    },
+    "step3": {
+      "title": "Unaishi Wapi?",
+      "subtitle": "Tuambie uliko sasa ili tuweze kukuunganisha na wanachama wengine wa diaspora katika eneo lako.",
+      "otherLocation": "Mahali Pengine",
+      "enterCountry": "Ingiza nchi yako...",
+      "back": "← Rudi"
+    },
+    "types": {
+      "resident": {
+        "title": "Mkazi",
+        "description": "Sasa hivi ninaishi katika nchi hii ya Kiafrika",
+        "benefits": [
+          "Haki kamili za kupiga kura katika uchaguzi wa sura",
+          "Unastahiki majukumu ya uongozi wa mtaa",
+          "Upatikanaji wa matukio na programu za ana kwa ana",
+          "Ushiriki wa moja kwa moja katika mipango ya jamii"
+        ]
+      },
+      "diaspora": {
+        "title": "Diaspora",
+        "description": "Asili yangu ni nchi hii lakini ninaishi nje ya nchi",
+        "benefits": [
+          "Ungana na sura ya nchi yako ya asili",
+          "Saidia miradi kutoka nje ya nchi",
+          "Unganisha rasilimali na fursa",
+          "Shiriki mikutano ya sura ya mtandaoni"
+        ]
+      },
+      "friend": {
+        "title": "Rafiki wa Nchi",
+        "description": "Nina uhusiano au shauku ya kusaidia nchi hii",
+        "benefits": [
+          "Saidia elimu katika nchi unayoipenda",
+          "Shiriki katika mipango ya kuchangisha fedha",
+          "Shiriki matukio ya mtandaoni na webinars",
+          "Pokea taarifa kuhusu shughuli za sura"
+        ]
+      }
+    },
+    "cta": {
+      "continue": "Endelea",
+      "proceedMembership": "Endelea na Uanachama"
+    },
+    "info": {
+      "title": "Kuhusu Sura za Mtandaoni",
+      "items": [
+        "Jamii za mtandaoni zilizopangwa kwa nchi",
+        "Wazi kwa wakazi, diaspora na marafiki",
+        "Mikutano na matukio ya mtandaoni ya kila mwezi",
+        "Njia ya sura za mseto/kimwili"
+      ]
+    }
+  },
   "contact": {
     "hero": {
       "badge": "Wasiliana Nasi",
