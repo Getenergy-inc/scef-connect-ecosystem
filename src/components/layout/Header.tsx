@@ -21,7 +21,6 @@ import { useAuthState } from "@/hooks/useAuthState";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import scefLogo from "@/assets/scef-logo.jpg";
-import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 
 const externalPlatforms = [
   { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true, icon: Library },
@@ -210,7 +209,7 @@ export const Header = () => {
                 asChild
               >
                 <Link to="/wallet">
-                  <img src={gfaWalletLogo} alt="GFA Wallet" className="w-5 h-5 rounded mr-1" />
+                  <img src={scefLogo} alt="GFA Wallet" className="w-5 h-5 rounded mr-1 object-contain bg-white p-0.5" />
                   Wallet
                 </Link>
               </Button>

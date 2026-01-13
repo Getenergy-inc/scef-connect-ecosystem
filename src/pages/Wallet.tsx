@@ -14,7 +14,7 @@ import {
 import { WalletHeader } from "@/components/wallet/WalletHeader";
 import { FundWalletModal } from "@/components/wallet/FundWalletModal";
 import { WithdrawModal } from "@/components/wallet/WithdrawModal";
-import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
+import scefLogo from "@/assets/scef-logo.jpg";
 
 const Wallet = () => {
   const navigate = useNavigate();
@@ -91,7 +91,7 @@ const Wallet = () => {
                 {/* USD Balance */}
                 <Card className="bg-gradient-to-br from-earth to-earth/90 text-cream overflow-hidden relative">
                   <div className="absolute top-3 right-3 opacity-20">
-                    <img src={gfaWalletLogo} alt="" className="w-16 h-16 rounded-lg" />
+                    <img src={scefLogo} alt="" className="w-16 h-16 rounded-lg object-contain bg-white/10 p-1" />
                   </div>
                   <CardHeader>
                     <CardDescription className="text-cream/70">Available Balance</CardDescription>
@@ -188,7 +188,7 @@ const Wallet = () => {
               {/* Info Section */}
               <div className="mt-8 p-6 rounded-xl bg-muted/50 border border-border">
                 <div className="flex items-start gap-4">
-                  <img src={gfaWalletLogo} alt="GFA Wallet" className="w-12 h-12 rounded-lg" />
+                  <img src={scefLogo} alt="GFA Wallet" className="w-12 h-12 rounded-lg object-contain bg-white p-1" />
                   <div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-3">
                       About GFA Wallet & AGC
