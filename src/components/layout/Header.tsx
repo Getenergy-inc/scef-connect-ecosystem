@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
-  Bell, MessageSquare, Settings
+  Bell, MessageSquare, Settings, Activity
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -263,6 +263,12 @@ export const Header = () => {
                     <Link to="/dashboard/profile" className="cursor-pointer">
                       <User className="w-4 h-4 mr-2" />
                       Profile
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/dashboard/activity" className="cursor-pointer">
+                      <Activity className="w-4 h-4 mr-2" />
+                      My Activity
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
