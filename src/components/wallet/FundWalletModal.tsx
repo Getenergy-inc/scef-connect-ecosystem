@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CreditCard, Building2, Smartphone, Globe, ExternalLink, Shield } from "lucide-react";
 import { toast } from "sonner";
-import scefLogo from "@/assets/scef-logo.jpg";
+import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 interface FundWalletModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -88,7 +88,7 @@ export const FundWalletModal = ({ open, onOpenChange }: FundWalletModalProps) =>
         <DialogHeader className="text-center">
           <div className="flex justify-center mb-4">
             <img
-              src={scefLogo}
+              src={gfaWalletLogo}
               alt="GFA Wallet"
               className="w-20 h-20 rounded-xl object-contain bg-white p-2 shadow-lg"
             />
@@ -171,7 +171,7 @@ export const FundWalletModal = ({ open, onOpenChange }: FundWalletModalProps) =>
           {/* Powered by GFA Wallet */}
           <div className="flex items-center justify-center gap-2 pt-2">
             <span className="text-xs text-muted-foreground">Powered by</span>
-            <img src={scefLogo} alt="GFA" className="w-5 h-5 rounded object-contain" />
+            <img src={gfaWalletLogo} alt="GFA" className="w-5 h-5 rounded object-contain" />
             <span className="text-xs font-semibold text-foreground">GFA Wallet</span>
           </div>
         </div>
