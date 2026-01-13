@@ -9,7 +9,7 @@ import {
   CheckCircle, Wallet, User, Users, BookOpen, 
   Heart, Award, ArrowRight, Sparkles
 } from "lucide-react";
-import scefLogo from "@/assets/scef-logo.jpg";
+import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -153,12 +153,12 @@ const Welcome = () => {
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <img 
-                  src={scefLogo} 
-                  alt="GFA Wallet" 
-                  className="w-24 h-24 rounded-xl object-contain bg-white p-2"
+                  src={gfaWalletLogo} 
+                  alt="GFA Wzip" 
+                  className="w-24 h-24 rounded-xl object-contain"
                 />
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="font-display text-xl font-bold mb-2">Your GFA Wallet is Ready</h3>
+                  <h3 className="font-display text-xl font-bold mb-2">Your GFA Wzip is Ready</h3>
                   <p className="text-white/70 mb-4">
                     All your donations, dues, and transactions flow through your secure GFA Wallet. 
                     Fund it to get started with memberships, certifications, and more.

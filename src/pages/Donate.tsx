@@ -12,7 +12,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 import { Heart, School, GraduationCap, Users, Shield, ExternalLink, Wallet } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import scefLogo from "@/assets/scef-logo.jpg";
+import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 
 const donationAmounts = [25, 50, 100, 250, 500, 1000];
 
@@ -134,13 +134,13 @@ const Donate = () => {
           {/* Hero */}
           <section className="bg-gradient-to-br from-earth to-earth/90 text-cream py-20">
             <div className="container mx-auto px-4 text-center">
-              <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-6 shadow-xl bg-white p-2">
-                <img src={scefLogo} alt="GFA Wallet" className="w-full h-full object-contain" />
+              <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-6 shadow-xl">
+                <img src={gfaWalletLogo} alt="GFA Wallet" className="w-full h-full object-contain" />
               </div>
               <h1 className="font-display text-4xl md:text-5xl font-bold mb-2">
                 {t("donate.hero.title") || "Fund Education. Change Lives."}
               </h1>
-              <p className="text-lg text-gold font-semibold mb-2">Powered by GFA Wallet • GetFinance Africa</p>
+              <p className="text-lg text-gold font-semibold mb-2">Powered by GFA Wzip • GetFinance Africa</p>
               <p className="text-cream/80 max-w-2xl mx-auto">
                 {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
               </p>
@@ -181,8 +181,8 @@ const Donate = () => {
                   {/* Use Wallet CTA */}
                   <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
                     <div className="flex items-center gap-3 mb-3">
-                      <img src={scefLogo} alt="GFA" className="w-8 h-8 rounded-lg object-contain bg-white p-0.5" />
-                      <span className="font-semibold text-foreground">Have a GFA Wallet?</span>
+                      <img src={gfaWalletLogo} alt="GFA" className="w-8 h-8 rounded-lg object-contain" />
+                      <span className="font-semibold text-foreground">Have a GFA Wzip?</span>
                     </div>
                     <p className="text-sm text-muted-foreground mb-3">Donate directly from your wallet balance for faster processing.</p>
                     <Button variant="outline" size="sm" className="w-full" onClick={() => navigate("/wallet")}>
@@ -284,8 +284,8 @@ const Donate = () => {
                       {/* Payment Provider Buttons */}
                       <div className="space-y-4 pt-4 border-t border-border">
                         <div className="flex items-center gap-2 justify-center">
-                          <img src={scefLogo} alt="GFA" className="w-6 h-6 rounded object-contain bg-white p-0.5" />
-                          <span className="text-sm font-semibold text-foreground">Pay via GFA Wallet</span>
+                          <img src={gfaWalletLogo} alt="GFA" className="w-6 h-6 rounded object-contain" />
+                          <span className="text-sm font-semibold text-foreground">Pay via GFA Wzip</span>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                           {paymentProviders.map((provider) => (
