@@ -176,7 +176,7 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
       </div>
 
       {/* Admin Actions Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4">
         {[
           { icon: Shield, label: "System", href: "/dashboard/system", color: "text-red-500" },
           { icon: Users, label: "Users", href: "/dashboard/users", color: "text-primary" },
@@ -185,7 +185,8 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
           { icon: Wallet, label: "Wallets", href: "/dashboard/wallets", color: "text-gold" },
           { icon: Award, label: "Roles", href: "/dashboard/roles", color: "text-purple-500" },
           { icon: BookOpen, label: "eLibrary", href: "/dashboard/elibrary", color: "text-[#0000CD]" },
-          { icon: ClipboardList, label: "Audit", href: "/dashboard/audit", color: "text-blue-500" },
+          { icon: ClipboardList, label: "Digital Board", href: "/admin/digital-board", color: "text-blue-500" },
+          { icon: Briefcase, label: "Vacancies", href: "/admin/vacancies", color: "text-forest" },
           { icon: Settings, label: "CMS", href: "/dashboard/cms", color: "text-muted-foreground" },
         ].map((action) => (
           <Button 

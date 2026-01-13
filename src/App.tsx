@@ -42,6 +42,7 @@ import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
 import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
 import NotFound from "./pages/NotFound";
 import Vacancies from "./pages/Vacancies";
+import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
 
 const queryClient = new QueryClient();
 
@@ -75,6 +76,7 @@ const App = () => (
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
               <Route path="/admin/digital-board" element={<DigitalBoardAdminPage />} />
+              <Route path="/admin/vacancies" element={<VacanciesAdminPage />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
