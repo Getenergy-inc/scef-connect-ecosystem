@@ -1549,5 +1549,31 @@
     },
     "copyright": "© {year} Santos Creations Educational Foundation. Haki zote zimehifadhiwa.",
     "mission": "Kusimamia Mustakabali wa Elimu wa Afrika kupitia utetezi, ufadhili na uthibitisho wa ubora wa elimu kote barani."
+  },
+  "messages": {
+    "title": "Ujumbe",
+    "subtitle": "Wasiliana na timu na matawi yako",
+    "decisions": "Maamuzi",
+    "searchRooms": "Tafuta vyumba...",
+    "noRoomsFound": "Hakuna vyumba vilivyopatikana",
+    "selectRoom": "Chagua chumba ili kuanza kutuma ujumbe",
+    "typeMessage": "Andika ujumbe...",
+    "startMeeting": "Anza Mkutano",
+    "members": "Wanachama",
+    "settings": "Mipangilio"
+  },
+  "decisions": {
+    "title": "Maamuzi na Upigaji Kura",
+    "subtitle": "Tazama na shiriki katika maamuzi ya timu",
+    "create": "Uamuzi Mpya",
+    "open": "Wazi",
+    "closed": "Imefungwa",
+    "votes": "kura"
+  },
+  "common": {
+    "all": "Zote",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "creating": "Inaunda..."
   }
 }
