@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,14 +9,47 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLocale } from "@/contexts/LocaleContext";
-import { Heart, School, GraduationCap, Users, BookOpen, Globe, ExternalLink } from "lucide-react";
+import { Heart, School, GraduationCap, Users, Shield, ExternalLink, Wallet } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 
 const donationAmounts = [25, 50, 100, 250, 500, 1000];
 
+const paymentProviders = [
+  {
+    id: "paystack",
+    name: "Paystack",
+    description: "Card, Bank, USSD",
+    color: "bg-[#00C3F7]",
+    url: "https://paystack.com/pay/scef-donation",
+  },
+  {
+    id: "flutterwave",
+    name: "Flutterwave",
+    description: "Card, Mobile Money",
+    color: "bg-[#F5A623]",
+    url: "https://flutterwave.com/pay/scef",
+  },
+  {
+    id: "bancable",
+    name: "Bancable",
+    description: "Direct Bank",
+    color: "bg-[#1A237E]",
+    url: "#",
+  },
+  {
+    id: "transcertpay",
+    name: "TranscertPay",
+    description: "International",
+    color: "bg-[#2E7D32]",
+    url: "#",
+  },
+];
+
 const Donate = () => {
   const { t } = useLocale();
+  const navigate = useNavigate();
   const [selectedAmount, setSelectedAmount] = useState<number | null>(100);
   const [customAmount, setCustomAmount] = useState("");
   const [selectedCause, setSelectedCause] = useState("general");
@@ -31,6 +65,23 @@ const Donate = () => {
     { id: "schools", name: t("donate.causes.schools") || "Rebuild Schools", icon: School, description: t("donate.causes.schoolsDesc") || "Infrastructure development" },
     { id: "chapters", name: t("donate.causes.chapters") || "Local Chapters", icon: Users, description: t("donate.causes.chaptersDesc") || "Community programs" },
   ];
+
+  const handlePaymentProvider = (provider: typeof paymentProviders[0]) => {
+    const amount = selectedAmount || parseFloat(customAmount);
+    if (!amount || amount <= 0) {
+      toast.error("Please select a donation amount");
+      return;
+    }
+
+    if (provider.url === "#") {
+      toast.info(`${provider.name} integration coming soon. Please try another payment method.`);
+      return;
+    }
+
+    const paymentUrl = `${provider.url}?amount=${amount}`;
+    window.open(paymentUrl, "_blank");
+    toast.success(`Redirecting to ${provider.name}...`);
+  };
 
   const handleDonate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +108,6 @@ const Donate = () => {
 
       toast.success(t("donate.success") || "Thank you for your donation! You will receive a confirmation email shortly.");
       
-      // Reset form
       setSelectedAmount(100);
       setCustomAmount("");
       setDonorName("");
@@ -84,13 +134,14 @@ const Donate = () => {
           {/* Hero */}
           <section className="bg-gradient-to-br from-earth to-earth/90 text-cream py-20">
             <div className="container mx-auto px-4 text-center">
-              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center mb-6">
-                <Heart className="w-10 h-10 text-earth" />
+              <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-6 shadow-xl">
+                <img src={gfaWalletLogo} alt="GFA Wallet" className="w-full h-full object-cover" />
               </div>
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="font-display text-4xl md:text-5xl font-bold mb-2">
                 {t("donate.hero.title") || "Fund Education. Change Lives."}
               </h1>
-              <p className="text-lg text-cream/80 max-w-2xl mx-auto">
+              <p className="text-lg text-gold font-semibold mb-2">Powered by GFA Wzip • GetFinance Africa</p>
+              <p className="text-cream/80 max-w-2xl mx-auto">
                 {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
               </p>
             </div>
@@ -126,6 +177,19 @@ const Donate = () => {
                       </div>
                     </button>
                   ))}
+
+                  {/* Use Wallet CTA */}
+                  <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
+                    <div className="flex items-center gap-3 mb-3">
+                      <img src={gfaWalletLogo} alt="GFA" className="w-8 h-8 rounded-lg" />
+                      <span className="font-semibold text-foreground">Have a GFA Wallet?</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">Donate directly from your wallet balance for faster processing.</p>
+                    <Button variant="outline" size="sm" className="w-full" onClick={() => navigate("/wallet")}>
+                      <Wallet className="w-4 h-4 mr-2" />
+                      Open My Wallet
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Form */}
@@ -217,35 +281,37 @@ const Donate = () => {
                         </label>
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full" disabled={loading}>
-                        <Heart className="w-5 h-5 mr-2" />
-                        {loading ? (t("donate.processing") || "Processing...") : `${t("nav.top.donate")} $${selectedAmount || customAmount || 0}`}
-                      </Button>
-
-                      {/* Payment Gateway Buttons */}
-                      <div className="pt-4 border-t border-border">
-                        <p className="text-sm text-center text-muted-foreground mb-4">{t("donate.orDonateVia") || "Or donate directly via:"}</p>
+                      {/* Payment Provider Buttons */}
+                      <div className="space-y-4 pt-4 border-t border-border">
+                        <div className="flex items-center gap-2 justify-center">
+                          <img src={gfaWalletLogo} alt="GFA" className="w-6 h-6 rounded" />
+                          <span className="text-sm font-semibold text-foreground">Pay via GFA Wzip</span>
+                        </div>
                         <div className="grid grid-cols-2 gap-3">
-                          <a
-                            href="https://paystack.com/pay/scef-donation"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-blue text-scef-gold hover:bg-scef-blue-dark border-2 border-black"
-                          >
-                            <Heart className="w-4 h-4" />
-                            Paystack
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                          <a
-                            href="https://flutterwave.com/pay/scef"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-gold text-scef-blue hover:bg-scef-gold-dark border-2 border-black"
-                          >
-                            <Heart className="w-4 h-4" />
-                            Flutterwave
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
+                          {paymentProviders.map((provider) => (
+                            <button
+                              key={provider.id}
+                              type="button"
+                              onClick={() => handlePaymentProvider(provider)}
+                              disabled={loading}
+                              className={`${provider.color} text-white py-3 px-4 rounded-xl font-semibold transition-all hover:opacity-90 hover:shadow-lg active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2`}
+                            >
+                              <span>{provider.name}</span>
+                              <ExternalLink className="w-4 h-4" />
+                            </button>
+                          ))}
+                        </div>
+                        <p className="text-xs text-center text-muted-foreground">
+                          Select a payment provider above to complete your ${selectedAmount || customAmount || 0} donation
+                        </p>
+                      </div>
+
+                      {/* Security Notice */}
+                      <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50 border border-border">
+                        <Shield className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <div className="text-xs text-muted-foreground">
+                          <p className="font-semibold text-foreground mb-1">Secure & Transparent</p>
+                          <p>All transactions are encrypted and auditable. You'll receive a receipt for your records.</p>
                         </div>
                       </div>
 

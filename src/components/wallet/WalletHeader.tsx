@@ -6,13 +6,16 @@ export const WalletHeader = () => {
       <img
         src={gfaWalletLogo}
         alt="GFA Wallet"
-        className="w-16 h-16 rounded-xl object-cover shadow-md"
+        className="w-20 h-20 rounded-xl object-cover shadow-lg"
       />
       <div>
         <h1 className="font-display text-3xl font-bold text-foreground">
-          GFA Wallet
+          GFA Wzip
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-lg text-primary font-medium">
+          GetFinance Africa
+        </p>
+        <p className="text-muted-foreground text-sm">
           Manage your funds and support education initiatives
         </p>
       </div>
