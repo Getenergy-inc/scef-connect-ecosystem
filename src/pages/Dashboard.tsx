@@ -78,6 +78,13 @@ const Dashboard = () => {
       chapter_admin: "Chapter Admin Dashboard",
       admin: "Admin Dashboard",
       super_admin: "Super Admin Dashboard",
+      hq_admin: "HQ Admin Dashboard",
+      staff: "Staff Dashboard",
+      division_lead: "Division Lead Dashboard",
+      board_bot: "Board of Trustees Dashboard",
+      board_boa: "Board of Advisers Dashboard",
+      board_bod: "Board of Directors Dashboard",
+      lcp: "Local Chapter President Dashboard",
     };
     return titles[role] || "Dashboard";
   };
