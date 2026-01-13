@@ -10,6 +10,7 @@ import {
   UserCheck, Lightbulb, MapPin, Phone, Mail,
   ExternalLink, Play, Star, Quote, ChevronDown
 } from "lucide-react";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 
 const scholarshipTypes = [
   { 
@@ -578,6 +579,15 @@ const EduAidAfrica = () => {
               </div>
             </div>
           </section>
+
+          {/* Video Section */}
+          <ProgramVideoSection
+            programName="EduAid-Africa"
+            videoUrl="https://www.youtube.com/embed/aP0SskrfioI"
+            videoType="youtube"
+            description="Learn about EduAid-Africa's scholarship programs and how we're transforming lives through education support."
+            thumbnailUrl="/assets/eduaid-africa-logo.jpg"
+          />
 
           {/* Navigation Links */}
           <section className="py-8 bg-gray-100 border-t-2 border-black" aria-label="Navigation">

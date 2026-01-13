@@ -519,7 +519,7 @@ const About = () => {
             </div>
           </section>
 
-          {/* SECTION 7: 6 Core Objectives - Updated with SMART measures */}
+          {/* SECTION 7: 6 Core Objectives - OFFICIAL APPROVED VERSION */}
           <section id="objectives" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -527,41 +527,41 @@ const About = () => {
                   Our 6 Core Objectives
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Each objective includes SMART-style targets with clear deliverables and timelines.
+                  Our mission is delivered through six strategic objectives with clear delivery tools and measurable outcomes.
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-10">
                 {[
                   {
-                    title: "To build the SCEF platform for advocating a continuous, ever-growing standard of education in Africa.",
-                    shortTitle: "Standards Platform",
-                    measures: ["Publish Africa-wide Standards & Governance Framework v1 by Q4 2026", "Pilot adoption across all 5 African regions by 2030"]
+                    title: "To build the platform for advocating a continuous, ever-growing standard of education in Africa—through standards frameworks, benchmarking, recognition, and endorsed certification/verification systems.",
+                    shortTitle: "Standards & Recognition",
+                    tools: ["NESA-Africa", "Certification Systems"]
                   },
                   {
-                    title: "To strengthen layered governance and accountability for Education-for-All delivery across Africa and the diaspora.",
-                    shortTitle: "Governance & Accountability",
-                    measures: ["Implement governance workflows (BoT/BoA/BoD) by Q2 2026", "Publish annual governance & performance reports starting 2026"]
+                    title: "To expand equitable access to learning and certification by deploying integrated digital platforms for resources, skills, and verifiable outcomes across Africa and the diaspora.",
+                    shortTitle: "Digital Access & Certification",
+                    tools: ["EOA", "eLibrary Nigeria", "ACDL/AWPC"]
                   },
                   {
-                    title: "To deploy digital platforms that expand access, learning, verification, and certification at scale.",
-                    shortTitle: "Digital Platforms",
-                    measures: ["Launch unified platforms (web/app, dashboards, certification) by Q4 2026", "Improve completion/verification rates annually through 2035"]
+                    title: "To strengthen education advocacy and knowledge dissemination by developing media channels (TV, radio, webinars, podcasts, publications) that promote adoption of quality and inclusion practices.",
+                    shortTitle: "Media & Advocacy",
+                    tools: ["NESA Africa TV", "It's In Me Radio", "Webinars"]
                   },
                   {
-                    title: "To build and monitor a chapter-driven implementation network across the 5 African regions, supported by diaspora (6th region).",
-                    shortTitle: "Chapter Network",
-                    measures: ["Standardize chapter onboarding + compliance by Q2 2026", "Activate chapters across all 5 regions + 10 diaspora chapters by 2030"]
+                    title: "To establish and monitor compliant delivery networks by onboarding, supporting, and auditing local chapters (physical and online) to implement programs with measurable reporting.",
+                    shortTitle: "Chapter Networks",
+                    tools: ["Local Chapters", "Compliance Framework"]
                   },
                   {
-                    title: "To mobilize, manage, and report education funding transparently—especially through CSR for Education Funds Management Services (SCEF–FMS).",
-                    shortTitle: "Funding & CSR Management",
-                    measures: ["Operate verified project pipeline + ESG/SDG reporting by Q2 2026", "Grow 10-year renewable partnerships through 2035"]
+                    title: "To mobilize and manage education funding with accountability—including CSR for Education Funds Management Services—using verified project pipelines, tracked disbursement, and ESG/SDG-aligned reporting.",
+                    shortTitle: "Funding & Accountability",
+                    tools: ["SCEF–FMS", "CSR Programs", "ESG Reporting"]
                   },
                   {
-                    title: "To deliver measurable, inclusive impact through integrated programs aligned with SDG 4, AU Agenda 2063, sustainability, ESG, and Africa development finance priorities.",
-                    shortTitle: "Measurable Impact",
-                    measures: ["By 2035: 100,000+ scholarships, 1,000 schools rebuilt", "By 2035: 4M learners reached, 54 chapters, $50m mobilized"]
+                    title: "To scale Education for All across Africa's five regions (North, West, Central, East, Southern) with support from a sixth region: the African diaspora, by building renewable multi-year partnerships with institutions, multilaterals, and global education funders.",
+                    shortTitle: "Pan-African Scale",
+                    tools: ["Regional Chapters", "Diaspora", "Partnerships"]
                   },
                 ].map((objective, index) => (
                   <div key={index} className="bg-card rounded-xl p-6 border border-border hover:border-scef-gold hover:shadow-md transition-all">
@@ -569,17 +569,16 @@ const About = () => {
                       <div className="w-10 h-10 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
                         {index + 1}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <span className="text-xs font-semibold text-scef-gold uppercase tracking-wide">{objective.shortTitle}</span>
-                        <p className="text-foreground leading-relaxed mt-1">{objective.title}</p>
+                        <p className="text-foreground leading-relaxed mt-1 text-sm">{objective.title}</p>
                       </div>
                     </div>
-                    <div className="pl-14 space-y-2">
-                      {objective.measures.map((measure, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                          <span>{measure}</span>
-                        </div>
+                    <div className="pl-14 flex flex-wrap gap-2">
+                      {objective.tools.map((tool, i) => (
+                        <span key={i} className="px-2 py-1 text-xs rounded-full bg-scef-gold/10 text-scef-gold border border-scef-gold/20">
+                          {tool}
+                        </span>
                       ))}
                     </div>
                   </div>

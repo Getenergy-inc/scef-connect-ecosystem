@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ELibrarySearch } from "@/components/elibrary/ELibrarySearch";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { 
   BookOpen, 
   Download, 
@@ -392,6 +393,14 @@ const ELibraryNigeria = () => {
             </div>
           </div>
         </section>
+
+        {/* Video Section */}
+        <ProgramVideoSection
+          programName="eLibrary Nigeria"
+          videoUrl="https://www.youtube.com/embed/MrErQY7qWRs"
+          videoType="youtube"
+          description="Discover how eLibrary Nigeria is providing free digital learning resources to students and educators."
+        />
 
         {/* CTA Section */}
         <section className="py-16 md:py-24 border-t-2 border-black" style={{ backgroundColor: '#0000CD' }}>

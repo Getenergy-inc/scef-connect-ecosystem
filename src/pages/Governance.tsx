@@ -8,6 +8,7 @@ import {
   Shield, Users, Building2, Globe, ArrowRight, CheckCircle2, 
   Briefcase, Scale, FileText, Mail, Phone
 } from "lucide-react";
+import { GovernanceProfileSection } from "@/components/governance/GovernanceProfileSection";
 
 const colorClasses = {
   gold: "bg-gold/10 text-gold border-gold/20",
@@ -239,6 +240,34 @@ const Governance = () => {
             </div>
           </section>
 
+          {/* Leadership Profiles - Board of Trustees */}
+          <GovernanceProfileSection 
+            boardType="bot"
+            title="Board of Trustees"
+            subtitle="Our fiduciary oversight body ensuring organizational integrity"
+          />
+
+          {/* Leadership Profiles - Board of Advisors */}
+          <GovernanceProfileSection 
+            boardType="boa"
+            title="Board of Advisors"
+            subtitle="Expert advisors providing specialized guidance"
+          />
+
+          {/* Leadership Profiles - Board of Directors */}
+          <GovernanceProfileSection 
+            boardType="bod"
+            title="Board of Directors"
+            subtitle="Regional operational governance leaders"
+          />
+
+          {/* Leadership Profiles - Local Chapter Presidents */}
+          <GovernanceProfileSection 
+            boardType="lcp"
+            title="Local Chapter Presidents"
+            subtitle="Country-level leadership driving local impact"
+          />
+
           {/* Executive Office / Management Team */}
           <section id="management" className="py-20 bg-card scroll-mt-24">
             <div className="container mx-auto px-4">
@@ -272,6 +301,15 @@ const Governance = () => {
                     </div>
                   );
                 })}
+              </div>
+
+              {/* Management Team Profiles from Database */}
+              <div className="mt-12">
+                <GovernanceProfileSection 
+                  boardType="management"
+                  title="Meet the Team"
+                  subtitle="The professionals leading our day-to-day operations"
+                />
               </div>
             </div>
           </section>

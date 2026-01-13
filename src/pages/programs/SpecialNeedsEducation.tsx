@@ -9,6 +9,7 @@ import {
   Globe, TrendingUp, Star, Quote, UserCheck, Eye, Ear,
   ChevronDown, HandHeart, School, Brain, Hand
 } from "lucide-react";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 
 const supportAreas = [
   {
@@ -307,6 +308,14 @@ const SpecialNeedsEducation = () => {
               </div>
             </div>
           </section>
+
+          {/* Video Section */}
+          <ProgramVideoSection
+            programName="Special Needs Education"
+            videoUrl="https://www.youtube.com/embed/Hdu_qlFLfrQ"
+            videoType="youtube"
+            description="Learn about our inclusive education programs supporting learners with special needs across Africa."
+          />
 
           {/* CTA */}
           <section className="py-24 bg-white">

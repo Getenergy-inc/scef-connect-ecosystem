@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, MessageSquare, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { EmailDirectory } from "@/components/contact/EmailDirectory";
+import { emailDirectory } from "@/config/emailDirectory";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -62,45 +64,42 @@ const Contact = () => {
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-3 gap-12">
                 {/* Contact Info */}
-                <div className="space-y-8">
-                  <div className="bg-card rounded-2xl p-8 border border-border">
+                <div className="space-y-6">
+                  <div className="bg-card rounded-2xl p-6 border border-border">
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
                       <Mail className="w-6 h-6 text-gold" />
                     </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2">Email Us</h3>
-                    <a href="mailto:info@scef.org" className="text-primary hover:underline">
-                      info@scef.org
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2">General Inquiries</h3>
+                    <a href={`mailto:${emailDirectory.info}`} className="text-primary hover:underline">
+                      {emailDirectory.info}
                     </a>
-                    <p className="text-muted-foreground text-sm mt-2">
-                      For general inquiries
-                    </p>
                   </div>
                   
-                  <div className="bg-card rounded-2xl p-8 border border-border">
+                  <div className="bg-card rounded-2xl p-6 border border-border">
                     <div className="w-12 h-12 rounded-xl bg-terracotta/10 flex items-center justify-center mb-4">
                       <Phone className="w-6 h-6 text-terracotta" />
                     </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">Call Us</h3>
-                    <a href="tel:+234000000000" className="text-primary hover:underline">
-                      +234 000 000 0000
+                    <a href="tel:+2348056677770" className="text-primary hover:underline">
+                      +234 805 667 7770
                     </a>
                     <p className="text-muted-foreground text-sm mt-2">
                       Mon - Fri, 9am - 5pm WAT
                     </p>
                   </div>
                   
-                  <div className="bg-card rounded-2xl p-8 border border-border">
+                  <div className="bg-card rounded-2xl p-6 border border-border">
                     <div className="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center mb-4">
                       <MapPin className="w-6 h-6 text-forest" />
                     </div>
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2">Visit Us</h3>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2">Headquarters</h3>
                     <p className="text-foreground">Lagos, Nigeria</p>
                     <p className="text-muted-foreground text-sm mt-2">
-                      SCEF Headquarters
+                      SCEF Office
                     </p>
                   </div>
                   
-                  <div className="bg-card rounded-2xl p-8 border border-border">
+                  <div className="bg-card rounded-2xl p-6 border border-border">
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
                       <Clock className="w-6 h-6 text-gold" />
                     </div>
@@ -190,6 +189,15 @@ const Contact = () => {
                     </form>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Email Directory Section */}
+          <section className="py-16 bg-muted/50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <EmailDirectory variant="full" />
               </div>
             </div>
           </section>
