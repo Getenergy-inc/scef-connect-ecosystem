@@ -14,6 +14,169 @@ export type Database = {
   }
   public: {
     Tables: {
+      audit_logs: {
+        Row: {
+          action_type: string
+          created_at: string
+          entity_id: string
+          entity_type: string
+          id: string
+          ip_address: string | null
+          new_values: Json | null
+          old_values: Json | null
+          user_agent: string | null
+          user_id: string | null
+        }
+        Insert: {
+          action_type: string
+          created_at?: string
+          entity_id: string
+          entity_type: string
+          id?: string
+          ip_address?: string | null
+          new_values?: Json | null
+          old_values?: Json | null
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          action_type?: string
+          created_at?: string
+          entity_id?: string
+          entity_type?: string
+          id?: string
+          ip_address?: string | null
+          new_values?: Json | null
+          old_values?: Json | null
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      bank_accounts: {
+        Row: {
+          account_name: string
+          account_number_masked: string
+          bank_name: string
+          country: string
+          created_at: string
+          currency: string
+          id: string
+          is_primary: boolean | null
+          owner_id: string | null
+          owner_type: string
+          routing_number: string | null
+          updated_at: string
+          verification_docs: string[] | null
+          verification_status: string
+        }
+        Insert: {
+          account_name: string
+          account_number_masked: string
+          bank_name: string
+          country: string
+          created_at?: string
+          currency?: string
+          id?: string
+          is_primary?: boolean | null
+          owner_id?: string | null
+          owner_type: string
+          routing_number?: string | null
+          updated_at?: string
+          verification_docs?: string[] | null
+          verification_status?: string
+        }
+        Update: {
+          account_name?: string
+          account_number_masked?: string
+          bank_name?: string
+          country?: string
+          created_at?: string
+          currency?: string
+          id?: string
+          is_primary?: boolean | null
+          owner_id?: string | null
+          owner_type?: string
+          routing_number?: string | null
+          updated_at?: string
+          verification_docs?: string[] | null
+          verification_status?: string
+        }
+        Relationships: []
+      }
+      chapter_inbox_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          sender_id: string | null
+          sender_type: string
+          thread_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          sender_id?: string | null
+          sender_type: string
+          thread_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          sender_id?: string | null
+          sender_type?: string
+          thread_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_inbox_messages_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "chapter_inbox_threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chapter_inbox_threads: {
+        Row: {
+          chapter_id: string
+          created_at: string
+          id: string
+          is_read: boolean | null
+          last_message_at: string | null
+          subject: string
+          user_id: string
+        }
+        Insert: {
+          chapter_id: string
+          created_at?: string
+          id?: string
+          is_read?: boolean | null
+          last_message_at?: string | null
+          subject: string
+          user_id: string
+        }
+        Update: {
+          chapter_id?: string
+          created_at?: string
+          id?: string
+          is_read?: boolean | null
+          last_message_at?: string | null
+          subject?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_inbox_threads_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chapter_members: {
         Row: {
           chapter_id: string
@@ -144,6 +307,69 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      disbursement_requests: {
+        Row: {
+          amount: number
+          approved_at: string | null
+          approved_by: string | null
+          bank_account_id: string
+          created_at: string
+          currency: string
+          id: string
+          notes: string | null
+          rejection_reason: string | null
+          requested_by: string
+          status: string
+          updated_at: string
+          wallet_id: string
+        }
+        Insert: {
+          amount: number
+          approved_at?: string | null
+          approved_by?: string | null
+          bank_account_id: string
+          created_at?: string
+          currency?: string
+          id?: string
+          notes?: string | null
+          rejection_reason?: string | null
+          requested_by: string
+          status?: string
+          updated_at?: string
+          wallet_id: string
+        }
+        Update: {
+          amount?: number
+          approved_at?: string | null
+          approved_by?: string | null
+          bank_account_id?: string
+          created_at?: string
+          currency?: string
+          id?: string
+          notes?: string | null
+          rejection_reason?: string | null
+          requested_by?: string
+          status?: string
+          updated_at?: string
+          wallet_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "disbursement_requests_bank_account_id_fkey"
+            columns: ["bank_account_id"]
+            isOneToOne: false
+            referencedRelation: "bank_accounts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "disbursement_requests_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "wallets"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       donations: {
         Row: {
@@ -452,6 +678,7 @@ export type Database = {
         Row: {
           avatar_url: string | null
           bio: string | null
+          chapter_id: string | null
           city: string | null
           country: string | null
           created_at: string
@@ -460,6 +687,7 @@ export type Database = {
           id: string
           last_name: string | null
           phone: string | null
+          relationship_to_country: string | null
           state: string | null
           updated_at: string
           user_id: string
@@ -467,6 +695,7 @@ export type Database = {
         Insert: {
           avatar_url?: string | null
           bio?: string | null
+          chapter_id?: string | null
           city?: string | null
           country?: string | null
           created_at?: string
@@ -475,6 +704,7 @@ export type Database = {
           id?: string
           last_name?: string | null
           phone?: string | null
+          relationship_to_country?: string | null
           state?: string | null
           updated_at?: string
           user_id: string
@@ -482,6 +712,7 @@ export type Database = {
         Update: {
           avatar_url?: string | null
           bio?: string | null
+          chapter_id?: string | null
           city?: string | null
           country?: string | null
           created_at?: string
@@ -490,11 +721,20 @@ export type Database = {
           id?: string
           last_name?: string | null
           phone?: string | null
+          relationship_to_country?: string | null
           state?: string | null
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profiles_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       programs: {
         Row: {
@@ -691,6 +931,17 @@ export type Database = {
         Returns: boolean
       }
       is_admin: { Args: { _user_id: string }; Returns: boolean }
+      log_audit: {
+        Args: {
+          p_action_type: string
+          p_entity_id: string
+          p_entity_type: string
+          p_new_values?: Json
+          p_old_values?: Json
+          p_user_id?: string
+        }
+        Returns: string
+      }
     }
     Enums: {
       app_role:
