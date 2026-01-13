@@ -39,11 +39,13 @@ import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
 import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
 import DigitalLearning from "./pages/programs/DigitalLearning";
 import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
+import InclusionAccess from "./pages/programs/InclusionAccess";
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
 import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
 import NotFound from "./pages/NotFound";
 import Vacancies from "./pages/Vacancies";
 import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
+import PartnerWithUs from "./pages/PartnerWithUs";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +68,7 @@ const App = () => (
               <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
+              <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/local-chapters" element={<LocalChapters />} />
               <Route path="/chapters" element={<Chapters />} />
@@ -84,11 +87,13 @@ const App = () => (
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/get-involved" element={<GetInvolved />} />
+              <Route path="/get-involved/membership" element={<Membership />} />
               <Route path="/vacancies" element={<Vacancies />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/governance" element={<Governance />} />
               <Route path="/certifications" element={<Certifications />} />
               <Route path="/partners" element={<Partners />} />
+              <Route path="/partner-with-us" element={<PartnerWithUs />} />
               <Route path="/divisions" element={<Divisions />} />
               <Route path="/divisions/sobcd" element={<SOBCD />} />
               <Route path="/divisions/tdsd" element={<TDSD />} />

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -14,7 +14,20 @@ import {
 const Membership = () => {
   const { t } = useLocale();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [selectedTier, setSelectedTier] = useState("Active Member");
+
+  // Read query params from join-online flow
+  const chapterCountry = searchParams.get("chapter");
+  const participationType = searchParams.get("type");
+  const diasporaLocation = searchParams.get("location");
+
+  // Pre-fill context message based on join-online flow
+  const joinContext = chapterCountry ? {
+    country: chapterCountry,
+    type: participationType || "resident",
+    location: diasporaLocation,
+  } : null;
 
   const membershipTiers = [
     {
@@ -95,6 +108,21 @@ const Membership = () => {
                 <p className="text-xl text-white/80 leading-relaxed">
                   {t("about.hero.subtitle")}
                 </p>
+                
+                {/* Show join context if coming from join-online flow */}
+                {joinContext && (
+                  <div className="mt-6 p-4 bg-white/10 rounded-xl border border-white/20 backdrop-blur-sm">
+                    <p className="text-white/90 text-sm mb-2">
+                      <span className="font-semibold">Joining as:</span>{" "}
+                      {joinContext.type === "resident" && `Resident of ${joinContext.country}`}
+                      {joinContext.type === "diaspora" && `${joinContext.country} Diaspora${joinContext.location ? ` in ${joinContext.location}` : ""}`}
+                      {joinContext.type === "friend" && `Friend of ${joinContext.country}`}
+                    </p>
+                    <p className="text-white/70 text-xs">
+                      Your chapter preference has been saved. Complete your membership below.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </section>
