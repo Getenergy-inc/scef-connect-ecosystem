@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useLocale } from "@/contexts/LocaleContext";
+import { supabase } from "@/integrations/supabase/client";
 import { 
   Handshake, Building2, Heart, Globe, Users, Award, 
   CheckCircle, ArrowRight, Briefcase, GraduationCap, Banknote,
@@ -89,19 +90,33 @@ const PartnerWithUs = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success("Partnership inquiry submitted! We'll be in touch within 48 hours.");
-    setFormData({
-      organizationName: "",
-      contactName: "",
-      email: "",
-      phone: "",
-      partnershipType: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase.from("partnership_inquiries").insert({
+        company_name: formData.organizationName,
+        contact_name: formData.contactName,
+        email: formData.email,
+        phone: formData.phone || null,
+        partnership_type: formData.partnershipType || null,
+        message: formData.message || null,
+      });
+
+      if (error) throw error;
+
+      toast.success("Partnership inquiry submitted! We'll be in touch within 48 hours.");
+      setFormData({
+        organizationName: "",
+        contactName: "",
+        email: "",
+        phone: "",
+        partnershipType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting inquiry:", error);
+      toast.error("Failed to submit inquiry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

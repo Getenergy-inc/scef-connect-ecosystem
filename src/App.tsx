@@ -46,6 +46,8 @@ import NotFound from "./pages/NotFound";
 import Vacancies from "./pages/Vacancies";
 import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
 import PartnerWithUs from "./pages/PartnerWithUs";
+import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
+import Ambassador from "./pages/get-involved/Ambassador";
 
 const queryClient = new QueryClient();
 
@@ -88,6 +90,8 @@ const App = () => (
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/get-involved/membership" element={<Membership />} />
+              <Route path="/get-involved/ambassador" element={<Ambassador />} />
+              <Route path="/resources/organizational-profile" element={<OrganizationalProfile />} />
               <Route path="/vacancies" element={<Vacancies />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/governance" element={<Governance />} />
