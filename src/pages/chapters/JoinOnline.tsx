@@ -2,24 +2,17 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useState } from "react";
 import {
   Globe, Users, Heart, MapPin, CheckCircle2, ArrowRight,
-  Building2, Plane, UserPlus, ChevronDown, Search
+  Building2, Plane, Search
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Card, CardContent } from "@/components/ui/card";
 
 // African countries list
 const africanCountries = [
@@ -44,47 +37,15 @@ const diasporaRegions = [
   { region: "South America", countries: ["Brazil", "Argentina"] },
 ];
 
-const participationTypes = [
-  {
-    id: "resident",
-    title: "Resident",
-    description: "I currently live in this African country",
-    icon: Building2,
-    benefits: [
-      "Full voting rights in chapter elections",
-      "Eligible for local leadership roles",
-      "Access to in-person events and programs",
-      "Direct participation in community initiatives"
-    ]
-  },
-  {
-    id: "diaspora",
-    title: "Diaspora",
-    description: "I am originally from this country but live abroad",
-    icon: Plane,
-    benefits: [
-      "Connect with your home country chapter",
-      "Support projects from abroad",
-      "Bridge resources and opportunities",
-      "Attend virtual chapter meetings"
-    ]
-  },
-  {
-    id: "friend",
-    title: "Friend of the Country",
-    description: "I have affinity or interest in supporting this country",
-    icon: Heart,
-    benefits: [
-      "Support education in a country you care about",
-      "Participate in fundraising initiatives",
-      "Attend virtual events and webinars",
-      "Receive updates on chapter activities"
-    ]
-  }
-];
+const participationTypeKeys = ["resident", "diaspora", "friend"] as const;
+const participationIcons = {
+  resident: Building2,
+  diaspora: Plane,
+  friend: Heart,
+};
 
 const JoinOnline = () => {
-  const { isRTL } = useLocale();
+  const { t, isRTL } = useLocale();
   const navigate = useNavigate();
   
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -104,7 +65,6 @@ const JoinOnline = () => {
       if (participationType === "diaspora") {
         setStep(3);
       } else {
-        // Proceed to membership
         navigate(`/membership?chapter=${encodeURIComponent(selectedCountry)}&type=${participationType}`);
       }
     } else if (step === 3 && diasporaLocation) {
@@ -119,14 +79,13 @@ const JoinOnline = () => {
     return false;
   };
 
+  const infoItems = t("joinOnline.info.items") as unknown as string[] || [];
+
   return (
     <>
       <Helmet>
-        <title>Join an Online Chapter | SCEF</title>
-        <meta 
-          name="description" 
-          content="Join a SCEF online local chapter for your country of choice. Connect as a resident, diaspora member, or friend of the country to support education across Africa." 
-        />
+        <title>{t("joinOnline.hero.title")} | SCEF</title>
+        <meta name="description" content={t("joinOnline.hero.subtitle")} />
       </Helmet>
       
       <div className="min-h-screen bg-background" dir={isRTL ? "rtl" : "ltr"}>
@@ -139,19 +98,19 @@ const JoinOnline = () => {
               <div className="max-w-3xl mx-auto text-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-gold text-sm font-semibold mb-6 border border-scef-gold/30">
                   <Globe className="w-4 h-4" />
-                  Online Chapter Network
+                  {t("joinOnline.hero.badge")}
                 </div>
                 
                 <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Join an Online Local Chapter
+                  {t("joinOnline.hero.title")}
                 </h1>
                 
                 <p className="text-lg text-white/80 leading-relaxed mb-4">
-                  Connect with your country's education community — whether you're a resident, in the diaspora, or a friend of the country.
+                  {t("joinOnline.hero.subtitle")}
                 </p>
                 
                 <p className="text-sm text-white/60">
-                  Online chapters are the entry point to the SCEF network. As chapters grow, they can evolve into hybrid or physical chapters.
+                  {t("joinOnline.hero.note")}
                 </p>
               </div>
             </div>
@@ -162,9 +121,9 @@ const JoinOnline = () => {
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-center gap-4 md:gap-8">
                 {[
-                  { num: 1, label: "Select Country" },
-                  { num: 2, label: "Choose Your Role" },
-                  { num: 3, label: "Your Location", conditional: participationType === "diaspora" },
+                  { num: 1, labelKey: "joinOnline.steps.selectCountry" },
+                  { num: 2, labelKey: "joinOnline.steps.chooseRole" },
+                  { num: 3, labelKey: "joinOnline.steps.yourLocation", conditional: participationType === "diaspora" },
                 ].filter(s => !s.conditional || (s.conditional && participationType === "diaspora")).map((s, i) => (
                   <div key={s.num} className="flex items-center gap-2 md:gap-4">
                     {i > 0 && <div className="w-8 md:w-16 h-0.5 bg-border" />}
@@ -178,7 +137,7 @@ const JoinOnline = () => {
                       )}>
                         {step > s.num ? <CheckCircle2 className="w-5 h-5" /> : s.num}
                       </div>
-                      <span className="hidden md:block text-sm font-medium">{s.label}</span>
+                      <span className="hidden md:block text-sm font-medium">{t(s.labelKey)}</span>
                     </div>
                   </div>
                 ))}
@@ -196,10 +155,10 @@ const JoinOnline = () => {
                   <div className="space-y-8">
                     <div className="text-center mb-8">
                       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                        Select Your Country
+                        {t("joinOnline.step1.title")}
                       </h2>
                       <p className="text-muted-foreground">
-                        Choose the African country whose chapter you want to join. Each country has its own online chapter community.
+                        {t("joinOnline.step1.subtitle")}
                       </p>
                     </div>
 
@@ -207,7 +166,7 @@ const JoinOnline = () => {
                     <div className="relative">
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                       <Input
-                        placeholder="Search for a country..."
+                        placeholder={t("joinOnline.step1.searchPlaceholder")}
                         value={countrySearch}
                         onChange={(e) => setCountrySearch(e.target.value)}
                         className="pl-10 h-12"
@@ -245,7 +204,7 @@ const JoinOnline = () => {
 
                     {filteredCountries.length === 0 && (
                       <p className="text-center text-muted-foreground py-8">
-                        No countries found matching "{countrySearch}"
+                        {t("joinOnline.step1.noResults")} "{countrySearch}"
                       </p>
                     )}
                   </div>
@@ -260,10 +219,10 @@ const JoinOnline = () => {
                         {selectedCountry}
                       </div>
                       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                        How Will You Participate?
+                        {t("joinOnline.step2.title")}
                       </h2>
                       <p className="text-muted-foreground">
-                        Choose your relationship with {selectedCountry}. This determines your role and benefits in the chapter.
+                        {t("joinOnline.step2.subtitle").replace("{country}", selectedCountry)}
                       </p>
                     </div>
 
@@ -272,43 +231,50 @@ const JoinOnline = () => {
                       onValueChange={setParticipationType}
                       className="space-y-4"
                     >
-                      {participationTypes.map((type) => {
-                        const Icon = type.icon;
+                      {participationTypeKeys.map((typeKey) => {
+                        const Icon = participationIcons[typeKey];
+                        const benefits = t(`joinOnline.types.${typeKey}.benefits`) as unknown as string[] || [];
                         return (
                           <label
-                            key={type.id}
-                            htmlFor={type.id}
+                            key={typeKey}
+                            htmlFor={typeKey}
                             className={cn(
                               "block p-6 rounded-2xl border-2 cursor-pointer transition-all hover:shadow-md",
-                              participationType === type.id
+                              participationType === typeKey
                                 ? "border-scef-gold bg-scef-gold/5 shadow-md"
                                 : "border-border bg-card hover:border-scef-blue/50"
                             )}
                           >
                             <div className="flex items-start gap-4">
-                              <RadioGroupItem value={type.id} id={type.id} className="mt-1" />
+                              <RadioGroupItem value={typeKey} id={typeKey} className="mt-1" />
                               <div className="flex-1">
                                 <div className="flex items-center gap-3 mb-2">
                                   <div className={cn(
                                     "w-10 h-10 rounded-xl flex items-center justify-center",
-                                    participationType === type.id ? "bg-scef-gold/20" : "bg-muted"
+                                    participationType === typeKey ? "bg-scef-gold/20" : "bg-muted"
                                   )}>
                                     <Icon className={cn(
                                       "w-5 h-5",
-                                      participationType === type.id ? "text-scef-gold" : "text-muted-foreground"
+                                      participationType === typeKey ? "text-scef-gold" : "text-muted-foreground"
                                     )} />
                                   </div>
                                   <div>
-                                    <h3 className="font-display font-bold text-foreground">{type.title}</h3>
-                                    <p className="text-sm text-muted-foreground">{type.description}</p>
+                                    <h3 className="font-display font-bold text-foreground">
+                                      {t(`joinOnline.types.${typeKey}.title`)}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground">
+                                      {t(`joinOnline.types.${typeKey}.description`)}
+                                    </p>
                                   </div>
                                 </div>
                                 
-                                {participationType === type.id && (
+                                {participationType === typeKey && (
                                   <div className="mt-4 pt-4 border-t border-border">
-                                    <p className="text-xs font-semibold text-scef-blue uppercase tracking-wide mb-2">Benefits</p>
+                                    <p className="text-xs font-semibold text-scef-blue uppercase tracking-wide mb-2">
+                                      {t("joinOnline.step2.benefits")}
+                                    </p>
                                     <ul className="grid md:grid-cols-2 gap-2">
-                                      {type.benefits.map((benefit, i) => (
+                                      {Array.isArray(benefits) && benefits.map((benefit, i) => (
                                         <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                                           <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
                                           {benefit}
@@ -328,7 +294,7 @@ const JoinOnline = () => {
                       onClick={() => setStep(1)}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      ← Change country
+                      {t("joinOnline.step2.changeCountry")}
                     </button>
                   </div>
                 )}
@@ -343,14 +309,14 @@ const JoinOnline = () => {
                         </span>
                         <span className="text-muted-foreground">•</span>
                         <span className="px-3 py-1.5 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium">
-                          Diaspora
+                          {t("joinOnline.types.diaspora.title")}
                         </span>
                       </div>
                       <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                        Where Do You Live?
+                        {t("joinOnline.step3.title")}
                       </h2>
                       <p className="text-muted-foreground">
-                        Let us know your current location so we can connect you with other diaspora members in your area.
+                        {t("joinOnline.step3.subtitle")}
                       </p>
                     </div>
 
@@ -378,12 +344,12 @@ const JoinOnline = () => {
                       ))}
                       
                       <div>
-                        <h3 className="font-semibold text-foreground mb-3">Other Location</h3>
+                        <h3 className="font-semibold text-foreground mb-3">{t("joinOnline.step3.otherLocation")}</h3>
                         <Input
-                          placeholder="Enter your country..."
+                          placeholder={t("joinOnline.step3.enterCountry")}
                           value={diasporaLocation}
                           onChange={(e) => setDiasporaLocation(e.target.value)}
-                          className="h-12"
+                          className="border-2 border-black"
                         />
                       </div>
                     </div>
@@ -392,93 +358,53 @@ const JoinOnline = () => {
                       onClick={() => setStep(2)}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      ← Change participation type
+                      {t("joinOnline.step3.back")}
                     </button>
                   </div>
                 )}
 
                 {/* Continue Button */}
-                <div className="mt-10 pt-6 border-t border-border">
+                <div className="mt-8 pt-8 border-t border-border">
                   <Button
                     size="lg"
-                    className="w-full bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold"
-                    disabled={!canContinue()}
+                    className="w-full bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold"
                     onClick={handleContinue}
+                    disabled={!canContinue()}
                   >
-                    {step === 3 || (step === 2 && participationType !== "diaspora") 
-                      ? "Continue to Membership" 
-                      : "Continue"}
-                    <ArrowRight className="w-5 h-5" />
-                  </Button>
-                  
-                  {selectedCountry && step >= 2 && (
-                    <p className="text-center text-sm text-muted-foreground mt-4">
-                      You're joining the <strong>{selectedCountry}</strong> online chapter
-                      {participationType && (
-                        <> as a <strong>{participationTypes.find(t => t.id === participationType)?.title}</strong></>
-                      )}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Info Section */}
-          <section className="py-16 bg-muted/30 border-t border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="font-display text-2xl font-bold text-foreground mb-8 text-center">
-                  How Online Chapters Work
-                </h2>
-                
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-card rounded-2xl p-6 border border-border">
-                    <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4">
-                      <Globe className="w-6 h-6 text-scef-blue" />
-                    </div>
-                    <h3 className="font-display font-bold text-foreground mb-2">Online First</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Start with virtual meetings, forums, and collaborative projects. Connect with members globally.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-card rounded-2xl p-6 border border-border">
-                    <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
-                      <Users className="w-6 h-6 text-scef-gold" />
-                    </div>
-                    <h3 className="font-display font-bold text-foreground mb-2">Grow Together</h3>
-                    <p className="text-sm text-muted-foreground">
-                      As membership grows, chapters can evolve into hybrid or physical chapters with local presence.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-card rounded-2xl p-6 border border-border">
-                    <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4">
-                      <Building2 className="w-6 h-6 text-scef-blue" />
-                    </div>
-                    <h3 className="font-display font-bold text-foreground mb-2">Governance Structure</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Each chapter has a Board of Advisors (3-7 members) and an elected Local Chapter President (LCP).
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-10 text-center">
-                  <p className="text-muted-foreground mb-4">
-                    Already a member? Access your chapter dashboard.
-                  </p>
-                  <Button variant="outline" asChild>
-                    <Link to="/dashboard">
-                      Go to Dashboard
-                    </Link>
+                    {step < 3 || (step === 2 && participationType !== "diaspora") 
+                      ? t("joinOnline.cta.continue")
+                      : t("joinOnline.cta.proceedMembership")
+                    }
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </div>
               </div>
+
+              {/* Info Box */}
+              <Card className="max-w-2xl mx-auto mt-12 border-2 border-black">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-scef-gold/20 flex items-center justify-center flex-shrink-0 border border-black">
+                      <Users className="w-5 h-5 text-scef-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">{t("joinOnline.info.title")}</h3>
+                      <ul className="space-y-1">
+                        {Array.isArray(infoItems) && infoItems.map((item, idx) => (
+                          <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </section>
         </main>
-        
+
         <Footer />
       </div>
     </>
