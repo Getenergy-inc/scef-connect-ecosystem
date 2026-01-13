@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
 import LocalChapters from "./pages/LocalChapters";
+import JoinOnline from "./pages/chapters/JoinOnline";
 import Chapters from "./pages/Chapters";
 import Media from "./pages/Media";
 import Auth from "./pages/Auth";
@@ -68,6 +69,8 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/local-chapters" element={<LocalChapters />} />
               <Route path="/chapters" element={<Chapters />} />
+              <Route path="/chapters/join-online" element={<JoinOnline />} />
+              <Route path="/chapters/join" element={<JoinOnline />} />
               <Route path="/media" element={<Media />} />
               <Route path="/updates" element={<Updates />} />
               <Route path="/reports" element={<Reports />} />
