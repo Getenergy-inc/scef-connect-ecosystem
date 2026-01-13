@@ -1506,6 +1506,110 @@
       "chapters": "Local Chapters"
     }
   },
+  "eduaid": {
+    "reporting": "Verified reporting in progress",
+    "hero": {
+      "welcome": "Welcome to EduAid Africa",
+      "title": "Empowering Education, Enabling Futures Across Africa.",
+      "description": "Join us in transforming the educational landscape through scholarships, donations, CSR initiatives, community projects, and global education expos.",
+      "stat1": { "label": "Schools Renovated" },
+      "stat2": { "label": "Scholarships Awarded" },
+      "stat3": { "label": "Teachers Trained" },
+      "primaryCta": "Start a Fundraiser",
+      "secondaryCta": "Donate Now"
+    },
+    "vision": {
+      "title": "Vision & Objectives for 2032",
+      "description": "We envision to achieve these SMART goals by 2032",
+      "goal1": { "title": "To empower 10 Million Students", "desc": "through scholarships, e-learning, and vocational training" },
+      "goal2": { "title": "To Renovate or Build 10,000 Schools", "desc": "across the African continent" },
+      "goal3": { "title": "To Train 500,000 Teachers in ICT", "desc": "and modern teaching methodologies" }
+    },
+    "objectives": {
+      "badge": "Our Mission",
+      "title": "Core Objectives",
+      "subtitle": "Strategic pillars driving educational transformation across the African continent"
+    },
+    "programs": {
+      "badge": "Impact Initiatives",
+      "title": "Programs & Initiatives",
+      "subtitle": "Comprehensive education support programs designed to transform lives and communities",
+      "cta": "View All Programs"
+    },
+    "target": {
+      "badge": "Who We Serve",
+      "title": "Target Beneficiaries",
+      "subtitle": "Reaching learners at every stage of their educational journey"
+    },
+    "projects": {
+      "badge": "Active Projects",
+      "title": "Ongoing Initiatives",
+      "subtitle": "Current projects transforming education across the African continent",
+      "viewAll": "View All Projects"
+    },
+    "goals": {
+      "badge": "SMART Goals",
+      "title": "Vision 2032 Targets",
+      "subtitle": "Specific, Measurable, Achievable, Relevant, and Time-bound objectives for transformational impact",
+      "disclaimer": "Impact metrics are subject to independent verification and audit"
+    },
+    "engagement": {
+      "badge": "Collaboration",
+      "title": "Engagement & Partnerships",
+      "subtitle": "Join our network of partners committed to transforming education across Africa"
+    },
+    "chapters": {
+      "badge": "Local Presence",
+      "title": "EduAid Local Chapters",
+      "description": "Our growing network of local chapters brings EduAid's mission to communities across Africa, enabling grassroots impact and sustainable change.",
+      "point1": "Present in 15+ African countries",
+      "point2": "2,000+ active chapter members",
+      "browse": "Browse Chapters",
+      "start": "Start a Chapter"
+    },
+    "partners": {
+      "badge": "Strategic Alliances",
+      "title": "Our Partners",
+      "subtitle": "Collaborating with leading organizations to maximize educational impact across Africa",
+      "disclaimer": "Partnership details are subject to formal agreements and verification"
+    },
+    "achievers": {
+      "badge": "Success Stories",
+      "title": "Wall of Achievers",
+      "subtitle": "Celebrating the remarkable journeys of EduAid scholarship recipients who are now transforming their communities",
+      "disclaimer": "Stories are verified and published with consent of featured individuals"
+    },
+    "contact": {
+      "badge": "Contact Us",
+      "title": "Get In Touch",
+      "description": "Have questions about scholarships, partnerships, or volunteering? We'd love to hear from you.",
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Head Office",
+      "name": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more...",
+      "sending": "Sending...",
+      "send": "Send Message",
+      "success": "Message Sent",
+      "successDesc": "Thank you for reaching out. We'll respond within 48 hours."
+    },
+    "faq": {
+      "badge": "FAQs",
+      "title": "Frequently Asked Questions"
+    },
+    "donate": {
+      "title": "Ready to Make a Difference?",
+      "description": "Your contribution transforms lives. Every donation funds scholarships, builds schools, and trains teachers across Africa.",
+      "cta": "Donate Now",
+      "volunteer": "Become a Volunteer"
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programs",
