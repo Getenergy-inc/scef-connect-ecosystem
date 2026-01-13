@@ -10,21 +10,11 @@ import {
   Shield, Building2, Tv, Laptop, TrendingUp, CheckCircle2,
   GraduationCap, Handshake, BookOpen, School, Wrench,
   Accessibility, ChevronDown, ChevronUp, Download, BarChart3,
-  Radio, Play, FileText, MapPin, Clock, Sparkles
+  Radio, Play, FileText, MapPin, Clock, Sparkles, Menu
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import aboutHeroImage from "@/assets/about-scef-hero.jpg";
-
-// Image Generation Prompt (for hero):
-// "Create a premium, realistic website hero banner for a Pan-African education NGO. 
-// Scene: a modern TVET classroom/workshop in Africa with diverse students practicing 
-// hands-on technical skills and an inclusive learning area where a special needs learner 
-// is engaged confidently using assistive learning technology beside peers. 
-// Mood: hopeful, professional, dignified, non-stereotyped. Lighting: bright natural light, 
-// clean environment. Style: ultra-realistic, 4K, corporate documentary feel. 
-// Composition: wide banner with negative space on the left for headline text. 
-// Include subtle black/gold/emerald accents and faint African geometric patterns. 
-// No visible logos, no text in image."
 
 const divisionIcons = {
   bgeo: Shield,
@@ -51,7 +41,7 @@ const quickNavItems = [
   { id: "tvet-inclusion", label: "TVET & Inclusion" },
   { id: "objectives", label: "Objectives" },
   { id: "divisions", label: "How We Work" },
-  { id: "impact", label: "Impact" },
+  { id: "impact", label: "Impact & Accountability" },
   { id: "sustainability", label: "Sustainability" },
   { id: "get-involved", label: "Get Involved" },
   { id: "faqs", label: "FAQs" },
@@ -61,19 +51,20 @@ const About = () => {
   const { t, isRTL } = useLocale();
   const [activeSection, setActiveSection] = useState("who-we-are");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [heroExpanded, setHeroExpanded] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  // Smooth scroll to section
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 120; // Account for sticky nav
+      const offset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
+    setMobileNavOpen(false);
   };
 
-  // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
       const sections = quickNavItems.map(item => document.getElementById(item.id));
@@ -93,16 +84,26 @@ const About = () => {
   }, []);
 
   const programs = [
-    { key: "nesa", icon: Award, href: "/programs/nesa-africa" },
-    { key: "eduaid", icon: GraduationCap, href: "/programs/eduaid-africa" },
-    { key: "rmsa", icon: School, href: "/programs/rebuild-my-school-africa" },
-    { key: "eoa", icon: Laptop, href: "/programs/digital-learning" },
-    { key: "womenGirls", icon: Heart, href: "/programs/women-girls-education" },
-    { key: "specialNeeds", icon: Accessibility, href: "/programs/special-needs-education" },
-    { key: "elibrary", icon: BookOpen, href: "/programs/elibrary-nigeria" },
+    { key: "nesa", title: "New Education Standard Award Africa (NESA Africa)", desc: "Recognizing and amplifying educational excellence", icon: Award, href: "/programs/nesa-africa" },
+    { key: "eduaid", title: "Education Aid Africa (EduAid Africa)", desc: "Scholarships, support pathways, and education funding", icon: GraduationCap, href: "/programs/eduaid-africa" },
+    { key: "rmsa", title: "Rebuild My School Africa (RMSA)", desc: "School renewal and learning environment improvement", icon: School, href: "/programs/rebuild-my-school-africa" },
+    { key: "eoa", title: "Education Online Africa (EOA)", desc: "Digital learning and verifiable certification", icon: Laptop, href: "/programs/digital-learning" },
+    { key: "womenGirls", title: "Women & Girls Education", desc: "Targeted interventions for access and outcomes", icon: Heart, href: "/programs/women-girls-education" },
+    { key: "specialNeeds", title: "Special Needs Education Support", desc: "Inclusion and support for learners", icon: Accessibility, href: "/programs/special-needs-education" },
+    { key: "elibrary", title: "eLibrary Nigeria", desc: "Free and curated learning resources", icon: BookOpen, href: "/programs/elibrary-nigeria" },
+    { key: "nesaTv", title: "NESA Africa TV", desc: "Education media, stories, and live coverage", icon: Tv, href: "/media/nesa-tv" },
   ];
 
   const divisionKeys = ["bgeo", "sobcd", "tdsd", "ombdd", "santosMedia", "lcs"];
+
+  const divisionsData = [
+    { code: "BGEO", title: "Board Governance & Executive Office", lead: "Organization Secretary (Legal background + PRO function)", mandate: "Board coordination, governance documentation, executive office support, institutional communications, and governance continuity." },
+    { code: "SOBCD", title: "Strategic Operations & Business Compliance Division", lead: "Director of Operations and Compliance", mandate: "Admin & HR, finance operations oversight, events management, internal/external training coordination, compliance systems, operational reporting." },
+    { code: "TDSD", title: "Technology & Digital Services Division", lead: "Director of Technology and Digital Innovation", mandate: "Website/app systems, databases, security, dashboards, multilingual systems, platform performance, and digital transformation delivery." },
+    { code: "OMBDD", title: "Online Media Business Development Division", lead: "Director of Media Business Development", mandate: "Fundraising communications, sponsorship pipelines, digital growth, campaigns, partnerships conversion support, donor engagement assets." },
+    { code: "Santos Media", title: "Santos Media Division", lead: "Director of Santos Media", mandate: "NESA Africa TV, It's In Me Radio, webinars/podcasts, education tourism show, content operations, editorial standards, media distribution." },
+    { code: "LCS", title: "Local Chapter Services Division", lead: "Director of Chapter Services and Support", mandate: "Onboarding, monitoring, compliance support, reporting systems, local chapter governance, and scalable chapter activation." },
+  ];
 
   const faqs = [
     {
@@ -115,21 +116,12 @@ const About = () => {
     },
     {
       q: "Do you work across countries?",
-      a: "Yes—through structured local chapters and diaspora engagement. We operate in 54+ African countries and diaspora communities, each with local leadership aligned to SCEF governance standards."
+      a: "Yes—through structured local chapters and diaspora engagement. We operate across African countries and diaspora communities, each with local leadership aligned to SCEF governance standards."
     },
     {
       q: "How do partners track impact?",
       a: "Through detailed reports, digital updates via our Digital Board, and program dashboards. CSR partners receive quarterly impact statements and annual audited reports."
     },
-  ];
-
-  const impactStats = [
-    { label: "Countries/Regions", value: "54+", icon: MapPin },
-    { label: "Active Chapters", value: "120+", icon: Globe },
-    { label: "Learners Supported", value: "50K+", icon: GraduationCap },
-    { label: "Schools Supported", value: "200+", icon: School },
-    { label: "Scholarships", value: "5K+", icon: Award },
-    { label: "Media Reach", value: "1M+", icon: Play },
   ];
 
   return (
@@ -148,17 +140,16 @@ const About = () => {
         <Header />
         
         <main>
-          {/* SECTION 1: Hero with Dual Image Layout */}
+          {/* HERO SECTION */}
           <section id="top" className="relative bg-scef-blue overflow-hidden">
-            {/* Hero Image Grid */}
             <div className="grid lg:grid-cols-2">
               {/* Left: Hero Content */}
-              <div className="relative py-24 lg:py-32 px-6 lg:px-12 flex flex-col justify-center bg-gradient-to-br from-scef-blue via-scef-blue to-scef-blue-darker">
+              <div className="relative py-20 lg:py-28 px-6 lg:px-12 flex flex-col justify-center bg-gradient-to-br from-scef-blue via-scef-blue to-scef-blue-darker">
                 <div className="absolute inset-0 bg-gradient-to-r from-scef-blue/0 to-scef-blue/80 lg:hidden" />
                 <div className="absolute top-0 right-0 w-96 h-96 bg-scef-gold/10 rounded-full blur-3xl" />
                 
                 <div className="relative z-10 max-w-xl">
-                  {/* Region Badge */}
+                  {/* Eyebrow */}
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-gold text-sm font-semibold mb-6 border border-scef-gold/30">
                     <Globe className="w-4 h-4" />
                     Regional Africa • Diaspora Africa
@@ -168,23 +159,61 @@ const About = () => {
                     About Santos Creations Educational Foundation (SCEF)
                   </h1>
                   
-                  <p className="text-lg md:text-xl text-white/85 leading-relaxed mb-6">
+                  <h2 className="text-lg md:text-xl text-white/85 leading-relaxed mb-6 font-medium">
                     Building a continuous, ever-growing standard of education in Africa.
-                  </p>
+                  </h2>
                   
-                  <p className="text-base text-white/70 leading-relaxed mb-8">
+                  {/* Short visible preview */}
+                  <p className="text-base text-white/70 leading-relaxed mb-4">
                     SCEF is a membership-driven Pan-African education foundation advancing Education for All through governance, local chapters, digital learning, TVET workforce readiness, inclusive education, and transparent partnerships.
                   </p>
+
+                  {/* Collapsible "Read more" section */}
+                  <Collapsible open={heroExpanded} onOpenChange={setHeroExpanded}>
+                    <CollapsibleContent className="text-base text-white/70 leading-relaxed space-y-4 mb-4">
+                      <p>
+                        Santos Creations Educational Foundation (SCEF) is a membership-based, not-for-profit and membership-driven Pan-African education foundation advocating for transforming education across Nigeria and Africa through sustainable practices, innovation, and community-driven initiatives.
+                      </p>
+                      <p>
+                        We also provide <strong className="text-white/90">CSR for Education Funds Management Services</strong>—supporting corporations and institutions to deploy education CSR funds through verified projects, tracked disbursement, measurable outcomes, and accountability reporting aligned with sustainability and ESG expectations.
+                      </p>
+                      <p>
+                        In addition, SCEF delivers <strong className="text-white/90">Africa-recognised stakeholder and African-institution endorsed certification/endorsement services</strong> to validate education quality efforts, strengthen credibility, and support continuous improvement across schools, programs, and partner interventions.
+                      </p>
+                    </CollapsibleContent>
+                    <CollapsibleTrigger asChild>
+                      <button className="inline-flex items-center gap-2 text-scef-gold hover:text-scef-gold-light text-sm font-medium mb-6 transition-colors">
+                        {heroExpanded ? (
+                          <>Read less <ChevronUp className="w-4 h-4" /></>
+                        ) : (
+                          <>Read more <ChevronDown className="w-4 h-4" /></>
+                        )}
+                      </button>
+                    </CollapsibleTrigger>
+                  </Collapsible>
+
+                  {/* Quick Facts chips */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
+                      Founded 1997
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
+                      Registered 2010
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full bg-scef-gold/20 text-scef-gold text-xs font-medium border border-scef-gold/30">
+                      SDG 4 + AU Agenda 2063
+                    </span>
+                  </div>
 
                   {/* Primary CTAs */}
                   <div className="flex flex-wrap gap-3 mb-6">
                     <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold shadow-lg" asChild>
-                      <Link to="/membership">
+                      <Link to="/get-involved/membership">
                         Join SCEF
                       </Link>
                     </Button>
                     <Button size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-semibold" asChild>
-                      <Link to="/partners">
+                      <Link to="/partner-with-us">
                         Partner With Us
                       </Link>
                     </Button>
@@ -196,14 +225,13 @@ const About = () => {
                     </Button>
                   </div>
 
-                  {/* Trust Line */}
-                  <div className="pt-6 border-t border-white/20">
-                    <p className="text-xs text-white/50 flex flex-wrap gap-x-3 gap-y-1">
-                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Founded 1997</span>
-                      <span>•</span>
-                      <span>Registered 2010</span>
-                      <span>•</span>
-                      <span>SDG 4 + AU Agenda 2063</span>
+                  {/* Secondary CTA */}
+                  <div className="text-sm text-white/60">
+                    <Link to="/chapters/join-online" className="text-scef-gold hover:text-scef-gold-light underline underline-offset-2">
+                      Join an Online Local Chapter →
+                    </Link>
+                    <p className="mt-1 text-xs">
+                      Join an online local chapter of your choice and country — as a resident, diaspora, or friend of the country.
                     </p>
                   </div>
                 </div>
@@ -213,7 +241,7 @@ const About = () => {
               <div className="relative hidden lg:block">
                 <img 
                   src={aboutHeroImage}
-                  alt="Inclusive TVET classroom with learners building practical skills and a special needs learner using assistive learning technology."
+                  alt="Learners on the journey to school and an inclusive TVET classroom supporting practical skills and special needs learning."
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-scef-blue/40" />
@@ -224,60 +252,79 @@ const About = () => {
             <div className="lg:hidden relative h-64">
               <img 
                 src={aboutHeroImage}
-                alt="Inclusive TVET classroom with learners building practical skills and a special needs learner using assistive learning technology."
+                alt="Learners on the journey to school and an inclusive TVET classroom supporting practical skills and special needs learning."
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/80 to-transparent" />
             </div>
           </section>
           
-          {/* Mission Snapshot Cards */}
+          {/* THREE PILLAR CARDS */}
           <section className="py-12 bg-background border-b border-border">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-3 gap-6">
+                {/* Card 1: Standards & Recognition */}
                 <div className="bg-card rounded-2xl p-6 border-2 border-scef-gold/20 hover:border-scef-gold/40 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
                     <Award className="w-6 h-6 text-scef-gold" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-3">Standards & Recognition</h3>
-                  <p className="text-sm text-muted-foreground mb-3">NESA-Africa</p>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Standards & Recognition</h3>
+                  <p className="text-sm text-scef-gold font-medium mb-3">NESA-Africa</p>
+                  <ul className="text-sm text-muted-foreground space-y-2 mb-4">
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Recognition awards for educators</li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Quality benchmarking programs</li>
                   </ul>
+                  <Button variant="outline" size="sm" asChild className="w-full">
+                    <a href="https://nesa.africa" target="_blank" rel="noopener noreferrer">
+                      Visit NESA-Africa <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
                 </div>
                 
+                {/* Card 2: Scholarships & Funding */}
                 <div className="bg-card rounded-2xl p-6 border-2 border-scef-blue/20 hover:border-scef-blue/40 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4">
                     <GraduationCap className="w-6 h-6 text-scef-blue" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-3">Scholarships & Funding</h3>
-                  <p className="text-sm text-muted-foreground mb-3">EduAid-Africa</p>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Scholarships & Funding</h3>
+                  <p className="text-sm text-scef-blue font-medium mb-3">EduAid-Africa</p>
+                  <ul className="text-sm text-muted-foreground space-y-2 mb-4">
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> Learner sponsorship pathways</li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> CSR partnership programs</li>
                   </ul>
+                  <Button variant="outline" size="sm" asChild className="w-full">
+                    <a href="https://edu-aid-chi.vercel.app" target="_blank" rel="noopener noreferrer">
+                      Visit EduAid-Africa <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
                 </div>
                 
+                {/* Card 3: Inclusion & Access */}
                 <div className="bg-card rounded-2xl p-6 border-2 border-scef-gold/20 hover:border-scef-gold/40 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
                     <Accessibility className="w-6 h-6 text-scef-gold" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-3">Inclusion & Access</h3>
-                  <p className="text-sm text-muted-foreground mb-3">Women & Girls + Special Needs</p>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Inclusion & Access</h3>
+                  <p className="text-sm text-scef-gold font-medium mb-3">Women & Girls + Special Needs</p>
+                  <ul className="text-sm text-muted-foreground space-y-2 mb-4">
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Assistive learning support</li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Girls education advocacy</li>
                   </ul>
+                  <Button variant="outline" size="sm" asChild className="w-full">
+                    <Link to="/programs/inclusion-access">
+                      Learn More <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION 2: Quick Navigation (Sticky) */}
+          {/* STICKY ANCHOR NAV */}
           <nav className="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
             <div className="container mx-auto px-4">
-              <div className="flex items-center gap-1 py-3 overflow-x-auto scrollbar-hide">
+              {/* Desktop Nav */}
+              <div className="hidden md:flex items-center gap-1 py-3 overflow-x-auto scrollbar-hide">
                 {quickNavItems.map((item) => (
                   <button
                     key={item.id}
@@ -293,10 +340,40 @@ const About = () => {
                   </button>
                 ))}
               </div>
+              
+              {/* Mobile Nav Dropdown */}
+              <div className="md:hidden py-3">
+                <Collapsible open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
+                  <CollapsibleTrigger asChild>
+                    <button className="w-full flex items-center justify-between px-4 py-2 bg-muted rounded-lg">
+                      <span className="text-sm font-medium text-foreground">
+                        {quickNavItems.find(item => item.id === activeSection)?.label || "Navigate"}
+                      </span>
+                      <Menu className="w-4 h-4 text-muted-foreground" />
+                    </button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 space-y-1">
+                    {quickNavItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className={cn(
+                          "w-full px-4 py-2 text-sm text-left rounded-lg transition-colors",
+                          activeSection === item.id
+                            ? "bg-scef-blue text-white"
+                            : "text-muted-foreground hover:bg-muted"
+                        )}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              </div>
             </div>
           </nav>
 
-          {/* SECTION 3: Who We Are */}
+          {/* WHO WE ARE */}
           <section id="who-we-are" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
@@ -310,7 +387,7 @@ const About = () => {
                 </h2>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Santos Creations Educational Foundation (SCEF) is a structured education impact ecosystem—built to help education systems improve, scale, and stay accountable. We connect local chapters, partners, digital platforms, and media advocacy to deliver measurable outcomes in:
+                  SCEF is a structured education impact ecosystem—built to help education systems improve, scale, and stay accountable. We connect local chapters, partners, digital platforms, and media advocacy to deliver measurable outcomes in:
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-10">
@@ -332,26 +409,21 @@ const About = () => {
                 <div className="flex flex-wrap gap-4">
                   <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
                     <Link to="/programs">
-                      Explore Our Programs
-                      <ArrowRight className="w-4 h-4" />
+                      Explore Our Programs <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/local-chapters">
-                      Join a Chapter
-                    </Link>
+                    <Link to="/chapters">Join a Chapter</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/donate">
-                      Donate Now
-                    </Link>
+                    <Link to="/donate">Donate Now</Link>
                   </Button>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION 4: Why We Exist */}
+          {/* WHY WE EXIST */}
           <section id="why-we-exist" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
@@ -389,7 +461,7 @@ const About = () => {
             </div>
           </section>
 
-          {/* SECTION 5: What We Do (Programs) */}
+          {/* WHAT WE DO (PROGRAMS) */}
           <section id="what-we-do" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -401,7 +473,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
                 {programs.map((program) => {
                   const Icon = program.icon;
                   return (
@@ -413,11 +485,11 @@ const About = () => {
                       <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4 group-hover:bg-scef-gold/20 transition-colors">
                         <Icon className="w-6 h-6 text-scef-gold" />
                       </div>
-                      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
-                        {t(`about.programs.cards.${program.key}`).split(' — ')[0]}
+                      <h3 className="font-display text-base font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors leading-tight">
+                        {program.title}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        {t(`about.programs.cards.${program.key}`).split(' — ')[1] || t(`about.programs.cards.${program.key}`)}
+                        {program.desc}
                       </p>
                       <div className="mt-4 flex items-center gap-2 text-sm text-scef-blue group-hover:text-scef-gold transition-colors">
                         Learn more <ArrowRight className="w-4 h-4" />
@@ -429,26 +501,26 @@ const About = () => {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                  <Link to="/get-involved">Apply / Participate</Link>
+                  <Link to="/get-involved/apply">Apply / Participate</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/partners">Partner / Sponsor</Link>
+                  <Link to="/partner-with-us">Partner / Sponsor</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/donate">Donate to a Program</Link>
+                  <Link to="/donate?type=program">Donate to a Program</Link>
                 </Button>
               </div>
             </div>
           </section>
 
-          {/* SECTION 6: TVET + Special Needs Spotlight */}
+          {/* TVET & INCLUSION */}
           <section id="tvet-inclusion" className="py-20 bg-scef-blue-darker text-white">
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
                     <Wrench className="w-4 h-4" />
-                    Spotlight
+                    TVET & Inclusion
                   </div>
                   
                   <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
@@ -472,26 +544,35 @@ const About = () => {
                     ))}
                   </ul>
 
-                  <div className="bg-white/10 rounded-xl p-6 mb-8">
-                    <h3 className="font-semibold text-white mb-4">What this looks like:</h3>
-                    <ul className="space-y-2 text-sm text-white/80">
-                      <li><strong className="text-scef-gold">TVET support:</strong> starter equipment, training linkages, digital skills certification pathways</li>
-                      <li><strong className="text-scef-gold">Inclusive access:</strong> advocacy for learning aids, accessible content, inclusive teacher support</li>
-                      <li><strong className="text-scef-gold">Outcomes focus:</strong> employability skills, entrepreneurship readiness, community value creation</li>
-                    </ul>
-                  </div>
+                  {/* Collapsible details on mobile */}
+                  <Collapsible>
+                    <div className="bg-white/10 rounded-xl p-6 mb-8">
+                      <h3 className="font-semibold text-white mb-4">What this looks like:</h3>
+                      <CollapsibleContent className="lg:block">
+                        <ul className="space-y-2 text-sm text-white/80">
+                          <li><strong className="text-scef-gold">TVET support:</strong> starter equipment, training linkages, digital skills certification pathways</li>
+                          <li><strong className="text-scef-gold">Inclusive access:</strong> advocacy for learning aids, accessible content, inclusive teacher support</li>
+                          <li><strong className="text-scef-gold">Outcomes focus:</strong> employability skills, entrepreneurship readiness, community value creation</li>
+                        </ul>
+                      </CollapsibleContent>
+                      <CollapsibleTrigger asChild>
+                        <button className="lg:hidden mt-4 text-scef-gold text-sm font-medium flex items-center gap-1">
+                          Show details <ChevronDown className="w-4 h-4" />
+                        </button>
+                      </CollapsibleTrigger>
+                    </div>
+                  </Collapsible>
 
                   <div className="flex flex-wrap gap-4">
                     <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
-                      <Link to="/donate">Support a TVET Lab / Inclusive Classroom</Link>
+                      <Link to="/donate?focus=tvet-inclusion">Support TVET & Inclusion</Link>
                     </Button>
                     <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                      <Link to="/partners">Partner as CSR Skills Sponsor</Link>
+                      <Link to="/partner-with-us/csr">Partner as CSR Sponsor</Link>
                     </Button>
                   </div>
                 </div>
 
-                {/* TVET + Inclusion Image - uses the bottom half of the hero image */}
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                     <img 
@@ -502,24 +583,12 @@ const About = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/60 via-transparent to-transparent" />
                   </div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-scef-gold/20 rounded-full blur-2xl" />
-                  
-                  {/* Floating stats */}
-                  <div className="absolute bottom-4 left-4 right-4 flex gap-3">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
-                      <p className="text-2xl font-bold text-scef-blue">54+</p>
-                      <p className="text-xs text-muted-foreground">Countries</p>
-                    </div>
-                    <div className="bg-scef-gold/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
-                      <p className="text-2xl font-bold text-scef-blue">5K+</p>
-                      <p className="text-xs text-scef-blue/80">Learners</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION 7: 6 Core Objectives - OFFICIAL APPROVED VERSION */}
+          {/* OBJECTIVES */}
           <section id="objectives" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -587,13 +656,13 @@ const About = () => {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                  <Link to="/governance">
+                  <Link to="/about/governance">
                     <Shield className="w-4 h-4" />
                     Visit Governance Hub
                   </Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/divisions">
+                  <Link to="/about/divisions">
                     View Our Divisions
                   </Link>
                 </Button>
@@ -601,7 +670,7 @@ const About = () => {
             </div>
           </section>
 
-          {/* SECTION 8: How SCEF Works (Divisions) */}
+          {/* HOW WE WORK (DIVISIONS) */}
           <section id="divisions" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -614,7 +683,8 @@ const About = () => {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
-                {divisionKeys.map((divKey) => {
+                {divisionsData.map((division, index) => {
+                  const divKey = divisionKeys[index];
                   const Icon = divisionIcons[divKey as keyof typeof divisionIcons];
                   const link = divisionLinks[divKey as keyof typeof divisionLinks];
                   return (
@@ -628,16 +698,16 @@ const About = () => {
                           <Icon className="w-5 h-5 text-scef-blue group-hover:text-scef-gold transition-colors" />
                         </div>
                         <span className="text-xs font-semibold px-2 py-1 rounded-full bg-scef-gold text-scef-blue">
-                          {t(`divisions.items.${divKey}.code`)}
+                          {division.code}
                         </span>
                       </div>
                       <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
-                        {t(`divisions.items.${divKey}.title`)}
+                        {division.title}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-1">
-                        <strong>{t(`divisions.items.${divKey}.lead`)}</strong>
+                        <strong>{division.lead}</strong>
                       </p>
-                      <p className="text-sm text-muted-foreground">{t(`divisions.items.${divKey}.mandate`)}</p>
+                      <p className="text-sm text-muted-foreground">{division.mandate}</p>
                     </Link>
                   );
                 })}
@@ -645,16 +715,16 @@ const About = () => {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                  <Link to="/local-chapters">Join a Local Chapter</Link>
+                  <Link to="/chapters/join">Join a Local Chapter</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/get-involved">Volunteer / Intern</Link>
+                  <Link to="/get-involved/volunteer">Volunteer / Intern / Staff</Link>
                 </Button>
               </div>
             </div>
           </section>
 
-          {/* SECTION 9: Impact & Accountability */}
+          {/* IMPACT & ACCOUNTABILITY - NO FAKE METRICS */}
           <section id="impact" className="py-20 bg-scef-blue text-white">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -662,32 +732,61 @@ const About = () => {
                   Impact & Accountability
                 </h2>
                 <p className="text-white/70 max-w-2xl mx-auto">
-                  Measurable outcomes and transparent reporting for all stakeholders.
+                  Transparent reporting and measurable outcomes for all stakeholders.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                {impactStats.map((stat, i) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div key={i} className="text-center p-6 bg-white/5 rounded-2xl border border-white/10">
-                      <Icon className="w-8 h-8 text-scef-gold mx-auto mb-3" />
-                      <div className="text-3xl font-display font-bold text-white mb-1">{stat.value}</div>
-                      <p className="text-sm text-white/60">{stat.label}</p>
-                    </div>
-                  );
-                })}
+              {/* Accountability Framework */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
+                  <h3 className="font-display text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <Shield className="w-6 h-6 text-scef-gold" />
+                    Accountability Framework
+                  </h3>
+                  <p className="text-white/80 mb-6">
+                    We report impact through governance reporting, program delivery records, chapter reporting systems, and partner-ready documentation:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      "Verified projects and milestone evidence",
+                      "Disbursement tracking (where applicable)",
+                      "Quarterly outcome summaries (program-level)",
+                      "ESG/SDG alignment indicators (partner-ready)",
+                      "Independent/audited reporting (where available)",
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
+                        <span className="text-white/80 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Reporting Status */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <div className="bg-scef-gold/20 rounded-2xl p-6 border border-scef-gold/30 text-center">
+                  <BarChart3 className="w-10 h-10 text-scef-gold mx-auto mb-4" />
+                  <h4 className="font-semibold text-white mb-2">Reporting Snapshot</h4>
+                  <p className="text-white/70 text-sm mb-4">
+                    Live impact metrics and regional data are being consolidated. Full reporting dashboard coming soon.
+                  </p>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm">
+                    <Clock className="w-4 h-4" />
+                    Reporting in progress
+                  </span>
+                </div>
               </div>
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
-                  <Link to="/reports">
+                  <Link to="/resources/organizational-profile">
                     <Download className="w-4 h-4" />
                     Download Organizational Profile
                   </Link>
                 </Button>
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                  <Link to="/case-studies">
+                  <Link to="/resources/reports">
                     <FileText className="w-4 h-4" />
                     View Reports & Case Studies
                   </Link>
@@ -702,7 +801,7 @@ const About = () => {
             </div>
           </section>
 
-          {/* SECTION 10: Sustainability & Alignment */}
+          {/* SUSTAINABILITY & ALIGNMENT */}
           <section id="sustainability" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
@@ -733,17 +832,17 @@ const About = () => {
 
                 <div className="flex flex-wrap gap-4">
                   <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                    <Link to="/partners">CSR Partnership</Link>
+                    <Link to="/partner-with-us/csr">CSR Partnership</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/donate">Sponsor a Program</Link>
+                    <Link to="/donate?type=sponsor">Sponsor a Program</Link>
                   </Button>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* SECTION 11: Get Involved */}
+          {/* GET INVOLVED */}
           <section id="get-involved" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -755,12 +854,14 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
                 {[
-                  { icon: Users, title: "Join as Member", desc: "Become part of the movement", href: "/membership", color: "scef-blue" },
-                  { icon: Award, title: "Become Ambassador", desc: "Represent SCEF, mobilize support", href: "/membership", color: "scef-gold" },
-                  { icon: Handshake, title: "Partner/CSR", desc: "Fund measurable projects", href: "/partners", color: "scef-blue" },
+                  { icon: Users, title: "Join as Member", desc: "Become part of the movement", href: "/get-involved/membership", color: "scef-blue" },
+                  { icon: Award, title: "Become Ambassador", desc: "Represent SCEF, mobilize support", href: "/get-involved/ambassador", color: "scef-gold" },
+                  { icon: Handshake, title: "Partner/CSR", desc: "Fund measurable projects", href: "/partner-with-us", color: "scef-blue" },
                   { icon: Heart, title: "Donate", desc: "Support a learner or school", href: "/donate", color: "scef-gold" },
+                  { icon: Globe, title: "Join Online Chapter", desc: "Connect with your country community", href: "/chapters/join-online", color: "scef-blue" },
+                  { icon: Users, title: "Volunteer / Intern / Staff", desc: "Contribute your skills", href: "/get-involved/volunteer", color: "scef-gold" },
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
@@ -784,14 +885,10 @@ const About = () => {
                   );
                 })}
               </div>
-
-              <p className="text-center text-muted-foreground">
-                You can start small—membership, a one-time donation, or joining your local chapter.
-              </p>
             </div>
           </section>
 
-          {/* SECTION 12: FAQs */}
+          {/* FAQs */}
           <section id="faqs" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto">
@@ -825,7 +922,7 @@ const About = () => {
             </div>
           </section>
 
-          {/* SECTION 13: Final CTA */}
+          {/* FINAL CTA */}
           <section id="final-cta" className="py-20 bg-scef-blue-darker text-white">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -837,7 +934,7 @@ const About = () => {
               
               <div className="flex flex-wrap justify-center gap-4">
                 <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold" asChild>
-                  <Link to="/membership">
+                  <Link to="/get-involved/membership">
                     <Users className="w-5 h-5" />
                     Join
                   </Link>
@@ -849,7 +946,7 @@ const About = () => {
                   </Link>
                 </Button>
                 <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
-                  <Link to="/partners">
+                  <Link to="/partner-with-us">
                     <Handshake className="w-5 h-5" />
                     Partner
                   </Link>
