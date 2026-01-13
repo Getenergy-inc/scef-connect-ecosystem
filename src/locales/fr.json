@@ -181,6 +181,12 @@
         "point2": "Suivi des décaissements et documentation prête pour l'audit",
         "point3": "Rapports trimestriels alignés sur les indicateurs ESG/ODD",
         "point4": "Modèle de livraison par chapitres pour une mise en œuvre évolutive"
+      },
+      "ctaStrip": {
+        "apply": "Postuler / Participer",
+        "programs": "Explorer les Programmes",
+        "chapters": "Explorer les Chapitres",
+        "media": "Regarder SCEF Media"
       }
     },
     "quickPath": {

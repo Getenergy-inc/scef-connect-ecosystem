@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Play, ChevronLeft, ChevronRight, ExternalLink, Volume2, FileText, Image, ChevronDown, ChevronUp, CheckCircle, Globe, Calendar, Award, MapPin } from "lucide-react";
+import { Play, ChevronLeft, ChevronRight, ExternalLink, Volume2, FileText, Image, ChevronDown, ChevronUp, CheckCircle, Globe, Calendar, Award, MapPin, Users, Tv, BookOpen, UserPlus } from "lucide-react";
 import { siteContent } from "@/config/siteContent";
 import heroImage from "@/assets/hero-education.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -307,6 +307,58 @@ export const HeroScreenshot = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Secondary CTA Strip */}
+      <div className="relative z-10 bg-white border-t border-b border-gray-200">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-scef-blue-dark hover:bg-scef-blue-darker text-white border-scef-blue-dark hover:border-scef-blue-darker font-medium text-xs md:text-sm px-4 py-2"
+              asChild
+            >
+              <Link to="/get-involved/apply" className="flex items-center gap-2">
+                <UserPlus className="w-4 h-4" />
+                {t("home.hero.ctaStrip.apply")}
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-white hover:bg-gray-50 text-scef-blue-dark border-scef-blue-dark font-medium text-xs md:text-sm px-4 py-2"
+              asChild
+            >
+              <Link to="/programs" className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4" />
+                {t("home.hero.ctaStrip.programs")}
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-white hover:bg-gray-50 text-scef-blue-dark border-scef-blue-dark font-medium text-xs md:text-sm px-4 py-2"
+              asChild
+            >
+              <Link to="/chapters" className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                {t("home.hero.ctaStrip.chapters")}
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark border-scef-gold font-medium text-xs md:text-sm px-4 py-2"
+              asChild
+            >
+              <Link to="/media" className="flex items-center gap-2">
+                <Tv className="w-4 h-4" />
+                {t("home.hero.ctaStrip.media")}
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
