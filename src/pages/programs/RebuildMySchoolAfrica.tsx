@@ -7,6 +7,7 @@ import {
   Building, Hammer, Users, MapPin, 
   ArrowRight, CheckCircle, Lightbulb, Droplets, Wifi, Shield 
 } from "lucide-react";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 
 const infrastructureTypes = [
   { name: "Classroom Construction", icon: Building, desc: "New classrooms built to modern standards" },
@@ -236,6 +237,14 @@ const RebuildMySchoolAfrica = () => {
               </div>
             </div>
           </section>
+
+          {/* Video Section */}
+          <ProgramVideoSection
+            programName="Rebuild My School Africa"
+            videoUrl="/videos/program-video-1.mp4"
+            videoType="local"
+            description="See how RMSA is transforming school infrastructure across Africa, one school at a time."
+          />
 
           {/* CTA */}
           <section className="py-20 bg-earth">

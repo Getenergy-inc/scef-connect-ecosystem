@@ -7,6 +7,7 @@ import {
   Award, Trophy, Star, Users, Calendar, 
   ArrowRight, CheckCircle, Vote, Medal, Sparkles 
 } from "lucide-react";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 
 const awardCategories = [
   { name: "Outstanding Student Award", desc: "Recognizing academic excellence and leadership" },
@@ -205,6 +206,15 @@ const NESAAfrica = () => {
               </div>
             </div>
           </section>
+
+          {/* Video Section */}
+          <ProgramVideoSection
+            programName="NESA-Africa"
+            videoUrl="https://www.youtube.com/embed/nQCXDX_X3rs"
+            videoType="youtube"
+            description="Watch highlights from NESA-Africa awards ceremonies and learn about our recognition programs."
+            thumbnailUrl="/assets/nesa-africa-logo.jpg"
+          />
 
           {/* CTA */}
           <section className="py-20 bg-earth">

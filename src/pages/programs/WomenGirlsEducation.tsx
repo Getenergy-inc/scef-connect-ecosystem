@@ -9,6 +9,7 @@ import {
   Globe, TrendingUp, Star, Quote, UserCheck, Sparkles,
   ChevronDown, HandHeart, School
 } from "lucide-react";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 
 const programPillars = [
   {
@@ -290,6 +291,14 @@ const WomenGirlsEducation = () => {
               </div>
             </div>
           </section>
+
+          {/* Video Section */}
+          <ProgramVideoSection
+            programName="Women & Girls Education"
+            videoUrl="https://www.youtube.com/embed/DDREAU_bmRk"
+            videoType="youtube"
+            description="Discover how we're empowering women and girls through education across Africa."
+          />
 
           {/* CTA */}
           <section className="py-24 bg-white">

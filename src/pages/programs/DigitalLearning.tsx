@@ -9,6 +9,7 @@ import {
   TrendingUp, Star, Quote, Users, Smartphone, Play,
   ChevronDown, HandHeart, Monitor, Database, Code, Cloud
 } from "lucide-react";
+import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 
 const platforms = [
   {
@@ -334,6 +335,14 @@ const DigitalLearning = () => {
               </div>
             </div>
           </section>
+
+          {/* Video Section */}
+          <ProgramVideoSection
+            programName="Education Online Africa"
+            videoUrl="/videos/program-video-2.mp4"
+            videoType="local"
+            description="Explore how EOA is bridging the digital learning gap across Africa with accessible online education."
+          />
 
           {/* CTA */}
           <section className="py-24 bg-white">
