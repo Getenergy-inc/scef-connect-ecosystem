@@ -41,6 +41,7 @@ import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
 import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
 import NotFound from "./pages/NotFound";
+import Vacancies from "./pages/Vacancies";
 
 const queryClient = new QueryClient();
 
@@ -78,6 +79,7 @@ const App = () => (
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/get-involved" element={<GetInvolved />} />
+              <Route path="/vacancies" element={<Vacancies />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/governance" element={<Governance />} />
               <Route path="/certifications" element={<Certifications />} />
