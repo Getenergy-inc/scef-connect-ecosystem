@@ -266,7 +266,19 @@
       "ctaAmbassador": "Become an Ambassador",
       "ctaJoinChapter": "Join a Local Chapter",
       "ctaCsr": "Partner / CSR",
-      "ctaMedia": "Watch SCEF Media"
+      "ctaMedia": "Watch SCEF Media",
+      "expanded": {
+        "p1": "Santos Creations Educational Foundation (SCEF) is a membership-based, not-for-profit and membership-driven Pan-African education foundation advocating for transforming education across Nigeria and Africa through sustainable practices, innovation, and community-driven initiatives.",
+        "p2": "We also provide CSR for Education Funds Management Services—supporting corporations and institutions to deploy education CSR funds through verified projects, tracked disbursement, measurable outcomes, and accountability reporting aligned with sustainability and ESG expectations.",
+        "p3": "In addition, SCEF delivers Africa-recognised stakeholder and African-institution endorsed certification/endorsement services to validate education quality efforts, strengthen credibility, and support continuous improvement across schools, programs, and partner interventions."
+      },
+      "facts": {
+        "founded": "Founded 1997",
+        "registered": "Registered 2010",
+        "alignment": "SDG 4 + AU Agenda 2063"
+      },
+      "imageAlt": "Learners on the journey to school and an inclusive TVET classroom supporting practical skills and special needs learning.",
+      "joinChapterHelper": "Join an online local chapter of your choice and country — as a resident, diaspora, or friend of the country."
     },
     "quickNav": {
       "whoWeAre": "Who We Are",
@@ -278,7 +290,8 @@
       "impact": "Impact",
       "sustainability": "Sustainability",
       "getInvolved": "Get Involved",
-      "faqs": "FAQs"
+      "faqs": "FAQs",
+      "navigate": "Navigate"
     },
     "missionSnapshot": {
       "standards": {
@@ -298,7 +311,9 @@
         "subtitle": "Women & Girls + Special Needs",
         "point1": "Assistive learning support",
         "point2": "Girls education advocacy"
-      }
+      },
+      "visitNesa": "Visit NESA-Africa",
+      "visitEduaid": "Visit EduAid-Africa"
     },
     "who": {
       "badge": "Who We Are",
@@ -339,7 +354,7 @@
       "ctaDonate": "Donate to a Program"
     },
     "tvetSpotlight": {
-      "badge": "Spotlight",
+      "badge": "TVET & Inclusion",
       "title": "TVET, Skills, and Inclusive Education: Practical Learning for Every Learner",
       "intro": "We believe education must prepare learners for life—through skills, confidence, and opportunity, not only certificates. SCEF supports TVET-aligned pathways and inclusive learning environments that empower:",
       "empowerPoints": [
@@ -354,19 +369,59 @@
       "inclusiveAccessDesc": "advocacy for learning aids, accessible content, inclusive teacher support",
       "outcomesFocus": "Outcomes focus:",
       "outcomesFocusDesc": "employability skills, entrepreneurship readiness, community value creation",
-      "ctaTvet": "Support a TVET Lab / Inclusive Classroom",
-      "ctaCsr": "Partner as CSR Skills Sponsor"
+      "ctaTvet": "Support TVET & Inclusion",
+      "ctaCsr": "Partner as CSR Sponsor",
+      "showDetails": "Show details",
+      "imageAlt": "TVET workshop learners practicing hands-on skills alongside an inclusive classroom supporting a special needs learner."
+    },
+    "whatWeDo": {
+      "title": "What We Do",
+      "intro": "Featured Programs designed to work together on access, quality, inclusion, skills, and recognition.",
+      "learnMore": "Learn more",
+      "ctaApply": "Apply / Participate",
+      "ctaPartner": "Partner / Sponsor",
+      "ctaDonate": "Donate to a Program",
+      "programs": {
+        "nesa": { "title": "New Education Standard Award Africa (NESA Africa)", "desc": "Recognizing and amplifying educational excellence" },
+        "eduaid": { "title": "Education Aid Africa (EduAid Africa)", "desc": "Scholarships, support pathways, and education funding" },
+        "rmsa": { "title": "Rebuild My School Africa (RMSA)", "desc": "School renewal and learning environment improvement" },
+        "eoa": { "title": "Education Online Africa (EOA)", "desc": "Digital learning and verifiable certification" },
+        "womenGirls": { "title": "Women & Girls Education", "desc": "Targeted interventions for access and outcomes" },
+        "specialNeeds": { "title": "Special Needs Education Support", "desc": "Inclusion and support for learners" },
+        "elibrary": { "title": "eLibrary Nigeria", "desc": "Free and curated learning resources" },
+        "nesaTv": { "title": "NESA Africa TV", "desc": "Education media, stories, and live coverage" }
+      }
     },
     "objectives": {
       "title": "Our 6 Core Objectives",
+      "subtitle": "Our mission is delivered through six strategic objectives with clear delivery tools and measurable outcomes.",
       "items": [
-        "Establish layered governance for education delivery.",
-        "Deploy digital platforms for access and certification.",
-        "Develop media for knowledge dissemination.",
-        "Onboard and monitor local chapters for compliance.",
-        "Secure funding and partnerships with accountability.",
-        "Align operations with UN SDGs and AU Agenda 2063 for scalability."
+        "To build the platform for advocating a continuous, ever-growing standard of education in Africa—through standards frameworks, benchmarking, recognition, and endorsed certification/verification systems.",
+        "To expand equitable access to learning and certification by deploying integrated digital platforms for resources, skills, and verifiable outcomes across Africa and the diaspora.",
+        "To strengthen education advocacy and knowledge dissemination by developing media channels (TV, radio, webinars, podcasts, publications) that promote adoption of quality and inclusion practices.",
+        "To establish and monitor compliant delivery networks by onboarding, supporting, and auditing local chapters (physical and online) to implement programs with measurable reporting.",
+        "To mobilize and manage education funding with accountability—including CSR for Education Funds Management Services—using verified project pipelines, tracked disbursement, and ESG/SDG-aligned reporting.",
+        "To scale Education for All across Africa's five regions (North, West, Central, East, Southern) with support from a sixth region: the African diaspora, by building renewable multi-year partnerships with institutions, multilaterals, and global education funders."
       ],
+      "shortTitles": [
+        "Standards & Recognition",
+        "Digital Access & Certification",
+        "Media & Advocacy",
+        "Chapter Networks",
+        "Funding & Accountability",
+        "Pan-African Scale"
+      ],
+      "tools": {
+        "certificationSystems": "Certification Systems",
+        "webinars": "Webinars",
+        "localChapters": "Local Chapters",
+        "complianceFramework": "Compliance Framework",
+        "csrPrograms": "CSR Programs",
+        "esgReporting": "ESG Reporting",
+        "regionalChapters": "Regional Chapters",
+        "diaspora": "Diaspora",
+        "partnerships": "Partnerships"
+      },
       "ctaGovernance": "Visit Governance Hub",
       "ctaDivisions": "View Our Divisions",
       "ctaDownload": "Download SCEF Profile (PDF)"
@@ -379,7 +434,19 @@
     },
     "impact": {
       "title": "Impact & Accountability",
-      "subtitle": "Measurable outcomes and transparent reporting for all stakeholders.",
+      "subtitle": "Transparent reporting and measurable outcomes for all stakeholders.",
+      "frameworkTitle": "Accountability Framework",
+      "frameworkDesc": "We report impact through governance reporting, program delivery records, chapter reporting systems, and partner-ready documentation:",
+      "accountability": [
+        "Verified projects and milestone evidence",
+        "Disbursement tracking (where applicable)",
+        "Quarterly outcome summaries (program-level)",
+        "ESG/SDG alignment indicators (partner-ready)",
+        "Independent/audited reporting (where available)"
+      ],
+      "reportingTitle": "Reporting Snapshot",
+      "reportingDesc": "Live impact metrics and regional data are being consolidated. Full reporting dashboard coming soon.",
+      "reportingStatus": "Reporting in progress",
       "stats": {
         "countries": "Countries/Regions",
         "chapters": "Active Chapters",
@@ -410,12 +477,14 @@
     },
     "getInvolved": {
       "title": "Get Involved",
-      "subtitle": "Choose your pathway",
+      "subtitle": "Choose your pathway to make an impact.",
       "pathways": {
         "member": { "title": "Join as Member", "desc": "Become part of the movement" },
-        "ambassador": { "title": "Become an Ambassador", "desc": "Represent SCEF, mobilize support, track impact" },
-        "partner": { "title": "Partner/CSR", "desc": "Fund measurable projects with accountability" },
-        "donate": { "title": "Donate", "desc": "Support a learner, school, or media advocacy" }
+        "ambassador": { "title": "Become Ambassador", "desc": "Represent SCEF, mobilize support" },
+        "partner": { "title": "Partner/CSR", "desc": "Fund measurable projects" },
+        "donate": { "title": "Donate", "desc": "Support a learner or school" },
+        "chapter": { "title": "Join Online Chapter", "desc": "Connect with your country community" },
+        "volunteer": { "title": "Volunteer / Intern / Staff", "desc": "Contribute your skills" }
       },
       "reassurance": "You can start small—membership, a one-time donation, or joining your local chapter."
     },
@@ -496,6 +565,7 @@
     },
     "final": {
       "title": "Be part of Africa's education transformation.",
+      "subtitle": "Join the movement to make education accessible, inclusive, and impactful across the continent.",
       "ctaJoin": "Join",
       "ctaDonate": "Donate",
       "ctaPartner": "Partner",
