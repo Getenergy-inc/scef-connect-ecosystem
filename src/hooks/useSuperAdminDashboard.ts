@@ -9,6 +9,7 @@ export interface DashboardStats {
   totalMembers: number;
   activePrograms: number;
   elibraryResources: number;
+  totalWalletBalance: number;
 }
 
 export interface Transaction {
@@ -16,7 +17,17 @@ export interface Transaction {
   date: Date;
   description: string;
   amount: string;
-  type: "donation" | "disbursement" | "dues" | "purchase" | "contribution";
+  type: "donation" | "disbursement" | "dues" | "purchase" | "contribution" | "transfer" | "agc_purchase" | "credit" | "debit";
+}
+
+export interface WalletTransaction {
+  id: string;
+  date: Date;
+  type: string;
+  amount: number;
+  description: string;
+  walletId: string;
+  referenceId?: string;
 }
 
 export interface ChapterHealth {
@@ -93,6 +104,7 @@ export function useSuperAdminDashboard() {
       return {
         totalAGC,
         totalDonations: totalDonations + totalWalletBalance,
+        totalWalletBalance,
         activeChapters,
         totalChapters,
         totalMembers: totalMembers || 0,
@@ -103,25 +115,87 @@ export function useSuperAdminDashboard() {
     refetchInterval: 30000, // Refetch every 30 seconds
   });
 
-  // Fetch recent transactions (donations as transactions)
+  // Fetch wallet transactions
+  const walletTransactionsQuery = useQuery({
+    queryKey: ["super-admin-wallet-transactions"],
+    queryFn: async (): Promise<WalletTransaction[]> => {
+      const { data: walletTxns, error } = await supabase
+        .from("wallet_transactions")
+        .select("id, created_at, transaction_type, amount, description, wallet_id, reference_id")
+        .order("created_at", { ascending: false })
+        .limit(50);
+
+      if (error) throw error;
+
+      return (walletTxns || []).map((t) => ({
+        id: t.id,
+        date: new Date(t.created_at),
+        type: t.transaction_type,
+        amount: Number(t.amount) || 0,
+        description: t.description || "",
+        walletId: t.wallet_id,
+        referenceId: t.reference_id || undefined,
+      }));
+    },
+    refetchInterval: 30000,
+  });
+
+  // Fetch combined transactions (donations + wallet transactions)
   const transactionsQuery = useQuery({
     queryKey: ["super-admin-transactions"],
     queryFn: async (): Promise<Transaction[]> => {
-      const { data: donations, error } = await supabase
+      // Fetch donations
+      const { data: donations, error: donationsError } = await supabase
         .from("donations")
         .select("id, created_at, donor_name, amount, currency, payment_status, is_anonymous")
         .order("created_at", { ascending: false })
         .limit(20);
 
-      if (error) throw error;
+      if (donationsError) throw donationsError;
 
-      return (donations || []).map((d) => ({
+      // Fetch wallet transactions
+      const { data: walletTxns, error: walletError } = await supabase
+        .from("wallet_transactions")
+        .select("id, created_at, transaction_type, amount, description")
+        .order("created_at", { ascending: false })
+        .limit(20);
+
+      if (walletError) throw walletError;
+
+      const donationTxns: Transaction[] = (donations || []).map((d) => ({
         id: d.id,
         date: new Date(d.created_at),
         description: d.is_anonymous ? "Anonymous Donation" : (d.donor_name || "Donation"),
         amount: `${d.currency || "USD"} ${Number(d.amount).toLocaleString()}`,
         type: "donation" as const,
       }));
+
+      const walletTxnsMapped: Transaction[] = (walletTxns || []).map((t) => {
+        const typeMap: Record<string, Transaction["type"]> = {
+          "credit": "credit",
+          "debit": "debit",
+          "agc_purchase": "agc_purchase",
+          "transfer": "transfer",
+          "dues": "dues",
+          "purchase": "purchase",
+          "contribution": "contribution",
+        };
+        
+        return {
+          id: t.id,
+          date: new Date(t.created_at),
+          description: t.description || t.transaction_type,
+          amount: `USD ${Number(t.amount).toLocaleString()}`,
+          type: typeMap[t.transaction_type] || "credit" as const,
+        };
+      });
+
+      // Combine and sort by date
+      const allTxns = [...donationTxns, ...walletTxnsMapped]
+        .sort((a, b) => b.date.getTime() - a.date.getTime())
+        .slice(0, 30);
+
+      return allTxns;
     },
     refetchInterval: 30000,
   });
@@ -211,6 +285,9 @@ export function useSuperAdminDashboard() {
     
     transactions: transactionsQuery.data || [],
     transactionsLoading: transactionsQuery.isLoading,
+
+    walletTransactions: walletTransactionsQuery.data || [],
+    walletTransactionsLoading: walletTransactionsQuery.isLoading,
     
     chapterHealth: chapterHealthQuery.data || [],
     chapterHealthLoading: chapterHealthQuery.isLoading,
@@ -222,6 +299,7 @@ export function useSuperAdminDashboard() {
     refetchAll: () => {
       statsQuery.refetch();
       transactionsQuery.refetch();
+      walletTransactionsQuery.refetch();
       chapterHealthQuery.refetch();
       donationChartQuery.refetch();
     },
