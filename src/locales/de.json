@@ -108,7 +108,9 @@
     "watchVideo": "Video ansehen",
     "previous": "Zurück",
     "next": "Weiter",
-    "goToSlide": "Zur Folie gehen"
+    "goToSlide": "Zur Folie gehen",
+    "readMore": "Mehr lesen",
+    "readLess": "Weniger lesen"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",
@@ -132,12 +134,33 @@
   },
   "home": {
     "hero": {
-      "title": "Bildung für alle in Afrika — unterstützt von Mitgliedern, Ortsverbänden und Partnern",
-      "subtitle": "SCEF ist eine panafrikanische mitgliedergetriebene Stiftung, die Bildung durch Stipendien, Schulerneuerung, vertrauenswürdige Zertifizierungen und Medienadvokatur fördert — mit Ortsverbänden, Diaspora und CSR-Partnern.",
-      "ctaPrimary": "Mitglied werden",
-      "ctaDonate": "Jetzt spenden",
-      "ctaAmbassador": "Botschafter werden",
-      "ctaJoinChapter": "Ortsverband beitreten"
+      "eyebrow": "Regionales Afrika • Afrikanische Diaspora",
+      "title": "Einen kontinuierlich wachsenden Bildungsstandard in Afrika aufbauen",
+      "summary": "Die Santos Creations Educational Foundation (SCEF) ist eine mitgliedergetriebene panafrikanische Bildungsstiftung, die Bildung für alle in den fünf Regionen Afrikas (Nord, West, Zentral, Ost, Süd) liefert, mit strategischer Unterstützung der afrikanischen Diaspora (sechste Region) durch vertrauenswürdige Partnerschaften, lokale Ortsverbände und digitale Liefersysteme.",
+      "imageAlt": "Afrikanische Schüler lernen gemeinsam im Klassenzimmer",
+      "expanded": {
+        "p1": "SCEF arbeitet durch mehrschichtige Governance, lokale Ortsverbände, digitales Lernen, TVET-Arbeitsmarktbereitschaft, inklusive Bildung und transparente Partnerschaften — konzipiert für messbare Ergebnisse über Länder und Regionen hinweg.",
+        "p2": "SCEF bietet auch CSR-Fondsmanagement-Dienstleistungen für Bildung (SCEF-FMS), die Institutionen helfen, Bildungs-CSR-Budgets durch verifizierte Projektauswahl und -genehmigung, meilensteinbasierte Auszahlungsverfolgung, ESG/SDG-konforme Berichterstattung und vierteljährliche Ergebnismessung einzusetzen, unterstützt durch Dashboards und prüfungsfertige Dokumentation.",
+        "p3": "SCEF positioniert sich als NGO-Liefer- und Verantwortlichkeitspartner für mehrjährige (mindestens 10 Jahre erneuerbare) Bildungspartnerschaften mit Institutionen wie der Afrikanischen Union, Entwicklungspartnern, Unternehmensstiftungen und globalen Bildungsfonds — zur Unterstützung skalierbarer Implementierung im Einklang mit SDG 4 und der AU Agenda 2063."
+      },
+      "facts": {
+        "founded": "Gegründet: 1997",
+        "registered": "Registriert: 2010",
+        "alignment": "SDG 4 + AU Agenda 2063",
+        "coverage": "5 Regionen + Diaspora"
+      },
+      "ctaPartner": "Partner werden",
+      "ctaMember": "Der Mission beitreten",
+      "ctaDonate": "An ein Programm spenden",
+      "ctaCsr": "CSR-Partnerschaftsinteresse einreichen",
+      "csrHelper": "Setzen Sie Bildungs-CSR-Mittel durch verifizierte Projekte, Auszahlungsverfolgung und messbare Wirkungsberichte ein.",
+      "trust": {
+        "title": "Partnerfertige Lieferung und Verantwortlichkeit",
+        "point1": "Verifizierte Bildungsprojekt-Pipeline und Meilensteinpläne",
+        "point2": "Auszahlungsverfolgung und prüfungsfertige Dokumentation",
+        "point3": "Quartalsberichte im Einklang mit ESG/SDG-Indikatoren",
+        "point4": "Ortsverband-basiertes Liefermodell für skalierbare Implementierung"
+      }
     },
     "impact": {
       "title": "Wirkungsübersicht",

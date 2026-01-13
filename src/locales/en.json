@@ -108,7 +108,9 @@
     "watchVideo": "Watch Video",
     "previous": "Previous",
     "next": "Next",
-    "goToSlide": "Go to slide"
+    "goToSlide": "Go to slide",
+    "readMore": "Read more",
+    "readLess": "Read less"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",
@@ -153,12 +155,33 @@
       }
     },
     "hero": {
-      "title": "Education for All in Africa — powered by members, chapters, and partners",
-      "subtitle": "SCEF is a pan-African membership-driven foundation advancing education through scholarships, school renewal, trusted certifications, and media advocacy — with local chapters, diaspora, and CSR partners.",
-      "ctaPrimary": "Become a Member",
-      "ctaDonate": "Donate Now",
-      "ctaAmbassador": "Become Ambassador",
-      "ctaJoinChapter": "Join a Local Chapter"
+      "eyebrow": "Regional Africa • Diaspora Africa",
+      "title": "Building a continuous, ever-growing standard of education in Africa",
+      "summary": "Santos Creations Educational Foundation (SCEF) is a membership-driven Pan-African education foundation delivering Education for All across Africa's five regions (North, West, Central, East, Southern), with strategic support from the African diaspora (sixth region) through trusted partnerships, local chapters, and digital delivery systems.",
+      "imageAlt": "African students in classroom learning together",
+      "expanded": {
+        "p1": "SCEF operates through layered governance, local chapters, digital learning, TVET workforce readiness, inclusive education, and transparent partnerships—designed for measurable outcomes across countries and regions.",
+        "p2": "SCEF also provides CSR for Education Funds Management Services (SCEF–FMS), helping institutions deploy education CSR budgets through verified project selection and approval, milestone-based disbursement tracking, ESG/SDG-aligned reporting, and quarterly outcome measurement, supported by dashboards and audit-ready documentation.",
+        "p3": "SCEF positions as an NGO delivery and accountability partner for multi-year (minimum 10-year renewable) education partnerships with institutions such as the African Union, development partners, corporate foundations, and global education funds—supporting scalable implementation aligned with SDG 4 and AU Agenda 2063."
+      },
+      "facts": {
+        "founded": "Founded: 1997",
+        "registered": "Registered: 2010",
+        "alignment": "SDG 4 + AU Agenda 2063",
+        "coverage": "5 Africa Regions + Diaspora"
+      },
+      "ctaPartner": "Partner With Us",
+      "ctaMember": "Join the Mission",
+      "ctaDonate": "Donate to a Program",
+      "ctaCsr": "Submit CSR Partnership Interest",
+      "csrHelper": "Deploy education CSR funds through verified projects, tracked disbursement, and measurable impact reporting.",
+      "trust": {
+        "title": "Partner-ready delivery and accountability",
+        "point1": "Verified education project pipeline and milestone plans",
+        "point2": "Disbursement tracking and audit-ready documentation",
+        "point3": "Quarterly outcome reporting aligned to ESG/SDG indicators",
+        "point4": "Chapter-based delivery model for scalable implementation"
+      }
     },
     "quickPath": {
       "title": "Choose your path",

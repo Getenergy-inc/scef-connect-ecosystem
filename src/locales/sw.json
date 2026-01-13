@@ -108,7 +108,9 @@
     "watchVideo": "Tazama Video",
     "previous": "Iliyotangulia",
     "next": "Inayofuata",
-    "goToSlide": "Nenda kwenye slaidi"
+    "goToSlide": "Nenda kwenye slaidi",
+    "readMore": "Soma zaidi",
+    "readLess": "Soma kidogo"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",
@@ -153,12 +155,33 @@
       }
     },
     "hero": {
-      "title": "Elimu kwa Wote Barani Afrika — kwa nguvu ya wanachama, sura na washirika",
-      "subtitle": "SCEF ni taasisi ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma elimu kupitia ufadhili wa masomo, uboreshaji wa shule, vyeti vinavyoaminika na utetezi wa vyombo vya habari — kwa kushirikiana na sura za mitaa, diaspora na washirika wa CSR.",
-      "ctaPrimary": "Jiunge kama Mwanachama",
-      "ctaDonate": "Changia Sasa",
-      "ctaAmbassador": "Kuwa Balozi",
-      "ctaJoinChapter": "Jiunge na Sura ya Mtaa"
+      "eyebrow": "Afrika ya Kikanda • Diaspora ya Afrika",
+      "title": "Kujenga kiwango cha elimu kinachoendelea kukua barani Afrika",
+      "summary": "Santos Creations Educational Foundation (SCEF) ni taasisi ya elimu ya Ki-Afrika inayoendeshwa na wanachama, inayotoa Elimu kwa Wote katika kanda tano za Afrika (Kaskazini, Magharibi, Kati, Mashariki, Kusini), kwa msaada wa kimkakati kutoka diaspora ya Afrika (kanda ya sita) kupitia ushirikiano wa kuaminika, sura za mitaa na mifumo ya utoaji wa kidijitali.",
+      "imageAlt": "Wanafunzi wa Afrika wakijifunza pamoja darasani",
+      "expanded": {
+        "p1": "SCEF inafanya kazi kupitia utawala wa tabaka, sura za mitaa, ujifunzaji wa kidijitali, utayari wa wafanyakazi wa TVET, elimu jumuishi, na ushirikiano wa uwazi — uliobuniwa kwa matokeo yanayoweza kupimika katika nchi na kanda.",
+        "p2": "SCEF pia hutoa Huduma za Usimamizi wa Fedha za CSR kwa Elimu (SCEF-FMS), kusaidia taasisi kutekeleza bajeti za CSR za elimu kupitia uteuzi na uidhinishaji wa miradi iliyothibitishwa, ufuatiliaji wa malipo kulingana na hatua, taarifa zilizowekwa sawiya na ESG/SDG, na upimaji wa matokeo wa robo mwaka, unaosaidiwa na dashbodi na nyaraka zilizoandaliwa kwa ukaguzi.",
+        "p3": "SCEF inajiweka kama mshirika wa utoaji na uwajibikaji wa NGO kwa ushirikiano wa elimu wa miaka mingi (kiwango cha chini cha miaka 10 inayoweza kufanywa upya) na taasisi kama Umoja wa Afrika, washirika wa maendeleo, wakfu wa makampuni, na fedha za elimu za kimataifa — kusaidia utekelezaji unaoweza kupanuliwa unaofanana na SDG 4 na Ajenda 2063 ya AU."
+      },
+      "facts": {
+        "founded": "Ilianzishwa: 1997",
+        "registered": "Ilisajiliwa: 2010",
+        "alignment": "SDG 4 + Ajenda 2063 AU",
+        "coverage": "Kanda 5 + Diaspora"
+      },
+      "ctaPartner": "Kuwa Mshirika",
+      "ctaMember": "Jiunge na Dhamira",
+      "ctaDonate": "Changia Programu",
+      "ctaCsr": "Tuma Hamu ya Ushirikiano wa CSR",
+      "csrHelper": "Tekeleza fedha za CSR za elimu kupitia miradi iliyothibitishwa, ufuatiliaji wa malipo, na ripoti za athari zinazoweza kupimika.",
+      "trust": {
+        "title": "Utoaji na uwajibikaji ulio tayari kwa washirika",
+        "point1": "Bomba la miradi ya elimu iliyothibitishwa na mipango ya hatua",
+        "point2": "Ufuatiliaji wa malipo na nyaraka zilizoandaliwa kwa ukaguzi",
+        "point3": "Ripoti za robo mwaka zilizowekwa sawiya na viashirio vya ESG/SDG",
+        "point4": "Mfano wa utoaji unaotegemea sura kwa utekelezaji unaoweza kupanuliwa"
+      }
     },
     "quickPath": {
       "title": "Chagua njia yako",
