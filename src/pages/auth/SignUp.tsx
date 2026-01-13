@@ -151,12 +151,32 @@ const SignUp = () => {
           })
           .eq("user_id", data.user.id);
 
-        // If chapter selected, add to chapter_members
-        if (selectedChapter) {
+        // If chapter selected, add to chapter_members and create welcome thread
+        if (selectedChapter && selectedChapter !== "online-global") {
           await supabase.from("chapter_members").insert({
             chapter_id: selectedChapter,
             user_id: data.user.id,
           });
+
+          // Create welcome inbox thread
+          const { data: thread } = await supabase
+            .from("chapter_inbox_threads")
+            .insert({
+              chapter_id: selectedChapter,
+              user_id: data.user.id,
+              subject: "Welcome to your SCEF Chapter!",
+            })
+            .select()
+            .single();
+
+          if (thread) {
+            // Add welcome message
+            await supabase.from("chapter_inbox_messages").insert({
+              thread_id: thread.id,
+              sender_type: "system",
+              content: `Welcome to SCEF, ${firstName}! 🎉\n\nYou've been successfully registered under your local chapter. This is your dedicated channel for chapter correspondence, announcements, and support.\n\nHere's what you can do next:\n• Complete your profile\n• Fund your GFA Wallet\n• Explore our programs\n• Connect with other members\n\nIf you have any questions, simply reply to this thread and our chapter team will assist you.\n\n— Your SCEF Chapter Team`,
+            });
+          }
         }
       }
 

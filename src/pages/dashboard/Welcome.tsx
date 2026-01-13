@@ -9,7 +9,7 @@ import {
   CheckCircle, Wallet, User, Users, BookOpen, 
   Heart, Award, ArrowRight, Sparkles
 } from "lucide-react";
-import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
+import scefLogo from "@/assets/scef-logo.jpg";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -153,7 +153,7 @@ const Welcome = () => {
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <img 
-                  src={gfaWalletLogo} 
+                  src={scefLogo} 
                   alt="GFA Wallet" 
                   className="w-24 h-24 rounded-xl object-contain bg-white p-2"
                 />
