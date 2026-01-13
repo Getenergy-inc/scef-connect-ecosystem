@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -9,14 +9,20 @@ import { supabase } from "@/integrations/supabase/client";
 import { logger } from "@/lib/logger";
 import { 
   Wallet as WalletIcon, Plus, ArrowUpRight, ArrowDownLeft, 
-  CreditCard, Coins, History, RefreshCw 
+  Coins, History, RefreshCw 
 } from "lucide-react";
+import { WalletHeader } from "@/components/wallet/WalletHeader";
+import { FundWalletModal } from "@/components/wallet/FundWalletModal";
+import { WithdrawModal } from "@/components/wallet/WithdrawModal";
+import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 
 const Wallet = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
   const [wallet, setWallet] = useState<any>(null);
+  const [fundModalOpen, setFundModalOpen] = useState(false);
+  const [withdrawModalOpen, setWithdrawModalOpen] = useState(false);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
@@ -77,20 +83,16 @@ const Wallet = () => {
         <main className="pt-24 pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              {/* Header */}
-              <div className="mb-8">
-                <h1 className="font-display text-3xl font-bold text-foreground mb-2">
-                  GFA Wallet
-                </h1>
-                <p className="text-muted-foreground">
-                  Manage your funds and support education initiatives
-                </p>
-              </div>
+              {/* Header with GFA Wallet Logo */}
+              <WalletHeader />
 
               {/* Balance Cards */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 {/* USD Balance */}
-                <Card className="bg-gradient-to-br from-earth to-earth/90 text-cream">
+                <Card className="bg-gradient-to-br from-earth to-earth/90 text-cream overflow-hidden relative">
+                  <div className="absolute top-3 right-3 opacity-20">
+                    <img src={gfaWalletLogo} alt="" className="w-16 h-16 rounded-lg" />
+                  </div>
                   <CardHeader>
                     <CardDescription className="text-cream/70">Available Balance</CardDescription>
                     <CardTitle className="text-4xl font-display">
@@ -99,13 +101,18 @@ const Wallet = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="flex gap-2">
-                      <Button variant="secondary" size="sm">
+                      <Button variant="secondary" size="sm" onClick={() => setFundModalOpen(true)}>
                         <Plus className="w-4 h-4 mr-2" />
                         Add Funds
                       </Button>
-                      <Button variant="outline" size="sm" className="border-cream/30 text-cream hover:bg-cream/10">
-                        <ArrowUpRight className="w-4 h-4 mr-2" />
-                        Send
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="border-cream/30 text-cream hover:bg-cream/10"
+                        onClick={() => setWithdrawModalOpen(true)}
+                      >
+                        <ArrowDownLeft className="w-4 h-4 mr-2" />
+                        Withdraw
                       </Button>
                     </div>
                   </CardContent>
@@ -139,9 +146,9 @@ const Wallet = () => {
               {/* Quick Actions */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 {[
-                  { icon: Plus, label: "Add Funds", action: () => {} },
-                  { icon: ArrowUpRight, label: "Send", action: () => {} },
-                  { icon: CreditCard, label: "Donate", action: () => navigate("/donate") },
+                  { icon: Plus, label: "Add Funds", action: () => setFundModalOpen(true) },
+                  { icon: ArrowDownLeft, label: "Withdraw", action: () => setWithdrawModalOpen(true) },
+                  { icon: ArrowUpRight, label: "Donate", action: () => navigate("/donate") },
                   { icon: History, label: "History", action: () => {} },
                 ].map((item) => (
                   <button
@@ -170,7 +177,7 @@ const Wallet = () => {
                     <WalletIcon className="w-16 h-16 mx-auto mb-4 opacity-30" />
                     <p className="text-lg font-medium mb-2">No transactions yet</p>
                     <p className="text-sm mb-4">Start by adding funds to your wallet</p>
-                    <Button>
+                    <Button onClick={() => setFundModalOpen(true)}>
                       <Plus className="w-4 h-4 mr-2" />
                       Add Funds
                     </Button>
@@ -180,14 +187,19 @@ const Wallet = () => {
 
               {/* Info Section */}
               <div className="mt-8 p-6 rounded-xl bg-muted/50 border border-border">
-                <h3 className="font-display text-lg font-bold text-foreground mb-3">
-                  About GFA Wallet & AGC
-                </h3>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>• <strong>GFA Wallet</strong> is your personal funding account for all SCEF activities.</p>
-                  <p>• <strong>Afri Gold Coin (AGC)</strong> is SCEF's utility token for voting, governance, and exclusive benefits.</p>
-                  <p>• Convert USD to AGC to participate in NESA voting and member decisions.</p>
-                  <p>• All transactions are secure and transparent.</p>
+                <div className="flex items-start gap-4">
+                  <img src={gfaWalletLogo} alt="GFA Wallet" className="w-12 h-12 rounded-lg" />
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-foreground mb-3">
+                      About GFA Wallet & AGC
+                    </h3>
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <p>• <strong>GFA Wallet</strong> is your personal funding account for all SCEF activities.</p>
+                      <p>• <strong>Afri Gold Coin (AGC)</strong> is SCEF's utility token for voting, governance, and exclusive benefits.</p>
+                      <p>• Convert USD to AGC to participate in NESA voting and member decisions.</p>
+                      <p>• All transactions are secure, transparent, and auditable.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -196,6 +208,15 @@ const Wallet = () => {
 
         <Footer />
       </div>
+
+      {/* Modals */}
+      <FundWalletModal open={fundModalOpen} onOpenChange={setFundModalOpen} />
+      <WithdrawModal 
+        open={withdrawModalOpen} 
+        onOpenChange={setWithdrawModalOpen}
+        balance={wallet?.balance || 0}
+        hasBankAccount={false} // TODO: Check from bank_accounts table
+      />
     </>
   );
 };
