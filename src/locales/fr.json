@@ -108,7 +108,9 @@
     "watchVideo": "Regarder la vidéo",
     "previous": "Précédent",
     "next": "Suivant",
-    "goToSlide": "Aller à la diapositive"
+    "goToSlide": "Aller à la diapositive",
+    "readMore": "Lire la suite",
+    "readLess": "Lire moins"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",
@@ -153,12 +155,33 @@
       }
     },
     "hero": {
-      "title": "L'Éducation pour Tous en Afrique — portée par les membres, les chapitres et les partenaires",
-      "subtitle": "SCEF est une fondation panafricaine axée sur l'adhésion, qui fait progresser l'éducation grâce aux bourses, au renouvellement des écoles, aux certifications fiables et au plaidoyer médiatique — avec des chapitres locaux, la diaspora et des partenaires CSR.",
-      "ctaPrimary": "Devenir membre",
-      "ctaDonate": "Faire un don",
-      "ctaAmbassador": "Devenir ambassadeur",
-      "ctaJoinChapter": "Rejoindre un chapitre local"
+      "eyebrow": "Afrique Régionale • Diaspora Africaine",
+      "title": "Construire un standard éducatif en constante croissance en Afrique",
+      "summary": "Santos Creations Educational Foundation (SCEF) est une fondation éducative panafricaine axée sur l'adhésion, offrant l'Éducation pour Tous dans les cinq régions d'Afrique (Nord, Ouest, Centre, Est, Sud), avec le soutien stratégique de la diaspora africaine (sixième région) à travers des partenariats de confiance, des chapitres locaux et des systèmes de livraison numériques.",
+      "imageAlt": "Étudiants africains apprenant ensemble en classe",
+      "expanded": {
+        "p1": "SCEF fonctionne à travers une gouvernance en couches, des chapitres locaux, l'apprentissage numérique, la préparation à l'emploi TVET, l'éducation inclusive et des partenariats transparents — conçus pour des résultats mesurables à travers les pays et les régions.",
+        "p2": "SCEF fournit également des Services de Gestion de Fonds CSR pour l'Éducation (SCEF–FMS), aidant les institutions à déployer leurs budgets CSR éducatifs grâce à la sélection et l'approbation de projets vérifiés, au suivi des décaissements par jalons, aux rapports alignés ESG/ODD, et à la mesure trimestrielle des résultats, soutenus par des tableaux de bord et une documentation prête pour l'audit.",
+        "p3": "SCEF se positionne comme partenaire ONG de livraison et de redevabilité pour des partenariats éducatifs pluriannuels (minimum 10 ans renouvelables) avec des institutions comme l'Union Africaine, les partenaires de développement, les fondations d'entreprise et les fonds mondiaux pour l'éducation — soutenant une mise en œuvre évolutive alignée sur l'ODD 4 et l'Agenda 2063 de l'UA."
+      },
+      "facts": {
+        "founded": "Fondée : 1997",
+        "registered": "Enregistrée : 2010",
+        "alignment": "ODD 4 + Agenda 2063 UA",
+        "coverage": "5 Régions + Diaspora"
+      },
+      "ctaPartner": "Devenir Partenaire",
+      "ctaMember": "Rejoindre la Mission",
+      "ctaDonate": "Faire un Don à un Programme",
+      "ctaCsr": "Soumettre un Intérêt de Partenariat CSR",
+      "csrHelper": "Déployez les fonds CSR éducatifs à travers des projets vérifiés, un suivi des décaissements et des rapports d'impact mesurables.",
+      "trust": {
+        "title": "Livraison et redevabilité prêtes pour les partenaires",
+        "point1": "Pipeline de projets éducatifs vérifiés et plans de jalons",
+        "point2": "Suivi des décaissements et documentation prête pour l'audit",
+        "point3": "Rapports trimestriels alignés sur les indicateurs ESG/ODD",
+        "point4": "Modèle de livraison par chapitres pour une mise en œuvre évolutive"
+      }
     },
     "quickPath": {
       "title": "Choisissez votre parcours",

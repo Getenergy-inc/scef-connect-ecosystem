@@ -108,7 +108,9 @@
     "watchVideo": "Ver Video",
     "previous": "Anterior",
     "next": "Siguiente",
-    "goToSlide": "Ir a diapositiva"
+    "goToSlide": "Ir a diapositiva",
+    "readMore": "Leer más",
+    "readLess": "Leer menos"
   },
   "footer": {
     "organization": "Fundación Educativa Santos Creations",
@@ -132,12 +134,33 @@
   },
   "home": {
     "hero": {
-      "title": "Educación para Todos en África — impulsada por miembros, capítulos y socios",
-      "subtitle": "SCEF es una fundación panafricana impulsada por miembros que avanza la educación a través de becas, renovación escolar, certificaciones confiables y defensa mediática — con capítulos locales, diáspora y socios de RSC.",
-      "ctaPrimary": "Convertirse en Miembro",
-      "ctaDonate": "Donar Ahora",
-      "ctaAmbassador": "Convertirse en Embajador",
-      "ctaJoinChapter": "Unirse a un Capítulo Local"
+      "eyebrow": "África Regional • Diáspora Africana",
+      "title": "Construyendo un estándar educativo en constante crecimiento en África",
+      "summary": "Santos Creations Educational Foundation (SCEF) es una fundación educativa panafricana impulsada por miembros, entregando Educación para Todos en las cinco regiones de África (Norte, Oeste, Centro, Este, Sur), con apoyo estratégico de la diáspora africana (sexta región) a través de alianzas confiables, capítulos locales y sistemas de entrega digitales.",
+      "imageAlt": "Estudiantes africanos aprendiendo juntos en el aula",
+      "expanded": {
+        "p1": "SCEF opera a través de gobernanza en capas, capítulos locales, aprendizaje digital, preparación para el mercado laboral TVET, educación inclusiva y alianzas transparentes — diseñadas para resultados medibles en países y regiones.",
+        "p2": "SCEF también proporciona Servicios de Gestión de Fondos de RSC para Educación (SCEF-FMS), ayudando a las instituciones a desplegar presupuestos de RSC educativa a través de selección y aprobación de proyectos verificados, seguimiento de desembolsos por hitos, informes alineados con ESG/ODS y medición trimestral de resultados, apoyados por dashboards y documentación lista para auditoría.",
+        "p3": "SCEF se posiciona como socio de entrega y rendición de cuentas de ONGs para alianzas educativas plurianuales (mínimo 10 años renovables) con instituciones como la Unión Africana, socios de desarrollo, fundaciones empresariales y fondos educativos globales — apoyando implementación escalable alineada con el ODS 4 y la Agenda 2063 de la UA."
+      },
+      "facts": {
+        "founded": "Fundada: 1997",
+        "registered": "Registrada: 2010",
+        "alignment": "ODS 4 + Agenda 2063 UA",
+        "coverage": "5 Regiones + Diáspora"
+      },
+      "ctaPartner": "Ser Socio",
+      "ctaMember": "Unirse a la Misión",
+      "ctaDonate": "Donar a un Programa",
+      "ctaCsr": "Enviar Interés de Alianza RSC",
+      "csrHelper": "Despliegue fondos de RSC educativa a través de proyectos verificados, seguimiento de desembolsos e informes de impacto medibles.",
+      "trust": {
+        "title": "Entrega y rendición de cuentas listas para socios",
+        "point1": "Pipeline de proyectos educativos verificados y planes de hitos",
+        "point2": "Seguimiento de desembolsos y documentación lista para auditoría",
+        "point3": "Informes trimestrales alineados con indicadores ESG/ODS",
+        "point4": "Modelo de entrega basado en capítulos para implementación escalable"
+      }
     },
     "impact": {
       "title": "Resumen de Impacto",
