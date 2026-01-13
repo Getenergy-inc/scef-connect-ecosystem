@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useLocale } from "@/contexts/LocaleContext";
+import { ScrollAnimation } from "@/components/ui/scroll-animation";
 
 // EduAid Components
 import EduAidMainHero from "@/components/eduaid/EduAidMainHero";
@@ -36,8 +37,8 @@ export default function EduAidAfrica() {
 
       <Header />
 
-      <main className="relative">
-        {/* Main Hero Section */}
+      <main className="relative overflow-hidden">
+        {/* Main Hero Section - No animation, loads immediately */}
         <EduAidMainHero
           welcomeText={t('eduaid.hero.welcome') || "Welcome to EduAid Africa"}
           title={t('eduaid.hero.title') || "Empowering Education, Enabling Futures Across Africa."}
@@ -54,63 +55,89 @@ export default function EduAidAfrica() {
         />
 
         {/* Vision & Objectives for 2032 */}
-        <EduAidFeatureHero
-          title={t('eduaid.vision.title') || "Vision & Objectives for 2032"}
-          description={t('eduaid.vision.description') || "We envision to achieve these SMART goals by 2032"}
-          features={[
-            {
-              title: t('eduaid.vision.goal1.title') || "To empower 10 Million Students",
-              description: t('eduaid.vision.goal1.desc') || "through scholarships, e-learning, and vocational training",
-              stats: { current: t('eduaid.reporting') || "Verified reporting in progress", percentage: "—" }
-            },
-            {
-              title: t('eduaid.vision.goal2.title') || "To Renovate or Build 10,000 Schools",
-              description: t('eduaid.vision.goal2.desc') || "across the African continent",
-              stats: { percentage: "—" }
-            },
-            {
-              title: t('eduaid.vision.goal3.title') || "To Train 500,000 Teachers in ICT",
-              description: t('eduaid.vision.goal3.desc') || "and modern teaching methodologies",
-              stats: { current: t('eduaid.reporting') || "Verified reporting in progress", percentage: "—" }
-            },
-          ]}
-        />
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <EduAidFeatureHero
+            title={t('eduaid.vision.title') || "Vision & Objectives for 2032"}
+            description={t('eduaid.vision.description') || "We envision to achieve these SMART goals by 2032"}
+            features={[
+              {
+                title: t('eduaid.vision.goal1.title') || "To empower 10 Million Students",
+                description: t('eduaid.vision.goal1.desc') || "through scholarships, e-learning, and vocational training",
+                stats: { current: t('eduaid.reporting') || "Verified reporting in progress", percentage: "—" }
+              },
+              {
+                title: t('eduaid.vision.goal2.title') || "To Renovate or Build 10,000 Schools",
+                description: t('eduaid.vision.goal2.desc') || "across the African continent",
+                stats: { percentage: "—" }
+              },
+              {
+                title: t('eduaid.vision.goal3.title') || "To Train 500,000 Teachers in ICT",
+                description: t('eduaid.vision.goal3.desc') || "and modern teaching methodologies",
+                stats: { current: t('eduaid.reporting') || "Verified reporting in progress", percentage: "—" }
+              },
+            ]}
+          />
+        </ScrollAnimation>
 
         {/* Core Objectives */}
-        <EduAidObjectives />
+        <ScrollAnimation animation="fadeUp" delay={0.15}>
+          <EduAidObjectives />
+        </ScrollAnimation>
 
         {/* Programs & Initiatives */}
-        <EduAidPrograms />
+        <ScrollAnimation animation="scale" delay={0.1}>
+          <EduAidPrograms />
+        </ScrollAnimation>
 
         {/* Target Beneficiaries */}
-        <EduAidTargetGroups />
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <EduAidTargetGroups />
+        </ScrollAnimation>
 
         {/* Ongoing Projects */}
-        <EduAidOngoingProjects />
+        <ScrollAnimation animation="fadeRight" delay={0.15}>
+          <EduAidOngoingProjects />
+        </ScrollAnimation>
 
         {/* SMART Goals 2032 */}
-        <EduAidSmartGoals />
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <EduAidSmartGoals />
+        </ScrollAnimation>
 
         {/* Engagement & Partnerships */}
-        <EduAidEngagement />
+        <ScrollAnimation animation="scale" delay={0.15}>
+          <EduAidEngagement />
+        </ScrollAnimation>
 
         {/* Local Chapters */}
-        <EduAidLocalChapters />
+        <ScrollAnimation animation="fadeLeft" delay={0.1}>
+          <EduAidLocalChapters />
+        </ScrollAnimation>
 
         {/* Strategic Partners */}
-        <EduAidPartners />
+        <ScrollAnimation animation="fadeUp" delay={0.15}>
+          <EduAidPartners />
+        </ScrollAnimation>
 
         {/* Wall of Achievers / Success Stories */}
-        <EduAidWallOfAchievers />
+        <ScrollAnimation animation="blur" delay={0.1}>
+          <EduAidWallOfAchievers />
+        </ScrollAnimation>
 
         {/* Contact / Get In Touch */}
-        <EduAidGetInTouch />
+        <ScrollAnimation animation="fadeUp" delay={0.15}>
+          <EduAidGetInTouch />
+        </ScrollAnimation>
 
         {/* FAQs */}
-        <EduAidFAQs />
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <EduAidFAQs />
+        </ScrollAnimation>
 
         {/* Final Donation CTA */}
-        <EduAidDonationSection />
+        <ScrollAnimation animation="scale" delay={0.15}>
+          <EduAidDonationSection />
+        </ScrollAnimation>
       </main>
 
       <Footer />
