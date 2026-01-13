@@ -260,6 +260,228 @@ export type Database = {
         }
         Relationships: []
       }
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string
+          file_name: string | null
+          file_size: number | null
+          file_type: string | null
+          file_url: string | null
+          id: string
+          is_deleted: boolean | null
+          is_edited: boolean | null
+          is_pinned: boolean | null
+          message_type: string | null
+          parent_id: string | null
+          room_id: string
+          sender_id: string
+          updated_at: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          file_name?: string | null
+          file_size?: number | null
+          file_type?: string | null
+          file_url?: string | null
+          id?: string
+          is_deleted?: boolean | null
+          is_edited?: boolean | null
+          is_pinned?: boolean | null
+          message_type?: string | null
+          parent_id?: string | null
+          room_id: string
+          sender_id: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          file_name?: string | null
+          file_size?: number | null
+          file_type?: string | null
+          file_url?: string | null
+          id?: string
+          is_deleted?: boolean | null
+          is_edited?: boolean | null
+          is_pinned?: boolean | null
+          message_type?: string | null
+          parent_id?: string | null
+          room_id?: string
+          sender_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_messages_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "chat_messages"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chat_messages_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "chat_rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chat_rooms: {
+        Row: {
+          chapter_id: string | null
+          created_at: string
+          created_by: string | null
+          description: string | null
+          division_slug: string | null
+          external_meeting_link: string | null
+          governance_type: string | null
+          icon: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          program_slug: string | null
+          room_type: Database["public"]["Enums"]["room_type"]
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          division_slug?: string | null
+          external_meeting_link?: string | null
+          governance_type?: string | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          program_slug?: string | null
+          room_type: Database["public"]["Enums"]["room_type"]
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          division_slug?: string | null
+          external_meeting_link?: string | null
+          governance_type?: string | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          program_slug?: string | null
+          room_type?: Database["public"]["Enums"]["room_type"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_rooms_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      decision_audit_logs: {
+        Row: {
+          action: string
+          actor_id: string | null
+          created_at: string
+          decision_id: string
+          details: Json | null
+          id: string
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          created_at?: string
+          decision_id: string
+          details?: Json | null
+          id?: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          created_at?: string
+          decision_id?: string
+          details?: Json | null
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "decision_audit_logs_decision_id_fkey"
+            columns: ["decision_id"]
+            isOneToOne: false
+            referencedRelation: "decisions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      decisions: {
+        Row: {
+          created_at: string
+          created_by: string
+          description: string | null
+          id: string
+          is_anonymous: boolean | null
+          options: Json | null
+          quorum_count: number | null
+          result_summary: Json | null
+          room_id: string
+          status: string | null
+          title: string
+          updated_at: string
+          voting_closes_at: string
+          voting_opens_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          description?: string | null
+          id?: string
+          is_anonymous?: boolean | null
+          options?: Json | null
+          quorum_count?: number | null
+          result_summary?: Json | null
+          room_id: string
+          status?: string | null
+          title: string
+          updated_at?: string
+          voting_closes_at: string
+          voting_opens_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          description?: string | null
+          id?: string
+          is_anonymous?: boolean | null
+          options?: Json | null
+          quorum_count?: number | null
+          result_summary?: Json | null
+          room_id?: string
+          status?: string | null
+          title?: string
+          updated_at?: string
+          voting_closes_at?: string
+          voting_opens_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "decisions_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "chat_rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       digital_board_items: {
         Row: {
           content_text: string | null
@@ -638,6 +860,88 @@ export type Database = {
         }
         Relationships: []
       }
+      meetings: {
+        Row: {
+          created_at: string
+          created_by: string
+          description: string | null
+          ended_at: string | null
+          external_link: string | null
+          id: string
+          jitsi_room_name: string | null
+          meeting_type: string | null
+          room_id: string
+          scheduled_at: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          description?: string | null
+          ended_at?: string | null
+          external_link?: string | null
+          id?: string
+          jitsi_room_name?: string | null
+          meeting_type?: string | null
+          room_id: string
+          scheduled_at?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          description?: string | null
+          ended_at?: string | null
+          external_link?: string | null
+          id?: string
+          jitsi_room_name?: string | null
+          meeting_type?: string | null
+          room_id?: string
+          scheduled_at?: string | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "meetings_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "chat_rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      message_reactions: {
+        Row: {
+          created_at: string
+          emoji: string
+          id: string
+          message_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          emoji: string
+          id?: string
+          message_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          emoji?: string
+          id?: string
+          message_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "message_reactions_message_id_fkey"
+            columns: ["message_id"]
+            isOneToOne: false
+            referencedRelation: "chat_messages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       partnership_inquiries: {
         Row: {
           company_name: string
@@ -772,6 +1076,96 @@ export type Database = {
         }
         Relationships: []
       }
+      room_members: {
+        Row: {
+          can_vote: boolean | null
+          id: string
+          joined_at: string
+          role: string | null
+          room_id: string
+          user_id: string
+        }
+        Insert: {
+          can_vote?: boolean | null
+          id?: string
+          joined_at?: string
+          role?: string | null
+          room_id: string
+          user_id: string
+        }
+        Update: {
+          can_vote?: boolean | null
+          id?: string
+          joined_at?: string
+          role?: string | null
+          room_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "room_members_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "chat_rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      room_notifications: {
+        Row: {
+          created_at: string
+          decision_id: string | null
+          id: string
+          is_read: boolean | null
+          message_id: string | null
+          notification_type: string
+          room_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          decision_id?: string | null
+          id?: string
+          is_read?: boolean | null
+          message_id?: string | null
+          notification_type: string
+          room_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          decision_id?: string | null
+          id?: string
+          is_read?: boolean | null
+          message_id?: string | null
+          notification_type?: string
+          room_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "room_notifications_decision_id_fkey"
+            columns: ["decision_id"]
+            isOneToOne: false
+            referencedRelation: "decisions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "room_notifications_message_id_fkey"
+            columns: ["message_id"]
+            isOneToOne: false
+            referencedRelation: "chat_messages"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "room_notifications_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "chat_rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -849,6 +1243,38 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      votes: {
+        Row: {
+          created_at: string
+          decision_id: string
+          id: string
+          user_id: string
+          vote_option: string
+        }
+        Insert: {
+          created_at?: string
+          decision_id: string
+          id?: string
+          user_id: string
+          vote_option: string
+        }
+        Update: {
+          created_at?: string
+          decision_id?: string
+          id?: string
+          user_id?: string
+          vote_option?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "votes_decision_id_fkey"
+            columns: ["decision_id"]
+            isOneToOne: false
+            referencedRelation: "decisions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       wallet_transactions: {
         Row: {
@@ -931,6 +1357,14 @@ export type Database = {
         Returns: boolean
       }
       is_admin: { Args: { _user_id: string }; Returns: boolean }
+      is_room_admin: {
+        Args: { _room_id: string; _user_id: string }
+        Returns: boolean
+      }
+      is_room_member: {
+        Args: { _room_id: string; _user_id: string }
+        Returns: boolean
+      }
       log_audit: {
         Args: {
           p_action_type: string
@@ -953,8 +1387,23 @@ export type Database = {
         | "chapter_admin"
         | "admin"
         | "super_admin"
+        | "hq_admin"
+        | "staff"
+        | "division_lead"
+        | "board_bot"
+        | "board_boa"
+        | "board_bod"
+        | "lcp"
       chapter_status: "pending" | "active" | "suspended"
       chapter_type: "online" | "hybrid" | "physical"
+      room_type:
+        | "staff_management"
+        | "division"
+        | "inter_division"
+        | "program"
+        | "governance"
+        | "lcp_council"
+        | "chapter"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1091,9 +1540,25 @@ export const Constants = {
         "chapter_admin",
         "admin",
         "super_admin",
+        "hq_admin",
+        "staff",
+        "division_lead",
+        "board_bot",
+        "board_boa",
+        "board_bod",
+        "lcp",
       ],
       chapter_status: ["pending", "active", "suspended"],
       chapter_type: ["online", "hybrid", "physical"],
+      room_type: [
+        "staff_management",
+        "division",
+        "inter_division",
+        "program",
+        "governance",
+        "lcp_council",
+        "chapter",
+      ],
     },
   },
 } as const
