@@ -1427,6 +1427,110 @@
       "chapters": "Sura za Mitaa"
     }
   },
+  "eduaid": {
+    "reporting": "Ripoti inaendelea kuthibitishwa",
+    "hero": {
+      "welcome": "Karibu EduAid Africa",
+      "title": "Kuwezesha Elimu, Kuwezesha Mustakabali Kote Afrika.",
+      "description": "Jiunge nasi kubadilisha mandhari ya elimu kupitia ufadhili, michango, mipango ya CSR, miradi ya jamii, na maonyesho ya elimu ya kimataifa.",
+      "stat1": { "label": "Shule zilizorekebishwa" },
+      "stat2": { "label": "Ufadhili uliotolewa" },
+      "stat3": { "label": "Walimu waliofunzwa" },
+      "primaryCta": "Anza Mkusanyiko wa Fedha",
+      "secondaryCta": "Changia Sasa"
+    },
+    "vision": {
+      "title": "Dira na Malengo ya 2032",
+      "description": "Tunatarajia kufikia malengo haya ya SMART ifikapo 2032",
+      "goal1": { "title": "Kuwezesha wanafunzi milioni 10", "desc": "kupitia ufadhili, e-learning, na mafunzo ya ufundi" },
+      "goal2": { "title": "Kurekebisha au Kujenga shule 10,000", "desc": "katika bara la Afrika" },
+      "goal3": { "title": "Kufunza walimu 500,000 katika ICT", "desc": "na mbinu za kufundisha za kisasa" }
+    },
+    "objectives": {
+      "badge": "Dhamira Yetu",
+      "title": "Malengo Makuu",
+      "subtitle": "Nguzo za kimkakati zinazoendesha mabadiliko ya elimu barani Afrika"
+    },
+    "programs": {
+      "badge": "Mipango ya Athari",
+      "title": "Programu na Mipango",
+      "subtitle": "Programu kamili za msaada wa elimu zilizoundwa kubadilisha maisha na jamii",
+      "cta": "Ona Programu Zote"
+    },
+    "target": {
+      "badge": "Tunaowahudumia",
+      "title": "Wanufaika Walengwa",
+      "subtitle": "Kuwafikia wanafunzi katika kila hatua ya safari yao ya elimu"
+    },
+    "projects": {
+      "badge": "Miradi Inayoendelea",
+      "title": "Mipango Inayoendelea",
+      "subtitle": "Miradi ya sasa inayobadilisha elimu katika bara la Afrika",
+      "viewAll": "Ona Miradi Yote"
+    },
+    "goals": {
+      "badge": "Malengo ya SMART",
+      "title": "Malengo ya Dira 2032",
+      "subtitle": "Malengo maalum, yanayopimika, yanayoweza kufikiwa, yanayofaa, na yenye muda maalum kwa athari ya mabadiliko",
+      "disclaimer": "Vipimo vya athari vinategemea uthibitisho na ukaguzi huru"
+    },
+    "engagement": {
+      "badge": "Ushirikiano",
+      "title": "Ushiriki na Ubia",
+      "subtitle": "Jiunge na mtandao wetu wa washirika waliojitolea kubadilisha elimu barani Afrika"
+    },
+    "chapters": {
+      "badge": "Uwepo wa Ndani",
+      "title": "Sura za Mitaa za EduAid",
+      "description": "Mtandao wetu unaokua wa sura za ndani unaeneza dhamira ya EduAid kwa jamii kote Afrika, kuwezesha athari ya msingi na mabadiliko endelevu.",
+      "point1": "Tupo katika nchi zaidi ya 15 za Afrika",
+      "point2": "Wanachama zaidi ya 2,000 wanaofanya kazi",
+      "browse": "Vinjari Sura",
+      "start": "Anzisha Sura"
+    },
+    "partners": {
+      "badge": "Ushirikiano wa Kimkakati",
+      "title": "Washirika Wetu",
+      "subtitle": "Kushirikiana na mashirika yanayoongoza kuongeza athari ya elimu barani Afrika",
+      "disclaimer": "Maelezo ya ubia yanategemea makubaliano rasmi na uthibitisho"
+    },
+    "achievers": {
+      "badge": "Hadithi za Mafanikio",
+      "title": "Ukuta wa Wanaofaulu",
+      "subtitle": "Kusherehekea safari za ajabu za wanufaika wa ufadhili wa EduAid ambao sasa wanabadilisha jamii zao",
+      "disclaimer": "Hadithi zinathibitishwa na kuchapishwa kwa idhini ya watu walioonyeshwa"
+    },
+    "contact": {
+      "badge": "Wasiliana Nasi",
+      "title": "Wasiliana",
+      "description": "Una maswali kuhusu ufadhili, ubia, au kujitolea? Tungependa kusikia kutoka kwako.",
+      "email": "Barua pepe",
+      "phone": "Simu",
+      "office": "Ofisi Kuu",
+      "name": "Jina Kamili",
+      "namePlaceholder": "Jina lako",
+      "emailLabel": "Barua pepe",
+      "emailPlaceholder": "wewe@mfano.com",
+      "subject": "Mada",
+      "subjectPlaceholder": "Tunawezaje kukusaidia?",
+      "message": "Ujumbe",
+      "messagePlaceholder": "Tuambie zaidi...",
+      "sending": "Inatuma...",
+      "send": "Tuma Ujumbe",
+      "success": "Ujumbe Umetumwa",
+      "successDesc": "Asante kwa kuwasiliana nasi. Tutajibu ndani ya masaa 48."
+    },
+    "faq": {
+      "badge": "Maswali Yanayoulizwa Mara kwa Mara",
+      "title": "Maswali Yanayoulizwa Sana"
+    },
+    "donate": {
+      "title": "Uko Tayari Kuleta Mabadiliko?",
+      "description": "Mchango wako unabadilisha maisha. Kila mchango unafadhili ufadhili, unajenga shule, na unafundisha walimu kote Afrika.",
+      "cta": "Changia Sasa",
+      "volunteer": "Kuwa Mjitolea"
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programu",

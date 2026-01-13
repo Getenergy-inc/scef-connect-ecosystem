@@ -1427,6 +1427,110 @@
       "chapters": "Chapitres locaux"
     }
   },
+  "eduaid": {
+    "reporting": "Rapport en cours de vérification",
+    "hero": {
+      "welcome": "Bienvenue chez EduAid Africa",
+      "title": "Autonomiser l'éducation, permettre des avenirs à travers l'Afrique.",
+      "description": "Rejoignez-nous pour transformer le paysage éducatif grâce aux bourses, dons, initiatives RSE, projets communautaires et expositions éducatives mondiales.",
+      "stat1": { "label": "Écoles rénovées" },
+      "stat2": { "label": "Bourses attribuées" },
+      "stat3": { "label": "Enseignants formés" },
+      "primaryCta": "Lancer une collecte",
+      "secondaryCta": "Faire un don"
+    },
+    "vision": {
+      "title": "Vision et objectifs pour 2032",
+      "description": "Nous envisageons d'atteindre ces objectifs SMART d'ici 2032",
+      "goal1": { "title": "Autonomiser 10 millions d'étudiants", "desc": "grâce aux bourses, e-learning et formation professionnelle" },
+      "goal2": { "title": "Rénover ou construire 10 000 écoles", "desc": "à travers le continent africain" },
+      "goal3": { "title": "Former 500 000 enseignants aux TIC", "desc": "et aux méthodologies pédagogiques modernes" }
+    },
+    "objectives": {
+      "badge": "Notre mission",
+      "title": "Objectifs principaux",
+      "subtitle": "Piliers stratégiques de la transformation éducative sur le continent africain"
+    },
+    "programs": {
+      "badge": "Initiatives d'impact",
+      "title": "Programmes et initiatives",
+      "subtitle": "Programmes complets de soutien éducatif conçus pour transformer des vies et des communautés",
+      "cta": "Voir tous les programmes"
+    },
+    "target": {
+      "badge": "Qui nous servons",
+      "title": "Bénéficiaires cibles",
+      "subtitle": "Atteindre les apprenants à chaque étape de leur parcours éducatif"
+    },
+    "projects": {
+      "badge": "Projets actifs",
+      "title": "Initiatives en cours",
+      "subtitle": "Projets actuels transformant l'éducation à travers le continent africain",
+      "viewAll": "Voir tous les projets"
+    },
+    "goals": {
+      "badge": "Objectifs SMART",
+      "title": "Cibles Vision 2032",
+      "subtitle": "Objectifs spécifiques, mesurables, atteignables, pertinents et limités dans le temps pour un impact transformationnel",
+      "disclaimer": "Les métriques d'impact sont soumises à une vérification et un audit indépendants"
+    },
+    "engagement": {
+      "badge": "Collaboration",
+      "title": "Engagement et partenariats",
+      "subtitle": "Rejoignez notre réseau de partenaires engagés à transformer l'éducation en Afrique"
+    },
+    "chapters": {
+      "badge": "Présence locale",
+      "title": "Chapitres locaux EduAid",
+      "description": "Notre réseau croissant de chapitres locaux apporte la mission d'EduAid aux communautés à travers l'Afrique, permettant un impact de base et un changement durable.",
+      "point1": "Présent dans plus de 15 pays africains",
+      "point2": "Plus de 2 000 membres actifs",
+      "browse": "Parcourir les chapitres",
+      "start": "Créer un chapitre"
+    },
+    "partners": {
+      "badge": "Alliances stratégiques",
+      "title": "Nos partenaires",
+      "subtitle": "Collaborer avec des organisations leaders pour maximiser l'impact éducatif en Afrique",
+      "disclaimer": "Les détails des partenariats sont soumis à des accords formels et à une vérification"
+    },
+    "achievers": {
+      "badge": "Histoires de réussite",
+      "title": "Mur des lauréats",
+      "subtitle": "Célébrer les parcours remarquables des boursiers EduAid qui transforment maintenant leurs communautés",
+      "disclaimer": "Les histoires sont vérifiées et publiées avec le consentement des personnes présentées"
+    },
+    "contact": {
+      "badge": "Contactez-nous",
+      "title": "Entrer en contact",
+      "description": "Vous avez des questions sur les bourses, les partenariats ou le bénévolat? Nous serions ravis de vous entendre.",
+      "email": "Email",
+      "phone": "Téléphone",
+      "office": "Siège social",
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "emailLabel": "Email",
+      "emailPlaceholder": "vous@exemple.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Comment pouvons-nous vous aider?",
+      "message": "Message",
+      "messagePlaceholder": "Dites-nous en plus...",
+      "sending": "Envoi en cours...",
+      "send": "Envoyer le message",
+      "success": "Message envoyé",
+      "successDesc": "Merci de nous avoir contactés. Nous répondrons dans les 48 heures."
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Questions fréquemment posées"
+    },
+    "donate": {
+      "title": "Prêt à faire la différence?",
+      "description": "Votre contribution transforme des vies. Chaque don finance des bourses, construit des écoles et forme des enseignants à travers l'Afrique.",
+      "cta": "Faire un don",
+      "volunteer": "Devenir bénévole"
+    }
+  },
   "footer": {
     "columns": {
       "programs": "Programmes",

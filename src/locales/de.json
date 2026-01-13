@@ -392,5 +392,109 @@
       "message": "Nachricht",
       "submit": "Nachricht senden"
     }
+  },
+  "eduaid": {
+    "reporting": "Bericht wird verifiziert",
+    "hero": {
+      "welcome": "Willkommen bei EduAid Africa",
+      "title": "Bildung stärken, Zukunft in Afrika ermöglichen.",
+      "description": "Schließen Sie sich uns an, um die Bildungslandschaft durch Stipendien, Spenden, CSR-Initiativen, Gemeinschaftsprojekte und globale Bildungsmessen zu transformieren.",
+      "stat1": { "label": "Renovierte Schulen" },
+      "stat2": { "label": "Vergebene Stipendien" },
+      "stat3": { "label": "Ausgebildete Lehrer" },
+      "primaryCta": "Spendensammlung starten",
+      "secondaryCta": "Jetzt spenden"
+    },
+    "vision": {
+      "title": "Vision und Ziele für 2032",
+      "description": "Wir streben an, diese SMART-Ziele bis 2032 zu erreichen",
+      "goal1": { "title": "10 Millionen Schüler stärken", "desc": "durch Stipendien, E-Learning und Berufsausbildung" },
+      "goal2": { "title": "10.000 Schulen renovieren oder bauen", "desc": "auf dem afrikanischen Kontinent" },
+      "goal3": { "title": "500.000 Lehrer in IKT ausbilden", "desc": "und moderne Lehrmethoden" }
+    },
+    "objectives": {
+      "badge": "Unsere Mission",
+      "title": "Kernziele",
+      "subtitle": "Strategische Säulen, die den Bildungswandel auf dem afrikanischen Kontinent vorantreiben"
+    },
+    "programs": {
+      "badge": "Wirkungsinitiativen",
+      "title": "Programme und Initiativen",
+      "subtitle": "Umfassende Bildungsförderprogramme, die Leben und Gemeinschaften transformieren",
+      "cta": "Alle Programme ansehen"
+    },
+    "target": {
+      "badge": "Wen wir bedienen",
+      "title": "Zielgruppen",
+      "subtitle": "Lernende in jeder Phase ihrer Bildungsreise erreichen"
+    },
+    "projects": {
+      "badge": "Aktive Projekte",
+      "title": "Laufende Initiativen",
+      "subtitle": "Aktuelle Projekte, die die Bildung auf dem afrikanischen Kontinent transformieren",
+      "viewAll": "Alle Projekte ansehen"
+    },
+    "goals": {
+      "badge": "SMART-Ziele",
+      "title": "Vision 2032 Ziele",
+      "subtitle": "Spezifische, messbare, erreichbare, relevante und zeitgebundene Ziele für transformative Wirkung",
+      "disclaimer": "Wirkungsmetriken unterliegen unabhängiger Überprüfung und Prüfung"
+    },
+    "engagement": {
+      "badge": "Zusammenarbeit",
+      "title": "Engagement und Partnerschaften",
+      "subtitle": "Treten Sie unserem Netzwerk von Partnern bei, die sich der Bildungstransformation in Afrika verschrieben haben"
+    },
+    "chapters": {
+      "badge": "Lokale Präsenz",
+      "title": "EduAid Ortsverbände",
+      "description": "Unser wachsendes Netzwerk von Ortsverbänden bringt die Mission von EduAid in Gemeinschaften in ganz Afrika und ermöglicht Basiswirkung und nachhaltigen Wandel.",
+      "point1": "Präsent in über 15 afrikanischen Ländern",
+      "point2": "Über 2.000 aktive Mitglieder",
+      "browse": "Ortsverbände durchsuchen",
+      "start": "Ortsverband gründen"
+    },
+    "partners": {
+      "badge": "Strategische Allianzen",
+      "title": "Unsere Partner",
+      "subtitle": "Zusammenarbeit mit führenden Organisationen zur Maximierung der Bildungswirkung in Afrika",
+      "disclaimer": "Partnerschaftsdetails unterliegen formellen Vereinbarungen und Überprüfung"
+    },
+    "achievers": {
+      "badge": "Erfolgsgeschichten",
+      "title": "Wand der Erfolgreichen",
+      "subtitle": "Würdigung der bemerkenswerten Wege von EduAid-Stipendiaten, die jetzt ihre Gemeinschaften transformieren",
+      "disclaimer": "Geschichten werden verifiziert und mit Zustimmung der vorgestellten Personen veröffentlicht"
+    },
+    "contact": {
+      "badge": "Kontaktieren Sie uns",
+      "title": "Kontakt aufnehmen",
+      "description": "Haben Sie Fragen zu Stipendien, Partnerschaften oder Freiwilligenarbeit? Wir freuen uns von Ihnen zu hören.",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "office": "Hauptsitz",
+      "name": "Vollständiger Name",
+      "namePlaceholder": "Ihr Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "sie@beispiel.de",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Wie können wir helfen?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie uns mehr...",
+      "sending": "Wird gesendet...",
+      "send": "Nachricht senden",
+      "success": "Nachricht gesendet",
+      "successDesc": "Vielen Dank für Ihre Kontaktaufnahme. Wir antworten innerhalb von 48 Stunden."
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Häufig gestellte Fragen"
+    },
+    "donate": {
+      "title": "Bereit, etwas zu bewegen?",
+      "description": "Ihr Beitrag verändert Leben. Jede Spende finanziert Stipendien, baut Schulen und bildet Lehrer in ganz Afrika aus.",
+      "cta": "Jetzt spenden",
+      "volunteer": "Freiwilliger werden"
+    }
   }
 }

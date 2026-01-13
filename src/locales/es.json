@@ -392,5 +392,109 @@
       "message": "Mensaje",
       "submit": "Enviar Mensaje"
     }
+  },
+  "eduaid": {
+    "reporting": "Informe en verificación",
+    "hero": {
+      "welcome": "Bienvenido a EduAid Africa",
+      "title": "Potenciando la Educación, Habilitando Futuros en África.",
+      "description": "Únete a nosotros para transformar el panorama educativo a través de becas, donaciones, iniciativas de RSC, proyectos comunitarios y exposiciones educativas globales.",
+      "stat1": { "label": "Escuelas Renovadas" },
+      "stat2": { "label": "Becas Otorgadas" },
+      "stat3": { "label": "Profesores Formados" },
+      "primaryCta": "Iniciar una Recaudación",
+      "secondaryCta": "Donar Ahora"
+    },
+    "vision": {
+      "title": "Visión y Objetivos para 2032",
+      "description": "Prevemos alcanzar estos objetivos SMART para 2032",
+      "goal1": { "title": "Empoderar a 10 Millones de Estudiantes", "desc": "a través de becas, e-learning y formación profesional" },
+      "goal2": { "title": "Renovar o Construir 10,000 Escuelas", "desc": "en todo el continente africano" },
+      "goal3": { "title": "Formar a 500,000 Profesores en TIC", "desc": "y metodologías de enseñanza modernas" }
+    },
+    "objectives": {
+      "badge": "Nuestra Misión",
+      "title": "Objetivos Principales",
+      "subtitle": "Pilares estratégicos que impulsan la transformación educativa en el continente africano"
+    },
+    "programs": {
+      "badge": "Iniciativas de Impacto",
+      "title": "Programas e Iniciativas",
+      "subtitle": "Programas integrales de apoyo educativo diseñados para transformar vidas y comunidades",
+      "cta": "Ver Todos los Programas"
+    },
+    "target": {
+      "badge": "A Quién Servimos",
+      "title": "Beneficiarios Objetivo",
+      "subtitle": "Llegando a los estudiantes en cada etapa de su viaje educativo"
+    },
+    "projects": {
+      "badge": "Proyectos Activos",
+      "title": "Iniciativas en Curso",
+      "subtitle": "Proyectos actuales que transforman la educación en el continente africano",
+      "viewAll": "Ver Todos los Proyectos"
+    },
+    "goals": {
+      "badge": "Objetivos SMART",
+      "title": "Metas de Visión 2032",
+      "subtitle": "Objetivos específicos, medibles, alcanzables, relevantes y temporales para un impacto transformacional",
+      "disclaimer": "Las métricas de impacto están sujetas a verificación y auditoría independientes"
+    },
+    "engagement": {
+      "badge": "Colaboración",
+      "title": "Compromiso y Asociaciones",
+      "subtitle": "Únete a nuestra red de socios comprometidos con transformar la educación en África"
+    },
+    "chapters": {
+      "badge": "Presencia Local",
+      "title": "Capítulos Locales EduAid",
+      "description": "Nuestra creciente red de capítulos locales lleva la misión de EduAid a las comunidades de toda África, permitiendo un impacto de base y un cambio sostenible.",
+      "point1": "Presentes en más de 15 países africanos",
+      "point2": "Más de 2,000 miembros activos",
+      "browse": "Explorar Capítulos",
+      "start": "Iniciar un Capítulo"
+    },
+    "partners": {
+      "badge": "Alianzas Estratégicas",
+      "title": "Nuestros Socios",
+      "subtitle": "Colaborando con organizaciones líderes para maximizar el impacto educativo en África",
+      "disclaimer": "Los detalles de las asociaciones están sujetos a acuerdos formales y verificación"
+    },
+    "achievers": {
+      "badge": "Historias de Éxito",
+      "title": "Muro de los Triunfadores",
+      "subtitle": "Celebrando los viajes extraordinarios de los becarios de EduAid que ahora están transformando sus comunidades",
+      "disclaimer": "Las historias se verifican y publican con el consentimiento de las personas destacadas"
+    },
+    "contact": {
+      "badge": "Contáctanos",
+      "title": "Ponte en Contacto",
+      "description": "¿Tienes preguntas sobre becas, asociaciones o voluntariado? Nos encantaría saber de ti.",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "office": "Oficina Central",
+      "name": "Nombre Completo",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿Cómo podemos ayudarte?",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos más...",
+      "sending": "Enviando...",
+      "send": "Enviar Mensaje",
+      "success": "Mensaje Enviado",
+      "successDesc": "Gracias por contactarnos. Responderemos dentro de 48 horas."
+    },
+    "faq": {
+      "badge": "Preguntas Frecuentes",
+      "title": "Preguntas Frecuentes"
+    },
+    "donate": {
+      "title": "¿Listo para Hacer la Diferencia?",
+      "description": "Tu contribución transforma vidas. Cada donación financia becas, construye escuelas y forma profesores en toda África.",
+      "cta": "Donar Ahora",
+      "volunteer": "Convertirse en Voluntario"
+    }
   }
 }

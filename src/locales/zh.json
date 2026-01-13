@@ -392,5 +392,109 @@
       "message": "消息",
       "submit": "发送消息"
     }
+  },
+  "eduaid": {
+    "reporting": "报告验证中",
+    "hero": {
+      "welcome": "欢迎来到 EduAid Africa",
+      "title": "赋能教育，成就非洲未来。",
+      "description": "加入我们，通过奖学金、捐赠、企业社会责任倡议、社区项目和全球教育展览来改变教育格局。",
+      "stat1": { "label": "翻新学校" },
+      "stat2": { "label": "颁发奖学金" },
+      "stat3": { "label": "培训教师" },
+      "primaryCta": "发起筹款",
+      "secondaryCta": "立即捐赠"
+    },
+    "vision": {
+      "title": "2032年愿景与目标",
+      "description": "我们计划在2032年前实现这些SMART目标",
+      "goal1": { "title": "赋能1000万学生", "desc": "通过奖学金、电子学习和职业培训" },
+      "goal2": { "title": "翻新或建造10,000所学校", "desc": "遍及非洲大陆" },
+      "goal3": { "title": "培训50万教师掌握信息通信技术", "desc": "和现代教学方法" }
+    },
+    "objectives": {
+      "badge": "我们的使命",
+      "title": "核心目标",
+      "subtitle": "推动非洲大陆教育转型的战略支柱"
+    },
+    "programs": {
+      "badge": "影响力倡议",
+      "title": "项目与倡议",
+      "subtitle": "旨在改变生活和社区的综合教育支持项目",
+      "cta": "查看所有项目"
+    },
+    "target": {
+      "badge": "我们服务的对象",
+      "title": "目标受益者",
+      "subtitle": "在教育旅程的每个阶段接触学习者"
+    },
+    "projects": {
+      "badge": "活跃项目",
+      "title": "正在进行的倡议",
+      "subtitle": "正在改变非洲大陆教育的当前项目",
+      "viewAll": "查看所有项目"
+    },
+    "goals": {
+      "badge": "SMART目标",
+      "title": "2032年愿景目标",
+      "subtitle": "具体的、可衡量的、可实现的、相关的、有时限的目标，以实现变革性影响",
+      "disclaimer": "影响指标需经独立验证和审计"
+    },
+    "engagement": {
+      "badge": "合作",
+      "title": "参与与合作",
+      "subtitle": "加入我们致力于改变非洲教育的合作伙伴网络"
+    },
+    "chapters": {
+      "badge": "本地存在",
+      "title": "EduAid 本地分会",
+      "description": "我们不断壮大的本地分会网络将EduAid的使命带到非洲各地的社区，实现基层影响和可持续变革。",
+      "point1": "遍布15+个非洲国家",
+      "point2": "2,000+活跃会员",
+      "browse": "浏览分会",
+      "start": "创建分会"
+    },
+    "partners": {
+      "badge": "战略联盟",
+      "title": "我们的合作伙伴",
+      "subtitle": "与领先组织合作，最大化非洲的教育影响",
+      "disclaimer": "合作详情须经正式协议和验证"
+    },
+    "achievers": {
+      "badge": "成功故事",
+      "title": "成就墙",
+      "subtitle": "庆祝EduAid奖学金获得者的非凡旅程，他们现在正在改变自己的社区",
+      "disclaimer": "故事经过验证，并经相关人员同意后发布"
+    },
+    "contact": {
+      "badge": "联系我们",
+      "title": "取得联系",
+      "description": "对奖学金、合作或志愿服务有疑问？我们很乐意听取您的意见。",
+      "email": "电子邮件",
+      "phone": "电话",
+      "office": "总部",
+      "name": "全名",
+      "namePlaceholder": "您的姓名",
+      "emailLabel": "电子邮件",
+      "emailPlaceholder": "you@example.com",
+      "subject": "主题",
+      "subjectPlaceholder": "我们能帮您什么？",
+      "message": "消息",
+      "messagePlaceholder": "告诉我们更多...",
+      "sending": "发送中...",
+      "send": "发送消息",
+      "success": "消息已发送",
+      "successDesc": "感谢您的联系。我们将在48小时内回复。"
+    },
+    "faq": {
+      "badge": "常见问题",
+      "title": "常见问题解答"
+    },
+    "donate": {
+      "title": "准备好做出改变了吗？",
+      "description": "您的贡献改变生命。每一笔捐赠都资助奖学金、建设学校并培训非洲各地的教师。",
+      "cta": "立即捐赠",
+      "volunteer": "成为志愿者"
+    }
   }
 }
