@@ -1,12 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, Library, Award, GraduationCap } from "lucide-react";
+import { 
+  Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
+  Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
+  Bell, MessageSquare, Settings
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/contexts/LocaleContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useAuthState } from "@/hooks/useAuthState";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import scefLogo from "@/assets/scef-logo.jpg";
-// External platform links with icons
+import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
+
 const externalPlatforms = [
   { name: "eLibrary Nigeria", href: "https://www.elibrarynigeria.com.ng", external: true, icon: Library },
   { name: "NESA.africa", href: "https://nesa.africa", external: true, icon: Award },
@@ -14,10 +30,12 @@ const externalPlatforms = [
 ];
 
 export const Header = () => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { t, isRTL } = useLocale();
+  const { user, isAuthenticated, loading } = useAuthState();
 
   const navigation = [
     { name: t("nav.top.about"), href: "/about", key: "about",
@@ -86,6 +104,21 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleSignOut = async () => {
+    try {
+      await supabase.auth.signOut();
+      toast.success("Signed out successfully");
+      navigate("/");
+    } catch (error) {
+      toast.error("Error signing out");
+    }
+  };
+
+  const getUserInitials = () => {
+    if (!user?.email) return "U";
+    return user.email.charAt(0).toUpperCase();
+  };
 
   return (
     <header
@@ -161,41 +194,137 @@ export const Header = () => {
           ))}
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - Auth Aware */}
         <div className="hidden xl:flex items-center gap-2">
           <LanguageSwitcher />
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            className="text-white hover:text-scef-gold hover:bg-white/10"
-            asChild
-          >
-            <Link to="/wallet">
-              <Wallet className="w-4 h-4" />
-              {t("nav.top.donate")}
-            </Link>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
-            asChild
-          >
-            <Link to="/donate">
-              <Heart className="w-4 h-4" />
-              {t("nav.top.donate")}
-            </Link>
-          </Button>
-          <Button 
-            size="sm" 
-            className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
-            asChild
-          >
-            <Link to="/auth">
-              <LogIn className="w-4 h-4" />
-              {t("nav.top.signin")}
-            </Link>
-          </Button>
+          
+          {loading ? (
+            <div className="w-8 h-8 rounded-full bg-white/20 animate-pulse" />
+          ) : isAuthenticated ? (
+            <>
+              {/* Wallet Button */}
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="text-white hover:text-scef-gold hover:bg-white/10"
+                asChild
+              >
+                <Link to="/wallet">
+                  <img src={gfaWalletLogo} alt="GFA Wallet" className="w-5 h-5 rounded mr-1" />
+                  Wallet
+                </Link>
+              </Button>
+
+              {/* Notifications */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:text-scef-gold hover:bg-white/10 relative"
+                asChild
+              >
+                <Link to="/chapter/inbox">
+                  <Bell className="w-4 h-4" />
+                </Link>
+              </Button>
+
+              {/* User Menu */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    className="flex items-center gap-2 text-white hover:text-scef-gold hover:bg-white/10 px-2"
+                  >
+                    <Avatar className="w-8 h-8 border-2 border-scef-gold">
+                      <AvatarImage src={undefined} />
+                      <AvatarFallback className="bg-scef-gold text-scef-blue-dark font-semibold text-xs">
+                        {getUserInitials()}
+                      </AvatarFallback>
+                    </Avatar>
+                    <ChevronDown className="w-3 h-3" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <div className="px-3 py-2 border-b border-border">
+                    <p className="font-medium text-sm">{user?.email}</p>
+                    <p className="text-xs text-muted-foreground">Member</p>
+                  </div>
+                  <DropdownMenuItem asChild>
+                    <Link to="/dashboard" className="cursor-pointer">
+                      <LayoutDashboard className="w-4 h-4 mr-2" />
+                      Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/wallet" className="cursor-pointer">
+                      <Wallet className="w-4 h-4 mr-2" />
+                      My Wallet
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/dashboard/profile" className="cursor-pointer">
+                      <User className="w-4 h-4 mr-2" />
+                      Profile
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/chapter/inbox" className="cursor-pointer">
+                      <MessageSquare className="w-4 h-4 mr-2" />
+                      Chapter Inbox
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link to="/dashboard/settings" className="cursor-pointer">
+                      <Settings className="w-4 h-4 mr-2" />
+                      Settings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem 
+                    onClick={handleSignOut}
+                    className="text-red-600 cursor-pointer"
+                  >
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </>
+          ) : (
+            <>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+                asChild
+              >
+                <Link to="/donate">
+                  <Heart className="w-4 h-4 mr-1" />
+                  {t("nav.top.donate")}
+                </Link>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="text-white hover:text-scef-gold hover:bg-white/10"
+                asChild
+              >
+                <Link to="/auth/sign-in">
+                  Sign In
+                </Link>
+              </Button>
+              <Button 
+                size="sm" 
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
+                asChild
+              >
+                <Link to="/auth/sign-up">
+                  <LogIn className="w-4 h-4 mr-1" />
+                  Sign Up
+                </Link>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -218,6 +347,37 @@ export const Header = () => {
       {mobileMenuOpen && (
         <div className="xl:hidden absolute top-full left-0 right-0 bg-scef-blue-dark border-b border-white/10 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 space-y-2">
+            {/* User Info (if authenticated) */}
+            {isAuthenticated && (
+              <div className="pb-4 border-b border-white/10 mb-4">
+                <div className="flex items-center gap-3 px-4">
+                  <Avatar className="w-10 h-10 border-2 border-scef-gold">
+                    <AvatarFallback className="bg-scef-gold text-scef-blue-dark font-semibold">
+                      {getUserInitials()}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="font-medium text-white">{user?.email}</p>
+                    <p className="text-xs text-white/60">Member</p>
+                  </div>
+                </div>
+                <div className="flex gap-2 mt-3 px-4">
+                  <Button variant="secondary" size="sm" asChild className="flex-1">
+                    <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                      <LayoutDashboard className="w-4 h-4 mr-1" />
+                      Dashboard
+                    </Link>
+                  </Button>
+                  <Button variant="secondary" size="sm" asChild className="flex-1">
+                    <Link to="/wallet" onClick={() => setMobileMenuOpen(false)}>
+                      <Wallet className="w-4 h-4 mr-1" />
+                      Wallet
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            )}
+
             {navigation.map((item) => (
               <div key={item.key}>
                 <Link
@@ -281,53 +441,65 @@ export const Header = () => {
               </div>
             </div>
 
-            {/* Donation Buttons */}
+            {/* Auth Actions */}
             <div className="pt-4 border-t border-white/10">
-              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Support Our Mission</p>
-              <div className="flex flex-col gap-2 px-4">
-                <a
-                  href="https://paystack.com/pay/scef-donation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-blue text-scef-gold hover:bg-scef-blue-dark border-2 border-scef-gold/30"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Heart className="w-4 h-4" />
-                  Donate with Paystack
-                </a>
-                <a
-                  href="https://flutterwave.com/pay/scef"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-300 bg-scef-gold text-scef-blue hover:bg-scef-gold-dark border-2 border-scef-blue/30"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Heart className="w-4 h-4" />
-                  Donate with Flutterwave
-                </a>
-              </div>
-            </div>
-
-            <div className="pt-4 flex flex-col gap-2">
-              <Button 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
-                asChild
-              >
-                <Link to="/wallet" onClick={() => setMobileMenuOpen(false)}>
-                  <Wallet className="w-4 h-4" />
-                  {t("nav.top.donate")}
-                </Link>
-              </Button>
-              <Button 
-                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
-                asChild
-              >
-                <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
-                  <LogIn className="w-4 h-4" />
-                  {t("nav.top.signin")} / {t("nav.top.dashboard")}
-                </Link>
-              </Button>
+              {isAuthenticated ? (
+                <div className="flex flex-col gap-2 px-4">
+                  <Button 
+                    variant="outline" 
+                    className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      navigate("/chapter/inbox");
+                    }}
+                  >
+                    <MessageSquare className="w-4 h-4 mr-2" />
+                    Chapter Inbox
+                  </Button>
+                  <Button 
+                    variant="destructive"
+                    onClick={() => {
+                      handleSignOut();
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Sign Out
+                  </Button>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2 px-4">
+                  <Button 
+                    variant="outline" 
+                    className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+                    asChild
+                  >
+                    <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
+                      <Heart className="w-4 h-4 mr-1" />
+                      {t("nav.top.donate")}
+                    </Link>
+                  </Button>
+                  <div className="flex gap-2">
+                    <Button 
+                      variant="outline"
+                      className="flex-1 border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+                      asChild
+                    >
+                      <Link to="/auth/sign-in" onClick={() => setMobileMenuOpen(false)}>
+                        Sign In
+                      </Link>
+                    </Button>
+                    <Button 
+                      className="flex-1 bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
+                      asChild
+                    >
+                      <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>
+                        Sign Up
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

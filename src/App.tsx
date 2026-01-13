@@ -49,6 +49,19 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
 
+// New Auth Pages
+import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/SignUp";
+
+// New Dashboard Pages
+import Welcome from "./pages/dashboard/Welcome";
+import ChapterInbox from "./pages/chapter/Inbox";
+
+// Admin Finance Pages
+import FinanceOverview from "./pages/admin/FinanceOverview";
+import BankAccounts from "./pages/admin/BankAccounts";
+import Disbursements from "./pages/admin/Disbursements";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -80,11 +93,28 @@ const App = () => (
               <Route path="/updates" element={<Updates />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/case-studies" element={<CaseStudies />} />
+              
+              {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
+              <Route path="/auth/sign-in" element={<SignIn />} />
+              <Route path="/auth/sign-up" element={<SignUp />} />
+              
+              {/* Dashboard Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard/welcome" element={<Welcome />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
+              
+              {/* Chapter Routes */}
+              <Route path="/chapter/inbox" element={<ChapterInbox />} />
+              
+              {/* Admin Routes */}
               <Route path="/admin/digital-board" element={<DigitalBoardAdminPage />} />
               <Route path="/admin/vacancies" element={<VacanciesAdminPage />} />
+              <Route path="/admin/finance/overview" element={<FinanceOverview />} />
+              <Route path="/admin/finance/bank-accounts" element={<BankAccounts />} />
+              <Route path="/admin/finance/disbursements" element={<Disbursements />} />
+              
+              {/* Other Routes */}
               <Route path="/donate" element={<Donate />} />
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
