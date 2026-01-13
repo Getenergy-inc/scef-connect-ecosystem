@@ -266,12 +266,18 @@ export const AuthenticatedHeader = () => {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
+                    <Link to="/messages" className="cursor-pointer">
+                      <MessageSquare className="w-4 h-4 mr-2" />
+                      Messages
+                      <span className="ml-auto bg-primary text-primary-foreground text-[10px] px-1.5 py-0.5 rounded-full">
+                        New
+                      </span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <Link to="/chapter/inbox" className="cursor-pointer">
                       <MessageSquare className="w-4 h-4 mr-2" />
                       Chapter Inbox
-                      <span className="ml-auto bg-primary text-primary-foreground text-[10px] px-1.5 py-0.5 rounded-full">
-                        2
-                      </span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />

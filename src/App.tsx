@@ -59,6 +59,11 @@ import ChapterInbox from "./pages/chapter/Inbox";
 import Profile from "./pages/dashboard/Profile";
 import Activity from "./pages/dashboard/Activity";
 
+// Messages & Decisions Pages
+import MessagesIndex from "./pages/messages/Index";
+import MessagesRoom from "./pages/messages/Room";
+import Decisions from "./pages/Decisions";
+
 // Admin Finance Pages
 import FinanceOverview from "./pages/admin/FinanceOverview";
 import BankAccounts from "./pages/admin/BankAccounts";
@@ -110,6 +115,11 @@ const App = () => (
               
               {/* Chapter Routes */}
               <Route path="/chapter/inbox" element={<ChapterInbox />} />
+              
+              {/* Messages & Decisions Routes */}
+              <Route path="/messages" element={<MessagesIndex />} />
+              <Route path="/messages/:roomId" element={<MessagesRoom />} />
+              <Route path="/decisions" element={<Decisions />} />
               
               {/* Admin Routes */}
               <Route path="/admin/digital-board" element={<DigitalBoardAdminPage />} />
