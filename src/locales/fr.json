@@ -996,6 +996,409 @@
       "contact": "Nous contacter"
     }
   },
+  "ambassador": {
+    "hero": {
+      "badge": "Programme Ambassadeur SCEF",
+      "title": "Devenez Ambassadeur SCEF",
+      "subtitle": "Rejoignez notre réseau mondial d'ambassadeurs façonnant l'avenir de l'éducation à travers l'Afrique. Représentez SCEF dans votre région et aidez à amplifier notre mission.",
+      "ctaApply": "Postuler maintenant",
+      "ctaLearn": "En savoir plus"
+    },
+    "role": {
+      "title": "Que font les ambassadeurs ?",
+      "subtitle": "Les ambassadeurs SCEF sont des défenseurs passionnés qui représentent notre mission dans leurs communautés et réseaux.",
+      "items": [
+        "Représenter SCEF lors d'événements et conférences dans votre région",
+        "Sensibiliser aux problèmes de transformation de l'éducation",
+        "Connecter SCEF avec des partenaires et parties prenantes potentiels",
+        "Partager les histoires d'impact et les mises à jour des programmes avec vos réseaux",
+        "Participer aux initiatives régionales de chapitres"
+      ]
+    },
+    "benefits": {
+      "title": "Avantages Ambassadeur",
+      "subtitle": "Rejoindre notre réseau d'ambassadeurs vous donne des opportunités uniques de grandir et de vous connecter.",
+      "network": {
+        "title": "Réseau Mondial",
+        "description": "Connectez-vous avec des leaders de l'éducation et des acteurs du changement à travers l'Afrique et au-delà."
+      },
+      "recognition": {
+        "title": "Reconnaissance",
+        "description": "Recevez une reconnaissance officielle et des certificats pour votre contribution."
+      },
+      "events": {
+        "title": "Événements Exclusifs",
+        "description": "Accès aux événements VIP, webinaires et réunions de planification stratégique."
+      },
+      "development": {
+        "title": "Développement Personnel",
+        "description": "Développez vos compétences en leadership, plaidoyer et gestion communautaire."
+      }
+    },
+    "requirements": {
+      "title": "Qui peut postuler ?",
+      "subtitle": "Nous recherchons des personnes passionnées par l'éducation et le développement de l'Afrique.",
+      "items": [
+        "Passion pour la transformation de l'éducation en Afrique",
+        "Présence active dans l'éducation ou le développement communautaire",
+        "Excellentes compétences en communication et réseautage",
+        "Engagement de 5-10 heures par mois",
+        "Statut professionnel ou communautaire dans votre région"
+      ]
+    },
+    "form": {
+      "title": "Postuler pour devenir Ambassadeur",
+      "subtitle": "Remplissez le formulaire ci-dessous. Notre équipe examinera votre candidature et répondra sous 7 jours ouvrables.",
+      "fullName": "Nom complet",
+      "email": "E-mail",
+      "phone": "Numéro de téléphone",
+      "country": "Pays",
+      "countryPlaceholder": "ex., Nigeria, Kenya, Ghana",
+      "profession": "Profession / Rôle",
+      "professionPlaceholder": "ex., Éducateur, Directeur ONG",
+      "linkedin": "Profil LinkedIn",
+      "linkedinPlaceholder": "https://linkedin.com/in/...",
+      "motivation": "Pourquoi voulez-vous devenir Ambassadeur SCEF ?",
+      "motivationPlaceholder": "Partagez votre passion pour l'éducation et comment vous contribueriez...",
+      "experience": "Expérience pertinente",
+      "experiencePlaceholder": "Décrivez votre expérience en éducation, développement communautaire ou plaidoyer...",
+      "submit": "Soumettre la candidature",
+      "submitting": "Envoi en cours...",
+      "success": "Candidature ambassadeur soumise ! Nous examinerons et répondrons sous 7 jours ouvrables."
+    },
+    "otherWays": {
+      "title": "Autres façons de s'impliquer",
+      "member": {
+        "title": "Rejoindre comme membre",
+        "description": "Faites partie de notre communauté croissante de défenseurs de l'éducation."
+      },
+      "chapter": {
+        "title": "Rejoindre un chapitre",
+        "description": "Connectez-vous avec les membres SCEF de votre pays ou région."
+      },
+      "donate": {
+        "title": "Faire un don",
+        "description": "Soutenez les programmes éducatifs à travers l'Afrique."
+      }
+    }
+  },
+  "partnerWithUs": {
+    "hero": {
+      "badge": "ODD 4 • Aligné Agenda 2063 UA",
+      "title": "Devenez Partenaire de SCEF",
+      "subtitle": "Rejoignez l'écosystème éducatif croissant d'Afrique. Associez-vous à nous pour un impact mesurable et durable à travers des programmes vérifiés et une responsabilité transparente.",
+      "ctaStart": "Démarrer une conversation de partenariat",
+      "ctaProfile": "Voir notre profil"
+    },
+    "why": {
+      "title": "Pourquoi devenir partenaire de SCEF ?",
+      "subtitle": "Nous fournissons un parcours structuré et responsable pour l'investissement dans l'éducation avec des résultats mesurables.",
+      "verified": {
+        "title": "Impact vérifié",
+        "description": "Tous les projets sont vérifiés avec suivi des jalons, surveillance des décaissements et documentation des résultats."
+      },
+      "esg": {
+        "title": "Rapports ESG/ODD",
+        "description": "Rapports prêts pour les partenaires, alignés sur les cadres mondiaux de durabilité et les normes de conformité."
+      },
+      "scale": {
+        "title": "Échelle panafricaine",
+        "description": "Livraison pilotée par les chapitres à travers les cinq régions d'Afrique plus le réseau diaspora."
+      }
+    },
+    "pathways": {
+      "title": "Parcours de partenariat",
+      "subtitle": "Choisissez le modèle de partenariat qui correspond aux objectifs et capacités de votre organisation.",
+      "corporate": {
+        "title": "Partenaire Entreprise",
+        "description": "Programmes CSR, engagement des employés et alignement de marque avec l'impact éducatif",
+        "benefits": [
+          "Gestion des fonds CSR pour l'éducation",
+          "Rapports d'impact alignés ESG/ODD",
+          "Programmes de bénévolat employé",
+          "Visibilité de marque sur les plateformes SCEF"
+        ]
+      },
+      "institutional": {
+        "title": "Partenaire Institutionnel",
+        "description": "Écoles, universités et organismes éducatifs collaborant sur les normes et programmes",
+        "benefits": [
+          "Parcours de reconnaissance NESA",
+          "Support d'alignement des programmes",
+          "Opportunités d'échange étudiant",
+          "Initiatives de recherche conjointes"
+        ]
+      },
+      "funding": {
+        "title": "Partenaire de financement",
+        "description": "Fondations, multilatéraux et donateurs soutenant des interventions éducatives évolutives",
+        "benefits": [
+          "Pipelines de projets vérifiés",
+          "Systèmes de suivi des décaissements",
+          "Rapports trimestriels des résultats",
+          "Visibilité directe de l'impact"
+        ]
+      },
+      "technical": {
+        "title": "Partenaire Technique",
+        "description": "Fournisseurs de technologie et organisations de services permettant la transformation numérique",
+        "benefits": [
+          "Opportunités d'intégration de plateforme",
+          "Solutions numériques co-brandées",
+          "Participation au laboratoire d'innovation",
+          "Rôles de conseil technique"
+        ]
+      }
+    },
+    "csr": {
+      "title": "Gestion des fonds CSR pour l'éducation",
+      "description": "SCEF fournit des services complets de gestion CSR pour les entreprises et institutions cherchant à déployer des fonds éducatifs avec responsabilité et impact mesurable.",
+      "benefits": [
+        "Identification et vérification de projets",
+        "Suivi des décaissements par jalons",
+        "Rapports trimestriels d'impact et de résultats",
+        "Documentation d'alignement ESG/ODD",
+        "Reconnaissance et image de marque partenaire"
+      ],
+      "cta": "Explorer le partenariat CSR"
+    },
+    "impact": {
+      "chapters": "Réseau de chapitres",
+      "countries": "Pays atteints",
+      "recognition": "Programmes de reconnaissance",
+      "learners": "Apprenants soutenus"
+    },
+    "form": {
+      "title": "Démarrer la conversation",
+      "subtitle": "Parlez-nous de votre organisation et de votre souhait de partenariat. Notre équipe partenariats répondra sous 48 heures.",
+      "organizationName": "Nom de l'organisation",
+      "contactName": "Nom du contact",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "interest": "Intérêt de partenariat",
+      "message": "Parlez-nous de vos objectifs de partenariat",
+      "messagePlaceholder": "Partagez les objectifs de votre organisation, comment vous aimeriez vous associer à SCEF, et les programmes ou régions d'intérêt spécifiques...",
+      "submit": "Soumettre la demande de partenariat",
+      "submitting": "Envoi en cours...",
+      "success": "Demande de partenariat soumise ! Nous vous contacterons sous 48 heures.",
+      "error": "Échec de la soumission. Veuillez réessayer."
+    }
+  },
+  "organizationalProfile": {
+    "hero": {
+      "badge": "Ressources Partenaires",
+      "title": "Profil Organisationnel",
+      "subtitle": "Santos Creations Educational Foundation (SCEF) — Une fondation éducative panafricaine axée sur l'adhésion promouvant l'Éducation pour Tous.",
+      "download": "Télécharger le profil complet (PDF)"
+    },
+    "facts": {
+      "founded": "Fondée",
+      "registered": "Enregistrée",
+      "headquarters": "Siège",
+      "alignment": "Alignement"
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Construire un standard éducatif continu et en croissance en Afrique à travers des modèles de livraison soutenus par la gouvernance et pilotés par les chapitres qui rendent la transformation éducative mesurable, inclusive et évolutive."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "description": "Un écosystème éducatif panafricain où chaque apprenant a accès à une éducation de qualité, des parcours de compétences vérifiés et des systèmes de soutien durables alignés sur l'ODD 4 et l'Agenda 2063 de l'UA."
+    },
+    "programs": {
+      "title": "Programmes Principaux",
+      "subtitle": "Programmes intégrés conçus pour travailler ensemble pour un impact éducatif complet.",
+      "learnMore": "En savoir plus"
+    },
+    "structure": {
+      "title": "Structure Organisationnelle",
+      "subtitle": "Six divisions opérationnelles assurant une livraison coordonnée des programmes et de la gouvernance.",
+      "viewAll": "Voir toutes les divisions"
+    },
+    "partnership": {
+      "title": "Avantages du Partenariat",
+      "subtitle": "SCEF fournit des parcours structurés pour que les organisations s'engagent dans la transformation éducative à travers des partenariats vérifiés et responsables.",
+      "benefits": [
+        "Pipelines de projets vérifiés avec suivi des jalons",
+        "Rapports d'impact alignés ESG/ODD",
+        "Services de gestion des fonds CSR pour l'éducation",
+        "Programmes de reconnaissance et image de marque partenaire",
+        "Accès au réseau de chapitres panafricain",
+        "Documentation trimestrielle des résultats"
+      ],
+      "partner": {
+        "title": "Prêt à devenir partenaire ?",
+        "subtitle": "Démarrez la conversation avec notre équipe partenariats."
+      },
+      "support": {
+        "title": "Soutenez l'éducation",
+        "subtitle": "Faites un impact direct à travers nos programmes vérifiés."
+      }
+    },
+    "cta": {
+      "title": "Rejoignez l'écosystème SCEF",
+      "subtitle": "Que ce soit en tant que membre, partenaire ou supporter — il y a un chemin pour vous contribuer à la transformation éducative en Afrique.",
+      "join": "Rejoindre SCEF",
+      "learn": "En savoir plus sur nous"
+    }
+  },
+  "inclusionAccess": {
+    "hero": {
+      "badge": "Programmes d'éducation inclusive SCEF",
+      "title": "Inclusion & Accès",
+      "subtitle": "Garantir que chaque apprenant ait l'opportunité de réussir grâce à un soutien ciblé pour les femmes, les filles et les apprenants ayant des besoins spéciaux.",
+      "ctaDonate": "Donner pour l'éducation inclusive",
+      "ctaPartner": "Partenariat pour l'inclusion"
+    },
+    "pillars": {
+      "title": "Piliers du programme",
+      "subtitle": "Notre approche d'éducation inclusive aborde plusieurs dimensions d'accès et de soutien.",
+      "womenGirls": {
+        "title": "Éducation des femmes et des filles",
+        "description": "Interventions ciblées pour supprimer les obstacles et créer des parcours pour que les filles et les femmes accèdent à une éducation de qualité.",
+        "initiatives": [
+          "Programmes de bourses pour les filles",
+          "Plaidoyer pour des environnements d'apprentissage sûrs",
+          "Initiatives femmes dans les STEM",
+          "Réseaux de mentorat pour les jeunes femmes"
+        ]
+      },
+      "specialNeeds": {
+        "title": "Soutien à l'éducation spécialisée",
+        "description": "Systèmes éducatifs inclusifs qui accueillent les apprenants handicapés et aux besoins d'apprentissage divers.",
+        "initiatives": [
+          "Fourniture de technologies d'assistance",
+          "Formation des enseignants pour les classes inclusives",
+          "Matériels d'apprentissage accessibles",
+          "Partenariats avec des écoles spécialisées"
+        ]
+      },
+      "visualHearing": {
+        "title": "Soutien visuel et auditif",
+        "description": "Ressources spécialisées pour les apprenants ayant des déficiences visuelles et auditives.",
+        "initiatives": [
+          "Matériels d'apprentissage en braille",
+          "Formation d'interprètes en langue des signes",
+          "Distribution d'appareils d'assistance",
+          "Contenu numérique accessible"
+        ]
+      },
+      "learning": {
+        "title": "Plaidoyer pour les troubles d'apprentissage",
+        "description": "Soutien pour les apprenants dyslexiques, TDAH, autistes et autres différences d'apprentissage.",
+        "initiatives": [
+          "Programmes de dépistage précoce",
+          "Soutien d'apprentissage spécialisé",
+          "Sensibilisation des parents et enseignants",
+          "Planification éducative individualisée"
+        ]
+      }
+    },
+    "impact": {
+      "girlsEnrolled": "Filles inscrites",
+      "specialNeeds": "Apprenants besoins spéciaux",
+      "countries": "Pays actifs",
+      "resources": "Ressources créées"
+    },
+    "approach": {
+      "title": "Notre approche",
+      "subtitle": "Les programmes d'éducation inclusive de SCEF sont conçus pour aborder les obstacles systémiques et créer des parcours durables pour tous les apprenants.",
+      "items": [
+        "Identification communautaire des apprenants nécessitant un soutien",
+        "Partenariat avec des institutions et experts spécialisés",
+        "Formation et renforcement des capacités des enseignants",
+        "Infrastructure et matériels d'apprentissage accessibles",
+        "Plaidoyer pour des politiques d'éducation inclusive"
+      ]
+    },
+    "programs": {
+      "title": "Programmes associés",
+      "subtitle": "Explorez nos programmes spécialisés pour l'éducation inclusive."
+    },
+    "cta": {
+      "title": "Soutenez l'éducation inclusive",
+      "subtitle": "Votre contribution nous aide à atteindre plus d'apprenants nécessitant un soutien spécialisé.",
+      "donate": "Faire un don maintenant",
+      "partner": "Devenir partenaire"
+    }
+  },
+  "joinOnline": {
+    "hero": {
+      "badge": "Réseau de chapitres en ligne",
+      "title": "Rejoindre un chapitre local en ligne",
+      "subtitle": "Connectez-vous avec la communauté éducative de votre pays — que vous soyez résident, dans la diaspora ou ami du pays.",
+      "note": "Les chapitres en ligne sont le point d'entrée au réseau SCEF. À mesure qu'ils grandissent, ils peuvent évoluer en chapitres hybrides ou physiques."
+    },
+    "steps": {
+      "selectCountry": "Sélectionner le pays",
+      "chooseRole": "Choisir votre rôle",
+      "yourLocation": "Votre emplacement"
+    },
+    "step1": {
+      "title": "Sélectionnez votre pays",
+      "subtitle": "Choisissez le pays africain dont vous voulez rejoindre le chapitre. Chaque pays a sa propre communauté de chapitre en ligne.",
+      "searchPlaceholder": "Rechercher un pays...",
+      "noResults": "Aucun pays trouvé correspondant"
+    },
+    "step2": {
+      "title": "Comment allez-vous participer ?",
+      "subtitle": "Choisissez votre relation avec {country}. Cela détermine votre rôle et vos avantages dans le chapitre.",
+      "changeCountry": "← Changer de pays",
+      "benefits": "Avantages"
+    },
+    "step3": {
+      "title": "Où habitez-vous ?",
+      "subtitle": "Indiquez-nous votre emplacement actuel pour vous connecter avec d'autres membres diaspora de votre région.",
+      "otherLocation": "Autre emplacement",
+      "enterCountry": "Entrez votre pays...",
+      "back": "← Retour"
+    },
+    "types": {
+      "resident": {
+        "title": "Résident",
+        "description": "Je vis actuellement dans ce pays africain",
+        "benefits": [
+          "Droits de vote complets aux élections du chapitre",
+          "Éligible aux rôles de leadership locaux",
+          "Accès aux événements et programmes en personne",
+          "Participation directe aux initiatives communautaires"
+        ]
+      },
+      "diaspora": {
+        "title": "Diaspora",
+        "description": "Je suis originaire de ce pays mais vis à l'étranger",
+        "benefits": [
+          "Connectez-vous avec le chapitre de votre pays d'origine",
+          "Soutenez les projets depuis l'étranger",
+          "Faites le pont entre ressources et opportunités",
+          "Participez aux réunions virtuelles du chapitre"
+        ]
+      },
+      "friend": {
+        "title": "Ami du pays",
+        "description": "J'ai une affinité ou un intérêt à soutenir ce pays",
+        "benefits": [
+          "Soutenez l'éducation dans un pays qui vous tient à cœur",
+          "Participez aux initiatives de collecte de fonds",
+          "Assistez aux événements virtuels et webinaires",
+          "Recevez des mises à jour sur les activités du chapitre"
+        ]
+      }
+    },
+    "cta": {
+      "continue": "Continuer",
+      "proceedMembership": "Procéder à l'adhésion"
+    },
+    "info": {
+      "title": "À propos des chapitres en ligne",
+      "items": [
+        "Communautés virtuelles organisées par pays",
+        "Ouvertes aux résidents, diaspora et amis",
+        "Réunions et événements virtuels mensuels",
+        "Passerelle vers des chapitres hybrides/physiques"
+      ]
+    }
+  },
   "contact": {
     "hero": {
       "badge": "Nous contacter",
