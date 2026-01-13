@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { 
   Shield, Users, MapPin, Wallet, Briefcase, 
   ClipboardList, Settings, BookOpen, Award,
-  LayoutDashboard, FileText, CreditCard, Heart
+  LayoutDashboard, FileText, CreditCard, Heart,
+  RefreshCw
 } from "lucide-react";
 
 // Super Admin Dashboard Components
@@ -16,36 +18,42 @@ import { ActivityFeed } from "./super-admin/ActivityFeed";
 import { ComplianceAlertsCard } from "./super-admin/ComplianceAlertsCard";
 import { RegisteredMembersCard } from "./super-admin/RegisteredMembersCard";
 import { QuickActionsTabs } from "./super-admin/QuickActionsTabs";
+import { useSuperAdminDashboard } from "@/hooks/useSuperAdminDashboard";
 
 interface SuperAdminDashboardProps {
   profile: any;
   user: any;
 }
 
-// Sample transaction data - in production, this would come from Supabase
-const sampleTransactions = [
-  { id: "1", date: new Date("2023-10-29"), description: "Major Donor Contribution", amount: "$75,000", type: "donation" as const },
-  { id: "2", date: new Date("2023-10-29"), description: "Lagos Chapter Operations", amount: "$4,400", type: "disbursement" as const },
-  { id: "3", date: new Date("2023-10-29"), description: "Nairobi Chapter Grant", amount: "$3,400", type: "disbursement" as const },
-  { id: "4", date: new Date("2023-10-27"), description: "Pretoria Chapter Funding", amount: "$1,420", type: "disbursement" as const },
-  { id: "5", date: new Date("2023-10-25"), description: "Annual Membership Dues", amount: "$2,500", type: "dues" as const },
-  { id: "6", date: new Date("2023-10-24"), description: "AGC Token Purchase", amount: "$5,000", type: "purchase" as const },
-];
-
-// Sidebar navigation items for super admin
-const sidebarNavItems = [
-  { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard", active: true },
-  { icon: MapPin, label: "Local Chapters", href: "/dashboard/chapters" },
-  { icon: Briefcase, label: "Projects & Programs", href: "/dashboard/programs" },
-  { icon: Users, label: "Users & Profiles", href: "/dashboard/users" },
-  { icon: Wallet, label: "Wallet & Transactions", href: "/dashboard/wallets" },
-  { icon: Award, label: "Scholarships & Grants", href: "/dashboard/scholarships" },
-  { icon: Heart, label: "Donations & CSR Partners", href: "/dashboard/donations" },
-  { icon: FileText, label: "Media & Reports", href: "/dashboard/reports" },
-  { icon: Shield, label: "Admin & Governance", href: "/dashboard/governance" }
-];
-
 export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps) => {
+  const {
+    stats,
+    statsLoading,
+    transactions,
+    transactionsLoading,
+    chapterHealth,
+    chapterHealthLoading,
+    donationChartData,
+    donationChartLoading,
+    refetchAll,
+  } = useSuperAdminDashboard();
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
+  const formatAGC = (amount: number) => {
+    return amount.toLocaleString("en-US", {
+      minimumFractionDigits: 3,
+      maximumFractionDigits: 3,
+    });
+  };
+
   return (
     <div className="space-y-6">
       {/* Top Header Banner */}
@@ -61,9 +69,21 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
             </div>
           </div>
           <div className="flex items-center gap-3">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-white/70 hover:text-white hover:bg-white/10"
+              onClick={refetchAll}
+            >
+              <RefreshCw className="w-4 h-4" />
+            </Button>
             <div className="bg-white/10 rounded-lg px-4 py-2 flex items-center gap-2">
               <CreditCard className="w-4 h-4" />
-              <span className="font-semibold">1,230.000 AGC</span>
+              {statsLoading ? (
+                <Skeleton className="h-5 w-24 bg-white/20" />
+              ) : (
+                <span className="font-semibold">{formatAGC(stats?.totalAGC || 0)} AGC</span>
+              )}
             </div>
             <Button variant="secondary" size="sm" asChild>
               <Link to="/admin/digital-board">
@@ -85,46 +105,76 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
       <QuickActionsTabs />
 
       {/* Main Stats Cards */}
-      <DashboardStatsCards
-        totalAGC="1,230.000"
-        totalDonations="$750,000"
-        activeProjects={44}
-        scholarshipsAwarded={1420}
-      />
+      {statsLoading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[1, 2, 3, 4].map((i) => (
+            <Skeleton key={i} className="h-24 rounded-xl" />
+          ))}
+        </div>
+      ) : (
+        <DashboardStatsCards
+          totalAGC={formatAGC(stats?.totalAGC || 0)}
+          totalDonations={formatCurrency(stats?.totalDonations || 0)}
+          activeProjects={stats?.activePrograms || 0}
+          scholarshipsAwarded={stats?.totalMembers || 0}
+        />
+      )}
 
       {/* Two Column Layout - Transaction History & Charts */}
       <div className="grid lg:grid-cols-2 gap-6">
-        <TransactionHistoryTable transactions={sampleTransactions} maxRows={5} />
-        <DonationsDisbursementsChart data={undefined} />
+        <TransactionHistoryTable 
+          transactions={transactions} 
+          maxRows={5} 
+          isLoading={transactionsLoading}
+        />
+        <DonationsDisbursementsChart 
+          data={donationChartData} 
+          isLoading={donationChartLoading}
+        />
       </div>
 
       {/* Three Column Layout - Activity, Chapters, Compliance */}
       <div className="grid lg:grid-cols-3 gap-6">
         <ActivityFeed activities={undefined} maxItems={5} />
-        <ChapterHealthCard chapters={undefined} />
+        <ChapterHealthCard 
+          chapters={chapterHealth} 
+          isLoading={chapterHealthLoading}
+        />
         <div className="space-y-6">
-          <RegisteredMembersCard totalMembers={22580} monthlyGrowth={8.5} />
+          <RegisteredMembersCard 
+            totalMembers={stats?.totalMembers || 0} 
+            monthlyGrowth={8.5} 
+            isLoading={statsLoading}
+          />
           <ComplianceAlertsCard alerts={undefined} />
         </div>
       </div>
 
       {/* Chapters Overview Chart + Extra Stats */}
       <div className="grid lg:grid-cols-2 gap-6">
-        <ChaptersOverviewChart activeChapters={44} totalChapters={57} />
+        <ChaptersOverviewChart 
+          activeChapters={stats?.activeChapters || 0} 
+          totalChapters={stats?.totalChapters || 0} 
+          isLoading={statsLoading}
+        />
         
         {/* Platform Overview */}
         <div className="grid grid-cols-2 gap-4">
           {[
-            { icon: MapPin, label: "Countries Active", value: "12 / 54", color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950" },
-            { icon: Briefcase, label: "Active Programs", value: "6", color: "text-purple-500", bg: "bg-purple-50 dark:bg-purple-950" },
-            { icon: BookOpen, label: "eLibrary Resources", value: "1,240", color: "text-blue-500", bg: "bg-blue-50 dark:bg-blue-950" },
-            { icon: Award, label: "NESA Nominations", value: "328", color: "text-orange-500", bg: "bg-orange-50 dark:bg-orange-950" },
+            { icon: MapPin, label: "Countries Active", value: statsLoading ? null : `${stats?.activeChapters || 0} / 54`, color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950" },
+            { icon: Briefcase, label: "Active Programs", value: statsLoading ? null : String(stats?.activePrograms || 0), color: "text-purple-500", bg: "bg-purple-50 dark:bg-purple-950" },
+            { icon: BookOpen, label: "eLibrary Resources", value: statsLoading ? null : (stats?.elibraryResources || 0).toLocaleString(), color: "text-blue-500", bg: "bg-blue-50 dark:bg-blue-950" },
+            { icon: Award, label: "Total Chapters", value: statsLoading ? null : String(stats?.totalChapters || 0), color: "text-orange-500", bg: "bg-orange-50 dark:bg-orange-950" },
           ].map((item) => (
             <div key={item.label} className="bg-card border border-border rounded-xl p-5">
               <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center mb-3`}>
                 <item.icon className={`w-5 h-5 ${item.color}`} />
               </div>
-              <p className="text-2xl font-bold text-foreground">{item.value}</p>
+              {item.value === null ? (
+                <Skeleton className="h-8 w-16 mb-1" />
+              ) : (
+                <p className="text-2xl font-bold text-foreground">{item.value}</p>
+              )}
               <p className="text-sm text-muted-foreground">{item.label}</p>
             </div>
           ))}

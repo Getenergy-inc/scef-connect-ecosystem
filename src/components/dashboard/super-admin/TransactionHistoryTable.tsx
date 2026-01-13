@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import { format } from "date-fns";
 
 interface Transaction {
@@ -14,6 +15,7 @@ interface Transaction {
 interface TransactionHistoryTableProps {
   transactions: Transaction[];
   maxRows?: number;
+  isLoading?: boolean;
 }
 
 const typeColors: Record<string, string> = {
@@ -24,7 +26,7 @@ const typeColors: Record<string, string> = {
   contribution: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300"
 };
 
-export function TransactionHistoryTable({ transactions, maxRows = 5 }: TransactionHistoryTableProps) {
+export function TransactionHistoryTable({ transactions, maxRows = 5, isLoading = false }: TransactionHistoryTableProps) {
   const displayedTransactions = transactions.slice(0, maxRows);
 
   return (
@@ -42,7 +44,20 @@ export function TransactionHistoryTable({ transactions, maxRows = 5 }: Transacti
             </TableRow>
           </TableHeader>
           <TableBody>
-            {displayedTransactions.length > 0 ? (
+            {isLoading ? (
+              Array.from({ length: maxRows }).map((_, i) => (
+                <TableRow key={i}>
+                  <TableCell><Skeleton className="h-4 w-20" /></TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-2">
+                      <Skeleton className="h-5 w-16" />
+                      <Skeleton className="h-4 w-32" />
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-right"><Skeleton className="h-4 w-16 ml-auto" /></TableCell>
+                </TableRow>
+              ))
+            ) : displayedTransactions.length > 0 ? (
               displayedTransactions.map((tx) => (
                 <TableRow key={tx.id}>
                   <TableCell className="text-sm text-muted-foreground">
