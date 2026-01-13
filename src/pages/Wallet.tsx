@@ -14,6 +14,7 @@ import {
 import { WalletHeader } from "@/components/wallet/WalletHeader";
 import { FundWalletModal } from "@/components/wallet/FundWalletModal";
 import { WithdrawModal } from "@/components/wallet/WithdrawModal";
+import { TransactionHistory } from "@/components/wallet/TransactionHistory";
 import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 
 const Wallet = () => {
@@ -61,6 +62,32 @@ const Wallet = () => {
       setLoading(false);
     }
   };
+
+  // Real-time subscription for wallet balance updates
+  useEffect(() => {
+    if (!wallet?.id) return;
+
+    const channel = supabase
+      .channel(`wallet-balance-${wallet.id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "UPDATE",
+          schema: "public",
+          table: "wallets",
+          filter: `id=eq.${wallet.id}`,
+        },
+        (payload) => {
+          logger.log("Wallet balance updated:", payload);
+          setWallet(payload.new);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [wallet?.id]);
 
   if (loading) {
     return (
@@ -149,7 +176,7 @@ const Wallet = () => {
                   { icon: Plus, label: "Add Funds", action: () => setFundModalOpen(true) },
                   { icon: ArrowDownLeft, label: "Withdraw", action: () => setWithdrawModalOpen(true) },
                   { icon: ArrowUpRight, label: "Donate", action: () => navigate("/donate") },
-                  { icon: History, label: "History", action: () => {} },
+                  { icon: History, label: "History", action: () => document.getElementById("transaction-history")?.scrollIntoView({ behavior: "smooth" }) },
                 ].map((item) => (
                   <button
                     key={item.label}
@@ -164,26 +191,13 @@ const Wallet = () => {
                 ))}
               </div>
 
-              {/* Transactions */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <History className="w-5 h-5" />
-                    Recent Transactions
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-center py-12 text-muted-foreground">
-                    <WalletIcon className="w-16 h-16 mx-auto mb-4 opacity-30" />
-                    <p className="text-lg font-medium mb-2">No transactions yet</p>
-                    <p className="text-sm mb-4">Start by adding funds to your wallet</p>
-                    <Button onClick={() => setFundModalOpen(true)}>
-                      <Plus className="w-4 h-4 mr-2" />
-                      Add Funds
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* Transaction History with Pagination */}
+              <div id="transaction-history">
+                <TransactionHistory 
+                  walletId={wallet?.id || null} 
+                  onFundWallet={() => setFundModalOpen(true)}
+                />
+              </div>
 
               {/* Info Section */}
               <div className="mt-8 p-6 rounded-xl bg-muted/50 border border-border">
