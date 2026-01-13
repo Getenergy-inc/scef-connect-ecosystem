@@ -20,7 +20,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 interface DecisionCardProps {
   decision: Decision;
   currentUserId: string;
-  onVote: (decisionId: string, option: string) => Promise<void>;
+  onVote: (decisionId: string, option: string) => Promise<unknown>;
   onClose?: (decisionId: string) => Promise<void>;
   onCancel?: (decisionId: string) => Promise<void>;
   onViewAuditLog?: (decisionId: string) => void;
