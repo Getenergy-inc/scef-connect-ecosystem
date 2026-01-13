@@ -325,6 +325,51 @@ export type Database = {
           },
         ]
       }
+      governance_profiles: {
+        Row: {
+          bio: string | null
+          board_type: string
+          created_at: string
+          display_order: number | null
+          email: string | null
+          id: string
+          is_active: boolean
+          linkedin_url: string | null
+          name: string
+          photo_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          bio?: string | null
+          board_type: string
+          created_at?: string
+          display_order?: number | null
+          email?: string | null
+          id?: string
+          is_active?: boolean
+          linkedin_url?: string | null
+          name: string
+          photo_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          bio?: string | null
+          board_type?: string
+          created_at?: string
+          display_order?: number | null
+          email?: string | null
+          id?: string
+          is_active?: boolean
+          linkedin_url?: string | null
+          name?: string
+          photo_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       media_items: {
         Row: {
           created_at: string
@@ -505,6 +550,63 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      vacancies: {
+        Row: {
+          application_deadline: string | null
+          application_email: string | null
+          created_at: string
+          created_by: string | null
+          department: string
+          description: string
+          employment_type: string
+          id: string
+          is_active: boolean
+          is_featured: boolean
+          location: string | null
+          requirements: string[] | null
+          responsibilities: string[] | null
+          salary_range: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          application_deadline?: string | null
+          application_email?: string | null
+          created_at?: string
+          created_by?: string | null
+          department: string
+          description: string
+          employment_type?: string
+          id?: string
+          is_active?: boolean
+          is_featured?: boolean
+          location?: string | null
+          requirements?: string[] | null
+          responsibilities?: string[] | null
+          salary_range?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          application_deadline?: string | null
+          application_email?: string | null
+          created_at?: string
+          created_by?: string | null
+          department?: string
+          description?: string
+          employment_type?: string
+          id?: string
+          is_active?: boolean
+          is_featured?: boolean
+          location?: string | null
+          requirements?: string[] | null
+          responsibilities?: string[] | null
+          salary_range?: string | null
+          title?: string
+          updated_at?: string
         }
         Relationships: []
       }

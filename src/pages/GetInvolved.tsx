@@ -5,7 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLocale } from "@/contexts/LocaleContext";
-import { Users, Award, HandHeart, ArrowRight, CheckCircle } from "lucide-react";
+import { Users, Award, HandHeart, ArrowRight, CheckCircle, Briefcase } from "lucide-react";
+import { emailDirectory } from "@/config/emailDirectory";
 
 const GetInvolved = () => {
   const { t } = useLocale();
@@ -57,7 +58,25 @@ const GetInvolved = () => {
       ],
       cta: t("nav.dropdown.getInvolved.volunteer"),
       href: "/volunteer",
+      email: emailDirectory.volunteer,
       color: "from-forest to-forest-light",
+    },
+    {
+      id: "careers",
+      title: "Join Our Team",
+      description: "Explore career opportunities at SCEF",
+      icon: Briefcase,
+      benefits: [
+        "Full-time & part-time positions",
+        "Internship programs",
+        "Remote work options",
+        "Professional development",
+        "Make a Pan-African impact",
+      ],
+      cta: "View Vacancies",
+      href: "/vacancies",
+      email: emailDirectory.hr,
+      color: "from-primary to-primary/80",
     },
   ];
 
@@ -87,16 +106,16 @@ const GetInvolved = () => {
           {/* Options */}
           <section className="py-16">
             <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {involvementOptions.map((option) => (
                   <Card key={option.id} className="relative overflow-hidden group hover:shadow-xl transition-shadow">
                     <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${option.color}`} />
                     <CardHeader className="pt-8">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${option.color} flex items-center justify-center mb-4`}>
-                        <option.icon className="w-8 h-8 text-earth" />
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${option.color} flex items-center justify-center mb-4`}>
+                        <option.icon className="w-7 h-7 text-earth" />
                       </div>
-                      <CardTitle className="text-2xl">{option.title}</CardTitle>
-                      <CardDescription className="text-base">{option.description}</CardDescription>
+                      <CardTitle className="text-xl">{option.title}</CardTitle>
+                      <CardDescription className="text-sm">{option.description}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="space-y-2">
@@ -107,12 +126,21 @@ const GetInvolved = () => {
                           </div>
                         ))}
                       </div>
-                      <Button className="w-full" asChild>
-                        <Link to={option.href}>
-                          {option.cta}
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
+                      <div className="space-y-2">
+                        <Button className="w-full" asChild>
+                          <Link to={option.href}>
+                            {option.cta}
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Link>
+                        </Button>
+                        {option.email && (
+                          <Button variant="ghost" size="sm" className="w-full text-xs" asChild>
+                            <a href={`mailto:${option.email}`}>
+                              Or email: {option.email}
+                            </a>
+                          </Button>
+                        )}
+                      </div>
                     </CardContent>
                   </Card>
                 ))}
@@ -129,9 +157,14 @@ const GetInvolved = () => {
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
                 {t("about.hero.subtitle")}
               </p>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">{t("footer.contact")}</Link>
-              </Button>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/contact">{t("footer.contact")}</Link>
+                </Button>
+                <Button size="lg" asChild>
+                  <Link to="/partners">Partner With Us</Link>
+                </Button>
+              </div>
             </div>
           </section>
         </main>

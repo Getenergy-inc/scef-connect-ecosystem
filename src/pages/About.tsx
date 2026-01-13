@@ -519,29 +519,69 @@ const About = () => {
             </div>
           </section>
 
-          {/* SECTION 7: 6 Core Objectives */}
+          {/* SECTION 7: 6 Core Objectives - Updated with SMART measures */}
           <section id="objectives" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Our 6 Core Objectives
                 </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Each objective includes SMART-style targets with clear deliverables and timelines.
+                </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+              <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-10">
                 {[
-                  "Establish layered governance for education delivery.",
-                  "Deploy digital platforms for access and certification.",
-                  "Develop media for knowledge dissemination.",
-                  "Onboard and monitor local chapters for compliance.",
-                  "Secure funding and partnerships with accountability.",
-                  "Align operations with UN SDGs and AU Agenda 2063 for scalability.",
+                  {
+                    title: "To build the SCEF platform for advocating a continuous, ever-growing standard of education in Africa.",
+                    shortTitle: "Standards Platform",
+                    measures: ["Publish Africa-wide Standards & Governance Framework v1 by Q4 2026", "Pilot adoption across all 5 African regions by 2030"]
+                  },
+                  {
+                    title: "To strengthen layered governance and accountability for Education-for-All delivery across Africa and the diaspora.",
+                    shortTitle: "Governance & Accountability",
+                    measures: ["Implement governance workflows (BoT/BoA/BoD) by Q2 2026", "Publish annual governance & performance reports starting 2026"]
+                  },
+                  {
+                    title: "To deploy digital platforms that expand access, learning, verification, and certification at scale.",
+                    shortTitle: "Digital Platforms",
+                    measures: ["Launch unified platforms (web/app, dashboards, certification) by Q4 2026", "Improve completion/verification rates annually through 2035"]
+                  },
+                  {
+                    title: "To build and monitor a chapter-driven implementation network across the 5 African regions, supported by diaspora (6th region).",
+                    shortTitle: "Chapter Network",
+                    measures: ["Standardize chapter onboarding + compliance by Q2 2026", "Activate chapters across all 5 regions + 10 diaspora chapters by 2030"]
+                  },
+                  {
+                    title: "To mobilize, manage, and report education funding transparently—especially through CSR for Education Funds Management Services (SCEF–FMS).",
+                    shortTitle: "Funding & CSR Management",
+                    measures: ["Operate verified project pipeline + ESG/SDG reporting by Q2 2026", "Grow 10-year renewable partnerships through 2035"]
+                  },
+                  {
+                    title: "To deliver measurable, inclusive impact through integrated programs aligned with SDG 4, AU Agenda 2063, sustainability, ESG, and Africa development finance priorities.",
+                    shortTitle: "Measurable Impact",
+                    measures: ["By 2035: 100,000+ scholarships, 1,000 schools rebuilt", "By 2035: 4M learners reached, 54 chapters, $50m mobilized"]
+                  },
                 ].map((objective, index) => (
-                  <div key={index} className="flex items-start gap-4 bg-card rounded-xl p-6 border border-border hover:border-scef-gold hover:shadow-md transition-all">
-                    <div className="w-10 h-10 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
-                      {index + 1}
+                  <div key={index} className="bg-card rounded-xl p-6 border border-border hover:border-scef-gold hover:shadow-md transition-all">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <span className="text-xs font-semibold text-scef-gold uppercase tracking-wide">{objective.shortTitle}</span>
+                        <p className="text-foreground leading-relaxed mt-1">{objective.title}</p>
+                      </div>
                     </div>
-                    <p className="text-foreground leading-relaxed">{objective}</p>
+                    <div className="pl-14 space-y-2">
+                      {objective.measures.map((measure, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                          <span>{measure}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
