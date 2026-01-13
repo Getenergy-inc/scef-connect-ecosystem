@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
+import eduaidHeroImage from "@/assets/eduaid-hero.jpg";
 
 interface HeroStat {
   value: string;
@@ -32,14 +33,22 @@ export default function EduAidMainHero({
   const { isRTL } = useLocale();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0A1628]">
-      {/* Animated gradient background */}
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#1F892B]/20 to-[#0A1628]" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#1F892B]/30 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/20 rounded-full blur-3xl animate-pulse delay-1000" />
-        </div>
+        <img 
+          src={eduaidHeroImage} 
+          alt="African students learning in a classroom" 
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628]/90 via-[#0A1628]/80 to-[#1F892B]/40" />
+      </div>
+
+      {/* Animated accent elements */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#1F892B]/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       {/* Grid pattern overlay */}
