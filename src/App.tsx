@@ -57,6 +57,7 @@ import SignUp from "./pages/auth/SignUp";
 import Welcome from "./pages/dashboard/Welcome";
 import ChapterInbox from "./pages/chapter/Inbox";
 import Profile from "./pages/dashboard/Profile";
+import Activity from "./pages/dashboard/Activity";
 
 // Admin Finance Pages
 import FinanceOverview from "./pages/admin/FinanceOverview";
@@ -104,6 +105,7 @@ const App = () => (
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/welcome" element={<Welcome />} />
               <Route path="/dashboard/profile" element={<Profile />} />
+              <Route path="/dashboard/activity" element={<Activity />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
               
               {/* Chapter Routes */}
