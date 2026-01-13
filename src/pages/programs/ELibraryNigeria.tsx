@@ -20,8 +20,23 @@ import {
   ArrowRight,
   Star,
   BookMarked,
-  Laptop
+  Laptop,
+  ExternalLink,
+  Upload,
+  FolderOpen
 } from "lucide-react";
+
+// eLibrary Nigeria Brand Colors matching elibrarynigeria.com.ng
+const elibraryColors = {
+  primary: "#5cb85c", // Green primary
+  primaryDark: "#449d44",
+  secondary: "#337ab7", // Blue secondary
+  secondaryDark: "#286090",
+  white: "#FFFFFF",
+  light: "#F8F9FA",
+  text: "#333333",
+  textMuted: "#6c757d",
+};
 
 const ELibraryNigeria = () => {
   const resources = [
@@ -55,7 +70,7 @@ const ELibraryNigeria = () => {
     {
       icon: Search,
       title: "Smart Search",
-      description: "AI-powered search to find exactly what you need in seconds"
+      description: "Search anything Nigeria - find exactly what you need in seconds"
     },
     {
       icon: Smartphone,
@@ -95,6 +110,13 @@ const ELibraryNigeria = () => {
     "African History"
   ];
 
+  const navLinks = [
+    { label: "Setup your e-Library", href: "https://www.elibrarynigeria.com.ng", icon: Library },
+    { label: "Browse Categories", href: "https://www.elibrarynigeria.com.ng", icon: FolderOpen },
+    { label: "Become Uploader", href: "https://www.elibrarynigeria.com.ng", icon: Upload },
+    { label: "Resources", href: "https://www.elibrarynigeria.com.ng", icon: BookOpen },
+  ];
+
   const testimonials = [
     {
       name: "Amaka Okonkwo",
@@ -127,42 +149,73 @@ const ELibraryNigeria = () => {
     <>
       <Helmet>
         <title>eLibrary Nigeria – Santos Creations Educational Foundation</title>
-        <meta name="description" content="Access free digital educational resources through eLibrary Nigeria. Over 90,000 e-books, research papers, and learning materials for Nigerian students and educators." />
+        <meta name="description" content="Access free digital educational resources through eLibrary Nigeria. Promoting Nigeria local content e-libraries - streamline your search for local and international content." />
         <meta property="og:title" content="eLibrary Nigeria – SCEF" />
-        <meta property="og:description" content="Nigeria's largest free digital library for education. Access e-books, research papers, video tutorials, and exam preparation materials." />
+        <meta property="og:description" content="Promoting Nigeria local content e-libraries. Search local and international content e-libraries." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://santoscreations.org/programs/elibrary-nigeria" />
       </Helmet>
 
       <Header />
 
-      <main className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#0000CD' }}>
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-32 h-32 border border-[#FFD700] rounded-full" />
-            <div className="absolute bottom-20 right-10 w-48 h-48 border border-[#FFD700] rounded-full" />
-            <div className="absolute top-1/2 left-1/3 w-24 h-24 border border-[#FFD700] rotate-45" />
-          </div>
-          
-          <div className="container mx-auto px-4 relative z-10">
+      <main className="min-h-screen bg-white">
+        {/* Hero Section - Clean white design matching elibrarynigeria.com.ng */}
+        <section className="relative py-20 md:py-32 bg-white">
+          <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black bg-[#FFD700] text-black font-semibold mb-6">
-                <Library className="w-5 h-5" />
-                <span>SCEF Digital Education Initiative</span>
+              {/* Quick Nav Links */}
+              <div className="flex flex-wrap justify-center gap-4 mb-10">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors hover:text-opacity-80"
+                    style={{ color: elibraryColors.textMuted }}
+                  >
+                    <link.icon className="w-4 h-4" />
+                    {link.label}
+                  </a>
+                ))}
               </div>
               
-              <h1 className="font-['Abhaya_Libre'] text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                eLibrary <span className="text-[#FFD700]">Nigeria</span>
+              <h1 className="font-['Abhaya_Libre'] text-4xl md:text-6xl font-bold mb-4" style={{ color: elibraryColors.text }}>
+                Welcome to E-Library Nigeria
               </h1>
               
-              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
-                Promoting Nigeria local content e-libraries. Streamline your search for local 
-                and international content e-libraries, connecting students and educators 
-                to a vast repository of Nigerian-authored resources.
+              <p className="text-lg md:text-xl mb-8 italic" style={{ color: elibraryColors.textMuted }}>
+                promoting Nigeria local content e-libraries
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Search Box */}
+              <div className="max-w-2xl mx-auto mb-10">
+                <div 
+                  className="flex items-center rounded-full border-2 overflow-hidden shadow-sm"
+                  style={{ borderColor: '#E5E7EB' }}
+                >
+                  <input 
+                    type="text"
+                    placeholder="Search anything Nigeria"
+                    className="flex-1 px-6 py-4 text-lg outline-none"
+                    style={{ color: elibraryColors.text }}
+                  />
+                  <button 
+                    className="px-6 py-4 transition-opacity hover:opacity-80"
+                    style={{ backgroundColor: elibraryColors.textMuted }}
+                  >
+                    <Search className="w-5 h-5 text-white" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Streamline Search */}
+              <p className="text-sm mb-4" style={{ color: elibraryColors.textMuted }}>
+                Streamline your search
+              </p>
+              
+              {/* Category Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
                 <a 
                   href="https://www.elibrarynigeria.com.ng" 
                   target="_blank" 
@@ -170,53 +223,113 @@ const ELibraryNigeria = () => {
                 >
                   <Button 
                     size="lg" 
-                    className="text-lg px-8 py-6 border-2 border-black font-semibold"
-                    style={{ backgroundColor: '#FFD700', color: '#000000' }}
+                    className="text-lg px-8 py-6 font-medium text-white"
+                    style={{ backgroundColor: elibraryColors.primary }}
                   >
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    Visit eLibrary Nigeria
-                    <Globe className="w-5 h-5 ml-2" />
+                    local content e-libraries
                   </Button>
                 </a>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="text-lg px-8 py-6 border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black font-semibold"
+                <a 
+                  href="https://www.elibrarynigeria.com.ng" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                  Browse Catalog
-                </Button>
+                  <Button 
+                    size="lg" 
+                    className="text-lg px-8 py-6 font-medium text-white"
+                    style={{ backgroundColor: elibraryColors.primary }}
+                  >
+                    international content e-libraries
+                  </Button>
+                </a>
               </div>
+
+              {/* Visit Site CTA */}
+              <a 
+                href="https://www.elibrarynigeria.com.ng" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-semibold transition-colors hover:opacity-80"
+                style={{ color: elibraryColors.secondary }}
+              >
+                <Globe className="w-5 h-5" />
+                Visit elibrarynigeria.com.ng
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </section>
 
+        {/* New Books Section */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="font-['Abhaya_Libre'] text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: elibraryColors.text }}>
+              New books by categories
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <a
+                  key={category}
+                  href="https://www.elibrarynigeria.com.ng"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 rounded-full border-2 font-medium text-sm transition-all hover:shadow-md"
+                  style={{ 
+                    borderColor: elibraryColors.primary,
+                    color: elibraryColors.primary
+                  }}
+                >
+                  {category}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recent Uploaded Books Banner */}
+        <section 
+          className="py-8"
+          style={{ backgroundColor: elibraryColors.light }}
+        >
+          <div className="container mx-auto px-4">
+            <h2 className="font-['Abhaya_Libre'] text-xl md:text-2xl font-bold" style={{ color: elibraryColors.text }}>
+              Recent Uploaded Books
+            </h2>
+          </div>
+        </section>
+
         {/* Stats Section */}
-        <section className="py-12 bg-white border-y-2 border-black">
+        <section className="py-12 bg-white border-y" style={{ borderColor: '#E5E7EB' }}>
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold" style={{ color: '#0000CD' }}>
+                  <div 
+                    className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold"
+                    style={{ color: elibraryColors.primary }}
+                  >
                     {stat.value}
                   </div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div style={{ color: elibraryColors.textMuted }} className="font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Search Section */}
-        <ELibrarySearch />
-
         {/* Resources Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
+        <section className="py-16 md:py-24" style={{ backgroundColor: elibraryColors.light }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0000CD' }}>
-                Vast Digital <span className="text-[#FFD700]">Resources</span>
+              <h2 
+                className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4"
+                style={{ color: elibraryColors.text }}
+              >
+                Vast Digital <span style={{ color: elibraryColors.primary }}>Resources</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p style={{ color: elibraryColors.textMuted }} className="text-lg max-w-2xl mx-auto">
                 Access an extensive collection of educational materials curated for Nigerian curriculum and beyond.
               </p>
             </div>
@@ -225,19 +338,28 @@ const ELibraryNigeria = () => {
               {resources.map((resource, index) => (
                 <div 
                   key={index} 
-                  className="bg-white p-6 rounded-lg border-2 border-black shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white p-6 rounded-lg border-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  style={{ borderColor: '#E5E7EB' }}
                 >
                   <div 
-                    className="w-16 h-16 rounded-lg flex items-center justify-center mb-4 border-2 border-black"
-                    style={{ backgroundColor: '#0000CD' }}
+                    className="w-16 h-16 rounded-lg flex items-center justify-center mb-4"
+                    style={{ backgroundColor: elibraryColors.primary }}
                   >
-                    <resource.icon className="w-8 h-8 text-[#FFD700]" />
+                    <resource.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-2xl font-bold text-[#FFD700] mb-2">{resource.count}</div>
-                  <h3 className="font-['Abhaya_Libre'] text-xl font-bold mb-2" style={{ color: '#0000CD' }}>
+                  <div 
+                    className="text-2xl font-bold mb-2"
+                    style={{ color: elibraryColors.secondary }}
+                  >
+                    {resource.count}
+                  </div>
+                  <h3 
+                    className="font-['Abhaya_Libre'] text-xl font-bold mb-2"
+                    style={{ color: elibraryColors.text }}
+                  >
                     {resource.title}
                   </h3>
-                  <p className="text-gray-600">{resource.description}</p>
+                  <p style={{ color: elibraryColors.textMuted }}>{resource.description}</p>
                 </div>
               ))}
             </div>
@@ -249,10 +371,14 @@ const ELibraryNigeria = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-6" style={{ color: '#0000CD' }}>
-                  Powerful Features for <span className="text-[#FFD700]">Modern Learning</span>
+                <h2 
+                  className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-6"
+                  style={{ color: elibraryColors.text }}
+                >
+                  Powerful Features for{" "}
+                  <span style={{ color: elibraryColors.primary }}>Modern Learning</span>
                 </h2>
-                <p className="text-lg text-gray-600 mb-8">
+                <p style={{ color: elibraryColors.textMuted }} className="text-lg mb-8">
                   eLibrary Nigeria is designed with the unique needs of Nigerian learners in mind, 
                   offering features that work even in challenging connectivity environments.
                 </p>
@@ -261,14 +387,18 @@ const ELibraryNigeria = () => {
                   {features.map((feature, index) => (
                     <div key={index} className="flex gap-4">
                       <div 
-                        className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 border-2 border-black"
-                        style={{ backgroundColor: '#FFD700' }}
+                        className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: elibraryColors.primary }}
                       >
-                        <feature.icon className="w-6 h-6" style={{ color: '#0000CD' }} />
+                        <feature.icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-1" style={{ color: '#0000CD' }}>{feature.title}</h4>
-                        <p className="text-sm text-gray-600">{feature.description}</p>
+                        <h4 className="font-semibold mb-1" style={{ color: elibraryColors.text }}>
+                          {feature.title}
+                        </h4>
+                        <p className="text-sm" style={{ color: elibraryColors.textMuted }}>
+                          {feature.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -277,11 +407,11 @@ const ELibraryNigeria = () => {
 
               <div className="relative">
                 <div 
-                  className="aspect-square rounded-2xl flex items-center justify-center border-2 border-black"
-                  style={{ backgroundColor: '#0000CD' }}
+                  className="aspect-square rounded-2xl flex items-center justify-center"
+                  style={{ backgroundColor: elibraryColors.secondary }}
                 >
                   <div className="text-center p-8">
-                    <Laptop className="w-24 h-24 text-[#FFD700] mx-auto mb-6" />
+                    <Laptop className="w-24 h-24 text-white mx-auto mb-6" />
                     <h3 className="font-['Abhaya_Libre'] text-2xl font-bold text-white mb-4">
                       Access Anywhere
                     </h3>
@@ -290,47 +420,28 @@ const ELibraryNigeria = () => {
                     </p>
                   </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#FFD700] rounded-lg border-2 border-black flex items-center justify-center">
-                  <BookMarked className="w-12 h-12" style={{ color: '#0000CD' }} />
+                <div 
+                  className="absolute -bottom-4 -right-4 w-24 h-24 rounded-lg flex items-center justify-center"
+                  style={{ backgroundColor: elibraryColors.primary }}
+                >
+                  <BookMarked className="w-12 h-12 text-white" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Categories Section */}
-        <section className="py-16 md:py-24" style={{ backgroundColor: '#0000CD' }}>
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold text-white mb-4">
-                Browse by <span className="text-[#FFD700]">Category</span>
-              </h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                Find resources tailored to your educational level and interests.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category, index) => (
-                <button
-                  key={index}
-                  className="px-6 py-3 bg-white/10 border-2 border-[#FFD700] text-white rounded-full hover:bg-[#FFD700] hover:text-black transition-all duration-300 font-medium"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Testimonials Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
+        <section className="py-16 md:py-24" style={{ backgroundColor: elibraryColors.light }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0000CD' }}>
-                What Users <span className="text-[#FFD700]">Say</span>
+              <h2 
+                className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4"
+                style={{ color: elibraryColors.text }}
+              >
+                What Users <span style={{ color: elibraryColors.primary }}>Say</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p style={{ color: elibraryColors.textMuted }} className="text-lg max-w-2xl mx-auto">
                 Hear from students and educators across Nigeria who use eLibrary daily.
               </p>
             </div>
@@ -339,17 +450,28 @@ const ELibraryNigeria = () => {
               {testimonials.map((testimonial, index) => (
                 <div 
                   key={index} 
-                  className="bg-white p-8 rounded-xl border-2 border-black shadow-lg"
+                  className="bg-white p-8 rounded-xl border-2 shadow-lg"
+                  style={{ borderColor: '#E5E7EB' }}
                 >
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-[#FFD700] text-[#FFD700]" />
+                      <Star 
+                        key={i} 
+                        className="w-5 h-5"
+                        style={{ fill: elibraryColors.primary, color: elibraryColors.primary }}
+                      />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                  <p className="mb-6 italic" style={{ color: elibraryColors.textMuted }}>
+                    "{testimonial.quote}"
+                  </p>
                   <div>
-                    <div className="font-semibold" style={{ color: '#0000CD' }}>{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    <div className="font-semibold" style={{ color: elibraryColors.text }}>
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm" style={{ color: elibraryColors.textMuted }}>
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -361,10 +483,13 @@ const ELibraryNigeria = () => {
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0000CD' }}>
-                How to <span className="text-[#FFD700]">Get Started</span>
+              <h2 
+                className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4"
+                style={{ color: elibraryColors.text }}
+              >
+                How to <span style={{ color: elibraryColors.primary }}>Get Started</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p style={{ color: elibraryColors.textMuted }} className="text-lg max-w-2xl mx-auto">
                 Start accessing free educational resources in three simple steps.
               </p>
             </div>
@@ -373,20 +498,23 @@ const ELibraryNigeria = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   { step: "1", title: "Create Account", description: "Sign up free with your email or phone number" },
-                  { step: "2", title: "Verify Student Status", description: "Upload your student ID or school enrollment proof" },
+                  { step: "2", title: "Verify Status", description: "Upload your student ID or school enrollment proof" },
                   { step: "3", title: "Start Learning", description: "Access unlimited resources across all categories" }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
                     <div 
-                      className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-black"
-                      style={{ backgroundColor: '#FFD700' }}
+                      className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                      style={{ backgroundColor: elibraryColors.primary }}
                     >
-                      <span className="text-2xl font-bold" style={{ color: '#0000CD' }}>{item.step}</span>
+                      <span className="text-2xl font-bold text-white">{item.step}</span>
                     </div>
-                    <h3 className="font-['Abhaya_Libre'] text-xl font-bold mb-2" style={{ color: '#0000CD' }}>
+                    <h3 
+                      className="font-['Abhaya_Libre'] text-xl font-bold mb-2"
+                      style={{ color: elibraryColors.text }}
+                    >
                       {item.title}
                     </h3>
-                    <p className="text-gray-600">{item.description}</p>
+                    <p style={{ color: elibraryColors.textMuted }}>{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -403,9 +531,12 @@ const ELibraryNigeria = () => {
         />
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 border-t-2 border-black" style={{ backgroundColor: '#0000CD' }}>
+        <section 
+          className="py-16 md:py-24"
+          style={{ backgroundColor: elibraryColors.secondary }}
+        >
           <div className="container mx-auto px-4 text-center">
-            <Library className="w-16 h-16 text-[#FFD700] mx-auto mb-6" />
+            <Library className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold text-white mb-6">
               Start Your Learning Journey Today
             </h2>
@@ -420,32 +551,21 @@ const ELibraryNigeria = () => {
               >
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 py-6 border-2 border-black font-semibold"
-                  style={{ backgroundColor: '#FFD700', color: '#000000' }}
+                  className="text-lg px-8 py-6 font-semibold"
+                  style={{ backgroundColor: elibraryColors.primary, color: 'white' }}
                 >
+                  <BookOpen className="w-5 h-5 mr-2" />
                   Visit eLibrary Nigeria
-                  <Globe className="w-5 h-5 ml-2" />
+                  <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
               </a>
-              <Link to="/programs">
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="text-lg px-8 py-6 border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black font-semibold"
-                >
-                  Explore All Programs
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 font-semibold bg-transparent text-white border-2 border-white hover:bg-white/10"
+              >
+                Browse Catalog
+              </Button>
             </div>
-          </div>
-        </section>
-
-        {/* Back Link */}
-        <section className="py-8 bg-gray-100 border-t-2 border-black">
-          <div className="container mx-auto px-4 text-center">
-            <Link to="/" className="text-[#0000CD] hover:text-[#FFD700] font-medium inline-flex items-center gap-2">
-              ← Back to Santos Creations Educational Foundation
-            </Link>
           </div>
         </section>
       </main>
