@@ -181,6 +181,12 @@
         "point2": "Disbursement tracking and audit-ready documentation",
         "point3": "Quarterly outcome reporting aligned to ESG/SDG indicators",
         "point4": "Chapter-based delivery model for scalable implementation"
+      },
+      "ctaStrip": {
+        "apply": "Apply / Participate",
+        "programs": "Explore Programs",
+        "chapters": "Explore Chapters",
+        "media": "Watch SCEF Media"
       }
     },
     "quickPath": {

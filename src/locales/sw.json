@@ -181,6 +181,12 @@
         "point2": "Ufuatiliaji wa malipo na nyaraka zilizoandaliwa kwa ukaguzi",
         "point3": "Ripoti za robo mwaka zilizowekwa sawiya na viashirio vya ESG/SDG",
         "point4": "Mfano wa utoaji unaotegemea sura kwa utekelezaji unaoweza kupanuliwa"
+      },
+      "ctaStrip": {
+        "apply": "Omba / Shiriki",
+        "programs": "Chunguza Programu",
+        "chapters": "Chunguza Sura",
+        "media": "Tazama SCEF Media"
       }
     },
     "quickPath": {

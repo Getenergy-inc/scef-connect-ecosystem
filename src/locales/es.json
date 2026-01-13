@@ -160,6 +160,12 @@
         "point2": "Seguimiento de desembolsos y documentación lista para auditoría",
         "point3": "Informes trimestrales alineados con indicadores ESG/ODS",
         "point4": "Modelo de entrega basado en capítulos para implementación escalable"
+      },
+      "ctaStrip": {
+        "apply": "Aplicar / Participar",
+        "programs": "Explorar Programas",
+        "chapters": "Explorar Capítulos",
+        "media": "Ver SCEF Media"
       }
     },
     "impact": {

@@ -181,6 +181,12 @@
         "point2": "Rastreamento de desembolso e documentação pronta para auditoria",
         "point3": "Relatórios trimestrais alinhados com indicadores ESG/ODS",
         "point4": "Modelo de entrega baseado em capítulos para implementação escalável"
+      },
+      "ctaStrip": {
+        "apply": "Candidatar / Participar",
+        "programs": "Explorar Programas",
+        "chapters": "Explorar Capítulos",
+        "media": "Ver SCEF Media"
       }
     },
     "quickPath": {

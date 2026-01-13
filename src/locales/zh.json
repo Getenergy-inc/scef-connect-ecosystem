@@ -160,6 +160,12 @@
         "point2": "拨款跟踪和审计就绪文档",
         "point3": "与ESG/SDG指标对齐的季度报告",
         "point4": "基于分会的交付模式实现可扩展实施"
+      },
+      "ctaStrip": {
+        "apply": "申请 / 参与",
+        "programs": "探索项目",
+        "chapters": "探索分会",
+        "media": "观看 SCEF Media"
       }
     },
     "impact": {

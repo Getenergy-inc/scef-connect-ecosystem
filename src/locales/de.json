@@ -160,6 +160,12 @@
         "point2": "Auszahlungsverfolgung und prüfungsfertige Dokumentation",
         "point3": "Quartalsberichte im Einklang mit ESG/SDG-Indikatoren",
         "point4": "Ortsverband-basiertes Liefermodell für skalierbare Implementierung"
+      },
+      "ctaStrip": {
+        "apply": "Bewerben / Teilnehmen",
+        "programs": "Programme entdecken",
+        "chapters": "Ortsverbände entdecken",
+        "media": "SCEF Media ansehen"
       }
     },
     "impact": {
