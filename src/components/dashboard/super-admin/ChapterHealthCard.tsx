@@ -1,13 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface ChapterHealth {
   name: string;
   status: "good" | "fair" | "poor";
   members: number;
+  country?: string;
 }
 
 interface ChapterHealthCardProps {
   chapters: ChapterHealth[];
+  isLoading?: boolean;
 }
 
 const statusColors: Record<string, { text: string; dot: string }> = {
@@ -16,16 +19,9 @@ const statusColors: Record<string, { text: string; dot: string }> = {
   poor: { text: "text-red-500", dot: "bg-red-500" }
 };
 
-const defaultChapters: ChapterHealth[] = [
-  { name: "Eritrean Diaspora", status: "good", members: 120 },
-  { name: "Lagos", status: "fair", members: 210 },
-  { name: "Nairobi", status: "fair", members: 186 },
-  { name: "Pretoria", status: "good", members: 135 },
-  { name: "Accra", status: "good", members: 98 },
-  { name: "Johannesburg", status: "poor", members: 45 }
-];
+const defaultChapters: ChapterHealth[] = [];
 
-export function ChapterHealthCard({ chapters = defaultChapters }: ChapterHealthCardProps) {
+export function ChapterHealthCard({ chapters = defaultChapters, isLoading = false }: ChapterHealthCardProps) {
   return (
     <Card>
       <CardHeader className="pb-3">
@@ -36,20 +32,37 @@ export function ChapterHealthCard({ chapters = defaultChapters }: ChapterHealthC
       </CardHeader>
       <CardContent className="pt-0">
         <div className="space-y-3">
-          {chapters.slice(0, 5).map((chapter) => (
-            <div key={chapter.name} className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${statusColors[chapter.status].dot}`} />
-                <span className="text-sm font-medium text-foreground">{chapter.name}</span>
+          {isLoading ? (
+            Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Skeleton className="w-2 h-2 rounded-full" />
+                  <Skeleton className="h-4 w-24" />
+                </div>
+                <div className="flex items-center gap-4">
+                  <Skeleton className="h-4 w-12" />
+                  <Skeleton className="h-4 w-8" />
+                </div>
               </div>
-              <div className="flex items-center gap-4">
-                <span className={`text-sm font-medium capitalize ${statusColors[chapter.status].text}`}>
-                  {chapter.status.charAt(0).toUpperCase() + chapter.status.slice(1)}
-                </span>
-                <span className="text-sm text-muted-foreground w-12 text-right">{chapter.members}</span>
+            ))
+          ) : chapters.length > 0 ? (
+            chapters.slice(0, 5).map((chapter) => (
+              <div key={chapter.name} className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className={`w-2 h-2 rounded-full ${statusColors[chapter.status].dot}`} />
+                  <span className="text-sm font-medium text-foreground">{chapter.name}</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className={`text-sm font-medium capitalize ${statusColors[chapter.status].text}`}>
+                    {chapter.status.charAt(0).toUpperCase() + chapter.status.slice(1)}
+                  </span>
+                  <span className="text-sm text-muted-foreground w-12 text-right">{chapter.members}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="text-sm text-muted-foreground text-center py-4">No chapters available</p>
+          )}
         </div>
       </CardContent>
     </Card>

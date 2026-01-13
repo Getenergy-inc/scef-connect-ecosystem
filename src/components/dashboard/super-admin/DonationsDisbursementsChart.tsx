@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 interface ChartDataPoint {
@@ -8,7 +9,8 @@ interface ChartDataPoint {
 }
 
 interface DonationsDisbursementsChartProps {
-  data: ChartDataPoint[];
+  data?: ChartDataPoint[];
+  isLoading?: boolean;
 }
 
 const defaultData: ChartDataPoint[] = [
@@ -18,12 +20,11 @@ const defaultData: ChartDataPoint[] = [
   { month: "Feb", donations: 95000, disbursements: 72000 },
   { month: "Mar", donations: 110000, disbursements: 85000 },
   { month: "Apr", donations: 88000, disbursements: 92000 },
-  { month: "May", donations: 125000, disbursements: 105000 },
-  { month: "Jun", donations: 145000, disbursements: 118000 },
-  { month: "Jul", donations: 138000, disbursements: 130000 }
 ];
 
-export function DonationsDisbursementsChart({ data = defaultData }: DonationsDisbursementsChartProps) {
+export function DonationsDisbursementsChart({ data, isLoading = false }: DonationsDisbursementsChartProps) {
+  const chartData = data && data.length > 0 ? data : defaultData;
+  
   const formatYAxis = (value: number): string => {
     if (value >= 1000) {
       return `${(value / 1000).toFixed(0)}k`;
@@ -41,57 +42,61 @@ export function DonationsDisbursementsChart({ data = defaultData }: DonationsDis
         <CardTitle className="text-lg font-semibold">Donations & Disbursements</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <div className="h-[260px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
-              <XAxis 
-                dataKey="month" 
-                axisLine={false} 
-                tickLine={false} 
-                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
-              />
-              <YAxis 
-                axisLine={false} 
-                tickLine={false} 
-                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
-                tickFormatter={formatYAxis}
-              />
-              <Tooltip 
-                formatter={formatTooltip}
-                contentStyle={{
-                  backgroundColor: 'hsl(var(--card))',
-                  border: '1px solid hsl(var(--border))',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
-                }}
-              />
-              <Legend 
-                iconType="circle" 
-                iconSize={8}
-                wrapperStyle={{ paddingTop: '10px' }}
-              />
-              <Line 
-                type="monotone" 
-                dataKey="donations" 
-                name="Donations"
-                stroke="#f97316" 
-                strokeWidth={2.5}
-                dot={false}
-                activeDot={{ r: 5, strokeWidth: 2 }}
-              />
-              <Line 
-                type="monotone" 
-                dataKey="disbursements" 
-                name="Disbursements"
-                stroke="#1e3a5f" 
-                strokeWidth={2.5}
-                dot={false}
-                activeDot={{ r: 5, strokeWidth: 2 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+        {isLoading ? (
+          <Skeleton className="h-[260px] w-full" />
+        ) : (
+          <div className="h-[260px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={chartData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
+                <XAxis 
+                  dataKey="month" 
+                  axisLine={false} 
+                  tickLine={false} 
+                  tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+                />
+                <YAxis 
+                  axisLine={false} 
+                  tickLine={false} 
+                  tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+                  tickFormatter={formatYAxis}
+                />
+                <Tooltip 
+                  formatter={formatTooltip}
+                  contentStyle={{
+                    backgroundColor: 'hsl(var(--card))',
+                    border: '1px solid hsl(var(--border))',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+                  }}
+                />
+                <Legend 
+                  iconType="circle" 
+                  iconSize={8}
+                  wrapperStyle={{ paddingTop: '10px' }}
+                />
+                <Line 
+                  type="monotone" 
+                  dataKey="donations" 
+                  name="Donations"
+                  stroke="#f97316" 
+                  strokeWidth={2.5}
+                  dot={false}
+                  activeDot={{ r: 5, strokeWidth: 2 }}
+                />
+                <Line 
+                  type="monotone" 
+                  dataKey="disbursements" 
+                  name="Disbursements"
+                  stroke="#1e3a5f" 
+                  strokeWidth={2.5}
+                  dot={false}
+                  activeDot={{ r: 5, strokeWidth: 2 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
