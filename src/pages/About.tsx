@@ -34,25 +34,25 @@ const divisionLinks = {
   lcs: "/divisions/lcs",
 };
 
-const quickNavItems = [
-  { id: "who-we-are", label: "Who We Are" },
-  { id: "why-we-exist", label: "Why We Exist" },
-  { id: "what-we-do", label: "What We Do" },
-  { id: "tvet-inclusion", label: "TVET & Inclusion" },
-  { id: "objectives", label: "Objectives" },
-  { id: "divisions", label: "How We Work" },
-  { id: "impact", label: "Impact & Accountability" },
-  { id: "sustainability", label: "Sustainability" },
-  { id: "get-involved", label: "Get Involved" },
-  { id: "faqs", label: "FAQs" },
-];
-
 const About = () => {
   const { t, isRTL } = useLocale();
   const [activeSection, setActiveSection] = useState("who-we-are");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [heroExpanded, setHeroExpanded] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  const quickNavItems = [
+    { id: "who-we-are", label: t("about.quickNav.whoWeAre") },
+    { id: "why-we-exist", label: t("about.quickNav.whyWeExist") },
+    { id: "what-we-do", label: t("about.quickNav.whatWeDo") },
+    { id: "tvet-inclusion", label: t("about.quickNav.tvetInclusion") },
+    { id: "objectives", label: t("about.quickNav.objectives") },
+    { id: "divisions", label: t("about.quickNav.howWeWork") },
+    { id: "impact", label: t("about.quickNav.impact") },
+    { id: "sustainability", label: t("about.quickNav.sustainability") },
+    { id: "get-involved", label: t("about.quickNav.getInvolved") },
+    { id: "faqs", label: t("about.quickNav.faqs") },
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -81,57 +81,97 @@ const About = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [quickNavItems]);
 
   const programs = [
-    { key: "nesa", title: "New Education Standard Award Africa (NESA Africa)", desc: "Recognizing and amplifying educational excellence", icon: Award, href: "/programs/nesa-africa" },
-    { key: "eduaid", title: "Education Aid Africa (EduAid Africa)", desc: "Scholarships, support pathways, and education funding", icon: GraduationCap, href: "/programs/eduaid-africa" },
-    { key: "rmsa", title: "Rebuild My School Africa (RMSA)", desc: "School renewal and learning environment improvement", icon: School, href: "/programs/rebuild-my-school-africa" },
-    { key: "eoa", title: "Education Online Africa (EOA)", desc: "Digital learning and verifiable certification", icon: Laptop, href: "/programs/digital-learning" },
-    { key: "womenGirls", title: "Women & Girls Education", desc: "Targeted interventions for access and outcomes", icon: Heart, href: "/programs/women-girls-education" },
-    { key: "specialNeeds", title: "Special Needs Education Support", desc: "Inclusion and support for learners", icon: Accessibility, href: "/programs/special-needs-education" },
-    { key: "elibrary", title: "eLibrary Nigeria", desc: "Free and curated learning resources", icon: BookOpen, href: "/programs/elibrary-nigeria" },
-    { key: "nesaTv", title: "NESA Africa TV", desc: "Education media, stories, and live coverage", icon: Tv, href: "/media/nesa-tv" },
+    { key: "nesa", title: t("about.programs.cards.nesa"), desc: t("about.whatWeDo.programs.nesa.desc"), icon: Award, href: "/programs/nesa-africa" },
+    { key: "eduaid", title: t("about.programs.cards.eduaid"), desc: t("about.whatWeDo.programs.eduaid.desc"), icon: GraduationCap, href: "/programs/eduaid-africa" },
+    { key: "rmsa", title: t("about.programs.cards.rmsa"), desc: t("about.whatWeDo.programs.rmsa.desc"), icon: School, href: "/programs/rebuild-my-school-africa" },
+    { key: "eoa", title: t("about.programs.cards.eoa"), desc: t("about.whatWeDo.programs.eoa.desc"), icon: Laptop, href: "/programs/digital-learning" },
+    { key: "womenGirls", title: t("about.programs.cards.womenGirls"), desc: t("about.whatWeDo.programs.womenGirls.desc"), icon: Heart, href: "/programs/women-girls-education" },
+    { key: "specialNeeds", title: t("about.programs.cards.specialNeeds"), desc: t("about.whatWeDo.programs.specialNeeds.desc"), icon: Accessibility, href: "/programs/special-needs-education" },
+    { key: "elibrary", title: t("about.programs.cards.elibrary"), desc: t("about.whatWeDo.programs.elibrary.desc"), icon: BookOpen, href: "/programs/elibrary-nigeria" },
+    { key: "nesaTv", title: t("about.whatWeDo.programs.nesaTv.title"), desc: t("about.whatWeDo.programs.nesaTv.desc"), icon: Tv, href: "/media/nesa-tv" },
   ];
 
-  const divisionKeys = ["bgeo", "sobcd", "tdsd", "ombdd", "santosMedia", "lcs"];
+  const divisionKeys = ["bgeo", "sobcd", "tdsd", "ombdd", "santosMedia", "lcs"] as const;
 
-  const divisionsData = [
-    { code: "BGEO", title: "Board Governance & Executive Office", lead: "Organization Secretary (Legal background + PRO function)", mandate: "Board coordination, governance documentation, executive office support, institutional communications, and governance continuity." },
-    { code: "SOBCD", title: "Strategic Operations & Business Compliance Division", lead: "Director of Operations and Compliance", mandate: "Admin & HR, finance operations oversight, events management, internal/external training coordination, compliance systems, operational reporting." },
-    { code: "TDSD", title: "Technology & Digital Services Division", lead: "Director of Technology and Digital Innovation", mandate: "Website/app systems, databases, security, dashboards, multilingual systems, platform performance, and digital transformation delivery." },
-    { code: "OMBDD", title: "Online Media Business Development Division", lead: "Director of Media Business Development", mandate: "Fundraising communications, sponsorship pipelines, digital growth, campaigns, partnerships conversion support, donor engagement assets." },
-    { code: "Santos Media", title: "Santos Media Division", lead: "Director of Santos Media", mandate: "NESA Africa TV, It's In Me Radio, webinars/podcasts, education tourism show, content operations, editorial standards, media distribution." },
-    { code: "LCS", title: "Local Chapter Services Division", lead: "Director of Chapter Services and Support", mandate: "Onboarding, monitoring, compliance support, reporting systems, local chapter governance, and scalable chapter activation." },
-  ];
+  const divisionsData = divisionKeys.map(key => ({
+    key,
+    code: t(`divisions.items.${key}.code`),
+    title: t(`divisions.items.${key}.title`),
+    lead: t(`divisions.items.${key}.lead`),
+    mandate: t(`divisions.items.${key}.mandate`),
+  }));
 
   const faqs = [
-    {
-      q: "What does SCEF do differently?",
-      a: "Governance + chapters + digital platforms + media advocacy—integrated into one accountable system. We don't just fund projects; we build sustainable education ecosystems with measurable outcomes."
-    },
-    {
-      q: "Can I support TVET or special needs education directly?",
-      a: "Yes. Choose a program and donate/partner to a specific track (TVET lab support or inclusive learning support). 100% of designated funds go to your chosen initiative with transparent reporting."
-    },
-    {
-      q: "Do you work across countries?",
-      a: "Yes—through structured local chapters and diaspora engagement. We operate across African countries and diaspora communities, each with local leadership aligned to SCEF governance standards."
-    },
-    {
-      q: "How do partners track impact?",
-      a: "Through detailed reports, digital updates via our Digital Board, and program dashboards. CSR partners receive quarterly impact statements and annual audited reports."
-    },
+    { q: t("about.faqs.items.0.q"), a: t("about.faqs.items.0.a") },
+    { q: t("about.faqs.items.1.q"), a: t("about.faqs.items.1.a") },
+    { q: t("about.faqs.items.2.q"), a: t("about.faqs.items.2.a") },
+    { q: t("about.faqs.items.3.q"), a: t("about.faqs.items.3.a") },
+  ];
+
+  const whoWeAreOutcomes = [
+    t("about.who.outcomes.0"),
+    t("about.who.outcomes.1"),
+    t("about.who.outcomes.2"),
+    t("about.who.outcomes.3"),
+    t("about.who.outcomes.4"),
+    t("about.who.outcomes.5"),
+  ];
+
+  const whyWeExistChallenges = [
+    t("about.whyWeExist.challenges.0"),
+    t("about.whyWeExist.challenges.1"),
+    t("about.whyWeExist.challenges.2"),
+    t("about.whyWeExist.challenges.3"),
+    t("about.whyWeExist.challenges.4"),
+  ];
+
+  const tvetEmpowerPoints = [
+    t("about.tvetSpotlight.empowerPoints.0"),
+    t("about.tvetSpotlight.empowerPoints.1"),
+    t("about.tvetSpotlight.empowerPoints.2"),
+  ];
+
+  const objectives = [
+    { title: t("about.objectives.items.0"), shortTitle: t("about.objectives.shortTitles.0"), tools: ["NESA-Africa", t("about.objectives.tools.certificationSystems")] },
+    { title: t("about.objectives.items.1"), shortTitle: t("about.objectives.shortTitles.1"), tools: ["EOA", "eLibrary Nigeria", "ACDL/AWPC"] },
+    { title: t("about.objectives.items.2"), shortTitle: t("about.objectives.shortTitles.2"), tools: ["NESA Africa TV", "It's In Me Radio", t("about.objectives.tools.webinars")] },
+    { title: t("about.objectives.items.3"), shortTitle: t("about.objectives.shortTitles.3"), tools: [t("about.objectives.tools.localChapters"), t("about.objectives.tools.complianceFramework")] },
+    { title: t("about.objectives.items.4"), shortTitle: t("about.objectives.shortTitles.4"), tools: ["SCEF–FMS", t("about.objectives.tools.csrPrograms"), t("about.objectives.tools.esgReporting")] },
+    { title: t("about.objectives.items.5"), shortTitle: t("about.objectives.shortTitles.5"), tools: [t("about.objectives.tools.regionalChapters"), t("about.objectives.tools.diaspora"), t("about.objectives.tools.partnerships")] },
+  ];
+
+  const sustainabilityPriorities = [
+    { label: t("about.sustainability.priorities.inclusion.label"), desc: t("about.sustainability.priorities.inclusion.desc") },
+    { label: t("about.sustainability.priorities.ownership.label"), desc: t("about.sustainability.priorities.ownership.desc") },
+    { label: t("about.sustainability.priorities.transparency.label"), desc: t("about.sustainability.priorities.transparency.desc") },
+    { label: t("about.sustainability.priorities.outcomes.label"), desc: t("about.sustainability.priorities.outcomes.desc") },
+  ];
+
+  const getInvolvedPathways = [
+    { icon: Users, title: t("about.getInvolved.pathways.member.title"), desc: t("about.getInvolved.pathways.member.desc"), href: "/get-involved/membership", color: "scef-blue" },
+    { icon: Award, title: t("about.getInvolved.pathways.ambassador.title"), desc: t("about.getInvolved.pathways.ambassador.desc"), href: "/get-involved/ambassador", color: "scef-gold" },
+    { icon: Handshake, title: t("about.getInvolved.pathways.partner.title"), desc: t("about.getInvolved.pathways.partner.desc"), href: "/partner-with-us", color: "scef-blue" },
+    { icon: Heart, title: t("about.getInvolved.pathways.donate.title"), desc: t("about.getInvolved.pathways.donate.desc"), href: "/donate", color: "scef-gold" },
+    { icon: Globe, title: t("about.getInvolved.pathways.chapter.title"), desc: t("about.getInvolved.pathways.chapter.desc"), href: "/chapters/join-online", color: "scef-blue" },
+    { icon: Users, title: t("about.getInvolved.pathways.volunteer.title"), desc: t("about.getInvolved.pathways.volunteer.desc"), href: "/get-involved/volunteer", color: "scef-gold" },
+  ];
+
+  const impactAccountabilityItems = [
+    t("about.impact.accountability.0"),
+    t("about.impact.accountability.1"),
+    t("about.impact.accountability.2"),
+    t("about.impact.accountability.3"),
+    t("about.impact.accountability.4"),
   ];
 
   return (
     <>
       <Helmet>
-        <title>About Santos Creations Educational Foundation (SCEF)</title>
-        <meta 
-          name="description" 
-          content="Santos Creations Educational Foundation (SCEF) is a membership-driven Pan-African education foundation advancing Education for All through governance, local chapters, digital learning, TVET workforce readiness, inclusive education, and transparent partnerships across Africa and the diaspora." 
-        />
+        <title>{t("about.hero.title")}</title>
+        <meta name="description" content={t("about.hero.subtitle")} />
         <meta name="keywords" content="SCEF, Pan-African education, TVET, inclusive education, education governance, local chapters, Africa education, SDG 4, AU Agenda 2063" />
         <link rel="canonical" href="https://scef.org/about" />
       </Helmet>
@@ -152,41 +192,35 @@ const About = () => {
                   {/* Eyebrow */}
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-gold text-sm font-semibold mb-6 border border-scef-gold/30">
                     <Globe className="w-4 h-4" />
-                    Regional Africa • Diaspora Africa
+                    {t("about.hero.regionBadge")}
                   </div>
                   
                   <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-                    About Santos Creations Educational Foundation (SCEF)
+                    {t("about.hero.title")}
                   </h1>
                   
                   <h2 className="text-lg md:text-xl text-white/85 leading-relaxed mb-6 font-medium">
-                    Building a continuous, ever-growing standard of education in Africa.
+                    {t("about.hero.tagline")}
                   </h2>
                   
                   {/* Short visible preview */}
                   <p className="text-base text-white/70 leading-relaxed mb-4">
-                    SCEF is a membership-driven Pan-African education foundation advancing Education for All through governance, local chapters, digital learning, TVET workforce readiness, inclusive education, and transparent partnerships.
+                    {t("about.hero.description")}
                   </p>
 
                   {/* Collapsible "Read more" section */}
                   <Collapsible open={heroExpanded} onOpenChange={setHeroExpanded}>
                     <CollapsibleContent className="text-base text-white/70 leading-relaxed space-y-4 mb-4">
-                      <p>
-                        Santos Creations Educational Foundation (SCEF) is a membership-based, not-for-profit and membership-driven Pan-African education foundation advocating for transforming education across Nigeria and Africa through sustainable practices, innovation, and community-driven initiatives.
-                      </p>
-                      <p>
-                        We also provide <strong className="text-white/90">CSR for Education Funds Management Services</strong>—supporting corporations and institutions to deploy education CSR funds through verified projects, tracked disbursement, measurable outcomes, and accountability reporting aligned with sustainability and ESG expectations.
-                      </p>
-                      <p>
-                        In addition, SCEF delivers <strong className="text-white/90">Africa-recognised stakeholder and African-institution endorsed certification/endorsement services</strong> to validate education quality efforts, strengthen credibility, and support continuous improvement across schools, programs, and partner interventions.
-                      </p>
+                      <p>{t("about.hero.expanded.p1")}</p>
+                      <p>{t("about.hero.expanded.p2")}</p>
+                      <p>{t("about.hero.expanded.p3")}</p>
                     </CollapsibleContent>
                     <CollapsibleTrigger asChild>
                       <button className="inline-flex items-center gap-2 text-scef-gold hover:text-scef-gold-light text-sm font-medium mb-6 transition-colors">
                         {heroExpanded ? (
-                          <>Read less <ChevronUp className="w-4 h-4" /></>
+                          <>{t("labels.readLess")} <ChevronUp className="w-4 h-4" /></>
                         ) : (
-                          <>Read more <ChevronDown className="w-4 h-4" /></>
+                          <>{t("labels.readMore")} <ChevronDown className="w-4 h-4" /></>
                         )}
                       </button>
                     </CollapsibleTrigger>
@@ -195,13 +229,13 @@ const About = () => {
                   {/* Quick Facts chips */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
-                      Founded 1997
+                      {t("about.hero.facts.founded")}
                     </span>
                     <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
-                      Registered 2010
+                      {t("about.hero.facts.registered")}
                     </span>
                     <span className="px-3 py-1.5 rounded-full bg-scef-gold/20 text-scef-gold text-xs font-medium border border-scef-gold/30">
-                      SDG 4 + AU Agenda 2063
+                      {t("about.hero.facts.alignment")}
                     </span>
                   </div>
 
@@ -209,18 +243,18 @@ const About = () => {
                   <div className="flex flex-wrap gap-3 mb-6">
                     <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold shadow-lg" asChild>
                       <Link to="/get-involved/membership">
-                        Join SCEF
+                        {t("about.hero.ctaJoin")}
                       </Link>
                     </Button>
                     <Button size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-semibold" asChild>
                       <Link to="/partner-with-us">
-                        Partner With Us
+                        {t("about.hero.ctaPartner")}
                       </Link>
                     </Button>
                     <Button size="lg" variant="outline" className="border-2 border-scef-gold/60 text-scef-gold hover:bg-scef-gold/10 backdrop-blur-sm font-semibold" asChild>
                       <Link to="/donate">
                         <Heart className="w-4 h-4" />
-                        Donate
+                        {t("about.hero.ctaDonate")}
                       </Link>
                     </Button>
                   </div>
@@ -228,10 +262,10 @@ const About = () => {
                   {/* Secondary CTA */}
                   <div className="text-sm text-white/60">
                     <Link to="/chapters/join-online" className="text-scef-gold hover:text-scef-gold-light underline underline-offset-2">
-                      Join an Online Local Chapter →
+                      {t("about.hero.ctaJoinChapter")} →
                     </Link>
                     <p className="mt-1 text-xs">
-                      Join an online local chapter of your choice and country — as a resident, diaspora, or friend of the country.
+                      {t("about.hero.joinChapterHelper")}
                     </p>
                   </div>
                 </div>
@@ -241,7 +275,7 @@ const About = () => {
               <div className="relative hidden lg:block">
                 <img 
                   src={aboutHeroImage}
-                  alt="Learners on the journey to school and an inclusive TVET classroom supporting practical skills and special needs learning."
+                  alt={t("about.hero.imageAlt")}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-scef-blue/40" />
@@ -252,7 +286,7 @@ const About = () => {
             <div className="lg:hidden relative h-64">
               <img 
                 src={aboutHeroImage}
-                alt="Learners on the journey to school and an inclusive TVET classroom supporting practical skills and special needs learning."
+                alt={t("about.hero.imageAlt")}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/80 to-transparent" />
@@ -268,15 +302,15 @@ const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
                     <Award className="w-6 h-6 text-scef-gold" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Standards & Recognition</h3>
-                  <p className="text-sm text-scef-gold font-medium mb-3">NESA-Africa</p>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{t("about.missionSnapshot.standards.title")}</h3>
+                  <p className="text-sm text-scef-gold font-medium mb-3">{t("about.missionSnapshot.standards.subtitle")}</p>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Recognition awards for educators</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Quality benchmarking programs</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.standards.point1")}</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.standards.point2")}</li>
                   </ul>
                   <Button variant="outline" size="sm" asChild className="w-full">
                     <a href="https://nesa.africa" target="_blank" rel="noopener noreferrer">
-                      Visit NESA-Africa <ArrowRight className="w-4 h-4" />
+                      {t("about.missionSnapshot.visitNesa")} <ArrowRight className="w-4 h-4" />
                     </a>
                   </Button>
                 </div>
@@ -286,15 +320,15 @@ const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4">
                     <GraduationCap className="w-6 h-6 text-scef-blue" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Scholarships & Funding</h3>
-                  <p className="text-sm text-scef-blue font-medium mb-3">EduAid-Africa</p>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{t("about.missionSnapshot.scholarships.title")}</h3>
+                  <p className="text-sm text-scef-blue font-medium mb-3">{t("about.missionSnapshot.scholarships.subtitle")}</p>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> Learner sponsorship pathways</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> CSR partnership programs</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> {t("about.missionSnapshot.scholarships.point1")}</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> {t("about.missionSnapshot.scholarships.point2")}</li>
                   </ul>
                   <Button variant="outline" size="sm" asChild className="w-full">
                     <a href="https://edu-aid-chi.vercel.app" target="_blank" rel="noopener noreferrer">
-                      Visit EduAid-Africa <ArrowRight className="w-4 h-4" />
+                      {t("about.missionSnapshot.visitEduaid")} <ArrowRight className="w-4 h-4" />
                     </a>
                   </Button>
                 </div>
@@ -304,15 +338,15 @@ const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
                     <Accessibility className="w-6 h-6 text-scef-gold" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">Inclusion & Access</h3>
-                  <p className="text-sm text-scef-gold font-medium mb-3">Women & Girls + Special Needs</p>
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{t("about.missionSnapshot.inclusion.title")}</h3>
+                  <p className="text-sm text-scef-gold font-medium mb-3">{t("about.missionSnapshot.inclusion.subtitle")}</p>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Assistive learning support</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> Girls education advocacy</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.inclusion.point1")}</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.inclusion.point2")}</li>
                   </ul>
                   <Button variant="outline" size="sm" asChild className="w-full">
                     <Link to="/programs/inclusion-access">
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      {t("about.whatWeDo.learnMore")} <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
                 </div>
@@ -347,7 +381,7 @@ const About = () => {
                   <CollapsibleTrigger asChild>
                     <button className="w-full flex items-center justify-between px-4 py-2 bg-muted rounded-lg">
                       <span className="text-sm font-medium text-foreground">
-                        {quickNavItems.find(item => item.id === activeSection)?.label || "Navigate"}
+                        {quickNavItems.find(item => item.id === activeSection)?.label || t("about.quickNav.navigate")}
                       </span>
                       <Menu className="w-4 h-4 text-muted-foreground" />
                     </button>
@@ -379,26 +413,19 @@ const About = () => {
               <div className="max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6">
                   <Target className="w-4 h-4" />
-                  Who We Are
+                  {t("about.who.badge")}
                 </div>
                 
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  A Structured Education Impact Ecosystem
+                  {t("about.who.title")}
                 </h2>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  SCEF is a structured education impact ecosystem—built to help education systems improve, scale, and stay accountable. We connect local chapters, partners, digital platforms, and media advocacy to deliver measurable outcomes in:
+                  {t("about.who.body")}
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-10">
-                  {[
-                    "School support & infrastructure",
-                    "Scholarships & learner support",
-                    "TVET and workforce readiness",
-                    "Special needs education support",
-                    "Women & girls education",
-                    "Education quality recognition (NESA-Africa)",
-                  ].map((item, i) => (
+                  {whoWeAreOutcomes.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-4 bg-muted/50 rounded-xl">
                       <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
                       <span className="text-foreground">{item}</span>
@@ -409,14 +436,14 @@ const About = () => {
                 <div className="flex flex-wrap gap-4">
                   <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
                     <Link to="/programs">
-                      Explore Our Programs <ArrowRight className="w-4 h-4" />
+                      {t("about.who.ctaPrograms")} <ArrowRight className="w-4 h-4" />
                     </Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/chapters">Join a Chapter</Link>
+                    <Link to="/chapters">{t("about.who.ctaChapter")}</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/donate">Donate Now</Link>
+                    <Link to="/donate">{t("about.who.ctaDonate")}</Link>
                   </Button>
                 </div>
               </div>
@@ -428,21 +455,15 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Why We Exist
+                  {t("about.whyWeExist.title")}
                 </h2>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Across Africa, learning is still limited by:
+                  {t("about.whyWeExist.intro")}
                 </p>
 
                 <div className="space-y-4 mb-10">
-                  {[
-                    "Unsafe or under-equipped school environments",
-                    "Poor access to skills training and TVET labs",
-                    "Gaps in inclusion for learners with disabilities",
-                    "Funding constraints and low accountability",
-                    "Limited pathways from learning to decent work",
-                  ].map((item, i) => (
+                  {whyWeExistChallenges.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-4 bg-destructive/5 rounded-xl border border-destructive/10">
                       <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center shrink-0">
                         <span className="text-destructive text-sm font-bold">{i + 1}</span>
@@ -454,7 +475,7 @@ const About = () => {
 
                 <div className="bg-scef-blue/5 rounded-2xl p-8 border border-scef-blue/10">
                   <p className="text-lg text-foreground leading-relaxed">
-                    <strong className="text-scef-blue">SCEF exists to change that</strong>—by building a governance-backed, chapter-driven delivery model that makes education transformation measurable, inclusive, and scalable.
+                    <strong className="text-scef-blue">{t("about.whyWeExist.solution")}</strong>{t("about.whyWeExist.solutionDesc")}
                   </p>
                 </div>
               </div>
@@ -466,10 +487,10 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  What We Do
+                  {t("about.whatWeDo.title")}
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Featured Programs designed to work together on access, quality, inclusion, skills, and recognition.
+                  {t("about.whatWeDo.intro")}
                 </p>
               </div>
 
@@ -492,7 +513,7 @@ const About = () => {
                         {program.desc}
                       </p>
                       <div className="mt-4 flex items-center gap-2 text-sm text-scef-blue group-hover:text-scef-gold transition-colors">
-                        Learn more <ArrowRight className="w-4 h-4" />
+                        {t("about.whatWeDo.learnMore")} <ArrowRight className="w-4 h-4" />
                       </div>
                     </Link>
                   );
@@ -501,13 +522,13 @@ const About = () => {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                  <Link to="/get-involved/apply">Apply / Participate</Link>
+                  <Link to="/get-involved/apply">{t("about.whatWeDo.ctaApply")}</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/partner-with-us">Partner / Sponsor</Link>
+                  <Link to="/partner-with-us">{t("about.whatWeDo.ctaPartner")}</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/donate?type=program">Donate to a Program</Link>
+                  <Link to="/donate?type=program">{t("about.whatWeDo.ctaDonate")}</Link>
                 </Button>
               </div>
             </div>
@@ -520,23 +541,19 @@ const About = () => {
                 <div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
                     <Wrench className="w-4 h-4" />
-                    TVET & Inclusion
+                    {t("about.tvetSpotlight.badge")}
                   </div>
                   
                   <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-                    TVET, Skills, and Inclusive Education: Practical Learning for Every Learner
+                    {t("about.tvetSpotlight.title")}
                   </h2>
                   
                   <p className="text-lg text-white/80 leading-relaxed mb-6">
-                    We believe education must prepare learners for life—through skills, confidence, and opportunity, not only certificates. SCEF supports TVET-aligned pathways and inclusive learning environments that empower:
+                    {t("about.tvetSpotlight.intro")}
                   </p>
 
                   <ul className="space-y-3 mb-8">
-                    {[
-                      "Learners building real-world skills (technical, digital, vocational)",
-                      "Students in special needs settings accessing supportive tools",
-                      "Communities creating practical learning hubs linked to local opportunity",
-                    ].map((item, i) => (
+                    {tvetEmpowerPoints.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
                         <span className="text-white/90">{item}</span>
@@ -547,17 +564,17 @@ const About = () => {
                   {/* Collapsible details on mobile */}
                   <Collapsible>
                     <div className="bg-white/10 rounded-xl p-6 mb-8">
-                      <h3 className="font-semibold text-white mb-4">What this looks like:</h3>
+                      <h3 className="font-semibold text-white mb-4">{t("about.tvetSpotlight.whatLooksLike")}</h3>
                       <CollapsibleContent className="lg:block">
                         <ul className="space-y-2 text-sm text-white/80">
-                          <li><strong className="text-scef-gold">TVET support:</strong> starter equipment, training linkages, digital skills certification pathways</li>
-                          <li><strong className="text-scef-gold">Inclusive access:</strong> advocacy for learning aids, accessible content, inclusive teacher support</li>
-                          <li><strong className="text-scef-gold">Outcomes focus:</strong> employability skills, entrepreneurship readiness, community value creation</li>
+                          <li><strong className="text-scef-gold">{t("about.tvetSpotlight.tvetSupport")}</strong> {t("about.tvetSpotlight.tvetSupportDesc")}</li>
+                          <li><strong className="text-scef-gold">{t("about.tvetSpotlight.inclusiveAccess")}</strong> {t("about.tvetSpotlight.inclusiveAccessDesc")}</li>
+                          <li><strong className="text-scef-gold">{t("about.tvetSpotlight.outcomesFocus")}</strong> {t("about.tvetSpotlight.outcomesFocusDesc")}</li>
                         </ul>
                       </CollapsibleContent>
                       <CollapsibleTrigger asChild>
                         <button className="lg:hidden mt-4 text-scef-gold text-sm font-medium flex items-center gap-1">
-                          Show details <ChevronDown className="w-4 h-4" />
+                          {t("about.tvetSpotlight.showDetails")} <ChevronDown className="w-4 h-4" />
                         </button>
                       </CollapsibleTrigger>
                     </div>
@@ -565,10 +582,10 @@ const About = () => {
 
                   <div className="flex flex-wrap gap-4">
                     <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
-                      <Link to="/donate?focus=tvet-inclusion">Support TVET & Inclusion</Link>
+                      <Link to="/donate?focus=tvet-inclusion">{t("about.tvetSpotlight.ctaTvet")}</Link>
                     </Button>
                     <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                      <Link to="/partner-with-us/csr">Partner as CSR Sponsor</Link>
+                      <Link to="/partner-with-us/csr">{t("about.tvetSpotlight.ctaCsr")}</Link>
                     </Button>
                   </div>
                 </div>
@@ -577,7 +594,7 @@ const About = () => {
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                     <img 
                       src={aboutHeroImage}
-                      alt="TVET workshop learners practicing hands-on skills alongside an inclusive classroom supporting a special needs learner."
+                      alt={t("about.tvetSpotlight.imageAlt")}
                       className="w-full h-full object-cover object-bottom"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/60 via-transparent to-transparent" />
@@ -593,46 +610,15 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Our 6 Core Objectives
+                  {t("about.objectives.title")}
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Our mission is delivered through six strategic objectives with clear delivery tools and measurable outcomes.
+                  {t("about.objectives.subtitle")}
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-10">
-                {[
-                  {
-                    title: "To build the platform for advocating a continuous, ever-growing standard of education in Africa—through standards frameworks, benchmarking, recognition, and endorsed certification/verification systems.",
-                    shortTitle: "Standards & Recognition",
-                    tools: ["NESA-Africa", "Certification Systems"]
-                  },
-                  {
-                    title: "To expand equitable access to learning and certification by deploying integrated digital platforms for resources, skills, and verifiable outcomes across Africa and the diaspora.",
-                    shortTitle: "Digital Access & Certification",
-                    tools: ["EOA", "eLibrary Nigeria", "ACDL/AWPC"]
-                  },
-                  {
-                    title: "To strengthen education advocacy and knowledge dissemination by developing media channels (TV, radio, webinars, podcasts, publications) that promote adoption of quality and inclusion practices.",
-                    shortTitle: "Media & Advocacy",
-                    tools: ["NESA Africa TV", "It's In Me Radio", "Webinars"]
-                  },
-                  {
-                    title: "To establish and monitor compliant delivery networks by onboarding, supporting, and auditing local chapters (physical and online) to implement programs with measurable reporting.",
-                    shortTitle: "Chapter Networks",
-                    tools: ["Local Chapters", "Compliance Framework"]
-                  },
-                  {
-                    title: "To mobilize and manage education funding with accountability—including CSR for Education Funds Management Services—using verified project pipelines, tracked disbursement, and ESG/SDG-aligned reporting.",
-                    shortTitle: "Funding & Accountability",
-                    tools: ["SCEF–FMS", "CSR Programs", "ESG Reporting"]
-                  },
-                  {
-                    title: "To scale Education for All across Africa's five regions (North, West, Central, East, Southern) with support from a sixth region: the African diaspora, by building renewable multi-year partnerships with institutions, multilaterals, and global education funders.",
-                    shortTitle: "Pan-African Scale",
-                    tools: ["Regional Chapters", "Diaspora", "Partnerships"]
-                  },
-                ].map((objective, index) => (
+                {objectives.map((objective, index) => (
                   <div key={index} className="bg-card rounded-xl p-6 border border-border hover:border-scef-gold hover:shadow-md transition-all">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-10 h-10 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
@@ -643,7 +629,7 @@ const About = () => {
                         <p className="text-foreground leading-relaxed mt-1 text-sm">{objective.title}</p>
                       </div>
                     </div>
-                    <div className="pl-14 flex flex-wrap gap-2">
+                    <div className={cn("flex flex-wrap gap-2", isRTL ? "pr-14" : "pl-14")}>
                       {objective.tools.map((tool, i) => (
                         <span key={i} className="px-2 py-1 text-xs rounded-full bg-scef-gold/10 text-scef-gold border border-scef-gold/20">
                           {tool}
@@ -658,12 +644,12 @@ const About = () => {
                 <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
                   <Link to="/about/governance">
                     <Shield className="w-4 h-4" />
-                    Visit Governance Hub
+                    {t("about.objectives.ctaGovernance")}
                   </Link>
                 </Button>
                 <Button variant="outline" asChild>
                   <Link to="/about/divisions">
-                    View Our Divisions
+                    {t("about.objectives.ctaDivisions")}
                   </Link>
                 </Button>
               </div>
@@ -675,18 +661,18 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  How SCEF Works (Six Divisions)
+                  {t("about.divisionsSection.title")}
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Our operational structure ensures coordinated delivery of programs, governance, and stakeholder engagement.
+                  {t("about.divisionsSection.subtitle")}
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
                 {divisionsData.map((division, index) => {
                   const divKey = divisionKeys[index];
-                  const Icon = divisionIcons[divKey as keyof typeof divisionIcons];
-                  const link = divisionLinks[divKey as keyof typeof divisionLinks];
+                  const Icon = divisionIcons[divKey];
+                  const link = divisionLinks[divKey];
                   return (
                     <Link 
                       key={divKey} 
@@ -715,10 +701,10 @@ const About = () => {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                  <Link to="/chapters/join">Join a Local Chapter</Link>
+                  <Link to="/chapters/join">{t("about.divisionsSection.ctaChapter")}</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/get-involved/volunteer">Volunteer / Intern / Staff</Link>
+                  <Link to="/get-involved/volunteer">{t("about.divisionsSection.ctaVolunteer")}</Link>
                 </Button>
               </div>
             </div>
@@ -729,10 +715,10 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                  Impact & Accountability
+                  {t("about.impact.title")}
                 </h2>
                 <p className="text-white/70 max-w-2xl mx-auto">
-                  Transparent reporting and measurable outcomes for all stakeholders.
+                  {t("about.impact.subtitle")}
                 </p>
               </div>
 
@@ -741,19 +727,13 @@ const About = () => {
                 <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
                   <h3 className="font-display text-xl font-bold text-white mb-6 flex items-center gap-2">
                     <Shield className="w-6 h-6 text-scef-gold" />
-                    Accountability Framework
+                    {t("about.impact.frameworkTitle")}
                   </h3>
                   <p className="text-white/80 mb-6">
-                    We report impact through governance reporting, program delivery records, chapter reporting systems, and partner-ready documentation:
+                    {t("about.impact.frameworkDesc")}
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
-                    {[
-                      "Verified projects and milestone evidence",
-                      "Disbursement tracking (where applicable)",
-                      "Quarterly outcome summaries (program-level)",
-                      "ESG/SDG alignment indicators (partner-ready)",
-                      "Independent/audited reporting (where available)",
-                    ].map((item, i) => (
+                    {impactAccountabilityItems.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
                         <span className="text-white/80 text-sm">{item}</span>
@@ -767,13 +747,13 @@ const About = () => {
               <div className="max-w-4xl mx-auto mb-12">
                 <div className="bg-scef-gold/20 rounded-2xl p-6 border border-scef-gold/30 text-center">
                   <BarChart3 className="w-10 h-10 text-scef-gold mx-auto mb-4" />
-                  <h4 className="font-semibold text-white mb-2">Reporting Snapshot</h4>
+                  <h4 className="font-semibold text-white mb-2">{t("about.impact.reportingTitle")}</h4>
                   <p className="text-white/70 text-sm mb-4">
-                    Live impact metrics and regional data are being consolidated. Full reporting dashboard coming soon.
+                    {t("about.impact.reportingDesc")}
                   </p>
                   <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm">
                     <Clock className="w-4 h-4" />
-                    Reporting in progress
+                    {t("about.impact.reportingStatus")}
                   </span>
                 </div>
               </div>
@@ -782,19 +762,19 @@ const About = () => {
                 <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
                   <Link to="/resources/organizational-profile">
                     <Download className="w-4 h-4" />
-                    Download Organizational Profile
+                    {t("about.impact.ctaProfile")}
                   </Link>
                 </Button>
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
                   <Link to="/resources/reports">
                     <FileText className="w-4 h-4" />
-                    View Reports & Case Studies
+                    {t("about.impact.ctaReports")}
                   </Link>
                 </Button>
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
                   <Link to="/updates">
                     <BarChart3 className="w-4 h-4" />
-                    See Real-Time Updates
+                    {t("about.impact.ctaUpdates")}
                   </Link>
                 </Button>
               </div>
@@ -806,20 +786,15 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Sustainability & Alignment
+                  {t("about.sustainability.title")}
                 </h2>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  SCEF aligns programs with SDG 4 and broader SDG outcomes, and supports Africa-wide scalability through AU Agenda 2063. Our approach prioritizes:
+                  {t("about.sustainability.body")}
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-10">
-                  {[
-                    { label: "Inclusion", desc: "Girls and learners with disabilities" },
-                    { label: "Local ownership", desc: "Chapter delivery" },
-                    { label: "Transparent reporting", desc: "Partner-ready" },
-                    { label: "Measurable outcomes", desc: "Evidence-based learning support" },
-                  ].map((item, i) => (
+                  {sustainabilityPriorities.map((item, i) => (
                     <div key={i} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
                       <Sparkles className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
                       <div>
@@ -832,10 +807,10 @@ const About = () => {
 
                 <div className="flex flex-wrap gap-4">
                   <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                    <Link to="/partner-with-us/csr">CSR Partnership</Link>
+                    <Link to="/partner-with-us/csr">{t("about.sustainability.ctaCsr")}</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/donate?type=sponsor">Sponsor a Program</Link>
+                    <Link to="/donate?type=sponsor">{t("about.sustainability.ctaSponsor")}</Link>
                   </Button>
                 </div>
               </div>
@@ -847,22 +822,15 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Get Involved
+                  {t("about.getInvolved.title")}
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Choose your pathway to make an impact.
+                  {t("about.getInvolved.subtitle")}
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-                {[
-                  { icon: Users, title: "Join as Member", desc: "Become part of the movement", href: "/get-involved/membership", color: "scef-blue" },
-                  { icon: Award, title: "Become Ambassador", desc: "Represent SCEF, mobilize support", href: "/get-involved/ambassador", color: "scef-gold" },
-                  { icon: Handshake, title: "Partner/CSR", desc: "Fund measurable projects", href: "/partner-with-us", color: "scef-blue" },
-                  { icon: Heart, title: "Donate", desc: "Support a learner or school", href: "/donate", color: "scef-gold" },
-                  { icon: Globe, title: "Join Online Chapter", desc: "Connect with your country community", href: "/chapters/join-online", color: "scef-blue" },
-                  { icon: Users, title: "Volunteer / Intern / Staff", desc: "Contribute your skills", href: "/get-involved/volunteer", color: "scef-gold" },
-                ].map((item, i) => {
+                {getInvolvedPathways.map((item, i) => {
                   const Icon = item.icon;
                   return (
                     <Link
@@ -893,7 +861,7 @@ const About = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                  FAQs
+                  {t("about.faqs.title")}
                 </h2>
 
                 <div className="space-y-4">
@@ -926,35 +894,35 @@ const About = () => {
           <section id="final-cta" className="py-20 bg-scef-blue-darker text-white">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Be part of Africa's education transformation.
+                {t("about.final.title")}
               </h2>
               <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10">
-                Join the movement to make education accessible, inclusive, and impactful across the continent.
+                {t("about.final.subtitle")}
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
                 <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold" asChild>
                   <Link to="/get-involved/membership">
                     <Users className="w-5 h-5" />
-                    Join
+                    {t("about.final.ctaJoin")}
                   </Link>
                 </Button>
                 <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
                   <Link to="/donate">
                     <Heart className="w-5 h-5" />
-                    Donate
+                    {t("about.final.ctaDonate")}
                   </Link>
                 </Button>
                 <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
                   <Link to="/partner-with-us">
                     <Handshake className="w-5 h-5" />
-                    Partner
+                    {t("about.final.ctaPartner")}
                   </Link>
                 </Button>
                 <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
                   <Link to="/media">
                     <Play className="w-5 h-5" />
-                    Watch SCEF Media
+                    {t("about.final.ctaMedia")}
                   </Link>
                 </Button>
               </div>
