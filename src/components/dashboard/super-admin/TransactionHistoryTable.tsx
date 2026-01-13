@@ -4,13 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { format } from "date-fns";
 
-interface Transaction {
-  id: string;
-  date: Date;
-  description: string;
-  amount: string;
-  type: "donation" | "disbursement" | "dues" | "purchase" | "contribution";
-}
+import type { Transaction } from "@/hooks/useSuperAdminDashboard";
 
 interface TransactionHistoryTableProps {
   transactions: Transaction[];
@@ -23,7 +17,11 @@ const typeColors: Record<string, string> = {
   disbursement: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
   dues: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300",
   purchase: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300",
-  contribution: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300"
+  contribution: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300",
+  agc_purchase: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
+  transfer: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300",
+  credit: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300",
+  debit: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
 };
 
 export function TransactionHistoryTable({ transactions, maxRows = 5, isLoading = false }: TransactionHistoryTableProps) {
