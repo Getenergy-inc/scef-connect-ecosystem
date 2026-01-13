@@ -1549,5 +1549,31 @@
     },
     "copyright": "© {year} Santos Creations Educational Foundation. Todos os direitos reservados.",
     "mission": "Governando o Futuro da Educação em África através de advocacia, financiamento e certificação de excelência educacional em todo o continente."
+  },
+  "messages": {
+    "title": "Mensagens",
+    "subtitle": "Conecte-se com suas equipes e capítulos",
+    "decisions": "Decisões",
+    "searchRooms": "Pesquisar salas...",
+    "noRoomsFound": "Nenhuma sala encontrada",
+    "selectRoom": "Selecione uma sala para começar a enviar mensagens",
+    "typeMessage": "Digite uma mensagem...",
+    "startMeeting": "Iniciar Reunião",
+    "members": "Membros",
+    "settings": "Configurações"
+  },
+  "decisions": {
+    "title": "Decisões e Votações",
+    "subtitle": "Visualize e participe das decisões da equipe",
+    "create": "Nova Decisão",
+    "open": "Aberto",
+    "closed": "Fechado",
+    "votes": "votos"
+  },
+  "common": {
+    "all": "Todos",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "creating": "Criando..."
   }
 }

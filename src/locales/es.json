@@ -496,5 +496,24 @@
       "cta": "Donar Ahora",
       "volunteer": "Convertirse en Voluntario"
     }
+  },
+  "messages": {
+    "title": "Mensajes",
+    "subtitle": "Conéctate con tus equipos y capítulos",
+    "decisions": "Decisiones",
+    "searchRooms": "Buscar salas...",
+    "typeMessage": "Escribe un mensaje...",
+    "startMeeting": "Iniciar Reunión"
+  },
+  "decisions": {
+    "title": "Decisiones y Votaciones",
+    "create": "Nueva Decisión",
+    "open": "Abierto",
+    "closed": "Cerrado"
+  },
+  "common": {
+    "all": "Todos",
+    "save": "Guardar",
+    "cancel": "Cancelar"
   }
 }

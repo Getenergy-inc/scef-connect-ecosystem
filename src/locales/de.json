@@ -496,5 +496,24 @@
       "cta": "Jetzt spenden",
       "volunteer": "Freiwilliger werden"
     }
+  },
+  "messages": {
+    "title": "Nachrichten",
+    "subtitle": "Verbinden Sie sich mit Ihren Teams und Kapiteln",
+    "decisions": "Entscheidungen",
+    "searchRooms": "Räume suchen...",
+    "typeMessage": "Nachricht eingeben...",
+    "startMeeting": "Meeting starten"
+  },
+  "decisions": {
+    "title": "Entscheidungen & Abstimmungen",
+    "create": "Neue Entscheidung",
+    "open": "Offen",
+    "closed": "Geschlossen"
+  },
+  "common": {
+    "all": "Alle",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
   }
 }

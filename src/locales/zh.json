@@ -496,5 +496,24 @@
       "cta": "立即捐赠",
       "volunteer": "成为志愿者"
     }
+  },
+  "messages": {
+    "title": "消息",
+    "subtitle": "与您的团队和分会联系",
+    "decisions": "决策",
+    "searchRooms": "搜索房间...",
+    "typeMessage": "输入消息...",
+    "startMeeting": "开始会议"
+  },
+  "decisions": {
+    "title": "决策与投票",
+    "create": "新决策",
+    "open": "开放",
+    "closed": "已关闭"
+  },
+  "common": {
+    "all": "全部",
+    "save": "保存",
+    "cancel": "取消"
   }
 }
