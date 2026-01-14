@@ -1,66 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import { Play, ChevronLeft, ChevronRight, ExternalLink, Volume2, FileText, Image, ChevronDown, ChevronUp, CheckCircle, Globe, Calendar, Award, MapPin, Users, Tv, BookOpen, UserPlus } from "lucide-react";
-import { siteContent } from "@/config/siteContent";
+import { useState } from "react";
+import { ExternalLink, ChevronDown, ChevronUp, CheckCircle, Globe, Calendar, Award, MapPin, Users, Tv, BookOpen, UserPlus } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
 
-// Digital Board Items fallback - uses translation keys
-const getBoardItems = (t: (key: string) => string) => [
-  {
-    id: 1,
-    type: "video",
-    typeLabel: t("labels.video"),
-    title: t("home.board.fallback.nesa.title"),
-    description: t("home.board.fallback.nesa.description"),
-    cta: { text: t("home.board.fallback.nesa.cta"), href: "/programs/nesa-africa" },
-    thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600",
-  },
-  {
-    id: 2,
-    type: "flyer",
-    typeLabel: t("labels.flyer"),
-    title: t("home.board.fallback.eduaid.title"),
-    description: t("home.board.fallback.eduaid.description"),
-    cta: { text: t("home.board.fallback.eduaid.cta"), href: "/programs/eduaid-africa" },
-    thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600",
-  },
-  {
-    id: 3,
-    type: "announcement",
-    typeLabel: t("labels.announcement"),
-    title: t("home.board.fallback.aepc.title"),
-    description: t("home.board.fallback.aepc.description"),
-    cta: { text: t("home.board.fallback.aepc.cta"), href: "/certifications" },
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600",
-  },
-];
-
-const typeIcons = {
-  video: Play,
-  audio: Volume2,
-  announcement: FileText,
-  flyer: Image,
-};
-
 export const HeroScreenshot = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
-  const { digitalBoard } = siteContent.homepage;
   const { t, isRTL } = useLocale();
-  
-  const boardItems = getBoardItems(t);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % boardItems.length);
-    }, digitalBoard.rotationSeconds * 1000);
-    return () => clearInterval(timer);
-  }, [boardItems.length]);
-
-  const activeItem = boardItems[activeIndex];
-  const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons];
 
   // Quick facts data
   const quickFacts = [
@@ -79,7 +26,7 @@ export const HeroScreenshot = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="relative min-h-[70vh] flex flex-col overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -197,95 +144,29 @@ export const HeroScreenshot = () => {
             </div>
           </div>
 
-          {/* Right Side - Digital Board Widget */}
-          <div className="hidden lg:block">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl border-2 border-black shadow-2xl overflow-hidden">
-              {/* Board Header */}
-              <div className="bg-scef-blue-darker/80 px-4 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-scef-gold animate-pulse" />
-                  <span className="text-white text-sm font-semibold">{t("home.board.title")}</span>
+          {/* Right Side - Visual Element */}
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl border-2 border-white/20 shadow-2xl p-8">
+              <div className="text-center">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-scef-gold/20 flex items-center justify-center">
+                  <Globe className="w-12 h-12 text-scef-gold" />
                 </div>
-                <Link
-                  to="/updates"
-                  className="text-white/70 hover:text-scef-gold text-xs font-medium transition-colors"
-                >
-                  {t("home.board.viewAll")}
-                </Link>
-              </div>
-
-              {/* Board Content */}
-              <div className="relative">
-                <img
-                  src={activeItem.thumbnail}
-                  alt={activeItem.title}
-                  className="w-full h-48 object-cover"
-                />
-                
-                {/* Type Badge */}
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-scef-gold text-scef-blue-dark text-xs font-bold flex items-center gap-1.5 border border-black">
-                  <TypeIcon className="w-3 h-3" />
-                  {activeItem.typeLabel}
-                </div>
-
-                {/* Play button for video */}
-                {activeItem.type === "video" && (
-                  <button className="absolute inset-0 flex items-center justify-center group">
-                    <div className="w-14 h-14 rounded-full bg-scef-gold flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg border-2 border-black">
-                      <Play className="w-5 h-5 text-scef-blue-dark ml-0.5" />
-                    </div>
-                  </button>
-                )}
-              </div>
-
-              {/* Text Content */}
-              <div className="p-5">
-                <h3 className="font-display text-lg font-bold text-white mb-2">
-                  {activeItem.title}
+                <h3 className="font-display text-xl font-bold text-white mb-2">
+                  {t("home.hero.ctaStrip.programs")}
                 </h3>
-                <p className="text-white/70 text-sm mb-4">
-                  {activeItem.description}
+                <p className="text-white/70 text-sm mb-4 max-w-xs">
+                  {t("home.hero.summary")}
                 </p>
                 <Button
                   size="sm"
                   className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold border border-black"
                   asChild
                 >
-                  <Link to={activeItem.cta.href}>
-                    {activeItem.cta.text}
+                  <Link to="/programs">
+                    {t("home.hero.ctaStrip.programs")}
                     <ExternalLink className="w-3 h-3 ml-1.5" />
                   </Link>
                 </Button>
-              </div>
-
-              {/* Navigation Dots */}
-              <div className="px-5 pb-4 flex items-center justify-center gap-3">
-                <button
-                  onClick={() => setActiveIndex((prev) => (prev - 1 + boardItems.length) % boardItems.length)}
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  aria-label={t("labels.previous")}
-                >
-                  <ChevronLeft className="w-4 h-4 text-white" />
-                </button>
-                <div className="flex gap-1.5">
-                  {boardItems.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setActiveIndex(index)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        index === activeIndex ? "w-5 bg-scef-gold" : "w-1.5 bg-white/30 hover:bg-white/50"
-                      }`}
-                      aria-label={`${t("labels.goToSlide")} ${index + 1}`}
-                    />
-                  ))}
-                </div>
-                <button
-                  onClick={() => setActiveIndex((prev) => (prev + 1) % boardItems.length)}
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  aria-label={t("labels.next")}
-                >
-                  <ChevronRight className="w-4 h-4 text-white" />
-                </button>
               </div>
             </div>
           </div>
