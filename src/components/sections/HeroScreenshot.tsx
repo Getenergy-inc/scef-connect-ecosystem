@@ -144,53 +144,8 @@ export const HeroScreenshot = () => {
             </div>
           </div>
 
-          {/* Right Side - Digital Board Teaser */}
-          <div className="hidden lg:flex items-center justify-center">
-            <button
-              onClick={() => {
-                document.getElementById('digital-board')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="group bg-white/10 backdrop-blur-md rounded-2xl border-2 border-white/20 shadow-2xl overflow-hidden hover:border-scef-gold/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer w-full max-w-md"
-            >
-              {/* Teaser Header */}
-              <div className="bg-scef-blue-darker/80 px-4 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-scef-gold animate-pulse" />
-                  <span className="text-white text-sm font-semibold">{t("home.board.title")}</span>
-                </div>
-                <span className="text-scef-gold text-xs font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                  {t("home.board.viewAll")}
-                  <ChevronDown className="w-3 h-3 animate-bounce" />
-                </span>
-              </div>
-
-              {/* Teaser Preview Image */}
-              <div className="relative aspect-video">
-                <img
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600"
-                  alt={t("home.board.title")}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/90 via-transparent to-transparent" />
-                
-                {/* Overlay Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-white font-display text-lg font-bold mb-1">
-                    {t("labels.latest")}
-                  </p>
-                  <p className="text-white/70 text-sm">
-                    {t("home.board.desc")}
-                  </p>
-                </div>
-              </div>
-
-              {/* Teaser Footer */}
-              <div className="bg-scef-gold/10 px-4 py-3 flex items-center justify-center gap-2 text-scef-gold text-sm font-medium">
-                <span>{t("home.board.viewAll")}</span>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-            </button>
-          </div>
+          {/* Right Side - Empty on desktop, Digital Board is below */}
+          <div className="hidden lg:block" />
         </div>
       </div>
 
