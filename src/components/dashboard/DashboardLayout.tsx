@@ -8,7 +8,8 @@ import {
   BookOpen, LogOut, Bell, Settings, Home, User, Wallet, 
   Heart, MapPin, Award, Users, LayoutDashboard, Shield,
   Briefcase, Flag, ClipboardList, MessageSquare, BarChart3,
-  Search, CreditCard, ChevronDown, FileText
+  Search, CreditCard, ChevronDown, FileText, Handshake,
+  Image, Megaphone, UserCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -75,6 +76,15 @@ const roleNavItems: Record<string, NavItem[]> = {
     { icon: Settings, label: "Settings", href: "/dashboard/settings" },
   ],
 };
+
+// CMS Admin navigation items (for super_admin and admin roles)
+const cmsAdminItems: NavItem[] = [
+  { icon: Megaphone, label: "Digital Board", href: "/admin/digital-board" },
+  { icon: UserCheck, label: "Endorsements", href: "/admin/endorsements" },
+  { icon: Handshake, label: "CRS Partners", href: "/admin/crs-partners" },
+  { icon: Briefcase, label: "Vacancies", href: "/admin/vacancies" },
+  { icon: BookOpen, label: "eLibrary", href: "/dashboard/elibrary" },
+];
 
 const roleBadges: Record<string, { label: string; className: string }> = {
   member: { label: "Member", className: "bg-primary/20 text-primary" },
@@ -161,19 +171,32 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
           })}
         </nav>
 
-        {/* Admin Dropdown for Super Admin */}
+        {/* CMS Admin Section for Super Admin */}
         {isSuperAdmin && (
           <div className="px-4 pb-2">
-            <Link
-              to="/dashboard/admin"
-              className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-white/70 hover:bg-white/10 hover:text-white transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <Shield className="w-5 h-5" />
-                Admin
-              </div>
-              <ChevronDown className="w-4 h-4" />
-            </Link>
+            <div className="mb-2">
+              <span className="px-4 text-xs font-semibold uppercase tracking-wider text-white/40">
+                CMS Admin
+              </span>
+            </div>
+            {cmsAdminItems.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={cn(
+                    "flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+                    isActive 
+                      ? "bg-white/20 text-white" 
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <item.icon className="w-4 h-4" />
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         )}
 
