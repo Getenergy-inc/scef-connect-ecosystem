@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/contexts/LocaleContext";
-import { Handshake, ExternalLink, Filter } from "lucide-react";
+import { Handshake, ExternalLink, Filter, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 interface CRSPartner {
@@ -47,6 +48,7 @@ export const CRSPartnersSection = ({
 }: CRSPartnersSectionProps) => {
   const { t } = useLocale();
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const { data: partners, isLoading } = useQuery({
     queryKey: ["crs-partners"],
@@ -63,10 +65,15 @@ export const CRSPartnersSection = ({
 
   if (isLoading || !partners?.length) return null;
 
-  // Filter partners by category
-  const filteredPartners = selectedCategory === "all" 
-    ? partners 
-    : partners.filter(p => p.service_category === selectedCategory);
+  // Filter partners by category and search query
+  const filteredPartners = partners.filter(p => {
+    const matchesCategory = selectedCategory === "all" || p.service_category === selectedCategory;
+    const matchesSearch = searchQuery === "" || 
+      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (p.acronym && p.acronym.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      p.service_description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   // Get available categories (only show categories that have partners)
   const availableCategories = serviceCategories.filter(cat => 
@@ -119,29 +126,46 @@ export const CRSPartnersSection = ({
           </p>
         </div>
 
-        {/* Category Filters */}
-        {showFilters && availableCategories.length > 2 && (
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-            <Filter className="w-4 h-4 text-muted-foreground mr-2" />
-            {availableCategories.map((cat) => (
-              <Button
-                key={cat.value}
-                variant={selectedCategory === cat.value ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory(cat.value)}
-                className={cn(
-                  "rounded-full",
-                  selectedCategory === cat.value && "bg-primary text-primary-foreground"
-                )}
-              >
-                {cat.label}
-                {cat.value !== "all" && (
-                  <span className="ml-1 text-xs opacity-70">
-                    ({partners.filter(p => p.service_category === cat.value).length})
-                  </span>
-                )}
-              </Button>
-            ))}
+        {/* Search and Category Filters */}
+        {showFilters && (
+          <div className="max-w-5xl mx-auto mb-8 space-y-4">
+            {/* Search Input */}
+            <div className="relative max-w-md mx-auto">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search partners by name or service..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+
+            {/* Category Filters */}
+            {availableCategories.length > 2 && (
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <Filter className="w-4 h-4 text-muted-foreground mr-2" />
+                {availableCategories.map((cat) => (
+                  <Button
+                    key={cat.value}
+                    variant={selectedCategory === cat.value ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(cat.value)}
+                    className={cn(
+                      "rounded-full",
+                      selectedCategory === cat.value && "bg-primary text-primary-foreground"
+                    )}
+                  >
+                    {cat.label}
+                    {cat.value !== "all" && (
+                      <span className="ml-1 text-xs opacity-70">
+                        ({partners.filter(p => p.service_category === cat.value).length})
+                      </span>
+                    )}
+                  </Button>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
