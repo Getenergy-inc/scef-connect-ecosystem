@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import aboutHeroImage from "@/assets/about-scef-hero.jpg";
 
 const divisionIcons = {
@@ -928,6 +929,9 @@ const About = () => {
               </div>
             </div>
           </section>
+          
+          {/* CRS Partners */}
+          <CRSPartnersSection variant="compact" />
         </main>
         
         <Footer />
