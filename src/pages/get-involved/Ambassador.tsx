@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -10,13 +10,31 @@ import { Label } from "@/components/ui/label";
 import { useLocale } from "@/contexts/LocaleContext";
 import { 
   Star, Globe, Users, Megaphone, Award, CheckCircle, 
-  ArrowRight, Heart, Target, GraduationCap, MapPin
+  ArrowRight, Heart, Target, GraduationCap, MapPin, Sparkles
 } from "lucide-react";
 import { toast } from "sonner";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+
+// Program definitions for display
+const programDetails: Record<string, { name: string; color: string }> = {
+  "nesa-africa": { name: "NESA Africa", color: "bg-blue-100 text-blue-700" },
+  "eduaid-africa": { name: "EduAid Africa", color: "bg-green-100 text-green-700" },
+  "rebuild-my-school-africa": { name: "Rebuild My School Africa", color: "bg-orange-100 text-orange-700" },
+  "women-girls-education": { name: "Women & Girls Education", color: "bg-pink-100 text-pink-700" },
+  "special-needs-education": { name: "Special Needs Education", color: "bg-purple-100 text-purple-700" },
+  "education-online-africa": { name: "Education Online Africa", color: "bg-cyan-100 text-cyan-700" },
+  "elibrary-nigeria": { name: "eLibrary Nigeria", color: "bg-amber-100 text-amber-700" },
+};
 
 const Ambassador = () => {
   const { t, isRTL } = useLocale();
+  const [searchParams] = useSearchParams();
+  
+  // Get query parameters
+  const programParam = searchParams.get("program");
+  const countryParam = searchParams.get("country");
+  
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -26,8 +44,22 @@ const Ambassador = () => {
     linkedin: "",
     motivation: "",
     experience: "",
+    program: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Pre-fill form from URL parameters
+  useEffect(() => {
+    if (countryParam || programParam) {
+      setFormData(prev => ({
+        ...prev,
+        country: countryParam ? decodeURIComponent(countryParam) : prev.country,
+        program: programParam || prev.program,
+      }));
+    }
+  }, [countryParam, programParam]);
+
+  const selectedProgram = programParam ? programDetails[programParam] : null;
 
   const ambassadorBenefits = [
     { icon: Globe, key: "network" },
@@ -56,6 +88,7 @@ const Ambassador = () => {
       linkedin: "",
       motivation: "",
       experience: "",
+      program: "",
     });
     setIsSubmitting(false);
   };
@@ -177,9 +210,62 @@ const Ambassador = () => {
                   </p>
                 </div>
 
+                {/* Pre-filled Context Alert */}
+                {(selectedProgram || countryParam) && (
+                  <Alert className="mb-6 border-2 border-scef-gold bg-scef-gold/10">
+                    <Sparkles className="h-4 w-4 text-scef-gold" />
+                    <AlertDescription className="text-foreground">
+                      <span className="font-medium">Application pre-filled: </span>
+                      {selectedProgram && (
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${selectedProgram.color} mr-2`}>
+                          {selectedProgram.name} Ambassador
+                        </span>
+                      )}
+                      {countryParam && (
+                        <span className="text-muted-foreground">
+                          for {decodeURIComponent(countryParam)} chapter
+                        </span>
+                      )}
+                    </AlertDescription>
+                  </Alert>
+                )}
+
                 <Card className="border-2 border-black">
                   <CardContent className="pt-6">
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {/* Program Selection (if coming from program link) */}
+                      {selectedProgram && (
+                        <div className="space-y-2">
+                          <Label>Ambassador Type</Label>
+                          <div className={`flex items-center gap-2 px-4 py-3 rounded-lg border-2 border-black ${selectedProgram.color}`}>
+                            <Award className="w-5 h-5" />
+                            <span className="font-medium">{selectedProgram.name} Ambassador</span>
+                          </div>
+                          <input type="hidden" name="program" value={programParam || ""} />
+                        </div>
+                      )}
+
+                      {/* Program dropdown for general ambassadors */}
+                      {!selectedProgram && (
+                        <div className="space-y-2">
+                          <Label htmlFor="program">Ambassador Type</Label>
+                          <select
+                            id="program"
+                            value={formData.program}
+                            onChange={(e) => setFormData(prev => ({ ...prev, program: e.target.value }))}
+                            className="w-full h-10 px-3 py-2 border-2 border-black bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                          >
+                            <option value="">SCEF General Ambassador</option>
+                            {Object.entries(programDetails).map(([key, prog]) => (
+                              <option key={key} value={key}>{prog.name} Ambassador</option>
+                            ))}
+                          </select>
+                          <p className="text-xs text-muted-foreground">
+                            Select a program to become a focused program ambassador, or leave as general for SCEF-wide advocacy.
+                          </p>
+                        </div>
+                      )}
+
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="fullName">{t("ambassador.form.fullName")} *</Label>
