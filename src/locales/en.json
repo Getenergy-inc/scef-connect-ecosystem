@@ -245,6 +245,11 @@
       "ctaRequest": "Request Proposal / Meeting",
       "ctaEndorse": "Endorse SCEF / Programs"
     },
+    "endorsedBy": {
+      "badge": "Endorsed By",
+      "title": "Trusted & Endorsed By Leading Organizations",
+      "subtitle": "SCEF is proudly endorsed by these distinguished education advocacy organizations across Africa."
+    },
     "final": {
       "title": "Be part of transforming education across Africa",
       "ctaJoin": "Become a Member",

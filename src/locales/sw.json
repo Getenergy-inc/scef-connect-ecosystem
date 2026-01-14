@@ -245,6 +245,11 @@
       "ctaRequest": "Omba Pendekezo / Mkutano",
       "ctaEndorse": "Thibitisha SCEF / Programu"
     },
+    "endorsedBy": {
+      "badge": "Imethbitishwa na",
+      "title": "Kuaminiwa na Kuthibitishwa na Mashirika Yanayoongoza",
+      "subtitle": "SCEF inajivunia kuungwa mkono na mashirika mashuhuri ya utetezi wa elimu barani Afrika."
+    },
     "final": {
       "title": "Kuwa sehemu ya mabadiliko ya elimu barani Afrika",
       "ctaJoin": "Jiunge",

@@ -245,6 +245,11 @@
       "ctaRequest": "Solicitar proposta / reunião",
       "ctaEndorse": "Endossar SCEF / Programas"
     },
+    "endorsedBy": {
+      "badge": "Endossado por",
+      "title": "Confiável e Endossado por Organizações Líderes",
+      "subtitle": "A SCEF é orgulhosamente apoiada por estas distintas organizações de defesa da educação em toda a África."
+    },
     "final": {
       "title": "Faça parte da transformação da educação em África",
       "ctaJoin": "Tornar-se membro",
