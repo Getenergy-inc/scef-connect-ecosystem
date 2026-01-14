@@ -6,8 +6,30 @@ import { Link } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
 import { 
   Handshake, Building2, GraduationCap, Globe, ArrowRight, 
-  CheckCircle2, Users, Heart, Award, Briefcase
+  CheckCircle2, Users, Heart, Award, Briefcase, ExternalLink
 } from "lucide-react";
+import pkisLogo from "@/assets/partners/pkis-logo.jpg";
+import getenergyLogo from "@/assets/partners/getenergy-logo.jpg";
+
+// CRS Partners data
+const crsPartners = [
+  {
+    name: "PancoKrato Integrated Services",
+    acronym: "PKIS",
+    logo: pkisLogo,
+    service: "Operations & Administration",
+    since: 2005,
+    website: "https://pancokrato.com",
+  },
+  {
+    name: "GetEnergy.ng",
+    acronym: null,
+    logo: getenergyLogo,
+    service: "Energy Trading Services",
+    since: 2024,
+    website: "https://getenergy.ng",
+  },
+];
 
 const colorClasses = {
   gold: "bg-gold/10 text-gold border-gold/20",
@@ -95,6 +117,65 @@ const Partners = () => {
                     <div className="text-4xl font-display font-bold text-primary mb-2">{stat.value}</div>
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CRS Partners Section */}
+          <section className="py-16 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm mb-4">
+                  <Handshake className="w-4 h-4" />
+                  Corporate Responsibility Support
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Our CRS Partners
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Strategic partners providing essential services for SCEF operations and sustainability.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {crsPartners.map((partner) => (
+                  <a
+                    key={partner.name}
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card rounded-2xl border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-20 h-20 bg-white rounded-xl p-2 flex items-center justify-center overflow-hidden border border-border">
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          className="max-w-full max-h-full object-contain"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-display text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                          {partner.acronym || partner.name}
+                        </h3>
+                        {partner.acronym && (
+                          <p className="text-sm text-muted-foreground">{partner.name}</p>
+                        )}
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Service:</span>
+                        <span className="font-medium text-foreground">{partner.service}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Partner since:</span>
+                        <span className="font-medium text-primary">{partner.since}</span>
+                      </div>
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>
