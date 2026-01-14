@@ -256,16 +256,63 @@
     },
     "whyWeExist": {
       "title": "Por Qué Existimos",
-      "intro": "En toda África, el aprendizaje sigue limitado por:",
-      "challenges": [
-        "Entornos escolares inseguros o mal equipados",
-        "Acceso deficiente a formación en habilidades y laboratorios de FP",
-        "Brechas en la inclusión para estudiantes con discapacidades",
-        "Restricciones de financiación y baja responsabilidad",
-        "Vías limitadas del aprendizaje al trabajo decente"
-      ],
-      "solution": "SCEF existe para cambiar eso",
-      "solutionDesc": "—construyendo un modelo de entrega respaldado por gobernanza y impulsado por capítulos que hace que la transformación educativa sea medible, inclusiva y escalable."
+      "intro": "En toda África, los resultados de aprendizaje están limitados por brechas de infraestructura, acceso desigual a formación profesional, sistemas de inclusión limitados, débil responsabilidad de financiación y caminos poco claros del aprendizaje al trabajo decente. SCEF existe para abordar estas limitaciones a través de un modelo de entrega respaldado por gobernanza e impulsado por capítulos que es medible, inclusivo y escalable.",
+      "expandAll": "Expandir todo",
+      "collapseAll": "Contraer todo",
+      "closing": "SCEF existe para cambiar eso—construyendo un modelo de entrega respaldado por gobernanza e impulsado por capítulos que hace que la transformación educativa sea medible, inclusiva y escalable.",
+      "challenges": {
+        "schools": {
+          "title": "Entornos escolares inseguros o mal equipados",
+          "summary": "Muchas escuelas operan sin instalaciones seguras, aulas adecuadas, materiales de aprendizaje o estándares mínimos para condiciones básicas de aprendizaje.",
+          "points": [
+            "Las brechas típicas incluyen edificios inseguros, hacinamiento, acceso limitado a agua/saneamiento, mobiliario insuficiente y débil disponibilidad de recursos de aprendizaje.",
+            "Estas limitaciones reducen la asistencia, el tiempo de aprendizaje, la efectividad del docente y el rendimiento estudiantil."
+          ],
+          "response": "Pipeline de Rebuild My School Africa (RMSA) para necesidades escolares verificadas, planes de implementación listos para socios y reportes documentados antes/después."
+        },
+        "tvet": {
+          "title": "Acceso deficiente a formación profesional y laboratorios de FP",
+          "summary": "La empleabilidad juvenil está limitada cuando el aprendizaje no está conectado a habilidades prácticas, preparación industrial u oportunidades económicas locales.",
+          "points": [
+            "Laboratorios de FP, herramientas iniciales y entornos de aprendizaje aplicado frecuentemente faltan o son inaccesibles.",
+            "Donde existe formación, puede carecer de vías de certificación o vínculos con aprendizaje laboral."
+          ],
+          "response": "Apoyo alineado con FP, habilitación de aprendizaje práctico e integración con aprendizaje digital y certificación verificable a través de EOA y vías relacionadas."
+        },
+        "inclusion": {
+          "title": "Brechas en la inclusión para estudiantes con discapacidades",
+          "summary": "La educación inclusiva está limitada por herramientas asistivas limitadas, contenido de aprendizaje inaccesible y apoyo insuficiente al docente.",
+          "points": [
+            "Las barreras incluyen falta de ayudas de aprendizaje, mala accesibilidad en el diseño escolar y formación limitada en inclusión para educadores.",
+            "Los estudiantes pueden ser excluidos de las vías principales o carecer de servicios de apoyo consistentes."
+          ],
+          "response": "Apoyo a Educación para Necesidades Especiales y defensa de la inclusión, vías de apoyo al aprendizaje asistivo y modelos de implementación respaldados por socios."
+        },
+        "funding": {
+          "title": "Restricciones de financiación y baja responsabilidad",
+          "summary": "Las brechas de financiación educativa persisten, y donde existe financiación, el impacto puede ser difícil de verificar sin gobernanza y reportes sólidos.",
+          "points": [
+            "Los desafíos incluyen financiación fragmentada, verificación de proyectos poco clara, seguimiento débil y reportes de resultados medibles limitados.",
+            "Los socios exigen cada vez más reportes alineados con ESG/ODS y controles de gobernanza documentados."
+          ],
+          "response": "Gobernanza de financiación y reportes a través de los Servicios de Gestión de Fondos Educativos RSC de SCEF (SCEF–FMS): pipeline de proyectos verificados, desembolsos rastreados, documentación y medición trimestral de resultados."
+        },
+        "pathways": {
+          "title": "Vías limitadas del aprendizaje al trabajo decente",
+          "summary": "Los estudiantes frecuentemente enfrentan transiciones débiles de la escolarización a la empleabilidad, emprendimiento o preparación estructurada para el mercado laboral.",
+          "points": [
+            "La orientación profesional, mentoría y vías de habilidades aplicadas son desiguales entre regiones.",
+            "Sin preparación práctica y certificación creíble, los estudiantes luchan por demostrar competencia."
+          ],
+          "response": "Apoyo a la preparación laboral vía FP + certificación digital, orientación profesional impulsada por medios (radio/TV/webinars) y modelos de entrega por capítulos locales que conectan estudiantes con redes de oportunidades locales."
+        }
+      },
+      "cta": {
+        "programs": "Explorar Nuestros Programas",
+        "chapters": "Unirse a un Capítulo",
+        "partner": "Asociarse con Nosotros",
+        "donate": "Donar"
+      }
     },
     "objectives": {
       "title": "Nuestros 6 Objetivos Principales",
