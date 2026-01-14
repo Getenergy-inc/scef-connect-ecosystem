@@ -72,7 +72,7 @@ export const ImpactStats = () => {
             {t("home.impact.cta")}
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            {t("home.hero.subtitle")}
+            {t("home.hero.summary")}
           </p>
         </div>
 

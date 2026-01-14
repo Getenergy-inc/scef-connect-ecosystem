@@ -148,7 +148,7 @@ export const Footer = () => {
               <li>
                 <Link to="/vacancies" className="text-sm text-white/70 hover:text-scef-gold transition-colors flex items-center gap-1">
                   <Briefcase className="w-3 h-3" />
-                  Join Our Team
+                  Vacancies
                 </Link>
               </li>
               <li>

@@ -100,7 +100,7 @@ export const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="font-body text-lg md:text-xl text-white/85 max-w-4xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            {t("home.hero.subtitle")}
+            {t("home.hero.summary")}
           </p>
 
           {/* Primary CTA Buttons */}
@@ -112,7 +112,7 @@ export const HeroSection = () => {
             >
               <Link to="/membership">
                 <Users className="w-5 h-5" />
-                {t("home.hero.ctaPrimary")}
+                {t("home.hero.ctaMember")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
@@ -123,7 +123,7 @@ export const HeroSection = () => {
             >
               <Link to="/local-chapters">
                 <Globe className="w-5 h-5" />
-                {t("home.hero.ctaJoinChapter")}
+                {t("about.hero.ctaJoinChapter")}
               </Link>
             </Button>
             <Button 
