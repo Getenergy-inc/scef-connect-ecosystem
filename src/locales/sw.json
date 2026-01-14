@@ -324,16 +324,63 @@
     },
     "whyWeExist": {
       "title": "Kwa nini tupo",
-      "intro": "Barani Afrika, mafunzo bado yanakabiliwa na:",
-      "challenges": [
-        "Mazingira ya shule yasiyo salama au yasiyojitosheleza",
-        "Upatikanaji mdogo wa mafunzo ya ujuzi na maabara za TVET",
-        "Mapungufu ya ujumuishi kwa wanafunzi wenye ulemavu",
-        "Vikwazo vya fedha na uwajibikaji mdogo",
-        "Njia finyu kutoka kwa mafunzo hadi kazi bora"
-      ],
-      "solution": "SCEF ipo kubadilisha hilo",
-      "solutionDesc": "—kwa kujenga mfano wa utekelezaji unaounga mkono utawala na unaoendeshwa na sura, unaofanya mabadiliko ya elimu yapimike, kuwa shirikishi, na kupanuliwa."
+      "intro": "Barani Afrika, matokeo ya mafunzo yanazuiliwa na mapungufu ya miundombinu, upatikanaji usio sawa wa mafunzo ya ufundi, mifumo ya ujumuishi iliyopunguzwa, uwajibikaji dhaifu wa fedha, na njia zisizo wazi kutoka kwa mafunzo hadi kazi bora. SCEF ipo kushughulikia vikwazo hivi kupitia mfano wa utekelezaji unaoungwa mkono na utawala na unaoendeshwa na sura, ambao unapimika, shirikishi, na unaoweza kupanuliwa.",
+      "expandAll": "Panua yote",
+      "collapseAll": "Kunja yote",
+      "closing": "SCEF ipo kubadilisha hilo—kwa kujenga mfano wa utekelezaji unaoungwa mkono na utawala na unaoendeshwa na sura unaofanya mabadiliko ya elimu yapimike, kuwa shirikishi, na kupanuliwa.",
+      "challenges": {
+        "schools": {
+          "title": "Mazingira ya shule yasiyo salama au yasiyojitosheleza",
+          "summary": "Shule nyingi zinafanya kazi bila vifaa salama, madarasa ya kutosha, vifaa vya kufundishia, au viwango vya chini vya masharti ya msingi ya mafunzo.",
+          "points": [
+            "Mapungufu ya kawaida ni pamoja na majengo yasiyo salama, msongamano, upatikanaji mdogo wa maji/usafi, samani zisizotosha, na upatikanaji dhaifu wa rasilimali za mafunzo.",
+            "Vikwazo hivi vinapunguza mahudhurio, muda wa mafunzo, ufanisi wa mwalimu, na utendaji wa wanafunzi."
+          ],
+          "response": "Mfumo wa Rebuild My School Africa (RMSA) kwa mahitaji ya shule yaliyothibitishwa, mipango ya utekelezaji iliyo tayari kwa washirika, na ripoti zilizorekodiwa kabla/baada."
+        },
+        "tvet": {
+          "title": "Upatikanaji mdogo wa mafunzo ya ufundi na maabara za TVET",
+          "summary": "Uwezo wa kuajiriwa wa vijana umezuiliwa wakati mafunzo hayahusiani na ujuzi wa vitendo, utayari wa viwanda, au fursa za kiuchumi za mtaa.",
+          "points": [
+            "Maabara za TVET, zana za kuanzia, na mazingira ya mafunzo yanayotumika mara nyingi hayapo au hayapatikani.",
+            "Ambapo mafunzo yapo, yanaweza kukosa njia za vyeti au miunganisho na mafunzo ya kazini."
+          ],
+          "response": "Msaada unaofuatana na TVET, uwezeaji wa mafunzo ya vitendo, na kuunganishwa na mafunzo ya kidijitali na vyeti vinavyoweza kuthibitishwa kupitia EOA na njia zinazohusiana."
+        },
+        "inclusion": {
+          "title": "Mapungufu ya ujumuishi kwa wanafunzi wenye ulemavu",
+          "summary": "Elimu shirikishi inazuiliwa na zana za usaidizi zilizopunguzwa, maudhui ya mafunzo yasiyopatikana, na msaada usiotosheleza kwa walimu.",
+          "points": [
+            "Vikwazo ni pamoja na ukosefu wa visaidizi vya mafunzo, upatikanaji duni katika muundo wa shule, na mafunzo madogo ya ujumuishi kwa walimu.",
+            "Wanafunzi wanaweza kutengwa na njia za kawaida au kukosa huduma za msaada zinazofanana."
+          ],
+          "response": "Msaada wa Elimu kwa Mahitaji Maalum na utetezi wa ujumuishi, njia za msaada wa mafunzo ya usaidizi, na mifano ya utekelezaji inayoungwa mkono na washirika."
+        },
+        "funding": {
+          "title": "Vikwazo vya fedha na uwajibikaji mdogo",
+          "summary": "Mapungufu ya fedha za elimu yanaendelea, na ambapo fedha zipo, athari zinaweza kuwa ngumu kuthibitisha bila utawala imara na ripoti.",
+          "points": [
+            "Changamoto ni pamoja na fedha zilizogawanyika, uthibitisho usio wazi wa mradi, ufuatiliaji dhaifu, na ripoti za matokeo yanayopimika zilizopunguzwa.",
+            "Washirika wanazidi kuhitaji ripoti zinazofuatana na ESG/SDG na udhibiti wa utawala ulioandikwa."
+          ],
+          "response": "Utawala wa fedha na ripoti kupitia Huduma za Usimamizi wa Fedha za Elimu za CSR za SCEF (SCEF–FMS): mfumo wa miradi iliyothibitishwa, malipo yanayofuatiliwa, nyaraka, na kipimo cha matokeo cha robo mwaka."
+        },
+        "pathways": {
+          "title": "Njia finyu kutoka kwa mafunzo hadi kazi bora",
+          "summary": "Wanafunzi mara nyingi wanakabiliwa na mpito dhaifu kutoka shuleni hadi kuajiriwa, ujasiriamali, au utayari wa nguvu kazi uliopangwa.",
+          "points": [
+            "Ushauri wa kazi, uelekezaji, na njia za ujuzi zinazotumika haziko sawa kote katika maeneo.",
+            "Bila utayari wa vitendo na vyeti vya kuaminika, wanafunzi wanajitahidi kuonyesha uwezo wao."
+          ],
+          "response": "Msaada wa utayari wa nguvu kazi kupitia TVET + vyeti vya kidijitali, ushauri wa kazi kupitia vyombo vya habari (redio/TV/webinari), na mifano ya utekelezaji wa sura za mtaa zinazounganisha wanafunzi na mitandao ya fursa za mtaa."
+        }
+      },
+      "cta": {
+        "programs": "Chunguza Programu Zetu",
+        "chapters": "Jiunge na Sura",
+        "partner": "Shirikiana Nasi",
+        "donate": "Changia"
+      }
     },
     "whatWeDo": {
       "title": "Tunafanya nini",

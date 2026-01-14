@@ -256,16 +256,63 @@
     },
     "whyWeExist": {
       "title": "Warum wir existieren",
-      "intro": "In ganz Afrika ist Lernen immer noch begrenzt durch:",
-      "challenges": [
-        "Unsichere oder schlecht ausgestattete Schulumgebungen",
-        "Schlechter Zugang zu Berufsausbildung und Berufsbildungslaboren",
-        "Lücken in der Inklusion für Lernende mit Behinderungen",
-        "Finanzierungsbeschränkungen und geringe Verantwortlichkeit",
-        "Begrenzte Wege vom Lernen zu guter Arbeit"
-      ],
-      "solution": "SCEF existiert, um das zu ändern",
-      "solutionDesc": "—durch den Aufbau eines governance-gestützten, ortsverbandsgetriebenen Umsetzungsmodells, das Bildungstransformation messbar, inklusiv und skalierbar macht."
+      "intro": "In ganz Afrika sind Lernergebnisse durch Infrastrukturlücken, ungleichen Zugang zur Berufsausbildung, begrenzte Inklusionssysteme, schwache Finanzierungsverantwortlichkeit und unklare Wege vom Lernen zu anständiger Arbeit eingeschränkt. SCEF existiert, um diese Einschränkungen durch ein governance-gestütztes, ortsverbandsgetriebenes Umsetzungsmodell anzugehen, das messbar, inklusiv und skalierbar ist.",
+      "expandAll": "Alle erweitern",
+      "collapseAll": "Alle reduzieren",
+      "closing": "SCEF existiert, um das zu ändern—durch den Aufbau eines governance-gestützten, ortsverbandsgetriebenen Umsetzungsmodells, das Bildungstransformation messbar, inklusiv und skalierbar macht.",
+      "challenges": {
+        "schools": {
+          "title": "Unsichere oder schlecht ausgestattete Schulumgebungen",
+          "summary": "Viele Schulen arbeiten ohne sichere Einrichtungen, angemessene Klassenzimmer, Lernmaterialien oder Mindeststandards für grundlegende Lernbedingungen.",
+          "points": [
+            "Typische Lücken umfassen unsichere Gebäude, Überbelegung, begrenzter Zugang zu Wasser/Sanitär, unzureichende Möbel und schwache Verfügbarkeit von Lernressourcen.",
+            "Diese Einschränkungen reduzieren Anwesenheit, Lernzeit, Lehrereffektivität und Schülerleistung."
+          ],
+          "response": "Rebuild My School Africa (RMSA) Pipeline für verifizierte Schulbedarfe, partnerfertige Umsetzungspläne und dokumentierte Vorher/Nachher-Berichte."
+        },
+        "tvet": {
+          "title": "Schlechter Zugang zu Berufsausbildung und Berufsbildungslaboren",
+          "summary": "Die Beschäftigungsfähigkeit von Jugendlichen ist begrenzt, wenn Lernen nicht mit praktischen Fähigkeiten, Industriebereitschaft oder lokalen wirtschaftlichen Möglichkeiten verbunden ist.",
+          "points": [
+            "Berufsbildungslabore, Startwerkzeuge und angewandte Lernumgebungen fehlen oft oder sind unzugänglich.",
+            "Wo Ausbildung existiert, fehlen möglicherweise Zertifizierungspfade oder Verbindungen zum arbeitsbasierten Lernen."
+          ],
+          "response": "Berufsbildungsausgerichtete Unterstützung, praktische Lernbefähigung und Integration mit digitalem Lernen und verifizierbarer Zertifizierung durch EOA und verwandte Pfade."
+        },
+        "inclusion": {
+          "title": "Lücken in der Inklusion für Lernende mit Behinderungen",
+          "summary": "Inklusive Bildung ist durch begrenzte assistive Werkzeuge, unzugängliche Lerninhalte und unzureichende Lehrerunterstützung eingeschränkt.",
+          "points": [
+            "Barrieren umfassen Mangel an Lernhilfen, schlechte Zugänglichkeit im Schuldesign und begrenzte Inklusionsausbildung für Pädagogen.",
+            "Lernende können von Regelwegen ausgeschlossen werden oder konsistente Unterstützungsdienste fehlen."
+          ],
+          "response": "Unterstützung für Sonderpädagogik und Inklusionsadvokatur, Pfade für assistive Lernunterstützung und partnergestützte Umsetzungsmodelle."
+        },
+        "funding": {
+          "title": "Finanzierungsbeschränkungen und geringe Verantwortlichkeit",
+          "summary": "Bildungsfinanzierungslücken bestehen fort, und wo Finanzierung existiert, kann Wirkung ohne starke Governance und Berichterstattung schwer zu verifizieren sein.",
+          "points": [
+            "Herausforderungen umfassen fragmentierte Finanzierung, unklare Projektverifizierung, schwaches Tracking und begrenzte messbare Ergebnisberichte.",
+            "Partner verlangen zunehmend ESG/SDG-ausgerichtete Berichte und dokumentierte Governance-Kontrollen."
+          ],
+          "response": "Finanzierungsgovernance und Berichterstattung durch SCEF CSR für Bildungsfondsmanagement-Dienste (SCEF–FMS): verifizierte Projektpipeline, verfolgtes Auszahlen, Dokumentation und vierteljährliche Ergebnismessung."
+        },
+        "pathways": {
+          "title": "Begrenzte Wege vom Lernen zu guter Arbeit",
+          "summary": "Lernende stehen oft vor schwachen Übergängen von der Schulbildung zur Beschäftigungsfähigkeit, Unternehmertum oder strukturierter Arbeitsmarktbereitschaft.",
+          "points": [
+            "Berufsberatung, Mentoring und angewandte Fähigkeitenpfade sind zwischen Regionen ungleich.",
+            "Ohne praktische Bereitschaft und glaubwürdige Zertifizierung haben Lernende Schwierigkeiten, Kompetenz zu demonstrieren."
+          ],
+          "response": "Arbeitsmarktbereitschaftsunterstützung via Berufsbildung + digitale Zertifizierung, mediengetriebene Berufsberatung (Radio/TV/Webinare) und lokale Ortsverbands-Umsetzungsmodelle, die Lernende mit lokalen Opportunitätsnetzwerken verbinden."
+        }
+      },
+      "cta": {
+        "programs": "Unsere Programme erkunden",
+        "chapters": "Ortsverband beitreten",
+        "partner": "Partner werden",
+        "donate": "Spenden"
+      }
     },
     "objectives": {
       "title": "Unsere 6 Kernziele",

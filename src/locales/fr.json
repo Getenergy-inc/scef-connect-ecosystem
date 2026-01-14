@@ -324,16 +324,63 @@
     },
     "whyWeExist": {
       "title": "Pourquoi nous existons",
-      "intro": "À travers l'Afrique, l'apprentissage est encore limité par :",
-      "challenges": [
-        "Environnements scolaires non sécurisés ou sous-équipés",
-        "Faible accès à la formation professionnelle et aux laboratoires TVET",
-        "Lacunes d'inclusion pour les apprenants handicapés",
-        "Contraintes de financement et faible responsabilité",
-        "Parcours limités de l'apprentissage vers un emploi décent"
-      ],
-      "solution": "SCEF existe pour changer cela",
-      "solutionDesc": "—en construisant un modèle de livraison soutenu par la gouvernance et porté par les chapitres, rendant la transformation éducative mesurable, inclusive et évolutive."
+      "intro": "À travers l'Afrique, les résultats d'apprentissage sont limités par les lacunes d'infrastructure, l'accès inégal à la formation professionnelle, des systèmes d'inclusion limités, une faible responsabilité du financement et des parcours peu clairs de l'apprentissage vers un emploi décent. SCEF existe pour relever ces défis grâce à un modèle de livraison soutenu par la gouvernance et piloté par les chapitres, qui est mesurable, inclusif et évolutif.",
+      "expandAll": "Tout développer",
+      "collapseAll": "Tout réduire",
+      "closing": "SCEF existe pour changer cela—en construisant un modèle de livraison soutenu par la gouvernance et piloté par les chapitres qui rend la transformation éducative mesurable, inclusive et évolutive.",
+      "challenges": {
+        "schools": {
+          "title": "Environnements scolaires non sécurisés ou sous-équipés",
+          "summary": "De nombreuses écoles fonctionnent sans installations sûres, salles de classe adéquates, matériel pédagogique ou normes minimales pour les conditions d'apprentissage de base.",
+          "points": [
+            "Les lacunes typiques incluent des bâtiments non sécurisés, la surpopulation, un accès limité à l'eau/assainissement, un mobilier insuffisant et une faible disponibilité des ressources d'apprentissage.",
+            "Ces contraintes réduisent la fréquentation, le temps d'apprentissage, l'efficacité des enseignants et les performances des élèves."
+          ],
+          "response": "Pipeline Rebuild My School Africa (RMSA) pour les besoins scolaires vérifiés, plans de mise en œuvre prêts pour les partenaires et rapports documentés avant/après."
+        },
+        "tvet": {
+          "title": "Faible accès à la formation professionnelle et aux laboratoires TVET",
+          "summary": "L'employabilité des jeunes est limitée lorsque l'apprentissage n'est pas connecté aux compétences pratiques, à la préparation industrielle ou aux opportunités économiques locales.",
+          "points": [
+            "Les laboratoires TVET, les outils de démarrage et les environnements d'apprentissage appliqué sont souvent absents ou inaccessibles.",
+            "Là où la formation existe, elle peut manquer de parcours de certification ou de liens avec l'apprentissage en milieu de travail."
+          ],
+          "response": "Soutien aligné sur le TVET, facilitation de l'apprentissage pratique et intégration avec l'apprentissage numérique et la certification vérifiable via EOA et les parcours connexes."
+        },
+        "inclusion": {
+          "title": "Lacunes d'inclusion pour les apprenants handicapés",
+          "summary": "L'éducation inclusive est limitée par des outils d'assistance limités, un contenu d'apprentissage inaccessible et un soutien insuffisant aux enseignants.",
+          "points": [
+            "Les obstacles incluent le manque d'aides à l'apprentissage, une mauvaise accessibilité dans la conception des écoles et une formation limitée à l'inclusion pour les éducateurs.",
+            "Les apprenants peuvent être exclus des parcours ordinaires ou manquer de services de soutien cohérents."
+          ],
+          "response": "Soutien à l'éducation spécialisée et plaidoyer pour l'inclusion, parcours de soutien à l'apprentissage assisté et modèles de déploiement soutenus par les partenaires."
+        },
+        "funding": {
+          "title": "Contraintes de financement et faible responsabilité",
+          "summary": "Les lacunes de financement de l'éducation persistent, et là où le financement existe, l'impact peut être difficile à vérifier sans une gouvernance et des rapports solides.",
+          "points": [
+            "Les défis incluent un financement fragmenté, une vérification de projet peu claire, un suivi faible et des rapports de résultats mesurables limités.",
+            "Les partenaires exigent de plus en plus des rapports alignés ESG/ODD et des contrôles de gouvernance documentés."
+          ],
+          "response": "Gouvernance du financement et rapports via SCEF CSR pour les Services de Gestion des Fonds Éducatifs (SCEF–FMS) : pipeline de projets vérifiés, décaissements suivis, documentation et mesure trimestrielle des résultats."
+        },
+        "pathways": {
+          "title": "Parcours limités de l'apprentissage vers un emploi décent",
+          "summary": "Les apprenants font souvent face à des transitions faibles de la scolarité vers l'employabilité, l'entrepreneuriat ou la préparation structurée au marché du travail.",
+          "points": [
+            "L'orientation professionnelle, le mentorat et les parcours de compétences appliquées sont inégaux selon les régions.",
+            "Sans préparation pratique et certification crédible, les apprenants ont du mal à démontrer leurs compétences."
+          ],
+          "response": "Soutien à la préparation au marché du travail via TVET + certification numérique, orientation professionnelle par les médias (radio/TV/webinaires) et modèles de livraison par chapitres locaux qui connectent les apprenants aux réseaux d'opportunités locales."
+        }
+      },
+      "cta": {
+        "programs": "Explorer nos programmes",
+        "chapters": "Rejoindre un chapitre",
+        "partner": "Devenir partenaire",
+        "donate": "Faire un don"
+      }
     },
     "whatWeDo": {
       "title": "Ce que nous faisons",
