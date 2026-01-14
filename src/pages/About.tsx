@@ -10,8 +10,9 @@ import {
   Shield, Building2, Tv, Laptop, TrendingUp, CheckCircle2,
   GraduationCap, Handshake, BookOpen, School, Wrench,
   Accessibility, ChevronDown, ChevronUp, Download, BarChart3,
-  Radio, Play, FileText, MapPin, Clock, Sparkles, Menu
+  Radio, Play, FileText, MapPin, Clock, Sparkles, Menu, AlertCircle
 } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
@@ -41,6 +42,30 @@ const About = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [heroExpanded, setHeroExpanded] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [whyWeExistAccordion, setWhyWeExistAccordion] = useState<string[]>([]);
+
+  // Detect mobile and set initial accordion state
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      // Desktop: first item open by default, Mobile: all collapsed
+      if (!mobile) {
+        setWhyWeExistAccordion(["schools"]);
+      } else {
+        setWhyWeExistAccordion([]);
+      }
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const challengeKeys = ["schools", "tvet", "inclusion", "funding", "pathways"];
+  
+  const expandAllChallenges = () => setWhyWeExistAccordion(challengeKeys);
+  const collapseAllChallenges = () => setWhyWeExistAccordion([]);
 
   const quickNavItems = [
     { id: "who-we-are", label: t("about.quickNav.whoWeAre") },
@@ -122,13 +147,7 @@ const About = () => {
     t("about.who.outcomes.5"),
   ];
 
-  const whyWeExistChallenges = [
-    t("about.whyWeExist.challenges.0"),
-    t("about.whyWeExist.challenges.1"),
-    t("about.whyWeExist.challenges.2"),
-    t("about.whyWeExist.challenges.3"),
-    t("about.whyWeExist.challenges.4"),
-  ];
+  // whyWeExistChallenges is now handled via accordion with challengeKeys above
 
   const tvetEmpowerPoints = [
     t("about.tvetSpotlight.empowerPoints.0"),
@@ -1036,21 +1055,104 @@ const About = () => {
                   {t("about.whyWeExist.intro")}
                 </p>
 
-                <div className="space-y-4 mb-10">
-                  {whyWeExistChallenges.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-4 bg-destructive/5 rounded-xl border border-destructive/10">
-                      <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center shrink-0">
-                        <span className="text-destructive text-sm font-bold">{i + 1}</span>
-                      </div>
-                      <span className="text-foreground">{item}</span>
-                    </div>
-                  ))}
+                {/* Expand/Collapse Controls */}
+                <div className="flex justify-end gap-2 mb-4">
+                  <button
+                    onClick={expandAllChallenges}
+                    className="text-sm text-scef-blue hover:text-scef-blue-dark font-medium underline underline-offset-2"
+                  >
+                    {t("about.whyWeExist.expandAll")}
+                  </button>
+                  <span className="text-muted-foreground">|</span>
+                  <button
+                    onClick={collapseAllChallenges}
+                    className="text-sm text-scef-blue hover:text-scef-blue-dark font-medium underline underline-offset-2"
+                  >
+                    {t("about.whyWeExist.collapseAll")}
+                  </button>
                 </div>
 
-                <div className="bg-scef-blue/5 rounded-2xl p-8 border border-scef-blue/10">
+                {/* Accordion */}
+                <Accordion
+                  type="multiple"
+                  value={whyWeExistAccordion}
+                  onValueChange={setWhyWeExistAccordion}
+                  className="space-y-3 mb-10"
+                >
+                  {challengeKeys.map((key, i) => (
+                    <AccordionItem
+                      key={key}
+                      value={key}
+                      className="bg-card rounded-xl border border-border overflow-hidden"
+                    >
+                      <AccordionTrigger className="px-5 py-4 hover:no-underline hover:bg-muted/50 [&[data-state=open]>div>.number]:bg-scef-gold [&[data-state=open]>div>.number]:text-scef-blue">
+                        <div className="flex items-start gap-4 text-left w-full">
+                          <div className="number w-8 h-8 rounded-full bg-scef-blue/10 flex items-center justify-center shrink-0 transition-colors">
+                            <span className="text-scef-blue text-sm font-bold">{i + 1}</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-display font-bold text-foreground text-base mb-1">
+                              {t(`about.whyWeExist.challenges.${key}.title`)}
+                            </h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {t(`about.whyWeExist.challenges.${key}.summary`)}
+                            </p>
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-5 pb-5">
+                        <div className="ml-12 space-y-4">
+                          <ul className="space-y-2">
+                            {[0, 1].map((pointIdx) => (
+                              <li key={pointIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                                {t(`about.whyWeExist.challenges.${key}.points.${pointIdx}`)}
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="p-4 bg-scef-blue/5 rounded-lg border border-scef-blue/10">
+                            <p className="text-sm">
+                              <span className="font-semibold text-scef-blue">How SCEF responds: </span>
+                              <span className="text-foreground">{t(`about.whyWeExist.challenges.${key}.response`)}</span>
+                            </p>
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+
+                {/* Closing Statement */}
+                <div className="bg-scef-blue/5 rounded-2xl p-8 border border-scef-blue/10 mb-10">
                   <p className="text-lg text-foreground leading-relaxed">
-                    <strong className="text-scef-blue">{t("about.whyWeExist.solution")}</strong>{t("about.whyWeExist.solutionDesc")}
+                    {t("about.whyWeExist.closing")}
                   </p>
+                </div>
+
+                {/* CTA Row */}
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Button asChild size="lg" className="bg-scef-blue text-white hover:bg-scef-blue-dark">
+                    <Link to="/programs">
+                      {t("about.whyWeExist.cta.programs")}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/chapters">
+                      {t("about.whyWeExist.cta.chapters")}
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/partner-with-us">
+                      {t("about.whyWeExist.cta.partner")}
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/donate">
+                      <Heart className="w-4 h-4" />
+                      {t("about.whyWeExist.cta.donate")}
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
