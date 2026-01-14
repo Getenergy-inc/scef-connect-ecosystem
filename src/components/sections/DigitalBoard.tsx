@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/contexts/LocaleContext";
+import { resolveThumbnail, getDefaultThumbnail } from "@/config/digitalBoardThumbnails";
 
 interface BoardItem {
   id: string;
@@ -100,7 +101,10 @@ export const DigitalBoard = () => {
         title: item.title,
         description: item.content_text || "",
         cta: { text: item.cta_text || t("home.board.viewAll"), href: item.cta_link || "/updates" },
-        thumbnail: item.content_url || "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
+        thumbnail: resolveThumbnail(
+          (item as any).thumbnail_url, 
+          item.content_url || getDefaultThumbnail(item.content_type || "announcement")
+        ),
       }))
     : getFallbackItems(t);
 
