@@ -34,7 +34,7 @@ export const Footer = () => {
       {/* Header */}
       <div className="container mx-auto px-4 py-8">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-center text-scef-gold">
-          {t("footer.organization")}
+          Santos Creations Educational Foundation
         </h2>
       </div>
 
@@ -240,7 +240,7 @@ export const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
           <p className="text-sm text-white/50 text-center font-body">
-            © {new Date().getFullYear()} {t("footer.organization")}. {t("footer.copyright")}
+            © {new Date().getFullYear()} Santos Creations Educational Foundation. {t("footer.copyright")}
           </p>
         </div>
       </div>

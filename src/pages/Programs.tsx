@@ -6,6 +6,8 @@ import { useLocale } from "@/contexts/LocaleContext";
 import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Library, ExternalLink } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-programs.jpg";
+import nesaLogo from "@/assets/nesa-africa-logo.jpg";
+import eduaidLogo from "@/assets/eduaid-africa-logo.jpg";
 
 const programIcons = {
   nesa: Award,
@@ -15,6 +17,16 @@ const programIcons = {
   specialNeeds: Accessibility,
   eoa: Globe,
   elibrary: Library,
+};
+
+const programLogos: Record<string, string | null> = {
+  nesa: nesaLogo,
+  eduaid: eduaidLogo,
+  rmsa: null,
+  womenGirls: null,
+  specialNeeds: null,
+  eoa: null,
+  elibrary: null,
 };
 
 const programLinks = {
@@ -167,8 +179,16 @@ const Programs = () => {
                         {/* Content */}
                         <div className="lg:col-span-2 p-8 lg:p-12">
                           <div className="flex items-start gap-6">
-                            <div className="w-16 h-16 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center shrink-0">
-                              <Icon className="w-8 h-8 text-scef-blue" />
+                            <div className="w-16 h-16 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center shrink-0 overflow-hidden">
+                              {programLogos[programKey] ? (
+                                <img 
+                                  src={programLogos[programKey]!} 
+                                  alt={`${t(`programs.items.${programKey}.title`)} logo`}
+                                  className="w-full h-full object-cover"
+                                />
+                              ) : (
+                                <Icon className="w-8 h-8 text-scef-blue" />
+                              )}
                             </div>
                             <div className="flex-1">
                               <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
