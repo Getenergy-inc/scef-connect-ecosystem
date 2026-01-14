@@ -42,6 +42,7 @@ import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import InclusionAccess from "./pages/programs/InclusionAccess";
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
 import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
+import EndorsementsAdminPage from "./pages/admin/EndorsementsAdminPage";
 import NotFound from "./pages/NotFound";
 import Vacancies from "./pages/Vacancies";
 import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
@@ -123,6 +124,7 @@ const App = () => (
               
               {/* Admin Routes */}
               <Route path="/admin/digital-board" element={<DigitalBoardAdminPage />} />
+              <Route path="/admin/endorsements" element={<EndorsementsAdminPage />} />
               <Route path="/admin/vacancies" element={<VacanciesAdminPage />} />
               <Route path="/admin/finance/overview" element={<FinanceOverview />} />
               <Route path="/admin/finance/bank-accounts" element={<BankAccounts />} />
