@@ -676,6 +676,146 @@
           ],
           "closing": "This history informs SCEF's current direction: building renewable, multi-year partnerships and scaling Education for All across Africa's five regions—with active contribution from the diaspora as a sixth region of support."
         }
+      },
+      "partnersSection": {
+        "title": "Our Partners & Relationships (1997–2026)",
+        "subtitle": "A legacy of institutional collaborations, media partnerships, development organizations, and corporate support.",
+        "categories": {
+          "government": "Government & Public Institutions",
+          "development": "Development & International Organizations",
+          "media": "Media Partners",
+          "education": "Educational Institutions",
+          "corporate": "Corporate & CSR Partners",
+          "volunteer": "Volunteer & Talent Networks"
+        },
+        "partners": {
+          "kwaraMoe": {
+            "name": "Kwara State Ministry of Education",
+            "type": "Government",
+            "relationship": "Policy & Program Support",
+            "period": "2003–Present",
+            "description": "Primary government partner for education advocacy and program delivery in Kwara State."
+          },
+          "kwaraLib": {
+            "name": "Kwara State Library Board",
+            "type": "Government",
+            "relationship": "eLibrary Management & ICT Training",
+            "period": "2003–2021",
+            "description": "Managed the Kwara State eLibrary and delivered ICT training programs for educators and students."
+          },
+          "kwaraTourism": {
+            "name": "Kwara State Tourism Board",
+            "type": "Government",
+            "relationship": "Education Tourism Programs",
+            "period": "2003–2007",
+            "description": "Supported Nija Youth Tours and cultural heritage education initiatives."
+          },
+          "kwaraWomen": {
+            "name": "Kwara State Ministry of Women Affairs",
+            "type": "Government",
+            "relationship": "Women & Girls Education",
+            "period": "2003–2007",
+            "description": "Collaborated on gender-focused education and empowerment programs."
+          },
+          "kwaraYouth": {
+            "name": "Kwara State Government (Youth Empowerment)",
+            "type": "Government",
+            "relationship": "Consultancy & Skills Training",
+            "period": "2012–2019",
+            "description": "Delivered vocational and ICT training to 15,000+ youth through the Office of the Special Adviser on Youth Empowerment."
+          },
+          "esspin": {
+            "name": "ESSPIN (Education Sector Support Programme in Nigeria)",
+            "type": "Development",
+            "relationship": "Educator Capacity Building",
+            "period": "2003–2019",
+            "description": "DFID-funded program supporting teacher ICT training and classroom technology integration."
+          },
+          "pharmAccess": {
+            "name": "PharmAccess Foundation",
+            "type": "Development",
+            "relationship": "Consulting & Research",
+            "period": "2003–2010",
+            "description": "Provided consulting services including focus group discussions and community health education research."
+          },
+          "vso": {
+            "name": "Voluntary Service Overseas (VSO)",
+            "type": "Development",
+            "relationship": "Volunteer Talent & Capacity Building",
+            "period": "2003–2015",
+            "description": "International volunteer placements supporting education program delivery and organizational development."
+          },
+          "aiesec": {
+            "name": "AIESEC",
+            "type": "Volunteer Network",
+            "relationship": "Youth Leadership & Internships",
+            "period": "2003–Present",
+            "description": "Global youth network providing interns and volunteer consultants for education initiatives."
+          },
+          "volunteerMatch": {
+            "name": "Volunteer Match",
+            "type": "Volunteer Network",
+            "relationship": "Virtual Volunteering Platform",
+            "period": "2010–Present",
+            "description": "Online platform connecting skilled volunteers with SCEF programs globally."
+          },
+          "radioKwara": {
+            "name": "Radio Kwara & Midland FM",
+            "type": "Media",
+            "relationship": "Airtime Partnership & Broadcasting",
+            "period": "2003–2015",
+            "description": "Primary broadcast partner for 'It's In Me' radio program and youth empowerment content."
+          },
+          "kwaraTv": {
+            "name": "Kwara TV",
+            "type": "Media",
+            "relationship": "TV Broadcasting",
+            "period": "2003–2010",
+            "description": "Broadcast partner for 'A Time with Santos' TV program engaging youth on education and entrepreneurship."
+          },
+          "collegeIlorin": {
+            "name": "College of Education, Ilorin",
+            "type": "Education",
+            "relationship": "Teacher Training & Academic Partnership",
+            "period": "2003–2010",
+            "description": "Collaborated on educator development programs and student engagement initiatives."
+          },
+          "nyscKwara": {
+            "name": "NYSC Kwara",
+            "type": "Government",
+            "relationship": "Corps Member Engagement",
+            "period": "2003–2015",
+            "description": "Partnered with National Youth Service Corps for volunteer mobilization and community education projects."
+          },
+          "pkis": {
+            "name": "Pancokrato Integrated Services (PKIS)",
+            "type": "Corporate",
+            "relationship": "CSR Support & eLibrary Services",
+            "period": "2003–Present",
+            "description": "Longest-standing corporate partner providing CSR funding, eLibrary management services, and operational support. Founding partner of SCEF–FMS."
+          },
+          "getEnergy": {
+            "name": "Get Energy Trading Services",
+            "type": "Corporate",
+            "relationship": "CSR Partner & SCEF–FMS Founding Partner",
+            "period": "2024–Present",
+            "description": "Energy sector CSR partner supporting education infrastructure and SCEF–FMS accountability framework."
+          },
+          "csacefa": {
+            "name": "CSACEFA (Civil Society Action Coalition on Education for All)",
+            "type": "Development",
+            "relationship": "Advocacy & Endorsement",
+            "period": "2015–Present",
+            "description": "Nigerian education coalition endorsing SCEF's standards and advocacy approach."
+          },
+          "fawe": {
+            "name": "FAWE Kenya (Forum for African Women Educationalists)",
+            "type": "Development",
+            "relationship": "Women's Education Endorsement",
+            "period": "2018–Present",
+            "description": "Regional endorsement partner supporting women and girls education initiatives across Africa."
+          }
+        }
       }
     },
     "vision": {
