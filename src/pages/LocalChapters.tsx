@@ -4,7 +4,9 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { MapPin, Users, Search, Filter, Globe, Building, Wifi, ArrowRight, Plus } from "lucide-react";
+import { MapPin, Users, Search, Filter, Globe, Building, Wifi, ArrowRight, Plus, UserPlus, Award, GraduationCap, BookOpen, Heart, Hammer, Accessibility, Monitor } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface Chapter {
   id: number;
@@ -214,6 +216,65 @@ const regions = [
   { id: "Diaspora", label: "Diaspora" },
 ];
 
+const programs = [
+  {
+    id: "nesa-africa",
+    name: "NESA Africa",
+    description: "National Education Standards Assessment - Setting benchmarks for quality education",
+    icon: Award,
+    color: "bg-blue-100 text-blue-600",
+    href: "/programs/nesa-africa",
+  },
+  {
+    id: "eduaid-africa",
+    name: "EduAid Africa",
+    description: "Educational support and resources for underserved communities",
+    icon: GraduationCap,
+    color: "bg-green-100 text-green-600",
+    href: "/programs/eduaid-africa",
+  },
+  {
+    id: "rebuild-my-school-africa",
+    name: "Rebuild My School Africa",
+    description: "Infrastructure development for schools across Africa",
+    icon: Hammer,
+    color: "bg-orange-100 text-orange-600",
+    href: "/programs/rebuild-my-school-africa",
+  },
+  {
+    id: "women-girls-education",
+    name: "Women & Girls Education",
+    description: "Empowering women and girls through education access",
+    icon: Heart,
+    color: "bg-pink-100 text-pink-600",
+    href: "/programs/women-girls-education",
+  },
+  {
+    id: "special-needs-education",
+    name: "Special Needs Education",
+    description: "Inclusive education for learners with special needs",
+    icon: Accessibility,
+    color: "bg-purple-100 text-purple-600",
+    href: "/programs/special-needs-education",
+  },
+  {
+    id: "education-online-africa",
+    name: "Education Online Africa",
+    description: "Digital learning platforms and resources for Africa",
+    icon: Monitor,
+    color: "bg-cyan-100 text-cyan-600",
+    href: "/programs/digital-learning",
+  },
+  {
+    id: "elibrary-nigeria",
+    name: "eLibrary Nigeria",
+    description: "Digital library resources for Nigerian learners and educators",
+    icon: BookOpen,
+    color: "bg-amber-100 text-amber-600",
+    href: "/programs/elibrary-nigeria",
+  },
+];
+
 const typeIcons = {
   Physical: Building,
   Hybrid: Globe,
@@ -230,6 +291,13 @@ const LocalChapters = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [regionFilter, setRegionFilter] = useState<string>("all");
+  const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
+  const [joinDialogOpen, setJoinDialogOpen] = useState(false);
+
+  const handleJoinClick = (chapter: Chapter) => {
+    setSelectedChapter(chapter);
+    setJoinDialogOpen(true);
+  };
 
   const filteredChapters = chapters.filter((chapter) => {
     const matchesSearch = 
@@ -424,11 +492,13 @@ const LocalChapters = () => {
                                 <Users className="w-4 h-4" />
                                 {chapter.members.toLocaleString()}
                               </div>
-                              <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black" size="sm" asChild>
-                                <Link to={`/chapters/join-online?country=${encodeURIComponent(chapter.country)}`}>
-                                  Join
-                                  <ArrowRight className="w-3 h-3" />
-                                </Link>
+                              <Button 
+                                className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black" 
+                                size="sm"
+                                onClick={() => handleJoinClick(chapter)}
+                              >
+                                Join
+                                <ArrowRight className="w-3 h-3" />
                               </Button>
                             </div>
                           </div>
@@ -481,6 +551,134 @@ const LocalChapters = () => {
         
         <Footer />
       </div>
+
+      {/* Join Chapter Dialog */}
+      <Dialog open={joinDialogOpen} onOpenChange={setJoinDialogOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-display">
+              Join {selectedChapter?.name}
+            </DialogTitle>
+            <DialogDescription>
+              Choose how you'd like to join this chapter. You can become a general SCEF member or join as a program ambassador.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-6 pt-4">
+            {/* Option 1: Direct SCEF Membership */}
+            <div className="space-y-3">
+              <h3 className="font-semibold text-lg flex items-center gap-2">
+                <UserPlus className="w-5 h-5 text-scef-blue" />
+                Join as SCEF Member
+              </h3>
+              <Card className="border-2 border-black hover:border-scef-blue transition-colors cursor-pointer group">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-semibold group-hover:text-scef-blue transition-colors">
+                        General Membership
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Join the SCEF community directly and participate in all chapter activities
+                      </p>
+                    </div>
+                    <Button 
+                      className="bg-scef-blue text-white hover:bg-scef-blue/90 border-2 border-black"
+                      asChild
+                    >
+                      <Link to={`/chapters/join-online?country=${encodeURIComponent(selectedChapter?.country || '')}`}>
+                        Join SCEF
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-black hover:border-scef-gold transition-colors cursor-pointer group">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-semibold group-hover:text-scef-gold transition-colors">
+                        SCEF Ambassador
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Become an official SCEF Ambassador and lead initiatives in your community
+                      </p>
+                    </div>
+                    <Button 
+                      className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black"
+                      asChild
+                    >
+                      <Link to={`/get-involved/ambassador?country=${encodeURIComponent(selectedChapter?.country || '')}`}>
+                        Apply
+                        <Award className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Option 2: Program Ambassador */}
+            <div className="space-y-3">
+              <h3 className="font-semibold text-lg flex items-center gap-2">
+                <Award className="w-5 h-5 text-scef-gold" />
+                Join as Program Ambassador
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Champion a specific SCEF program in your chapter and drive focused impact
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-3">
+                {programs.map((program) => {
+                  const ProgramIcon = program.icon;
+                  return (
+                    <Card 
+                      key={program.id} 
+                      className="border-2 border-black hover:border-scef-blue transition-colors cursor-pointer group"
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${program.color}`}>
+                            <ProgramIcon className="w-5 h-5" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-semibold text-sm group-hover:text-scef-blue transition-colors">
+                              {program.name}
+                            </h4>
+                            <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
+                              {program.description}
+                            </p>
+                            <Button 
+                              size="sm" 
+                              variant="outline"
+                              className="h-7 text-xs border-2 border-black"
+                              asChild
+                            >
+                              <Link to={`/get-involved/ambassador?program=${program.id}&country=${encodeURIComponent(selectedChapter?.country || '')}`}>
+                                Join as Ambassador
+                              </Link>
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Info Note */}
+            <div className="bg-muted/50 rounded-lg p-4 text-sm text-muted-foreground">
+              <p>
+                <strong>Note:</strong> Ambassador roles require an application review. You'll receive a confirmation 
+                once your application has been approved by the SCEF team.
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
