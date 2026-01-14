@@ -6,6 +6,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/contexts/LocaleContext";
 import { resolveThumbnail, getDefaultThumbnail } from "@/config/digitalBoardThumbnails";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface BoardItem {
   id: string;
@@ -164,44 +165,75 @@ export const DigitalBoard = () => {
             {/* Main Display */}
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image Side */}
-              <div className="relative aspect-video lg:aspect-auto lg:min-h-[400px]">
-                <img
-                  src={activeItem.thumbnail}
-                  alt={activeItem.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+              <div className="relative aspect-video lg:aspect-auto lg:min-h-[400px] overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={activeItem.id}
+                    src={activeItem.thumbnail}
+                    alt={activeItem.title}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-transparent lg:bg-gradient-to-t" />
                 
                 {/* Type Badge */}
-                <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full ${typeColors[activeItem.type as keyof typeof typeColors] || "bg-primary text-primary-foreground"} text-xs font-semibold flex items-center gap-2`}>
-                  <TypeIcon className="w-3 h-3" />
-                  {getTypeLabel(activeItem.type)}
-                </div>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`badge-${activeItem.id}`}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                    className={`absolute top-4 left-4 px-3 py-1.5 rounded-full ${typeColors[activeItem.type as keyof typeof typeColors] || "bg-primary text-primary-foreground"} text-xs font-semibold flex items-center gap-2`}
+                  >
+                    <TypeIcon className="w-3 h-3" />
+                    {getTypeLabel(activeItem.type)}
+                  </motion.div>
+                </AnimatePresence>
 
                 {/* Play Button for Video */}
                 {activeItem.type === "video" && (
                   <button className="absolute inset-0 flex items-center justify-center group">
-                    <div className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                    <motion.div 
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.2 }}
+                      className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"
+                    >
                       <Play className="w-8 h-8 text-earth ml-1" />
-                    </div>
+                    </motion.div>
                   </button>
                 )}
               </div>
 
               {/* Content Side */}
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-2xl lg:text-3xl font-bold text-cream mb-4">
-                  {activeItem.title}
-                </h3>
-                <p className="text-cream/70 text-lg mb-8 leading-relaxed">
-                  {activeItem.description}
-                </p>
-                <Button variant="hero" size="lg" className="self-start" asChild>
-                  <a href={activeItem.cta.href}>
-                    {activeItem.cta.text}
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
+              <div className="p-8 lg:p-12 flex flex-col justify-center overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`content-${activeItem.id}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                  >
+                    <h3 className="font-display text-2xl lg:text-3xl font-bold text-cream mb-4">
+                      {activeItem.title}
+                    </h3>
+                    <p className="text-cream/70 text-lg mb-8 leading-relaxed">
+                      {activeItem.description}
+                    </p>
+                    <Button variant="hero" size="lg" className="self-start" asChild>
+                      <a href={activeItem.cta.href}>
+                        {activeItem.cta.text}
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
