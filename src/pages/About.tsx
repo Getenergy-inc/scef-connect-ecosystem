@@ -731,7 +731,7 @@ const About = () => {
                 </div>
 
                 {/* CTAs */}
-                <div className="flex flex-wrap justify-center gap-4 mt-12">
+                <div className="flex flex-wrap justify-center gap-4 mt-12 mb-16">
                   <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
                     <Link to="/governance">
                       <Shield className="w-4 h-4" />
@@ -744,6 +744,282 @@ const About = () => {
                   <Button variant="outline" asChild>
                     <Link to="/partner-with-us">{t("about.history.ctaPartner")}</Link>
                   </Button>
+                </div>
+
+                {/* Partners & Relationships Section */}
+                <div className="border-t border-border pt-16">
+                  <div className="text-center mb-12">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-4">
+                      <Handshake className="w-4 h-4" />
+                      {t("about.history.partnersSection.title")}
+                    </div>
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                      {t("about.history.partnersSection.subtitle")}
+                    </p>
+                  </div>
+
+                  {/* Government & Public Institutions */}
+                  <div className="mb-10">
+                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Building2 className="w-5 h-5 text-scef-blue" />
+                      {t("about.history.partnersSection.categories.government")}
+                    </h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { key: "kwaraMoe", icon: Building2 },
+                        { key: "kwaraLib", icon: BookOpen },
+                        { key: "kwaraTourism", icon: MapPin },
+                        { key: "kwaraWomen", icon: Heart },
+                        { key: "kwaraYouth", icon: Users },
+                        { key: "nyscKwara", icon: Users },
+                      ].map((partner) => {
+                        const Icon = partner.icon;
+                        return (
+                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-blue/30 transition-colors">
+                            <div className="flex items-start gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0">
+                                <Icon className="w-5 h-5 text-scef-blue" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
+                                </h5>
+                                <p className="text-xs text-scef-gold font-medium mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
+                                </p>
+                                <p className="text-xs text-muted-foreground line-clamp-2">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.relationship`)}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Development & International Organizations */}
+                  <div className="mb-10">
+                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Globe className="w-5 h-5 text-scef-gold" />
+                      {t("about.history.partnersSection.categories.development")}
+                    </h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { key: "esspin", icon: GraduationCap },
+                        { key: "pharmAccess", icon: Heart },
+                        { key: "vso", icon: Users },
+                        { key: "csacefa", icon: Award },
+                        { key: "fawe", icon: Heart },
+                      ].map((partner) => {
+                        const Icon = partner.icon;
+                        return (
+                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-gold/30 transition-colors">
+                            <div className="flex items-start gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-scef-gold/10 flex items-center justify-center shrink-0">
+                                <Icon className="w-5 h-5 text-scef-gold" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
+                                </h5>
+                                <p className="text-xs text-scef-gold font-medium mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
+                                </p>
+                                <p className="text-xs text-muted-foreground line-clamp-2">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.relationship`)}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Media Partners */}
+                  <div className="mb-10">
+                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Tv className="w-5 h-5 text-scef-blue" />
+                      {t("about.history.partnersSection.categories.media")}
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {[
+                        { key: "radioKwara", icon: Radio },
+                        { key: "kwaraTv", icon: Tv },
+                      ].map((partner) => {
+                        const Icon = partner.icon;
+                        return (
+                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-blue/30 transition-colors">
+                            <div className="flex items-start gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0">
+                                <Icon className="w-5 h-5 text-scef-blue" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
+                                </h5>
+                                <p className="text-xs text-scef-gold font-medium mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
+                                </p>
+                                <p className="text-xs text-muted-foreground">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.description`)}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Educational Institutions */}
+                  <div className="mb-10">
+                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <School className="w-5 h-5 text-scef-gold" />
+                      {t("about.history.partnersSection.categories.education")}
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="bg-card rounded-xl p-4 border border-border hover:border-scef-gold/30 transition-colors">
+                        <div className="flex items-start gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-scef-gold/10 flex items-center justify-center shrink-0">
+                            <School className="w-5 h-5 text-scef-gold" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                              {t("about.history.partnersSection.partners.collegeIlorin.name")}
+                            </h5>
+                            <p className="text-xs text-scef-gold font-medium mb-1">
+                              {t("about.history.partnersSection.partners.collegeIlorin.period")}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              {t("about.history.partnersSection.partners.collegeIlorin.description")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Volunteer & Talent Networks */}
+                  <div className="mb-10">
+                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Users className="w-5 h-5 text-scef-blue" />
+                      {t("about.history.partnersSection.categories.volunteer")}
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {[
+                        { key: "aiesec", icon: Globe },
+                        { key: "volunteerMatch", icon: Users },
+                      ].map((partner) => {
+                        const Icon = partner.icon;
+                        return (
+                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-blue/30 transition-colors">
+                            <div className="flex items-start gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0">
+                                <Icon className="w-5 h-5 text-scef-blue" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
+                                </h5>
+                                <p className="text-xs text-scef-gold font-medium mb-1">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
+                                </p>
+                                <p className="text-xs text-muted-foreground">
+                                  {t(`about.history.partnersSection.partners.${partner.key}.description`)}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Corporate & CSR Partners - Featured */}
+                  <div className="mb-10">
+                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Handshake className="w-5 h-5 text-scef-gold" />
+                      {t("about.history.partnersSection.categories.corporate")}
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* PKIS - Featured */}
+                      <div className="bg-gradient-to-br from-scef-gold/10 to-scef-gold/5 rounded-2xl p-6 border-2 border-scef-gold/30">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-gold text-scef-blue font-bold">
+                            Founding Partner
+                          </span>
+                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-blue/10 text-scef-blue font-medium">
+                            21+ Years
+                          </span>
+                        </div>
+                        <h5 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.partnersSection.partners.pkis.name")}
+                        </h5>
+                        <p className="text-sm text-scef-gold font-medium mb-2">
+                          {t("about.history.partnersSection.partners.pkis.period")}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-3">
+                          {t("about.history.partnersSection.partners.pkis.description")}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-2 py-1 text-xs rounded-full bg-scef-gold/20 text-scef-gold">CSR Support</span>
+                          <span className="px-2 py-1 text-xs rounded-full bg-scef-gold/20 text-scef-gold">eLibrary Services</span>
+                          <span className="px-2 py-1 text-xs rounded-full bg-scef-gold/20 text-scef-gold">SCEF–FMS</span>
+                        </div>
+                      </div>
+
+                      {/* Get Energy - Featured */}
+                      <div className="bg-gradient-to-br from-scef-blue/10 to-scef-blue/5 rounded-2xl p-6 border-2 border-scef-blue/30">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-blue text-white font-bold">
+                            Founding Partner
+                          </span>
+                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-gold/10 text-scef-gold font-medium">
+                            New Partnership
+                          </span>
+                        </div>
+                        <h5 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.partnersSection.partners.getEnergy.name")}
+                        </h5>
+                        <p className="text-sm text-scef-blue font-medium mb-2">
+                          {t("about.history.partnersSection.partners.getEnergy.period")}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-3">
+                          {t("about.history.partnersSection.partners.getEnergy.description")}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-2 py-1 text-xs rounded-full bg-scef-blue/20 text-scef-blue">CSR Partner</span>
+                          <span className="px-2 py-1 text-xs rounded-full bg-scef-blue/20 text-scef-blue">Energy Sector</span>
+                          <span className="px-2 py-1 text-xs rounded-full bg-scef-blue/20 text-scef-blue">SCEF–FMS</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Partner CTA */}
+                  <div className="bg-scef-blue rounded-2xl p-8 text-center">
+                    <h4 className="font-display text-xl font-bold text-white mb-3">
+                      Join Our Partnership Network
+                    </h4>
+                    <p className="text-white/70 mb-6 max-w-lg mx-auto">
+                      Partner with SCEF to deliver accountable education impact across Africa through CSR, institutional partnerships, or media collaboration.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
+                        <Link to="/partner-with-us">
+                          <Handshake className="w-4 h-4" />
+                          Partner With Us
+                        </Link>
+                      </Button>
+                      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                        <Link to="/partners">
+                          View All Partners
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
