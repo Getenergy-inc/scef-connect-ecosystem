@@ -44,6 +44,7 @@ const About = () => {
 
   const quickNavItems = [
     { id: "who-we-are", label: t("about.quickNav.whoWeAre") },
+    { id: "history", label: t("nav.dropdown.about.history") },
     { id: "why-we-exist", label: t("about.quickNav.whyWeExist") },
     { id: "what-we-do", label: t("about.quickNav.whatWeDo") },
     { id: "tvet-inclusion", label: t("about.quickNav.tvetInclusion") },
@@ -451,7 +452,303 @@ const About = () => {
             </div>
           </section>
 
-          {/* WHY WE EXIST */}
+          {/* OUR HISTORY */}
+          <section id="history" className="py-20 bg-muted/30 border-y border-border">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/10 text-scef-gold text-sm font-medium mb-6">
+                    <Clock className="w-4 h-4" />
+                    {t("about.history.badge")}
+                  </div>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    {t("about.history.title")}
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    {t("about.history.intro")}
+                  </p>
+                </div>
+
+                {/* Timeline */}
+                <div className="relative">
+                  {/* Timeline Line */}
+                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-scef-gold/30 -translate-x-1/2" />
+                  
+                  {/* Timeline Items */}
+                  <div className="space-y-8">
+                    {/* 1997 - Origins */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
+                          1997
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.1997.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {t("about.history.timeline.1997.description")}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 2003 - Advocacy Launch */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8 md:order-1 order-1">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
+                          2003
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2003.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10 md:order-2 order-2">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.2003.description")}
+                        </p>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <Radio className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span><strong className="text-foreground">"It's In Me"</strong> — youth empowerment radio program</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <Tv className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span><strong className="text-foreground">"A Time with Santos"</strong> — TV program</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <MapPin className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span><strong className="text-foreground">Nija Youth Tours</strong> — cultural education initiative</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 2003-2007 - Early Partnerships */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
+                          2003–2007
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2003-2007.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.2003-2007.description")}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {["Kwara State Ministry of Education", "PharmAccess Foundation", "AIESEC", "VSO", "ESSPIN", "Radio Kwara", "Kwara TV"].map((partner, i) => (
+                            <span key={i} className="px-2 py-1 text-xs rounded-full bg-scef-gold/10 text-scef-gold border border-scef-gold/20">
+                              {partner}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 2010 - Registration */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
+                          2010
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2010.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {t("about.history.timeline.2010.description")}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 2012-2019 - Youth Development */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
+                          2012–2019
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2012-2019.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.2012-2019.description")}
+                        </p>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2 text-sm">
+                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Trained and empowered <strong className="text-foreground">15,000+ youth</strong></span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Delivered ICT and entrepreneurial training</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Expanded operational influence statewide</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 2012-2021 - eLibrary */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
+                          2012–2021
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2012-2021.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.2012-2021.description")}
+                        </p>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2 text-sm">
+                            <BookOpen className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Public access to digital educational resources</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <Laptop className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Digital literacy training for students & educators</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <Globe className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Development of eLibraryNigeria.ng</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 2002-2025 - Global Engagement */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
+                          2002–2025
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2002-2025-engagement.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.2002-2025-engagement.description")}
+                        </p>
+                        <div className="bg-scef-gold/10 rounded-lg p-4 border border-scef-gold/20">
+                          <p className="text-sm text-foreground font-semibold mb-2">2,000+ participants worldwide including:</p>
+                          <ul className="text-sm text-muted-foreground space-y-1">
+                            <li>• Staff, interns, volunteers, consultants</li>
+                            <li>• BOT & BOA members</li>
+                            <li>• Online and office support teams</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 2024-Present - SCEF-FMS */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
+                          2024–Present
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.2024-present.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.2024-present.description")}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">
+                            PKIS (PanCokrato) — since 2003
+                          </span>
+                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">
+                            Get Energy — since 2024
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Today - Pan-African Model */}
+                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                      <div className="md:w-1/2 md:text-right md:pr-8">
+                        <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-scef-gold to-scef-blue text-white text-sm font-bold mb-2">
+                          Today
+                        </span>
+                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                          {t("about.history.timeline.today.title")}
+                        </h3>
+                      </div>
+                      <div className="absolute left-4 md:left-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-scef-gold to-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
+                      <div className="md:w-1/2 md:pl-8 pl-10">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                          {t("about.history.timeline.today.description")}
+                        </p>
+                        <ul className="space-y-2 mb-4">
+                          <li className="flex items-start gap-2 text-sm">
+                            <Award className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Standards & recognition (NESA-Africa)</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <Laptop className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Digital learning platforms (EOA, eLibrary)</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <Tv className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Media advocacy (TV, radio, webinars)</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <Globe className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Local chapters with compliance tracking</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-sm">
+                            <Shield className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">Accountability systems aligned with SDG 4 & AU 2063</span>
+                          </li>
+                        </ul>
+                        <p className="text-sm text-foreground font-medium italic">
+                          {t("about.history.timeline.today.closing")}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-wrap justify-center gap-4 mt-12">
+                  <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
+                    <Link to="/governance">
+                      <Shield className="w-4 h-4" />
+                      {t("about.history.ctaGovernance")}
+                    </Link>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <Link to="/programs">{t("about.history.ctaPrograms")}</Link>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <Link to="/partner-with-us">{t("about.history.ctaPartner")}</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section id="why-we-exist" className="py-20 bg-muted/30 border-y border-border">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">

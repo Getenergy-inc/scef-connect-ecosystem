@@ -559,8 +559,124 @@
     },
     "history": {
       "title": "Our History",
-      "body": "SCEF has evolved over time into a pan-African membership-driven platform — supporting education systems through programs, media, local chapters, and accountable partnerships.",
-      "ctaGovernance": "View Governance"
+      "badge": "1997 – Present",
+      "intro": "Santos Creations Educational Foundation (SCEF) has evolved from a personal initiative into a structured, membership-driven Pan-African education foundation focused on improving learning access, quality, inclusion, skills, and accountability—across Africa's five regions (North, West, Central, East, Southern) with additional support from a sixth region: the African diaspora.",
+      "ctaGovernance": "View Governance",
+      "ctaPrograms": "Explore Programs",
+      "ctaPartner": "Partner With Us",
+      "timeline": {
+        "1997": {
+          "year": "1997",
+          "title": "Origins — Foundation of the Vision",
+          "description": "SCEF's journey began in 1997 as a creative and civic hobby led by Engr. Babashola Santos Vincent Aderibigbe (Chief Visionary Officer, CVO). While studying engineering at the Federal University of Technology, Minna (FUT Minna) in Minna, Niger State, Nigeria, he produced tourism postcards as an early tool for communication, education, and community engagement. This formative phase established the discipline of using media and structured initiatives to support public learning and youth development."
+        },
+        "2003": {
+          "year": "2003",
+          "title": "Advocacy Launch — Formal Education Initiatives Begin",
+          "description": "On October 14, 2003, shortly after completing National Youth Service (NYSC) in Ilorin, Kwara State, the initiative transitioned into a structured education advocacy platform.",
+          "programs": [
+            "\"It's In Me\" — a youth empowerment radio program focused on career guidance, personal development, and leadership",
+            "\"A Time with Santos\" — a TV program engaging young people on education, entrepreneurship, and community development",
+            "Nija Youth Tours — a youth tourism education initiative promoting cultural heritage, history, and leadership through experiential learning"
+          ]
+        },
+        "2003-2007": {
+          "year": "2003–2007",
+          "title": "Early Partnerships — Institutional Expansion",
+          "description": "Between 2003 and 2007, SCEF expanded reach through collaborations with public institutions, media platforms, and development organizations.",
+          "partners": [
+            "Kwara State Ministry of Education",
+            "Kwara State Library Board",
+            "PharmAccess Foundation",
+            "Kwara State Tourism Board",
+            "Kwara State Ministry of Women Affairs",
+            "College of Education, Ilorin",
+            "AIESEC",
+            "Voluntary Service Overseas (VSO)",
+            "Radio Kwara & Midland FM",
+            "Kwara TV",
+            "NYSC Kwara",
+            "ESSPIN (Education Sector Support Programme in Nigeria)"
+          ]
+        },
+        "2010": {
+          "year": "2010",
+          "title": "Registration and Formalization",
+          "description": "SCEF was registered in 2010, establishing a more formal institutional structure to support long-term program delivery, governance, and partnerships."
+        },
+        "2012-2019": {
+          "year": "2012–2019",
+          "title": "Large-Scale Youth Development & Skills Delivery",
+          "description": "From 2012 to 2019, SCEF partnered with the Kwara State Government through the Office of the Special Adviser on Youth Empowerment. Under SCEF Consultancy Services, the foundation:",
+          "achievements": [
+            "Trained and empowered 15,000+ youth in vocational skills and leadership",
+            "Delivered ICT and entrepreneurial training for employability and job creation",
+            "Expanded operational influence beyond a single state through replicable delivery methods"
+          ]
+        },
+        "2012-2021": {
+          "year": "2012–2021",
+          "title": "Public Digital Learning Infrastructure — eLibrary",
+          "description": "From 2012 to 2021, SCEF managed the Kwara State eLibrary under its PKIS eLibrary Services, delivering:",
+          "achievements": [
+            "Public access to digital educational resources",
+            "Student and educator training in digital literacy",
+            "Development and management of eLibraryNigeria.ng as an academic resource hub"
+          ]
+        },
+        "esspin": {
+          "year": "2012–2019",
+          "title": "Educator Capacity Building — ESSPIN Collaboration",
+          "description": "SCEF partnered with ESSPIN to strengthen educator ICT capacity across Kwara State, supporting:",
+          "achievements": [
+            "Improved digital teaching competencies",
+            "Stronger technology integration in classrooms",
+            "Reduction of ICT skills gaps among teachers"
+          ]
+        },
+        "2002-2025-engagement": {
+          "year": "2002–2025",
+          "title": "Global Engagement, Volunteering & Workforce Pathways",
+          "description": "Across the broader period 2002 to 2025, SCEF enabled participation pathways for 2,000+ individuals worldwide as:",
+          "participants": [
+            "Staff, interns, volunteers, volunteer consultants",
+            "Board of Trustees (BOT) members and Board of Advisors (BOA) members",
+            "Online and office support teams"
+          ]
+        },
+        "financing": {
+          "year": "2002–2025",
+          "title": "Financing and Sustainability",
+          "description": "SCEF's programs have been sustained through a blended financing model that includes partnerships, sponsorships, and consulting services:",
+          "sources": [
+            "Airtime partnerships with Radio Kwara",
+            "Consultancy services supporting government youth empowerment initiatives",
+            "Sponsorship support for \"It's In Me\"",
+            "Consulting services for PharmAccess (including focus group discussions)",
+            "ICT training delivery at Kwara State Library",
+            "Volunteer talent contributions through AIESEC, Volunteer Match, and VSO",
+            "CSR support from Pancokrato Integrated Services (PKIS) and Get Energy Trading Services"
+          ]
+        },
+        "2024-present": {
+          "year": "2024–Present",
+          "title": "Structured CSR for Education Funds Management (SCEF–FMS)",
+          "description": "Building on two decades of program delivery and accountability practice, SCEF is advancing a structured CSR for Education Funds Management System (SCEF–FMS) to help partners deploy education CSR budgets with verified project selection, tracked disbursement, and measurable outcomes. The system is launching with two founding partners: PKIS (PanCokrato) (relationship since 2003) and Get Energy Trading Services (since 2024)—setting an early benchmark for outcomes-driven, auditable CSR education deployment in Africa."
+        },
+        "today": {
+          "year": "Today",
+          "title": "A Pan-African Delivery Model — Africa + Diaspora",
+          "description": "SCEF now operates as a governance-backed education impact ecosystem built around:",
+          "pillars": [
+            "Standards & recognition (NESA-Africa + endorsed certification/verification services)",
+            "Digital learning and certification platforms (EOA, eLibrary)",
+            "Media advocacy (TV, radio, webinars, podcasts)",
+            "Local chapters (physical and online) with compliance tracking",
+            "Partner-ready accountability systems aligned with SDG 4 and AU Agenda 2063"
+          ],
+          "closing": "This history informs SCEF's current direction: building renewable, multi-year partnerships and scaling Education for All across Africa's five regions—with active contribution from the diaspora as a sixth region of support."
+        }
+      }
     },
     "vision": {
       "title": "Vision 2035",
