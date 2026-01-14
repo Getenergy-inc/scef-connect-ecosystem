@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/contexts/LocaleContext";
-import { Handshake, ExternalLink } from "lucide-react";
+import { Handshake, ExternalLink, Filter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface CRSPartner {
   id: string;
@@ -10,23 +13,47 @@ interface CRSPartner {
   logo_url: string;
   website_url: string | null;
   service_description: string;
+  service_category: string | null;
   partner_since: number;
 }
 
 interface CRSPartnersSectionProps {
   variant?: "full" | "compact";
   className?: string;
+  showFilters?: boolean;
 }
 
-export const CRSPartnersSection = ({ variant = "full", className = "" }: CRSPartnersSectionProps) => {
+// Service categories for filtering
+const serviceCategories = [
+  { value: "all", label: "All Partners" },
+  { value: "operations", label: "Operations" },
+  { value: "energy", label: "Energy" },
+  { value: "technology", label: "Technology" },
+  { value: "logistics", label: "Logistics" },
+  { value: "legal", label: "Legal" },
+  { value: "finance", label: "Finance" },
+  { value: "marketing", label: "Marketing" },
+  { value: "hr", label: "Human Resources" },
+  { value: "consulting", label: "Consulting" },
+  { value: "facilities", label: "Facilities" },
+  { value: "security", label: "Security" },
+  { value: "other", label: "Other" },
+];
+
+export const CRSPartnersSection = ({ 
+  variant = "full", 
+  className = "",
+  showFilters = true 
+}: CRSPartnersSectionProps) => {
   const { t } = useLocale();
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const { data: partners, isLoading } = useQuery({
     queryKey: ["crs-partners"],
     queryFn: async () => {
       const { data, error } = await supabase
         .from("crs_partners")
-        .select("id, name, acronym, logo_url, website_url, service_description, partner_since")
+        .select("id, name, acronym, logo_url, website_url, service_description, service_category, partner_since")
         .eq("is_active", true)
         .order("display_order", { ascending: true });
       if (error) throw error;
@@ -35,6 +62,16 @@ export const CRSPartnersSection = ({ variant = "full", className = "" }: CRSPart
   });
 
   if (isLoading || !partners?.length) return null;
+
+  // Filter partners by category
+  const filteredPartners = selectedCategory === "all" 
+    ? partners 
+    : partners.filter(p => p.service_category === selectedCategory);
+
+  // Get available categories (only show categories that have partners)
+  const availableCategories = serviceCategories.filter(cat => 
+    cat.value === "all" || partners.some(p => p.service_category === cat.value)
+  );
 
   if (variant === "compact") {
     return (
@@ -82,8 +119,35 @@ export const CRSPartnersSection = ({ variant = "full", className = "" }: CRSPart
           </p>
         </div>
 
+        {/* Category Filters */}
+        {showFilters && availableCategories.length > 2 && (
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+            <Filter className="w-4 h-4 text-muted-foreground mr-2" />
+            {availableCategories.map((cat) => (
+              <Button
+                key={cat.value}
+                variant={selectedCategory === cat.value ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory(cat.value)}
+                className={cn(
+                  "rounded-full",
+                  selectedCategory === cat.value && "bg-primary text-primary-foreground"
+                )}
+              >
+                {cat.label}
+                {cat.value !== "all" && (
+                  <span className="ml-1 text-xs opacity-70">
+                    ({partners.filter(p => p.service_category === cat.value).length})
+                  </span>
+                )}
+              </Button>
+            ))}
+          </div>
+        )}
+
+        {/* Partners Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {partners.map((partner) => (
+          {filteredPartners.map((partner) => (
             <a
               key={partner.id}
               href={partner.website_url || "#"}
@@ -109,10 +173,20 @@ export const CRSPartnersSection = ({ variant = "full", className = "" }: CRSPart
                 </div>
                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
               </div>
+              
+              {/* Category Badge */}
+              {partner.service_category && (
+                <div className="mb-3">
+                  <span className="inline-flex px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium capitalize">
+                    {serviceCategories.find(c => c.value === partner.service_category)?.label || partner.service_category}
+                  </span>
+                </div>
+              )}
+              
               <div className="space-y-2 text-sm">
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Service:</span>
-                  <span className="font-medium text-foreground">{partner.service_description}</span>
+                  <span className="font-medium text-foreground text-right">{partner.service_description}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Partner since:</span>
@@ -122,6 +196,13 @@ export const CRSPartnersSection = ({ variant = "full", className = "" }: CRSPart
             </a>
           ))}
         </div>
+
+        {/* No results message */}
+        {filteredPartners.length === 0 && (
+          <div className="text-center py-12 text-muted-foreground">
+            No partners found in this category.
+          </div>
+        )}
       </div>
     </section>
   );
