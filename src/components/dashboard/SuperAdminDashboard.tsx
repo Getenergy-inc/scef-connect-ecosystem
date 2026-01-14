@@ -191,7 +191,7 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
             { icon: MapPin, label: "Chapters", href: "/dashboard/chapters", color: "text-teal-500" },
             { icon: Briefcase, label: "Programs", href: "/dashboard/programs", color: "text-purple-500" },
             { icon: Wallet, label: "Wallets", href: "/dashboard/wallets", color: "text-amber-500" },
-            { icon: Award, label: "Roles", href: "/dashboard/roles", color: "text-orange-500" },
+            { icon: Award, label: "Endorsements", href: "/admin/endorsements", color: "text-emerald-500" },
             { icon: BookOpen, label: "eLibrary", href: "/dashboard/elibrary", color: "text-blue-500" },
             { icon: ClipboardList, label: "Digital Board", href: "/admin/digital-board", color: "text-indigo-500" },
             { icon: Heart, label: "CRS Partners", href: "/admin/crs-partners", color: "text-pink-500" },
