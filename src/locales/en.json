@@ -797,6 +797,36 @@
       "title": "Programs & Initiatives",
       "subtitle": "SCEF delivers impact through flagship programs designed to work together on access, quality, inclusion, skills, and recognition."
     },
+    "items": {
+      "nesa": {
+        "title": "NESA Africa",
+        "subtitle": "Recognizing and amplifying educational excellence."
+      },
+      "eduaid": {
+        "title": "EduAid Africa",
+        "subtitle": "Scholarships, support pathways, and education funding."
+      },
+      "rmsa": {
+        "title": "RMSA",
+        "subtitle": "Rebuild My School Africa – School renewal and better learning environments."
+      },
+      "womenGirls": {
+        "title": "Women & Girls Education",
+        "subtitle": "Targeted interventions for access and outcomes."
+      },
+      "specialNeeds": {
+        "title": "Special Needs Education Support",
+        "subtitle": "Inclusion and support for learners with special needs."
+      },
+      "eoa": {
+        "title": "Education Online Africa (EOA)",
+        "subtitle": "Learn. Get Certified. Renew. Be Employable. – Digital learning & verifiable credentials."
+      },
+      "elibrary": {
+        "title": "eLibrary Nigeria",
+        "subtitle": "Free and curated learning resources."
+      }
+    },
     "categories": {
       "education": {
         "title": "Education Programs",
