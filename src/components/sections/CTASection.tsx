@@ -22,7 +22,7 @@ export const CTASection = () => {
             {t("home.final.title")}
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            {t("home.hero.subtitle")}
+            {t("home.hero.summary")}
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export const CTASection = () => {
             <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
               <Link to="/contact">
                 <Mail className="w-4 h-4" />
-                {t("footer.contact")}
+                {t("footer.columns.contact")}
               </Link>
             </Button>
             <span className="text-white/40 hidden sm:inline">|</span>

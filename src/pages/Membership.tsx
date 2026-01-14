@@ -86,8 +86,8 @@ const Membership = () => {
   return (
     <>
       <Helmet>
-        <title>{t("home.hero.ctaPrimary")} - SCEF</title>
-        <meta name="description" content={t("about.hero.subtitle")} />
+        <title>{t("membership.hero.title")} - SCEF</title>
+        <meta name="description" content={t("membership.hero.subtitle")} />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -103,10 +103,10 @@ const Membership = () => {
                   <Users className="w-10 h-10 text-scef-blue" />
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  {t("home.hero.ctaPrimary")}
+                  {t("membership.hero.title")}
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed">
-                  {t("about.hero.subtitle")}
+                  {t("membership.hero.subtitle")}
                 </p>
                 
                 {/* Show join context if coming from join-online flow */}
@@ -258,7 +258,7 @@ const Membership = () => {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
                 <Button size="lg" className="bg-transparent text-white border-2 border-scef-gold hover:bg-scef-gold/20" asChild>
-                  <Link to="/contact">{t("footer.contact")}</Link>
+                  <Link to="/contact">{t("footer.columns.contact")}</Link>
                 </Button>
               </div>
             </div>

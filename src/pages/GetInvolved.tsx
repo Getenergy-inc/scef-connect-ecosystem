@@ -14,24 +14,24 @@ const GetInvolved = () => {
   const involvementOptions = [
     {
       id: "member",
-      title: t("nav.dropdown.getInvolved.member"),
-      description: t("about.hero.subtitle"),
+      title: t("getInvolved.options.member.title"),
+      description: t("getInvolved.options.member.description"),
       icon: Users,
       benefits: [
-        t("membership.benefits.learning") || "Access to exclusive programs and events",
-        t("membership.benefits.voting") || "Voting rights in NESA Awards",
-        t("membership.benefits.chapters") || "Connect with chapters nationwide",
-        t("membership.benefits.impact") || "Receive impact reports",
+        "Access to exclusive programs and events",
+        "Voting rights in NESA Awards",
+        "Connect with chapters nationwide",
+        "Receive impact reports",
         "Member dashboard access",
       ],
-      cta: t("home.hero.ctaPrimary"),
+      cta: t("membership.cta.join"),
       href: "/membership",
       color: "from-gold to-gold-light",
     },
     {
       id: "ambassador",
-      title: t("nav.dropdown.getInvolved.ambassador"),
-      description: t("home.hero.ctaAmbassador"),
+      title: t("getInvolved.options.ambassador.title"),
+      description: t("getInvolved.options.ambassador.description"),
       icon: Award,
       benefits: [
         "Leadership training and certification",
@@ -40,14 +40,14 @@ const GetInvolved = () => {
         "Networking opportunities",
         "Recognition in media",
       ],
-      cta: t("home.hero.ctaAmbassador"),
+      cta: t("cta.becomeAmbassador"),
       href: "/ambassador",
       color: "from-terracotta to-terracotta-light",
     },
     {
       id: "volunteer",
-      title: t("nav.dropdown.getInvolved.volunteer"),
-      description: t("home.media.ctaVolunteer"),
+      title: t("getInvolved.options.volunteer.title"),
+      description: t("getInvolved.options.volunteer.description"),
       icon: HandHeart,
       benefits: [
         "Flexible commitment options",
@@ -56,7 +56,7 @@ const GetInvolved = () => {
         "Volunteer network access",
         "Make direct impact",
       ],
-      cta: t("nav.dropdown.getInvolved.volunteer"),
+      cta: t("getInvolved.options.volunteer.title"),
       href: "/volunteer",
       email: emailDirectory.volunteer,
       color: "from-forest to-forest-light",
@@ -159,7 +159,7 @@ const GetInvolved = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="/contact">{t("footer.contact")}</Link>
+                  <Link to="/contact">{t("footer.columns.contact")}</Link>
                 </Button>
                 <Button size="lg" asChild>
                   <Link to="/partners">Partner With Us</Link>

@@ -21,14 +21,14 @@ const Index = () => {
         <title>{t("home.hero.title")} - SCEF</title>
         <meta 
           name="description" 
-          content={t("home.hero.subtitle")} 
+          content={t("home.hero.summary")} 
         />
         <meta name="keywords" content="African education, SCEF, education governance, Pan-African, scholarships Africa, NESA Africa, AEPC certification" />
         <link rel="canonical" href="https://scef.org" />
         
         {/* Open Graph */}
         <meta property="og:title" content="SCEF - Santos Creations Educational Foundation" />
-        <meta property="og:description" content={t("home.hero.subtitle")} />
+        <meta property="og:description" content={t("home.hero.summary")} />
         <meta property="og:type" content="website" />
         
         {/* Structured Data */}
