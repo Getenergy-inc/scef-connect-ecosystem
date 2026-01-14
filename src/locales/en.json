@@ -339,16 +339,63 @@
     },
     "whyWeExist": {
       "title": "Why We Exist",
-      "intro": "Across Africa, learning is still limited by:",
-      "challenges": [
-        "Unsafe or under-equipped school environments",
-        "Poor access to skills training and TVET labs",
-        "Gaps in inclusion for learners with disabilities",
-        "Funding constraints and low accountability",
-        "Limited pathways from learning to decent work"
-      ],
-      "solution": "SCEF exists to change that",
-      "solutionDesc": "—by building a governance-backed, chapter-driven delivery model that makes education transformation measurable, inclusive, and scalable."
+      "intro": "Across Africa, learning outcomes are constrained by infrastructure gaps, uneven access to skills training, limited inclusion systems, weak funding accountability, and unclear pathways from learning to decent work. SCEF exists to address these constraints through a governance-backed, chapter-driven delivery model that is measurable, inclusive, and scalable.",
+      "expandAll": "Expand all",
+      "collapseAll": "Collapse all",
+      "closing": "SCEF exists to change that—by building a governance-backed, chapter-driven delivery model that makes education transformation measurable, inclusive, and scalable.",
+      "challenges": {
+        "schools": {
+          "title": "Unsafe or under-equipped school environments",
+          "summary": "Many schools operate without safe facilities, adequate classrooms, learning materials, or minimum standards for basic learning conditions.",
+          "points": [
+            "Typical gaps include unsafe buildings, overcrowding, limited water/sanitation, insufficient furniture, and weak learning resource availability.",
+            "These constraints reduce attendance, learning time, teacher effectiveness, and student performance."
+          ],
+          "response": "Rebuild My School Africa (RMSA) pipeline for verified school needs, partner-ready implementation plans, and documented before/after reporting."
+        },
+        "tvet": {
+          "title": "Poor access to skills training and TVET labs",
+          "summary": "Youth employability is limited when learning is not connected to practical skills, industry readiness, or local economic opportunity.",
+          "points": [
+            "TVET labs, starter tools, and applied learning environments are often missing or inaccessible.",
+            "Where training exists, it may lack certification pathways or linkages to work-based learning."
+          ],
+          "response": "TVET-aligned support, practical learning enablement, and integration with digital learning and verifiable certification through EOA and related pathways."
+        },
+        "inclusion": {
+          "title": "Gaps in inclusion for learners with disabilities",
+          "summary": "Inclusive education is constrained by limited assistive tools, inaccessible learning content, and insufficient teacher support.",
+          "points": [
+            "Barriers include lack of learning aids, poor accessibility in school design, and limited inclusion training for educators.",
+            "Learners may be excluded from mainstream pathways or lack consistent support services."
+          ],
+          "response": "Special Needs Education Support and inclusion advocacy, assistive learning support pathways, and partner-backed deployment models."
+        },
+        "funding": {
+          "title": "Funding constraints and low accountability",
+          "summary": "Education funding gaps persist, and where funding exists, impact can be difficult to verify without strong governance and reporting.",
+          "points": [
+            "Challenges include fragmented funding, unclear project verification, weak tracking, and limited measurable outcome reporting.",
+            "Partners increasingly require ESG/SDG-aligned reporting and documented governance controls."
+          ],
+          "response": "Funding governance and reporting through SCEF CSR for Education Funds Management Services (SCEF–FMS): verified project pipeline, tracked disbursement, documentation, and quarterly outcome measurement."
+        },
+        "pathways": {
+          "title": "Limited pathways from learning to decent work",
+          "summary": "Learners often face weak transitions from schooling into employability, entrepreneurship, or structured workforce readiness.",
+          "points": [
+            "Career guidance, mentorship, and applied skills pathways are uneven across regions.",
+            "Without practical readiness and credible certification, learners struggle to demonstrate competency."
+          ],
+          "response": "Workforce readiness support via TVET + digital certification, media-driven career guidance (radio/TV/webinars), and local chapter delivery models that connect learners to local opportunity networks."
+        }
+      },
+      "cta": {
+        "programs": "Explore Our Programs",
+        "chapters": "Join a Chapter",
+        "partner": "Partner With Us",
+        "donate": "Donate"
+      }
     },
     "whatWeDo": {
       "title": "What We Do",
