@@ -11,7 +11,8 @@ const tabs = [
   { id: "projects", label: "Projects", href: "/dashboard/programs" },
   { id: "scholarships", label: "Scholarships & Grants", href: "/dashboard/scholarships" },
   { id: "wallet", label: "Wallet & Transactions", href: "/dashboard/wallets" },
-  { id: "users", label: "Users & Profiles", href: "/dashboard/users" }
+  { id: "users", label: "Users & Profiles", href: "/dashboard/users" },
+  { id: "crs-partners", label: "CRS Partners", href: "/admin/crs-partners" }
 ];
 
 export function QuickActionsTabs({ activeTab = "dashboard" }: QuickActionsTabsProps) {

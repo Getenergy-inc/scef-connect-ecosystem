@@ -194,8 +194,8 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
             { icon: Award, label: "Roles", href: "/dashboard/roles", color: "text-orange-500" },
             { icon: BookOpen, label: "eLibrary", href: "/dashboard/elibrary", color: "text-blue-500" },
             { icon: ClipboardList, label: "Digital Board", href: "/admin/digital-board", color: "text-indigo-500" },
+            { icon: Heart, label: "CRS Partners", href: "/admin/crs-partners", color: "text-pink-500" },
             { icon: Briefcase, label: "Vacancies", href: "/admin/vacancies", color: "text-green-500" },
-            { icon: Settings, label: "CMS", href: "/dashboard/cms", color: "text-slate-500" },
           ].map((action) => (
             <Button 
               key={action.label}
