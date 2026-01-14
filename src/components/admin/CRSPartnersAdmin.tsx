@@ -18,6 +18,7 @@ interface CRSPartner {
   logo_url: string;
   website_url: string | null;
   service_description: string;
+  service_category: string | null;
   partner_since: number;
   description: string | null;
   display_order: number | null;
@@ -175,7 +176,7 @@ export const CRSPartnersAdmin = () => {
       logo_url: partner.logo_url,
       website_url: partner.website_url || "",
       service_description: partner.service_description,
-      service_category: "operations", // Default category for existing partners
+      service_category: partner.service_category || "operations",
       partner_since: partner.partner_since,
       description: partner.description || "",
       display_order: partner.display_order || 0,

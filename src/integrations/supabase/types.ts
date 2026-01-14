@@ -399,6 +399,7 @@ export type Database = {
           logo_url: string
           name: string
           partner_since: number
+          service_category: string | null
           service_description: string
           updated_at: string
           website_url: string | null
@@ -413,6 +414,7 @@ export type Database = {
           logo_url: string
           name: string
           partner_since: number
+          service_category?: string | null
           service_description: string
           updated_at?: string
           website_url?: string | null
@@ -427,6 +429,7 @@ export type Database = {
           logo_url?: string
           name?: string
           partner_since?: number
+          service_category?: string | null
           service_description?: string
           updated_at?: string
           website_url?: string | null
