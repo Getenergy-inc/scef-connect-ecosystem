@@ -8,6 +8,7 @@ import { ExploreSection } from "@/components/sections/ExploreSection";
 import { GovernanceSnapshot } from "@/components/sections/GovernanceSnapshot";
 import { PartnersStakeholdersSection } from "@/components/sections/PartnersStakeholdersSection";
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
+import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -72,6 +73,9 @@ const Index = () => {
           
           {/* Partners & Stakeholders */}
           <PartnersStakeholdersSection />
+          
+          {/* CRS Partners */}
+          <CRSPartnersSection variant="compact" />
           
           {/* Final CTA */}
           <CTASection />
