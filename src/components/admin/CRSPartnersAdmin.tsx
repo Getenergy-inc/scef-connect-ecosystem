@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,8 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Plus, Pencil, Trash2, ExternalLink, Upload, Loader2 } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Upload, Loader2, FileSpreadsheet, Download, AlertCircle } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 interface CRSPartner {
   id: string;
@@ -36,6 +37,18 @@ interface PartnerFormData {
   description: string;
   display_order: number;
   is_active: boolean;
+}
+
+interface BulkImportRow {
+  name: string;
+  acronym?: string;
+  logo_url: string;
+  website_url?: string;
+  service_description: string;
+  service_category?: string;
+  partner_since: number;
+  description?: string;
+  display_order?: number;
 }
 
 // Expanded service categories
@@ -70,9 +83,14 @@ const defaultFormData: PartnerFormData = {
 export const CRSPartnersAdmin = () => {
   const queryClient = useQueryClient();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isBulkDialogOpen, setIsBulkDialogOpen] = useState(false);
   const [editingPartner, setEditingPartner] = useState<CRSPartner | null>(null);
   const [formData, setFormData] = useState<PartnerFormData>(defaultFormData);
   const [uploading, setUploading] = useState(false);
+  const [bulkImporting, setBulkImporting] = useState(false);
+  const [bulkPreview, setBulkPreview] = useState<BulkImportRow[]>([]);
+  const [bulkErrors, setBulkErrors] = useState<string[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const { data: partners, isLoading } = useQuery({
     queryKey: ["crs-partners-admin"],
@@ -107,6 +125,35 @@ export const CRSPartnersAdmin = () => {
     },
     onError: (error) => {
       toast.error("Error saving partner: " + error.message);
+    },
+  });
+
+  const bulkImportMutation = useMutation({
+    mutationFn: async (rows: BulkImportRow[]) => {
+      const insertData = rows.map(row => ({
+        name: row.name,
+        acronym: row.acronym || null,
+        logo_url: row.logo_url,
+        website_url: row.website_url || null,
+        service_description: row.service_description,
+        service_category: row.service_category || "operations",
+        partner_since: row.partner_since,
+        description: row.description || null,
+        display_order: row.display_order || 0,
+        is_active: true,
+      }));
+
+      const { error } = await supabase.from("crs_partners").insert(insertData);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["crs-partners-admin"] });
+      queryClient.invalidateQueries({ queryKey: ["crs-partners"] });
+      toast.success(`${bulkPreview.length} partners imported successfully`);
+      resetBulkImport();
+    },
+    onError: (error) => {
+      toast.error("Error importing partners: " + error.message);
     },
   });
 
@@ -162,10 +209,113 @@ export const CRSPartnersAdmin = () => {
     toast.success("Logo uploaded");
   };
 
+  const parseCSV = (text: string): { rows: BulkImportRow[]; errors: string[] } => {
+    const lines = text.split('\n').filter(line => line.trim());
+    const errors: string[] = [];
+    const rows: BulkImportRow[] = [];
+
+    if (lines.length < 2) {
+      errors.push("CSV must have a header row and at least one data row");
+      return { rows, errors };
+    }
+
+    const headerLine = lines[0].toLowerCase();
+    const headers = headerLine.split(',').map(h => h.trim().replace(/"/g, ''));
+    
+    const requiredHeaders = ['name', 'logo_url', 'service_description', 'partner_since'];
+    const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
+    
+    if (missingHeaders.length > 0) {
+      errors.push(`Missing required columns: ${missingHeaders.join(', ')}`);
+      return { rows, errors };
+    }
+
+    for (let i = 1; i < lines.length; i++) {
+      const values = lines[i].split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+      
+      if (values.length !== headers.length) {
+        errors.push(`Row ${i + 1}: Column count mismatch`);
+        continue;
+      }
+
+      const row: Record<string, string> = {};
+      headers.forEach((header, index) => {
+        row[header] = values[index];
+      });
+
+      if (!row.name || !row.logo_url || !row.service_description || !row.partner_since) {
+        errors.push(`Row ${i + 1}: Missing required fields`);
+        continue;
+      }
+
+      const partnerSince = parseInt(row.partner_since);
+      if (isNaN(partnerSince) || partnerSince < 1990 || partnerSince > new Date().getFullYear()) {
+        errors.push(`Row ${i + 1}: Invalid partner_since year`);
+        continue;
+      }
+
+      rows.push({
+        name: row.name,
+        acronym: row.acronym,
+        logo_url: row.logo_url,
+        website_url: row.website_url,
+        service_description: row.service_description,
+        service_category: row.service_category,
+        partner_since: partnerSince,
+        description: row.description,
+        display_order: row.display_order ? parseInt(row.display_order) : 0,
+      });
+    }
+
+    return { rows, errors };
+  };
+
+  const handleBulkFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.name.endsWith('.csv')) {
+      toast.error("Please upload a CSV file");
+      return;
+    }
+
+    setBulkImporting(true);
+    const text = await file.text();
+    const { rows, errors } = parseCSV(text);
+    
+    setBulkPreview(rows);
+    setBulkErrors(errors);
+    setBulkImporting(false);
+  };
+
+  const downloadTemplate = () => {
+    const headers = ['name', 'acronym', 'logo_url', 'website_url', 'service_description', 'service_category', 'partner_since', 'description', 'display_order'];
+    const exampleRow = ['Example Corp', 'EC', 'https://example.com/logo.png', 'https://example.com', 'IT Support', 'technology', '2023', 'Description here', '0'];
+    
+    const csv = [headers.join(','), exampleRow.join(',')].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'crs_partners_template.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const resetForm = () => {
     setFormData(defaultFormData);
     setEditingPartner(null);
     setIsDialogOpen(false);
+  };
+
+  const resetBulkImport = () => {
+    setBulkPreview([]);
+    setBulkErrors([]);
+    setIsBulkDialogOpen(false);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   const openEdit = (partner: CRSPartner) => {
@@ -194,6 +344,14 @@ export const CRSPartnersAdmin = () => {
     saveMutation.mutate(formData);
   };
 
+  const handleBulkImport = () => {
+    if (bulkPreview.length === 0) {
+      toast.error("No valid rows to import");
+      return;
+    }
+    bulkImportMutation.mutate(bulkPreview);
+  };
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
@@ -204,173 +362,280 @@ export const CRSPartnersAdmin = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
           <h2 className="text-2xl font-bold text-foreground">CRS Partners</h2>
           <p className="text-muted-foreground">Manage Corporate Responsibility Support partners</p>
         </div>
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger asChild>
-            <Button onClick={() => { resetForm(); setIsDialogOpen(true); }}>
-              <Plus className="w-4 h-4 mr-2" />
-              Add Partner
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle>{editingPartner ? "Edit Partner" : "Add Partner"}</DialogTitle>
-            </DialogHeader>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name *</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Company Name"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="acronym">Acronym</Label>
-                <Input
-                  id="acronym"
-                  value={formData.acronym}
-                  onChange={(e) => setFormData({ ...formData, acronym: e.target.value })}
-                  placeholder="e.g., PKIS"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label>Logo *</Label>
+        <div className="flex items-center gap-2">
+          {/* Bulk Import Dialog */}
+          <Dialog open={isBulkDialogOpen} onOpenChange={setIsBulkDialogOpen}>
+            <DialogTrigger asChild>
+              <Button variant="outline" onClick={() => { resetBulkImport(); setIsBulkDialogOpen(true); }}>
+                <FileSpreadsheet className="w-4 h-4 mr-2" />
+                Bulk Import
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle>Bulk Import Partners</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  {formData.logo_url && (
-                    <img
-                      src={formData.logo_url}
-                      alt="Logo preview"
-                      className="w-16 h-16 object-contain border rounded"
-                    />
-                  )}
-                  <div className="flex-1">
-                    <Input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleUpload}
-                      disabled={uploading}
-                      className="hidden"
-                      id="logo-upload"
-                    />
-                    <Label
-                      htmlFor="logo-upload"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-md cursor-pointer hover:bg-secondary/80"
-                    >
-                      {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-                      {uploading ? "Uploading..." : "Upload Logo"}
-                    </Label>
-                  </div>
+                  <Button variant="outline" size="sm" onClick={downloadTemplate}>
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Template
+                  </Button>
+                  <p className="text-sm text-muted-foreground">
+                    Download a CSV template with the correct format
+                  </p>
                 </div>
-                <Input
-                  value={formData.logo_url}
-                  onChange={(e) => setFormData({ ...formData, logo_url: e.target.value })}
-                  placeholder="Or enter URL directly"
-                  className="mt-2"
-                />
-              </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="category">Service Category *</Label>
-                <select
-                  id="category"
-                  value={formData.service_category}
-                  onChange={(e) => setFormData({ ...formData, service_category: e.target.value })}
-                  className="w-full h-10 px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                  required
-                >
-                  {serviceCategories.map((cat) => (
-                    <option key={cat.value} value={cat.value}>
-                      {cat.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+                <div className="space-y-2">
+                  <Label>Upload CSV File</Label>
+                  <Input
+                    ref={fileInputRef}
+                    type="file"
+                    accept=".csv"
+                    onChange={handleBulkFileUpload}
+                    disabled={bulkImporting}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    Required columns: name, logo_url, service_description, partner_since
+                  </p>
+                </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="service">Service Description *</Label>
-                <Input
-                  id="service"
-                  value={formData.service_description}
-                  onChange={(e) => setFormData({ ...formData, service_description: e.target.value })}
-                  placeholder="e.g., Operations & Administration"
-                  required
-                />
-              </div>
+                {bulkErrors.length > 0 && (
+                  <Alert variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Import Errors</AlertTitle>
+                    <AlertDescription>
+                      <ul className="list-disc list-inside text-sm mt-2 space-y-1">
+                        {bulkErrors.map((error, i) => (
+                          <li key={i}>{error}</li>
+                        ))}
+                      </ul>
+                    </AlertDescription>
+                  </Alert>
+                )}
 
-              <div className="space-y-2">
-                <Label htmlFor="since">Partner Since (Year) *</Label>
-                <Input
-                  id="since"
-                  type="number"
-                  min="1990"
-                  max={new Date().getFullYear()}
-                  value={formData.partner_since}
-                  onChange={(e) => setFormData({ ...formData, partner_since: parseInt(e.target.value) })}
-                  required
-                />
-              </div>
+                {bulkPreview.length > 0 && (
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-sm">Preview ({bulkPreview.length} partners to import)</h4>
+                    <div className="border rounded-lg overflow-hidden">
+                      <div className="max-h-60 overflow-y-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-muted sticky top-0">
+                            <tr>
+                              <th className="text-left p-2">Name</th>
+                              <th className="text-left p-2">Service</th>
+                              <th className="text-left p-2">Category</th>
+                              <th className="text-left p-2">Since</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {bulkPreview.map((row, i) => (
+                              <tr key={i} className="border-t">
+                                <td className="p-2">{row.name}</td>
+                                <td className="p-2 truncate max-w-[150px]">{row.service_description}</td>
+                                <td className="p-2">{row.service_category || "operations"}</td>
+                                <td className="p-2">{row.partner_since}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
-              <div className="space-y-2">
-                <Label htmlFor="website">Website URL</Label>
-                <Input
-                  id="website"
-                  type="url"
-                  value={formData.website_url}
-                  onChange={(e) => setFormData({ ...formData, website_url: e.target.value })}
-                  placeholder="https://example.com"
-                />
+                <div className="flex gap-2 pt-4">
+                  <Button type="button" variant="outline" onClick={resetBulkImport} className="flex-1">
+                    Cancel
+                  </Button>
+                  <Button 
+                    onClick={handleBulkImport} 
+                    disabled={bulkPreview.length === 0 || bulkImportMutation.isPending}
+                    className="flex-1"
+                  >
+                    {bulkImportMutation.isPending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Importing...
+                      </>
+                    ) : (
+                      <>Import {bulkPreview.length} Partners</>
+                    )}
+                  </Button>
+                </div>
               </div>
+            </DialogContent>
+          </Dialog>
 
-              <div className="space-y-2">
-                <Label htmlFor="description">Description</Label>
-                <Textarea
-                  id="description"
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="Additional details about the partnership"
-                  rows={3}
-                />
-              </div>
+          {/* Add Partner Dialog */}
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button onClick={() => { resetForm(); setIsDialogOpen(true); }}>
+                <Plus className="w-4 h-4 mr-2" />
+                Add Partner
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle>{editingPartner ? "Edit Partner" : "Add Partner"}</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name *</Label>
+                  <Input
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Company Name"
+                    required
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="order">Display Order</Label>
-                <Input
-                  id="order"
-                  type="number"
-                  value={formData.display_order}
-                  onChange={(e) => setFormData({ ...formData, display_order: parseInt(e.target.value) })}
-                />
-              </div>
+                <div className="space-y-2">
+                  <Label htmlFor="acronym">Acronym</Label>
+                  <Input
+                    id="acronym"
+                    value={formData.acronym}
+                    onChange={(e) => setFormData({ ...formData, acronym: e.target.value })}
+                    placeholder="e.g., PKIS"
+                  />
+                </div>
 
-              <div className="flex items-center gap-2">
-                <Switch
-                  id="active"
-                  checked={formData.is_active}
-                  onCheckedChange={(checked) => setFormData({ ...formData, is_active: checked })}
-                />
-                <Label htmlFor="active">Active</Label>
-              </div>
+                <div className="space-y-2">
+                  <Label>Logo *</Label>
+                  <div className="flex items-center gap-4">
+                    {formData.logo_url && (
+                      <img
+                        src={formData.logo_url}
+                        alt="Logo preview"
+                        className="w-16 h-16 object-contain border rounded"
+                      />
+                    )}
+                    <div className="flex-1">
+                      <Input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleUpload}
+                        disabled={uploading}
+                        className="hidden"
+                        id="logo-upload"
+                      />
+                      <Label
+                        htmlFor="logo-upload"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-md cursor-pointer hover:bg-secondary/80"
+                      >
+                        {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                        {uploading ? "Uploading..." : "Upload Logo"}
+                      </Label>
+                    </div>
+                  </div>
+                  <Input
+                    value={formData.logo_url}
+                    onChange={(e) => setFormData({ ...formData, logo_url: e.target.value })}
+                    placeholder="Or enter URL directly"
+                    className="mt-2"
+                  />
+                </div>
 
-              <div className="flex gap-2 pt-4">
-                <Button type="button" variant="outline" onClick={resetForm} className="flex-1">
-                  Cancel
-                </Button>
-                <Button type="submit" disabled={saveMutation.isPending} className="flex-1">
-                  {saveMutation.isPending ? "Saving..." : editingPartner ? "Update" : "Add"}
-                </Button>
-              </div>
-            </form>
-          </DialogContent>
-        </Dialog>
+                <div className="space-y-2">
+                  <Label htmlFor="category">Service Category *</Label>
+                  <select
+                    id="category"
+                    value={formData.service_category}
+                    onChange={(e) => setFormData({ ...formData, service_category: e.target.value })}
+                    className="w-full h-10 px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    required
+                  >
+                    {serviceCategories.map((cat) => (
+                      <option key={cat.value} value={cat.value}>
+                        {cat.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="service">Service Description *</Label>
+                  <Input
+                    id="service"
+                    value={formData.service_description}
+                    onChange={(e) => setFormData({ ...formData, service_description: e.target.value })}
+                    placeholder="e.g., Operations & Administration"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="since">Partner Since (Year) *</Label>
+                  <Input
+                    id="since"
+                    type="number"
+                    min="1990"
+                    max={new Date().getFullYear()}
+                    value={formData.partner_since}
+                    onChange={(e) => setFormData({ ...formData, partner_since: parseInt(e.target.value) })}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="website">Website URL</Label>
+                  <Input
+                    id="website"
+                    type="url"
+                    value={formData.website_url}
+                    onChange={(e) => setFormData({ ...formData, website_url: e.target.value })}
+                    placeholder="https://example.com"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="description">Description</Label>
+                  <Textarea
+                    id="description"
+                    value={formData.description}
+                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    placeholder="Additional details about the partnership"
+                    rows={3}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="order">Display Order</Label>
+                  <Input
+                    id="order"
+                    type="number"
+                    value={formData.display_order}
+                    onChange={(e) => setFormData({ ...formData, display_order: parseInt(e.target.value) })}
+                  />
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Switch
+                    id="active"
+                    checked={formData.is_active}
+                    onCheckedChange={(checked) => setFormData({ ...formData, is_active: checked })}
+                  />
+                  <Label htmlFor="active">Active</Label>
+                </div>
+
+                <div className="flex gap-2 pt-4">
+                  <Button type="button" variant="outline" onClick={resetForm} className="flex-1">
+                    Cancel
+                  </Button>
+                  <Button type="submit" disabled={saveMutation.isPending} className="flex-1">
+                    {saveMutation.isPending ? "Saving..." : editingPartner ? "Update" : "Add"}
+                  </Button>
+                </div>
+              </form>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
