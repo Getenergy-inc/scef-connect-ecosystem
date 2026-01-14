@@ -139,7 +139,7 @@ export const DigitalBoard = () => {
   const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons] || FileText;
 
   return (
-    <section className="py-24 bg-earth relative overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
+    <section id="digital-board" className="py-24 bg-earth relative overflow-hidden scroll-mt-24" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-african-pattern opacity-10" />
       
