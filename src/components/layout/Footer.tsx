@@ -54,7 +54,7 @@ export const Footer = () => {
               isRTL ? "justify-end sm:justify-start flex-row-reverse" : "justify-center sm:justify-start"
             )}>
               <MapPin className="w-4 h-4 text-scef-gold" />
-              {t("footer.location")}
+              19 Godwin Okigbo Street, Surulere, Lagos, Nigeria
             </p>
             <p className={cn(
               "flex items-center gap-2 text-white/70 text-sm",
