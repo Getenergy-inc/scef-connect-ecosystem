@@ -7,6 +7,7 @@ import { ProgramsGrid } from "@/components/sections/ProgramsGrid";
 import { ExploreSection } from "@/components/sections/ExploreSection";
 import { GovernanceSnapshot } from "@/components/sections/GovernanceSnapshot";
 import { PartnersStakeholdersSection } from "@/components/sections/PartnersStakeholdersSection";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CTASection } from "@/components/sections/CTASection";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -65,6 +66,9 @@ const Index = () => {
           
           {/* Governance Snapshot */}
           <GovernanceSnapshot />
+          
+          {/* Endorsed By */}
+          <EndorsedBySection />
           
           {/* Partners & Stakeholders */}
           <PartnersStakeholdersSection />
