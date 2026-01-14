@@ -30,11 +30,28 @@ interface PartnerFormData {
   logo_url: string;
   website_url: string;
   service_description: string;
+  service_category: string;
   partner_since: number;
   description: string;
   display_order: number;
   is_active: boolean;
 }
+
+// Expanded service categories
+const serviceCategories = [
+  { value: "operations", label: "Operations & Administration" },
+  { value: "energy", label: "Energy Trading Services" },
+  { value: "technology", label: "Technology & IT Services" },
+  { value: "logistics", label: "Logistics & Supply Chain" },
+  { value: "legal", label: "Legal & Compliance" },
+  { value: "finance", label: "Financial Services" },
+  { value: "marketing", label: "Marketing & Communications" },
+  { value: "hr", label: "Human Resources" },
+  { value: "consulting", label: "Consulting & Advisory" },
+  { value: "facilities", label: "Facilities Management" },
+  { value: "security", label: "Security Services" },
+  { value: "other", label: "Other Services" },
+];
 
 const defaultFormData: PartnerFormData = {
   name: "",
@@ -42,6 +59,7 @@ const defaultFormData: PartnerFormData = {
   logo_url: "",
   website_url: "",
   service_description: "",
+  service_category: "operations",
   partner_since: new Date().getFullYear(),
   description: "",
   display_order: 0,
@@ -157,6 +175,7 @@ export const CRSPartnersAdmin = () => {
       logo_url: partner.logo_url,
       website_url: partner.website_url || "",
       service_description: partner.service_description,
+      service_category: "operations", // Default category for existing partners
       partner_since: partner.partner_since,
       description: partner.description || "",
       display_order: partner.display_order || 0,
@@ -256,6 +275,23 @@ export const CRSPartnersAdmin = () => {
                   placeholder="Or enter URL directly"
                   className="mt-2"
                 />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="category">Service Category *</Label>
+                <select
+                  id="category"
+                  value={formData.service_category}
+                  onChange={(e) => setFormData({ ...formData, service_category: e.target.value })}
+                  className="w-full h-10 px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                  required
+                >
+                  {serviceCategories.map((cat) => (
+                    <option key={cat.value} value={cat.value}>
+                      {cat.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="space-y-2">
