@@ -39,8 +39,8 @@ export default function EduAidLocalChapters() {
                 <span className="text-foreground font-medium">{t('eduaid.chapters.point1') || 'Present in 15+ African countries'}</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#FFD700]/10 rounded-lg flex items-center justify-center">
-                  <Users className="w-5 h-5 text-[#FFD700]" />
+                <div className="w-10 h-10 bg-scef-gold/20 rounded-lg flex items-center justify-center">
+                  <Users className="w-5 h-5 text-scef-gold-dark" />
                 </div>
                 <span className="text-foreground font-medium">{t('eduaid.chapters.point2') || '2,000+ active chapter members'}</span>
               </div>
@@ -78,7 +78,7 @@ export default function EduAidLocalChapters() {
                   <span className={`text-xs px-2 py-0.5 rounded-full ${
                     chapter.status === 'Active' 
                       ? 'bg-[#1F892B]/10 text-[#1F892B]' 
-                      : 'bg-[#FFD700]/10 text-[#996B00]'
+                      : 'bg-scef-gold/20 text-scef-gold-dark'
                   }`}>
                     {chapter.status}
                   </span>

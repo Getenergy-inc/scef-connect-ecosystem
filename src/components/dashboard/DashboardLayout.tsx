@@ -88,7 +88,7 @@ const cmsAdminItems: NavItem[] = [
 
 const roleBadges: Record<string, { label: string; className: string }> = {
   member: { label: "Member", className: "bg-primary/20 text-primary" },
-  ambassador: { label: "Ambassador", className: "bg-gold/20 text-gold" },
+  ambassador: { label: "Ambassador", className: "bg-scef-gold/25 text-scef-gold-dark" },
   volunteer: { label: "Volunteer", className: "bg-forest/20 text-forest" },
   chapter_admin: { label: "Chapter Admin", className: "bg-terracotta/20 text-terracotta" },
   admin: { label: "Admin", className: "bg-purple-500/20 text-purple-600" },

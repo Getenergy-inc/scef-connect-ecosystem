@@ -40,7 +40,7 @@ export const EndorsedBySection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-4 border border-scef-gold/30">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/25 text-scef-blue-dark text-sm font-medium mb-4 border border-scef-gold/40">
             <Award className="w-4 h-4" />
             {t("home.endorsedBy.badge") || "Endorsed By"}
           </div>

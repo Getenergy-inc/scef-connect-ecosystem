@@ -140,7 +140,7 @@ const Donate = () => {
               <h1 className="font-display text-4xl md:text-5xl font-bold mb-2">
                 {t("donate.hero.title") || "Fund Education. Change Lives."}
               </h1>
-              <p className="text-lg text-gold font-semibold mb-2">Powered by GFA Wzip • GetFinance Africa</p>
+              <p className="text-lg text-scef-gold font-semibold mb-2">Powered by GFA Wzip • GetFinance Africa</p>
               <p className="text-cream/80 max-w-2xl mx-auto">
                 {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
               </p>

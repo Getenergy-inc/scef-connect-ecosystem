@@ -11,10 +11,10 @@ import {
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 
 const colorClasses = {
-  gold: "bg-gold/10 text-gold border-gold/20",
-  terracotta: "bg-terracotta/10 text-terracotta border-terracotta/20",
-  forest: "bg-forest/10 text-forest border-forest/20",
-  primary: "bg-primary/10 text-primary border-primary/20",
+  gold: "bg-scef-gold/20 text-scef-gold-dark border-scef-gold/40",
+  terracotta: "bg-terracotta/15 text-terracotta border-terracotta/30",
+  forest: "bg-forest/15 text-forest border-forest/30",
+  primary: "bg-primary/15 text-primary border-primary/30",
 };
 
 const partnershipIcons = {

@@ -34,13 +34,12 @@ export const FeaturedPlatforms = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <span 
-            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 border-2 border-black"
-            style={{ backgroundColor: '#FFD700', color: '#0000CD' }}
+            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 border-2 border-black bg-scef-gold text-scef-blue-dark"
           >
             Our Digital Platforms
           </span>
-          <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0000CD' }}>
-            Visit Our <span style={{ color: '#FFD700' }}>Partner Platforms</span>
+          <h2 className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold mb-4 text-primary">
+            Visit Our <span className="text-scef-gold-dark">Partner Platforms</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Access our specialized platforms designed to transform education across Africa.
@@ -54,13 +53,12 @@ export const FeaturedPlatforms = () => {
               className="bg-white rounded-xl p-6 border-2 border-black shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               <div 
-                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 border-2 border-black"
-                style={{ backgroundColor: '#0000CD' }}
+                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 border-2 border-black bg-primary"
               >
-                <platform.icon className="w-7 h-7" style={{ color: '#FFD700' }} />
+                <platform.icon className="w-7 h-7 text-scef-gold" />
               </div>
               
-              <h3 className="font-['Abhaya_Libre'] text-xl font-bold mb-2" style={{ color: '#0000CD' }}>
+              <h3 className="font-['Abhaya_Libre'] text-xl font-bold mb-2 text-primary">
                 {platform.name}
               </h3>
               
@@ -73,16 +71,14 @@ export const FeaturedPlatforms = () => {
                   href={platform.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-semibold border-2 border-black transition-all duration-300 hover:shadow-md"
-                  style={{ backgroundColor: '#FFD700', color: '#0000CD' }}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-semibold border-2 border-black transition-all duration-300 hover:shadow-md bg-scef-gold text-scef-blue-dark hover:bg-scef-gold-hover"
                 >
                   Visit {platform.name.split('.')[0]}
                   <ExternalLink className="w-4 h-4" />
                 </a>
                 <a
                   href={platform.localPage}
-                  className="text-center text-sm hover:underline transition-colors"
-                  style={{ color: '#0000CD' }}
+                  className="text-center text-sm hover:underline transition-colors text-primary"
                 >
                   Learn more about this program →
                 </a>

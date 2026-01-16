@@ -146,13 +146,13 @@ const Wallet = () => {
                 </Card>
 
                 {/* AGC Balance */}
-                <Card className="bg-gradient-to-br from-gold/20 to-gold/10 border-gold/30">
+                <Card className="bg-gradient-to-br from-scef-gold/25 to-scef-gold/15 border-scef-gold/40">
                   <CardHeader>
                     <CardDescription className="flex items-center gap-2">
                       <Coins className="w-4 h-4" />
                       Afri Gold Coin (AGC)
                     </CardDescription>
-                    <CardTitle className="text-4xl font-display text-gold">
+                    <CardTitle className="text-4xl font-display text-scef-gold-dark">
                       {wallet?.agc_balance?.toFixed(4) || "0.0000"} AGC
                     </CardTitle>
                   </CardHeader>
