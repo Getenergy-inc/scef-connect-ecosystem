@@ -49,7 +49,12 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
     const keys = key.split('.');
     let value: any = translations[locale];
     for (const k of keys) {
-      value = value?.[k];
+      // Handle both object keys and array indices
+      if (Array.isArray(value) && !isNaN(Number(k))) {
+        value = value[Number(k)];
+      } else {
+        value = value?.[k];
+      }
     }
     return typeof value === 'string' ? value : key;
   };

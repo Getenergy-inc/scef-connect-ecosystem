@@ -402,6 +402,119 @@
     },
     "ctaJoinChapter": "Unirse a un Capítulo Local"
   },
+  "governance": {
+    "hero": {
+      "badge": "BGEO — Gobernanza del Consejo y Oficina Ejecutiva",
+      "title": "Gobernado para la Confianza. Estructurado para la Escala.",
+      "subtitle": "La Oficina de Gobernanza del Consejo y Ejecutiva (BGEO) es la división de gobernanza superior que proporciona liderazgo institucional, supervisión fiduciaria y dirección estratégica para todas las operaciones de SCEF en África.",
+      "anchors": {
+        "bot": "Consejo de Fideicomisarios",
+        "boa": "Consejo de Asesores",
+        "bod": "Consejo de Directores",
+        "lcps": "Presidentes de Capítulos Locales",
+        "management": "Equipo de Gestión"
+      }
+    },
+    "bgeo": {
+      "title": "División BGEO",
+      "body": "La Oficina de Gobernanza del Consejo y Ejecutiva sirve como el centro nervioso institucional, coordinando las actividades del consejo, el liderazgo ejecutivo y asegurando que SCEF cumpla con su mandato educativo panafricano con integridad y responsabilidad.",
+      "points": [
+        "Coordinación y gobernanza del consejo",
+        "Liderazgo y dirección ejecutiva",
+        "Supervisión de políticas institucionales",
+        "Compromiso estratégico de stakeholders"
+      ],
+      "whyTitle": "Por qué Importa la Gobernanza",
+      "whyBody": "El sector educativo de África ha sufrido de iniciativas fragmentadas y supervisión débil. El modelo de gobernanza de SCEF proporciona responsabilidad clara, toma de decisiones transparente y continuidad institucional.",
+      "metrics": {
+        "trust": "Confianza",
+        "trustDesc": "Integridad fiduciaria",
+        "scale": "Escala",
+        "scaleDesc": "Alcance continental",
+        "continuity": "Continuidad",
+        "continuityDesc": "Más allá de los proyectos"
+      }
+    },
+    "layers": {
+      "title": "Estructura de Gobernanza de Cuatro Niveles",
+      "subtitle": "Cada nivel tiene mandatos claros, líneas de responsabilidad y alcance operativo asegurando una gobernanza transparente y efectiva.",
+      "level": "Nivel",
+      "keyResponsibilities": "Responsabilidades Clave",
+      "bot": {
+        "title": "Consejo de Fideicomisarios (BOT)",
+        "count": "7 Miembros",
+        "description": "El órgano de gobierno más alto responsable de la supervisión fiduciaria, integridad institucional y dirección estratégica de la Fundación.",
+        "responsibilities": [
+          "Supervisión fiduciaria e integridad financiera",
+          "Aprobación y dirección de políticas estratégicas",
+          "Nombramiento ejecutivo y supervisión del desempeño",
+          "Cumplimiento institucional y aplicación de ética"
+        ]
+      },
+      "boa": {
+        "title": "Consejos de Asesores (BOA)",
+        "count": "Programa (5 cada uno) y Capítulo (3 cada uno)",
+        "description": "Paneles de expertos que proporcionan orientación especializada sobre la entrega de programas y operaciones de capítulos.",
+        "responsibilities": [
+          "Recomendaciones de estrategia de programas",
+          "Supervisión de gobernanza de capítulos",
+          "Experiencia técnica y de dominio",
+          "Representación y defensa de stakeholders"
+        ]
+      },
+      "bod": {
+        "title": "Consejos Regionales de Directores (BOD)",
+        "count": "3 Por Región",
+        "description": "Gobernanza operativa asegurando la ejecución regional de programas y adherencia a estándares institucionales.",
+        "responsibilities": [
+          "Coordinación de programas regionales",
+          "Toma de decisiones operativas",
+          "Supervisión de asignación de recursos",
+          "Monitoreo de desempeño e informes"
+        ]
+      },
+      "lcps": {
+        "title": "Presidentes de Capítulos Locales (LCPs)",
+        "count": "54+ Países",
+        "description": "Liderazgo sobre el terreno ejecutando programas y gestionando el compromiso comunitario a nivel de país.",
+        "responsibilities": [
+          "Ejecución de programas a nivel de país",
+          "Compromiso y movilización comunitaria",
+          "Asociaciones locales y defensa",
+          "Servicios a miembros y apoyo de base"
+        ]
+      }
+    },
+    "snapshot": {
+      "bot": {
+        "subtitle": "Sede SCEF",
+        "approves": ["Dirección estratégica", "Aprobación de presupuesto", "Nombramientos senior"]
+      },
+      "boa": {
+        "subtitle": "Programas y Capítulos",
+        "approves": ["Orientación política", "Estrategia de asociación", "Revisión de desempeño"]
+      },
+      "bod": {
+        "subtitle": "Operaciones Regionales",
+        "approves": ["Presupuestos regionales", "Aprobaciones de capítulos", "Ejecución de programas"]
+      },
+      "lcps": {
+        "subtitle": "Liderazgo de País",
+        "approves": ["Programas locales", "Actividades de miembros", "Alcance comunitario"]
+      }
+    },
+    "management": {
+      "title": "Equipo de Gestión Ejecutiva",
+      "subtitle": "El liderazgo ejecutivo de SCEF supervisa las seis divisiones operativas, asegurando la entrega coordinada de nuestro mandato educativo panafricano."
+    },
+    "cta": {
+      "title": "Asociarse con la Plataforma Educativa de África",
+      "subtitle": "Únete a gobiernos, donantes y organizaciones que ya colaboran con SCEF para transformar la educación en toda África.",
+      "ctaPartner": "Consulta de Asociación",
+      "ctaDonate": "Apoya Nuestro Trabajo",
+      "ctaChapter": "Iniciar un Capítulo Local"
+    }
+  },
   "donate": {
     "hero": {
       "badge": "Apoya la Educación",

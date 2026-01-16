@@ -634,7 +634,8 @@
           "Engajamento e mobilização comunitária",
           "Parcerias locais e advocacia",
           "Serviços aos membros e suporte de base"
-      ]
+        ]
+      }
     },
     "snapshot": {
       "bot": {
@@ -653,7 +654,6 @@
         "subtitle": "Liderança do País",
         "approves": ["Programas locais", "Atividades dos membros", "Alcance comunitário"]
       }
-    }
     },
     "management": {
       "title": "Equipa de Gestão Executiva",

@@ -634,7 +634,8 @@
           "Engagement et mobilisation communautaire",
           "Partenariats locaux et plaidoyer",
           "Services aux membres et soutien de base"
-      ]
+        ]
+      }
     },
     "snapshot": {
       "bot": {
@@ -653,7 +654,6 @@
         "subtitle": "Leadership pays",
         "approves": ["Programmes locaux", "Activités des membres", "Engagement communautaire"]
       }
-    }
     },
     "management": {
       "title": "Équipe de direction exécutive",
