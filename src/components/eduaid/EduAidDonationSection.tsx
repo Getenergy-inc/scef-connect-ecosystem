@@ -9,7 +9,7 @@ export default function EduAidDonationSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-[#1F892B] to-[#0A5518] text-white" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="container px-4 md:px-8 text-center">
-        <Heart className="w-16 h-16 mx-auto mb-6 text-[#FFD700]" />
+        <Heart className="w-16 h-16 mx-auto mb-6 text-scef-gold" />
         <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
           {t('eduaid.donate.title') || 'Ready to Make a Difference?'}
         </h2>
@@ -17,7 +17,7 @@ export default function EduAidDonationSection() {
           {t('eduaid.donate.description') || 'Your contribution transforms lives. Every donation funds scholarships, builds schools, and trains teachers across Africa.'}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-[#FFD700] text-[#0A1628] hover:bg-[#FFD700]/90">
+          <Button asChild size="lg" className="bg-scef-gold text-scef-blue-dark hover:bg-scef-gold-hover font-semibold">
             <Link to="/donate" className="flex items-center gap-2">
               <Gift className="w-5 h-5" />
               {t('eduaid.donate.cta') || 'Donate Now'}

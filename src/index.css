@@ -20,9 +20,9 @@
     --primary: 209 59% 30%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Gold #FFD700 */
-    --secondary: 51 100% 50%;
-    --secondary-foreground: 220 18% 14%;
+    /* Secondary - Gold (Deeper for contrast) */
+    --secondary: 45 92% 42%;
+    --secondary-foreground: 0 0% 100%;
 
     /* Accent - Light Gold */
     --accent: 48 100% 89%;
@@ -46,11 +46,11 @@
     --scef-blue-dark: 221 53% 20%;
     --scef-blue-darker: 221 53% 12%;
     
-    --scef-gold: 51 100% 50%;
-    --scef-gold-light: 48 100% 89%;
-    --scef-gold-hover: 48 100% 82%;
-    --scef-gold-active: 48 100% 71%;
-    --scef-gold-dark: 51 100% 40%;
+    --scef-gold: 45 92% 42%;
+    --scef-gold-light: 48 85% 58%;
+    --scef-gold-hover: 45 90% 48%;
+    --scef-gold-active: 43 95% 38%;
+    --scef-gold-dark: 40 100% 32%;
     
     --scef-grey: 220 4% 41%;
     --scef-grey-light: 0 0% 78%;
@@ -60,7 +60,7 @@
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(209 59% 30%) 0%, hsl(209 59% 40%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(209 59% 20% / 0.95) 0%, hsl(221 53% 12% / 0.98) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(48 100% 60%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 92% 42%) 0%, hsl(48 85% 52%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 8% 97%) 100%);
 
     /* Shadows */
@@ -68,7 +68,7 @@
     --shadow-md: 0 4px 20px hsl(220 18% 14% / 0.08);
     --shadow-lg: 0 8px 40px hsl(220 18% 14% / 0.12);
     --shadow-primary: 0 4px 24px hsl(209 59% 30% / 0.25);
-    --shadow-gold: 0 4px 24px hsl(51 100% 50% / 0.3);
+    --shadow-gold: 0 4px 24px hsl(45 92% 42% / 0.35);
 
     --sidebar-background: 0 0% 99%;
     --sidebar-foreground: 220 18% 14%;

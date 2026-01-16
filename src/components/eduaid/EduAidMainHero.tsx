@@ -48,7 +48,7 @@ export default function EduAidMainHero({
       {/* Animated accent elements */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#1F892B]/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-scef-gold/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       {/* Grid pattern overlay */}
@@ -86,7 +86,7 @@ export default function EduAidMainHero({
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-10 animate-fade-up" style={{ animationDelay: '0.3s' }}>
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#FFD700] font-display">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-bold text-scef-gold font-display">{stat.value}</div>
                 <div className="text-sm text-slate-400 uppercase tracking-wide mt-1">{stat.label}</div>
               </div>
             ))}
@@ -108,7 +108,7 @@ export default function EduAidMainHero({
               asChild
               size="lg"
               variant="outline"
-              className="border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700]/10 px-8 py-6 text-lg rounded-xl"
+              className="border-scef-gold text-scef-gold hover:bg-scef-gold/15 px-8 py-6 text-lg rounded-xl"
             >
               <Link to={secondaryButtonLink} className="flex items-center gap-2">
                 <Heart className="w-5 h-5" />

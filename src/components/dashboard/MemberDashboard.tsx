@@ -20,10 +20,10 @@ export const MemberDashboard = ({ profile, user }: MemberDashboardProps) => {
   ];
 
   const quickActions = [
-    { icon: Wallet, label: "Fund Wallet", href: "/wallet", color: "bg-gold/10 text-gold" },
-    { icon: Heart, label: "Donate Now", href: "/donate", color: "bg-terracotta/10 text-terracotta" },
-    { icon: MapPin, label: "Join Chapter", href: "/chapters", color: "bg-forest/10 text-forest" },
-    { icon: Award, label: "Get Certified", href: "/certifications", color: "bg-primary/10 text-primary" },
+    { icon: Wallet, label: "Fund Wallet", href: "/wallet", color: "bg-scef-gold/25 text-scef-gold-dark" },
+    { icon: Heart, label: "Donate Now", href: "/donate", color: "bg-terracotta/15 text-terracotta" },
+    { icon: MapPin, label: "Join Chapter", href: "/chapters", color: "bg-forest/15 text-forest" },
+    { icon: Award, label: "Get Certified", href: "/certifications", color: "bg-primary/15 text-primary" },
   ];
 
   const programCards = [

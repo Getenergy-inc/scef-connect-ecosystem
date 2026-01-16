@@ -77,7 +77,7 @@ const Vacancies = () => {
                   Careers at SCEF
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                  Join Our <span className="text-gold">Team</span>
+                  Join Our <span className="text-scef-gold">Team</span>
                 </h1>
                 <p className="text-lg text-cream/80 mb-6">
                   Be part of a mission-driven organization transforming education across Africa. 
@@ -120,9 +120,9 @@ const Vacancies = () => {
               ) : vacancies && vacancies.length > 0 ? (
                 <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                   {vacancies.map((vacancy) => (
-                    <Card key={vacancy.id} className={`relative overflow-hidden group hover:shadow-lg transition-shadow ${vacancy.is_featured ? 'border-gold' : ''}`}>
+                    <Card key={vacancy.id} className={`relative overflow-hidden group hover:shadow-lg transition-shadow ${vacancy.is_featured ? 'border-scef-gold' : ''}`}>
                       {vacancy.is_featured && (
-                        <div className="absolute top-0 right-0 bg-gold text-earth text-xs font-bold px-3 py-1 rounded-bl">
+                        <div className="absolute top-0 right-0 bg-scef-gold text-scef-blue-dark text-xs font-bold px-3 py-1 rounded-bl">
                           Featured
                         </div>
                       )}

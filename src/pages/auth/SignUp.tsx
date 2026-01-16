@@ -246,14 +246,14 @@ const SignUp = () => {
                   <div key={s} className="flex items-center">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
                       step >= s 
-                        ? "bg-gold text-earth" 
+                        ? "bg-scef-gold text-scef-blue-dark" 
                         : "bg-white/20 text-white/60"
                     }`}>
                       {s}
                     </div>
                     {s < 3 && (
                       <div className={`w-12 h-1 mx-1 rounded transition-colors ${
-                        step > s ? "bg-gold" : "bg-white/20"
+                        step > s ? "bg-scef-gold" : "bg-white/20"
                       }`} />
                     )}
                   </div>

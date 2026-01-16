@@ -14,7 +14,7 @@ export const GovernanceSnapshot = () => {
       descriptionKey: "governance.layers.bot.description",
       countKey: "governance.layers.bot.count",
       approvesKeys: ["governance.snapshot.bot.approves.0", "governance.snapshot.bot.approves.1", "governance.snapshot.bot.approves.2"],
-      color: "bg-scef-gold/10 text-scef-gold border-scef-gold/30",
+      color: "bg-scef-gold/20 text-scef-gold-dark border-scef-gold/40",
       iconBg: "bg-scef-gold text-scef-blue-dark",
     },
     {
@@ -34,7 +34,7 @@ export const GovernanceSnapshot = () => {
       descriptionKey: "governance.layers.bod.description",
       countKey: "governance.layers.bod.count",
       approvesKeys: ["governance.snapshot.bod.approves.0", "governance.snapshot.bod.approves.1", "governance.snapshot.bod.approves.2"],
-      color: "bg-scef-gold/10 text-scef-gold border-scef-gold/30",
+      color: "bg-scef-gold/20 text-scef-gold-dark border-scef-gold/40",
       iconBg: "bg-scef-gold text-scef-blue-dark",
     },
     {

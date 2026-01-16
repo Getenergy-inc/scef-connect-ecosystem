@@ -95,8 +95,8 @@ export const VolunteerDashboard = ({ profile, user }: VolunteerDashboardProps) =
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-medium text-foreground">{task.title}</span>
                       <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        task.priority === 'high' ? 'bg-terracotta/10 text-terracotta' :
-                        task.priority === 'medium' ? 'bg-gold/10 text-gold' :
+                        task.priority === 'high' ? 'bg-terracotta/15 text-terracotta' :
+                        task.priority === 'medium' ? 'bg-scef-gold/25 text-scef-gold-dark' :
                         'bg-muted text-muted-foreground'
                       }`}>
                         {task.priority}
