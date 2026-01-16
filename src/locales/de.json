@@ -402,6 +402,119 @@
     },
     "ctaJoinChapter": "Ortsverband beitreten"
   },
+  "governance": {
+    "hero": {
+      "badge": "BGEO — Vorstandsführung und Geschäftsleitung",
+      "title": "Geführt für Vertrauen. Strukturiert für Wachstum.",
+      "subtitle": "Das Büro für Vorstandsführung und Geschäftsleitung (BGEO) ist die oberste Governance-Abteilung, die institutionelle Führung, treuhänderische Aufsicht und strategische Ausrichtung für alle SCEF-Operationen in Afrika bietet.",
+      "anchors": {
+        "bot": "Kuratorium",
+        "boa": "Beirat",
+        "bod": "Vorstand",
+        "lcps": "Ortsverbandspräsidenten",
+        "management": "Führungsteam"
+      }
+    },
+    "bgeo": {
+      "title": "BGEO-Abteilung",
+      "body": "Das Büro für Vorstandsführung und Geschäftsleitung dient als institutionelles Nervenzentrum, koordiniert Vorstandsaktivitäten, Geschäftsführung und stellt sicher, dass SCEF sein panafrikanisches Bildungsmandat mit Integrität und Verantwortlichkeit erfüllt.",
+      "points": [
+        "Vorstandskoordination und Governance",
+        "Geschäftsführung und Ausrichtung",
+        "Institutionelle Politikaufsicht",
+        "Strategisches Stakeholder-Engagement"
+      ],
+      "whyTitle": "Warum Governance wichtig ist",
+      "whyBody": "Afrikas Bildungssektor hat unter fragmentierten Initiativen und schwacher Aufsicht gelitten. SCEFs Governance-Modell bietet klare Rechenschaftspflicht, transparente Entscheidungsfindung und institutionelle Kontinuität.",
+      "metrics": {
+        "trust": "Vertrauen",
+        "trustDesc": "Treuhänderische Integrität",
+        "scale": "Reichweite",
+        "scaleDesc": "Kontinentale Abdeckung",
+        "continuity": "Kontinuität",
+        "continuityDesc": "Über Projekte hinaus"
+      }
+    },
+    "layers": {
+      "title": "Vierstufige Governance-Struktur",
+      "subtitle": "Jede Ebene hat klare Mandate, Verantwortlichkeitslinien und operative Reichweite, die transparente und effektive Governance gewährleisten.",
+      "level": "Ebene",
+      "keyResponsibilities": "Hauptverantwortlichkeiten",
+      "bot": {
+        "title": "Kuratorium (BOT)",
+        "count": "7 Mitglieder",
+        "description": "Das höchste Leitungsgremium, verantwortlich für treuhänderische Aufsicht, institutionelle Integrität und strategische Ausrichtung der Stiftung.",
+        "responsibilities": [
+          "Treuhänderische Aufsicht und finanzielle Integrität",
+          "Genehmigung und Ausrichtung strategischer Politiken",
+          "Ernennung von Führungskräften und Leistungsaufsicht",
+          "Institutionelle Compliance und Ethikdurchsetzung"
+        ]
+      },
+      "boa": {
+        "title": "Beiräte (BOA)",
+        "count": "Programm (je 5) & Ortsverband (je 3)",
+        "description": "Expertengremien, die spezialisierte Beratung zur Programmdurchführung und Ortsverbandsoperationen bieten.",
+        "responsibilities": [
+          "Empfehlungen zur Programmstrategie",
+          "Aufsicht über Ortsverbandsgovernance",
+          "Technische und fachliche Expertise",
+          "Stakeholder-Vertretung und Interessenvertretung"
+        ]
+      },
+      "bod": {
+        "title": "Regionale Vorstände (BOD)",
+        "count": "3 Pro Region",
+        "description": "Operative Governance, die regionale Programmausführung und Einhaltung institutioneller Standards sicherstellt.",
+        "responsibilities": [
+          "Regionale Programmkoordination",
+          "Operative Entscheidungsfindung",
+          "Aufsicht über Ressourcenzuweisung",
+          "Leistungsüberwachung und Berichterstattung"
+        ]
+      },
+      "lcps": {
+        "title": "Ortsverbandspräsidenten (LCPs)",
+        "count": "54+ Länder",
+        "description": "Führung vor Ort, die Programme durchführt und das gesellschaftliche Engagement auf Landesebene verwaltet.",
+        "responsibilities": [
+          "Programmdurchführung auf Landesebene",
+          "Gesellschaftliches Engagement und Mobilisierung",
+          "Lokale Partnerschaften und Interessenvertretung",
+          "Mitgliederservices und Basisunterstützung"
+        ]
+      }
+    },
+    "snapshot": {
+      "bot": {
+        "subtitle": "SCEF-Hauptsitz",
+        "approves": ["Strategische Ausrichtung", "Budgetgenehmigung", "Senior-Ernennungen"]
+      },
+      "boa": {
+        "subtitle": "Programme & Ortsverbände",
+        "approves": ["Politische Orientierung", "Partnerschaftsstrategie", "Leistungsüberprüfung"]
+      },
+      "bod": {
+        "subtitle": "Regionale Operationen",
+        "approves": ["Regionale Budgets", "Ortsverbandsgenehmigungen", "Programmausführung"]
+      },
+      "lcps": {
+        "subtitle": "Landesführung",
+        "approves": ["Lokale Programme", "Mitgliederaktivitäten", "Gemeinschaftsreichweite"]
+      }
+    },
+    "management": {
+      "title": "Geschäftsführungsteam",
+      "subtitle": "Die Geschäftsführung von SCEF beaufsichtigt die sechs operativen Abteilungen und gewährleistet die koordinierte Umsetzung unseres panafrikanischen Bildungsmandats."
+    },
+    "cta": {
+      "title": "Partner der Bildungsplattform Afrikas werden",
+      "subtitle": "Schließen Sie sich Regierungen, Gebern und Organisationen an, die bereits mit SCEF zusammenarbeiten, um die Bildung in ganz Afrika zu transformieren.",
+      "ctaPartner": "Partnerschaftsanfrage",
+      "ctaDonate": "Unsere Arbeit unterstützen",
+      "ctaChapter": "Ortsverband gründen"
+    }
+  },
   "donate": {
     "hero": {
       "badge": "Bildung unterstützen",

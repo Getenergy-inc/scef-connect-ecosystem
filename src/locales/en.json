@@ -960,7 +960,8 @@
           "Community engagement and mobilization",
           "Local partnerships and advocacy",
           "Member services and grassroots support"
-      ]
+        ]
+      }
     },
     "snapshot": {
       "bot": {
@@ -979,7 +980,6 @@
         "subtitle": "Country Leadership",
         "approves": ["Local programs", "Member activities", "Community outreach"]
       }
-    }
     },
     "management": {
       "title": "Executive Management Team",

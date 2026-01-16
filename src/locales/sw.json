@@ -634,7 +634,8 @@
           "Ushiriki na uhamasishaji wa jamii",
           "Ushirikiano wa mitaa na utetezi",
           "Huduma kwa wanachama na msaada wa msingi"
-      ]
+        ]
+      }
     },
     "snapshot": {
       "bot": {
@@ -653,7 +654,6 @@
         "subtitle": "Uongozi wa Nchi",
         "approves": ["Programu za mitaa", "Shughuli za wanachama", "Kufikia jamii"]
       }
-    }
     },
     "management": {
       "title": "Timu ya Uongozi wa Utendaji",
