@@ -36,7 +36,7 @@ import { useUserRole } from "@/hooks/useUserRole";
 import { toast } from "sonner";
 import { 
   Building2, Plus, CheckCircle, XCircle, Clock,
-  MoreHorizontal, Trash2, Edit, Eye
+  MoreHorizontal, Trash2
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -44,6 +44,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { mapAdminErrorToUserMessage } from "@/lib/errorMapper";
+import { logger } from "@/lib/logger";
 
 interface BankAccount {
   id: string;
@@ -107,7 +109,7 @@ const BankAccounts = () => {
       if (error) throw error;
       setAccounts(data || []);
     } catch (error) {
-      console.error("Error fetching accounts:", error);
+      logger.error("Error fetching accounts:", error);
       toast.error("Failed to load bank accounts");
     } finally {
       setLoading(false);
@@ -150,8 +152,9 @@ const BankAccounts = () => {
         currency: "USD",
       });
       fetchAccounts();
-    } catch (error: any) {
-      toast.error(error.message || "Failed to add bank account");
+    } catch (error: unknown) {
+      logger.error("Failed to add bank account:", error);
+      toast.error(mapAdminErrorToUserMessage("add bank account", error));
     } finally {
       setSubmitting(false);
     }

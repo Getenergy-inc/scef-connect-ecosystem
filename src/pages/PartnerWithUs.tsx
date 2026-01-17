@@ -15,6 +15,7 @@ import {
   Target, BarChart3, FileCheck
 } from "lucide-react";
 import { toast } from "sonner";
+import { logger } from "@/lib/logger";
 
 const PartnerWithUs = () => {
   const { t, isRTL } = useLocale();
@@ -79,16 +80,28 @@ const PartnerWithUs = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.from("partnership_inquiries").insert({
-        company_name: formData.organizationName,
-        contact_name: formData.contactName,
-        email: formData.email,
-        phone: formData.phone || null,
-        partnership_type: formData.partnershipType || null,
-        message: formData.message || null,
+      // Use edge function with rate limiting for partnership inquiries
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const response = await fetch(`${supabaseUrl}/functions/v1/submit-partnership-inquiry`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          company_name: formData.organizationName,
+          contact_name: formData.contactName,
+          email: formData.email,
+          phone: formData.phone || null,
+          partnership_type: formData.partnershipType || null,
+          message: formData.message || null,
+        }),
       });
 
-      if (error) throw error;
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit inquiry');
+      }
 
       toast.success(t("partnerWithUs.form.success"));
       setFormData({
@@ -99,9 +112,14 @@ const PartnerWithUs = () => {
         partnershipType: "",
         message: "",
       });
-    } catch (error) {
-      console.error("Error submitting inquiry:", error);
-      toast.error(t("partnerWithUs.form.error"));
+    } catch (error: unknown) {
+      logger.error("Error submitting inquiry:", error);
+      const errorMessage = error instanceof Error ? error.message : '';
+      if (errorMessage.includes('Too many requests')) {
+        toast.error("Too many submissions. Please try again later.");
+      } else {
+        toast.error(t("partnerWithUs.form.error"));
+      }
     } finally {
       setIsSubmitting(false);
     }

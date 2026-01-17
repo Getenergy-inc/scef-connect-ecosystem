@@ -35,6 +35,9 @@ import {
   Image
 } from "lucide-react";
 import { toast } from "sonner";
+import { mapAdminErrorToUserMessage } from "@/lib/errorMapper";
+import { validateCoverFile, validateResourceFile } from "@/lib/fileValidation";
+import { logger } from "@/lib/logger";
 
 type ResourceType = "ebook" | "journal" | "video" | "audio";
 
@@ -159,13 +162,10 @@ export const ELibraryAdmin = () => {
     const file = e.target.files?.[0];
     if (!file) return;
     
-    if (!file.type.startsWith('image/')) {
-      toast.error("Please select an image file");
-      return;
-    }
-    
-    if (file.size > 5 * 1024 * 1024) {
-      toast.error("Image must be less than 5MB");
+    // Use centralized file validation
+    const validation = validateCoverFile(file);
+    if (!validation.isValid) {
+      toast.error(validation.error);
       return;
     }
     
@@ -174,8 +174,9 @@ export const ELibraryAdmin = () => {
       const url = await uploadFile(file, 'covers');
       setFormData({ ...formData, cover_url: url });
       toast.success("Cover image uploaded");
-    } catch (error: any) {
-      toast.error("Failed to upload cover: " + error.message);
+    } catch (error: unknown) {
+      logger.error("Failed to upload cover:", error);
+      toast.error("Failed to upload cover. Please try again.");
     } finally {
       setIsUploadingCover(false);
     }
@@ -185,8 +186,10 @@ export const ELibraryAdmin = () => {
     const file = e.target.files?.[0];
     if (!file) return;
     
-    if (file.size > 100 * 1024 * 1024) {
-      toast.error("File must be less than 100MB");
+    // Use centralized file validation based on resource type
+    const validation = validateResourceFile(file, formData.resource_type);
+    if (!validation.isValid) {
+      toast.error(validation.error);
       return;
     }
     
@@ -195,8 +198,9 @@ export const ELibraryAdmin = () => {
       const url = await uploadFile(file, 'resources');
       setFormData({ ...formData, resource_url: url });
       toast.success("Resource file uploaded");
-    } catch (error: any) {
-      toast.error("Failed to upload resource: " + error.message);
+    } catch (error: unknown) {
+      logger.error("Failed to upload resource:", error);
+      toast.error("Failed to upload resource. Please try again.");
     } finally {
       setIsUploadingResource(false);
     }
@@ -217,7 +221,8 @@ export const ELibraryAdmin = () => {
       setFormData(emptyFormData);
     },
     onError: (error) => {
-      toast.error("Failed to create resource: " + error.message);
+      logger.error("Failed to create resource:", error);
+      toast.error(mapAdminErrorToUserMessage("create resource", error));
     }
   });
 
@@ -238,7 +243,8 @@ export const ELibraryAdmin = () => {
       setFormData(emptyFormData);
     },
     onError: (error) => {
-      toast.error("Failed to update resource: " + error.message);
+      logger.error("Failed to update resource:", error);
+      toast.error(mapAdminErrorToUserMessage("update resource", error));
     }
   });
 
@@ -256,7 +262,8 @@ export const ELibraryAdmin = () => {
       toast.success("Resource deleted successfully");
     },
     onError: (error) => {
-      toast.error("Failed to delete resource: " + error.message);
+      logger.error("Failed to delete resource:", error);
+      toast.error(mapAdminErrorToUserMessage("delete resource", error));
     }
   });
 
@@ -274,7 +281,8 @@ export const ELibraryAdmin = () => {
       toast.success("Resource visibility updated");
     },
     onError: (error) => {
-      toast.error("Failed to update visibility: " + error.message);
+      logger.error("Failed to update visibility:", error);
+      toast.error(mapAdminErrorToUserMessage("update visibility", error));
     }
   });
 

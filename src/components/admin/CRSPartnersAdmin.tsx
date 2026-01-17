@@ -11,6 +11,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { toast } from "sonner";
 import { Plus, Pencil, Trash2, ExternalLink, Upload, Loader2, FileSpreadsheet, Download, AlertCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { mapAdminErrorToUserMessage } from "@/lib/errorMapper";
+import { validateLogoFile } from "@/lib/fileValidation";
+import { logger } from "@/lib/logger";
 
 interface CRSPartner {
   id: string;
@@ -124,7 +127,8 @@ export const CRSPartnersAdmin = () => {
       resetForm();
     },
     onError: (error) => {
-      toast.error("Error saving partner: " + error.message);
+      logger.error("Error saving partner:", error);
+      toast.error(mapAdminErrorToUserMessage("save partner", error));
     },
   });
 
@@ -153,7 +157,8 @@ export const CRSPartnersAdmin = () => {
       resetBulkImport();
     },
     onError: (error) => {
-      toast.error("Error importing partners: " + error.message);
+      logger.error("Error importing partners:", error);
+      toast.error(mapAdminErrorToUserMessage("import partners", error));
     },
   });
 
@@ -168,7 +173,8 @@ export const CRSPartnersAdmin = () => {
       toast.success("Partner deleted");
     },
     onError: (error) => {
-      toast.error("Error deleting partner: " + error.message);
+      logger.error("Error deleting partner:", error);
+      toast.error(mapAdminErrorToUserMessage("delete partner", error));
     },
   });
 
@@ -176,13 +182,10 @@ export const CRSPartnersAdmin = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (!file.type.startsWith("image/")) {
-      toast.error("Please upload an image file");
-      return;
-    }
-
-    if (file.size > 2 * 1024 * 1024) {
-      toast.error("File size must be less than 2MB");
+    // Use centralized file validation
+    const validation = validateLogoFile(file);
+    if (!validation.isValid) {
+      toast.error(validation.error);
       return;
     }
 
@@ -195,7 +198,8 @@ export const CRSPartnersAdmin = () => {
       .upload(fileName, file);
 
     if (uploadError) {
-      toast.error("Upload failed: " + uploadError.message);
+      logger.error("Upload failed:", uploadError);
+      toast.error("Upload failed. Please try again.");
       setUploading(false);
       return;
     }

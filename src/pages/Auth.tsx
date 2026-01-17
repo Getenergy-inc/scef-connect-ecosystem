@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Mail, Lock, User, BookOpen, ArrowRight } from "lucide-react";
+import { mapAuthErrorToUserMessage } from "@/lib/errorMapper";
+import { logger } from "@/lib/logger";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -63,12 +65,9 @@ const Auth = () => {
         if (error) throw error;
         toast.success("Account created successfully! Welcome to SCEF.");
       }
-    } catch (error: any) {
-      if (error.message.includes("already registered")) {
-        toast.error("This email is already registered. Please login instead.");
-      } else {
-        toast.error(error.message || "An error occurred");
-      }
+    } catch (error: unknown) {
+      logger.error("Auth error:", error);
+      toast.error(mapAuthErrorToUserMessage(error));
     } finally {
       setLoading(false);
     }

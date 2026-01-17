@@ -13,6 +13,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { toast } from "sonner";
 import { Plus, Pencil, Trash2, Briefcase, MapPin, Calendar, Building2 } from "lucide-react";
 import { format } from "date-fns";
+import { mapAdminErrorToUserMessage } from "@/lib/errorMapper";
+import { logger } from "@/lib/logger";
 
 interface Vacancy {
   id: string;
@@ -125,7 +127,8 @@ export const VacanciesAdmin = () => {
       resetForm();
     },
     onError: (error) => {
-      toast.error("Failed to create vacancy: " + error.message);
+      logger.error("Failed to create vacancy:", error);
+      toast.error(mapAdminErrorToUserMessage("create vacancy", error));
     },
   });
 
@@ -157,7 +160,8 @@ export const VacanciesAdmin = () => {
       resetForm();
     },
     onError: (error) => {
-      toast.error("Failed to update vacancy: " + error.message);
+      logger.error("Failed to update vacancy:", error);
+      toast.error(mapAdminErrorToUserMessage("update vacancy", error));
     },
   });
 
@@ -172,7 +176,8 @@ export const VacanciesAdmin = () => {
       toast.success("Vacancy deleted successfully");
     },
     onError: (error) => {
-      toast.error("Failed to delete vacancy: " + error.message);
+      logger.error("Failed to delete vacancy:", error);
+      toast.error(mapAdminErrorToUserMessage("delete vacancy", error));
     },
   });
 
@@ -190,7 +195,8 @@ export const VacanciesAdmin = () => {
       toast.success("Status updated");
     },
     onError: (error) => {
-      toast.error("Failed to update status: " + error.message);
+      logger.error("Failed to update status:", error);
+      toast.error(mapAdminErrorToUserMessage("update status", error));
     },
   });
 

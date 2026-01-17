@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.youtube-live-status]
 verify_jwt = false
+
+[functions.submit-partnership-inquiry]
+verify_jwt = false
