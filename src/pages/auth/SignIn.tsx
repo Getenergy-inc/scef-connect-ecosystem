@@ -9,8 +9,10 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Mail, Lock, ArrowRight } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
+import { mapAuthErrorToUserMessage } from "@/lib/errorMapper";
+import { logger } from "@/lib/logger";
 
 const SignIn = () => {
   const [searchParams] = useSearchParams();
@@ -42,8 +44,9 @@ const SignIn = () => {
       if (error) throw error;
       toast.success("Welcome back!");
       navigate(redirectTo);
-    } catch (error: any) {
-      toast.error(error.message || "Invalid credentials");
+    } catch (error: unknown) {
+      logger.error("Sign in error:", error);
+      toast.error(mapAuthErrorToUserMessage(error));
     } finally {
       setLoading(false);
     }

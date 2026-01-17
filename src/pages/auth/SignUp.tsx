@@ -18,6 +18,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Mail, Lock, User, BookOpen, ArrowRight, MapPin, Users, Globe } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { mapAuthErrorToUserMessage } from "@/lib/errorMapper";
+import { logger } from "@/lib/logger";
 
 // Country list (simplified)
 const countries = [
@@ -182,12 +184,9 @@ const SignUp = () => {
 
       toast.success("Account created successfully! Welcome to SCEF.");
       navigate("/dashboard/welcome");
-    } catch (error: any) {
-      if (error.message.includes("already registered")) {
-        toast.error("This email is already registered. Please login instead.");
-      } else {
-        toast.error(error.message || "An error occurred");
-      }
+    } catch (error: unknown) {
+      logger.error("Sign up error:", error);
+      toast.error(mapAuthErrorToUserMessage(error));
     } finally {
       setLoading(false);
     }

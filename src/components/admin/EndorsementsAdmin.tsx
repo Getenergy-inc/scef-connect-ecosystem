@@ -27,10 +27,12 @@ import {
   Loader2,
   Award,
   ExternalLink,
-  Upload,
-  Image as ImageIcon
+  Upload
 } from "lucide-react";
 import { toast } from "sonner";
+import { mapAdminErrorToUserMessage } from "@/lib/errorMapper";
+import { validateLogoFile } from "@/lib/fileValidation";
+import { logger } from "@/lib/logger";
 
 interface Endorsement {
   id: string;
@@ -110,7 +112,8 @@ export const EndorsementsAdmin = () => {
       setFormData(emptyFormData);
     },
     onError: (error) => {
-      toast.error("Failed to create endorsement: " + error.message);
+      logger.error("Failed to create endorsement:", error);
+      toast.error(mapAdminErrorToUserMessage("create endorsement", error));
     }
   });
 
@@ -140,7 +143,8 @@ export const EndorsementsAdmin = () => {
       setFormData(emptyFormData);
     },
     onError: (error) => {
-      toast.error("Failed to update endorsement: " + error.message);
+      logger.error("Failed to update endorsement:", error);
+      toast.error(mapAdminErrorToUserMessage("update endorsement", error));
     }
   });
 
@@ -158,7 +162,8 @@ export const EndorsementsAdmin = () => {
       toast.success("Endorsement deleted successfully");
     },
     onError: (error) => {
-      toast.error("Failed to delete endorsement: " + error.message);
+      logger.error("Failed to delete endorsement:", error);
+      toast.error(mapAdminErrorToUserMessage("delete endorsement", error));
     }
   });
 
@@ -166,15 +171,10 @@ export const EndorsementsAdmin = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      toast.error("Please upload an image file");
-      return;
-    }
-
-    // Validate file size (max 2MB)
-    if (file.size > 2 * 1024 * 1024) {
-      toast.error("File size must be less than 2MB");
+    // Use centralized file validation
+    const validation = validateLogoFile(file);
+    if (!validation.isValid) {
+      toast.error(validation.error);
       return;
     }
 
@@ -196,8 +196,9 @@ export const EndorsementsAdmin = () => {
 
       setFormData({ ...formData, logo_url: publicUrl });
       toast.success("Logo uploaded successfully");
-    } catch (error: any) {
-      toast.error("Failed to upload logo: " + error.message);
+    } catch (error: unknown) {
+      logger.error("Failed to upload logo:", error);
+      toast.error("Failed to upload logo. Please try again.");
     } finally {
       setUploading(false);
     }

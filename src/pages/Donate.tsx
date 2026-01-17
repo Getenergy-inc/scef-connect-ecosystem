@@ -13,6 +13,7 @@ import { Heart, School, GraduationCap, Users, Shield, ExternalLink, Wallet } fro
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
+import { logger } from "@/lib/logger";
 
 const donationAmounts = [25, 50, 100, 250, 500, 1000];
 
@@ -113,7 +114,8 @@ const Donate = () => {
       setDonorName("");
       setDonorEmail("");
       setMessage("");
-    } catch (error: any) {
+    } catch (error: unknown) {
+      logger.error("Donation error:", error);
       toast.error(t("donate.errors.failed") || "Failed to process donation. Please try again.");
     } finally {
       setLoading(false);
