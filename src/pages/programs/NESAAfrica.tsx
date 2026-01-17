@@ -11,7 +11,26 @@ import {
   GraduationCap, School, Accessibility
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
+import { EventCountdown } from "@/components/ui/event-countdown";
 
+// Key Event Dates for Countdowns
+const countdownEvents = [
+  {
+    name: "Platinum Recognition Show",
+    date: new Date("2026-02-28T18:00:00"),
+    type: "show" as const,
+  },
+  {
+    name: "Blue Garnet Awards Gala",
+    date: new Date("2026-06-27T18:00:00"),
+    type: "gala" as const,
+  },
+  {
+    name: "Rebuild My School Africa Launch",
+    date: new Date("2026-06-28T09:00:00"),
+    type: "legacy" as const,
+  },
+];
 // NESA-Africa Brand Colors matching nesa.africa
 const nesaColors = {
   dark: "#1A1A1A",
@@ -405,6 +424,31 @@ const NESAAfrica = () => {
                 <p style={{ color: nesaColors.textMuted }}>
                   EduAid Webinars Begin: 14 October 2025
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Event Countdowns Section */}
+          <section className="py-16" style={{ backgroundColor: nesaColors.darkAlt }}>
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-10">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+                  Upcoming <span style={{ color: nesaColors.gold }}>Key Events</span>
+                </h2>
+                <p style={{ color: nesaColors.textMuted }} className="max-w-xl mx-auto">
+                  Live countdown to NESA-Africa's major milestones
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {countdownEvents.map((event) => (
+                  <EventCountdown
+                    key={event.name}
+                    targetDate={event.date}
+                    eventName={event.name}
+                    eventType={event.type}
+                  />
+                ))}
               </div>
             </div>
           </section>
