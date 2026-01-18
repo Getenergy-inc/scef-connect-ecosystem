@@ -50,6 +50,7 @@ import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
+import EduAidWebinars from "./pages/media/EduAidWebinars";
 
 // New Auth Pages
 import SignIn from "./pages/auth/SignIn";
@@ -99,6 +100,7 @@ const App = () => (
               <Route path="/chapters/join-online" element={<JoinOnline />} />
               <Route path="/chapters/join" element={<JoinOnline />} />
               <Route path="/media" element={<Media />} />
+              <Route path="/media/eduaid-webinars" element={<EduAidWebinars />} />
               <Route path="/updates" element={<Updates />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/case-studies" element={<CaseStudies />} />
