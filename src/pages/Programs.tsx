@@ -132,6 +132,10 @@ const Programs = () => {
                 {flagshipPrograms.map((program) => (
                   <StaggerItem key={program.id} animation="fadeUp">
                     <FlagshipCard
+                      id={program.id === "nesa-africa" ? "nesa" : 
+                          program.id === "eduaid-africa" ? "eduaid" : 
+                          program.id === "education-online-africa" ? "eoa" : 
+                          program.id === "elibrary-nigeria" ? "elibrary" : program.id}
                       icon={program.icon}
                       logo={program.logo}
                       video={program.video}

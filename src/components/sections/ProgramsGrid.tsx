@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink, Play, X } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink, Play, X, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
 import { motion } from "framer-motion";
+import { ProgramLogo3D } from "@/components/ui/program-logo-3d";
+import { useProgramVoiceover } from "@/hooks/useProgramVoiceover";
+import { ProgramId } from "@/config/programVoiceovers";
 
 const flagshipItems = [
   {
@@ -100,6 +103,7 @@ const flagshipItems = [
 export const ProgramsGrid = () => {
   const { t, isRTL } = useLocale();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const { isPlaying, isLoading, toggleVoiceover } = useProgramVoiceover();
 
   return (
     <section className="py-20 md:py-24 bg-background" dir={isRTL ? "rtl" : "ltr"}>
@@ -150,6 +154,38 @@ export const ProgramsGrid = () => {
                 >
                   {/* Video Thumbnail Section */}
                   <div className="relative">
+                    {/* 3D Logo in top right corner */}
+                    <div className="absolute top-3 right-3 z-10">
+                      <ProgramLogo3D
+                        src={item.logo}
+                        alt={item.titleFallback}
+                        size="sm"
+                      />
+                    </div>
+
+                    {/* Voice Button */}
+                    <motion.button
+                      className="absolute top-3 left-3 z-10 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-scef-gold hover:text-scef-blue transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleVoiceover(item.id as ProgramId);
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {isLoading && isPlaying === item.id ? (
+                        <motion.div
+                          className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        />
+                      ) : isPlaying === item.id ? (
+                        <VolumeX className="w-5 h-5" />
+                      ) : (
+                        <Volume2 className="w-5 h-5" />
+                      )}
+                    </motion.button>
+
                     {item.video ? (
                       <button 
                         onClick={() => setActiveVideo(item.video!)}
