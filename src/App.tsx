@@ -81,6 +81,7 @@ import BlueGarnetAward from "./pages/awards/BlueGarnetAward";
 // Vote & Nominate Pages
 import Vote from "./pages/Vote";
 import Nominate from "./pages/Nominate";
+import Calendar from "./pages/Calendar";
 
 const queryClient = new QueryClient();
 
@@ -121,9 +122,10 @@ const App = () => (
               <Route path="/awards/gold" element={<GoldAward />} />
               <Route path="/awards/blue-garnet" element={<BlueGarnetAward />} />
               
-              {/* Vote & Nominate Routes */}
+              {/* Vote, Nominate & Calendar Routes */}
               <Route path="/vote" element={<Vote />} />
               <Route path="/nominate" element={<Nominate />} />
+              <Route path="/calendar" element={<Calendar />} />
               
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
