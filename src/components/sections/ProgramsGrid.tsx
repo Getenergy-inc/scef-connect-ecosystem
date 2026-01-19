@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
@@ -9,6 +10,8 @@ const flagshipItems = [
   {
     id: "nesa",
     icon: Award,
+    logo: "/assets/nesa-africa-logo.jpg",
+    video: "/videos/nesa-africa-promo.mp4",
     titleKey: "programs.page.flagship.nesa.title",
     titleFallback: "NESA Africa",
     subtitleKey: "programs.page.flagship.nesa.subtitle",
@@ -28,6 +31,8 @@ const flagshipItems = [
   {
     id: "eduaid",
     icon: BookOpen,
+    logo: "/assets/eduaid-africa-logo.jpg",
+    video: "/videos/eduaid-africa-promo.mp4",
     titleKey: "programs.page.flagship.eduaid.title",
     titleFallback: "EduAid Africa",
     subtitleKey: "programs.page.flagship.eduaid.subtitle",
@@ -47,6 +52,8 @@ const flagshipItems = [
   {
     id: "eoa",
     icon: Globe,
+    logo: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=200&h=200&fit=crop",
+    video: null,
     titleKey: "programs.page.flagship.eoa.title",
     titleFallback: "EOA",
     subtitleKey: "programs.page.flagship.eoa.subtitle",
@@ -66,6 +73,8 @@ const flagshipItems = [
   {
     id: "elibrary",
     icon: Library,
+    logo: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop",
+    video: null,
     titleKey: "programs.page.flagship.elibrary.title",
     titleFallback: "eLibrary Nigeria",
     subtitleKey: "programs.page.flagship.elibrary.subtitle",
@@ -86,6 +95,7 @@ const flagshipItems = [
 
 export const ProgramsGrid = () => {
   const { t, isRTL } = useLocale();
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
     <section className="py-20 md:py-24 bg-background" dir={isRTL ? "rtl" : "ltr"}>
@@ -126,7 +136,7 @@ export const ProgramsGrid = () => {
             return (
               <StaggerItem key={item.id} animation="fadeUp">
                 <motion.article 
-                  className="group bg-card rounded-2xl border-2 border-border p-6 h-full cursor-pointer"
+                  className="group bg-card rounded-2xl border-2 border-border overflow-hidden h-full cursor-pointer"
                   whileHover={{ 
                     scale: 1.02, 
                     boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)",
@@ -134,67 +144,98 @@ export const ProgramsGrid = () => {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  {/* Header */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <motion.div 
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${item.accentClass}`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                    >
-                      <Icon className="w-6 h-6" />
-                    </motion.div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                        {t(item.titleKey) || item.titleFallback}
-                      </h3>
-                      <p className="text-sm font-medium text-scef-gold">
-                        {t(item.subtitleKey) || item.subtitleFallback}
-                      </p>
-                    </div>
+                  {/* Logo/Image Section */}
+                  <div className="relative">
+                    <Link to={item.external ? item.secondaryHref : item.primaryHref}>
+                      <div className="aspect-[3/2] overflow-hidden bg-muted">
+                        <motion.img
+                          src={item.logo}
+                          alt={item.titleFallback}
+                          className="w-full h-full object-cover"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.4 }}
+                        />
+                      </div>
+                    </Link>
+                    
+                    {/* Video Play Button Overlay */}
+                    {item.video && (
+                      <motion.button
+                        onClick={() => setActiveVideo(item.video!)}
+                        className="absolute bottom-3 right-3 flex items-center gap-2 px-3 py-2 bg-black/80 hover:bg-black text-white rounded-full text-sm font-medium backdrop-blur-sm"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Play className="w-4 h-4" />
+                        {t("labels.watchVideo") || "Watch Video"}
+                      </motion.button>
+                    )}
                   </div>
 
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                    {t(item.descriptionKey) || item.descriptionFallback}
-                  </p>
-
-                  {/* Bullets */}
-                  <ul className="space-y-1.5 mb-5" role="list">
-                    {item.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
-                        <Check className="w-4 h-4 text-scef-gold mt-0.5 shrink-0" />
-                        <span>{t(bullet.key) || bullet.fallback}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTAs */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {item.external ? (
-                      <a
-                        href={item.primaryHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1"
+                  {/* Content Section */}
+                  <div className="p-6">
+                    {/* Header */}
+                    <div className="flex items-start gap-4 mb-4">
+                      <motion.div 
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border ${item.accentClass}`}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
                       >
-                        <Button size="sm" className="w-full bg-primary hover:bg-primary/90 gap-1">
-                          {t("cta.learnMore") || "Learn More"}
-                          <ExternalLink className="w-3 h-3" />
+                        <Icon className="w-5 h-5" />
+                      </motion.div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-display text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                          {t(item.titleKey) || item.titleFallback}
+                        </h3>
+                        <p className="text-xs font-medium text-scef-gold">
+                          {t(item.subtitleKey) || item.subtitleFallback}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {t(item.descriptionKey) || item.descriptionFallback}
+                    </p>
+
+                    {/* Bullets */}
+                    <ul className="space-y-1.5 mb-5" role="list">
+                      {item.bullets.map((bullet, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                          <Check className="w-4 h-4 text-scef-gold mt-0.5 shrink-0" />
+                          <span>{t(bullet.key) || bullet.fallback}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTAs */}
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {item.external ? (
+                        <a
+                          href={item.primaryHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1"
+                        >
+                          <Button size="sm" className="w-full bg-primary hover:bg-primary/90 gap-1">
+                            {t("cta.learnMore") || "Learn More"}
+                            <ExternalLink className="w-3 h-3" />
+                          </Button>
+                        </a>
+                      ) : (
+                        <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
+                          <Link to={item.primaryHref} className="gap-1">
+                            {t("cta.learnMore") || "Learn More"}
+                            <ArrowRight className={`w-3 h-3 ${isRTL ? "rotate-180" : ""}`} />
+                          </Link>
                         </Button>
-                      </a>
-                    ) : (
-                      <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
-                        <Link to={item.primaryHref} className="gap-1">
-                          {t("cta.learnMore") || "Learn More"}
-                          <ArrowRight className={`w-3 h-3 ${isRTL ? "rotate-180" : ""}`} />
+                      )}
+                      <Button size="sm" variant="outline" className="border-border" asChild>
+                        <Link to={item.secondaryHref}>
+                          {t("cta.details") || "Details"}
                         </Link>
                       </Button>
-                    )}
-                    <Button size="sm" variant="outline" className="border-border" asChild>
-                      <Link to={item.secondaryHref}>
-                        {t("cta.details") || "Details"}
-                      </Link>
-                    </Button>
+                    </div>
                   </div>
                 </motion.article>
               </StaggerItem>
@@ -217,6 +258,38 @@ export const ProgramsGrid = () => {
           </div>
         </ScrollAnimation>
       </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <motion.div 
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setActiveVideo(null)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div 
+            className="relative max-w-4xl w-full"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+          >
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <video
+              src={activeVideo}
+              controls
+              autoPlay
+              className="w-full rounded-lg"
+            />
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 };
