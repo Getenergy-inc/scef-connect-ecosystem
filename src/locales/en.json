@@ -2044,5 +2044,132 @@
     "save": "Save",
     "cancel": "Cancel",
     "creating": "Creating..."
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "Our Programs",
+        "subtext": "SCEF delivers impact through three flagship programs and one flagship platform. To stay focused and scalable, related work is delivered as Tracks (sub-programs) and Series (webinars/training) under the appropriate flagship."
+      },
+      "flagship": {
+        "label": "Flagship Programs & Platform",
+        "heading": "3 Programs + 1 Platform",
+        "nesa": {
+          "title": "NESA Africa",
+          "subtitle": "New Education Standard Award Africa",
+          "description": "Continental standards, recognition, and accountability for education excellence.",
+          "clarityLine": "NESA Africa is powered by the NESA.Africa Nomination & Voting Portal and amplified through NESA Africa TV / NESA Awards TV.",
+          "bullets": ["Nomination & voting (official portal)", "Judging, categories, and recognition", "Broadcast, countdowns, replays (Awards TV)"],
+          "cta": {
+            "primary": "Nominate / Vote (NESA.Africa)",
+            "secondary1": "Watch NESA Africa TV",
+            "secondary2": "View Awards Season"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid Africa",
+          "subtitle": "Education Aid Africa",
+          "description": "Direct education support for learners and schools—access, equity, inclusion, and infrastructure.",
+          "bullets": ["Scholarships and learner support", "School support and community delivery", "Tracks for infrastructure, equity, inclusion + webinars"],
+          "cta": {
+            "primary": "Apply for Support / Fund a Learner",
+            "secondary1": "Explore EduAid Tracks",
+            "secondary2": "Join EduAid Webinars"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Education Online Africa)",
+          "subtitle": "Learning & Certification",
+          "description": "Skills development, certification, and verification for workforce readiness.",
+          "bullets": ["Learning pathways and exams", "Certificate issuance and verification", "Workplace productivity certifications"],
+          "cta": {
+            "primary": "Explore Certifications / Book Exam",
+            "secondary1": "Verify Certificate"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Flagship Platform",
+          "description": "Free learning resources and community knowledge sharing.",
+          "bullets": ["Browse free materials", "Upload resources and contribute", "Support reading and learning engagement"],
+          "cta": {
+            "primary": "Browse Free Materials",
+            "secondary1": "Join Contributors Network"
+          }
+        }
+      },
+      "tracks": {
+        "title": "EduAid Africa Tracks (Sub-Programs)",
+        "oneline": "These tracks sit under EduAid Africa to keep the portfolio focused and easy to navigate.",
+        "note": "RMSA, Women & Girls Education, and Special Needs Support are EduAid Africa tracks—not separate programs.",
+        "rmsa": {
+          "title": "RMSA: Rebuild My School Africa",
+          "tag": "Infrastructure Track",
+          "description": "Renovation and upgrades for schools and learning environments.",
+          "cta1": "Submit School Request",
+          "cta2": "Sponsor a Renovation"
+        },
+        "womenGirls": {
+          "title": "Women & Girls Education",
+          "tag": "Equity Track",
+          "description": "Support for girls' and women's access, retention, and success.",
+          "cta1": "Sponsor Girls' Education",
+          "cta2": "Join Advocacy Team"
+        },
+        "specialNeeds": {
+          "title": "Special Needs Education Support",
+          "tag": "Inclusion Track",
+          "description": "Inclusive education support and assistive learning interventions.",
+          "cta1": "Request Support",
+          "cta2": "Sponsor Assistive Learning"
+        },
+        "webinars": {
+          "title": "EduAid Webinars",
+          "tag": "Learning & Outreach Series",
+          "description": "Webinars and capacity-building sessions for communities and partners.",
+          "cta1": "Join Next Webinar",
+          "cta2": "Watch Replays"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "EOA Certification Track",
+        "productTitle": "African Workplace Productivity Certifications",
+        "productDescription": "Practical productivity skills training + assessment + certificate verification.",
+        "cta1": "Start Learning",
+        "cta2": "Book Exam",
+        "cta3": "Verify Certificate"
+      },
+      "pathways": {
+        "title": "Choose Your Pathway",
+        "individuals": {
+          "title": "Individuals",
+          "link1": "Become a Member",
+          "link2": "Apply for EduAid Support",
+          "link3": "Learn with EOA"
+        },
+        "schools": {
+          "title": "Schools",
+          "link1": "Request Support (EduAid)",
+          "link2": "Apply for RMSA",
+          "link3": "Join eLibrary"
+        },
+        "partners": {
+          "title": "Partners / CSR",
+          "link1": "Sponsor a Track",
+          "link2": "Fund Scholarships",
+          "link3": "Sponsor NESA"
+        },
+        "communities": {
+          "title": "Communities",
+          "link1": "Join a Local Chapter",
+          "link2": "Volunteer",
+          "link3": "Watch SCEF Media"
+        },
+        "cta1": "Donate / Sponsor",
+        "cta2": "Become a Member",
+        "cta3": "Explore Local Chapters",
+        "cta4": "Watch SCEF Media"
+      }
+    }
   }
 }

@@ -1679,5 +1679,132 @@
     "save": "Enregistrer",
     "cancel": "Annuler",
     "creating": "Création..."
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "Nos Programmes",
+        "subtext": "SCEF délivre des résultats à travers trois programmes phares et une plateforme phare. Pour rester ciblé et évolutif, les travaux connexes sont délivrés sous forme de Filières (sous-programmes) et de Séries (webinaires/formations) sous le programme approprié."
+      },
+      "flagship": {
+        "label": "Programmes & Plateforme Phares",
+        "heading": "3 Programmes + 1 Plateforme",
+        "nesa": {
+          "title": "NESA Afrique",
+          "subtitle": "Nouveau Prix Standard Éducatif Afrique",
+          "description": "Normes continentales, reconnaissance et responsabilité pour l'excellence éducative.",
+          "clarityLine": "NESA Afrique est alimenté par le Portail de Nomination & Vote NESA.Africa et amplifié par NESA Africa TV / NESA Awards TV.",
+          "bullets": ["Nomination & vote (portail officiel)", "Jury, catégories et reconnaissance", "Diffusion, comptes à rebours, replays (Awards TV)"],
+          "cta": {
+            "primary": "Nommer / Voter (NESA.Africa)",
+            "secondary1": "Regarder NESA Africa TV",
+            "secondary2": "Voir la Saison des Prix"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid Afrique",
+          "subtitle": "Aide Éducative Afrique",
+          "description": "Soutien éducatif direct pour les apprenants et les écoles — accès, équité, inclusion et infrastructure.",
+          "bullets": ["Bourses et soutien aux apprenants", "Soutien aux écoles et livraison communautaire", "Filières pour infrastructure, équité, inclusion + webinaires"],
+          "cta": {
+            "primary": "Demander un Soutien / Financer un Apprenant",
+            "secondary1": "Explorer les Filières EduAid",
+            "secondary2": "Rejoindre les Webinaires EduAid"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Éducation en Ligne Afrique)",
+          "subtitle": "Apprentissage & Certification",
+          "description": "Développement des compétences, certification et vérification pour la préparation à l'emploi.",
+          "bullets": ["Parcours d'apprentissage et examens", "Délivrance et vérification de certificats", "Certifications de productivité au travail"],
+          "cta": {
+            "primary": "Explorer les Certifications / Réserver un Examen",
+            "secondary1": "Vérifier un Certificat"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Plateforme Phare",
+          "description": "Ressources d'apprentissage gratuites et partage de connaissances communautaire.",
+          "bullets": ["Parcourir les ressources gratuites", "Télécharger des ressources et contribuer", "Soutenir l'engagement dans la lecture"],
+          "cta": {
+            "primary": "Parcourir les Ressources Gratuites",
+            "secondary1": "Rejoindre le Réseau des Contributeurs"
+          }
+        }
+      },
+      "tracks": {
+        "title": "Filières EduAid Afrique (Sous-Programmes)",
+        "oneline": "Ces filières sont sous EduAid Afrique pour garder le portefeuille ciblé et facile à naviguer.",
+        "note": "RMSA, l'Éducation des Femmes & Filles, et le Soutien aux Besoins Spéciaux sont des filières EduAid Afrique — pas des programmes séparés.",
+        "rmsa": {
+          "title": "RMSA : Reconstruire Mon École Afrique",
+          "tag": "Filière Infrastructure",
+          "description": "Rénovation et améliorations des écoles et environnements d'apprentissage.",
+          "cta1": "Soumettre une Demande d'École",
+          "cta2": "Sponsoriser une Rénovation"
+        },
+        "womenGirls": {
+          "title": "Éducation des Femmes & Filles",
+          "tag": "Filière Équité",
+          "description": "Soutien à l'accès, la rétention et la réussite des filles et des femmes.",
+          "cta1": "Sponsoriser l'Éducation des Filles",
+          "cta2": "Rejoindre l'Équipe de Plaidoyer"
+        },
+        "specialNeeds": {
+          "title": "Soutien à l'Éducation Spécialisée",
+          "tag": "Filière Inclusion",
+          "description": "Soutien éducatif inclusif et interventions d'apprentissage assisté.",
+          "cta1": "Demander un Soutien",
+          "cta2": "Sponsoriser l'Apprentissage Assisté"
+        },
+        "webinars": {
+          "title": "Webinaires EduAid",
+          "tag": "Série Apprentissage & Sensibilisation",
+          "description": "Webinaires et sessions de renforcement des capacités pour les communautés et partenaires.",
+          "cta1": "Rejoindre le Prochain Webinaire",
+          "cta2": "Regarder les Replays"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "Filière Certification EOA",
+        "productTitle": "Certifications de Productivité au Travail Africaine",
+        "productDescription": "Formation pratique aux compétences de productivité + évaluation + vérification de certificat.",
+        "cta1": "Commencer à Apprendre",
+        "cta2": "Réserver un Examen",
+        "cta3": "Vérifier un Certificat"
+      },
+      "pathways": {
+        "title": "Choisissez Votre Parcours",
+        "individuals": {
+          "title": "Particuliers",
+          "link1": "Devenir Membre",
+          "link2": "Demander le Soutien EduAid",
+          "link3": "Apprendre avec EOA"
+        },
+        "schools": {
+          "title": "Écoles",
+          "link1": "Demander un Soutien (EduAid)",
+          "link2": "Postuler pour RMSA",
+          "link3": "Rejoindre eLibrary"
+        },
+        "partners": {
+          "title": "Partenaires / RSE",
+          "link1": "Sponsoriser une Filière",
+          "link2": "Financer des Bourses",
+          "link3": "Sponsoriser NESA"
+        },
+        "communities": {
+          "title": "Communautés",
+          "link1": "Rejoindre un Chapitre Local",
+          "link2": "Devenir Bénévole",
+          "link3": "Regarder SCEF Media"
+        },
+        "cta1": "Donner / Sponsoriser",
+        "cta2": "Devenir Membre",
+        "cta3": "Explorer les Chapitres Locaux",
+        "cta4": "Regarder SCEF Media"
+      }
+    }
   }
 }

@@ -675,5 +675,132 @@
     "all": "Alle",
     "save": "Speichern",
     "cancel": "Abbrechen"
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "Unsere Programme",
+        "subtext": "SCEF erzielt Wirkung durch drei Flaggschiff-Programme und eine Flaggschiff-Plattform. Um fokussiert und skalierbar zu bleiben, werden verwandte Arbeiten als Tracks (Unterprogramme) und Serien (Webinare/Schulungen) unter dem entsprechenden Flaggschiff-Programm geliefert."
+      },
+      "flagship": {
+        "label": "Flaggschiff-Programme und Plattform",
+        "heading": "3 Programme + 1 Plattform",
+        "nesa": {
+          "title": "NESA Afrika",
+          "subtitle": "Neuer Bildungsstandard-Preis Afrika",
+          "description": "Kontinentale Standards, Anerkennung und Rechenschaftspflicht für Bildungsexzellenz.",
+          "clarityLine": "NESA Afrika wird vom NESA.Africa Nominierungs- und Abstimmungsportal betrieben und durch NESA Africa TV / NESA Awards TV verstärkt.",
+          "bullets": ["Nominierung und Abstimmung (offizielles Portal)", "Jury, Kategorien und Anerkennung", "Übertragung, Countdowns, Wiederholungen (Awards TV)"],
+          "cta": {
+            "primary": "Nominieren / Abstimmen (NESA.Africa)",
+            "secondary1": "NESA Africa TV ansehen",
+            "secondary2": "Preissaison anzeigen"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid Afrika",
+          "subtitle": "Bildungshilfe Afrika",
+          "description": "Direkte Bildungsunterstützung für Lernende und Schulen — Zugang, Gerechtigkeit, Inklusion und Infrastruktur.",
+          "bullets": ["Stipendien und Lernendenunterstützung", "Schulunterstützung und Gemeinschaftslieferung", "Tracks für Infrastruktur, Gerechtigkeit, Inklusion + Webinare"],
+          "cta": {
+            "primary": "Unterstützung beantragen / Lernenden fördern",
+            "secondary1": "EduAid Tracks erkunden",
+            "secondary2": "EduAid Webinaren beitreten"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Bildung Online Afrika)",
+          "subtitle": "Lernen und Zertifizierung",
+          "description": "Kompetenzentwicklung, Zertifizierung und Verifizierung für Arbeitsbereitschaft.",
+          "bullets": ["Lernpfade und Prüfungen", "Zertifikatsausstellung und Verifizierung", "Produktivitätszertifizierungen am Arbeitsplatz"],
+          "cta": {
+            "primary": "Zertifizierungen erkunden / Prüfung buchen",
+            "secondary1": "Zertifikat verifizieren"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Flaggschiff-Plattform",
+          "description": "Kostenlose Lernressourcen und gemeinschaftlicher Wissensaustausch.",
+          "bullets": ["Kostenlose Materialien durchsuchen", "Ressourcen hochladen und beitragen", "Lese- und Lernengagement unterstützen"],
+          "cta": {
+            "primary": "Kostenlose Materialien durchsuchen",
+            "secondary1": "Beitragenden-Netzwerk beitreten"
+          }
+        }
+      },
+      "tracks": {
+        "title": "EduAid Afrika Tracks (Unterprogramme)",
+        "oneline": "Diese Tracks befinden sich unter EduAid Afrika, um das Portfolio fokussiert und einfach navigierbar zu halten.",
+        "note": "RMSA, Frauen- und Mädchenbildung und Unterstützung bei besonderen Bedürfnissen sind EduAid Afrika Tracks — keine separaten Programme.",
+        "rmsa": {
+          "title": "RMSA: Meine Schule Afrika wiederaufbauen",
+          "tag": "Infrastruktur-Track",
+          "description": "Renovierung und Upgrades für Schulen und Lernumgebungen.",
+          "cta1": "Schulantrag einreichen",
+          "cta2": "Renovierung sponsern"
+        },
+        "womenGirls": {
+          "title": "Frauen- und Mädchenbildung",
+          "tag": "Gerechtigkeits-Track",
+          "description": "Unterstützung für Zugang, Verbleib und Erfolg von Mädchen und Frauen.",
+          "cta1": "Mädchenbildung sponsern",
+          "cta2": "Advocacy-Team beitreten"
+        },
+        "specialNeeds": {
+          "title": "Unterstützung bei besonderen Bedürfnissen",
+          "tag": "Inklusions-Track",
+          "description": "Inklusive Bildungsunterstützung und assistierte Lerninterventionen.",
+          "cta1": "Unterstützung anfordern",
+          "cta2": "Assistiertes Lernen sponsern"
+        },
+        "webinars": {
+          "title": "EduAid Webinare",
+          "tag": "Lern- und Outreach-Serie",
+          "description": "Webinare und Kapazitätsaufbau-Sessions für Gemeinschaften und Partner.",
+          "cta1": "Nächstem Webinar beitreten",
+          "cta2": "Wiederholungen ansehen"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "EOA Zertifizierungs-Track",
+        "productTitle": "Afrikanische Arbeitsplatz-Produktivitätszertifizierungen",
+        "productDescription": "Praktische Produktivitätskompetenzschulung + Bewertung + Zertifikatsverifizierung.",
+        "cta1": "Lernen beginnen",
+        "cta2": "Prüfung buchen",
+        "cta3": "Zertifikat verifizieren"
+      },
+      "pathways": {
+        "title": "Wählen Sie Ihren Weg",
+        "individuals": {
+          "title": "Einzelpersonen",
+          "link1": "Mitglied werden",
+          "link2": "EduAid Unterstützung beantragen",
+          "link3": "Mit EOA lernen"
+        },
+        "schools": {
+          "title": "Schulen",
+          "link1": "Unterstützung anfordern (EduAid)",
+          "link2": "Für RMSA bewerben",
+          "link3": "eLibrary beitreten"
+        },
+        "partners": {
+          "title": "Partner / CSR",
+          "link1": "Track sponsern",
+          "link2": "Stipendien finanzieren",
+          "link3": "NESA sponsern"
+        },
+        "communities": {
+          "title": "Gemeinschaften",
+          "link1": "Lokalem Ortsverband beitreten",
+          "link2": "Freiwilliger werden",
+          "link3": "SCEF Media ansehen"
+        },
+        "cta1": "Spenden / Sponsern",
+        "cta2": "Mitglied werden",
+        "cta3": "Ortsverbände erkunden",
+        "cta4": "SCEF Media ansehen"
+      }
+    }
   }
 }

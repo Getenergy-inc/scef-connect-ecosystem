@@ -1627,5 +1627,132 @@
     "save": "Hifadhi",
     "cancel": "Ghairi",
     "creating": "Inaunda..."
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "Programu Zetu",
+        "subtext": "SCEF hutoa athari kupitia programu kuu tatu na jukwaa kuu moja. Ili kubaki makini na kuwa na uwezo wa kupanuka, kazi zinazohusiana hutolewa kama Njia (programu ndogo) na Mfululizo (webinari/mafunzo) chini ya programu kuu inayofaa."
+      },
+      "flagship": {
+        "label": "Programu na Jukwaa Kuu",
+        "heading": "Programu 3 + Jukwaa 1",
+        "nesa": {
+          "title": "NESA Afrika",
+          "subtitle": "Tuzo ya Kiwango Kipya cha Elimu Afrika",
+          "description": "Viwango vya bara, utambuzi, na uwajibikaji kwa ubora wa elimu.",
+          "clarityLine": "NESA Afrika inaendeshwa na Tovuti ya Uteuzi na Kupiga Kura ya NESA.Africa na kuenezwa kupitia NESA Africa TV / NESA Awards TV.",
+          "bullets": ["Uteuzi na kupiga kura (tovuti rasmi)", "Uhukumu, kategoria, na utambuzi", "Utangazaji, kuhesabu kurudi, kurudia (Awards TV)"],
+          "cta": {
+            "primary": "Teua / Piga Kura (NESA.Africa)",
+            "secondary1": "Tazama NESA Africa TV",
+            "secondary2": "Tazama Msimu wa Tuzo"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid Afrika",
+          "subtitle": "Msaada wa Elimu Afrika",
+          "description": "Msaada wa moja kwa moja wa elimu kwa wanafunzi na shule — ufikiaji, usawa, ujumuishaji, na miundombinu.",
+          "bullets": ["Udhamini na msaada wa wanafunzi", "Msaada wa shule na utoaji wa jamii", "Njia za miundombinu, usawa, ujumuishaji + webinari"],
+          "cta": {
+            "primary": "Omba Msaada / Fadhili Mwanafunzi",
+            "secondary1": "Chunguza Njia za EduAid",
+            "secondary2": "Jiunge na Webinari za EduAid"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Elimu Mtandaoni Afrika)",
+          "subtitle": "Kujifunza na Vyeti",
+          "description": "Maendeleo ya ujuzi, vyeti, na uthibitishaji kwa utayari wa kazi.",
+          "bullets": ["Njia za kujifunza na mitihani", "Utoaji na uthibitishaji wa vyeti", "Vyeti vya tija mahali pa kazi"],
+          "cta": {
+            "primary": "Chunguza Vyeti / Weka Mtihani",
+            "secondary1": "Thibitisha Cheti"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Jukwaa Kuu",
+          "description": "Rasilimali za kujifunza bure na kushiriki maarifa ya jamii.",
+          "bullets": ["Vinjari nyenzo bure", "Pakia rasilimali na kuchangia", "Kusaidia ushiriki wa kusoma na kujifunza"],
+          "cta": {
+            "primary": "Vinjari Nyenzo Bure",
+            "secondary1": "Jiunge na Mtandao wa Wachangiaji"
+          }
+        }
+      },
+      "tracks": {
+        "title": "Njia za EduAid Afrika (Programu Ndogo)",
+        "oneline": "Njia hizi zipo chini ya EduAid Afrika ili kuweka kwingineko makini na rahisi kuvinjari.",
+        "note": "RMSA, Elimu ya Wanawake na Wasichana, na Msaada wa Mahitaji Maalum ni njia za EduAid Afrika — si programu tofauti.",
+        "rmsa": {
+          "title": "RMSA: Jenga Upya Shule Yangu Afrika",
+          "tag": "Njia ya Miundombinu",
+          "description": "Ukarabati na maboresho ya shule na mazingira ya kujifunza.",
+          "cta1": "Tuma Ombi la Shule",
+          "cta2": "Fanya Udhamini wa Ukarabati"
+        },
+        "womenGirls": {
+          "title": "Elimu ya Wanawake na Wasichana",
+          "tag": "Njia ya Usawa",
+          "description": "Msaada kwa ufikiaji, kubaki, na mafanikio ya wasichana na wanawake.",
+          "cta1": "Fadhili Elimu ya Wasichana",
+          "cta2": "Jiunge na Timu ya Utetezi"
+        },
+        "specialNeeds": {
+          "title": "Msaada wa Elimu kwa Mahitaji Maalum",
+          "tag": "Njia ya Ujumuishaji",
+          "description": "Msaada wa elimu jumuishi na uingiliaji kati wa kujifunza kwa msaada.",
+          "cta1": "Omba Msaada",
+          "cta2": "Fadhili Kujifunza kwa Msaada"
+        },
+        "webinars": {
+          "title": "Webinari za EduAid",
+          "tag": "Mfululizo wa Kujifunza na Kufikia",
+          "description": "Webinari na vikao vya kujenga uwezo kwa jamii na washirika.",
+          "cta1": "Jiunge na Webinari Ijayo",
+          "cta2": "Tazama Marudiano"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "Njia ya Vyeti vya EOA",
+        "productTitle": "Vyeti vya Tija Mahali pa Kazi Afrika",
+        "productDescription": "Mafunzo ya vitendo ya ujuzi wa tija + tathmini + uthibitishaji wa cheti.",
+        "cta1": "Anza Kujifunza",
+        "cta2": "Weka Mtihani",
+        "cta3": "Thibitisha Cheti"
+      },
+      "pathways": {
+        "title": "Chagua Njia Yako",
+        "individuals": {
+          "title": "Watu Binafsi",
+          "link1": "Jiunge kama Mwanachama",
+          "link2": "Omba Msaada wa EduAid",
+          "link3": "Jifunze na EOA"
+        },
+        "schools": {
+          "title": "Shule",
+          "link1": "Omba Msaada (EduAid)",
+          "link2": "Omba RMSA",
+          "link3": "Jiunge na eLibrary"
+        },
+        "partners": {
+          "title": "Washirika / CSR",
+          "link1": "Fanya Udhamini wa Njia",
+          "link2": "Fadhili Udhamini",
+          "link3": "Fanya Udhamini wa NESA"
+        },
+        "communities": {
+          "title": "Jamii",
+          "link1": "Jiunge na Sura ya Mtaa",
+          "link2": "Jitolee",
+          "link3": "Tazama SCEF Media"
+        },
+        "cta1": "Changia / Fanya Udhamini",
+        "cta2": "Jiunge kama Mwanachama",
+        "cta3": "Chunguza Sura za Mtaa",
+        "cta4": "Tazama SCEF Media"
+      }
+    }
   }
 }
