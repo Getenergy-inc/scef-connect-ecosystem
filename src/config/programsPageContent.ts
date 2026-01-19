@@ -11,6 +11,8 @@ export const programsPageContent = {
     {
       id: "nesa-africa",
       icon: Award,
+      logo: "/assets/nesa-africa-logo.jpg",
+      video: "/videos/nesa-africa-promo.mp4",
       titleKey: "programs.page.flagship.nesa.title",
       titleFallback: "NESA Africa",
       subtitleKey: "programs.page.flagship.nesa.subtitle",
@@ -47,6 +49,8 @@ export const programsPageContent = {
     {
       id: "eduaid-africa",
       icon: BookOpen,
+      logo: "/assets/eduaid-africa-logo.jpg",
+      video: "/videos/eduaid-africa-promo.mp4",
       titleKey: "programs.page.flagship.eduaid.title",
       titleFallback: "EduAid Africa",
       subtitleKey: "programs.page.flagship.eduaid.subtitle",
@@ -82,6 +86,8 @@ export const programsPageContent = {
     {
       id: "eoa",
       icon: Globe,
+      logo: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=300&fit=crop",
+      video: "/videos/eoa-promo.mp4",
       titleKey: "programs.page.flagship.eoa.title",
       titleFallback: "EOA (Education Online Africa)",
       subtitleKey: "programs.page.flagship.eoa.subtitle",
@@ -110,6 +116,8 @@ export const programsPageContent = {
     {
       id: "elibrary",
       icon: Library,
+      logo: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop",
+      video: "/videos/elibrary-nigeria-promo.mp4",
       titleKey: "programs.page.flagship.elibrary.title",
       titleFallback: "eLibrary Nigeria",
       subtitleKey: "programs.page.flagship.elibrary.subtitle",

@@ -133,6 +133,8 @@ const Programs = () => {
                   <StaggerItem key={program.id} animation="fadeUp">
                     <FlagshipCard
                       icon={program.icon}
+                      logo={program.logo}
+                      video={program.video}
                       titleKey={program.titleKey}
                       titleFallback={program.titleFallback}
                       subtitleKey={program.subtitleKey}
