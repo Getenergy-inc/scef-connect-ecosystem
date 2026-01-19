@@ -102,8 +102,20 @@ const flagshipItems = [
 
 export const ProgramsGrid = () => {
   const { t, isRTL } = useLocale();
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
-  const { isPlaying, isLoading, toggleVoiceover } = useProgramVoiceover();
+  const [activeVideo, setActiveVideo] = useState<{ url: string; programId: ProgramId } | null>(null);
+  const { isPlaying, isLoading, toggleVoiceover, playVoiceover, stopVoiceover } = useProgramVoiceover();
+
+  // Auto-play voiceover when modal opens
+  const handleOpenVideo = (videoUrl: string, programId: ProgramId) => {
+    setActiveVideo({ url: videoUrl, programId });
+    // Delay slightly to let video start
+    setTimeout(() => playVoiceover(programId), 500);
+  };
+
+  const handleCloseVideo = () => {
+    stopVoiceover();
+    setActiveVideo(null);
+  };
 
   return (
     <section className="py-20 md:py-24 bg-background" dir={isRTL ? "rtl" : "ltr"}>
@@ -188,7 +200,7 @@ export const ProgramsGrid = () => {
 
                     {item.video ? (
                       <button 
-                        onClick={() => setActiveVideo(item.video!)}
+                        onClick={() => handleOpenVideo(item.video!, item.id as ProgramId)}
                         className="w-full block"
                       >
                         <div className="aspect-[3/2] overflow-hidden bg-muted relative">
@@ -313,11 +325,11 @@ export const ProgramsGrid = () => {
         </ScrollAnimation>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal with Auto-play Voiceover */}
       {activeVideo && (
         <motion.div 
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-          onClick={() => setActiveVideo(null)}
+          onClick={handleCloseVideo}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -329,14 +341,36 @@ export const ProgramsGrid = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
-            <button
-              onClick={() => setActiveVideo(null)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
-            >
-              <X className="w-8 h-8" />
-            </button>
+            {/* Header with close and voice control */}
+            <div className="flex items-center justify-between mb-4">
+              <button
+                onClick={() => {
+                  const currentlyPlaying = isPlaying === activeVideo.programId;
+                  currentlyPlaying ? stopVoiceover() : playVoiceover(activeVideo.programId);
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors text-sm"
+              >
+                {isPlaying === activeVideo.programId ? (
+                  <>
+                    <VolumeX className="w-4 h-4" />
+                    <span>Stop Narration</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="w-4 h-4" />
+                    <span>Play Narration</span>
+                  </>
+                )}
+              </button>
+              <button
+                onClick={handleCloseVideo}
+                className="text-white hover:text-primary transition-colors"
+              >
+                <X className="w-8 h-8" />
+              </button>
+            </div>
             <video
-              src={activeVideo}
+              src={activeVideo.url}
               controls
               autoPlay
               className="w-full rounded-lg"

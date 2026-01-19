@@ -58,7 +58,21 @@ export function FlagshipCard({
 }: FlagshipCardProps) {
   const { t, isRTL } = useLocale();
   const [activeVideo, setActiveVideo] = useState(false);
-  const { isPlaying, isLoading, toggleVoiceover } = useProgramVoiceover();
+  const { isPlaying, isLoading, toggleVoiceover, playVoiceover, stopVoiceover } = useProgramVoiceover();
+
+  // Auto-play voiceover when modal opens
+  const handleOpenVideo = () => {
+    setActiveVideo(true);
+    if (id) {
+      // Delay slightly to let video start
+      setTimeout(() => playVoiceover(id as ProgramId), 500);
+    }
+  };
+
+  const handleCloseVideo = () => {
+    stopVoiceover();
+    setActiveVideo(false);
+  };
 
   const handleScrollTo = (href: string) => {
     const elementId = href.replace("#", "");
@@ -121,7 +135,7 @@ export function FlagshipCard({
 
             {video ? (
               <button 
-                onClick={() => setActiveVideo(true)}
+                onClick={handleOpenVideo}
                 className="w-full block"
               >
                 <div className="aspect-[3/2] overflow-hidden bg-muted relative">
@@ -259,11 +273,11 @@ export function FlagshipCard({
         </div>
       </motion.article>
 
-      {/* Video Modal */}
+      {/* Video Modal with Auto-play Voiceover */}
       {activeVideo && video && (
         <motion.div 
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-          onClick={() => setActiveVideo(false)}
+          onClick={handleCloseVideo}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -275,12 +289,36 @@ export function FlagshipCard({
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
-            <button
-              onClick={() => setActiveVideo(false)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
-            >
-              <X className="w-8 h-8" />
-            </button>
+            {/* Header with close and voice control */}
+            <div className="flex items-center justify-between mb-4">
+              {id && (
+                <button
+                  onClick={() => {
+                    const currentlyPlaying = isPlaying === id;
+                    currentlyPlaying ? stopVoiceover() : playVoiceover(id as ProgramId);
+                  }}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors text-sm"
+                >
+                  {isPlaying === id ? (
+                    <>
+                      <VolumeX className="w-4 h-4" />
+                      <span>Stop Narration</span>
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="w-4 h-4" />
+                      <span>Play Narration</span>
+                    </>
+                  )}
+                </button>
+              )}
+              <button
+                onClick={handleCloseVideo}
+                className="text-white hover:text-primary transition-colors ml-auto"
+              >
+                <X className="w-8 h-8" />
+              </button>
+            </div>
             <video
               src={video}
               controls
