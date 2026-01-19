@@ -14,7 +14,7 @@ import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 
 // Key Event Dates for Countdowns
-const countdownEvents = [
+const tvShowEvents = [
   {
     name: "Platinum Recognition Show",
     date: new Date("2026-02-28T18:00:00"),
@@ -30,6 +30,22 @@ const countdownEvents = [
     date: new Date("2026-05-17T18:00:00"),
     type: "show" as const,
   },
+];
+
+const votingEvents = [
+  {
+    name: "Gold Public Voting Opens",
+    date: new Date("2026-04-10T00:00:00"),
+    type: "voting" as const,
+  },
+  {
+    name: "Blue Garnet Voting Opens",
+    date: new Date("2026-05-18T00:00:00"),
+    type: "voting" as const,
+  },
+];
+
+const galaEvents = [
   {
     name: "Blue Garnet Awards Gala",
     date: new Date("2026-06-27T18:00:00"),
@@ -443,35 +459,62 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-10">
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
-                  Upcoming <span style={{ color: nesaColors.gold }}>TV Shows & Events</span>
+                  Upcoming <span style={{ color: nesaColors.gold }}>TV Shows, Voting & Events</span>
                 </h2>
                 <p style={{ color: nesaColors.textMuted }} className="max-w-xl mx-auto">
-                  Live countdown to NESA-Africa's major milestones and broadcast events
+                  Live countdown to NESA-Africa's major milestones, public voting windows, and broadcast events
                 </p>
               </div>
               
-              {/* First row: 3 TV Shows */}
-              <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-6">
-                {countdownEvents.slice(0, 3).map((event) => (
-                  <EventCountdown
-                    key={event.name}
-                    targetDate={event.date}
-                    eventName={event.name}
-                    eventType={event.type}
-                  />
-                ))}
+              {/* TV Shows Row */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
+                  📺 Live TV Shows
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                  {tvShowEvents.map((event) => (
+                    <EventCountdown
+                      key={event.name}
+                      targetDate={event.date}
+                      eventName={event.name}
+                      eventType={event.type}
+                    />
+                  ))}
+                </div>
               </div>
               
-              {/* Second row: Gala + Legacy */}
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {countdownEvents.slice(3).map((event) => (
-                  <EventCountdown
-                    key={event.name}
-                    targetDate={event.date}
-                    eventName={event.name}
-                    eventType={event.type}
-                  />
-                ))}
+              {/* Public Voting Windows Row */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
+                  🗳️ Public Voting Windows
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                  {votingEvents.map((event) => (
+                    <EventCountdown
+                      key={event.name}
+                      targetDate={event.date}
+                      eventName={event.name}
+                      eventType={event.type}
+                    />
+                  ))}
+                </div>
+              </div>
+              
+              {/* Gala & Legacy Events Row */}
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
+                  🏆 Gala & Legacy Events
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                  {galaEvents.map((event) => (
+                    <EventCountdown
+                      key={event.name}
+                      targetDate={event.date}
+                      eventName={event.name}
+                      eventType={event.type}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </section>
