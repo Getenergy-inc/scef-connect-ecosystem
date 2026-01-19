@@ -11,6 +11,7 @@ import { EduAidTracksSection } from "@/components/programs/EduAidTracksSection";
 import { EOACertificationSection } from "@/components/programs/EOACertificationSection";
 import { StakeholderPathwaysSection } from "@/components/programs/StakeholderPathwaysSection";
 import { programsPageContent } from "@/config/programsPageContent";
+import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
 import heroImage from "@/assets/hero-programs.jpg";
 
 const Programs = () => {
@@ -117,35 +118,36 @@ const Programs = () => {
           <section className="py-16 md:py-20 bg-background">
             <div className="container px-4 md:px-8">
               {/* Section Label */}
-              <div className="text-center mb-10">
+              <ScrollAnimation animation="fadeUp" className="text-center mb-10">
                 <span className="inline-block px-4 py-1.5 bg-scef-gold/10 text-scef-gold rounded-full text-sm font-medium border border-scef-gold/20 mb-4">
                   {t("programs.page.flagship.label") || "Flagship Programs & Platform"}
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
                   {t("programs.page.flagship.heading") || "3 Programs + 1 Platform"}
                 </h2>
-              </div>
+              </ScrollAnimation>
 
               {/* Grid: 2x2 desktop, stacked mobile */}
-              <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto" staggerDelay={0.15}>
                 {flagshipPrograms.map((program) => (
-                  <FlagshipCard
-                    key={program.id}
-                    icon={program.icon}
-                    titleKey={program.titleKey}
-                    titleFallback={program.titleFallback}
-                    subtitleKey={program.subtitleKey}
-                    subtitleFallback={program.subtitleFallback}
-                    descriptionKey={program.descriptionKey}
-                    descriptionFallback={program.descriptionFallback}
-                    clarityLineKey={program.clarityLineKey}
-                    clarityLineFallback={program.clarityLineFallback}
-                    bullets={program.bullets}
-                    primaryCta={program.primaryCta}
-                    secondaryCtas={program.secondaryCtas}
-                  />
+                  <StaggerItem key={program.id} animation="fadeUp">
+                    <FlagshipCard
+                      icon={program.icon}
+                      titleKey={program.titleKey}
+                      titleFallback={program.titleFallback}
+                      subtitleKey={program.subtitleKey}
+                      subtitleFallback={program.subtitleFallback}
+                      descriptionKey={program.descriptionKey}
+                      descriptionFallback={program.descriptionFallback}
+                      clarityLineKey={program.clarityLineKey}
+                      clarityLineFallback={program.clarityLineFallback}
+                      bullets={program.bullets}
+                      primaryCta={program.primaryCta}
+                      secondaryCtas={program.secondaryCtas}
+                    />
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
           </section>
 

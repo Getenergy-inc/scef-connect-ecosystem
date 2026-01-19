@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLocale } from "@/contexts/LocaleContext";
 import { programsPageContent } from "@/config/programsPageContent";
 import { LucideIcon } from "lucide-react";
+import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
 
 interface TrackCardProps {
   id: string;
@@ -87,37 +88,40 @@ export function EduAidTracksSection() {
     >
       <div className="container px-4 md:px-8">
         {/* Section Header */}
-        <div className="text-center mb-10">
+        <ScrollAnimation animation="fadeUp" className="text-center mb-10">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
             {t(eduaidTracks.sectionTitleKey) || eduaidTracks.sectionTitleFallback}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {t(eduaidTracks.oneLineKey) || eduaidTracks.oneLineFallback}
           </p>
-        </div>
+        </ScrollAnimation>
 
         {/* Tracks Grid */}
-        <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-8">
+        <StaggerContainer className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-8" staggerDelay={0.12}>
           {eduaidTracks.tracks.map((track) => (
-            <TrackCard
-              key={track.id}
-              id={track.id}
-              icon={track.icon}
-              titleKey={track.titleKey}
-              titleFallback={track.titleFallback}
-              tagKey={track.tagKey}
-              tagFallback={track.tagFallback}
-              descriptionKey={track.descriptionKey}
-              descriptionFallback={track.descriptionFallback}
-              ctas={track.ctas}
-            />
+            <StaggerItem key={track.id} animation="scale">
+              <TrackCard
+                id={track.id}
+                icon={track.icon}
+                titleKey={track.titleKey}
+                titleFallback={track.titleFallback}
+                tagKey={track.tagKey}
+                tagFallback={track.tagFallback}
+                descriptionKey={track.descriptionKey}
+                descriptionFallback={track.descriptionFallback}
+                ctas={track.ctas}
+              />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Note */}
-        <p className="text-center text-sm text-muted-foreground italic max-w-xl mx-auto">
-          {t(eduaidTracks.noteKey) || eduaidTracks.noteFallback}
-        </p>
+        <ScrollAnimation animation="fadeUp" delay={0.3}>
+          <p className="text-center text-sm text-muted-foreground italic max-w-xl mx-auto">
+            {t(eduaidTracks.noteKey) || eduaidTracks.noteFallback}
+          </p>
+        </ScrollAnimation>
       </div>
     </section>
   );
