@@ -10,6 +10,7 @@ interface FlagshipCardProps {
   icon: LucideIcon;
   logo?: string;
   video?: string | null;
+  videoThumbnail?: string;
   titleKey: string;
   titleFallback: string;
   subtitleKey: string;
@@ -37,6 +38,7 @@ export function FlagshipCard({
   icon: Icon,
   logo,
   video,
+  videoThumbnail,
   titleKey,
   titleFallback,
   subtitleKey,
@@ -72,32 +74,46 @@ export function FlagshipCard({
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        {/* Logo/Image Section */}
-        {logo && (
+        {/* Video Thumbnail / Logo Section */}
+        {(videoThumbnail || logo) && (
           <div className="relative">
-            <Link to={primaryCta.external ? secondaryCtas[0]?.href || "#" : primaryCta.href}>
-              <div className="aspect-[3/2] overflow-hidden bg-muted">
-                <motion.img
-                  src={logo}
-                  alt={titleFallback}
-                  className="w-full h-full object-cover"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </div>
-            </Link>
-            
-            {/* Video Play Button Overlay */}
-            {video && (
-              <motion.button
+            {video ? (
+              <button 
                 onClick={() => setActiveVideo(true)}
-                className="absolute bottom-3 right-3 flex items-center gap-2 px-3 py-2 bg-black/80 hover:bg-black text-white rounded-full text-sm font-medium backdrop-blur-sm"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="w-full block"
               >
-                <Play className="w-4 h-4" />
-                {t("labels.watchVideo") || "Watch Video"}
-              </motion.button>
+                <div className="aspect-[3/2] overflow-hidden bg-muted relative">
+                  <motion.img
+                    src={videoThumbnail || logo}
+                    alt={titleFallback}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                    <motion.div 
+                      className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Play className="w-7 h-7 text-primary ml-1" fill="currentColor" />
+                    </motion.div>
+                  </div>
+                </div>
+              </button>
+            ) : (
+              <Link to={primaryCta.external ? secondaryCtas[0]?.href || "#" : primaryCta.href}>
+                <div className="aspect-[3/2] overflow-hidden bg-muted">
+                  <motion.img
+                    src={logo}
+                    alt={titleFallback}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                </div>
+              </Link>
             )}
           </div>
         )}

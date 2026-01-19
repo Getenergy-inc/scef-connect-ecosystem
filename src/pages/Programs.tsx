@@ -135,6 +135,7 @@ const Programs = () => {
                       icon={program.icon}
                       logo={program.logo}
                       video={program.video}
+                      videoThumbnail={program.videoThumbnail}
                       titleKey={program.titleKey}
                       titleFallback={program.titleFallback}
                       subtitleKey={program.subtitleKey}
