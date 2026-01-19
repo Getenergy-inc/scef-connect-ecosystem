@@ -97,14 +97,14 @@ const programmeTimeline = [
   { 
     phase: "Gold Public Voting", 
     date: "10 Apr – 16 May 2026", 
-    desc: "Mass participation voting across 125 sub-categories",
+    desc: "Mass participation voting across 135 sub-categories",
     type: "voting",
     active: false 
   },
   { 
     phase: "Gold Certificate Winners Show", 
     date: "17 May 2026", 
-    desc: "3-hour TV Show — 125 Gold winners announced",
+    desc: "3-hour TV Show — 135 Gold winners announced",
     type: "recognition",
     active: false 
   },
@@ -171,7 +171,7 @@ const awardPhases = [
     icon: Trophy,
     features: [
       "9 Award Categories",
-      "125 Sub-Categories",
+      "135 Sub-Categories",
       "1 Gold Winner per Sub-Category",
       "Public voting only — no judges",
       "Transparent digital audit trail",
@@ -185,7 +185,7 @@ const awardPhases = [
     showDate: "27 June 2026 (Gala)",
     icon: Gem,
     features: [
-      "From 125 Gold Certificate winners",
+      "From 135 Gold Certificate winners",
       "9 Blue Garnet Award winners",
       "40% Public Voting + 60% Jury Review",
       "Elite continental honour",
@@ -223,12 +223,12 @@ const awardCategories = [
   },
   { 
     name: "Blue Garnet & Gold Certificate Awards", 
-    desc: "Public voting + expert judging across 125 subcategories",
+    desc: "Public voting + expert judging across 135 subcategories",
     type: "competitive",
     link: "https://nesa.africa/competitive"
   },
   { 
-    name: "Platinum Certificate of Recognition", 
+    name: "Platinum Certificate of Recognition",
     desc: "Merit-based recognition through expert panel evaluation",
     type: "non-competitive",
     link: "https://nesa.africa/non-competitive"
@@ -268,7 +268,7 @@ const nominationPaths = [
     badge: "Blue Garnet & Gold Certificate Awards",
     period: "Annual Competition",
     desc: "Open competition with public participation through AGC voting and expert judging.",
-    features: ["Public Voting", "Expert Judging", "125 Subcategories"],
+    features: ["Public Voting", "Expert Judging", "135 Subcategories"],
     link: "https://nesa.africa/competitive",
     icon: Vote,
   },

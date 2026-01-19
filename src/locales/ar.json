@@ -91,7 +91,20 @@
     "uploadMedia": "رفع وسائط",
     "saveDraft": "حفظ كمسودة",
     "publish": "نشر",
-    "schedule": "جدولة"
+    "schedule": "جدولة",
+    "learnMore": "اعرف المزيد",
+    "details": "التفاصيل",
+    "nominate": "رشّح",
+    "vote": "صوّت الآن",
+    "getTickets": "احصل على تذاكر",
+    "donate": "تبرّع",
+    "partner": "شريك معنا",
+    "viewAll": "عرض الكل",
+    "startLearning": "ابدأ التعلم",
+    "getCertified": "احصل على الشهادة",
+    "apply": "تقدّم الآن",
+    "submit": "إرسال",
+    "explore": "استكشف"
   },
   "labels": {
     "countdown": "العدّ التنازلي",
@@ -110,7 +123,16 @@
     "next": "التالي",
     "goToSlide": "انتقل إلى الشريحة",
     "readMore": "اقرأ المزيد",
-    "readLess": "اقرأ أقل"
+    "readLess": "اقرأ أقل",
+    "days": "أيام",
+    "hours": "ساعات",
+    "minutes": "دقائق",
+    "seconds": "ثواني",
+    "hrs": "س",
+    "min": "د",
+    "sec": "ث",
+    "eventStarted": "بدأ الحدث",
+    "opensOn": "يفتتح في"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",

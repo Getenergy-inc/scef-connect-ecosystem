@@ -91,7 +91,20 @@
     "uploadMedia": "Pakia Media",
     "saveDraft": "Hifadhi Rasimu",
     "publish": "Chapisha",
-    "schedule": "Panga Ratiba"
+    "schedule": "Panga Ratiba",
+    "learnMore": "Jifunze Zaidi",
+    "details": "Maelezo",
+    "nominate": "Teua",
+    "vote": "Piga Kura Sasa",
+    "getTickets": "Pata Tiketi",
+    "donate": "Changia",
+    "partner": "Kuwa Mshirika",
+    "viewAll": "Tazama Zote",
+    "startLearning": "Anza Kujifunza",
+    "getCertified": "Pata Cheti",
+    "apply": "Omba Sasa",
+    "submit": "Wasilisha",
+    "explore": "Chunguza"
   },
   "labels": {
     "countdown": "Kaunta ya Muda",
@@ -110,7 +123,16 @@
     "next": "Inayofuata",
     "goToSlide": "Nenda kwenye slaidi",
     "readMore": "Soma zaidi",
-    "readLess": "Soma kidogo"
+    "readLess": "Soma kidogo",
+    "days": "Siku",
+    "hours": "Masaa",
+    "minutes": "Dakika",
+    "seconds": "Sekunde",
+    "hrs": "Saa",
+    "min": "Dak",
+    "sec": "Sek",
+    "eventStarted": "Tukio limeanza",
+    "opensOn": "Inafunguka tarehe"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",

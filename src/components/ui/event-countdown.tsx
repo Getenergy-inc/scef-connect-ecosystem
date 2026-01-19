@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Calendar, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/contexts/LocaleContext";
 
 interface EventCountdownProps {
   targetDate: Date;
   eventName: string;
   eventType?: "show" | "gala" | "deadline" | "voting" | "legacy";
   className?: string;
+  compact?: boolean;
 }
 
 interface TimeRemaining {
@@ -56,7 +58,9 @@ export const EventCountdown = ({
   eventName,
   eventType = "show",
   className,
+  compact = false,
 }: EventCountdownProps) => {
+  const { t } = useLocale();
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(
     calculateTimeRemaining(targetDate)
   );
@@ -75,17 +79,44 @@ export const EventCountdown = ({
     <div className="flex flex-col items-center">
       <div
         className={cn(
-          "w-14 h-14 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center text-white font-bold text-xl sm:text-2xl bg-gradient-to-br shadow-lg",
+          "rounded-lg flex items-center justify-center text-white font-bold bg-gradient-to-br shadow-lg",
+          compact ? "w-10 h-10 text-base" : "w-14 h-14 sm:w-16 sm:h-16 text-xl sm:text-2xl",
           eventTypeColors[eventType]
         )}
       >
         {value.toString().padStart(2, "0")}
       </div>
-      <span className="text-xs mt-1.5 text-muted-foreground uppercase tracking-wide">
+      <span className={cn(
+        "mt-1.5 text-muted-foreground uppercase tracking-wide",
+        compact ? "text-[10px]" : "text-xs"
+      )}>
         {label}
       </span>
     </div>
   );
+
+  const Separator = () => (
+    <div className={cn(
+      "flex items-center text-muted-foreground font-light self-start",
+      compact ? "text-lg mt-2" : "text-2xl mt-4"
+    )}>
+      :
+    </div>
+  );
+
+  if (compact) {
+    return (
+      <div className={cn("flex items-center gap-2", className)}>
+        <div className="flex gap-1">
+          <TimeBlock value={timeRemaining.days} label={t("labels.days") || "Days"} />
+          <Separator />
+          <TimeBlock value={timeRemaining.hours} label={t("labels.hrs") || "Hrs"} />
+          <Separator />
+          <TimeBlock value={timeRemaining.minutes} label={t("labels.min") || "Min"} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -114,24 +145,18 @@ export const EventCountdown = ({
       {isExpired ? (
         <div className="text-center py-4">
           <span className="text-lg font-medium text-muted-foreground">
-            Event has started
+            {t("labels.eventStarted") || "Event has started"}
           </span>
         </div>
       ) : (
         <div className="flex justify-center gap-2 sm:gap-3">
-          <TimeBlock value={timeRemaining.days} label="Days" />
-          <div className="flex items-center text-2xl text-muted-foreground font-light self-start mt-4">
-            :
-          </div>
-          <TimeBlock value={timeRemaining.hours} label="Hrs" />
-          <div className="flex items-center text-2xl text-muted-foreground font-light self-start mt-4">
-            :
-          </div>
-          <TimeBlock value={timeRemaining.minutes} label="Min" />
-          <div className="flex items-center text-2xl text-muted-foreground font-light self-start mt-4">
-            :
-          </div>
-          <TimeBlock value={timeRemaining.seconds} label="Sec" />
+          <TimeBlock value={timeRemaining.days} label={t("labels.days") || "Days"} />
+          <Separator />
+          <TimeBlock value={timeRemaining.hours} label={t("labels.hrs") || "Hrs"} />
+          <Separator />
+          <TimeBlock value={timeRemaining.minutes} label={t("labels.min") || "Min"} />
+          <Separator />
+          <TimeBlock value={timeRemaining.seconds} label={t("labels.sec") || "Sec"} />
         </div>
       )}
 
