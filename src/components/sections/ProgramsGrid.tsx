@@ -3,6 +3,7 @@ import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink } from
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
+import { motion } from "framer-motion";
 
 const flagshipItems = [
   {
@@ -124,12 +125,24 @@ export const ProgramsGrid = () => {
             const Icon = item.icon;
             return (
               <StaggerItem key={item.id} animation="fadeUp">
-                <article className="group bg-card rounded-2xl border-2 border-border p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 h-full">
+                <motion.article 
+                  className="group bg-card rounded-2xl border-2 border-border p-6 h-full cursor-pointer"
+                  whileHover={{ 
+                    scale: 1.02, 
+                    boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)",
+                    borderColor: "hsl(var(--primary) / 0.4)"
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${item.accentClass}`}>
+                    <motion.div 
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${item.accentClass}`}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                    >
                       <Icon className="w-6 h-6" />
-                    </div>
+                    </motion.div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {t(item.titleKey) || item.titleFallback}
@@ -183,7 +196,7 @@ export const ProgramsGrid = () => {
                       </Link>
                     </Button>
                   </div>
-                </article>
+                </motion.article>
               </StaggerItem>
             );
           })}
