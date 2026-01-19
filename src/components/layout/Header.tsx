@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
-  Bell, MessageSquare, Settings, Activity
+  Bell, MessageSquare, Settings, Activity, Calendar
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -70,6 +70,8 @@ export const Header = () => {
         { name: "Africa Education Icon", href: "/awards/icon" },
         { name: "Gold Certificate", href: "/awards/gold" },
         { name: "Blue Garnet Award", href: "/awards/blue-garnet" },
+        { divider: true },
+        { name: "NESA Calendar", href: "/calendar" },
       ]
     },
     { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
