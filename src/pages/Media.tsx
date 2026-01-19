@@ -64,21 +64,31 @@ const Media = () => {
   const featuredContent = [
     {
       type: "video",
+      title: "NESA Africa TV Promo",
+      thumbnail: "https://img.youtube.com/vi/DDREAU_bmRk/maxresdefault.jpg",
+      duration: "2:30",
+      youtubeId: "DDREAU_bmRk",
+    },
+    {
+      type: "video",
       title: "NESA Awards 2024 Highlights",
       thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600",
       duration: "15:30",
+      youtubeId: null,
     },
     {
       type: "podcast",
       title: "Education Innovation in Nigeria",
       thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600",
       duration: "45:00",
+      youtubeId: null,
     },
     {
       type: "video",
       title: "Rebuild My School: Ghana Story",
       thumbnail: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600",
       duration: "22:15",
+      youtubeId: null,
     },
   ];
 
@@ -208,10 +218,13 @@ const Media = () => {
                 </Button>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {featuredContent.map((content, index) => (
-                  <div
+                  <a
                     key={index}
+                    href={content.youtubeId ? `https://www.youtube.com/watch?v=${content.youtubeId}` : "#"}
+                    target={content.youtubeId ? "_blank" : undefined}
+                    rel={content.youtubeId ? "noopener noreferrer" : undefined}
                     className="group relative rounded-2xl overflow-hidden cursor-pointer border-2 border-black"
                   >
                     <OptimizedImage
@@ -237,7 +250,7 @@ const Media = () => {
                         {content.title}
                       </h3>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
