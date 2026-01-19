@@ -675,5 +675,132 @@
     "all": "Todos",
     "save": "Guardar",
     "cancel": "Cancelar"
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "Nuestros Programas",
+        "subtext": "SCEF genera impacto a través de tres programas insignia y una plataforma insignia. Para mantenernos enfocados y escalables, el trabajo relacionado se entrega como Rutas (subprogramas) y Series (webinarios/formación) bajo el programa insignia apropiado."
+      },
+      "flagship": {
+        "label": "Programas y Plataforma Insignia",
+        "heading": "3 Programas + 1 Plataforma",
+        "nesa": {
+          "title": "NESA África",
+          "subtitle": "Nuevo Premio Estándar Educativo África",
+          "description": "Estándares continentales, reconocimiento y responsabilidad para la excelencia educativa.",
+          "clarityLine": "NESA África funciona con el Portal de Nominación y Votación NESA.Africa y se amplifica a través de NESA Africa TV / NESA Awards TV.",
+          "bullets": ["Nominación y votación (portal oficial)", "Jurado, categorías y reconocimiento", "Transmisión, cuentas regresivas, repeticiones (Awards TV)"],
+          "cta": {
+            "primary": "Nominar / Votar (NESA.Africa)",
+            "secondary1": "Ver NESA Africa TV",
+            "secondary2": "Ver Temporada de Premios"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid África",
+          "subtitle": "Ayuda Educativa África",
+          "description": "Apoyo educativo directo para estudiantes y escuelas — acceso, equidad, inclusión e infraestructura.",
+          "bullets": ["Becas y apoyo a estudiantes", "Apoyo a escuelas y entrega comunitaria", "Rutas para infraestructura, equidad, inclusión + webinarios"],
+          "cta": {
+            "primary": "Solicitar Apoyo / Financiar un Estudiante",
+            "secondary1": "Explorar Rutas EduAid",
+            "secondary2": "Unirse a Webinarios EduAid"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Educación en Línea África)",
+          "subtitle": "Aprendizaje y Certificación",
+          "description": "Desarrollo de habilidades, certificación y verificación para preparación laboral.",
+          "bullets": ["Rutas de aprendizaje y exámenes", "Emisión y verificación de certificados", "Certificaciones de productividad laboral"],
+          "cta": {
+            "primary": "Explorar Certificaciones / Reservar Examen",
+            "secondary1": "Verificar Certificado"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Plataforma Insignia",
+          "description": "Recursos de aprendizaje gratuitos e intercambio de conocimiento comunitario.",
+          "bullets": ["Navegar materiales gratuitos", "Subir recursos y contribuir", "Apoyar el compromiso con la lectura y el aprendizaje"],
+          "cta": {
+            "primary": "Navegar Materiales Gratuitos",
+            "secondary1": "Unirse a la Red de Contribuidores"
+          }
+        }
+      },
+      "tracks": {
+        "title": "Rutas EduAid África (Subprogramas)",
+        "oneline": "Estas rutas están bajo EduAid África para mantener el portafolio enfocado y fácil de navegar.",
+        "note": "RMSA, Educación de Mujeres y Niñas, y Apoyo a Necesidades Especiales son rutas de EduAid África — no programas separados.",
+        "rmsa": {
+          "title": "RMSA: Reconstruir Mi Escuela África",
+          "tag": "Ruta de Infraestructura",
+          "description": "Renovación y mejoras para escuelas y entornos de aprendizaje.",
+          "cta1": "Enviar Solicitud de Escuela",
+          "cta2": "Patrocinar una Renovación"
+        },
+        "womenGirls": {
+          "title": "Educación de Mujeres y Niñas",
+          "tag": "Ruta de Equidad",
+          "description": "Apoyo al acceso, retención y éxito de niñas y mujeres.",
+          "cta1": "Patrocinar Educación de Niñas",
+          "cta2": "Unirse al Equipo de Defensa"
+        },
+        "specialNeeds": {
+          "title": "Apoyo a Educación Especial",
+          "tag": "Ruta de Inclusión",
+          "description": "Apoyo educativo inclusivo e intervenciones de aprendizaje asistido.",
+          "cta1": "Solicitar Apoyo",
+          "cta2": "Patrocinar Aprendizaje Asistido"
+        },
+        "webinars": {
+          "title": "Webinarios EduAid",
+          "tag": "Serie de Aprendizaje y Alcance",
+          "description": "Webinarios y sesiones de capacitación para comunidades y socios.",
+          "cta1": "Unirse al Próximo Webinario",
+          "cta2": "Ver Repeticiones"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "Ruta de Certificación EOA",
+        "productTitle": "Certificaciones de Productividad Laboral Africana",
+        "productDescription": "Formación práctica en habilidades de productividad + evaluación + verificación de certificado.",
+        "cta1": "Empezar a Aprender",
+        "cta2": "Reservar Examen",
+        "cta3": "Verificar Certificado"
+      },
+      "pathways": {
+        "title": "Elige Tu Camino",
+        "individuals": {
+          "title": "Individuos",
+          "link1": "Convertirse en Miembro",
+          "link2": "Solicitar Apoyo EduAid",
+          "link3": "Aprender con EOA"
+        },
+        "schools": {
+          "title": "Escuelas",
+          "link1": "Solicitar Apoyo (EduAid)",
+          "link2": "Aplicar a RMSA",
+          "link3": "Unirse a eLibrary"
+        },
+        "partners": {
+          "title": "Socios / RSC",
+          "link1": "Patrocinar una Ruta",
+          "link2": "Financiar Becas",
+          "link3": "Patrocinar NESA"
+        },
+        "communities": {
+          "title": "Comunidades",
+          "link1": "Unirse a un Capítulo Local",
+          "link2": "Voluntariado",
+          "link3": "Ver SCEF Media"
+        },
+        "cta1": "Donar / Patrocinar",
+        "cta2": "Convertirse en Miembro",
+        "cta3": "Explorar Capítulos Locales",
+        "cta4": "Ver SCEF Media"
+      }
+    }
   }
 }

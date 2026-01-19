@@ -1627,5 +1627,132 @@
     "save": "Salvar",
     "cancel": "Cancelar",
     "creating": "Criando..."
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "Nossos Programas",
+        "subtext": "A SCEF entrega impacto através de três programas principais e uma plataforma principal. Para manter o foco e a escalabilidade, o trabalho relacionado é entregue como Trilhas (subprogramas) e Séries (webinares/formação) sob o programa principal apropriado."
+      },
+      "flagship": {
+        "label": "Programas e Plataforma Principais",
+        "heading": "3 Programas + 1 Plataforma",
+        "nesa": {
+          "title": "NESA África",
+          "subtitle": "Novo Prémio Padrão Educacional África",
+          "description": "Padrões continentais, reconhecimento e responsabilidade para a excelência educacional.",
+          "clarityLine": "O NESA África é alimentado pelo Portal de Nomeação e Votação NESA.Africa e amplificado através da NESA Africa TV / NESA Awards TV.",
+          "bullets": ["Nomeação e votação (portal oficial)", "Júri, categorias e reconhecimento", "Transmissão, contagens regressivas, repetições (Awards TV)"],
+          "cta": {
+            "primary": "Nomear / Votar (NESA.Africa)",
+            "secondary1": "Assistir NESA Africa TV",
+            "secondary2": "Ver Temporada de Prémios"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid África",
+          "subtitle": "Ajuda Educacional África",
+          "description": "Apoio educacional direto para estudantes e escolas — acesso, equidade, inclusão e infraestrutura.",
+          "bullets": ["Bolsas e apoio a estudantes", "Apoio a escolas e entrega comunitária", "Trilhas para infraestrutura, equidade, inclusão + webinares"],
+          "cta": {
+            "primary": "Candidatar-se a Apoio / Financiar um Estudante",
+            "secondary1": "Explorar Trilhas EduAid",
+            "secondary2": "Participar em Webinares EduAid"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Educação Online África)",
+          "subtitle": "Aprendizagem e Certificação",
+          "description": "Desenvolvimento de competências, certificação e verificação para preparação profissional.",
+          "bullets": ["Percursos de aprendizagem e exames", "Emissão e verificação de certificados", "Certificações de produtividade no trabalho"],
+          "cta": {
+            "primary": "Explorar Certificações / Marcar Exame",
+            "secondary1": "Verificar Certificado"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigéria",
+          "subtitle": "Plataforma Principal",
+          "description": "Recursos de aprendizagem gratuitos e partilha de conhecimento comunitário.",
+          "bullets": ["Navegar materiais gratuitos", "Carregar recursos e contribuir", "Apoiar o envolvimento na leitura e aprendizagem"],
+          "cta": {
+            "primary": "Navegar Materiais Gratuitos",
+            "secondary1": "Juntar-se à Rede de Contribuidores"
+          }
+        }
+      },
+      "tracks": {
+        "title": "Trilhas EduAid África (Subprogramas)",
+        "oneline": "Estas trilhas estão sob o EduAid África para manter o portfólio focado e fácil de navegar.",
+        "note": "RMSA, Educação de Mulheres e Raparigas, e Apoio a Necessidades Especiais são trilhas do EduAid África — não programas separados.",
+        "rmsa": {
+          "title": "RMSA: Reconstruir Minha Escola África",
+          "tag": "Trilha de Infraestrutura",
+          "description": "Renovação e melhorias para escolas e ambientes de aprendizagem.",
+          "cta1": "Submeter Pedido de Escola",
+          "cta2": "Patrocinar uma Renovação"
+        },
+        "womenGirls": {
+          "title": "Educação de Mulheres e Raparigas",
+          "tag": "Trilha de Equidade",
+          "description": "Apoio ao acesso, retenção e sucesso de raparigas e mulheres.",
+          "cta1": "Patrocinar Educação de Raparigas",
+          "cta2": "Juntar-se à Equipa de Advocacia"
+        },
+        "specialNeeds": {
+          "title": "Apoio à Educação Especial",
+          "tag": "Trilha de Inclusão",
+          "description": "Apoio educacional inclusivo e intervenções de aprendizagem assistida.",
+          "cta1": "Solicitar Apoio",
+          "cta2": "Patrocinar Aprendizagem Assistida"
+        },
+        "webinars": {
+          "title": "Webinares EduAid",
+          "tag": "Série de Aprendizagem e Sensibilização",
+          "description": "Webinares e sessões de capacitação para comunidades e parceiros.",
+          "cta1": "Participar no Próximo Webinar",
+          "cta2": "Ver Repetições"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "Trilha de Certificação EOA",
+        "productTitle": "Certificações de Produtividade no Trabalho Africana",
+        "productDescription": "Formação prática em competências de produtividade + avaliação + verificação de certificado.",
+        "cta1": "Começar a Aprender",
+        "cta2": "Marcar Exame",
+        "cta3": "Verificar Certificado"
+      },
+      "pathways": {
+        "title": "Escolha o Seu Percurso",
+        "individuals": {
+          "title": "Indivíduos",
+          "link1": "Tornar-se Membro",
+          "link2": "Candidatar-se ao Apoio EduAid",
+          "link3": "Aprender com EOA"
+        },
+        "schools": {
+          "title": "Escolas",
+          "link1": "Solicitar Apoio (EduAid)",
+          "link2": "Candidatar-se ao RMSA",
+          "link3": "Juntar-se à eLibrary"
+        },
+        "partners": {
+          "title": "Parceiros / RSC",
+          "link1": "Patrocinar uma Trilha",
+          "link2": "Financiar Bolsas",
+          "link3": "Patrocinar NESA"
+        },
+        "communities": {
+          "title": "Comunidades",
+          "link1": "Juntar-se a um Capítulo Local",
+          "link2": "Voluntariar",
+          "link3": "Assistir SCEF Media"
+        },
+        "cta1": "Doar / Patrocinar",
+        "cta2": "Tornar-se Membro",
+        "cta3": "Explorar Capítulos Locais",
+        "cta4": "Assistir SCEF Media"
+      }
+    }
   }
 }

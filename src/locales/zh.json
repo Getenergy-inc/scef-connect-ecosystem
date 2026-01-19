@@ -675,5 +675,132 @@
     "all": "全部",
     "save": "保存",
     "cancel": "取消"
+  },
+  "programs": {
+    "page": {
+      "hero": {
+        "title": "我们的项目",
+        "subtext": "SCEF通过三个旗舰项目和一个旗舰平台产生影响。为保持专注和可扩展性，相关工作作为轨道（子项目）和系列（网络研讨会/培训）在相应的旗舰项目下交付。"
+      },
+      "flagship": {
+        "label": "旗舰项目和平台",
+        "heading": "3个项目 + 1个平台",
+        "nesa": {
+          "title": "NESA 非洲",
+          "subtitle": "非洲新教育标准奖",
+          "description": "大陆标准、认可和教育卓越的问责制。",
+          "clarityLine": "NESA非洲由NESA.Africa提名和投票门户提供支持，并通过NESA Africa TV / NESA Awards TV进行放大。",
+          "bullets": ["提名和投票（官方门户）", "评审、类别和认可", "广播、倒计时、重播（Awards TV）"],
+          "cta": {
+            "primary": "提名 / 投票 (NESA.Africa)",
+            "secondary1": "观看 NESA Africa TV",
+            "secondary2": "查看颁奖季"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid 非洲",
+          "subtitle": "非洲教育援助",
+          "description": "为学习者和学校提供直接教育支持——入学、公平、包容和基础设施。",
+          "bullets": ["奖学金和学习者支持", "学校支持和社区交付", "基础设施、公平、包容轨道 + 网络研讨会"],
+          "cta": {
+            "primary": "申请支持 / 资助学习者",
+            "secondary1": "探索 EduAid 轨道",
+            "secondary2": "加入 EduAid 网络研讨会"
+          }
+        },
+        "eoa": {
+          "title": "EOA（非洲在线教育）",
+          "subtitle": "学习与认证",
+          "description": "技能发展、认证和验证，为就业做好准备。",
+          "bullets": ["学习路径和考试", "证书颁发和验证", "职场生产力认证"],
+          "cta": {
+            "primary": "探索认证 / 预约考试",
+            "secondary1": "验证证书"
+          }
+        },
+        "elibrary": {
+          "title": "尼日利亚电子图书馆",
+          "subtitle": "旗舰平台",
+          "description": "免费学习资源和社区知识共享。",
+          "bullets": ["浏览免费材料", "上传资源和贡献", "支持阅读和学习参与"],
+          "cta": {
+            "primary": "浏览免费材料",
+            "secondary1": "加入贡献者网络"
+          }
+        }
+      },
+      "tracks": {
+        "title": "EduAid 非洲轨道（子项目）",
+        "oneline": "这些轨道位于EduAid非洲之下，以保持组合的专注性和易于导航。",
+        "note": "RMSA、女性和女童教育以及特殊需求支持是EduAid非洲的轨道——而不是单独的项目。",
+        "rmsa": {
+          "title": "RMSA：重建我的非洲学校",
+          "tag": "基础设施轨道",
+          "description": "学校和学习环境的翻新和升级。",
+          "cta1": "提交学校申请",
+          "cta2": "赞助翻新"
+        },
+        "womenGirls": {
+          "title": "女性和女童教育",
+          "tag": "公平轨道",
+          "description": "支持女童和女性的入学、留校和成功。",
+          "cta1": "赞助女童教育",
+          "cta2": "加入倡导团队"
+        },
+        "specialNeeds": {
+          "title": "特殊需求教育支持",
+          "tag": "包容轨道",
+          "description": "包容性教育支持和辅助学习干预。",
+          "cta1": "请求支持",
+          "cta2": "赞助辅助学习"
+        },
+        "webinars": {
+          "title": "EduAid 网络研讨会",
+          "tag": "学习和外展系列",
+          "description": "为社区和合作伙伴举办的网络研讨会和能力建设会议。",
+          "cta1": "加入下一次网络研讨会",
+          "cta2": "观看重播"
+        }
+      },
+      "eoa": {
+        "sectionTitle": "EOA 认证轨道",
+        "productTitle": "非洲职场生产力认证",
+        "productDescription": "实用生产力技能培训 + 评估 + 证书验证。",
+        "cta1": "开始学习",
+        "cta2": "预约考试",
+        "cta3": "验证证书"
+      },
+      "pathways": {
+        "title": "选择您的路径",
+        "individuals": {
+          "title": "个人",
+          "link1": "成为会员",
+          "link2": "申请 EduAid 支持",
+          "link3": "通过 EOA 学习"
+        },
+        "schools": {
+          "title": "学校",
+          "link1": "请求支持（EduAid）",
+          "link2": "申请 RMSA",
+          "link3": "加入 eLibrary"
+        },
+        "partners": {
+          "title": "合作伙伴 / 企业社会责任",
+          "link1": "赞助轨道",
+          "link2": "资助奖学金",
+          "link3": "赞助 NESA"
+        },
+        "communities": {
+          "title": "社区",
+          "link1": "加入当地分会",
+          "link2": "志愿服务",
+          "link3": "观看 SCEF 媒体"
+        },
+        "cta1": "捐赠 / 赞助",
+        "cta2": "成为会员",
+        "cta3": "探索当地分会",
+        "cta4": "观看 SCEF 媒体"
+      }
+    }
   }
 }
