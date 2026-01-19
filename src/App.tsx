@@ -72,6 +72,16 @@ import FinanceOverview from "./pages/admin/FinanceOverview";
 import BankAccounts from "./pages/admin/BankAccounts";
 import Disbursements from "./pages/admin/Disbursements";
 
+// NESA Award Pages
+import PlatinumAward from "./pages/awards/PlatinumAward";
+import IconAward from "./pages/awards/IconAward";
+import GoldAward from "./pages/awards/GoldAward";
+import BlueGarnetAward from "./pages/awards/BlueGarnetAward";
+
+// Vote & Nominate Pages
+import Vote from "./pages/Vote";
+import Nominate from "./pages/Nominate";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -104,6 +114,16 @@ const App = () => (
               <Route path="/updates" element={<Updates />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/case-studies" element={<CaseStudies />} />
+              
+              {/* NESA Award Routes */}
+              <Route path="/awards/platinum" element={<PlatinumAward />} />
+              <Route path="/awards/icon" element={<IconAward />} />
+              <Route path="/awards/gold" element={<GoldAward />} />
+              <Route path="/awards/blue-garnet" element={<BlueGarnetAward />} />
+              
+              {/* Vote & Nominate Routes */}
+              <Route path="/vote" element={<Vote />} />
+              <Route path="/nominate" element={<Nominate />} />
               
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
