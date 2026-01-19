@@ -852,6 +852,101 @@ const NESAAfrica = () => {
             </div>
           </section>
 
+          {/* How NESA Works Section */}
+          <section className="py-20" style={{ backgroundColor: nesaColors.dark }}>
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+                  How NESA <span style={{ color: nesaColors.gold }}>Works</span>
+                </h2>
+                <p style={{ color: nesaColors.textMuted }} className="max-w-2xl mx-auto">
+                  A structured lifecycle from public education to lasting legacy impact.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-4 max-w-4xl mx-auto">
+                {["Webinar", "Platinum", "Icon", "Gold", "Blue Garnet", "RMSA Legacy"].map((step, idx, arr) => (
+                  <div key={step} className="flex items-center gap-4">
+                    <div 
+                      className="px-4 py-2 rounded-lg font-semibold text-sm"
+                      style={{ backgroundColor: `${nesaColors.gold}20`, color: nesaColors.gold }}
+                    >
+                      {step}
+                    </div>
+                    {idx < arr.length - 1 && (
+                      <ArrowRight className="w-5 h-5" style={{ color: nesaColors.gold }} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Watch Live Section */}
+          <section className="py-16" style={{ backgroundColor: nesaColors.darkAlt }}>
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-6">
+                Watch <span style={{ color: nesaColors.gold }}>Live</span>
+              </h2>
+              <p style={{ color: nesaColors.textMuted }} className="mb-8 max-w-xl mx-auto">
+                NESA Africa TV broadcasts on social media, partner stations, and the CAST TV box/app.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                {["YouTube", "Facebook", "CAST TV App"].map((platform) => (
+                  <div key={platform} className="px-6 py-3 rounded-lg border" style={{ borderColor: `${nesaColors.gold}30` }}>
+                    <Play className="w-5 h-5 mx-auto mb-1" style={{ color: nesaColors.gold }} />
+                    <span className="text-sm text-white">{platform}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Get Involved Section */}
+          <section className="py-16" style={{ backgroundColor: nesaColors.dark }}>
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-8">
+                Get <span style={{ color: nesaColors.gold }}>Involved</span>
+              </h2>
+              <div className="flex flex-wrap justify-center gap-4">
+                {[
+                  { label: "Nominate", href: "/nominate" },
+                  { label: "Vote", href: "/vote" },
+                  { label: "Get Tickets", href: "https://nesa.africa" },
+                  { label: "Donate", href: "/donate" },
+                  { label: "Partner", href: "/partner-with-us" },
+                ].map((cta) => (
+                  <Link key={cta.label} to={cta.href}>
+                    <Button variant="outline" style={{ borderColor: nesaColors.gold, color: nesaColors.gold }}>
+                      {cta.label}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Firewalls & Integrity Section */}
+          <section className="py-16" style={{ backgroundColor: nesaColors.darkAlt }}>
+            <div className="container mx-auto px-4">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                Firewalls & <span style={{ color: nesaColors.gold }}>Integrity</span>
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                {[
+                  { title: "Platinum", desc: "Non-competitive. NRC verification + governance checks." },
+                  { title: "Gold Stage", desc: "100% public voting only — no judges." },
+                  { title: "Blue Garnet", desc: "60% jury + 40% public. Audit logs & anti-fraud controls." },
+                  { title: "Sponsors", desc: "Sponsors and endorsers cannot influence or select winners." },
+                ].map((item) => (
+                  <div key={item.title} className="p-4 rounded-xl border" style={{ borderColor: `${nesaColors.gold}20` }}>
+                    <CheckCircle className="w-6 h-6 mb-2" style={{ color: nesaColors.gold }} />
+                    <h4 className="font-semibold text-white mb-1">{item.title}</h4>
+                    <p className="text-xs" style={{ color: nesaColors.textMuted }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
           {/* Award Categories */}
           <section className="py-20" style={{ backgroundColor: nesaColors.darkAlt }}>
             <div className="container mx-auto px-4">

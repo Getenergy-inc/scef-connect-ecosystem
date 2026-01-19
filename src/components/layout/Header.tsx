@@ -63,6 +63,15 @@ export const Header = () => {
         { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
       ]
     },
+    // NESA Awards - Only award tiers (no role portals)
+    { name: "Awards", href: "/awards/platinum", key: "awards",
+      children: [
+        { name: "Platinum Certificate", href: "/awards/platinum" },
+        { name: "Africa Education Icon", href: "/awards/icon" },
+        { name: "Gold Certificate", href: "/awards/gold" },
+        { name: "Blue Garnet Award", href: "/awards/blue-garnet" },
+      ]
+    },
     { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
       children: [
         { name: t("nav.dropdown.chapters.browse"), href: "/chapters" },
@@ -95,6 +104,16 @@ export const Header = () => {
         { name: t("nav.dropdown.getInvolved.donate"), href: "/donate" },
       ]
     },
+  ];
+
+  // Role portals - shown only to authenticated users in Profile dropdown
+  const rolePortals = [
+    { name: "Jury Portal", href: "/portal/jury" },
+    { name: "NRC Portal", href: "/portal/nrc" },
+    { name: "Ambassador Portal", href: "/portal/ambassador" },
+    { name: "Chapter Admin", href: "/portal/chapter-admin" },
+    { name: "Sponsor Portal", href: "/portal/sponsor" },
+    { name: "Admin Dashboard", href: "/admin" },
   ];
 
   useEffect(() => {
@@ -278,6 +297,19 @@ export const Header = () => {
                       Chapter Inbox
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  {/* Role Portals - Accessible only after login */}
+                  <div className="px-2 py-1">
+                    <p className="text-xs font-medium text-muted-foreground px-2">Role Portals</p>
+                  </div>
+                  {rolePortals.map((portal) => (
+                    <DropdownMenuItem key={portal.name} asChild>
+                      <Link to={portal.href} className="cursor-pointer">
+                        <Award className="w-4 h-4 mr-2" />
+                        {portal.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link to="/dashboard/settings" className="cursor-pointer">
