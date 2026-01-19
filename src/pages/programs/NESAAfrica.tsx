@@ -21,6 +21,16 @@ const countdownEvents = [
     type: "show" as const,
   },
   {
+    name: "Africa Icon Recognition Show",
+    date: new Date("2026-03-28T18:00:00"),
+    type: "show" as const,
+  },
+  {
+    name: "Gold Certificate Winners Show",
+    date: new Date("2026-05-17T18:00:00"),
+    type: "show" as const,
+  },
+  {
     name: "Blue Garnet Awards Gala",
     date: new Date("2026-06-27T18:00:00"),
     type: "gala" as const,
@@ -433,15 +443,28 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-10">
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
-                  Upcoming <span style={{ color: nesaColors.gold }}>Key Events</span>
+                  Upcoming <span style={{ color: nesaColors.gold }}>TV Shows & Events</span>
                 </h2>
                 <p style={{ color: nesaColors.textMuted }} className="max-w-xl mx-auto">
-                  Live countdown to NESA-Africa's major milestones
+                  Live countdown to NESA-Africa's major milestones and broadcast events
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {countdownEvents.map((event) => (
+              {/* First row: 3 TV Shows */}
+              <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-6">
+                {countdownEvents.slice(0, 3).map((event) => (
+                  <EventCountdown
+                    key={event.name}
+                    targetDate={event.date}
+                    eventName={event.name}
+                    eventType={event.type}
+                  />
+                ))}
+              </div>
+              
+              {/* Second row: Gala + Legacy */}
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {countdownEvents.slice(3).map((event) => (
                   <EventCountdown
                     key={event.name}
                     targetDate={event.date}
