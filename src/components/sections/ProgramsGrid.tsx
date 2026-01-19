@@ -12,6 +12,7 @@ const flagshipItems = [
     icon: Award,
     logo: "/assets/nesa-africa-logo.jpg",
     video: "/videos/nesa-africa-promo.mp4",
+    videoThumbnail: "/videos/thumbnails/nesa-africa-thumb.jpg",
     titleKey: "programs.page.flagship.nesa.title",
     titleFallback: "NESA Africa",
     subtitleKey: "programs.page.flagship.nesa.subtitle",
@@ -33,6 +34,7 @@ const flagshipItems = [
     icon: BookOpen,
     logo: "/assets/eduaid-africa-logo.jpg",
     video: "/videos/eduaid-africa-promo.mp4",
+    videoThumbnail: "/videos/thumbnails/eduaid-africa-thumb.jpg",
     titleKey: "programs.page.flagship.eduaid.title",
     titleFallback: "EduAid Africa",
     subtitleKey: "programs.page.flagship.eduaid.subtitle",
@@ -54,6 +56,7 @@ const flagshipItems = [
     icon: Globe,
     logo: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=200&h=200&fit=crop",
     video: "/videos/eoa-promo.mp4",
+    videoThumbnail: "/videos/thumbnails/eoa-thumb.jpg",
     titleKey: "programs.page.flagship.eoa.title",
     titleFallback: "EOA",
     subtitleKey: "programs.page.flagship.eoa.subtitle",
@@ -75,6 +78,7 @@ const flagshipItems = [
     icon: Library,
     logo: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop",
     video: "/videos/elibrary-nigeria-promo.mp4",
+    videoThumbnail: "/videos/thumbnails/elibrary-nigeria-thumb.jpg",
     titleKey: "programs.page.flagship.elibrary.title",
     titleFallback: "eLibrary Nigeria",
     subtitleKey: "programs.page.flagship.elibrary.subtitle",
@@ -144,31 +148,45 @@ export const ProgramsGrid = () => {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  {/* Logo/Image Section */}
+                  {/* Video Thumbnail Section */}
                   <div className="relative">
-                    <Link to={item.external ? item.secondaryHref : item.primaryHref}>
-                      <div className="aspect-[3/2] overflow-hidden bg-muted">
-                        <motion.img
-                          src={item.logo}
-                          alt={item.titleFallback}
-                          className="w-full h-full object-cover"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.4 }}
-                        />
-                      </div>
-                    </Link>
-                    
-                    {/* Video Play Button Overlay */}
-                    {item.video && (
-                      <motion.button
+                    {item.video ? (
+                      <button 
                         onClick={() => setActiveVideo(item.video!)}
-                        className="absolute bottom-3 right-3 flex items-center gap-2 px-3 py-2 bg-black/80 hover:bg-black text-white rounded-full text-sm font-medium backdrop-blur-sm"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className="w-full block"
                       >
-                        <Play className="w-4 h-4" />
-                        {t("labels.watchVideo") || "Watch Video"}
-                      </motion.button>
+                        <div className="aspect-[3/2] overflow-hidden bg-muted relative">
+                          <motion.img
+                            src={item.videoThumbnail || item.logo}
+                            alt={item.titleFallback}
+                            className="w-full h-full object-cover"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.4 }}
+                          />
+                          {/* Play Button Overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                            <motion.div 
+                              className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              <Play className="w-6 h-6 text-primary ml-1" fill="currentColor" />
+                            </motion.div>
+                          </div>
+                        </div>
+                      </button>
+                    ) : (
+                      <Link to={item.external ? item.secondaryHref : item.primaryHref}>
+                        <div className="aspect-[3/2] overflow-hidden bg-muted">
+                          <motion.img
+                            src={item.logo}
+                            alt={item.titleFallback}
+                            className="w-full h-full object-cover"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.4 }}
+                          />
+                        </div>
+                      </Link>
                     )}
                   </div>
 
