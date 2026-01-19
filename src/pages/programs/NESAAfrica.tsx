@@ -8,10 +8,11 @@ import {
   ArrowRight, CheckCircle, Vote, Medal, Sparkles,
   Play, ExternalLink, Globe, Crown, Gem,
   BookOpen, Target, Building2, Heart, Radio,
-  GraduationCap, School, Accessibility
+  GraduationCap, School, Accessibility, Eye
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
+import { Vision2035Section } from "@/components/nesa/Vision2035Section";
 
 // Key Event Dates for Countdowns
 const tvShowEvents = [
@@ -406,27 +407,43 @@ const NESAAfrica = () => {
                 </div>
 
                 {/* Quick Action Buttons */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
                   {[
-                    { label: "Refer", icon: Users, link: "https://nesa.africa" },
-                    { label: "Nominate", icon: Trophy, link: "https://nesa.africa/competitive" },
-                    { label: "Tickets", icon: Calendar, link: "https://nesa.africa" },
-                    { label: "Watch", icon: Play, link: "https://nesa.africa/nesatv" },
+                    { label: "Refer", icon: Users, link: "https://nesa.africa", external: true },
+                    { label: "Nominate", icon: Trophy, link: "https://nesa.africa/competitive", external: true },
+                    { label: "Vision 2035", icon: Eye, link: "#vision-2035", external: false },
+                    { label: "Tickets", icon: Calendar, link: "https://nesa.africa", external: true },
+                    { label: "Watch", icon: Play, link: "https://nesa.africa/nesatv", external: true },
                   ].map((item) => (
-                    <a 
-                      key={item.label}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all hover:scale-105"
-                      style={{ 
-                        borderColor: `${nesaColors.gold}40`,
-                        backgroundColor: `${nesaColors.gold}10`
-                      }}
-                    >
-                      <item.icon className="w-5 h-5" style={{ color: nesaColors.gold }} />
-                      <span className="text-sm font-medium text-white">{item.label}</span>
-                    </a>
+                    item.external ? (
+                      <a 
+                        key={item.label}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all hover:scale-105"
+                        style={{ 
+                          borderColor: `${nesaColors.gold}40`,
+                          backgroundColor: `${nesaColors.gold}10`
+                        }}
+                      >
+                        <item.icon className="w-5 h-5" style={{ color: nesaColors.gold }} />
+                        <span className="text-sm font-medium text-white">{item.label}</span>
+                      </a>
+                    ) : (
+                      <a 
+                        key={item.label}
+                        href={item.link}
+                        className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all hover:scale-105"
+                        style={{ 
+                          borderColor: `${nesaColors.gold}40`,
+                          backgroundColor: `${nesaColors.gold}10`
+                        }}
+                      >
+                        <item.icon className="w-5 h-5" style={{ color: nesaColors.gold }} />
+                        <span className="text-sm font-medium text-white">{item.label}</span>
+                      </a>
+                    )
                   ))}
                 </div>
               </div>
@@ -1059,6 +1076,9 @@ const NESAAfrica = () => {
               </div>
             </div>
           </section>
+
+          {/* Vision 2035 Section */}
+          <Vision2035Section />
 
           {/* Video Section */}
           <ProgramVideoSection
