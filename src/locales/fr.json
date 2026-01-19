@@ -91,7 +91,20 @@
     "uploadMedia": "Téléverser un média",
     "saveDraft": "Enregistrer comme brouillon",
     "publish": "Publier",
-    "schedule": "Planifier"
+    "schedule": "Planifier",
+    "learnMore": "En savoir plus",
+    "details": "Détails",
+    "nominate": "Nominer",
+    "vote": "Voter maintenant",
+    "getTickets": "Obtenir des billets",
+    "donate": "Faire un don",
+    "partner": "Devenir partenaire",
+    "viewAll": "Voir tout",
+    "startLearning": "Commencer à apprendre",
+    "getCertified": "Obtenir la certification",
+    "apply": "Postuler",
+    "submit": "Soumettre",
+    "explore": "Explorer"
   },
   "labels": {
     "countdown": "Compte à rebours",
@@ -110,7 +123,16 @@
     "next": "Suivant",
     "goToSlide": "Aller à la diapositive",
     "readMore": "Lire la suite",
-    "readLess": "Lire moins"
+    "readLess": "Lire moins",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "hrs": "Hrs",
+    "min": "Min",
+    "sec": "Sec",
+    "eventStarted": "L'événement a commencé",
+    "opensOn": "Ouverture le"
   },
   "footer": {
     "organization": "Santos Creations Educational Foundation",
