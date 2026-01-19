@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Calendar, Clock } from "lucide-react";
+import { Calendar, Clock, Sparkles, Trophy, Vote, Building2, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -37,20 +37,42 @@ const calculateTimeRemaining = (targetDate: Date): TimeRemaining => {
   };
 };
 
-const eventTypeColors = {
-  show: "from-blue-600 to-indigo-700",
-  gala: "from-amber-500 to-yellow-600",
-  deadline: "from-red-500 to-rose-600",
-  voting: "from-emerald-500 to-teal-600",
-  legacy: "from-purple-500 to-violet-600",
-};
-
-const eventTypeBorders = {
-  show: "border-blue-500/30",
-  gala: "border-amber-500/30",
-  deadline: "border-red-500/30",
-  voting: "border-emerald-500/30",
-  legacy: "border-purple-500/30",
+const eventTypeConfig = {
+  show: {
+    gradient: "from-blue-500 to-indigo-600",
+    bgGradient: "from-blue-500/20 to-indigo-600/20",
+    border: "border-blue-500/40",
+    icon: Clock,
+    iconBg: "bg-blue-500",
+  },
+  gala: {
+    gradient: "from-amber-400 to-yellow-500",
+    bgGradient: "from-amber-400/20 to-yellow-500/20",
+    border: "border-amber-500/40",
+    icon: Calendar,
+    iconBg: "bg-amber-500",
+  },
+  deadline: {
+    gradient: "from-red-500 to-rose-600",
+    bgGradient: "from-red-500/20 to-rose-600/20",
+    border: "border-red-500/40",
+    icon: AlertCircle,
+    iconBg: "bg-red-500",
+  },
+  voting: {
+    gradient: "from-emerald-400 to-teal-500",
+    bgGradient: "from-emerald-400/20 to-teal-500/20",
+    border: "border-emerald-500/40",
+    icon: Vote,
+    iconBg: "bg-emerald-500",
+  },
+  legacy: {
+    gradient: "from-purple-400 to-violet-500",
+    bgGradient: "from-purple-400/20 to-violet-500/20",
+    border: "border-purple-500/40",
+    icon: Building2,
+    iconBg: "bg-purple-500",
+  },
 };
 
 export const EventCountdown = ({
@@ -74,20 +96,23 @@ export const EventCountdown = ({
   }, [targetDate]);
 
   const isExpired = timeRemaining.total <= 0;
+  const config = eventTypeConfig[eventType];
+  const IconComponent = config.icon;
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
       <div
         className={cn(
           "rounded-lg flex items-center justify-center text-white font-bold bg-gradient-to-br shadow-lg",
-          compact ? "w-10 h-10 text-base" : "w-14 h-14 sm:w-16 sm:h-16 text-xl sm:text-2xl",
-          eventTypeColors[eventType]
+          compact ? "w-12 h-12 text-lg" : "w-16 h-16 sm:w-18 sm:h-18 text-2xl sm:text-3xl",
+          config.gradient
         )}
+        style={{ minWidth: compact ? '3rem' : '4rem' }}
       >
         {value.toString().padStart(2, "0")}
       </div>
       <span className={cn(
-        "mt-1.5 text-muted-foreground uppercase tracking-wide",
+        "mt-2 text-white/70 uppercase tracking-wider font-medium",
         compact ? "text-[10px]" : "text-xs"
       )}>
         {label}
@@ -95,23 +120,12 @@ export const EventCountdown = ({
     </div>
   );
 
-  const Separator = () => (
-    <div className={cn(
-      "flex items-center text-muted-foreground font-light self-start",
-      compact ? "text-lg mt-2" : "text-2xl mt-4"
-    )}>
-      :
-    </div>
-  );
-
   if (compact) {
     return (
-      <div className={cn("flex items-center gap-2", className)}>
-        <div className="flex gap-1">
+      <div className={cn("flex items-center gap-3", className)}>
+        <div className="flex gap-2">
           <TimeBlock value={timeRemaining.days} label={t("labels.days") || "Days"} />
-          <Separator />
           <TimeBlock value={timeRemaining.hours} label={t("labels.hrs") || "Hrs"} />
-          <Separator />
           <TimeBlock value={timeRemaining.minutes} label={t("labels.min") || "Min"} />
         </div>
       </div>
@@ -121,52 +135,59 @@ export const EventCountdown = ({
   return (
     <div
       className={cn(
-        "rounded-xl border bg-card/50 backdrop-blur-sm p-4 sm:p-6",
-        eventTypeBorders[eventType],
+        "rounded-2xl border p-6 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-xl",
+        config.border,
         className
       )}
+      style={{ backgroundColor: 'rgba(26, 26, 26, 0.8)' }}
     >
-      <div className="flex items-center gap-2 mb-4">
-        <div
-          className={cn(
-            "p-2 rounded-lg bg-gradient-to-br text-white",
-            eventTypeColors[eventType]
-          )}
-        >
-          {eventType === "gala" ? (
-            <Calendar className="w-4 h-4" />
-          ) : (
-            <Clock className="w-4 h-4" />
-          )}
+      {/* Background gradient overlay */}
+      <div className={cn(
+        "absolute inset-0 bg-gradient-to-br opacity-30",
+        config.bgGradient
+      )} />
+      
+      <div className="relative z-10">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-5">
+          <div
+            className={cn(
+              "p-2.5 rounded-xl text-white shadow-lg",
+              config.iconBg
+            )}
+          >
+            <IconComponent className="w-5 h-5" />
+          </div>
+          <h3 className="font-bold text-white text-lg">{eventName}</h3>
         </div>
-        <h3 className="font-semibold text-foreground">{eventName}</h3>
-      </div>
 
-      {isExpired ? (
-        <div className="text-center py-4">
-          <span className="text-lg font-medium text-muted-foreground">
-            {t("labels.eventStarted") || "Event has started"}
-          </span>
-        </div>
-      ) : (
-        <div className="flex justify-center gap-2 sm:gap-3">
-          <TimeBlock value={timeRemaining.days} label={t("labels.days") || "Days"} />
-          <Separator />
-          <TimeBlock value={timeRemaining.hours} label={t("labels.hrs") || "Hrs"} />
-          <Separator />
-          <TimeBlock value={timeRemaining.minutes} label={t("labels.min") || "Min"} />
-          <Separator />
-          <TimeBlock value={timeRemaining.seconds} label={t("labels.sec") || "Sec"} />
-        </div>
-      )}
+        {isExpired ? (
+          <div className="text-center py-6">
+            <Sparkles className="w-8 h-8 mx-auto mb-2 text-amber-400" />
+            <span className="text-lg font-semibold text-white">
+              {t("labels.eventStarted") || "Event has started!"}
+            </span>
+          </div>
+        ) : (
+          <div className="flex justify-center gap-3 sm:gap-4">
+            <TimeBlock value={timeRemaining.days} label={t("labels.days") || "Days"} />
+            <TimeBlock value={timeRemaining.hours} label={t("labels.hrs") || "Hrs"} />
+            <TimeBlock value={timeRemaining.minutes} label={t("labels.min") || "Min"} />
+            <TimeBlock value={timeRemaining.seconds} label={t("labels.sec") || "Sec"} />
+          </div>
+        )}
 
-      <div className="mt-4 text-center text-sm text-muted-foreground">
-        {targetDate.toLocaleDateString("en-US", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
+        {/* Date display */}
+        <div className="mt-5 text-center">
+          <p className="text-sm text-white/60">
+            {targetDate.toLocaleDateString("en-US", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
+        </div>
       </div>
     </div>
   );
