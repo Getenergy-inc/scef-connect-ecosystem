@@ -1,88 +1,208 @@
 import { Link } from "react-router-dom";
-import { siteContent } from "@/config/siteContent";
-import { useState } from "react";
-import { Play, X } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
+import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
+
+const flagshipItems = [
+  {
+    id: "nesa",
+    icon: Award,
+    titleKey: "programs.page.flagship.nesa.title",
+    titleFallback: "NESA Africa",
+    subtitleKey: "programs.page.flagship.nesa.subtitle",
+    subtitleFallback: "New Education Standard Award Africa",
+    descriptionKey: "programs.page.flagship.nesa.description",
+    descriptionFallback: "Continental standards, recognition, and accountability for education excellence.",
+    bullets: [
+      { key: "programs.page.flagship.nesa.bullets.0", fallback: "Nomination & voting portal" },
+      { key: "programs.page.flagship.nesa.bullets.1", fallback: "Judging & recognition" },
+      { key: "programs.page.flagship.nesa.bullets.2", fallback: "Awards TV broadcast" },
+    ],
+    primaryHref: "https://nesa.africa",
+    external: true,
+    secondaryHref: "/programs/nesa-africa",
+    accentClass: "text-scef-gold bg-scef-gold/10 border-scef-gold/20",
+  },
+  {
+    id: "eduaid",
+    icon: BookOpen,
+    titleKey: "programs.page.flagship.eduaid.title",
+    titleFallback: "EduAid Africa",
+    subtitleKey: "programs.page.flagship.eduaid.subtitle",
+    subtitleFallback: "Education Aid Africa",
+    descriptionKey: "programs.page.flagship.eduaid.description",
+    descriptionFallback: "Direct education support for learners and schools—access, equity, inclusion, and infrastructure.",
+    bullets: [
+      { key: "programs.page.flagship.eduaid.bullets.0", fallback: "Scholarships & learner support" },
+      { key: "programs.page.flagship.eduaid.bullets.1", fallback: "School & community delivery" },
+      { key: "programs.page.flagship.eduaid.bullets.2", fallback: "Infrastructure & inclusion tracks" },
+    ],
+    primaryHref: "/programs/eduaid-africa",
+    external: false,
+    secondaryHref: "/programs#eduaid-tracks",
+    accentClass: "text-eduaid-green bg-eduaid-green/10 border-eduaid-green/20",
+  },
+  {
+    id: "eoa",
+    icon: Globe,
+    titleKey: "programs.page.flagship.eoa.title",
+    titleFallback: "EOA",
+    subtitleKey: "programs.page.flagship.eoa.subtitle",
+    subtitleFallback: "Education Online Africa",
+    descriptionKey: "programs.page.flagship.eoa.description",
+    descriptionFallback: "Skills development, certification, and verification for workforce readiness.",
+    bullets: [
+      { key: "programs.page.flagship.eoa.bullets.0", fallback: "Learning pathways & exams" },
+      { key: "programs.page.flagship.eoa.bullets.1", fallback: "Certificate issuance" },
+      { key: "programs.page.flagship.eoa.bullets.2", fallback: "Workplace certifications" },
+    ],
+    primaryHref: "/programs/digital-learning",
+    external: false,
+    secondaryHref: "/programs/digital-learning#verify",
+    accentClass: "text-primary bg-primary/10 border-primary/20",
+  },
+  {
+    id: "elibrary",
+    icon: Library,
+    titleKey: "programs.page.flagship.elibrary.title",
+    titleFallback: "eLibrary Nigeria",
+    subtitleKey: "programs.page.flagship.elibrary.subtitle",
+    subtitleFallback: "Flagship Platform",
+    descriptionKey: "programs.page.flagship.elibrary.description",
+    descriptionFallback: "Free learning resources and community knowledge sharing.",
+    bullets: [
+      { key: "programs.page.flagship.elibrary.bullets.0", fallback: "Browse free materials" },
+      { key: "programs.page.flagship.elibrary.bullets.1", fallback: "Upload & contribute" },
+      { key: "programs.page.flagship.elibrary.bullets.2", fallback: "Learning engagement" },
+    ],
+    primaryHref: "/programs/elibrary-nigeria",
+    external: false,
+    secondaryHref: "/programs/elibrary-nigeria#contributors",
+    accentClass: "text-elibrary-green bg-elibrary-green/10 border-elibrary-green/20",
+  },
+];
 
 export const ProgramsGrid = () => {
-  const { programs } = siteContent.homepage;
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const { t, isRTL } = useLocale();
 
   return (
-    <section className="py-16 bg-background" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-10">
-          {t("home.programs.title")}
-        </h2>
-
-        {/* Programs Grid - 7 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
-          {programs.map((program) => (
-            <div key={program.id} className="group">
-              {/* Card */}
-              <div className="bg-card rounded-xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-                {/* Image/Logo */}
-                <Link to={program.href}>
-                  <div className="aspect-square overflow-hidden bg-muted flex items-center justify-center p-2">
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </Link>
-
-                {/* Title & Video Button */}
-                <div className="p-3">
-                  <Link to={program.href}>
-                    <h3 className="font-display text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[2.5rem]">
-                      {program.title}
-                    </h3>
-                  </Link>
-                  
-                  {/* Video Play Button */}
-                  {program.video && (
-                    <button
-                      onClick={() => setActiveVideo(program.video!)}
-                      className="mt-2 flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
-                    >
-                      <Play className="w-3 h-3" />
-                      {t("labels.watchVideo")}
-                    </button>
-                  )}
-                </div>
+    <section className="py-20 md:py-24 bg-background" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Header */}
+        <ScrollAnimation animation="fadeUp">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/10 text-scef-gold text-sm font-medium mb-4 border border-scef-gold/20">
+                <BookOpen className="w-4 h-4" />
+                {t("nav.programs") || "Programs & Initiatives"}
               </div>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                {t("programs.page.flagship.heading") || "3 Programs + 1 Platform"}
+              </h2>
+              <p className="text-muted-foreground mt-3 max-w-xl">
+                {t("programs.page.hero.subtext")?.toString().slice(0, 120) || "SCEF delivers impact through three flagship programs and one flagship platform."}
+              </p>
             </div>
-          ))}
-        </div>
-
-        {/* Video Modal */}
-        {activeVideo && (
-          <div 
-            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-            onClick={() => setActiveVideo(null)}
-          >
-            <div 
-              className="relative max-w-4xl w-full"
-              onClick={(e) => e.stopPropagation()}
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
+              asChild
             >
-              <button
-                onClick={() => setActiveVideo(null)}
-                className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
-              >
-                <X className="w-8 h-8" />
-              </button>
-              <video
-                src={activeVideo}
-                controls
-                autoPlay
-                className="w-full rounded-lg"
-              />
-            </div>
+              <Link to="/programs" className="gap-2">
+                {t("home.programs.ctaAll") || "Explore All Programs"}
+                <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
+              </Link>
+            </Button>
           </div>
-        )}
+        </ScrollAnimation>
+
+        {/* Flagship Grid - 2x2 */}
+        <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {flagshipItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <StaggerItem key={item.id} animation="fadeUp">
+                <article className="group bg-card rounded-2xl border-2 border-border p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300 h-full">
+                  {/* Header */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${item.accentClass}`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {t(item.titleKey) || item.titleFallback}
+                      </h3>
+                      <p className="text-sm font-medium text-scef-gold">
+                        {t(item.subtitleKey) || item.subtitleFallback}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {t(item.descriptionKey) || item.descriptionFallback}
+                  </p>
+
+                  {/* Bullets */}
+                  <ul className="space-y-1.5 mb-5" role="list">
+                    {item.bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                        <Check className="w-4 h-4 text-scef-gold mt-0.5 shrink-0" />
+                        <span>{t(bullet.key) || bullet.fallback}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTAs */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {item.external ? (
+                      <a
+                        href={item.primaryHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
+                      >
+                        <Button size="sm" className="w-full bg-primary hover:bg-primary/90 gap-1">
+                          {t("cta.learnMore") || "Learn More"}
+                          <ExternalLink className="w-3 h-3" />
+                        </Button>
+                      </a>
+                    ) : (
+                      <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
+                        <Link to={item.primaryHref} className="gap-1">
+                          {t("cta.learnMore") || "Learn More"}
+                          <ArrowRight className={`w-3 h-3 ${isRTL ? "rotate-180" : ""}`} />
+                        </Link>
+                      </Button>
+                    )}
+                    <Button size="sm" variant="outline" className="border-border" asChild>
+                      <Link to={item.secondaryHref}>
+                        {t("cta.details") || "Details"}
+                      </Link>
+                    </Button>
+                  </div>
+                </article>
+              </StaggerItem>
+            );
+          })}
+        </StaggerContainer>
+
+        {/* Bottom CTA */}
+        <ScrollAnimation animation="fadeUp" delay={0.3}>
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">
+              {t("programs.page.tracks.oneline") || "Related work is delivered as Tracks and Series under these flagships."}
+            </p>
+            <Button size="lg" className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-dark font-semibold" asChild>
+              <Link to="/programs" className="gap-2">
+                {t("home.programs.ctaAll") || "View All Programs & Tracks"}
+                <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
+              </Link>
+            </Button>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
