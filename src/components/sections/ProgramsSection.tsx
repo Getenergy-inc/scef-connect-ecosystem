@@ -1,226 +1,173 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Radio, Tv, Video, Library } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Globe, Library, Check, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "@/contexts/LocaleContext";
 
-const educationPrograms = [
+const flagshipItems = [
   {
+    id: "nesa",
+    icon: Award,
+    title: "NESA Africa",
+    subtitle: "New Education Standard Award Africa",
+    description: "Continental standards, recognition, and accountability for education excellence.",
+    bullets: ["Nomination & voting portal", "Judging & recognition", "Awards TV broadcast"],
+    primaryHref: "https://nesa.africa",
+    external: true,
+    secondaryHref: "/programs/nesa-africa",
+    accentClass: "text-scef-gold bg-scef-gold/10 border-scef-gold/20",
+  },
+  {
+    id: "eduaid",
     icon: BookOpen,
-    title: "EduAid-Africa",
-    description: "Scholarships & funding for underprivileged students across Africa.",
-    href: "/programs/eduaid-africa",
+    title: "EduAid Africa",
+    subtitle: "Education Aid Africa",
+    description: "Direct education support for learners and schools—access, equity, inclusion, and infrastructure.",
+    bullets: ["Scholarships & learner support", "School & community delivery", "Infrastructure & inclusion tracks"],
+    primaryHref: "/programs/eduaid-africa",
+    external: false,
+    secondaryHref: "/programs",
+    accentClass: "text-eduaid-green bg-eduaid-green/10 border-eduaid-green/20",
   },
   {
-    icon: Home,
-    title: "Rebuild My School Africa",
-    description: "Infrastructure development rebuilding schools across the continent.",
-    href: "/programs/rebuild-my-school-africa",
-  },
-  {
-    icon: Heart,
-    title: "Women & Girls Education",
-    description: "Empowering women and girls through education and mentorship.",
-    href: "/programs/women-girls-education",
-  },
-  {
-    icon: Accessibility,
-    title: "Special Needs Education",
-    description: "Inclusive education ensuring every child has access to learning.",
-    href: "/programs/special-needs-education",
-  },
-];
-
-const digitalLearning = [
-  {
+    id: "eoa",
     icon: Globe,
-    title: "Education Online Africa",
-    description: "Modern digital learning platforms and e-resources.",
-    href: "/programs/digital-learning",
+    title: "EOA",
+    subtitle: "Education Online Africa",
+    description: "Skills development, certification, and verification for workforce readiness.",
+    bullets: ["Learning pathways & exams", "Certificate issuance", "Workplace certifications"],
+    primaryHref: "/programs/digital-learning",
+    external: false,
+    secondaryHref: "/programs/digital-learning#verify",
+    accentClass: "text-primary bg-primary/10 border-primary/20",
   },
   {
+    id: "elibrary",
     icon: Library,
     title: "eLibrary Nigeria",
-    description: "Promoting Nigerian local content e-libraries with searchable books and resources.",
-    href: "/programs/elibrary-nigeria",
-  },
-];
-
-const recognitionPrograms = [
-  {
-    icon: Award,
-    title: "NESA-Africa",
-    description: "New Education Standard Award: 2025–2037 program with regional rotation hosting from 2027.",
-    href: "/programs/nesa-africa",
-  },
-];
-
-const mediaPrograms = [
-  {
-    icon: Tv,
-    title: "NESA Africa TV",
-    description: "Educational broadcasting platform.",
-    href: "/media",
-  },
-  {
-    icon: Radio,
-    title: "It's In Me Radio",
-    description: "Inspiring stories from educators.",
-    href: "/media",
-  },
-  {
-    icon: Video,
-    title: "EduAid Webinar Series",
-    description: "Expert-led educational webinars.",
-    href: "/media",
-  },
-  {
-    icon: Globe,
-    title: "EduAid Education Tourism Show",
-    description: "Showcasing education destinations across Africa.",
-    href: "/media",
+    subtitle: "Flagship Platform",
+    description: "Free learning resources and community knowledge sharing.",
+    bullets: ["Browse free materials", "Upload & contribute", "Learning engagement"],
+    primaryHref: "/programs/elibrary-nigeria",
+    external: false,
+    secondaryHref: "/programs/elibrary-nigeria#contributors",
+    accentClass: "text-elibrary-green bg-elibrary-green/10 border-elibrary-green/20",
   },
 ];
 
 export const ProgramsSection = () => {
+  const { t, isRTL } = useLocale();
+
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 md:py-24 bg-background" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-4 border-2 border-black">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/10 text-scef-gold text-sm font-medium mb-4 border border-scef-gold/20">
               <BookOpen className="w-4 h-4" />
-              Programs & Platforms
+              {t("nav.programs") || "Programs & Platform"}
             </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              What We <span className="text-scef-gold">Deliver</span>
+              {t("programs.page.flagship.heading") || "3 Programs + 1 Platform"}
             </h2>
+            <p className="text-muted-foreground mt-3 max-w-xl">
+              {t("programs.page.hero.subtext")?.slice(0, 120) || "SCEF delivers impact through three flagship programs and one flagship platform."}
+            </p>
           </div>
-          <Button variant="outline" size="lg" className="border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white border-2" asChild>
-            <Link to="/programs">
-              Explore All Programs
-              <ArrowRight className="w-4 h-4" />
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
+            asChild
+          >
+            <Link to="/programs" className="gap-2">
+              {t("home.programs.ctaAll") || "Explore All Programs"}
+              <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
             </Link>
           </Button>
         </div>
 
-        {/* Education Programs Grid */}
-        <div className="mb-12">
-          <h3 className="font-display text-xl font-bold text-foreground mb-6">Education Programs</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {educationPrograms.map((program, index) => (
-              <Link
-                key={program.title}
-                to={program.href}
-                className="group relative bg-card rounded-2xl p-6 border-2 border-black hover:border-scef-gold hover:shadow-lg transition-all duration-500 overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
+        {/* Flagship Grid - 2x2 */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {flagshipItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <article
+                key={item.id}
+                className="group bg-card rounded-2xl border-2 border-border p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-scef-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative w-12 h-12 rounded-xl bg-scef-blue border-2 border-black flex items-center justify-center mb-4 group-hover:bg-scef-gold transition-colors duration-300">
-                  <program.icon className="w-6 h-6 text-scef-gold group-hover:text-scef-blue-dark transition-colors" />
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-4">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${item.accentClass}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm font-medium text-scef-gold">{item.subtitle}</p>
+                  </div>
                 </div>
-                
-                <h3 className="relative font-display text-lg font-bold text-card-foreground mb-2 group-hover:text-scef-blue transition-colors">
-                  {program.title}
-                </h3>
-                <p className="relative text-muted-foreground text-sm leading-relaxed mb-4">
-                  {program.description}
+
+                {/* Description */}
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {item.description}
                 </p>
-                
-                <div className="relative flex items-center gap-2 text-scef-gold text-sm font-semibold">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+
+                {/* Bullets */}
+                <ul className="space-y-1.5 mb-5" role="list">
+                  {item.bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                      <Check className="w-4 h-4 text-scef-gold mt-0.5 shrink-0" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTAs */}
+                <div className="flex flex-wrap gap-2">
+                  {item.external ? (
+                    <a
+                      href={item.primaryHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button size="sm" className="w-full bg-primary hover:bg-primary/90 gap-1">
+                        {t("cta.learnMore") || "Learn More"}
+                        <ExternalLink className="w-3 h-3" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
+                      <Link to={item.primaryHref} className="gap-1">
+                        {t("cta.learnMore") || "Learn More"}
+                        <ArrowRight className={`w-3 h-3 ${isRTL ? "rotate-180" : ""}`} />
+                      </Link>
+                    </Button>
+                  )}
+                  <Button size="sm" variant="outline" className="border-border" asChild>
+                    <Link to={item.secondaryHref}>
+                      {t("cta.details") || "Details"}
+                    </Link>
+                  </Button>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </article>
+            );
+          })}
         </div>
 
-        {/* Digital Learning & Recognition Row */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {/* Digital Learning */}
-          <div className="bg-card rounded-2xl p-8 border-2 border-black">
-            <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-              <Globe className="w-5 h-5 text-scef-gold" />
-              Digital Learning
-            </h3>
-            <div className="space-y-4">
-              {digitalLearning.map((program) => (
-                <Link
-                  key={program.title}
-                  to={program.href}
-                  className="flex items-center justify-between p-4 rounded-xl bg-background border-2 border-black hover:border-scef-blue/30 transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <program.icon className="w-5 h-5 text-scef-blue" />
-                    <div>
-                      <h4 className="font-semibold text-foreground group-hover:text-scef-blue transition-colors">
-                        {program.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">{program.description}</p>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-scef-blue group-hover:translate-x-1 transition-all" />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Recognition */}
-          <div className="bg-card rounded-2xl p-8 border-2 border-black">
-            <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-              <Award className="w-5 h-5 text-scef-gold" />
-              Recognition & Accountability
-            </h3>
-            <div className="space-y-4">
-              {recognitionPrograms.map((program) => (
-                <Link
-                  key={program.title}
-                  to={program.href}
-                  className="flex items-center justify-between p-4 rounded-xl bg-background border-2 border-black hover:border-scef-blue/30 transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <program.icon className="w-5 h-5 text-scef-blue" />
-                    <div>
-                      <h4 className="font-semibold text-foreground group-hover:text-scef-blue transition-colors">
-                        {program.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">{program.description}</p>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-scef-blue group-hover:translate-x-1 transition-all" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Media Platforms */}
-        <div className="bg-card rounded-2xl p-8 border-2 border-black">
-          <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-            <Tv className="w-5 h-5 text-scef-gold" />
-            Media Platforms
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {mediaPrograms.map((program) => (
-              <Link
-                key={program.title}
-                to={program.href}
-                className="flex items-center justify-between p-4 rounded-xl bg-background border-2 border-black hover:border-scef-blue/30 transition-colors group"
-              >
-                <div className="flex items-center gap-3">
-                  <program.icon className="w-5 h-5 text-scef-blue" />
-                  <div>
-                    <h4 className="font-semibold text-foreground group-hover:text-scef-blue transition-colors text-sm">
-                      {program.title}
-                    </h4>
-                    <p className="text-xs text-muted-foreground">{program.description}</p>
-                  </div>
-                </div>
-                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-scef-blue group-hover:translate-x-1 transition-all shrink-0" />
-              </Link>
-            ))}
-          </div>
+        {/* Bottom CTA */}
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground mb-4">
+            {t("programs.page.tracks.oneline") || "Related work is delivered as Tracks and Series under these flagships."}
+          </p>
+          <Button size="lg" className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-dark font-semibold" asChild>
+            <Link to="/programs" className="gap-2">
+              {t("home.programs.ctaAll") || "View All Programs & Tracks"}
+              <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

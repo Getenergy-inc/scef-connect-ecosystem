@@ -1,230 +1,162 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import { ArrowRight, Heart, Users, Tv, BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
-import { ArrowRight, Award, BookOpen, Home, Heart, Accessibility, Globe, Library, ExternalLink } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { FlagshipCard } from "@/components/programs/FlagshipCard";
+import { EduAidTracksSection } from "@/components/programs/EduAidTracksSection";
+import { EOACertificationSection } from "@/components/programs/EOACertificationSection";
+import { StakeholderPathwaysSection } from "@/components/programs/StakeholderPathwaysSection";
+import { programsPageContent } from "@/config/programsPageContent";
 import heroImage from "@/assets/hero-programs.jpg";
-import nesaLogo from "@/assets/nesa-africa-logo.jpg";
-import eduaidLogo from "@/assets/eduaid-africa-logo.jpg";
-
-const programIcons = {
-  nesa: Award,
-  eduaid: BookOpen,
-  rmsa: Home,
-  womenGirls: Heart,
-  specialNeeds: Accessibility,
-  eoa: Globe,
-  elibrary: Library,
-};
-
-const programLogos: Record<string, string | null> = {
-  nesa: nesaLogo,
-  eduaid: eduaidLogo,
-  rmsa: null,
-  womenGirls: null,
-  specialNeeds: null,
-  eoa: null,
-  elibrary: null,
-};
-
-const programLinks = {
-  nesa: "/programs/nesa-africa",
-  eduaid: "/programs/eduaid-africa",
-  rmsa: "/programs/rebuild-my-school-africa",
-  womenGirls: "/programs/women-girls-education",
-  specialNeeds: "/programs/special-needs-education",
-  eoa: "/programs/digital-learning",
-  elibrary: "/programs/elibrary-nigeria",
-};
 
 const Programs = () => {
-  const { t } = useLocale();
-
-  const programKeys = ["nesa", "eduaid", "rmsa", "womenGirls", "specialNeeds", "eoa", "elibrary"];
+  const { t, isRTL } = useLocale();
+  const { hero, flagshipPrograms } = programsPageContent;
 
   return (
     <>
       <Helmet>
-        <title>{t("home.programs.title")} - SCEF</title>
+        <title>{t("programs.page.hero.title") || "Our Programs"} - SCEF</title>
         <meta 
           name="description" 
-          content={t("about.programs.intro")} 
+          content={t(hero.subtextKey) || hero.subtextFallback}
         />
       </Helmet>
       
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background" dir={isRTL ? "rtl" : "ltr"}>
         <Header />
         
         <main>
-          {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-scef-blue overflow-hidden">
-            <OptimizedImage src={heroImage} alt="SCEF Programs - African students graduating" className="absolute inset-0 w-full h-full" imgClassName="opacity-30" priority />
-            <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/80 to-scef-blue/95" />
-            <div className="container mx-auto px-4 relative z-10">
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm mb-6">
+          {/* ========== HERO SECTION ========== */}
+          <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 bg-scef-blue overflow-hidden">
+            <OptimizedImage 
+              src={heroImage} 
+              alt="SCEF Programs - African students in education" 
+              className="absolute inset-0 w-full h-full" 
+              imgClassName="opacity-25" 
+              priority 
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-scef-blue/70 via-scef-blue/85 to-scef-blue" />
+            
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
+              <div className="max-w-4xl mx-auto text-center">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-scef-gold text-sm font-medium mb-6 border border-white/20">
                   <BookOpen className="w-4 h-4" />
-                  {t("home.programs.title")}
+                  {t("nav.programs") || "Programs"}
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  {t("about.programs.title")}
+
+                {/* H1 */}
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  {t(hero.titleKey) || "Our Programs"}
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed">
-                  {t("about.programs.intro")}
+
+                {/* Subtext */}
+                <p className="text-base md:text-lg text-white/85 leading-relaxed max-w-3xl mx-auto mb-10">
+                  {t(hero.subtextKey) || hero.subtextFallback}
                 </p>
+
+                {/* Primary CTAs */}
+                <div className="flex flex-wrap justify-center gap-3 mb-6">
+                  <Button 
+                    size="lg" 
+                    className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-dark font-semibold gap-2"
+                    asChild
+                  >
+                    <Link to="/donate">
+                      <Heart className="w-4 h-4" />
+                      {t("cta.donateSponsor") || "Donate / Sponsor"}
+                    </Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    className="bg-white hover:bg-white/90 text-scef-blue font-semibold gap-2"
+                    asChild
+                  >
+                    <Link to="/membership">
+                      <Users className="w-4 h-4" />
+                      {t("cta.becomeMember") || "Become a Member"}
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Secondary CTAs */}
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="bg-transparent border-white/30 text-white hover:bg-white/10"
+                    asChild
+                  >
+                    <Link to="/chapters" className="gap-2">
+                      {t("cta.exploreChapters") || "Explore Local Chapters"}
+                      <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
+                    </Link>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="bg-transparent border-white/30 text-white hover:bg-white/10"
+                    asChild
+                  >
+                    <Link to="/media" className="gap-2">
+                      <Tv className="w-4 h-4" />
+                      {t("cta.watchMedia") || "Watch SCEF Media"}
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* External Platforms Section */}
-          <section className="py-16 bg-scef-blue/5 border-y-2 border-border">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  {t("home.eoa.title")}
+          {/* ========== FLAGSHIP GRID (4 Cards) ========== */}
+          <section className="py-16 md:py-20 bg-background">
+            <div className="container px-4 md:px-8">
+              {/* Section Label */}
+              <div className="text-center mb-10">
+                <span className="inline-block px-4 py-1.5 bg-scef-gold/10 text-scef-gold rounded-full text-sm font-medium border border-scef-gold/20 mb-4">
+                  {t("programs.page.flagship.label") || "Flagship Programs & Platform"}
+                </span>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+                  {t("programs.page.flagship.heading") || "3 Programs + 1 Platform"}
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  {t("home.eoa.body")}
-                </p>
               </div>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* eLibrary Nigeria */}
-                <a
-                  href="https://www.elibrarynigeria.com.ng"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-card rounded-2xl border-2 border-border p-8 hover:border-scef-blue/30 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center mb-6">
-                    <Library className="w-7 h-7 text-scef-blue" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors flex items-center gap-2">
-                    eLibrary Nigeria
-                    <ExternalLink className="w-4 h-4 text-scef-gold" />
-                  </h3>
-                  <p className="text-sm text-scef-gold font-medium mb-4">elibrarynigeria.com.ng</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {t("about.programs.cards.eoa")}
-                  </p>
-                </a>
 
-                {/* NESA Africa */}
-                <a
-                  href="https://nesa.africa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-card rounded-2xl border-2 border-border p-8 hover:border-scef-blue/30 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center mb-6">
-                    <Award className="w-7 h-7 text-scef-blue" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors flex items-center gap-2">
-                    NESA Africa
-                    <ExternalLink className="w-4 h-4 text-scef-gold" />
-                  </h3>
-                  <p className="text-sm text-scef-gold font-medium mb-4">nesa.africa</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {t("about.programs.cards.nesa")}
-                  </p>
-                </a>
-
-                {/* EduAid Africa */}
-                <a
-                  href="https://eduaid.africa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-card rounded-2xl border-2 border-border p-8 hover:border-scef-blue/30 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center mb-6">
-                    <BookOpen className="w-7 h-7 text-scef-blue" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors flex items-center gap-2">
-                    EduAid Africa
-                    <ExternalLink className="w-4 h-4 text-scef-gold" />
-                  </h3>
-                  <p className="text-sm text-scef-gold font-medium mb-4">eduaid.africa</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {t("about.programs.cards.eduaid")}
-                  </p>
-                </a>
+              {/* Grid: 2x2 desktop, stacked mobile */}
+              <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                {flagshipPrograms.map((program) => (
+                  <FlagshipCard
+                    key={program.id}
+                    icon={program.icon}
+                    titleKey={program.titleKey}
+                    titleFallback={program.titleFallback}
+                    subtitleKey={program.subtitleKey}
+                    subtitleFallback={program.subtitleFallback}
+                    descriptionKey={program.descriptionKey}
+                    descriptionFallback={program.descriptionFallback}
+                    clarityLineKey={program.clarityLineKey}
+                    clarityLineFallback={program.clarityLineFallback}
+                    bullets={program.bullets}
+                    primaryCta={program.primaryCta}
+                    secondaryCtas={program.secondaryCtas}
+                  />
+                ))}
               </div>
             </div>
           </section>
 
-          {/* Programs Grid */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  {t("home.programs.ctaAll")}
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  {t("about.programs.intro")}
-                </p>
-              </div>
-              <div className="space-y-8">
-                {programKeys.map((programKey) => {
-                  const Icon = programIcons[programKey as keyof typeof programIcons];
-                  const link = programLinks[programKey as keyof typeof programLinks];
-                  
-                  return (
-                    <div
-                      key={programKey}
-                      className="group bg-card rounded-2xl border-2 border-border overflow-hidden hover:border-scef-blue/30 hover:shadow-lg transition-all duration-500"
-                    >
-                      <div className="grid lg:grid-cols-3 gap-0">
-                        {/* Content */}
-                        <div className="lg:col-span-2 p-8 lg:p-12">
-                          <div className="flex items-start gap-6">
-                            <div className="w-16 h-16 rounded-xl bg-scef-blue/10 border-2 border-scef-blue/20 flex items-center justify-center shrink-0 overflow-hidden">
-                              {programLogos[programKey] ? (
-                                <img 
-                                  src={programLogos[programKey]!} 
-                                  alt={`${t(`programs.items.${programKey}.title`)} logo`}
-                                  className="w-full h-full object-cover"
-                                />
-                              ) : (
-                                <Icon className="w-8 h-8 text-scef-blue" />
-                              )}
-                            </div>
-                            <div className="flex-1">
-                              <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
-                                {t(`programs.items.${programKey}.title`)}
-                              </h2>
-                              <p className="text-sm font-medium text-scef-gold mb-4">
-                                {t(`programs.items.${programKey}.subtitle`)}
-                              </p>
-                              <p className="text-muted-foreground leading-relaxed mb-6">
-                                {t(`about.programs.cards.${programKey}`)}
-                              </p>
-                              <Link
-                                to={link}
-                                className="inline-flex items-center gap-2 text-scef-blue font-semibold hover:gap-3 transition-all"
-                              >
-                                {t("home.programs.ctaAll")}
-                                <ArrowRight className="w-4 h-4" />
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Features */}
-                        <div className="bg-scef-blue/5 p-8 lg:p-12 flex flex-col justify-center border-l-2 border-border">
-                          <h3 className="font-display font-semibold text-foreground mb-4">{t("programs.items." + programKey + ".title")}</h3>
-                          <p className="text-sm text-muted-foreground">
-                            {t(`about.programs.cards.${programKey}`)}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
+          {/* ========== EDUAID TRACKS SECTION ========== */}
+          <EduAidTracksSection />
+
+          {/* ========== EOA CERTIFICATION BLOCK ========== */}
+          <EOACertificationSection />
+
+          {/* ========== STAKEHOLDER PATHWAYS ========== */}
+          <StakeholderPathwaysSection />
         </main>
         
         <Footer />

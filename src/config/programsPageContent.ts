@@ -1,0 +1,273 @@
+import { Award, BookOpen, Globe, Library, Home, Heart, Accessibility, Video } from "lucide-react";
+
+export const programsPageContent = {
+  hero: {
+    titleKey: "programs.page.hero.title",
+    subtextKey: "programs.page.hero.subtext",
+    subtextFallback: "SCEF delivers impact through three flagship programs and one flagship platform. To stay focused and scalable, related work is delivered as Tracks (sub-programs) and Series (webinars/training) under the appropriate flagship.",
+  },
+  
+  flagshipPrograms: [
+    {
+      id: "nesa-africa",
+      icon: Award,
+      titleKey: "programs.page.flagship.nesa.title",
+      titleFallback: "NESA Africa",
+      subtitleKey: "programs.page.flagship.nesa.subtitle",
+      subtitleFallback: "New Education Standard Award Africa",
+      descriptionKey: "programs.page.flagship.nesa.description",
+      descriptionFallback: "Continental standards, recognition, and accountability for education excellence.",
+      clarityLineKey: "programs.page.flagship.nesa.clarityLine",
+      clarityLineFallback: "NESA Africa is powered by the NESA.Africa Nomination & Voting Portal and amplified through NESA Africa TV / NESA Awards TV.",
+      bullets: [
+        { key: "programs.page.flagship.nesa.bullets.0", fallback: "Nomination & voting (official portal)" },
+        { key: "programs.page.flagship.nesa.bullets.1", fallback: "Judging, categories, and recognition" },
+        { key: "programs.page.flagship.nesa.bullets.2", fallback: "Broadcast, countdowns, replays (Awards TV)" },
+      ],
+      primaryCta: {
+        labelKey: "programs.page.flagship.nesa.cta.primary",
+        labelFallback: "Nominate / Vote (NESA.Africa)",
+        href: "https://nesa.africa",
+        external: true,
+      },
+      secondaryCtas: [
+        {
+          labelKey: "programs.page.flagship.nesa.cta.secondary1",
+          labelFallback: "Watch NESA Africa TV",
+          href: "/media/nesa-tv",
+        },
+        {
+          labelKey: "programs.page.flagship.nesa.cta.secondary2",
+          labelFallback: "View Awards Season",
+          href: "/media/nesa-awards-tv",
+        },
+      ],
+      accentColor: "hsl(var(--scef-gold))",
+    },
+    {
+      id: "eduaid-africa",
+      icon: BookOpen,
+      titleKey: "programs.page.flagship.eduaid.title",
+      titleFallback: "EduAid Africa",
+      subtitleKey: "programs.page.flagship.eduaid.subtitle",
+      subtitleFallback: "Education Aid Africa",
+      descriptionKey: "programs.page.flagship.eduaid.description",
+      descriptionFallback: "Direct education support for learners and schools—access, equity, inclusion, and infrastructure.",
+      bullets: [
+        { key: "programs.page.flagship.eduaid.bullets.0", fallback: "Scholarships and learner support" },
+        { key: "programs.page.flagship.eduaid.bullets.1", fallback: "School support and community delivery" },
+        { key: "programs.page.flagship.eduaid.bullets.2", fallback: "Tracks for infrastructure, equity, inclusion + webinars" },
+      ],
+      primaryCta: {
+        labelKey: "programs.page.flagship.eduaid.cta.primary",
+        labelFallback: "Apply for Support / Fund a Learner",
+        href: "/programs/eduaid-africa",
+      },
+      secondaryCtas: [
+        {
+          labelKey: "programs.page.flagship.eduaid.cta.secondary1",
+          labelFallback: "Explore EduAid Tracks",
+          href: "#eduaid-tracks",
+          scrollTo: true,
+        },
+        {
+          labelKey: "programs.page.flagship.eduaid.cta.secondary2",
+          labelFallback: "Join EduAid Webinars",
+          href: "#webinars-track",
+          scrollTo: true,
+        },
+      ],
+      accentColor: "hsl(var(--eduaid-green))",
+    },
+    {
+      id: "eoa",
+      icon: Globe,
+      titleKey: "programs.page.flagship.eoa.title",
+      titleFallback: "EOA (Education Online Africa)",
+      subtitleKey: "programs.page.flagship.eoa.subtitle",
+      subtitleFallback: "Learning & Certification",
+      descriptionKey: "programs.page.flagship.eoa.description",
+      descriptionFallback: "Skills development, certification, and verification for workforce readiness.",
+      bullets: [
+        { key: "programs.page.flagship.eoa.bullets.0", fallback: "Learning pathways and exams" },
+        { key: "programs.page.flagship.eoa.bullets.1", fallback: "Certificate issuance and verification" },
+        { key: "programs.page.flagship.eoa.bullets.2", fallback: "Workplace productivity certifications" },
+      ],
+      primaryCta: {
+        labelKey: "programs.page.flagship.eoa.cta.primary",
+        labelFallback: "Explore Certifications / Book Exam",
+        href: "/programs/digital-learning",
+      },
+      secondaryCtas: [
+        {
+          labelKey: "programs.page.flagship.eoa.cta.secondary1",
+          labelFallback: "Verify Certificate",
+          href: "/programs/digital-learning#verify",
+        },
+      ],
+      accentColor: "hsl(var(--scef-blue))",
+    },
+    {
+      id: "elibrary",
+      icon: Library,
+      titleKey: "programs.page.flagship.elibrary.title",
+      titleFallback: "eLibrary Nigeria",
+      subtitleKey: "programs.page.flagship.elibrary.subtitle",
+      subtitleFallback: "Flagship Platform",
+      descriptionKey: "programs.page.flagship.elibrary.description",
+      descriptionFallback: "Free learning resources and community knowledge sharing.",
+      bullets: [
+        { key: "programs.page.flagship.elibrary.bullets.0", fallback: "Browse free materials" },
+        { key: "programs.page.flagship.elibrary.bullets.1", fallback: "Upload resources and contribute" },
+        { key: "programs.page.flagship.elibrary.bullets.2", fallback: "Support reading and learning engagement" },
+      ],
+      primaryCta: {
+        labelKey: "programs.page.flagship.elibrary.cta.primary",
+        labelFallback: "Browse Free Materials",
+        href: "/programs/elibrary-nigeria",
+      },
+      secondaryCtas: [
+        {
+          labelKey: "programs.page.flagship.elibrary.cta.secondary1",
+          labelFallback: "Join Contributors Network",
+          href: "/programs/elibrary-nigeria#contributors",
+        },
+      ],
+      accentColor: "hsl(var(--elibrary-green))",
+    },
+  ],
+
+  eduaidTracks: {
+    sectionTitleKey: "programs.page.tracks.title",
+    sectionTitleFallback: "EduAid Africa Tracks (Sub-Programs)",
+    oneLineKey: "programs.page.tracks.oneline",
+    oneLineFallback: "These tracks sit under EduAid Africa to keep the portfolio focused and easy to navigate.",
+    noteKey: "programs.page.tracks.note",
+    noteFallback: "RMSA, Women & Girls Education, and Special Needs Support are EduAid Africa tracks—not separate programs.",
+    tracks: [
+      {
+        id: "rmsa",
+        icon: Home,
+        titleKey: "programs.page.tracks.rmsa.title",
+        titleFallback: "RMSA: Rebuild My School Africa",
+        tagKey: "programs.page.tracks.rmsa.tag",
+        tagFallback: "Infrastructure Track",
+        descriptionKey: "programs.page.tracks.rmsa.description",
+        descriptionFallback: "Renovation and upgrades for schools and learning environments.",
+        ctas: [
+          { labelKey: "programs.page.tracks.rmsa.cta1", labelFallback: "Submit School Request", href: "/programs/rebuild-my-school-africa" },
+          { labelKey: "programs.page.tracks.rmsa.cta2", labelFallback: "Sponsor a Renovation", href: "/donate" },
+        ],
+      },
+      {
+        id: "women-girls",
+        icon: Heart,
+        titleKey: "programs.page.tracks.womenGirls.title",
+        titleFallback: "Women & Girls Education",
+        tagKey: "programs.page.tracks.womenGirls.tag",
+        tagFallback: "Equity Track",
+        descriptionKey: "programs.page.tracks.womenGirls.description",
+        descriptionFallback: "Support for girls' and women's access, retention, and success.",
+        ctas: [
+          { labelKey: "programs.page.tracks.womenGirls.cta1", labelFallback: "Sponsor Girls' Education", href: "/donate" },
+          { labelKey: "programs.page.tracks.womenGirls.cta2", labelFallback: "Join Advocacy Team", href: "/get-involved/volunteer" },
+        ],
+      },
+      {
+        id: "special-needs",
+        icon: Accessibility,
+        titleKey: "programs.page.tracks.specialNeeds.title",
+        titleFallback: "Special Needs Education Support",
+        tagKey: "programs.page.tracks.specialNeeds.tag",
+        tagFallback: "Inclusion Track",
+        descriptionKey: "programs.page.tracks.specialNeeds.description",
+        descriptionFallback: "Inclusive education support and assistive learning interventions.",
+        ctas: [
+          { labelKey: "programs.page.tracks.specialNeeds.cta1", labelFallback: "Request Support", href: "/programs/special-needs-education" },
+          { labelKey: "programs.page.tracks.specialNeeds.cta2", labelFallback: "Sponsor Assistive Learning", href: "/donate" },
+        ],
+      },
+      {
+        id: "webinars",
+        icon: Video,
+        titleKey: "programs.page.tracks.webinars.title",
+        titleFallback: "EduAid Webinars",
+        tagKey: "programs.page.tracks.webinars.tag",
+        tagFallback: "Learning & Outreach Series",
+        descriptionKey: "programs.page.tracks.webinars.description",
+        descriptionFallback: "Webinars and capacity-building sessions for communities and partners.",
+        ctas: [
+          { labelKey: "programs.page.tracks.webinars.cta1", labelFallback: "Join Next Webinar", href: "/media/eduaid-webinars" },
+          { labelKey: "programs.page.tracks.webinars.cta2", labelFallback: "Watch Replays", href: "/media/eduaid-webinars#archive" },
+        ],
+      },
+    ],
+  },
+
+  eoaCertification: {
+    sectionTitleKey: "programs.page.eoa.sectionTitle",
+    sectionTitleFallback: "EOA Certification Track",
+    titleKey: "programs.page.eoa.productTitle",
+    titleFallback: "African Workplace Productivity Certifications",
+    descriptionKey: "programs.page.eoa.productDescription",
+    descriptionFallback: "Practical productivity skills training + assessment + certificate verification.",
+    ctas: [
+      { labelKey: "programs.page.eoa.cta1", labelFallback: "Start Learning", href: "/programs/digital-learning" },
+      { labelKey: "programs.page.eoa.cta2", labelFallback: "Book Exam", href: "/programs/digital-learning#exam" },
+      { labelKey: "programs.page.eoa.cta3", labelFallback: "Verify Certificate", href: "/programs/digital-learning#verify" },
+    ],
+  },
+
+  stakeholderPathways: {
+    sectionTitleKey: "programs.page.pathways.title",
+    sectionTitleFallback: "Choose Your Pathway",
+    pathways: [
+      {
+        id: "individuals",
+        titleKey: "programs.page.pathways.individuals.title",
+        titleFallback: "Individuals",
+        links: [
+          { labelKey: "programs.page.pathways.individuals.link1", labelFallback: "Become a Member", href: "/membership" },
+          { labelKey: "programs.page.pathways.individuals.link2", labelFallback: "Apply for EduAid Support", href: "/programs/eduaid-africa" },
+          { labelKey: "programs.page.pathways.individuals.link3", labelFallback: "Learn with EOA", href: "/programs/digital-learning" },
+        ],
+      },
+      {
+        id: "schools",
+        titleKey: "programs.page.pathways.schools.title",
+        titleFallback: "Schools",
+        links: [
+          { labelKey: "programs.page.pathways.schools.link1", labelFallback: "Request Support (EduAid)", href: "/programs/eduaid-africa" },
+          { labelKey: "programs.page.pathways.schools.link2", labelFallback: "Apply for RMSA", href: "/programs/rebuild-my-school-africa" },
+          { labelKey: "programs.page.pathways.schools.link3", labelFallback: "Join eLibrary", href: "/programs/elibrary-nigeria" },
+        ],
+      },
+      {
+        id: "partners",
+        titleKey: "programs.page.pathways.partners.title",
+        titleFallback: "Partners / CSR",
+        links: [
+          { labelKey: "programs.page.pathways.partners.link1", labelFallback: "Sponsor a Track", href: "/partner-with-us" },
+          { labelKey: "programs.page.pathways.partners.link2", labelFallback: "Fund Scholarships", href: "/donate" },
+          { labelKey: "programs.page.pathways.partners.link3", labelFallback: "Sponsor NESA", href: "/partner-with-us" },
+        ],
+      },
+      {
+        id: "communities",
+        titleKey: "programs.page.pathways.communities.title",
+        titleFallback: "Communities",
+        links: [
+          { labelKey: "programs.page.pathways.communities.link1", labelFallback: "Join a Local Chapter", href: "/chapters" },
+          { labelKey: "programs.page.pathways.communities.link2", labelFallback: "Volunteer", href: "/get-involved/volunteer" },
+          { labelKey: "programs.page.pathways.communities.link3", labelFallback: "Watch SCEF Media", href: "/media" },
+        ],
+      },
+    ],
+    finalCtas: [
+      { labelKey: "programs.page.pathways.cta1", labelFallback: "Donate / Sponsor", href: "/donate", primary: true },
+      { labelKey: "programs.page.pathways.cta2", labelFallback: "Become a Member", href: "/membership", primary: true },
+      { labelKey: "programs.page.pathways.cta3", labelFallback: "Explore Local Chapters", href: "/chapters", primary: false },
+      { labelKey: "programs.page.pathways.cta4", labelFallback: "Watch SCEF Media", href: "/media", primary: false },
+    ],
+  },
+};

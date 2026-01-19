@@ -69,6 +69,9 @@ export default {
             darker: "hsl(var(--scef-grey-darker))",
           },
         },
+        // Program accent colors
+        "eduaid-green": "hsl(var(--eduaid-green))",
+        "elibrary-green": "hsl(var(--elibrary-green))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
