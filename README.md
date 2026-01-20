@@ -1,73 +1,142 @@
-# Welcome to your Lovable project
+# SCEF - Santos Creations Educational Foundation
 
-## Project info
+A comprehensive web platform for the Santos Creations Educational Foundation (SCEF), featuring education programs, recognition awards, and community engagement across Africa.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🌍 Project Overview
 
-## How can I edit this code?
+SCEF operates a continuous, ever-growing standards system for education in Africa. This platform serves as the unified web ecosystem for:
 
-There are several ways of editing your application.
+- **Main HQ Website** (santoscreations.org)
+- **Program Microsites** (NESA-Africa, EduAid-Africa, Rebuild My School Africa, etc.)
+- **Local Chapter Microsites**
+- **Role-based Dashboards**
+- **GFA Wallet Integration**
 
-**Use Lovable**
+## 🏆 NESA-Africa (New Education Standards Awards Africa)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+NESA-Africa is the flagship continental education standards, recognition, and accountability platform.
 
-Changes made via Lovable will be committed automatically to this repo.
+### Key Features
 
-**Use your preferred IDE**
+- **Tiered Award Structure**: Platinum → Icon → Gold → Blue Garnet
+- **Region-First Logic**: North, West, East, Central, Southern Africa
+- **Phase-Aware System**: Dynamic CTAs based on current season phase
+- **Vision 2035**: 10-year strategic roadmap with collapsible sections
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### NESA File Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```
+src/
+├── pages/
+│   └── programs/
+│       └── NESAAfrica.tsx          # Main NESA landing page
+├── components/
+│   └── nesa/
+│       ├── Vision2035Section.tsx   # Collapsible Vision 2035 document
+│       └── StageBanner.tsx         # Phase-aware countdown banner
+└── config/
+    └── nesaSeasonConfig.ts         # Central season configuration
+```
 
-Follow these steps:
+### Award Categories
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+| Tier | Type | Count | Voting |
+|------|------|-------|--------|
+| Platinum | Non-competitive | 17 categories | Baseline certification |
+| Icon | Honorary | 9 icons (3 subcategories) | Selection-based |
+| Gold | Competitive | 135 subcategories | 100% public vote |
+| Blue Garnet | Competitive | 135 subcategories | 40% public / 60% jury |
+
+### Season Timeline (2025-2027)
+
+- **Oct 2025**: EduAid Webinars begin
+- **Feb 2026**: Platinum Recognition Show
+- **Mar 2026**: Icon Recognition Show
+- **Apr-May 2026**: Gold Public Voting Window
+- **May 2026**: Gold Winners Show
+- **Jun 2026**: Blue Garnet Gala
+- **Jun 2026-2027**: Rebuild My School Africa Legacy Phase
+
+## 🛠 Technology Stack
+
+- **Framework**: React 18 + Vite
+- **Styling**: TailwindCSS + shadcn/ui
+- **Language**: TypeScript
+- **State**: React Query + Context
+- **Backend**: Lovable Cloud (Supabase)
+- **Animation**: Framer Motion
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── nesa/           # NESA-specific components
+│   ├── eduaid/         # EduAid-Africa components
+│   ├── sections/       # Shared page sections
+│   ├── layout/         # Header, Footer, Navigation
+│   ├── ui/             # shadcn/ui components
+│   └── dashboard/      # Role-based dashboards
+├── pages/
+│   ├── programs/       # Program microsites
+│   ├── awards/         # Award tier pages
+│   ├── get-involved/   # Membership, Ambassador
+│   └── admin/          # Admin panels
+├── config/
+│   ├── nesaSeasonConfig.ts
+│   ├── programsPageContent.ts
+│   └── siteContent.ts
+├── contexts/           # React contexts
+├── hooks/              # Custom hooks
+└── locales/            # i18n translations (9 languages)
+```
+
+## 🌐 Multilingual Support
+
+Supports 9 languages with RTL for Arabic:
+- English, French, Arabic, Portuguese, Swahili
+- Spanish, German, Russian, Chinese
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📖 Key Pages
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage |
+| `/programs/nesa-africa` | NESA-Africa landing page |
+| `/programs/eduaid-africa` | EduAid-Africa program |
+| `/nominate` | Nomination portal |
+| `/vote` | Voting portal |
+| `/calendar` | NESA event calendar |
+| `/chapters` | Local chapters directory |
 
-**Use GitHub Codespaces**
+## 🔐 Authentication & Roles
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Role-based access system supporting:
+- Member, Ambassador, Volunteer, Donor
+- Chapter Admin, HQ Admin, Super Admin
+- Board members (BOT, BOA, BOD)
+- Division leads, LCP
 
-## What technologies are used for this project?
+## 📜 License
 
-This project is built with:
+© Santos Creations Educational Foundation. All rights reserved.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Live Preview**: [santoscreationsorg.lovable.app](https://santoscreationsorg.lovable.app)
