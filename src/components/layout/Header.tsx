@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
-  Bell, MessageSquare, Settings, Activity, Calendar
+  Bell, MessageSquare, Settings, Activity, Calendar, Users, Scale
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -217,6 +217,30 @@ export const Header = () => {
 
         {/* CTA Buttons - Auth Aware */}
         <div className="hidden xl:flex items-center gap-2">
+          {/* NRC & Judge Application Buttons */}
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="border-scef-gold/50 text-scef-gold hover:bg-scef-gold hover:text-scef-blue-dark font-medium"
+            asChild
+          >
+            <Link to="/get-involved/nrc">
+              <Users className="w-4 h-4 mr-1" />
+              Join NRC
+            </Link>
+          </Button>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark font-medium"
+            asChild
+          >
+            <Link to="/get-involved/judge">
+              <Scale className="w-4 h-4 mr-1" />
+              Be a Judge
+            </Link>
+          </Button>
+          
           <LanguageSwitcher />
           
           {loading ? (
@@ -459,6 +483,32 @@ export const Header = () => {
                 )}
               </div>
             ))}
+
+            {/* NRC & Judge Application CTA - Mobile */}
+            <div className="pt-4 border-t border-white/10">
+              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Get Involved with NESA</p>
+              <div className="flex flex-col gap-2 px-4">
+                <Button 
+                  className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
+                  asChild
+                >
+                  <Link to="/get-involved/nrc" onClick={() => setMobileMenuOpen(false)}>
+                    <Users className="w-4 h-4 mr-2" />
+                    Apply to Join NRC
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-white/50 text-white hover:bg-white hover:text-scef-blue-dark font-medium"
+                  asChild
+                >
+                  <Link to="/get-involved/judge" onClick={() => setMobileMenuOpen(false)}>
+                    <Scale className="w-4 h-4 mr-2" />
+                    Become a Judge
+                  </Link>
+                </Button>
+              </div>
+            </div>
 
             {/* External Platforms Section */}
             <div className="pt-4 border-t border-white/10">
