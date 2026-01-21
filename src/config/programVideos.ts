@@ -15,7 +15,7 @@ export const programVideos: ProgramVideo[] = [
     programName: "NESA-Africa",
     videoType: "youtube",
     videoUrl: "https://www.youtube.com/embed/nQCXDX_X3rs",
-    thumbnailUrl: "/assets/nesa-africa-logo.jpg"
+    thumbnailUrl: "/assets/nesa-africa-stage-thumbnail.jpg"
   },
   {
     programId: "eduaid-africa",
