@@ -13,6 +13,7 @@ import {
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
+import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
 
 // Key Event Dates for Countdowns
 const tvShowEvents = [
@@ -329,13 +330,34 @@ const NESAAfrica = () => {
         <Header />
         
         <main>
-          {/* Hero Section - Award Show Dark Theme with Spotlight Effects */}
+          {/* Hero Section - Award Show Dark Theme with Video Background */}
           <section className="relative pt-32 pb-24 overflow-hidden" style={{ backgroundColor: nesaColors.darkAlt }}>
-            {/* Animated Spotlight Effects */}
-            <div className="absolute inset-0 overflow-hidden">
+            {/* Video Background */}
+            <div className="absolute inset-0 z-0">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ opacity: 0.6 }}
+              >
+                <source src={nesaHeroBgVideo} type="video/mp4" />
+              </video>
+              {/* Dark overlay for text readability */}
+              <div 
+                className="absolute inset-0"
+                style={{ 
+                  background: `linear-gradient(180deg, ${nesaColors.darkAlt}90 0%, ${nesaColors.darkAlt}70 50%, ${nesaColors.darkAlt}95 100%)`
+                }}
+              />
+            </div>
+            
+            {/* Animated Spotlight Effects (on top of video) */}
+            <div className="absolute inset-0 overflow-hidden z-[1]">
               {/* Main center spotlight */}
               <div 
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] blur-3xl opacity-30 animate-pulse"
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] blur-3xl opacity-20 animate-pulse"
                 style={{ 
                   background: `radial-gradient(ellipse at center, ${nesaColors.gold}60 0%, transparent 70%)`,
                   animationDuration: '3s'
@@ -343,21 +365,21 @@ const NESAAfrica = () => {
               />
               {/* Left spotlight beam */}
               <div 
-                className="absolute -top-20 left-10 w-32 h-[800px] opacity-20 rotate-[25deg] animate-spotlight-left"
+                className="absolute -top-20 left-10 w-32 h-[800px] opacity-15 rotate-[25deg] animate-spotlight-left"
                 style={{ 
                   background: `linear-gradient(180deg, ${nesaColors.gold}80 0%, ${nesaColors.gold}20 50%, transparent 100%)`,
                 }}
               />
               {/* Right spotlight beam */}
               <div 
-                className="absolute -top-20 right-10 w-32 h-[800px] opacity-20 -rotate-[25deg] animate-spotlight-right"
+                className="absolute -top-20 right-10 w-32 h-[800px] opacity-15 -rotate-[25deg] animate-spotlight-right"
                 style={{ 
                   background: `linear-gradient(180deg, ${nesaColors.gold}80 0%, ${nesaColors.gold}20 50%, transparent 100%)`,
                 }}
               />
               {/* Floating particles/stars effect */}
               <div className="absolute inset-0">
-                {[...Array(20)].map((_, i) => (
+                {[...Array(15)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute w-1 h-1 rounded-full animate-twinkle"
@@ -375,20 +397,7 @@ const NESAAfrica = () => {
               <div 
                 className="absolute bottom-0 left-0 right-0 h-40"
                 style={{ 
-                  background: `linear-gradient(0deg, ${nesaColors.gold}15 0%, transparent 100%)`,
-                }}
-              />
-              {/* Side curtain shadows */}
-              <div 
-                className="absolute top-0 left-0 w-40 h-full opacity-50"
-                style={{ 
-                  background: `linear-gradient(90deg, ${nesaColors.darkAlt} 0%, transparent 100%)`,
-                }}
-              />
-              <div 
-                className="absolute top-0 right-0 w-40 h-full opacity-50"
-                style={{ 
-                  background: `linear-gradient(-90deg, ${nesaColors.darkAlt} 0%, transparent 100%)`,
+                  background: `linear-gradient(0deg, ${nesaColors.gold}10 0%, transparent 100%)`,
                 }}
               />
             </div>
