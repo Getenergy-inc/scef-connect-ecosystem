@@ -329,42 +329,108 @@ const NESAAfrica = () => {
         <Header />
         
         <main>
-          {/* Hero Section - Dark theme matching nesa.africa */}
+          {/* Hero Section - Award Show Dark Theme with Spotlight Effects */}
           <section className="relative pt-32 pb-24 overflow-hidden" style={{ backgroundColor: nesaColors.darkAlt }}>
-            {/* Decorative gold accents */}
-            <div className="absolute inset-0">
+            {/* Animated Spotlight Effects */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Main center spotlight */}
               <div 
-                className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-20"
-                style={{ backgroundColor: nesaColors.gold }}
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] blur-3xl opacity-30 animate-pulse"
+                style={{ 
+                  background: `radial-gradient(ellipse at center, ${nesaColors.gold}60 0%, transparent 70%)`,
+                  animationDuration: '3s'
+                }}
+              />
+              {/* Left spotlight beam */}
+              <div 
+                className="absolute -top-20 left-10 w-32 h-[800px] opacity-20 rotate-[25deg] animate-spotlight-left"
+                style={{ 
+                  background: `linear-gradient(180deg, ${nesaColors.gold}80 0%, ${nesaColors.gold}20 50%, transparent 100%)`,
+                }}
+              />
+              {/* Right spotlight beam */}
+              <div 
+                className="absolute -top-20 right-10 w-32 h-[800px] opacity-20 -rotate-[25deg] animate-spotlight-right"
+                style={{ 
+                  background: `linear-gradient(180deg, ${nesaColors.gold}80 0%, ${nesaColors.gold}20 50%, transparent 100%)`,
+                }}
+              />
+              {/* Floating particles/stars effect */}
+              <div className="absolute inset-0">
+                {[...Array(20)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1 h-1 rounded-full animate-twinkle"
+                    style={{
+                      backgroundColor: nesaColors.gold,
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 3}s`,
+                      animationDuration: `${2 + Math.random() * 2}s`
+                    }}
+                  />
+                ))}
+              </div>
+              {/* Stage gradient floor effect */}
+              <div 
+                className="absolute bottom-0 left-0 right-0 h-40"
+                style={{ 
+                  background: `linear-gradient(0deg, ${nesaColors.gold}15 0%, transparent 100%)`,
+                }}
+              />
+              {/* Side curtain shadows */}
+              <div 
+                className="absolute top-0 left-0 w-40 h-full opacity-50"
+                style={{ 
+                  background: `linear-gradient(90deg, ${nesaColors.darkAlt} 0%, transparent 100%)`,
+                }}
               />
               <div 
-                className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl opacity-10"
-                style={{ backgroundColor: nesaColors.gold }}
+                className="absolute top-0 right-0 w-40 h-full opacity-50"
+                style={{ 
+                  background: `linear-gradient(-90deg, ${nesaColors.darkAlt} 0%, transparent 100%)`,
+                }}
               />
             </div>
             
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-5xl mx-auto text-center">
-                {/* Badge */}
+                {/* Badge with glow effect */}
                 <div 
-                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-8 border"
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-8 border shadow-lg animate-glow"
                   style={{ 
                     backgroundColor: `${nesaColors.gold}20`,
                     borderColor: nesaColors.gold,
-                    color: nesaColors.gold
+                    color: nesaColors.gold,
+                    boxShadow: `0 0 20px ${nesaColors.gold}40`
                   }}
                 >
-                  <Award className="w-5 h-5" />
+                  <Award className="w-5 h-5 animate-pulse" />
                   <span>NESA-Africa 2025 — Nominations Open Now</span>
                 </div>
                 
-                {/* Main Heading */}
-                <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
+                {/* Main Heading with enhanced styling */}
+                <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
                   Honoring Africa's{" "}
-                  <span style={{ color: nesaColors.gold }}>Changemakers</span>
+                  <span 
+                    className="relative inline-block"
+                    style={{ 
+                      color: nesaColors.gold,
+                      textShadow: `0 0 40px ${nesaColors.gold}80, 0 0 80px ${nesaColors.gold}40`
+                    }}
+                  >
+                    Changemakers
+                    <Sparkles className="absolute -top-4 -right-8 w-8 h-8 animate-pulse" style={{ color: nesaColors.gold }} />
+                  </span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl font-medium mb-6" style={{ color: nesaColors.gold }}>
+                <p 
+                  className="text-xl md:text-2xl font-medium mb-6"
+                  style={{ 
+                    color: nesaColors.gold,
+                    textShadow: `0 0 20px ${nesaColors.gold}60`
+                  }}
+                >
                   Building the Future of Education
                 </p>
                 
@@ -374,39 +440,41 @@ const NESAAfrica = () => {
                   of educational transformation, social impact, and legacy.
                 </p>
                 
-                {/* CTA Buttons */}
+                {/* CTA Buttons with enhanced hover effects */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                   <a href="https://nesa.africa" target="_blank" rel="noopener noreferrer">
                     <Button 
                       size="lg" 
-                      className="text-lg px-8 py-6 font-bold border-2"
+                      className="text-lg px-8 py-6 font-bold border-2 transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
                       style={{ 
                         backgroundColor: nesaColors.gold,
                         borderColor: nesaColors.goldDark,
-                        color: nesaColors.dark
+                        color: nesaColors.dark,
+                        boxShadow: `0 0 30px ${nesaColors.gold}50`
                       }}
                     >
-                      <Play className="w-5 h-5 mr-2" />
+                      <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                       Read More About NESA
                     </Button>
                   </a>
                   <a href="https://nesa.africa/competitive" target="_blank" rel="noopener noreferrer">
                     <Button 
                       size="lg" 
-                      className="text-lg px-8 py-6 font-bold"
+                      className="text-lg px-8 py-6 font-bold transition-all duration-300 hover:scale-105 group"
                       style={{ 
                         backgroundColor: 'transparent',
                         border: `2px solid ${nesaColors.gold}`,
-                        color: nesaColors.gold
+                        color: nesaColors.gold,
+                        boxShadow: `0 0 20px ${nesaColors.gold}30`
                       }}
                     >
-                      <Trophy className="w-5 h-5 mr-2" />
+                      <Trophy className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                       Nominate Now
                     </Button>
                   </a>
                 </div>
 
-                {/* Quick Action Buttons */}
+                {/* Quick Action Buttons with award show styling */}
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
                   {[
                     { label: "Refer", icon: Users, link: "https://nesa.africa", external: true },
@@ -421,26 +489,28 @@ const NESAAfrica = () => {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all hover:scale-105"
+                        className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all duration-300 hover:scale-110 hover:-translate-y-1 group"
                         style={{ 
                           borderColor: `${nesaColors.gold}40`,
-                          backgroundColor: `${nesaColors.gold}10`
+                          backgroundColor: `${nesaColors.gold}10`,
+                          boxShadow: `0 4px 20px ${nesaColors.gold}10`
                         }}
                       >
-                        <item.icon className="w-5 h-5" style={{ color: nesaColors.gold }} />
+                        <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform" style={{ color: nesaColors.gold }} />
                         <span className="text-sm font-medium text-white">{item.label}</span>
                       </a>
                     ) : (
                       <a 
                         key={item.label}
                         href={item.link}
-                        className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all hover:scale-105"
+                        className="flex flex-col items-center gap-2 p-4 rounded-xl border transition-all duration-300 hover:scale-110 hover:-translate-y-1 group"
                         style={{ 
                           borderColor: `${nesaColors.gold}40`,
-                          backgroundColor: `${nesaColors.gold}10`
+                          backgroundColor: `${nesaColors.gold}10`,
+                          boxShadow: `0 4px 20px ${nesaColors.gold}10`
                         }}
                       >
-                        <item.icon className="w-5 h-5" style={{ color: nesaColors.gold }} />
+                        <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform" style={{ color: nesaColors.gold }} />
                         <span className="text-sm font-medium text-white">{item.label}</span>
                       </a>
                     )

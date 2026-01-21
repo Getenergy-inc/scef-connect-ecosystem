@@ -236,6 +236,66 @@
   }
 }
 
+/* NESA Award Show Spotlight Animations */
+@keyframes spotlight-left {
+  0%, 100% { 
+    transform: rotate(25deg) translateX(0);
+    opacity: 0.2;
+  }
+  50% { 
+    transform: rotate(30deg) translateX(20px);
+    opacity: 0.35;
+  }
+}
+
+@keyframes spotlight-right {
+  0%, 100% { 
+    transform: rotate(-25deg) translateX(0);
+    opacity: 0.2;
+  }
+  50% { 
+    transform: rotate(-30deg) translateX(-20px);
+    opacity: 0.35;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(45 92% 42% / 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(45 92% 42% / 0.6), 0 0 60px hsl(45 92% 42% / 0.3);
+  }
+}
+
+.animate-spotlight-left {
+  animation: spotlight-left 4s ease-in-out infinite;
+}
+
+.animate-spotlight-right {
+  animation: spotlight-right 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
 /* Scrollbar styling - SCEF Blue */
 ::-webkit-scrollbar {
   width: 6px;
