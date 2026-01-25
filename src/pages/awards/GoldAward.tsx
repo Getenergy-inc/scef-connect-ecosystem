@@ -13,7 +13,8 @@ import {
   Newspaper,
   Radio,
   Factory,
-  Briefcase
+  Briefcase,
+  Layers
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -22,22 +23,24 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StageBanner } from '@/components/nesa/StageBanner';
 import { 
-  competitiveCategories, 
-  AFRICA_REGIONS,
-  TOTAL_GOLD_SUBCATEGORIES,
   formatPhaseDate, 
   nesaPhases,
   isVotingOpen 
 } from '@/config/nesaSeasonConfig';
+import {
+  getCompetitiveCategories,
+  AFRICA_REGIONS,
+  TOTAL_COMPETITIVE_SUBCATEGORIES,
+} from '@/config/nesaCategoriesConfig';
 
-const categoryIcons: Record<string, any> = {
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'csr-education-africa': Building2,
   'csr-education-nigeria': Building2,
   'edutech-africa': Smartphone,
   'media-education-nigeria': Tv,
   'ngo-education-nigeria': Users,
   'ngo-education-africa': Users,
-  'stem-africa': Factory,
+  'stem-education-africa': Factory,
   'creative-arts-nigeria': Radio,
   'education-friendly-state': Briefcase,
 };
@@ -46,12 +49,13 @@ export default function GoldAward() {
   const goldVoting = nesaPhases.find(p => p.id === 'gold_voting');
   const goldShow = nesaPhases.find(p => p.id === 'gold_show');
   const votingStatus = isVotingOpen();
+  const competitiveCategories = getCompetitiveCategories();
 
   return (
     <>
       <Helmet>
         <title>Gold Certificate | NESA-Africa 2025</title>
-        <meta name="description" content="Competitive Gold Certificate awards across 9 categories and 135 subcategories. Public voting only - no judges. Advancing to Blue Garnet consideration." />
+        <meta name="description" content={`Competitive Gold Certificate awards across ${competitiveCategories.length} categories and ${TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories. Public voting only - no judges. Advancing to Blue Garnet consideration.`} />
       </Helmet>
 
       <Header />
@@ -71,7 +75,7 @@ export default function GoldAward() {
                 Gold <span className="text-amber-200">Certificate</span>
               </h1>
               <p className="text-xl text-white/90 mb-4 max-w-2xl mx-auto">
-                The competitive stage of NESA recognition. {TOTAL_GOLD_SUBCATEGORIES} subcategories across 9 major categories, determined by public voting.
+                The competitive stage of NESA recognition. {TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories across {competitiveCategories.length} major categories, determined by public voting.
               </p>
               <p className="text-lg text-amber-200 font-semibold mb-8">
                 100% Public Voting • No Judges • Region-First Competition
@@ -168,16 +172,22 @@ export default function GoldAward() {
           </div>
         </section>
 
-        {/* 9 Categories */}
+        {/* Categories */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                9 Competitive Categories
+                {competitiveCategories.length} Competitive Categories
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                {TOTAL_GOLD_SUBCATEGORIES} total subcategories across regional and national competitions
+                {TOTAL_COMPETITIVE_SUBCATEGORIES} total subcategories across regional and national competitions
               </p>
+              <Button variant="outline" className="mt-4" asChild>
+                <Link to="/categories">
+                  <Layers className="w-4 h-4 mr-2" />
+                  View All 17 Categories
+                </Link>
+              </Button>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -201,7 +211,7 @@ export default function GoldAward() {
                         {category.isRegional && (
                           <Badge variant="outline" className="text-xs bg-amber-50">
                             <Globe className="w-3 h-3 mr-1" />
-                            {category.regions?.length} Regions
+                            5 Regions
                           </Badge>
                         )}
                         <Badge variant="secondary" className="text-xs">

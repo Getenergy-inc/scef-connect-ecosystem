@@ -5,16 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Link, useSearchParams } from "react-router-dom";
 import { 
   Vote as VoteIcon, Trophy, Gem, Calendar, 
-  CheckCircle, AlertCircle, Clock, ExternalLink
+  CheckCircle, AlertCircle, Clock, ExternalLink, Layers
 } from "lucide-react";
 import { StageBanner } from "@/components/nesa/StageBanner";
 import { 
   getCurrentPhase, 
   nesaPhases, 
-  competitiveCategories,
   formatPhaseDate,
   getTimeRemaining 
 } from "@/config/nesaSeasonConfig";
+import {
+  getCompetitiveCategories,
+  TOTAL_COMPETITIVE_SUBCATEGORIES,
+} from "@/config/nesaCategoriesConfig";
 import { useEffect, useState } from "react";
 
 const nesaColors = {
@@ -33,6 +36,7 @@ const Vote = () => {
 
   const goldVotingPhase = nesaPhases.find(p => p.id === 'gold_voting');
   const blueGarnetVotingPhase = nesaPhases.find(p => p.id === 'blue_garnet_voting');
+  const competitiveCategories = getCompetitiveCategories();
 
   const isGoldVotingOpen = currentPhase?.id === 'gold_voting';
   const isBlueGarnetVotingOpen = currentPhase?.id === 'blue_garnet_voting';
@@ -57,7 +61,7 @@ const Vote = () => {
         <title>Vote - NESA-Africa 2025 | SCEF</title>
         <meta 
           name="description" 
-          content="Vote for your favorite education changemakers in the NESA-Africa 2025 awards. Gold stage: 100% public vote. Blue Garnet: 40% public + 60% jury." 
+          content={`Vote for your favorite education changemakers in the NESA-Africa 2025 awards. ${TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories. Gold stage: 100% public vote. Blue Garnet: 40% public + 60% jury.`}
         />
       </Helmet>
       
@@ -141,7 +145,7 @@ const Vote = () => {
                     <Trophy className="w-16 h-16 mx-auto mb-4" style={{ color: '#FFD700' }} />
                     <h2 className="text-2xl font-bold text-white mb-2">Gold Certificate Voting</h2>
                     <p style={{ color: nesaColors.textMuted }} className="mb-4">
-                      100% Public Vote — No Judges • 135 Sub-Categories • 9 Award Categories
+                      100% Public Vote — No Judges • {TOTAL_COMPETITIVE_SUBCATEGORIES} Sub-Categories • {competitiveCategories.length} Award Categories
                     </p>
                     
                     {isGoldVotingOpen ? (
@@ -239,15 +243,24 @@ const Vote = () => {
 
             {/* Categories Preview */}
             <div className="max-w-5xl mx-auto">
-              <h3 className="text-xl font-bold text-white mb-6 text-center">
-                Award Categories ({competitiveCategories.length})
-              </h3>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <h3 className="text-xl font-bold text-white">
+                  Award Categories ({competitiveCategories.length})
+                </h3>
+                <Button variant="outline" size="sm" className="border-white/30 text-white" asChild>
+                  <Link to="/categories">
+                    <Layers className="w-4 h-4 mr-1" />
+                    View All 17
+                  </Link>
+                </Button>
+              </div>
               
               <div className="grid md:grid-cols-3 gap-4">
                 {competitiveCategories.map((category) => (
-                  <div 
+                  <Link 
                     key={category.id}
-                    className="p-4 rounded-xl border"
+                    to={`/categories/${category.slug}`}
+                    className="block p-4 rounded-xl border transition-all hover:border-amber-500/50"
                     style={{ 
                       backgroundColor: `${nesaColors.gold}05`,
                       borderColor: `${nesaColors.gold}20`
@@ -258,7 +271,7 @@ const Vote = () => {
                       {category.totalSubcategoryCount} sub-categories
                       {category.isRegional && ' • Regional'}
                     </p>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
