@@ -23,8 +23,8 @@ import {
   formatPhaseDate, 
   nesaPhases,
   isVotingOpen,
-  AFRICA_REGIONS
 } from '@/config/nesaSeasonConfig';
+import { AFRICA_REGIONS } from '@/config/nesaCategoriesConfig';
 
 export default function BlueGarnetAward() {
   const blueGarnetVoting = nesaPhases.find(p => p.id === 'blue_garnet_voting');

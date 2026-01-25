@@ -15,7 +15,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StageBanner } from '@/components/nesa/StageBanner';
-import { iconSubcategories, formatPhaseDate, nesaPhases } from '@/config/nesaSeasonConfig';
+import { formatPhaseDate, nesaPhases } from '@/config/nesaSeasonConfig';
+import { iconSubcategories } from '@/config/nesaCategoriesConfig';
 
 const iconIcons = {
   philanthropy: Heart,

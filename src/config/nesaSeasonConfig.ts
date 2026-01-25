@@ -30,31 +30,8 @@ export interface PhaseConfig {
   color: string;
 }
 
-export interface AwardCategory {
-  id: string;
-  name: string;
-  description: string;
-  type: 'platinum' | 'icon' | 'gold' | 'blue_garnet';
-  isRegional: boolean;
-  regions?: string[];
-  subcategories: string[];
-  totalSubcategoryCount: number;
-}
-
-export interface IconSubcategory {
-  id: string;
-  name: string;
-  description: string;
-  iconsPerSubcategory: number;
-}
-
-// Africa Regions for regional awards
-export const AFRICA_REGIONS = ['North', 'West', 'East', 'Central', 'Southern'] as const;
-export type AfricaRegion = typeof AFRICA_REGIONS[number];
-
-// Nigeria Zones for state awards
-export const NIGERIA_ZONES = ['NC', 'NE', 'NW', 'SE', 'SS', 'SW'] as const;
-export type NigeriaZone = typeof NIGERIA_ZONES[number];
+// NOTE: AwardCategory, IconSubcategory, AFRICA_REGIONS, NIGERIA_ZONES 
+// have been moved to src/config/nesaCategoriesConfig.ts
 
 // ========================================
 // PHASE TIMELINE (Oct 14, 2025 - June 27, 2026)
@@ -180,34 +157,12 @@ export const nesaPhases: PhaseConfig[] = [
 ];
 
 // ========================================
-// ICON SUBCATEGORIES (3 types, 9 total Icons)
-// ========================================
-export const iconSubcategories: IconSubcategory[] = [
-  {
-    id: 'philanthropy',
-    name: 'Africa Education Philanthropy Icon of the Decade',
-    description: 'Sustained education philanthropy (2005–2025 impact window)',
-    iconsPerSubcategory: 3,
-  },
-  {
-    id: 'literary',
-    name: 'Literary and New Curriculum Advocate Africa Education Icon of the Decade',
-    description: 'Champions of literary excellence and curriculum innovation (2014–2024)',
-    iconsPerSubcategory: 3,
-  },
-  {
-    id: 'technical',
-    name: 'Africa Technical Educator Icon of the Decade',
-    description: 'Excellence in technical and vocational education (2014–2024)',
-    iconsPerSubcategory: 3,
-  },
-];
-
-// ========================================
 // CATEGORY CONFIGURATION
 // ========================================
-// NOTE: All category definitions have been moved to src/config/nesaCategoriesConfig.ts
-// Import from there: getCompetitiveCategories, getCategoriesByTier, TOTAL_COMPETITIVE_SUBCATEGORIES, etc.
+// NOTE: All category definitions (including iconSubcategories) have been moved to 
+// src/config/nesaCategoriesConfig.ts
+// Import from there: getCompetitiveCategories, getCategoriesByTier, 
+// TOTAL_COMPETITIVE_SUBCATEGORIES, iconSubcategories, etc.
 
 // ========================================
 // HELPER FUNCTIONS
