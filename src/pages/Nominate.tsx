@@ -5,15 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
   Award, Trophy, Crown, Medal, Gem, 
-  ArrowRight, ExternalLink, CheckCircle, Users
+  ArrowRight, ExternalLink, CheckCircle, Users, Layers
 } from "lucide-react";
 import { StageBanner } from "@/components/nesa/StageBanner";
-import { 
-  platinumCategories, 
-  iconSubcategories, 
-  competitiveCategories,
-  TOTAL_GOLD_SUBCATEGORIES
-} from "@/config/nesaSeasonConfig";
+import { iconSubcategories } from "@/config/nesaSeasonConfig";
+import {
+  getCompetitiveCategories,
+  getCategoriesByTier,
+  TOTAL_COMPETITIVE_SUBCATEGORIES,
+  TOTAL_CATEGORIES,
+} from "@/config/nesaCategoriesConfig";
 
 const nesaColors = {
   dark: "#1A1A1A",
@@ -23,65 +24,68 @@ const nesaColors = {
   textMuted: "#9CA3AF",
 };
 
-const nominationTracks = [
-  {
-    id: 'platinum',
-    title: 'Platinum Certificate',
-    subtitle: 'Baseline Recognition of Service',
-    icon: Medal,
-    color: '#E5E4E2',
-    description: 'Non-competitive entry layer. Verification by NESA Nominee Research Corps (NRC) with governance and safeguarding checks.',
-    features: [
-      `${platinumCategories.length} categories available`,
-      'Certificate validity: 1 year',
-      'Global QR-code verification',
-      'No public voting required',
-    ],
-    link: 'https://nesa.africa/non-competitive',
-    deadline: 'Open until Feb 2026',
-  },
-  {
-    id: 'icon',
-    title: 'Africa Education Icon',
-    subtitle: 'Lifetime Impact Recognition',
-    icon: Crown,
-    color: '#C4A052',
-    description: 'Honours 9 Icons across 3 subcategories for documented impact from 2005–2025. Non-competitive lifetime recognition.',
-    features: [
-      '3 Icon subcategories',
-      '9 Icons total (3 per subcategory)',
-      '2005–2025 impact window',
-      'Expert panel selection',
-    ],
-    link: 'https://nesa.africa/nomination/sub-categories/africa-lifetime-education-icon',
-    deadline: 'Closes 30 April 2026',
-  },
-  {
-    id: 'competitive',
-    title: 'Gold & Blue Garnet',
-    subtitle: 'Competitive Awards Track',
-    icon: Trophy,
-    color: '#FFD700',
-    description: 'Public voting competition across 9 categories. Gold winners advance to Blue Garnet with jury evaluation.',
-    features: [
-      `${TOTAL_GOLD_SUBCATEGORIES} Gold subcategories`,
-      '9 Blue Garnet winners',
-      'Gold: 100% public vote',
-      'Blue Garnet: 60% jury + 40% public',
-    ],
-    link: 'https://nesa.africa/competitive',
-    deadline: 'Open until April 2026',
-  },
-];
-
 const Nominate = () => {
+  const competitiveCategories = getCompetitiveCategories();
+  const platinumCategories = getCategoriesByTier('platinum');
+
+  const nominationTracks = [
+    {
+      id: 'platinum',
+      title: 'Platinum Certificate',
+      subtitle: 'Baseline Recognition of Service',
+      icon: Medal,
+      color: '#E5E4E2',
+      description: 'Non-competitive entry layer. Verification by NESA Nominee Research Corps (NRC) with governance and safeguarding checks.',
+      features: [
+        `${platinumCategories.length} categories available`,
+        'Certificate validity: 1 year',
+        'Global QR-code verification',
+        'No public voting required',
+      ],
+      link: 'https://nesa.africa/non-competitive',
+      deadline: 'Open until Feb 2026',
+    },
+    {
+      id: 'icon',
+      title: 'Africa Education Icon',
+      subtitle: 'Lifetime Impact Recognition',
+      icon: Crown,
+      color: '#C4A052',
+      description: 'Honours 9 Icons across 3 subcategories for documented impact from 2005–2025. Non-competitive lifetime recognition.',
+      features: [
+        '3 Icon subcategories',
+        '9 Icons total (3 per subcategory)',
+        '2005–2025 impact window',
+        'Expert panel selection',
+      ],
+      link: 'https://nesa.africa/nomination/sub-categories/africa-lifetime-education-icon',
+      deadline: 'Closes 30 April 2026',
+    },
+    {
+      id: 'competitive',
+      title: 'Gold & Blue Garnet',
+      subtitle: 'Competitive Awards Track',
+      icon: Trophy,
+      color: '#FFD700',
+      description: `Public voting competition across ${competitiveCategories.length} categories. Gold winners advance to Blue Garnet with jury evaluation.`,
+      features: [
+        `${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold subcategories`,
+        '9 Blue Garnet winners',
+        'Gold: 100% public vote',
+        'Blue Garnet: 60% jury + 40% public',
+      ],
+      link: 'https://nesa.africa/competitive',
+      deadline: 'Open until April 2026',
+    },
+  ];
+
   return (
     <>
       <Helmet>
         <title>Nominate - NESA-Africa 2025 | SCEF</title>
         <meta 
           name="description" 
-          content="Nominate Africa's education changemakers for NESA-Africa 2025 awards. Choose from Platinum, Icon, or Competitive tracks across 135+ categories." 
+          content={`Nominate Africa's education changemakers for NESA-Africa 2025 awards. Choose from Platinum, Icon, or Competitive tracks across ${TOTAL_CATEGORIES} categories.`}
         />
       </Helmet>
       
@@ -113,6 +117,13 @@ const Nominate = () => {
                 Recognize individuals, organizations, and institutions driving educational 
                 excellence across Africa. Select the appropriate nomination track below.
               </p>
+
+              <Button variant="outline" className="mt-6 border-white/30 text-white" asChild>
+                <Link to="/categories">
+                  <Layers className="w-4 h-4 mr-2" />
+                  Browse All {TOTAL_CATEGORIES} Categories
+                </Link>
+              </Button>
             </div>
 
             {/* Nomination Tracks */}
@@ -193,7 +204,7 @@ const Nominate = () => {
                     <Crown className="w-8 h-8 mx-auto mb-2" style={{ color: nesaColors.gold }} />
                     <h4 className="font-semibold text-white text-sm mb-1">{sub.name}</h4>
                     <p className="text-xs" style={{ color: nesaColors.textMuted }}>
-                      {sub.iconsPerSubcategory} Icons • 2014–2024
+                      {sub.iconsPerSubcategory} Icons • 2005–2025
                     </p>
                   </div>
                 ))}
@@ -202,18 +213,27 @@ const Nominate = () => {
 
             {/* Competitive Categories Grid */}
             <div className="max-w-6xl mx-auto">
-              <h3 className="text-xl font-bold text-white mb-6 text-center">
-                Gold & Blue Garnet Categories ({competitiveCategories.length})
-              </h3>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <h3 className="text-xl font-bold text-white">
+                  Gold & Blue Garnet Categories ({competitiveCategories.length})
+                </h3>
+                <Button variant="outline" size="sm" className="border-white/30 text-white" asChild>
+                  <Link to="/categories">
+                    <Layers className="w-4 h-4 mr-1" />
+                    View All
+                  </Link>
+                </Button>
+              </div>
               <p className="text-center mb-8" style={{ color: nesaColors.textMuted }}>
-                Total: {TOTAL_GOLD_SUBCATEGORIES} subcategories across all categories
+                Total: {TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories across all categories
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {competitiveCategories.map((category) => (
-                  <div 
+                  <Link 
                     key={category.id}
-                    className="p-4 rounded-xl border"
+                    to={`/categories/${category.slug}`}
+                    className="block p-4 rounded-xl border transition-all hover:border-amber-500/50"
                     style={{ 
                       backgroundColor: `${nesaColors.gold}05`,
                       borderColor: `${nesaColors.gold}20`
@@ -235,25 +255,25 @@ const Nominate = () => {
                       {category.totalSubcategoryCount} sub-categories
                     </p>
                     <div className="mt-2 flex flex-wrap gap-1">
-                      {category.subcategories.slice(0, 3).map((sub, idx) => (
+                      {category.baseSubcategories.slice(0, 3).map((sub) => (
                         <span 
-                          key={idx}
+                          key={sub.id}
                           className="text-xs px-2 py-0.5 rounded"
                           style={{ backgroundColor: `${nesaColors.gold}10`, color: nesaColors.textMuted }}
                         >
-                          {sub}
+                          {sub.name}
                         </span>
                       ))}
-                      {category.subcategories.length > 3 && (
+                      {category.baseSubcategories.length > 3 && (
                         <span 
                           className="text-xs px-2 py-0.5 rounded"
                           style={{ backgroundColor: `${nesaColors.gold}10`, color: nesaColors.textMuted }}
                         >
-                          +{category.subcategories.length - 3} more
+                          +{category.baseSubcategories.length - 3} more
                         </span>
                       )}
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
