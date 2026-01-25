@@ -621,6 +621,40 @@ export const TOTAL_COMPETITIVE_SUBCATEGORIES = getTotalCompetitiveSubcategoryCou
 export const TOTAL_ALL_SUBCATEGORIES = getTotalSubcategoryCount();
 
 // ========================================
+// ICON SUBCATEGORIES (3 types, 9 total Icons)
+// ========================================
+export interface IconSubcategory {
+  id: string;
+  name: string;
+  description: string;
+  iconsPerSubcategory: number;
+}
+
+export const iconSubcategories: IconSubcategory[] = [
+  {
+    id: 'philanthropy',
+    name: 'Africa Education Philanthropy Icon of the Decade',
+    description: 'Sustained education philanthropy (2005–2025 impact window)',
+    iconsPerSubcategory: 3,
+  },
+  {
+    id: 'literary',
+    name: 'Literary and New Curriculum Advocate Africa Education Icon of the Decade',
+    description: 'Champions of literary excellence and curriculum innovation (2014–2024)',
+    iconsPerSubcategory: 3,
+  },
+  {
+    id: 'technical',
+    name: 'Africa Technical Educator Icon of the Decade',
+    description: 'Excellence in technical and vocational education (2014–2024)',
+    iconsPerSubcategory: 3,
+  },
+];
+
+export const TOTAL_ICON_SUBCATEGORIES = iconSubcategories.length;
+export const TOTAL_ICONS = iconSubcategories.reduce((sum, sub) => sum + sub.iconsPerSubcategory, 0); // 9
+
+// ========================================
 // SEASON CONFIGURATION
 // ========================================
 export const NESA_SEASON = {

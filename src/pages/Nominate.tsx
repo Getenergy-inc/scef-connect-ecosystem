@@ -8,12 +8,12 @@ import {
   ArrowRight, ExternalLink, CheckCircle, Users, Layers
 } from "lucide-react";
 import { StageBanner } from "@/components/nesa/StageBanner";
-import { iconSubcategories } from "@/config/nesaSeasonConfig";
 import {
   getCompetitiveCategories,
   getCategoriesByTier,
   TOTAL_COMPETITIVE_SUBCATEGORIES,
   TOTAL_CATEGORIES,
+  iconSubcategories,
 } from "@/config/nesaCategoriesConfig";
 
 const nesaColors = {
