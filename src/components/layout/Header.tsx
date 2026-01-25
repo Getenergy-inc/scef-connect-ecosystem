@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
-  Bell, MessageSquare, Settings, Activity, Calendar, Users, Scale
+  Bell, MessageSquare, Settings, Activity, Calendar, Users, Scale,
+  Layers
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -66,6 +67,8 @@ export const Header = () => {
     // NESA Awards - Only award tiers (no role portals)
     { name: "Awards", href: "/awards/platinum", key: "awards",
       children: [
+        { name: "Categories (17)", href: "/categories", icon: Layers },
+        { divider: true },
         { name: "Platinum Certificate", href: "/awards/platinum" },
         { name: "Africa Education Icon", href: "/awards/icon" },
         { name: "Gold Certificate", href: "/awards/gold" },
