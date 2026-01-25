@@ -8,12 +8,19 @@ import {
   ArrowRight, CheckCircle, Vote, Medal, Sparkles,
   Play, ExternalLink, Globe, Crown, Gem,
   BookOpen, Target, Building2, Heart, Radio,
-  GraduationCap, School, Accessibility, Eye
+  GraduationCap, School, Accessibility, Eye, Layers
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
 import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
+import { 
+  TOTAL_CATEGORIES, 
+  TOTAL_COMPETITIVE_SUBCATEGORIES,
+  getCompetitiveCategories,
+  getCategoriesByTier,
+  formatScope
+} from "@/config/nesaCategoriesConfig";
 
 // Key Event Dates for Countdowns
 const tvShowEvents = [
@@ -125,14 +132,14 @@ const programmeTimeline = [
   { 
     phase: "Gold Public Voting", 
     date: "10 Apr – 16 May 2026", 
-    desc: "Mass participation voting across 135 sub-categories",
+    desc: `Mass participation voting across ${TOTAL_COMPETITIVE_SUBCATEGORIES} sub-categories`,
     type: "voting",
     active: false 
   },
   { 
     phase: "Gold Certificate Winners Show", 
     date: "17 May 2026", 
-    desc: "3-hour TV Show — 135 Gold winners announced",
+    desc: `3-hour TV Show — ${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold winners announced`,
     type: "recognition",
     active: false 
   },
@@ -198,8 +205,8 @@ const awardPhases = [
     showDate: "17 May 2026",
     icon: Trophy,
     features: [
-      "9 Award Categories",
-      "135 Sub-Categories",
+      `${TOTAL_CATEGORIES} Award Categories`,
+      `${TOTAL_COMPETITIVE_SUBCATEGORIES} Sub-Categories`,
       "1 Gold Winner per Sub-Category",
       "Public voting only — no judges",
       "Transparent digital audit trail",
@@ -213,7 +220,7 @@ const awardPhases = [
     showDate: "27 June 2026 (Gala)",
     icon: Gem,
     features: [
-      "From 135 Gold Certificate winners",
+      `From ${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold Certificate winners`,
       "9 Blue Garnet Award winners",
       "40% Public Voting + 60% Jury Review",
       "Elite continental honour",
@@ -242,44 +249,9 @@ const legacyRegions = [
   "Southern Africa",
 ];
 
-const awardCategories = [
-  { 
-    name: "Africa Icon Blue Garnet Award", 
-    desc: "Lifetime Achievement (10+ years of institutional impact)",
-    type: "lifetime",
-    link: "https://nesa.africa/nomination/sub-categories/africa-lifetime-education-icon"
-  },
-  { 
-    name: "Blue Garnet & Gold Certificate Awards", 
-    desc: "Public voting + expert judging across 135 subcategories",
-    type: "competitive",
-    link: "https://nesa.africa/competitive"
-  },
-  { 
-    name: "Platinum Certificate of Recognition",
-    desc: "Merit-based recognition through expert panel evaluation",
-    type: "non-competitive",
-    link: "https://nesa.africa/non-competitive"
-  },
-  { 
-    name: "Outstanding Student Award", 
-    desc: "Recognizing academic excellence and leadership",
-    type: "competitive",
-    link: "https://nesa.africa/competitive"
-  },
-  { 
-    name: "Teacher of Excellence", 
-    desc: "Honoring educators making exceptional impact",
-    type: "competitive",
-    link: "https://nesa.africa/competitive"
-  },
-  { 
-    name: "Innovation in Education", 
-    desc: "Rewarding creative teaching approaches",
-    type: "competitive",
-    link: "https://nesa.africa/competitive"
-  },
-];
+// Get categories from config for display
+const competitiveCategories = getCompetitiveCategories();
+const platinumCategories = getCategoriesByTier('platinum');
 
 const nominationPaths = [
   {
@@ -1114,44 +1086,82 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-                  Award <span style={{ color: nesaColors.gold }}>Categories</span>
+                  {TOTAL_CATEGORIES} Official <span style={{ color: nesaColors.gold }}>Categories</span>
                 </h2>
                 <p style={{ color: nesaColors.textMuted }} className="max-w-2xl mx-auto">
-                  Multiple award tracks recognizing excellence at every level of education across Africa.
+                  {TOTAL_COMPETITIVE_SUBCATEGORIES} competitive subcategories across Africa's regions and Nigeria.
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {awardCategories.map((category) => (
-                  <a 
-                    key={category.name}
-                    href={category.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group p-6 rounded-2xl border transition-all hover:border-opacity-100"
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+                {[
+                  { value: TOTAL_CATEGORIES, label: "Categories" },
+                  { value: TOTAL_COMPETITIVE_SUBCATEGORIES, label: "Subcategories" },
+                  { value: "5", label: "Africa Regions" },
+                  { value: "4", label: "Award Tiers" },
+                ].map((stat) => (
+                  <div 
+                    key={stat.label}
+                    className="p-4 rounded-xl text-center"
+                    style={{ backgroundColor: `${nesaColors.gold}10` }}
+                  >
+                    <p className="font-display text-2xl font-bold" style={{ color: nesaColors.gold }}>
+                      {stat.value}
+                    </p>
+                    <p className="text-sm" style={{ color: nesaColors.textMuted }}>{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Category Preview Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+                {competitiveCategories.slice(0, 6).map((category) => (
+                  <Link 
+                    key={category.id}
+                    to={`/categories/${category.slug}`}
+                    className="group p-5 rounded-2xl border transition-all hover:-translate-y-1"
                     style={{ 
                       backgroundColor: nesaColors.dark,
                       borderColor: `${nesaColors.gold}30`
                     }}
                   >
-                    <div 
-                      className="w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                      style={{ backgroundColor: `${nesaColors.gold}20` }}
-                    >
-                      <Sparkles className="w-6 h-6" style={{ color: nesaColors.gold }} />
+                    <div className="flex items-start gap-3">
+                      <div 
+                        className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 font-bold text-sm"
+                        style={{ backgroundColor: `${nesaColors.gold}20`, color: nesaColors.gold }}
+                      >
+                        {category.categoryNumber}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white text-sm mb-1 group-hover:text-[#C4A052] transition-colors">
+                          {category.name}
+                        </h3>
+                        <p className="text-xs" style={{ color: nesaColors.textMuted }}>
+                          {formatScope(category.scope)} • {category.totalSubcategoryCount} subcategories
+                        </p>
+                      </div>
                     </div>
-                    <div 
-                      className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
-                      style={{ 
-                        backgroundColor: `${nesaColors.gold}20`,
-                        color: nesaColors.gold
-                      }}
-                    >
-                      {category.type === 'lifetime' ? 'Lifetime' : category.type === 'competitive' ? 'Competitive' : 'Non-Competitive'}
-                    </div>
-                    <h3 className="font-display font-bold text-white mb-2">{category.name}</h3>
-                    <p className="text-sm" style={{ color: nesaColors.textMuted }}>{category.desc}</p>
-                  </a>
+                  </Link>
                 ))}
+              </div>
+
+              {/* View All Categories CTA */}
+              <div className="text-center">
+                <Link to="/categories">
+                  <Button 
+                    size="lg"
+                    className="font-bold"
+                    style={{ 
+                      backgroundColor: nesaColors.gold,
+                      color: nesaColors.dark
+                    }}
+                  >
+                    <Layers className="w-5 h-5 mr-2" />
+                    View All {TOTAL_CATEGORIES} Categories
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </section>
