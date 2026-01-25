@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Laptop, TrendingUp, Tv, Globe } from "lucide-react";
+import { ArrowRight, Shield, Laptop, TrendingUp, Tv, Globe, Building2 } from "lucide-react";
 
 const divisions = [
   {
+    code: "BGEO",
+    title: "Board Governance & Executive Office",
+    description: "Leads institutional governance, executive communications, compliance oversight, and coordination across all boards and the CVO office.",
+    icon: Building2,
+    href: "/divisions/bgeo",
+  },
+  {
     code: "SOBCD",
     title: "Strategic Operations & Business Compliance Division",
-    description: "Oversees governance, compliance, finance, audits, risk management, and institutional integrity.",
+    description: "Oversees primary business development, marketing, fundraising, grant writing, compliance, and local chapter coordination.",
     icon: Shield,
     href: "/divisions/sobcd",
   },
@@ -20,7 +27,7 @@ const divisions = [
   {
     code: "OMBDD",
     title: "Online Media Business Development Division",
-    description: "Drives digital growth, sponsorships, partnerships, and revenue development.",
+    description: "Drives media content creation, outreach campaigns, and secures media-related partnerships, sponsorships, and revenue streams.",
     icon: TrendingUp,
     href: "/divisions/ombdd",
   },
