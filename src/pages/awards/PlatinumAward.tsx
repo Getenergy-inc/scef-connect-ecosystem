@@ -15,10 +15,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StageBanner } from '@/components/nesa/StageBanner';
-import { platinumCategories, formatPhaseDate, nesaPhases } from '@/config/nesaSeasonConfig';
+import { formatPhaseDate, nesaPhases } from '@/config/nesaSeasonConfig';
+import { getCategoriesByTier } from '@/config/nesaCategoriesConfig';
 
 export default function PlatinumAward() {
   const platinumShow = nesaPhases.find(p => p.id === 'platinum_show');
+  const platinumCategories = getCategoriesByTier('platinum');
 
   return (
     <>
@@ -145,17 +147,19 @@ export default function PlatinumAward() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {platinumCategories.map((category, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-sm">
-                        {index + 1}
+              {platinumCategories.map((category) => (
+                <Link key={category.id} to={`/categories/${category.slug}`}>
+                  <Card className="hover:shadow-lg transition-shadow h-full">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-sm">
+                          {category.categoryNumber}
+                        </div>
+                        <span className="font-medium text-gray-800 text-sm">{category.name}</span>
                       </div>
-                      <span className="font-medium text-gray-800 text-sm">{category}</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
