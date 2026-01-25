@@ -83,6 +83,11 @@ import Vote from "./pages/Vote";
 import Nominate from "./pages/Nominate";
 import Calendar from "./pages/Calendar";
 
+// Categories Pages
+import CategoriesIndex from "./pages/categories/Index";
+import CategoryDetail from "./pages/categories/CategoryDetail";
+import NigeriaCategories from "./pages/categories/Nigeria";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -126,6 +131,11 @@ const App = () => (
               <Route path="/vote" element={<Vote />} />
               <Route path="/nominate" element={<Nominate />} />
               <Route path="/calendar" element={<Calendar />} />
+              
+              {/* Categories Routes */}
+              <Route path="/categories" element={<CategoriesIndex />} />
+              <Route path="/categories/nigeria" element={<NigeriaCategories />} />
+              <Route path="/categories/:slug" element={<CategoryDetail />} />
               
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
