@@ -27,6 +27,7 @@ import Divisions from "./pages/Divisions";
 import Updates from "./pages/Updates";
 import Reports from "./pages/Reports";
 import CaseStudies from "./pages/CaseStudies";
+import BGEO from "./pages/divisions/BGEO";
 import SOBCD from "./pages/divisions/SOBCD";
 import TDSD from "./pages/divisions/TDSD";
 import OMBDD from "./pages/divisions/OMBDD";
@@ -181,6 +182,7 @@ const App = () => (
               <Route path="/partners" element={<Partners />} />
               <Route path="/partner-with-us" element={<PartnerWithUs />} />
               <Route path="/divisions" element={<Divisions />} />
+              <Route path="/divisions/bgeo" element={<BGEO />} />
               <Route path="/divisions/sobcd" element={<SOBCD />} />
               <Route path="/divisions/tdsd" element={<TDSD />} />
               <Route path="/divisions/ombdd" element={<OMBDD />} />
