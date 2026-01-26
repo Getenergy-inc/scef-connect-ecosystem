@@ -15,7 +15,7 @@ const Membership = () => {
   const { t } = useLocale();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const [selectedTier, setSelectedTier] = useState("Active Member");
+  const [selectedTier, setSelectedTier] = useState("Standard Member");
 
   // Read query params from join-online flow
   const chapterCountry = searchParams.get("chapter");
@@ -31,48 +31,125 @@ const Membership = () => {
 
   const membershipTiers = [
     {
-      name: "Basic Member",
-      price: t("membership.tiers.basic.price") || "Free",
-      description: t("membership.tiers.basic.description") || "Start your journey with SCEF",
+      name: "General Member",
+      price: "Free",
+      period: "",
+      description: "Start your journey with SCEF (18+)",
       features: [
-        "Access to member dashboard",
+        "Access to online platforms",
         "Newsletter subscription",
+        "Chapter observation",
         "Event notifications",
-        "Join local chapters",
-        "Access to public resources",
       ],
       popular: false,
+      voting: false,
     },
     {
-      name: "Active Member",
-      price: t("membership.tiers.active.price") || "$25/year",
-      description: t("membership.tiers.active.description") || "Full access to SCEF programs and governance",
+      name: "Youth Member",
+      price: "Free",
+      period: "",
+      description: "For ages 13–17 with parental consent",
       features: [
-        "All Basic features",
-        "NESA voting rights",
+        "Mentorship programs",
+        "Educational resources",
+        "Youth workshops",
+        "My Career, My Life access",
+      ],
+      popular: false,
+      voting: false,
+    },
+    {
+      name: "Standard Member",
+      price: "$50",
+      period: "/year",
+      description: "Full access to SCEF programs and governance",
+      features: [
+        "All General features",
+        "Voting rights in elections",
         "Priority event registration",
-        "Official member certificate",
-        "Exclusive webinars access",
-        "AGC token allocation",
+        "Training workshops",
+        "Digital recognition",
         "Chapter leadership eligibility",
       ],
       popular: true,
+      voting: true,
     },
     {
-      name: "Patron Member",
-      price: t("membership.tiers.patron.price") || "$100/year",
-      description: t("membership.tiers.patron.description") || "Premium support for Africa's education future",
+      name: "Organizational Member",
+      price: "$200",
+      period: "/year",
+      description: "For institutions and organizations",
       features: [
-        "All Active features",
-        "VIP event access",
-        "Named recognition on platforms",
-        "Direct impact reports",
-        "Advisory board eligibility",
-        "Exclusive mentor network",
-        "Premium AGC allocation",
-        "Governance participation",
+        "All Standard features",
+        "Voting rights",
+        "Branding opportunities",
+        "Program collaboration",
+        "Corporate recognition",
+        "CSR partnership access",
       ],
       popular: false,
+      voting: true,
+    },
+    {
+      name: "Lifetime Member",
+      price: "$1,000",
+      period: "one-time",
+      description: "Permanent commitment to Africa's education",
+      features: [
+        "All Standard features",
+        "Permanent recognition",
+        "Advisory board eligibility",
+        "VIP event access",
+        "Legacy naming opportunities",
+        "Premium AGC allocation",
+      ],
+      popular: false,
+      voting: true,
+    },
+  ];
+
+  const ambassadorTiers = [
+    {
+      name: "Ambassador-1",
+      price: "$100",
+      period: "/year",
+      requirements: "Requires Standard/Lifetime membership",
+      commitment: "5 hours/month",
+      description: "Lead outreach for a single program (e.g., EduAid-Africa)",
+      features: [
+        "Program-specific leadership",
+        "Official ambassador badge",
+        "Training & mentorship",
+        "Impact reporting tools",
+      ],
+    },
+    {
+      name: "Ambassador-2",
+      price: "$200",
+      period: "/year",
+      requirements: "Requires Ambassador-1 experience",
+      commitment: "10 hours/month",
+      description: "Manage multiple programs, mentor other ambassadors",
+      features: [
+        "Multi-program coordination",
+        "Ambassador mentorship role",
+        "Regional representation",
+        "Enhanced recognition",
+      ],
+    },
+    {
+      name: "Ambassador-3",
+      price: "$300",
+      period: "/year",
+      requirements: "Requires Ambassador-2 experience",
+      commitment: "15 hours/month",
+      description: "Lead global advocacy and high-level partnerships",
+      features: [
+        "Global advocacy leadership",
+        "Partnership development",
+        "Board consultation rights",
+        "SCEF representation at events",
+      ],
     },
   ];
 
@@ -144,19 +221,19 @@ const Membership = () => {
             </div>
           </section>
 
-          {/* Tiers */}
+          {/* Membership Tiers */}
           <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("membership.chooseTier") || "Choose Your Membership"}
+                  {t("membership.chooseTier") || "Membership Tiers"}
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   {t("membership.chooseTierDesc") || "Select the membership tier that best fits your commitment to Africa's education future."}
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
                 {membershipTiers.map((tier) => (
                   <Card 
                     key={tier.name}
@@ -168,20 +245,94 @@ const Membership = () => {
                     onClick={() => setSelectedTier(tier.name)}
                   >
                     {tier.popular && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-scef-gold text-scef-blue text-xs font-bold rounded-full flex items-center gap-1 border-2 border-black">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-scef-gold text-scef-blue text-xs font-bold rounded-full flex items-center gap-1 border-2 border-black whitespace-nowrap">
                         <Star className="w-3 h-3" />
                         {t("membership.recommended") || "Recommended"}
                       </div>
                     )}
+                    <CardHeader className="text-center pt-8 pb-4">
+                      <CardTitle className="text-lg">{tier.name}</CardTitle>
+                      <div className="text-2xl font-display font-bold text-scef-blue mt-2">
+                        {tier.price}
+                        {tier.period && <span className="text-sm font-normal text-muted-foreground">{tier.period}</span>}
+                      </div>
+                      <CardDescription className="mt-2 text-xs">{tier.description}</CardDescription>
+                      {tier.voting && (
+                        <div className="mt-2 inline-flex items-center gap-1 px-2 py-1 bg-scef-gold/20 rounded-full text-xs font-medium text-scef-blue">
+                          <Vote className="w-3 h-3" />
+                          Voting Rights
+                        </div>
+                      )}
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <ul className="space-y-2">
+                        {tier.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2 text-xs">
+                            <CheckCircle className="w-3.5 h-3.5 text-scef-gold mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <div className="text-center mt-8">
+                <Button 
+                  size="lg" 
+                  className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold"
+                  onClick={() => navigate("/auth")}
+                >
+                  {t("membership.continueWith") || "Continue with"} {selectedTier}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+                <p className="text-sm text-muted-foreground mt-4">
+                  {t("membership.alreadyMember") || "Already a member?"} <Link to="/auth" className="text-scef-blue font-medium hover:underline">{t("nav.top.signin")}</Link>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Ambassador Tiers */}
+          <section className="py-20 bg-muted/30 border-y-2 border-black">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-scef-gold/20 rounded-full text-scef-blue font-semibold mb-4 border border-scef-gold">
+                  <Award className="w-5 h-5" />
+                  Higher Commitment Tiers
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Ambassador Program
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Ambassadors are project-based leaders who represent SCEF at local, regional, or global levels with specific program responsibilities.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {ambassadorTiers.map((tier, index) => (
+                  <Card 
+                    key={tier.name}
+                    className="relative border-2 border-scef-gold bg-gradient-to-b from-scef-gold/5 to-transparent hover:shadow-xl transition-all"
+                  >
+                    <div className="absolute -top-3 left-4 px-3 py-1 bg-scef-blue text-white text-xs font-bold rounded-full border-2 border-black">
+                      Tier {index + 1}
+                    </div>
                     <CardHeader className="text-center pt-8">
                       <CardTitle className="text-xl">{tier.name}</CardTitle>
                       <div className="text-3xl font-display font-bold text-scef-blue mt-2">
                         {tier.price}
+                        <span className="text-sm font-normal text-muted-foreground">{tier.period}</span>
                       </div>
                       <CardDescription className="mt-2">{tier.description}</CardDescription>
+                      <div className="mt-3 space-y-1 text-xs">
+                        <p className="text-scef-blue font-medium">{tier.requirements}</p>
+                        <p className="text-muted-foreground">Commitment: {tier.commitment}</p>
+                      </div>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2">
                         {tier.features.map((feature) => (
                           <li key={feature} className="flex items-start gap-2 text-sm">
                             <CheckCircle className="w-4 h-4 text-scef-gold mt-0.5 flex-shrink-0" />
@@ -194,18 +345,16 @@ const Membership = () => {
                 ))}
               </div>
 
-              <div className="text-center mt-12">
+              <div className="text-center mt-10">
                 <Button 
                   size="lg" 
-                  className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold"
-                  onClick={() => navigate("/auth")}
+                  variant="outline"
+                  className="border-2 border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white font-semibold"
+                  onClick={() => navigate("/get-involved/ambassador")}
                 >
-                  {t("membership.continueWith") || "Continue with"} {selectedTier}
+                  Apply to Become an Ambassador
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <p className="text-sm text-muted-foreground mt-4">
-                  {t("membership.alreadyMember") || "Already a member?"} <Link to="/auth" className="text-scef-blue font-medium hover:underline">{t("nav.top.signin")}</Link>
-                </p>
               </div>
             </div>
           </section>
