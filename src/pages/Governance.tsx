@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
 import { 
   Shield, Users, Building2, Globe, ArrowRight, CheckCircle2, 
-  Briefcase, Scale, FileText, Mail, Phone
+  Briefcase, Scale, FileText, Mail, Phone, Crown, UserCircle, HeartHandshake
 } from "lucide-react";
 import { GovernanceProfileSection } from "@/components/governance/GovernanceProfileSection";
 
@@ -32,7 +32,9 @@ const layerColors = {
 };
 
 const managementIcons = {
+  cvo: Crown,
   orgSecretary: Scale,
+  membershipCouncil: HeartHandshake,
   pro: Users,
   operations: Briefcase,
   technology: Building2,
@@ -40,6 +42,33 @@ const managementIcons = {
   santosMedia: FileText,
   chapterServices: Users,
 };
+
+const executiveRoles = [
+  {
+    key: "cvo",
+    title: "Chief Visionary Officer (CVO)",
+    subtitle: "Founder & Strategic Leadership",
+    description: "Provides strategic vision, institutional direction, and represents SCEF at the highest levels.",
+    icon: Crown,
+    color: "bg-scef-gold/20 text-scef-gold border-scef-gold/40",
+  },
+  {
+    key: "orgSecretary",
+    title: "Organization Secretary / PRO",
+    subtitle: "Governance & Communications",
+    description: "Manages institutional records, governance compliance, board coordination, and official communications.",
+    icon: Scale,
+    color: "bg-scef-blue/20 text-scef-blue border-scef-blue/40",
+  },
+  {
+    key: "membershipCouncil",
+    title: "Membership Council",
+    subtitle: "Member Advocacy",
+    description: "Represents member interests, oversees membership policies, and ensures member voices are heard.",
+    icon: HeartHandshake,
+    color: "bg-scef-gold/20 text-scef-gold border-scef-gold/40",
+  },
+];
 
 const Governance = () => {
   const { t } = useLocale();
@@ -166,6 +195,42 @@ const Governance = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Executive Leadership */}
+          <section className="py-20">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Executive <span className="text-gradient-gold">Leadership</span>
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  SCEF's executive structure ensures strategic direction, governance compliance, and member representation at the highest levels.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {executiveRoles.map((role) => (
+                  <div 
+                    key={role.key}
+                    className="bg-card rounded-2xl border-2 border-border p-8 hover:shadow-lg transition-shadow"
+                  >
+                    <div className={`w-14 h-14 rounded-xl ${role.color} border flex items-center justify-center mb-5`}>
+                      <role.icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-foreground mb-1">
+                      {role.title}
+                    </h3>
+                    <p className="text-sm text-scef-gold font-medium mb-3">
+                      {role.subtitle}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {role.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
