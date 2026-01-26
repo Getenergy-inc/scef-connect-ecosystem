@@ -181,18 +181,20 @@ export const siteContent = {
   // Membership Pricing
   membership: {
     tiers: [
-      { name: "Basic", price: 10, currency: "USD", period: "month" },
-      { name: "Standard", price: 20, currency: "USD", period: "month" },
-      { name: "Premium", price: 50, currency: "USD", period: "month" },
+      { name: "General", price: 0, currency: "USD", period: "", description: "Free, 18+, limited benefits" },
+      { name: "Youth", price: 0, currency: "USD", period: "", description: "Free, 13–17 with parental consent" },
+      { name: "Standard", price: 50, currency: "USD", period: "year", description: "Full access with voting rights" },
+      { name: "Organizational", price: 200, currency: "USD", period: "year", description: "For institutions and organizations" },
+      { name: "Lifetime", price: 1000, currency: "USD", period: "one-time", description: "Permanent commitment" },
     ],
   },
 
   // Ambassador Pricing
   ambassador: {
     tiers: [
-      { name: "Ambassador 1", price: 50, currency: "USD" },
-      { name: "Ambassador 2", price: 75, currency: "USD" },
-      { name: "Ambassador 3", price: 100, currency: "USD" },
+      { name: "Ambassador-1", price: 100, currency: "USD", period: "year", commitment: "5 hours/month", requirements: "Standard/Lifetime membership" },
+      { name: "Ambassador-2", price: 200, currency: "USD", period: "year", commitment: "10 hours/month", requirements: "Ambassador-1 experience" },
+      { name: "Ambassador-3", price: 300, currency: "USD", period: "year", commitment: "15 hours/month", requirements: "Ambassador-2 experience" },
     ],
   },
 };
