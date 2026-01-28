@@ -84,7 +84,7 @@ export const CTASection = () => {
             </p>
             
             <Button size="lg" variant="outline" className="w-full border-2 border-white text-white hover:bg-white/10" asChild>
-              <Link to="/wallet/donate">
+              <Link to="/donate">
                 {t("cta.donateNow")}
                 <Heart className="w-4 h-4" />
               </Link>
@@ -103,7 +103,7 @@ export const CTASection = () => {
             </Button>
             <span className="text-white/40 hidden sm:inline">|</span>
             <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10" asChild>
-              <Link to="/wallet/donate">
+              <Link to="/donate">
                 <Heart className="w-4 h-4" />
                 {t("cta.donateNow")}
               </Link>

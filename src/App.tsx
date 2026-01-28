@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LocaleProvider } from "@/contexts/LocaleContext";
 import { HelmetProvider } from "react-helmet-async";
+
+// Core Pages
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
@@ -27,12 +29,25 @@ import Divisions from "./pages/Divisions";
 import Updates from "./pages/Updates";
 import Reports from "./pages/Reports";
 import CaseStudies from "./pages/CaseStudies";
+import NotFound from "./pages/NotFound";
+import Vacancies from "./pages/Vacancies";
+import PartnerWithUs from "./pages/PartnerWithUs";
+
+// Legal Pages
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Accessibility from "./pages/Accessibility";
+import Help from "./pages/Help";
+
+// Division Pages
 import BGEO from "./pages/divisions/BGEO";
 import SOBCD from "./pages/divisions/SOBCD";
 import TDSD from "./pages/divisions/TDSD";
 import OMBDD from "./pages/divisions/OMBDD";
 import SantosMedia from "./pages/divisions/SantosMedia";
 import LCS from "./pages/divisions/LCS";
+
+// Program Pages
 import NESAAfrica from "./pages/programs/NESAAfrica";
 import EduAidAfrica from "./pages/programs/EduAidAfrica";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
@@ -41,23 +56,37 @@ import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
 import DigitalLearning from "./pages/programs/DigitalLearning";
 import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import InclusionAccess from "./pages/programs/InclusionAccess";
+
+// Admin Pages
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
 import DigitalBoardAdminPage from "./pages/admin/DigitalBoardAdminPage";
 import EndorsementsAdminPage from "./pages/admin/EndorsementsAdminPage";
 import CRSPartnersAdminPage from "./pages/admin/CRSPartnersAdminPage";
-import NotFound from "./pages/NotFound";
-import Vacancies from "./pages/Vacancies";
 import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
-import PartnerWithUs from "./pages/PartnerWithUs";
+import FinanceOverview from "./pages/admin/FinanceOverview";
+import BankAccounts from "./pages/admin/BankAccounts";
+import Disbursements from "./pages/admin/Disbursements";
+
+// Resources
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
-import EduAidWebinars from "./pages/media/EduAidWebinars";
 
-// New Auth Pages
+// Media Pages
+import EduAidWebinars from "./pages/media/EduAidWebinars";
+import NesaTv from "./pages/media/NesaTv";
+import NesaAwardsTv from "./pages/media/NesaAwardsTv";
+import NesaAwardsPlatinum from "./pages/media/NesaAwardsPlatinum";
+import NesaAwardsAfricaIcon from "./pages/media/NesaAwardsAfricaIcon";
+import NesaAwardsGoldCertificate from "./pages/media/NesaAwardsGoldCertificate";
+import NesaAwardsBlueGarnetGala from "./pages/media/NesaAwardsBlueGarnetGala";
+import ItsInMeRadio from "./pages/media/ItsInMeRadio";
+import EducationTourism from "./pages/media/EducationTourism";
+
+// Auth Pages
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 
-// New Dashboard Pages
+// Dashboard Pages
 import Welcome from "./pages/dashboard/Welcome";
 import ChapterInbox from "./pages/chapter/Inbox";
 import Profile from "./pages/dashboard/Profile";
@@ -67,11 +96,6 @@ import Activity from "./pages/dashboard/Activity";
 import MessagesIndex from "./pages/messages/Index";
 import MessagesRoom from "./pages/messages/Room";
 import Decisions from "./pages/Decisions";
-
-// Admin Finance Pages
-import FinanceOverview from "./pages/admin/FinanceOverview";
-import BankAccounts from "./pages/admin/BankAccounts";
-import Disbursements from "./pages/admin/Disbursements";
 
 // NESA Award Pages
 import PlatinumAward from "./pages/awards/PlatinumAward";
@@ -100,8 +124,12 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
+              {/* Core Routes */}
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              
+              {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
               <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
               <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
@@ -111,13 +139,26 @@ const App = () => (
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
               <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
-              <Route path="/contact" element={<Contact />} />
+              
+              {/* Chapters Routes */}
               <Route path="/local-chapters" element={<LocalChapters />} />
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/chapters/join-online" element={<JoinOnline />} />
               <Route path="/chapters/join" element={<JoinOnline />} />
+              
+              {/* Media Routes */}
               <Route path="/media" element={<Media />} />
+              <Route path="/media/nesa-tv" element={<NesaTv />} />
+              <Route path="/media/nesa-awards-tv" element={<NesaAwardsTv />} />
+              <Route path="/media/nesa-awards-tv/platinum" element={<NesaAwardsPlatinum />} />
+              <Route path="/media/nesa-awards-tv/africa-icon" element={<NesaAwardsAfricaIcon />} />
+              <Route path="/media/nesa-awards-tv/gold-certificate" element={<NesaAwardsGoldCertificate />} />
+              <Route path="/media/nesa-awards-tv/blue-garnet-gala" element={<NesaAwardsBlueGarnetGala />} />
+              <Route path="/media/its-in-me-radio" element={<ItsInMeRadio />} />
               <Route path="/media/eduaid-webinars" element={<EduAidWebinars />} />
+              <Route path="/media/education-tourism-show" element={<EducationTourism />} />
+              
+              {/* Updates & Reports */}
               <Route path="/updates" element={<Updates />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/case-studies" element={<CaseStudies />} />
@@ -167,20 +208,22 @@ const App = () => (
               <Route path="/admin/finance/bank-accounts" element={<BankAccounts />} />
               <Route path="/admin/finance/disbursements" element={<Disbursements />} />
               
-              {/* Other Routes */}
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/donation-success" element={<DonationSuccess />} />
-              <Route path="/wallet" element={<Wallet />} />
+              {/* Get Involved Routes */}
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/get-involved/membership" element={<Membership />} />
               <Route path="/get-involved/ambassador" element={<Ambassador />} />
-              <Route path="/resources/organizational-profile" element={<OrganizationalProfile />} />
-              <Route path="/vacancies" element={<Vacancies />} />
               <Route path="/membership" element={<Membership />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/donation-success" element={<DonationSuccess />} />
+              <Route path="/wallet" element={<Wallet />} />
+              <Route path="/wallet/donate" element={<Donate />} />
+              
+              {/* Governance & Partners */}
               <Route path="/governance" element={<Governance />} />
-              <Route path="/certifications" element={<Certifications />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/partner-with-us" element={<PartnerWithUs />} />
+              
+              {/* Divisions Routes */}
               <Route path="/divisions" element={<Divisions />} />
               <Route path="/divisions/bgeo" element={<BGEO />} />
               <Route path="/divisions/sobcd" element={<SOBCD />} />
@@ -188,6 +231,19 @@ const App = () => (
               <Route path="/divisions/ombdd" element={<OMBDD />} />
               <Route path="/divisions/santos-media" element={<SantosMedia />} />
               <Route path="/divisions/lcs" element={<LCS />} />
+              
+              {/* Resources & Certifications */}
+              <Route path="/resources/organizational-profile" element={<OrganizationalProfile />} />
+              <Route path="/certifications" element={<Certifications />} />
+              <Route path="/vacancies" element={<Vacancies />} />
+              
+              {/* Legal Pages */}
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/accessibility" element={<Accessibility />} />
+              <Route path="/help" element={<Help />} />
+              
+              {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
