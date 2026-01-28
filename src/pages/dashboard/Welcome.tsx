@@ -171,7 +171,7 @@ const Welcome = () => {
                       </Link>
                     </Button>
                     <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                      <Link to="/wallet/fund">
+                      <Link to="/donate">
                         Fund Wallet
                       </Link>
                     </Button>
