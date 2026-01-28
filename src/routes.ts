@@ -34,6 +34,8 @@ export const ROUTES = {
   GET_INVOLVED: "/get-involved",
   MEMBERSHIP: "/membership",
   AMBASSADOR: "/get-involved/ambassador",
+  NRC: "/get-involved/nrc",
+  JUDGE: "/get-involved/judge",
   DONATE: "/donate",
   DONATION_SUCCESS: "/donation-success",
   WALLET: "/wallet",
@@ -88,6 +90,7 @@ export const ROUTES = {
   DASHBOARD_PROFILE: "/dashboard/profile",
   DASHBOARD_ACTIVITY: "/dashboard/activity",
   DASHBOARD_ELIBRARY: "/dashboard/elibrary",
+  DASHBOARD_SETTINGS: "/dashboard/settings",
   
   // Chapter Inbox
   CHAPTER_INBOX: "/chapter/inbox",
@@ -96,7 +99,15 @@ export const ROUTES = {
   MESSAGES: "/messages",
   DECISIONS: "/decisions",
   
+  // Portals (Role-based)
+  PORTAL_JURY: "/portal/jury",
+  PORTAL_NRC: "/portal/nrc",
+  PORTAL_AMBASSADOR: "/portal/ambassador",
+  PORTAL_CHAPTER_ADMIN: "/portal/chapter-admin",
+  PORTAL_SPONSOR: "/portal/sponsor",
+  
   // Admin
+  ADMIN: "/admin",
   ADMIN_DIGITAL_BOARD: "/admin/digital-board",
   ADMIN_ENDORSEMENTS: "/admin/endorsements",
   ADMIN_CRS_PARTNERS: "/admin/crs-partners",
@@ -115,7 +126,7 @@ export const ROUTES = {
   REPORTS: "/reports",
   CASE_STUDIES: "/case-studies",
   
-  // Legal (need to be created)
+  // Legal
   PRIVACY: "/privacy",
   TERMS: "/terms",
   ACCESSIBILITY: "/accessibility",
