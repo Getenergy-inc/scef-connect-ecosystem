@@ -70,6 +70,8 @@ import Disbursements from "./pages/admin/Disbursements";
 // Resources
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
+import NRC from "./pages/get-involved/NRC";
+import Judge from "./pages/get-involved/Judge";
 
 // Media Pages
 import EduAidWebinars from "./pages/media/EduAidWebinars";
@@ -91,11 +93,20 @@ import Welcome from "./pages/dashboard/Welcome";
 import ChapterInbox from "./pages/chapter/Inbox";
 import Profile from "./pages/dashboard/Profile";
 import Activity from "./pages/dashboard/Activity";
+import SettingsPage from "./pages/dashboard/Settings";
 
 // Messages & Decisions Pages
 import MessagesIndex from "./pages/messages/Index";
 import MessagesRoom from "./pages/messages/Room";
 import Decisions from "./pages/Decisions";
+
+// Portal Pages
+import JuryPortal from "./pages/portal/Jury";
+import NRCPortal from "./pages/portal/NRCPortal";
+import AmbassadorPortal from "./pages/portal/AmbassadorPortal";
+import ChapterAdminPortal from "./pages/portal/ChapterAdmin";
+import SponsorPortal from "./pages/portal/Sponsor";
+import AdminIndex from "./pages/admin/Index";
 
 // NESA Award Pages
 import PlatinumAward from "./pages/awards/PlatinumAward";
@@ -190,6 +201,7 @@ const App = () => (
               <Route path="/dashboard/profile" element={<Profile />} />
               <Route path="/dashboard/activity" element={<Activity />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
+              <Route path="/dashboard/settings" element={<SettingsPage />} />
               
               {/* Chapter Routes */}
               <Route path="/chapter/inbox" element={<ChapterInbox />} />
@@ -199,7 +211,15 @@ const App = () => (
               <Route path="/messages/:roomId" element={<MessagesRoom />} />
               <Route path="/decisions" element={<Decisions />} />
               
+              {/* Portal Routes (Role-based) */}
+              <Route path="/portal/jury" element={<JuryPortal />} />
+              <Route path="/portal/nrc" element={<NRCPortal />} />
+              <Route path="/portal/ambassador" element={<AmbassadorPortal />} />
+              <Route path="/portal/chapter-admin" element={<ChapterAdminPortal />} />
+              <Route path="/portal/sponsor" element={<SponsorPortal />} />
+              
               {/* Admin Routes */}
+              <Route path="/admin" element={<AdminIndex />} />
               <Route path="/admin/digital-board" element={<DigitalBoardAdminPage />} />
               <Route path="/admin/endorsements" element={<EndorsementsAdminPage />} />
               <Route path="/admin/crs-partners" element={<CRSPartnersAdminPage />} />
@@ -212,6 +232,8 @@ const App = () => (
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/get-involved/membership" element={<Membership />} />
               <Route path="/get-involved/ambassador" element={<Ambassador />} />
+              <Route path="/get-involved/nrc" element={<NRC />} />
+              <Route path="/get-involved/judge" element={<Judge />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/donation-success" element={<DonationSuccess />} />
