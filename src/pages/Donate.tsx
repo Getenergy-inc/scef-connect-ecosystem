@@ -237,7 +237,7 @@ const Donate = () => {
               <h1 className="font-display text-4xl md:text-5xl font-bold mb-2">
                 {t("donate.hero.title") || "Fund Education. Change Lives."}
               </h1>
-              <p className="text-lg text-scef-gold font-semibold mb-2">Powered by GFA Wzip • GetFinance Africa</p>
+              <p className="text-lg text-scef-gold font-semibold mb-2">Powered by GFA Wallet • GetFinance Africa</p>
               <p className="text-cream/80 max-w-2xl mx-auto">
                 {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
               </p>
@@ -409,7 +409,7 @@ const Donate = () => {
                       <div className="space-y-4 pt-4 border-t border-border">
                         <div className="flex items-center gap-2 justify-center">
                           <img src={gfaWalletLogo} alt="GFA" className="w-6 h-6 rounded object-contain" />
-                          <span className="text-sm font-semibold text-foreground">Pay via GFA Wzip</span>
+                          <span className="text-sm font-semibold text-foreground">Pay via GFA Wallet</span>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                           {paymentProviders.map((provider) => (
@@ -453,7 +453,7 @@ const Donate = () => {
                       <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
                         <div className="flex items-center gap-3 mb-3">
                           <img src={gfaWalletLogo} alt="GFA" className="w-8 h-8 rounded-lg object-contain" />
-                          <span className="font-semibold text-foreground">Have a GFA Wzip?</span>
+                          <span className="font-semibold text-foreground">Have a GFA Wallet?</span>
                         </div>
                         <p className="text-sm text-muted-foreground mb-3">Donate directly from your wallet balance for faster processing.</p>
                         <Button variant="outline" size="sm" className="w-full" onClick={() => navigate("/wallet")}>

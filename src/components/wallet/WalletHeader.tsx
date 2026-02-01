@@ -10,7 +10,7 @@ export const WalletHeader = () => {
       />
       <div>
         <h1 className="font-display text-3xl font-bold text-foreground">
-          GFA Wzip
+          GFA Wallet
         </h1>
         <p className="text-lg text-primary font-medium">
           GetFinance Africa

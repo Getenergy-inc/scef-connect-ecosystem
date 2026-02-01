@@ -258,7 +258,7 @@ export const Header = () => {
                 asChild
               >
                 <Link to="/wallet">
-                  <img src={gfaWalletLogo} alt="GFA Wzip" className="w-5 h-5 rounded mr-1 object-contain" />
+                  <img src={gfaWalletLogo} alt="GFA Wallet" className="w-5 h-5 rounded mr-1 object-contain" />
                   Wallet
                 </Link>
               </Button>
