@@ -262,8 +262,8 @@ const Activity = () => {
                 <Card className="bg-gradient-to-br from-earth to-earth/90 text-cream">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-cream">
-                      <img src={gfaWalletLogo} alt="GFA Wzip" className="w-6 h-6 rounded object-contain" />
-                      GFA Wzip
+                      <img src={gfaWalletLogo} alt="GFA Wallet" className="w-6 h-6 rounded object-contain" />
+                      GFA Wallet
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
