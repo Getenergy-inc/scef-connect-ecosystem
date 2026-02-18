@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
 import { 
   Shield, Users, Building2, Globe, ArrowRight, CheckCircle2, 
-  Briefcase, Scale, FileText, Mail, Phone, Crown, UserCircle, HeartHandshake
+  FileText, Mail, Phone, Crown, UserCircle, HeartHandshake
 } from "lucide-react";
 import { GovernanceProfileSection } from "@/components/governance/GovernanceProfileSection";
 import { EmailDirectory } from "@/components/contact/EmailDirectory";
@@ -32,44 +32,6 @@ const layerColors = {
   lcps: "primary",
 };
 
-const managementIcons = {
-  cvo: Crown,
-  orgSecretary: Scale,
-  membershipCouncil: HeartHandshake,
-  pro: Users,
-  operations: Briefcase,
-  technology: Building2,
-  mediaBusiness: Globe,
-  santosMedia: FileText,
-  chapterServices: Users,
-};
-
-const executiveRoles = [
-  {
-    key: "cvo",
-    title: "Chief Visionary Officer (CVO)",
-    subtitle: "Founder & Strategic Leadership",
-    description: "Provides strategic vision, institutional direction, and represents SCEF at the highest levels.",
-    icon: Crown,
-    color: "bg-scef-gold/20 text-scef-gold border-scef-gold/40",
-  },
-  {
-    key: "orgSecretary",
-    title: "Organization Secretary / PRO",
-    subtitle: "Governance & Communications",
-    description: "Manages institutional records, governance compliance, board coordination, and official communications.",
-    icon: Scale,
-    color: "bg-scef-blue/20 text-scef-blue border-scef-blue/40",
-  },
-  {
-    key: "membershipCouncil",
-    title: "Membership Council",
-    subtitle: "Member Advocacy",
-    description: "Represents member interests, oversees membership policies, and ensures member voices are heard.",
-    icon: HeartHandshake,
-    color: "bg-scef-gold/20 text-scef-gold border-scef-gold/40",
-  },
-];
 
 const Governance = () => {
   const { t } = useLocale();
@@ -81,15 +43,8 @@ const Governance = () => {
     { id: "lcps", level: 4 },
   ];
 
-  const managementRoles = [
-    "orgSecretary",
-    "pro",
-    "operations",
-    "technology",
-    "mediaBusiness",
-    "santosMedia",
-    "chapterServices",
-  ];
+
+
 
   const policyKeys = [
     "constitution",
@@ -200,7 +155,7 @@ const Governance = () => {
             </div>
           </section>
 
-          {/* Executive Leadership */}
+          {/* Executive Leadership - Now using database profiles */}
           <section className="py-20">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16">
@@ -210,28 +165,6 @@ const Governance = () => {
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   SCEF's executive structure ensures strategic direction, governance compliance, and member representation at the highest levels.
                 </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {executiveRoles.map((role) => (
-                  <div 
-                    key={role.key}
-                    className="bg-card rounded-2xl border-2 border-border p-8 hover:shadow-lg transition-shadow"
-                  >
-                    <div className={`w-14 h-14 rounded-xl ${role.color} border flex items-center justify-center mb-5`}>
-                      <role.icon className="w-7 h-7" />
-                    </div>
-                    <h3 className="font-display text-xl font-bold text-foreground mb-1">
-                      {role.title}
-                    </h3>
-                    <p className="text-sm text-scef-gold font-medium mb-3">
-                      {role.subtitle}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {role.description}
-                    </p>
-                  </div>
-                ))}
               </div>
             </div>
           </section>
@@ -334,49 +267,14 @@ const Governance = () => {
             subtitle="Country-level leadership driving local impact"
           />
 
-          {/* Executive Office / Management Team */}
+          {/* Management Team Profiles from Database */}
           <section id="management" className="py-20 bg-card scroll-mt-24">
             <div className="container mx-auto px-4">
-              <div className="text-center mb-16">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("governance.management.title").split(' ').slice(0, 1).join(' ')} <span className="text-gradient-gold">{t("governance.management.title").split(' ').slice(1).join(' ')}</span>
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  {t("governance.management.subtitle")}
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {managementRoles.map((roleKey) => {
-                  const Icon = managementIcons[roleKey as keyof typeof managementIcons];
-                  return (
-                    <div 
-                      key={roleKey}
-                      className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
-                    >
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <h3 className="font-display font-bold text-foreground mb-1">{t(`governance.management.roles.${roleKey}.title`)}</h3>
-                      <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-gold/10 text-gold mb-3">
-                        {t(`governance.management.roles.${roleKey}.mandate`)}
-                      </span>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {t(`governance.management.roles.${roleKey}.description`)}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Management Team Profiles from Database */}
-              <div className="mt-12">
-                <GovernanceProfileSection 
-                  boardType="management"
-                  title="Meet the Team"
-                  subtitle="The professionals leading our day-to-day operations"
-                />
-              </div>
+              <GovernanceProfileSection 
+                boardType="management"
+                title="Meet the Team"
+                subtitle="The professionals leading our day-to-day operations"
+              />
             </div>
           </section>
 
