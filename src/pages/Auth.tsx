@@ -80,7 +80,7 @@ const Auth = () => {
         <meta name="description" content="Join SCEF to support education across Africa. Login or create an account to become a member." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-earth via-earth/95 to-earth">
+      <div className="min-h-screen bg-gradient-to-br from-scef-blue-darker via-scef-blue-dark to-scef-blue-darker">
         <Header />
         
         <main className="pt-32 pb-20">
@@ -88,13 +88,13 @@ const Auth = () => {
             <div className="max-w-md mx-auto">
               {/* Logo */}
               <div className="text-center mb-8">
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shadow-gold mb-4">
-                  <BookOpen className="w-10 h-10 text-earth" />
+                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-scef-gold to-scef-gold-light flex items-center justify-center shadow-gold mb-4">
+                  <BookOpen className="w-10 h-10 text-scef-blue-darker" />
                 </div>
-                <h1 className="font-display text-3xl font-bold text-cream mb-2">
+                <h1 className="font-display text-3xl font-bold text-white mb-2">
                   {isLogin ? "Welcome Back" : "Join SCEF"}
                 </h1>
-                <p className="text-cream/70">
+                <p className="text-white/70">
                   {isLogin 
                     ? "Sign in to access your dashboard" 
                     : "Create an account to start your journey"}

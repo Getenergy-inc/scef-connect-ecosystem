@@ -110,20 +110,20 @@ const Partners = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
-            <div className="absolute inset-0 bg-african-pattern opacity-10" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl" />
+          <section className="relative pt-32 pb-20 bg-scef-blue-darker overflow-hidden">
+            <div className="absolute inset-0 bg-scef-pattern opacity-10" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-scef-gold/20 rounded-full blur-3xl" />
             
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
                   <Handshake className="w-4 h-4" />
                   {t("partners.hero.badge")}
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   {t("partners.hero.title")}
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed mb-8">
+                <p className="text-xl text-white/80 leading-relaxed mb-8">
                   {t("partners.hero.subtitle")}
                 </p>
                 <Button variant="hero" size="lg" asChild>
@@ -252,13 +252,13 @@ const Partners = () => {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-earth to-earth/90 rounded-3xl p-8 lg:p-10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-african-pattern opacity-10" />
+                <div className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark rounded-3xl p-8 lg:p-10 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-scef-pattern opacity-10" />
                   <div className="relative">
-                    <h3 className="font-display text-2xl font-bold text-cream mb-6">
+                    <h3 className="font-display text-2xl font-bold text-white mb-6">
                       Ready to Partner?
                     </h3>
-                    <p className="text-cream/80 mb-8">
+                    <p className="text-white/80 mb-8">
                       Submit your partnership inquiry and our team will connect with you to discuss collaboration opportunities.
                     </p>
                     <div className="space-y-4">

@@ -116,12 +116,12 @@ const Wallet = () => {
               {/* Balance Cards */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 {/* USD Balance */}
-                <Card className="bg-gradient-to-br from-earth to-earth/90 text-cream overflow-hidden relative">
+                <Card className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white overflow-hidden relative">
                   <div className="absolute top-3 right-3 opacity-20">
                     <img src={gfaWalletLogo} alt="" className="w-16 h-16 rounded-lg object-contain" />
                   </div>
                   <CardHeader>
-                    <CardDescription className="text-cream/70">Available Balance</CardDescription>
+                    <CardDescription className="text-white/70">Available Balance</CardDescription>
                     <CardTitle className="text-4xl font-display">
                       ${wallet?.balance?.toFixed(2) || "0.00"}
                     </CardTitle>
@@ -135,7 +135,7 @@ const Wallet = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="border-cream/30 text-cream hover:bg-cream/10"
+                        className="border-white/30 text-white hover:bg-white/10"
                         onClick={() => setWithdrawModalOpen(true)}
                       >
                         <ArrowDownLeft className="w-4 h-4 mr-2" />

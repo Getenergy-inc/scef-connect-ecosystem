@@ -59,7 +59,7 @@ const SignIn = () => {
         <meta name="description" content="Sign in to your SCEF account to access your dashboard, wallet, and more." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-earth via-earth/95 to-earth">
+      <div className="min-h-screen bg-gradient-to-br from-scef-blue-darker via-scef-blue-dark to-scef-blue-darker">
         <Header />
         
         <main className="pt-32 pb-20">
@@ -72,10 +72,10 @@ const SignIn = () => {
                   alt="GFA Wallet" 
                   className="w-20 h-20 mx-auto rounded-xl object-contain bg-white p-2 shadow-lg mb-4"
                 />
-                <h1 className="font-display text-3xl font-bold text-cream mb-2">
+                <h1 className="font-display text-3xl font-bold text-white mb-2">
                   Welcome Back
                 </h1>
-                <p className="text-cream/70">
+                <p className="text-white/70">
                   Sign in to access your dashboard
                 </p>
               </div>
@@ -149,7 +149,7 @@ const SignIn = () => {
               </Card>
 
               {/* Info */}
-              <p className="text-center text-cream/50 text-xs mt-6">
+              <p className="text-center text-white/50 text-xs mt-6">
                 By signing in, you agree to our{" "}
                 <Link to="/terms" className="underline">Terms of Service</Link>
                 {" "}and{" "}

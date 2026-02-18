@@ -124,7 +124,7 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
           <Link to="/" className="flex items-center gap-3">
             <div className={cn(
               "w-10 h-10 rounded-lg flex items-center justify-center font-display font-bold text-sm",
-              isSuperAdmin ? "bg-[#c9a227] text-[#1e3a5f]" : "bg-gradient-to-br from-gold to-gold-light text-earth"
+              isSuperAdmin ? "bg-scef-gold text-scef-blue-darker" : "bg-gradient-to-br from-scef-gold to-scef-gold-light text-scef-blue-darker"
             )}>
               SCEF
             </div>

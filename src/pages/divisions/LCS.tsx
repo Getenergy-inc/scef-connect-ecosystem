@@ -58,24 +58,24 @@ const LCS = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
-            <div className="absolute inset-0 bg-african-pattern opacity-10" />
+          <section className="relative pt-32 pb-20 bg-scef-blue-darker overflow-hidden">
+            <div className="absolute inset-0 bg-scef-pattern opacity-10" />
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl">
                 <Link 
                   to="/divisions" 
-                  className="inline-flex items-center gap-2 text-cream/70 hover:text-gold mb-6 transition-colors"
+                  className="inline-flex items-center gap-2 text-white/70 hover:text-scef-gold mb-6 transition-colors"
                 >
                   ← Back to Divisions
                 </Link>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6 ml-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6 ml-4">
                   <MapPin className="w-4 h-4" />
                   Division
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   Local Chapter <span className="text-gradient-gold">Services</span>
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed">
+                <p className="text-xl text-white/80 leading-relaxed">
                   Enabling grassroots education leadership through compliant, governed, and institutionally-supported local chapters across 54+ African countries and the diaspora.
                 </p>
               </div>

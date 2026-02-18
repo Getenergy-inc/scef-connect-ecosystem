@@ -69,17 +69,17 @@ const Vacancies = () => {
         
         <main className="pt-24 pb-20">
           {/* Hero */}
-          <section className="bg-gradient-to-br from-earth to-earth/90 text-cream py-16">
+          <section className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white py-16">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
                   <Briefcase className="w-4 h-4" />
                   Careers at SCEF
                 </div>
                 <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
                   Join Our <span className="text-scef-gold">Team</span>
                 </h1>
-                <p className="text-lg text-cream/80 mb-6">
+                <p className="text-lg text-white/80 mb-6">
                   Be part of a mission-driven organization transforming education across Africa. 
                   We're looking for passionate individuals to join our team.
                 </p>

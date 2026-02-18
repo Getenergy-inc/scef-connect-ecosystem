@@ -259,25 +259,25 @@ const Activity = () => {
                 </Card>
 
                 {/* GFA Wallet Card */}
-                <Card className="bg-gradient-to-br from-earth to-earth/90 text-cream">
+                <Card className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-cream">
+                    <CardTitle className="flex items-center gap-2 text-white">
                       <img src={gfaWalletLogo} alt="GFA Wallet" className="w-6 h-6 rounded object-contain" />
                       GFA Wallet
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="mb-4">
-                      <p className="text-cream/70 text-sm">Available Balance</p>
+                      <p className="text-white/70 text-sm">Available Balance</p>
                       <p className="text-3xl font-display font-bold">${wallet?.balance?.toFixed(2) || "0.00"}</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div>
-                        <p className="text-cream/70 text-xs">AGC Balance</p>
+                        <p className="text-white/70 text-xs">AGC Balance</p>
                         <p className="font-semibold">{wallet?.agc_balance?.toFixed(4) || "0.0000"}</p>
                       </div>
                       <div>
-                        <p className="text-cream/70 text-xs">Currency</p>
+                        <p className="text-white/70 text-xs">Currency</p>
                         <p className="font-semibold">{wallet?.currency || "USD"}</p>
                       </div>
                     </div>

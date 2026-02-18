@@ -126,20 +126,20 @@ const Divisions = () => {
         
         <main>
           {/* Hero */}
-          <section className="relative pt-32 pb-20 bg-earth overflow-hidden">
-            <div className="absolute inset-0 bg-african-pattern opacity-10" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl" />
+          <section className="relative pt-32 pb-20 bg-scef-blue-darker overflow-hidden">
+            <div className="absolute inset-0 bg-scef-pattern opacity-10" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-scef-gold/20 rounded-full blur-3xl" />
             
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
                   <Building2 className="w-4 h-4" />
                   Organizational Structure
                 </div>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-6">
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   6 Operational <span className="text-gradient-gold">Divisions</span>
                 </h1>
-                <p className="text-xl text-cream/80 leading-relaxed">
+                <p className="text-xl text-white/80 leading-relaxed">
                   SCEF operates through six specialized divisions, each with clear mandates, accountability structures, and operational scope to deliver on our institutional mission.
                 </p>
               </div>
