@@ -62,7 +62,7 @@ export const PartnersStakeholdersSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-6 border-2 border-black">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-blue text-sm font-medium mb-6 border border-scef-gold/40">
             <Users className="w-4 h-4" />
             {t("home.partnerships.title")}
           </div>
@@ -81,11 +81,11 @@ export const PartnersStakeholdersSection = () => {
           {stakeholders.map((stakeholder, index) => (
             <div
               key={stakeholder.titleKey}
-              className="group bg-card rounded-xl p-5 border-2 border-black hover:border-scef-gold hover:shadow-lg transition-all duration-300"
+              className="group bg-card rounded-xl p-5 border border-border hover:border-scef-gold hover:shadow-lg transition-all duration-300"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0 border border-black group-hover:bg-scef-gold/20 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0 border border-border group-hover:bg-scef-gold/20 transition-colors">
                   <stakeholder.icon className="w-5 h-5 text-scef-blue" />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export const PartnersStakeholdersSection = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light border-2 border-black font-semibold" asChild>
+          <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
             <Link to="/partners">
               {t("about.hero.ctaCsr")}
               <ArrowRight className="w-4 h-4" />

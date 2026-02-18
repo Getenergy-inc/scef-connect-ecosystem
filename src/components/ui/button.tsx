@@ -16,10 +16,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-scef-gold text-scef-blue-dark font-bold hover:bg-scef-gold-hover hover:shadow-lg hover:scale-105 transform",
-        heroOutline: "border-2 border-scef-gold bg-transparent text-cream hover:bg-scef-gold/20 backdrop-blur-sm",
+        heroOutline: "border-2 border-scef-gold bg-transparent text-white hover:bg-scef-gold/20 backdrop-blur-sm",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90",
-        terracotta: "bg-terracotta text-cream hover:bg-terracotta/90 hover:shadow-md",
-        forest: "bg-forest text-cream hover:bg-forest/90 hover:shadow-md",
       },
       size: {
         default: "h-11 px-6 py-2",

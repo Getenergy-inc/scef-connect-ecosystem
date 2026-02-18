@@ -73,11 +73,11 @@ export const GovernanceSnapshot = () => {
           {governanceLayers.map((layer, index) => (
             <div
               key={layer.titleKey}
-              className="group bg-card rounded-2xl p-6 border-2 border-black hover:shadow-xl transition-all duration-300"
+              className="group bg-card rounded-2xl p-6 border border-border hover:shadow-xl transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl ${layer.iconBg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform border-2 border-black`}>
+              <div className={`w-14 h-14 rounded-xl ${layer.iconBg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
                 <layer.icon className="w-7 h-7" />
               </div>
               
@@ -117,7 +117,7 @@ export const GovernanceSnapshot = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-2 border-black hover:bg-primary hover:text-primary-foreground"
+            className="border-2 border-primary hover:bg-primary hover:text-primary-foreground"
             asChild
           >
             <Link to="/governance">

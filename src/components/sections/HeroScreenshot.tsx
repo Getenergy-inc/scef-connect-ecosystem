@@ -100,7 +100,7 @@ export const HeroScreenshot = () => {
             <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <Button
                 size="lg"
-                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-bold px-6 py-5 text-sm md:text-base rounded-lg border-2 border-black shadow-lg"
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-bold px-6 py-5 text-sm md:text-base rounded-lg shadow-lg"
                 asChild
               >
                 <Link to="/partner-with-us">
@@ -110,7 +110,7 @@ export const HeroScreenshot = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-white hover:bg-white/90 text-scef-blue-dark font-bold px-6 py-5 text-sm md:text-base rounded-lg border-2 border-black shadow-lg"
+                className="bg-card hover:bg-card/90 text-foreground font-bold px-6 py-5 text-sm md:text-base rounded-lg shadow-lg border-2 border-border"
                 asChild
               >
                 <Link to="/get-involved/membership">
@@ -169,16 +169,16 @@ export const HeroScreenshot = () => {
       </div>
 
       {/* Secondary CTA Strip */}
-      <div className="relative z-10 bg-white border-t border-b border-gray-200">
+      <div className="relative z-10 bg-card border-t border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
             <Button
-              variant="outline"
+              variant="default"
               size="sm"
-              className="bg-scef-blue-dark hover:bg-scef-blue-darker text-white border-scef-blue-dark hover:border-scef-blue-darker font-medium text-xs md:text-sm px-4 py-2"
+              className="font-medium text-xs md:text-sm px-4 py-2"
               asChild
             >
-              <Link to="/get-involved/apply" className="flex items-center gap-2">
+              <Link to="/get-involved" className="flex items-center gap-2">
                 <UserPlus className="w-4 h-4" />
                 {t("home.hero.ctaStrip.apply")}
               </Link>
@@ -186,7 +186,7 @@ export const HeroScreenshot = () => {
             <Button
               variant="outline"
               size="sm"
-              className="bg-white hover:bg-gray-50 text-scef-blue-dark border-scef-blue-dark font-medium text-xs md:text-sm px-4 py-2"
+              className="font-medium text-xs md:text-sm px-4 py-2"
               asChild
             >
               <Link to="/programs" className="flex items-center gap-2">
@@ -197,7 +197,7 @@ export const HeroScreenshot = () => {
             <Button
               variant="outline"
               size="sm"
-              className="bg-white hover:bg-gray-50 text-scef-blue-dark border-scef-blue-dark font-medium text-xs md:text-sm px-4 py-2"
+              className="font-medium text-xs md:text-sm px-4 py-2"
               asChild
             >
               <Link to="/chapters" className="flex items-center gap-2">
@@ -206,9 +206,9 @@ export const HeroScreenshot = () => {
               </Link>
             </Button>
             <Button
-              variant="outline"
+              variant="secondary"
               size="sm"
-              className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark border-scef-gold font-medium text-xs md:text-sm px-4 py-2"
+              className="font-medium text-xs md:text-sm px-4 py-2"
               asChild
             >
               <Link to="/media" className="flex items-center gap-2">

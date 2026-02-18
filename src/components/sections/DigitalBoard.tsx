@@ -44,10 +44,10 @@ const typeIcons = {
 };
 
 const typeColors = {
-  video: "bg-gold text-earth",
-  audio: "bg-terracotta text-cream",
-  announcement: "bg-forest text-cream",
-  flyer: "bg-primary text-primary-foreground",
+  video: "bg-scef-gold text-scef-blue-dark",
+  audio: "bg-destructive text-destructive-foreground",
+  announcement: "bg-primary text-primary-foreground",
+  flyer: "bg-secondary text-secondary-foreground",
 };
 
 export const DigitalBoard = () => {
@@ -140,28 +140,28 @@ export const DigitalBoard = () => {
   const TypeIcon = typeIcons[activeItem.type as keyof typeof typeIcons] || FileText;
 
   return (
-    <section className="py-24 bg-earth relative overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="py-24 bg-scef-blue-darker relative overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-african-pattern opacity-10" />
+      <div className="absolute inset-0 bg-scef-pattern opacity-10" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/10 text-cream/90 text-sm font-medium mb-4">
-            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-4">
+            <span className="w-2 h-2 rounded-full bg-scef-gold animate-pulse" />
             {t("home.board.title")}
           </div>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-cream mb-4">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             {t("home.board.title")} • <span className="text-gradient-gold">{t("labels.latest")}</span>
           </h2>
-          <p className="text-cream/70 max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto">
             {t("home.board.desc")}
           </p>
         </div>
 
         {/* Board Content */}
         <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cream/10 to-transparent backdrop-blur-sm border border-cream/10">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/10">
             {/* Main Display */}
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image Side */}
@@ -178,7 +178,7 @@ export const DigitalBoard = () => {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-transparent lg:bg-gradient-to-t" />
+                <div className="absolute inset-0 bg-gradient-to-r from-scef-blue-darker/80 to-transparent lg:bg-gradient-to-t" />
                 
                 {/* Type Badge */}
                 <AnimatePresence mode="wait">
@@ -202,9 +202,9 @@ export const DigitalBoard = () => {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ duration: 0.3, delay: 0.2 }}
-                      className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"
+                      className="w-20 h-20 rounded-full bg-scef-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"
                     >
-                      <Play className="w-8 h-8 text-earth ml-1" />
+                      <Play className="w-8 h-8 text-scef-blue-dark ml-1" />
                     </motion.div>
                   </button>
                 )}
@@ -220,10 +220,10 @@ export const DigitalBoard = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   >
-                    <h3 className="font-display text-2xl lg:text-3xl font-bold text-cream mb-4">
+                    <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-4">
                       {activeItem.title}
                     </h3>
-                    <p className="text-cream/70 text-lg mb-8 leading-relaxed">
+                    <p className="text-white/70 text-lg mb-8 leading-relaxed">
                       {activeItem.description}
                     </p>
                     <Button variant="hero" size="lg" className="self-start" asChild>
@@ -241,9 +241,10 @@ export const DigitalBoard = () => {
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
               <button
                 onClick={() => setActiveIndex((prev) => (prev - 1 + boardItems.length) % boardItems.length)}
-                className="w-10 h-10 rounded-full bg-cream/10 hover:bg-cream/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                aria-label="Previous item"
               >
-                <ChevronLeft className="w-5 h-5 text-cream" />
+                <ChevronLeft className="w-5 h-5 text-white" />
               </button>
               
               <div className="flex gap-2">
@@ -251,10 +252,11 @@ export const DigitalBoard = () => {
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
+                    aria-label={`Go to item ${index + 1}`}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       index === activeIndex
-                        ? "w-8 bg-gold"
-                        : "w-2 bg-cream/30 hover:bg-cream/50"
+                        ? "w-8 bg-scef-gold"
+                        : "w-2 bg-white/30 hover:bg-white/50"
                     }`}
                   />
                 ))}
@@ -262,9 +264,10 @@ export const DigitalBoard = () => {
 
               <button
                 onClick={() => setActiveIndex((prev) => (prev + 1) % boardItems.length)}
-                className="w-10 h-10 rounded-full bg-cream/10 hover:bg-cream/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                aria-label="Next item"
               >
-                <ChevronRight className="w-5 h-5 text-cream" />
+                <ChevronRight className="w-5 h-5 text-white" />
               </button>
             </div>
           </div>
