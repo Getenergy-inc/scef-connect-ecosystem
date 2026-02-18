@@ -379,6 +379,68 @@ const Governance = () => {
             </div>
           </section>
 
+          {/* Endorsement Letters */}
+          <section className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Endorsement <span className="text-gradient-gold">Letters</span>
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Official endorsements from partner organizations affirming SCEF's mission and governance standards.
+                  </p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <a
+                    href="/assets/endorsements/csacefa-lagos-endorsement.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-lg transition-all flex items-start gap-4"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-scef-gold/15 border border-scef-gold/30 flex items-center justify-center shrink-0">
+                      <FileText className="w-6 h-6 text-scef-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                        CSACEFA Lagos Endorsement
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Civil Society Action Coalition on Education For All (CSACEFA) Lagos State chapter officially endorses SCEF's education standards mission.
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                        View PDF <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href="/assets/endorsements/csacefa-lagos-endorsement-2.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-lg transition-all flex items-start gap-4"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
+                      <FileText className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                        CSACEFA Lagos Endorsement (Page 2)
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Continuation of the official endorsement detailing CSACEFA's commitment to collaborate with SCEF on education reform initiatives.
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                        View PDF <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Policies & Documents */}
           <section className="py-20">
             <div className="container mx-auto px-4">
