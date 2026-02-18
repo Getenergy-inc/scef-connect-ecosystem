@@ -92,12 +92,12 @@ const GetInvolved = () => {
         
         <main className="pt-24 pb-20">
           {/* Hero */}
-          <section className="bg-gradient-to-br from-earth to-earth/90 text-cream py-20">
+          <section className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white py-20">
             <div className="container mx-auto px-4 text-center">
               <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
                 {t("nav.top.getInvolved")}
               </h1>
-              <p className="text-lg text-cream/80 max-w-2xl mx-auto">
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
                 {t("about.hero.subtitle")}
               </p>
             </div>

@@ -189,7 +189,7 @@ export const Header = () => {
                 )}>
                   {item.children.map((child: any, idx: number) => (
                     child.divider ? (
-                      <div key={idx} className="border-t border-gray-200 my-1" />
+                      <div key={idx} className="border-t border-border my-1" />
                     ) : child.external ? (
                       <a
                         key={child.name}
@@ -197,7 +197,7 @@ export const Header = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
-                        style={{ color: '#0000CD' }}
+                        
                       >
                         {child.name}
                         <ExternalLink className="w-3 h-3 text-scef-gold" />

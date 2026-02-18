@@ -229,7 +229,7 @@ const Donate = () => {
         
         <main className="pt-24 pb-20">
           {/* Hero */}
-          <section className="bg-gradient-to-br from-earth to-earth/90 text-cream py-20">
+          <section className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white py-20">
             <div className="container mx-auto px-4 text-center">
               <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-6 shadow-xl">
                 <img src={gfaWalletLogo} alt="GFA Wallet" className="w-full h-full object-contain" />
@@ -238,7 +238,7 @@ const Donate = () => {
                 {t("donate.hero.title") || "Fund Education. Change Lives."}
               </h1>
               <p className="text-lg text-scef-gold font-semibold mb-2">Powered by GFA Wallet • GetFinance Africa</p>
-              <p className="text-cream/80 max-w-2xl mx-auto">
+              <p className="text-white/80 max-w-2xl mx-auto">
                 {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
               </p>
             </div>
