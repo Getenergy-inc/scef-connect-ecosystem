@@ -240,7 +240,7 @@ export const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
           <p className="text-sm text-white/50 text-center font-body">
-            © {new Date().getFullYear()} Santos Creations Educational Foundation. {t("footer.copyright")}
+            © {new Date().getFullYear()} Santos Creations Educational Foundation. All rights reserved.
           </p>
         </div>
       </div>

@@ -23,7 +23,7 @@ export const MainNavbar = () => {
     <nav
       className={cn(
         "bg-scef-blue transition-all duration-300",
-        scrolled && "fixed top-0 left-0 right-0 z-50 shadow-lg"
+        scrolled && "shadow-lg"
       )}
     >
       <div className="container mx-auto px-4 py-3">
@@ -151,7 +151,7 @@ export const MainNavbar = () => {
             {/* Mobile CTAs */}
             <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
               <Button
-                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold border-2 border-black"
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
                 asChild
               >
                 <Link to="/membership" onClick={() => setMobileMenuOpen(false)}>

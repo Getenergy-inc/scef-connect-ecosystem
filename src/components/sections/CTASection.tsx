@@ -30,7 +30,7 @@ export const CTASection = () => {
         <div className="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
           {/* Join Card */}
           <div className="group bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/20 hover:border-scef-gold/50 transition-all duration-300 hover:bg-white/15">
-            <div className="w-14 h-14 rounded-2xl bg-scef-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+            <div className="w-14 h-14 rounded-2xl bg-scef-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Users className="w-7 h-7 text-scef-gold" />
             </div>
             
@@ -41,7 +41,7 @@ export const CTASection = () => {
               {t("about.hero.subtitle")}
             </p>
             
-            <Button size="lg" className="w-full bg-scef-gold text-scef-blue hover:bg-scef-gold/90 border-2 border-black" asChild>
+            <Button size="lg" className="w-full bg-scef-gold text-scef-blue hover:bg-scef-gold/90" asChild>
               <Link to="/membership">
                 {t("home.final.ctaJoin")}
                 <ArrowRight className="w-4 h-4" />
@@ -51,7 +51,7 @@ export const CTASection = () => {
 
           {/* Partner Card */}
           <div className="group bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/20 hover:border-scef-gold/50 transition-all duration-300 hover:bg-white/15">
-            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Handshake className="w-7 h-7 text-white" />
             </div>
             
@@ -72,7 +72,7 @@ export const CTASection = () => {
 
           {/* Donate Card */}
           <div className="group bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/20 hover:border-scef-gold/50 transition-all duration-300 hover:bg-white/15">
-            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Heart className="w-7 h-7 text-white" />
             </div>
             

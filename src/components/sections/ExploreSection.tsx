@@ -53,9 +53,9 @@ export const ExploreSection = () => {
               to={item.href}
               className="group block"
             >
-              <div className="bg-card rounded-xl p-6 border-2 border-black hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full">
+              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full">
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-lg ${item.color} flex items-center justify-center mb-4 border border-black group-hover:scale-110 transition-transform`}>
+                <div className={`w-12 h-12 rounded-lg ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                   <item.icon className="w-6 h-6" />
                 </div>
 
@@ -81,7 +81,7 @@ export const ExploreSection = () => {
         <div className="mt-12 text-center">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold border-2 border-black"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
             asChild
           >
             <Link to="/about">
