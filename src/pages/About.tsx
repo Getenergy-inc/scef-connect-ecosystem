@@ -480,7 +480,7 @@ const About = () => {
                   <img 
                     src="/assets/governance/cvo-about.jpg" 
                     alt="Babashola Aderibigbe — Chief Visionary Officer, SCEF"
-                    className="w-full h-full object-cover rotate-90"
+                    className="w-full h-full object-cover -rotate-90"
                   />
                 </div>
                 
