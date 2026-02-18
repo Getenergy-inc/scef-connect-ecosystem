@@ -470,24 +470,95 @@ const Governance = () => {
           {/* Contact Leadership */}
           <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("governance.contact.title")}
-                </h2>
-                <p className="text-muted-foreground mb-12">
-                  {t("governance.contact.subtitle")}
-                </p>
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    {t("governance.contact.title")}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {t("governance.contact.subtitle")}
+                  </p>
+                </div>
                 
-                <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Executive Office */}
                   <div className="bg-background rounded-xl border border-border p-6">
-                    <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold text-foreground mb-2">{t("governance.contact.email")}</h3>
-                    <a href="mailto:governance@scef.org" className="text-primary hover:underline">governance@scef.org</a>
+                    <div className="w-10 h-10 rounded-lg bg-scef-gold/15 border border-scef-gold/30 flex items-center justify-center mb-3">
+                      <Crown className="w-5 h-5 text-scef-gold" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-3">Executive Office</h3>
+                    <div className="space-y-2 text-sm">
+                      <a href="mailto:babashola@santoscreations.org" className="block text-primary hover:underline">babashola@santoscreations.org</a>
+                      <a href="mailto:office@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">office@santoscreations.org</a>
+                      <a href="mailto:admin@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">admin@santoscreations.org</a>
+                    </div>
                   </div>
+
+                  {/* General Inquiries */}
                   <div className="bg-background rounded-xl border border-border p-6">
-                    <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-semibold text-foreground mb-2">{t("governance.contact.phone")}</h3>
-                    <a href="tel:+2341234567890" className="text-primary hover:underline">+234 123 456 7890</a>
+                    <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center mb-3">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-3">General Inquiries</h3>
+                    <div className="space-y-2 text-sm">
+                      <a href="mailto:info@santoscreations.org" className="block text-primary hover:underline">info@santoscreations.org</a>
+                      <a href="mailto:support@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">support@santoscreations.org</a>
+                      <a href="mailto:donation@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">donation@santoscreations.org</a>
+                    </div>
+                  </div>
+
+                  {/* Partnerships & Chapters */}
+                  <div className="bg-background rounded-xl border border-border p-6">
+                    <div className="w-10 h-10 rounded-lg bg-forest/15 border border-forest/30 flex items-center justify-center mb-3">
+                      <HeartHandshake className="w-5 h-5 text-forest" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-3">Partnerships & Chapters</h3>
+                    <div className="space-y-2 text-sm">
+                      <a href="mailto:partnership@santoscreations.org" className="block text-primary hover:underline">partnership@santoscreations.org</a>
+                      <a href="mailto:chapters@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">chapters@santoscreations.org</a>
+                      <a href="mailto:membership@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">membership@santoscreations.org</a>
+                    </div>
+                  </div>
+
+                  {/* HR & Volunteering */}
+                  <div className="bg-background rounded-xl border border-border p-6">
+                    <div className="w-10 h-10 rounded-lg bg-terracotta/15 border border-terracotta/30 flex items-center justify-center mb-3">
+                      <Users className="w-5 h-5 text-terracotta" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-3">HR & Volunteering</h3>
+                    <div className="space-y-2 text-sm">
+                      <a href="mailto:hr@santoscreations.org" className="block text-primary hover:underline">hr@santoscreations.org</a>
+                      <a href="mailto:volunteer@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">volunteer@santoscreations.org</a>
+                      <a href="mailto:internship@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">internship@santoscreations.org</a>
+                    </div>
+                  </div>
+
+                  {/* Programs */}
+                  <div className="bg-background rounded-xl border border-border p-6">
+                    <div className="w-10 h-10 rounded-lg bg-scef-gold/15 border border-scef-gold/30 flex items-center justify-center mb-3">
+                      <FileText className="w-5 h-5 text-scef-gold" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-3">Programs</h3>
+                    <div className="space-y-2 text-sm">
+                      <a href="mailto:nesa.africa@santoscreations.org" className="block text-primary hover:underline">nesa.africa@santoscreations.org</a>
+                      <a href="mailto:eon@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">eon@santoscreations.org</a>
+                      <a href="mailto:elibrarynigeria@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">elibrarynigeria@santoscreations.org</a>
+                      <a href="mailto:certificate@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">certificate@santoscreations.org</a>
+                    </div>
+                  </div>
+
+                  {/* Operations & Finance */}
+                  <div className="bg-background rounded-xl border border-border p-6">
+                    <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center mb-3">
+                      <Briefcase className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground mb-3">Operations & Finance</h3>
+                    <div className="space-y-2 text-sm">
+                      <a href="mailto:sobcd@santoscreations.org" className="block text-primary hover:underline">sobcd@santoscreations.org</a>
+                      <a href="mailto:finance@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">finance@santoscreations.org</a>
+                      <a href="mailto:legal@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">legal@santoscreations.org</a>
+                      <a href="mailto:businessdevelopment@santoscreations.org" className="block text-muted-foreground hover:text-primary transition-colors">businessdevelopment@santoscreations.org</a>
+                    </div>
                   </div>
                 </div>
               </div>
