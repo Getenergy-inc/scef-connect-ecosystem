@@ -17,6 +17,15 @@ import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import aboutHeroImage from "@/assets/about-scef-hero.jpg";
+import history1997 from "@/assets/history/history-1997-origins.jpg";
+import history2003 from "@/assets/history/history-2003-advocacy.jpg";
+import history2003_2007 from "@/assets/history/history-2003-2007-partnerships.jpg";
+import history2010 from "@/assets/history/history-2010-registration.jpg";
+import history2012_2019 from "@/assets/history/history-2012-2019-youth.jpg";
+import history2012_2021 from "@/assets/history/history-2012-2021-elibrary.jpg";
+import history2002_2025 from "@/assets/history/history-2002-2025-global.jpg";
+import history2024 from "@/assets/history/history-2024-fms.jpg";
+import historyToday from "@/assets/history/history-today-pan-african.jpg";
 
 const divisionIcons = {
   bgeo: Shield,
@@ -522,46 +531,30 @@ const About = () => {
                   </p>
                 </div>
 
-                {/* Timeline */}
-                <div className="relative">
-                  {/* Timeline Line */}
-                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-scef-gold/30 -translate-x-1/2" />
-                  
-                  {/* Timeline Items */}
-                  <div className="space-y-8">
-                    {/* 1997 - Origins */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
-                          1997
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.1997.title")}
-                        </h3>
+                {/* Timeline Cards with Images */}
+                <div className="space-y-10">
+                  {/* 1997 - Origins */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-2 relative h-56 md:h-auto">
+                        <img src={history1997} alt="SCEF origins — children with books in Nigeria, 1997" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">1997</span>
+                        </div>
                       </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {t("about.history.timeline.1997.description")}
-                        </p>
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.1997.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{t("about.history.timeline.1997.description")}</p>
                       </div>
                     </div>
+                  </div>
 
-                    {/* 2003 - Advocacy Launch */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8 md:order-1 order-1">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
-                          2003
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2003.title")}
-                        </h3>
-                      </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10 md:order-2 order-2">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.2003.description")}
-                        </p>
+                  {/* 2003 - Advocacy Launch */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2003.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2003.description")}</p>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2 text-sm text-muted-foreground">
                             <Radio className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
@@ -577,23 +570,27 @@ const About = () => {
                           </li>
                         </ul>
                       </div>
-                    </div>
-
-                    {/* 2003-2007 - Early Partnerships */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
-                          2003–2007
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2003-2007.title")}
-                        </h3>
+                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
+                        <img src={history2003} alt="Media advocacy — radio and TV production, 2003" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 right-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2003</span>
+                        </div>
                       </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.2003-2007.description")}
-                        </p>
+                    </div>
+                  </div>
+
+                  {/* 2003-2007 - Early Partnerships */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-2 relative h-56 md:h-auto">
+                        <img src={history2003_2007} alt="Partnership signing ceremony, 2003-2007" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">2003–2007</span>
+                        </div>
+                      </div>
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2003-2007.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2003-2007.description")}</p>
                         <div className="flex flex-wrap gap-2">
                           {["Kwara State Ministry of Education", "PharmAccess Foundation", "AIESEC", "VSO", "ESSPIN", "Radio Kwara", "Kwara TV"].map((partner, i) => (
                             <span key={i} className="px-2 py-1 text-xs rounded-full bg-scef-gold/10 text-scef-gold border border-scef-gold/20">
@@ -603,40 +600,36 @@ const About = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* 2010 - Registration */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
-                          2010
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2010.title")}
-                        </h3>
+                  {/* 2010 - Registration */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2010.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{t("about.history.timeline.2010.description")}</p>
                       </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {t("about.history.timeline.2010.description")}
-                        </p>
+                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
+                        <img src={history2010} alt="Official SCEF registration, 2010" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 right-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2010</span>
+                        </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* 2012-2019 - Youth Development */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
-                          2012–2019
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2012-2019.title")}
-                        </h3>
+                  {/* 2012-2019 - Youth Development */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-2 relative h-56 md:h-auto">
+                        <img src={history2012_2019} alt="Youth ICT training program, 2012-2019" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">2012–2019</span>
+                        </div>
                       </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.2012-2019.description")}
-                        </p>
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2012-2019.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2012-2019.description")}</p>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2 text-sm">
                             <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
@@ -653,22 +646,14 @@ const About = () => {
                         </ul>
                       </div>
                     </div>
+                  </div>
 
-                    {/* 2012-2021 - eLibrary */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
-                          2012–2021
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2012-2021.title")}
-                        </h3>
-                      </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.2012-2021.description")}
-                        </p>
+                  {/* 2012-2021 - eLibrary */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2012-2021.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2012-2021.description")}</p>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2 text-sm">
                             <BookOpen className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
@@ -684,23 +669,27 @@ const About = () => {
                           </li>
                         </ul>
                       </div>
-                    </div>
-
-                    {/* 2002-2025 - Global Engagement */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold mb-2">
-                          2002–2025
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2002-2025-engagement.title")}
-                        </h3>
+                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
+                        <img src={history2012_2021} alt="Digital library with students on tablets, 2012-2021" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 right-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2012–2021</span>
+                        </div>
                       </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-gold border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.2002-2025-engagement.description")}
-                        </p>
+                    </div>
+                  </div>
+
+                  {/* 2002-2025 - Global Engagement */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-2 relative h-56 md:h-auto">
+                        <img src={history2002_2025} alt="Global team collaboration and video conference, 2002-2025" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">2002–2025</span>
+                        </div>
+                      </div>
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2002-2025-engagement.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2002-2025-engagement.description")}</p>
                         <div className="bg-scef-gold/10 rounded-lg p-4 border border-scef-gold/20">
                           <p className="text-sm text-foreground font-semibold mb-2">2,000+ participants worldwide including:</p>
                           <ul className="text-sm text-muted-foreground space-y-1">
@@ -711,71 +700,64 @@ const About = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* 2024-Present - SCEF-FMS */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold mb-2">
-                          2024–Present
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.2024-present.title")}
-                        </h3>
-                      </div>
-                      <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.2024-present.description")}
-                        </p>
+                  {/* 2024-Present - SCEF-FMS */}
+                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2024-present.title")}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2024-present.description")}</p>
                         <div className="flex flex-wrap gap-2">
-                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">
-                            PKIS (PanCokrato) — since 2003
-                          </span>
-                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">
-                            Get Energy — since 2024
-                          </span>
+                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">PKIS (PanCokrato) — since 2003</span>
+                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">Get Energy — since 2024</span>
+                        </div>
+                      </div>
+                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
+                        <img src={history2024} alt="SCEF-FMS fintech platform launch, 2024" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute top-4 right-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2024–Present</span>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Today - Pan-African Model */}
-                    <div className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                      <div className="md:w-1/2 md:text-right md:pr-8">
-                        <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-scef-gold to-scef-blue text-white text-sm font-bold mb-2">
-                          Today
-                        </span>
-                        <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.timeline.today.title")}
-                        </h3>
+                  {/* Today - Pan-African Model */}
+                  <div className="bg-gradient-to-r from-scef-blue to-scef-blue-darker rounded-2xl overflow-hidden shadow-lg">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-2 relative h-56 md:h-auto">
+                        <img src={historyToday} alt="Pan-African education summit with continental leaders" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-scef-blue/40 hidden md:block" />
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-scef-gold to-scef-gold-light text-scef-blue text-sm font-bold shadow-lg">Today</span>
+                        </div>
                       </div>
-                      <div className="absolute left-4 md:left-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-scef-gold to-scef-blue border-4 border-background -translate-x-1/2 mt-1" />
-                      <div className="md:w-1/2 md:pl-8 pl-10">
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                          {t("about.history.timeline.today.description")}
-                        </p>
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                        <h3 className="font-display text-xl font-bold text-white mb-3">{t("about.history.timeline.today.title")}</h3>
+                        <p className="text-white/70 leading-relaxed mb-4">{t("about.history.timeline.today.description")}</p>
                         <ul className="space-y-2 mb-4">
                           <li className="flex items-start gap-2 text-sm">
                             <Award className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Standards & recognition (NESA-Africa)</span>
+                            <span className="text-white/80">Standards & recognition (NESA-Africa)</span>
                           </li>
                           <li className="flex items-start gap-2 text-sm">
                             <Laptop className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Digital learning platforms (EOA, eLibrary)</span>
+                            <span className="text-white/80">Digital learning platforms (EOA, eLibrary)</span>
                           </li>
                           <li className="flex items-start gap-2 text-sm">
                             <Tv className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Media advocacy (TV, radio, webinars)</span>
+                            <span className="text-white/80">Media advocacy (TV, radio, webinars)</span>
                           </li>
                           <li className="flex items-start gap-2 text-sm">
                             <Globe className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Local chapters with compliance tracking</span>
+                            <span className="text-white/80">Local chapters with compliance tracking</span>
                           </li>
                           <li className="flex items-start gap-2 text-sm">
                             <Shield className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Accountability systems aligned with SDG 4 & AU 2063</span>
+                            <span className="text-white/80">Accountability systems aligned with SDG 4 & AU 2063</span>
                           </li>
                         </ul>
-                        <p className="text-sm text-foreground font-medium italic">
+                        <p className="text-sm text-scef-gold font-medium italic">
                           {t("about.history.timeline.today.closing")}
                         </p>
                       </div>
