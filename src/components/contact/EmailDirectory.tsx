@@ -1,5 +1,5 @@
-import { Mail, ExternalLink } from "lucide-react";
-import { emailCategories, getMailtoLink } from "@/config/emailDirectory";
+import { Mail } from "lucide-react";
+import { emailCategories, categoryLabels, getMailtoLink } from "@/config/emailDirectory";
 
 interface EmailDirectoryProps {
   variant?: "full" | "condensed";
@@ -22,29 +22,17 @@ export const EmailDirectory = ({
           Contact Us
         </h4>
         <div className="grid grid-cols-2 gap-2 text-sm">
-          <a 
-            href={getMailtoLink("info@santoscreations.org")}
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
+          <a href={getMailtoLink("info@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
             info@santoscreations.org
           </a>
-          <a 
-            href={getMailtoLink("partnership@santoscreations.org")}
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
+          <a href={getMailtoLink("partnership@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
             partnership@santoscreations.org
           </a>
-          <a 
-            href={getMailtoLink("membership@santoscreations.org")}
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
+          <a href={getMailtoLink("membership@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
             membership@santoscreations.org
           </a>
-          <a 
-            href={getMailtoLink("hr@santoscreations.org")}
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            hr@santoscreations.org
+          <a href={getMailtoLink("support@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
+            support@santoscreations.org
           </a>
         </div>
       </div>
@@ -66,11 +54,8 @@ export const EmailDirectory = ({
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {categoriesToShow.map(([categoryKey, emails]) => (
           <div key={categoryKey} className="space-y-3">
-            <h4 className="font-semibold text-foreground capitalize text-sm border-b border-border pb-2">
-              {categoryKey === "getInvolved" ? "Get Involved" : 
-               categoryKey === "partnerships" ? "Partnerships & CSR" :
-               categoryKey === "programs" ? "Programs" :
-               categoryKey === "hr" ? "HR & Leadership" : "General"}
+            <h4 className="font-semibold text-foreground text-sm border-b border-border pb-2">
+              {categoryLabels[categoryKey] || categoryKey}
             </h4>
             <ul className="space-y-2">
               {emails.map((item) => (
