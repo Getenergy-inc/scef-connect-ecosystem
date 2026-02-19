@@ -487,9 +487,9 @@ const About = () => {
                 {/* CVO Photo */}
                 <div className="w-40 h-40 md:w-52 md:h-52 rounded-2xl overflow-hidden border-4 border-scef-gold/40 shadow-2xl shrink-0">
                   <img 
-                    src="/assets/governance/cvo-about.jpg" 
+                    src="/assets/governance/babashola-aderibigbe.jpg" 
                     alt="Babashola Aderibigbe — Chief Visionary Officer, SCEF"
-                    className="w-full h-full object-cover -rotate-90"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 
