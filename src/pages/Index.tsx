@@ -10,6 +10,7 @@ import { PartnersStakeholdersSection } from "@/components/sections/PartnersStake
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { NesaAfricaCard } from "@/components/sections/NesaAfricaCard";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const Index = () => {
@@ -61,6 +62,9 @@ const Index = () => {
           
           {/* Our Programs */}
           <ProgramsGrid />
+          
+          {/* NESA Africa 2025 Card */}
+          <NesaAfricaCard />
           
           {/* Explore Section */}
           <ExploreSection />
