@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { DivisionLeaders } from "@/components/divisions/DivisionLeaders";
 import { 
   Building2, Shield, Laptop, TrendingUp, Tv, Globe, 
   ArrowRight, Users, CheckCircle2
@@ -214,6 +215,8 @@ const Divisions = () => {
               </div>
             </div>
           </section>
+
+          <DivisionLeaders />
 
           {/* CTA */}
           <section className="py-20 bg-card">
