@@ -1000,6 +1000,57 @@ export type Database = {
           },
         ]
       }
+      membership_applications: {
+        Row: {
+          address: string | null
+          commitment: string | null
+          created_at: string
+          date_of_birth: string | null
+          date_stamp: string | null
+          email: string
+          id: string
+          mobile_numbers: string | null
+          name: string
+          nationality: string | null
+          preferred_language: string | null
+          sn: number
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          commitment?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          date_stamp?: string | null
+          email: string
+          id?: string
+          mobile_numbers?: string | null
+          name: string
+          nationality?: string | null
+          preferred_language?: string | null
+          sn: number
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          commitment?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          date_stamp?: string | null
+          email?: string
+          id?: string
+          mobile_numbers?: string | null
+          name?: string
+          nationality?: string | null
+          preferred_language?: string | null
+          sn?: number
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       message_reactions: {
         Row: {
           created_at: string
