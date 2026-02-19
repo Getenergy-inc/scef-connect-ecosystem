@@ -8,6 +8,7 @@ const divisionLeaderMap: Record<string, { code: string; division: string }> = {
   "Director of Operations": { code: "SOBCD", division: "Strategic Operations & Business Compliance" },
   "Director of Technology": { code: "TDSD", division: "Technology & Digital Services" },
   "Director of Media Business": { code: "OMBDD", division: "Online Media Business Development" },
+  "Director of Santos Media": { code: "Santos Media", division: "Santos Media Division" },
   "Director of Chapter Services": { code: "LCS", division: "Local Chapter Services" },
 };
 
