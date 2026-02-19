@@ -301,7 +301,7 @@ const Governance = () => {
                   </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   <a
                     href="/assets/endorsements/csacefa-lagos-endorsement.pdf"
                     target="_blank"
@@ -345,6 +345,60 @@ const Governance = () => {
                       </span>
                     </div>
                   </a>
+
+                  <a
+                    href="/assets/endorsements/fawe-confirmation.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-lg transition-all flex items-start gap-4"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-forest/15 border border-forest/30 flex items-center justify-center shrink-0">
+                      <FileText className="w-6 h-6 text-forest" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                        FAWE Africa Confirmation Letter
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Forum for African Women Educationalists (FAWE) confirms endorsement of NESA-Africa and EduAid-Africa programs.
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                        View PDF <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href="/assets/endorsements/fawe-press-release.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-lg transition-all flex items-start gap-4"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-terracotta/15 border border-terracotta/30 flex items-center justify-center shrink-0">
+                      <FileText className="w-6 h-6 text-terracotta" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                        FAWE Africa Press Release
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Official FAWE press release announcing the partnership with SCEF for advancing inclusive education across Africa.
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                        View PDF <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </a>
+
+                  {/* FAWE Partnership Announcement */}
+                  <div className="sm:col-span-2 lg:col-span-1 bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all">
+                    <img
+                      src="/assets/endorsements/fawe-partnership-announcement.jpg"
+                      alt="FAWE Africa Partnership Announcement endorsing NESA-Africa 2025/2027 and EduAid-Africa 2026/2027"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
