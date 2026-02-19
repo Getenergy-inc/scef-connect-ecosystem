@@ -390,6 +390,28 @@ const Governance = () => {
                     </div>
                   </a>
 
+                  <a
+                    href="/assets/endorsements/csacefa-lagos-endorsement-3.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-card rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-lg transition-all flex items-start gap-4"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-scef-gold/15 border border-scef-gold/30 flex items-center justify-center shrink-0">
+                      <FileText className="w-6 h-6 text-scef-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                        CSACEFA Lagos Endorsement (Page 3)
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Additional endorsement page from CSACEFA Lagos State chapter supporting SCEF's education standards and reform agenda.
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                        View PDF <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </a>
+
                   {/* FAWE Partnership Announcement */}
                   <div className="sm:col-span-2 lg:col-span-1 bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all">
                     <img
