@@ -8,6 +8,7 @@ interface GovernanceProfileSectionProps {
   boardType: "bot" | "boa" | "bod" | "lcp" | "management";
   title: string;
   subtitle?: string;
+  excludeTitles?: string[];
 }
 
 const boardIcons = {
@@ -38,9 +39,10 @@ export const GovernanceProfileSection = ({
   boardType,
   title,
   subtitle,
+  excludeTitles,
 }: GovernanceProfileSectionProps) => {
   const { data: profiles, isLoading } = useQuery({
-    queryKey: ["governance-profiles", boardType],
+    queryKey: ["governance-profiles", boardType, excludeTitles],
     queryFn: async () => {
       const { data, error } = await supabase
         .from("governance_profiles")
@@ -50,7 +52,11 @@ export const GovernanceProfileSection = ({
         .order("display_order", { ascending: true });
 
       if (error) throw error;
-      return data as GovernanceProfile[];
+      let results = data as GovernanceProfile[];
+      if (excludeTitles?.length) {
+        results = results.filter((p) => !excludeTitles.includes(p.title));
+      }
+      return results;
     },
   });
 

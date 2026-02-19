@@ -9,6 +9,7 @@ import {
   FileText, Mail, Phone, Crown, UserCircle, HeartHandshake
 } from "lucide-react";
 import { GovernanceProfileSection } from "@/components/governance/GovernanceProfileSection";
+import { DivisionLeaders } from "@/components/divisions/DivisionLeaders";
 import { EmailDirectory } from "@/components/contact/EmailDirectory";
 
 const colorClasses = {
@@ -267,16 +268,25 @@ const Governance = () => {
             subtitle="Country-level leadership driving local impact"
           />
 
-          {/* Management Team Profiles from Database */}
-          <section id="management" className="py-20 bg-card scroll-mt-24">
-            <div className="container mx-auto px-4">
-              <GovernanceProfileSection 
-                boardType="management"
-                title="Meet the Team"
-                subtitle="The professionals leading our day-to-day operations"
-              />
-            </div>
+          {/* Division Leaders + Management Team */}
+          <section id="management" className="scroll-mt-24">
+            <DivisionLeaders />
           </section>
+
+          {/* Supporting Management Staff */}
+          <GovernanceProfileSection 
+            boardType="management"
+            title="Supporting Leadership"
+            subtitle="Key professionals driving day-to-day operations across the foundation"
+            excludeTitles={[
+              "Chief Visionary Officer (CVO)",
+              "Director of Operations",
+              "Director of Technology",
+              "Director of Media Business",
+              "Director of Santos Media",
+              "Director of Chapter Services",
+            ]}
+          />
 
           {/* Endorsement Letters */}
           <section className="py-20 bg-muted/30">
