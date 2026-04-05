@@ -1,125 +1,43 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Users, Building2, Globe, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Users, Building2, Globe } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
 export const GovernanceSnapshot = () => {
   const { t, isRTL } = useLocale();
 
-  const governanceLayers = [
-    {
-      icon: Shield,
-      titleKey: "governance.layers.bot.title",
-      subtitleKey: "governance.snapshot.bot.subtitle",
-      descriptionKey: "governance.layers.bot.description",
-      countKey: "governance.layers.bot.count",
-      approvesKeys: ["governance.snapshot.bot.approves.0", "governance.snapshot.bot.approves.1", "governance.snapshot.bot.approves.2"],
-      color: "bg-scef-gold/20 text-scef-gold-dark border-scef-gold/40",
-      iconBg: "bg-scef-gold text-scef-blue-dark",
-    },
-    {
-      icon: Users,
-      titleKey: "governance.layers.boa.title",
-      subtitleKey: "governance.snapshot.boa.subtitle",
-      descriptionKey: "governance.layers.boa.description",
-      countKey: "governance.layers.boa.count",
-      approvesKeys: ["governance.snapshot.boa.approves.0", "governance.snapshot.boa.approves.1", "governance.snapshot.boa.approves.2"],
-      color: "bg-primary/10 text-primary border-primary/30",
-      iconBg: "bg-primary text-primary-foreground",
-    },
-    {
-      icon: Building2,
-      titleKey: "governance.layers.bod.title",
-      subtitleKey: "governance.snapshot.bod.subtitle",
-      descriptionKey: "governance.layers.bod.description",
-      countKey: "governance.layers.bod.count",
-      approvesKeys: ["governance.snapshot.bod.approves.0", "governance.snapshot.bod.approves.1", "governance.snapshot.bod.approves.2"],
-      color: "bg-scef-gold/20 text-scef-gold-dark border-scef-gold/40",
-      iconBg: "bg-scef-gold text-scef-blue-dark",
-    },
-    {
-      icon: Globe,
-      titleKey: "governance.layers.lcps.title",
-      subtitleKey: "governance.snapshot.lcps.subtitle",
-      descriptionKey: "governance.layers.lcps.description",
-      countKey: "governance.layers.lcps.count",
-      approvesKeys: ["governance.snapshot.lcps.approves.0", "governance.snapshot.lcps.approves.1", "governance.snapshot.lcps.approves.2"],
-      color: "bg-primary/10 text-primary border-primary/30",
-      iconBg: "bg-primary text-primary-foreground",
-    },
+  const layers = [
+    { icon: Shield, titleKey: "governance.layers.bot.title", descKey: "governance.layers.bot.description", countKey: "governance.layers.bot.count" },
+    { icon: Users, titleKey: "governance.layers.boa.title", descKey: "governance.layers.boa.description", countKey: "governance.layers.boa.count" },
+    { icon: Building2, titleKey: "governance.layers.bod.title", descKey: "governance.layers.bod.description", countKey: "governance.layers.bod.count" },
+    { icon: Globe, titleKey: "governance.layers.lcps.title", descKey: "governance.layers.lcps.description", countKey: "governance.layers.lcps.count" },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="py-16 bg-muted/30" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
-            <Shield className="w-4 h-4" />
-            {t("governance.layers.title")}
-          </div>
-          
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5">
+        <div className="text-center mb-10">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
             {t("governance.hero.title")}
           </h2>
-          
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             {t("governance.hero.subtitle")}
           </p>
         </div>
 
-        {/* Governance Layers Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {governanceLayers.map((layer, index) => (
-            <div
-              key={layer.titleKey}
-              className="group bg-card rounded-2xl p-6 border border-border hover:shadow-xl transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl ${layer.iconBg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                <layer.icon className="w-7 h-7" />
-              </div>
-              
-              {/* Title & Subtitle */}
-              <h3 className="font-display text-lg font-bold text-foreground mb-1">
-                {t(layer.titleKey)}
-              </h3>
-              <p className="text-sm text-muted-foreground font-medium mb-3">
-                {t(layer.subtitleKey)}
-              </p>
-              
-              {/* Count Badge */}
-              <span className={`inline-block px-3 py-1 rounded-full ${layer.color} text-xs font-semibold mb-4 border`}>
-                {t(layer.countKey)}
-              </span>
-              
-              {/* Description */}
-              <p className="text-sm text-muted-foreground mb-4">
-                {t(layer.descriptionKey)}
-              </p>
-              
-              {/* Approves List */}
-              <div className="space-y-2">
-                {layer.approvesKeys.map((key) => (
-                  <div key={key} className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <CheckCircle className="w-3.5 h-3.5 text-scef-gold flex-shrink-0" />
-                    {t(key)}
-                  </div>
-                ))}
-              </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+          {layers.map((layer) => (
+            <div key={layer.titleKey} className="bg-card rounded-xl p-5 border border-border">
+              <layer.icon className="w-8 h-8 text-primary mb-3" />
+              <h3 className="font-display text-base font-bold text-foreground mb-1">{t(layer.titleKey)}</h3>
+              <span className="text-xs text-scef-gold font-semibold">{t(layer.countKey)}</span>
+              <p className="text-sm text-muted-foreground mt-2">{t(layer.descKey)}</p>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-2 border-primary hover:bg-primary hover:text-primary-foreground"
-            asChild
-          >
+          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
             <Link to="/governance">
               {t("about.trust.ctaHub")}
               <ArrowRight className="w-4 h-4 ms-2" />
