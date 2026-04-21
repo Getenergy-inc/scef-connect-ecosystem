@@ -345,7 +345,10 @@ const LocalChapters = () => {
                   Join a <span className="text-scef-gold">Chapter</span>
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed">
-                  Connect with like-minded individuals in your community. Find a local chapter or start one of your own.
+                  Connect with like-minded members in your region. Find a local chapter or start one of your own.
+                </p>
+                <p className="mt-4 text-sm text-scef-gold/90 font-medium">
+                  Chapters are the regional engine of our membership-run NGO advocating Achieving Education for All in Africa.
                 </p>
               </div>
             </div>

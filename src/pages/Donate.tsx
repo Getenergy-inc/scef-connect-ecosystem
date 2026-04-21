@@ -243,7 +243,10 @@ const Donate = () => {
                 Fund education. <span className="text-scef-gold">Change lives.</span>
               </h1>
               <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed mb-3">
-                {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and education programs across 54+ African regions."}
+                {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and education programs across African regions."}
+              </p>
+              <p className="text-sm text-scef-gold/90 font-medium max-w-2xl mx-auto mb-3">
+                Fueling our membership-run NGO advocating Achieving Education for All in Africa.
               </p>
               <p className="text-xs uppercase tracking-widest text-scef-gold/80 font-semibold">
                 Powered by GFA Wallet · GetFinance Africa
