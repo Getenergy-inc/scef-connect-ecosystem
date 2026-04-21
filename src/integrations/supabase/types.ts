@@ -436,6 +436,243 @@ export type Database = {
         }
         Relationships: []
       }
+      csr_inquiries: {
+        Row: {
+          assigned_to: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone: string | null
+          converted_project_id: string | null
+          country: string | null
+          created_at: string
+          focus_areas: string[] | null
+          funding_range: string | null
+          id: string
+          message: string | null
+          notes: string | null
+          organization_name: string
+          organization_type: string | null
+          preferred_regions: string[] | null
+          source: string | null
+          status: string
+          timeline: string | null
+          updated_at: string
+        }
+        Insert: {
+          assigned_to?: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone?: string | null
+          converted_project_id?: string | null
+          country?: string | null
+          created_at?: string
+          focus_areas?: string[] | null
+          funding_range?: string | null
+          id?: string
+          message?: string | null
+          notes?: string | null
+          organization_name: string
+          organization_type?: string | null
+          preferred_regions?: string[] | null
+          source?: string | null
+          status?: string
+          timeline?: string | null
+          updated_at?: string
+        }
+        Update: {
+          assigned_to?: string | null
+          contact_email?: string
+          contact_name?: string
+          contact_phone?: string | null
+          converted_project_id?: string | null
+          country?: string | null
+          created_at?: string
+          focus_areas?: string[] | null
+          funding_range?: string | null
+          id?: string
+          message?: string | null
+          notes?: string | null
+          organization_name?: string
+          organization_type?: string | null
+          preferred_regions?: string[] | null
+          source?: string | null
+          status?: string
+          timeline?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      csr_milestones: {
+        Row: {
+          amount: number | null
+          completed_at: string | null
+          created_at: string
+          description: string | null
+          display_order: number | null
+          due_date: string | null
+          evidence_url: string | null
+          id: string
+          project_id: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          amount?: number | null
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          due_date?: string | null
+          evidence_url?: string | null
+          id?: string
+          project_id: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number | null
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          due_date?: string | null
+          evidence_url?: string | null
+          id?: string
+          project_id?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "csr_milestones_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "csr_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      csr_project_reports: {
+        Row: {
+          beneficiaries_reached: number | null
+          challenges: string | null
+          created_at: string
+          created_by: string | null
+          document_url: string | null
+          funds_disbursed: number | null
+          highlights: string | null
+          id: string
+          project_id: string
+          published_at: string | null
+          report_period: string
+        }
+        Insert: {
+          beneficiaries_reached?: number | null
+          challenges?: string | null
+          created_at?: string
+          created_by?: string | null
+          document_url?: string | null
+          funds_disbursed?: number | null
+          highlights?: string | null
+          id?: string
+          project_id: string
+          published_at?: string | null
+          report_period: string
+        }
+        Update: {
+          beneficiaries_reached?: number | null
+          challenges?: string | null
+          created_at?: string
+          created_by?: string | null
+          document_url?: string | null
+          funds_disbursed?: number | null
+          highlights?: string | null
+          id?: string
+          project_id?: string
+          published_at?: string | null
+          report_period?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "csr_project_reports_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "csr_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      csr_projects: {
+        Row: {
+          country: string | null
+          created_at: string
+          currency: string
+          description: string | null
+          disbursed_amount: number
+          end_date: string | null
+          focus_area: string | null
+          id: string
+          inquiry_id: string | null
+          managed_by: string | null
+          partner_name: string
+          project_name: string
+          region: string | null
+          start_date: string | null
+          status: string
+          total_amount: number
+          updated_at: string
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          currency?: string
+          description?: string | null
+          disbursed_amount?: number
+          end_date?: string | null
+          focus_area?: string | null
+          id?: string
+          inquiry_id?: string | null
+          managed_by?: string | null
+          partner_name: string
+          project_name: string
+          region?: string | null
+          start_date?: string | null
+          status?: string
+          total_amount?: number
+          updated_at?: string
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          currency?: string
+          description?: string | null
+          disbursed_amount?: number
+          end_date?: string | null
+          focus_area?: string | null
+          id?: string
+          inquiry_id?: string | null
+          managed_by?: string | null
+          partner_name?: string
+          project_name?: string
+          region?: string | null
+          start_date?: string | null
+          status?: string
+          total_amount?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "csr_projects_inquiry_id_fkey"
+            columns: ["inquiry_id"]
+            isOneToOne: false
+            referencedRelation: "csr_inquiries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       decision_audit_logs: {
         Row: {
           action: string
