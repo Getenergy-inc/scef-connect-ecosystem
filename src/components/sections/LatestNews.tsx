@@ -13,8 +13,8 @@ const news = [
   {
     date: "2026-02-08",
     category: "Program",
-    title: "EduAid Africa Expands to 5 New Countries",
-    excerpt: "Scholarship program now reaches learners in Tanzania, Zambia, Cameroon, Mali, and Mozambique.",
+    title: "EduAid Africa Expands Across New Regions",
+    excerpt: "Scholarship program now reaches learners in additional African regions including Tanzania, Zambia, Cameroon, Mali and Mozambique.",
     href: "/programs/eduaid-africa",
   },
   {

@@ -62,10 +62,10 @@ const PartnerWithUs = () => {
   ];
 
   const impactAreas = [
-    { icon: Users, labelKey: "partnerWithUs.impact.chapters", value: "50+" },
-    { icon: Globe, labelKey: "partnerWithUs.impact.countries", value: "15+" },
+    { icon: Users, labelKey: "partnerWithUs.impact.chapters", value: "Reporting in progress" },
+    { icon: Globe, labelKey: "partnerWithUs.impact.countries", value: "Reporting in progress" },
     { icon: Award, labelKey: "partnerWithUs.impact.recognition", value: "NESA" },
-    { icon: Heart, labelKey: "partnerWithUs.impact.learners", value: "Growing" },
+    { icon: Heart, labelKey: "partnerWithUs.impact.learners", value: "Reporting in progress" },
   ];
 
   const csrBenefits = t("partnerWithUs.csr.benefits") as unknown as string[] || [

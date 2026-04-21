@@ -36,7 +36,7 @@ export default function EduAidLocalChapters() {
                 <div className="w-10 h-10 bg-[#1F892B]/10 rounded-lg flex items-center justify-center">
                   <MapPin className="w-5 h-5 text-[#1F892B]" />
                 </div>
-                <span className="text-foreground font-medium">{t('eduaid.chapters.point1') || 'Present in 15+ African countries'}</span>
+                <span className="text-foreground font-medium">{t('eduaid.chapters.point1') || 'Present across multiple African regions'}</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-scef-gold/20 rounded-lg flex items-center justify-center">
