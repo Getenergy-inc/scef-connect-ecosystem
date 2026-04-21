@@ -40,11 +40,18 @@ const footerColumns = [
     ],
   },
   {
-    title: "Get Involved",
+    title: "Membership",
     links: [
       { name: "Become a Member", href: "/membership" },
+      { name: "Member Benefits", href: "/membership#benefits" },
+      { name: "Member Directory", href: "/membership#directory" },
       { name: "Become an Ambassador", href: "/get-involved#ambassador" },
       { name: "Volunteer", href: "/get-involved#volunteer" },
+    ],
+  },
+  {
+    title: "Get Involved",
+    links: [
       { name: "Partner With Us", href: "/partners" },
       { name: "Vacancies", href: "/vacancies" },
       { name: "Donate", href: "/donate" },
@@ -139,9 +146,9 @@ export const Footer = () => {
 
       {/* Main footer grid */}
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 lg:gap-8">
           {/* Brand block */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-3">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="inline-block group">
               <div className="font-display text-xl font-bold leading-tight group-hover:text-scef-gold transition-colors">
                 Santos Creations
@@ -151,7 +158,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="mt-4 text-sm text-white/65 leading-relaxed max-w-xs">
-              A continental institution advancing education standards across 54+ African regions.
+              A membership-run Educational Institutionalized NGO advocating Achieving Education for All across African regions.
             </p>
 
             <ul className="mt-5 space-y-2.5">
@@ -186,10 +193,13 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Link columns */}
+          {/* Link columns (6 columns × 1 = 5 cols) — Membership column highlighted */}
           {footerColumns.map((col) => (
-            <div key={col.title} className="lg:col-span-2">
-              <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold mb-4">
+            <div key={col.title} className="lg:col-span-1">
+              <h4 className={cn(
+                "text-[11px] font-semibold uppercase tracking-[0.18em] mb-4",
+                col.title === "Membership" ? "text-scef-gold" : "text-scef-gold/90"
+              )}>
                 {col.title}
               </h4>
               <ul className="space-y-2.5">
@@ -206,13 +216,15 @@ export const Footer = () => {
               </ul>
             </div>
           ))}
+        </div>
 
-          {/* Email directory + external */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-3">
+        {/* Email directory + external (full width row below) */}
+        <div className="mt-12 pt-10 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold mb-4">
               Email Directory
             </h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2">
               {directoryEmails.map((item) => (
                 <li key={item.label}>
                   <a
@@ -224,11 +236,13 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
 
-            <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold mt-6 mb-3">
+          <div>
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold mb-4">
               External Platforms
             </h4>
-            <ul className="space-y-2">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {externalProjects.map((link) => (
                 <li key={link.name}>
                   <a

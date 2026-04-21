@@ -65,8 +65,8 @@ export const siteContent = {
       name: "Get Involved",
       href: "/get-involved",
       children: [
-        { name: "Become a Member", href: "/membership", description: "Join the SCEF community" },
-        { name: "Become an Ambassador", href: "/get-involved#ambassador", description: "Represent SCEF in your country" },
+        { name: "Become a Member", href: "/membership", description: "Join our membership-run NGO advancing Education for All" },
+        { name: "Become an Ambassador", href: "/get-involved#ambassador", description: "Represent SCEF in your region" },
         { name: "Volunteer", href: "/get-involved#volunteer", description: "Contribute your time & skills" },
         { name: "Partner With Us", href: "/partners", description: "Institutional & corporate partnerships" },
         { name: "Donate", href: "/donate", description: "Fund education across Africa" },

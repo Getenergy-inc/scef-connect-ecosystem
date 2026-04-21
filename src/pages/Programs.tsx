@@ -61,16 +61,16 @@ const Programs = () => {
                   {t(hero.subtextKey) || hero.subtextFallback}
                 </p>
 
-                {/* Primary CTAs */}
+                {/* Primary CTAs — Membership first (membership-run NGO identity) */}
                 <div className="flex flex-wrap justify-center gap-3 mb-6">
                   <Button 
                     size="lg" 
                     className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-dark font-semibold gap-2"
                     asChild
                   >
-                    <Link to="/donate">
-                      <Heart className="w-4 h-4" />
-                      {t("cta.donateSponsor") || "Donate / Sponsor"}
+                    <Link to="/membership">
+                      <Users className="w-4 h-4" />
+                      {t("cta.becomeMember") || "Become a Member"}
                     </Link>
                   </Button>
                   <Button 
@@ -78,9 +78,9 @@ const Programs = () => {
                     className="bg-white hover:bg-white/90 text-scef-blue font-semibold gap-2"
                     asChild
                   >
-                    <Link to="/membership">
-                      <Users className="w-4 h-4" />
-                      {t("cta.becomeMember") || "Become a Member"}
+                    <Link to="/donate">
+                      <Heart className="w-4 h-4" />
+                      {t("cta.donateSponsor") || "Donate / Sponsor"}
                     </Link>
                   </Button>
                 </div>
