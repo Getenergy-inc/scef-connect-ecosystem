@@ -104,15 +104,6 @@ export const CinematicHero = () => {
             >
               <Link to="/donate">Support the Mission</Link>
             </Button>
-            <Link
-              to="/about"
-              className="ms-2 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-scef-gold"
-            >
-              <span className="grid h-9 w-9 place-items-center rounded-full border border-white/30 transition-colors group-hover:border-scef-gold">
-                <Play className="h-3.5 w-3.5 fill-current" />
-              </span>
-              Watch our story
-            </Link>
           </div>
         </div>
 
