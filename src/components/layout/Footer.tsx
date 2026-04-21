@@ -3,10 +3,72 @@ import {
   Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin,
   ExternalLink, Heart, ArrowRight,
 } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/contexts/LocaleContext";
 import { cn } from "@/lib/utils";
 import { emailDirectory } from "@/config/emailDirectory";
 import { Button } from "@/components/ui/button";
+
+interface FooterEndorsement {
+  id: string;
+  name: string;
+  acronym: string | null;
+  logo_url: string;
+  website_url: string | null;
+}
+
+const FooterEndorsements = () => {
+  const { t } = useLocale();
+  const { data: endorsements = [] } = useQuery({
+    queryKey: ["endorsements", "footer"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("endorsements")
+        .select("*")
+        .eq("is_active", true)
+        .order("display_order", { ascending: true });
+      if (error) throw error;
+      return data as FooterEndorsement[];
+    },
+  });
+
+  if (endorsements.length === 0) return null;
+
+  return (
+    <div className="relative border-b border-white/5">
+      <div className="container mx-auto px-4 py-8">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold text-center mb-5">
+          {t("home.endorsedBy.title") || "Endorsed By"}
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-5">
+          {endorsements.map((e) => (
+            <a
+              key={e.id}
+              href={e.website_url || "#"}
+              target={e.website_url ? "_blank" : undefined}
+              rel={e.website_url ? "noopener noreferrer" : undefined}
+              className="flex flex-col items-center gap-1.5 group"
+              title={e.name}
+            >
+              <div className="w-14 h-14 rounded-full overflow-hidden bg-white shadow border border-white/10 transition-transform group-hover:scale-105">
+                <img
+                  src={e.logo_url}
+                  alt={e.name}
+                  className="w-full h-full object-contain p-1"
+                  loading="lazy"
+                />
+              </div>
+              <span className="text-[10px] font-medium text-white/70 group-hover:text-scef-gold transition-colors">
+                {e.acronym || e.name}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const footerColumns = [
   {
