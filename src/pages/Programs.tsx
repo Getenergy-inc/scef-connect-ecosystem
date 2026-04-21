@@ -12,7 +12,7 @@ import { EOACertificationSection } from "@/components/programs/EOACertificationS
 import { StakeholderPathwaysSection } from "@/components/programs/StakeholderPathwaysSection";
 import { programsPageContent } from "@/config/programsPageContent";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
-import heroImage from "@/assets/hero-programs.jpg";
+import heroImage from "@/assets/hero-classroom.jpg";
 
 const Programs = () => {
   const { t, isRTL } = useLocale();

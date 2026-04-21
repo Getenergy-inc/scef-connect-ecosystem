@@ -16,7 +16,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
-import aboutHeroImage from "@/assets/about-scef-hero.jpg";
+import aboutHeroImage from "@/assets/hero-classroom.jpg";
 import history1997 from "@/assets/history/history-1997-origins.jpg";
 import history2003 from "@/assets/history/history-2003-advocacy.jpg";
 import history2003_2007 from "@/assets/history/history-2003-2007-partnerships.jpg";
