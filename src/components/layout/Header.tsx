@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
-  Bell, MessageSquare, Settings, Activity, Calendar, Users, Scale,
-  Layers
+  Bell, MessageSquare, Settings, Activity, Users, Scale
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
