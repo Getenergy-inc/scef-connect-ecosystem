@@ -88,7 +88,7 @@ const Partners = () => {
 
   const impactStats = [
     { value: "50K+", label: t("home.impact.metrics.scholarships") },
-    { value: "54+", label: t("home.impact.metrics.chapters") },
+    { value: "5+", label: t("home.impact.metrics.chapters") },
     { value: "100+", label: t("home.impact.metrics.partners") },
     { value: "$2M+", label: "Programs Funded" },
   ];
@@ -235,7 +235,7 @@ const Partners = () => {
                       <Globe className="w-5 h-5 text-terracotta shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-foreground">Continental Scale</h4>
-                        <p className="text-sm text-muted-foreground">Reach across 54+ African countries and the diaspora</p>
+                        <p className="text-sm text-muted-foreground">Reach across 5+ African regions and the diaspora</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">

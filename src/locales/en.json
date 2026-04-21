@@ -575,7 +575,7 @@
         },
         {
           "q": "Do you work across countries?",
-          "a": "Yes—through structured local chapters and diaspora engagement. We operate in 54+ African countries and diaspora communities, each with local leadership aligned to SCEF governance standards."
+          "a": "Yes—through structured local chapters and diaspora engagement. We operate in 5+ African regions and diaspora communities, each with local leadership aligned to SCEF governance standards."
         },
         {
           "q": "How do partners track impact?",
@@ -975,7 +975,7 @@
       },
       "lcps": {
         "title": "Local Chapter Presidents (LCPs)",
-        "count": "54+ Countries",
+        "count": "5+ Regions",
         "description": "On-ground leadership executing programs and managing community engagement at country level.",
         "responsibilities": [
           "Country-level program execution",

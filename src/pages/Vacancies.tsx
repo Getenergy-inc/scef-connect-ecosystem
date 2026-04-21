@@ -219,7 +219,7 @@ const Vacancies = () => {
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">Pan-African Impact</h3>
                     <p className="text-sm text-muted-foreground">
-                      Work on initiatives that reach 54+ countries across Africa and the diaspora.
+                      Work on initiatives that reach 5+ regions across Africa and the diaspora.
                     </p>
                   </div>
                   <div className="text-center">

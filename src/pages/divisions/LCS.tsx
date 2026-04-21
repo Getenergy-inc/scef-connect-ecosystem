@@ -76,7 +76,7 @@ const LCS = () => {
                   Local Chapter <span className="text-gradient-gold">Services</span>
                 </h1>
                 <p className="text-xl text-white/80 leading-relaxed">
-                  Enabling grassroots education leadership through compliant, governed, and institutionally-supported local chapters across 54+ African countries and the diaspora.
+                  Enabling grassroots education leadership through compliant, governed, and institutionally-supported local chapters across 5+ African regions and the diaspora.
                 </p>
               </div>
             </div>
