@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Jiunge kama Mwanachama",
     "donateNow": "Changia Sasa",
-    "becomeAmbassador": "Kuwa Balozi",
+    "becomeAmbassador": "Omba Sasa",
     "joinChapter": "Jiunge na Sura ya Mtaa",
     "partnerCsr": "Ushirikiano / CSR",
     "watchMedia": "Tazama SCEF Media",
@@ -254,11 +254,11 @@
       "title": "Jinsi SCEF inavyofanya kazi (Idara 6)"
     },
     "chaptersBlock": {
-      "title": "Jiunge na Sura ya Mtaa",
-      "body": "Pata sura ya nchi yako, kutana na wachochezi wa mabadiliko, na jiunge na miradi yenye athari halisi.",
+      "title": "Amilisha eneo lako",
+      "body": "Matawi ya ndani huleta programu za SCEF kwa jamii — jiunge na tawi karibu nawe au anzisha jipya.",
       "ctaBrowse": "Tazama Sura",
-      "ctaJoin": "Jiunge",
-      "ctaCreate": "Anzisha",
+      "ctaJoin": "Jiunge na Tawi",
+      "ctaCreate": "Anzisha Tawi",
       "ctaLeader": "Omba Uongozi"
     },
     "partnerships": {
@@ -278,6 +278,74 @@
       "ctaJoin": "Jiunge",
       "ctaDonate": "Changia",
       "ctaPartner": "Shirikiana (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "Sisi ni Nani",
+      "title": "Mfumo uliopangwa wa athari za kielimu.",
+      "body": "SCEF ni msingi unaoendeshwa na wanachama unaojenga mifumo inayosaidia elimu kuboreka, kupanuka na kuwa na uwajibikaji kote Afrika — ukiunganisha programu, matawi, washirika, mifumo na vyombo vya habari.",
+      "links": {
+        "about": "Kuhusu SCEF",
+        "mission": "Dhamira",
+        "vision": "Maono",
+        "join": "Jiunge kama Mwanachama"
+      }
+    },
+    "pillars": {
+      "eyebrow": "Tunachofanya",
+      "title": "Programu zinazofanya kazi pamoja.",
+      "subtitle": "Zimeundwa kuboresha ufikiaji, ubora, ujumuishaji, ujuzi na utambuzi katika maeneo.",
+      "viewAll": "Tazama programu zote"
+    },
+    "explore": {
+      "eyebrow": "Chunguza SCEF",
+      "title": "Chagua njia yako.",
+      "subtitle": "Jiunge na SCEF kwa njia inayokufaa — mwanachama, balozi, mshirika, mfadhili au kiongozi wa tawi.",
+      "joinBadge": "Jiunge",
+      "cards": {
+        "about": {
+          "title": "Kuhusu SCEF",
+          "text": "Taasisi, dhamira na maono yetu."
+        },
+        "programs": {
+          "title": "Programu",
+          "text": "Miradi inayoungwa mkono na wanachama Afrika."
+        },
+        "awards": {
+          "title": "Tuzo",
+          "text": "Mfumo wa utambuzi wa NESA-Afrika."
+        },
+        "chapters": {
+          "title": "Matawi",
+          "text": "Mitandao ya kikanda Afrika na diaspora."
+        },
+        "media": {
+          "title": "Vyombo vya Habari",
+          "text": "TV, redio, podikasti na matangazo."
+        },
+        "involved": {
+          "title": "Shiriki",
+          "text": "Mwanachama, balozi, kujitolea na zaidi."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Habari Maalum",
+      "title": "NESA-Afrika 2026: viwango katika vitendo.",
+      "body": "Utambuzi unaobadilisha ubora kuwa athari ya kudumu katika maeneo — unaoendeshwa na matawi ya wanachama na njia za washirika zilizothibitishwa.",
+      "status": "Ripoti zinaendelea",
+      "ctaPrimary": "Soma hadithi",
+      "ctaSecondary": "Habari zote",
+      "tag": "NESA-Afrika 2026",
+      "imageCaption": "Utambuzi kama utaratibu wa viwango."
+    },
+    "finalCta": {
+      "eyebrow": "Jiunge Nasi",
+      "title": "Kuwa sehemu ya mageuzi ya elimu Afrika.",
+      "subtitle": "Tusaidie kufanya elimu ipatikane, ijumuishe na ilete athari katika maeneo yote.",
+      "ctaJoin": "Kuwa Mwanachama",
+      "ctaDonate": "Changia Sasa",
+      "helper": "Huna uhakika pa kuanzia?",
+      "helperLink": "Chunguza njia zote za kujiunga →"
     }
   },
   "about": {
@@ -853,8 +921,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Programu Zetu",
-        "subtext": "SCEF hutoa athari kupitia programu kuu tatu na jukwaa kuu moja. Ili kubaki makini na kuwa na uwezo wa kupanuka, kazi zinazohusiana hutolewa kama Njia (programu ndogo) na Mfululizo (webinari/mafunzo) chini ya programu kuu inayofaa."
+        "title": "Programu zinazofanya kazi pamoja",
+        "subtext": "Zimeundwa kuboresha ufikiaji, ubora, ujumuishaji, ujuzi na utambuzi katika maeneo."
       },
       "flagship": {
         "label": "Programu na Jukwaa Kuu",
@@ -1026,7 +1094,7 @@
       }
     },
     "cta": {
-      "join": "Jiunge Sasa",
+      "join": "Chunguza Uanachama",
       "ambassador": "Kuwa Balozi",
       "institutional": "Uanachama wa Kitaasisi"
     }
@@ -1220,15 +1288,15 @@
     "options": {
       "member": {
         "title": "Kuwa Mwanachama",
-        "description": "Jiunge na jamii yetu ya pana-Afrika ya watetezi wa elimu na wachochezi wa mabadiliko."
+        "description": "Pata programu, piga kura katika NESA, na ungana na matawi Afrika."
       },
       "ambassador": {
         "title": "Kuwa Balozi",
-        "description": "Unga mkono programu za SCEF na utuwakilishe katika jamii na mitandao yako."
+        "description": "Ongoza utetezi katika eneo lako kwa utambuzi rasmi wa SCEF."
       },
       "volunteer": {
-        "title": "Jitolee",
-        "description": "Changia ujuzi na muda wako kusaidia programu na shughuli za SCEF."
+        "title": "Kujitolea",
+        "description": "Toa muda na ujuzi wako kwa programu muhimu."
       },
       "chapter": {
         "title": "Jiunge na Sura",

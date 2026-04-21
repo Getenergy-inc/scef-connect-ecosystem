@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "成为会员",
     "donateNow": "立即捐赠",
-    "becomeAmbassador": "成为大使",
+    "becomeAmbassador": "立即申请",
     "joinChapter": "加入地方分会",
     "partnerCsr": "合作伙伴 / CSR",
     "watchMedia": "观看 SCEF 媒体",
@@ -211,6 +211,80 @@
       "ctaJoin": "成为会员",
       "ctaDonate": "捐赠",
       "ctaPartner": "合作伙伴 (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "关于我们",
+      "title": "有组织的教育影响生态系统。",
+      "body": "SCEF 是一个由会员管理的基金会,构建系统帮助非洲各地的教育改善、扩展并保持问责 —— 连接项目、分会、合作伙伴、平台和媒体以实现可衡量的成果。",
+      "links": {
+        "about": "关于 SCEF",
+        "mission": "使命",
+        "vision": "愿景",
+        "join": "成为会员"
+      }
+    },
+    "pillars": {
+      "eyebrow": "我们的工作",
+      "title": "协同运作的项目。",
+      "subtitle": "旨在改善各地区的准入、质量、包容性、技能和认可。",
+      "viewAll": "查看所有项目"
+    },
+    "explore": {
+      "eyebrow": "探索 SCEF",
+      "title": "选择您的道路。",
+      "subtitle": "以适合您的方式加入 SCEF —— 会员、大使、合作伙伴、捐助者或分会负责人。",
+      "joinBadge": "加入",
+      "cards": {
+        "about": {
+          "title": "关于 SCEF",
+          "text": "我们的机构、使命和愿景。"
+        },
+        "programs": {
+          "title": "项目",
+          "text": "由会员支持的非洲倡议。"
+        },
+        "awards": {
+          "title": "奖项",
+          "text": "NESA-非洲认可生态系统。"
+        },
+        "chapters": {
+          "title": "分会",
+          "text": "非洲及侨民地区网络。"
+        },
+        "media": {
+          "title": "媒体",
+          "text": "电视、广播、播客和节目。"
+        },
+        "involved": {
+          "title": "参与",
+          "text": "会员、大使、志愿者等。"
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "特色更新",
+      "title": "NESA-非洲 2026:将标准付诸行动。",
+      "body": "将卓越转化为各地区持久影响的认可 —— 由会员分会和经过验证的合作伙伴渠道驱动。",
+      "status": "报告进行中",
+      "ctaPrimary": "阅读故事",
+      "ctaSecondary": "所有新闻",
+      "tag": "NESA-非洲 2026",
+      "imageCaption": "认可作为标准机制。"
+    },
+    "finalCta": {
+      "eyebrow": "加入我们",
+      "title": "成为非洲教育变革的一部分。",
+      "subtitle": "帮助我们让教育在各地区更易获取、更具包容性、更具影响力。",
+      "ctaJoin": "成为会员",
+      "ctaDonate": "立即捐赠",
+      "helper": "不确定从哪里开始?",
+      "helperLink": "探索所有加入方式 →"
+    },
+    "chaptersBlock": {
+      "title": "激活您的地区",
+      "body": "地方分会将 SCEF 项目带到社区 —— 加入您附近的分会或领导新分会。",
+      "ctaJoin": "加入分会",
+      "ctaCreate": "创建分会"
     }
   },
   "about": {
@@ -581,7 +655,7 @@
       "subtitle": "加入由教育变革者组成的泛非社区。作为 SCEF 会员，您可以获得项目、分会、认证和塑造非洲教育未来的机会。"
     },
     "cta": {
-      "join": "立即加入",
+      "join": "了解会员资格",
       "ambassador": "成为大使",
       "institutional": "机构会员资格"
     }
@@ -741,8 +815,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "我们的项目",
-        "subtext": "SCEF通过三个旗舰项目和一个旗舰平台产生影响。为保持专注和可扩展性，相关工作作为轨道（子项目）和系列（网络研讨会/培训）在相应的旗舰项目下交付。"
+        "title": "协同运作的项目",
+        "subtext": "旨在改善各地区的准入、质量、包容性、技能和认可。"
       },
       "flagship": {
         "label": "旗舰项目和平台",
@@ -878,6 +952,22 @@
         "cta2": "成为会员",
         "cta3": "探索当地分会",
         "cta4": "观看 SCEF 媒体"
+      }
+    }
+  },
+  "getInvolved": {
+    "options": {
+      "member": {
+        "title": "成为会员",
+        "description": "参与项目,在 NESA 投票,并与非洲各地分会建立联系。"
+      },
+      "ambassador": {
+        "title": "成为大使",
+        "description": "在您所在地区以 SCEF 官方认可领导倡导工作。"
+      },
+      "volunteer": {
+        "title": "志愿服务",
+        "description": "为重要项目贡献时间和技能。"
       }
     }
   }

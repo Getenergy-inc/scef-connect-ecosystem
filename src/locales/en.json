@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Join as a Member",
     "donateNow": "Donate Now",
-    "becomeAmbassador": "Become an Ambassador",
+    "becomeAmbassador": "Apply Now",
     "joinChapter": "Join a Local Chapter",
     "partnerCsr": "Partner / CSR",
     "watchMedia": "Watch SCEF Media",
@@ -254,11 +254,11 @@
       "title": "How SCEF Works (6 Divisions)"
     },
     "chaptersBlock": {
-      "title": "Join a Local Chapter",
-      "body": "Find your country chapter, connect with changemakers, and participate in real-impact projects.",
+      "title": "Activate your region",
+      "body": "Local chapters bring SCEF programs to communities — join one near you or lead a new one.",
       "ctaBrowse": "Browse",
-      "ctaJoin": "Join",
-      "ctaCreate": "Create",
+      "ctaJoin": "Join a Chapter",
+      "ctaCreate": "Start a Chapter",
       "ctaLeader": "Apply as Leader"
     },
     "partnerships": {
@@ -278,6 +278,74 @@
       "ctaJoin": "Become a Member",
       "ctaDonate": "Donate",
       "ctaPartner": "Partner (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "Who We Are",
+      "title": "A structured education impact ecosystem.",
+      "body": "SCEF is a membership-run foundation building systems that help education improve, scale, and stay accountable across Africa — connecting programs, chapters, partners, platforms, and media for measurable outcomes.",
+      "links": {
+        "about": "About SCEF",
+        "mission": "Mission",
+        "vision": "Vision",
+        "join": "Join as Member"
+      }
+    },
+    "pillars": {
+      "eyebrow": "What We Do",
+      "title": "Programs that work together.",
+      "subtitle": "Designed to improve access, quality, inclusion, skills, and recognition across regions.",
+      "viewAll": "View all programs"
+    },
+    "explore": {
+      "eyebrow": "Explore SCEF",
+      "title": "Choose your path.",
+      "subtitle": "Join SCEF in the way that fits you — member, ambassador, partner, donor, or chapter lead.",
+      "joinBadge": "Join",
+      "cards": {
+        "about": {
+          "title": "About SCEF",
+          "text": "Our institution, mission & vision."
+        },
+        "programs": {
+          "title": "Programs",
+          "text": "Member-backed initiatives across Africa."
+        },
+        "awards": {
+          "title": "Awards",
+          "text": "NESA-Africa recognition ecosystem."
+        },
+        "chapters": {
+          "title": "Chapters",
+          "text": "Regional networks across Africa & diaspora."
+        },
+        "media": {
+          "title": "Media",
+          "text": "TV, radio, podcasts & broadcasts."
+        },
+        "involved": {
+          "title": "Get Involved",
+          "text": "Member, ambassador, volunteer & more."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Featured Update",
+      "title": "NESA-Africa 2026: standards into action.",
+      "body": "Recognition that translates excellence into legacy impact across regions — powered by member chapters and verified partner pipelines.",
+      "status": "Reporting in progress",
+      "ctaPrimary": "Read the story",
+      "ctaSecondary": "View all news",
+      "tag": "NESA-Africa 2026",
+      "imageCaption": "Recognition as a standards mechanism."
+    },
+    "finalCta": {
+      "eyebrow": "Join Us",
+      "title": "Be part of Africa's education transformation.",
+      "subtitle": "Help us make education accessible, inclusive, and impactful across regions.",
+      "ctaJoin": "Become a Member",
+      "ctaDonate": "Donate Now",
+      "helper": "Not sure where to start?",
+      "helperLink": "Explore all ways to join →"
     }
   },
   "about": {
@@ -1200,8 +1268,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Our Programs",
-        "subtext": "SCEF delivers impact through three flagship programs and one flagship platform. To stay focused and scalable, related work is delivered as Tracks (sub-programs) and Series (webinars/training) under the appropriate flagship."
+        "title": "Programs that work together",
+        "subtext": "Designed to improve access, quality, inclusion, skills, and recognition across regions."
       },
       "flagship": {
         "label": "Flagship Programs & Platform",
@@ -1373,7 +1441,7 @@
       }
     },
     "cta": {
-      "join": "Join Now",
+      "join": "Explore Membership",
       "ambassador": "Become an Ambassador",
       "institutional": "Institutional Membership"
     }
@@ -1580,15 +1648,15 @@
     "options": {
       "member": {
         "title": "Become a Member",
-        "description": "Join our pan-African community of education advocates and changemakers."
+        "description": "Access programs, vote in NESA, and connect with chapters across Africa."
       },
       "ambassador": {
         "title": "Become an Ambassador",
-        "description": "Champion SCEF's programs and represent us in your community and networks."
+        "description": "Lead advocacy in your region with official SCEF recognition."
       },
       "volunteer": {
         "title": "Volunteer",
-        "description": "Contribute your skills and time to support SCEF's programs and operations."
+        "description": "Contribute time and skills to programs that matter."
       },
       "chapter": {
         "title": "Join a Chapter",

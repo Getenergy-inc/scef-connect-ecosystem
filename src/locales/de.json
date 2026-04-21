@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Als Mitglied beitreten",
     "donateNow": "Jetzt spenden",
-    "becomeAmbassador": "Botschafter werden",
+    "becomeAmbassador": "Jetzt bewerben",
     "joinChapter": "Ortsverband beitreten",
     "partnerCsr": "Partnerschaft / CSR",
     "watchMedia": "SCEF Medien ansehen",
@@ -211,6 +211,80 @@
       "ctaJoin": "Mitglied werden",
       "ctaDonate": "Spenden",
       "ctaPartner": "Partnerschaft (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "Wer wir sind",
+      "title": "Ein strukturiertes Ökosystem für Bildungswirkung.",
+      "body": "SCEF ist eine mitgliedergeführte Stiftung, die Systeme aufbaut, damit Bildung sich verbessern, skalieren und rechenschaftspflichtig bleiben kann — durch Verbindung von Programmen, Chaptern, Partnern, Plattformen und Medien für messbare Ergebnisse.",
+      "links": {
+        "about": "Über SCEF",
+        "mission": "Mission",
+        "vision": "Vision",
+        "join": "Mitglied werden"
+      }
+    },
+    "pillars": {
+      "eyebrow": "Was wir tun",
+      "title": "Programme, die zusammenarbeiten.",
+      "subtitle": "Entwickelt, um Zugang, Qualität, Inklusion, Kompetenzen und Anerkennung in den Regionen zu verbessern.",
+      "viewAll": "Alle Programme ansehen"
+    },
+    "explore": {
+      "eyebrow": "SCEF erkunden",
+      "title": "Wählen Sie Ihren Weg.",
+      "subtitle": "Schließen Sie sich SCEF auf die Weise an, die zu Ihnen passt — Mitglied, Botschafter, Partner, Spender oder Chapter-Leiter.",
+      "joinBadge": "Beitreten",
+      "cards": {
+        "about": {
+          "title": "Über SCEF",
+          "text": "Unsere Institution, Mission und Vision."
+        },
+        "programs": {
+          "title": "Programme",
+          "text": "Von Mitgliedern getragene Initiativen in Afrika."
+        },
+        "awards": {
+          "title": "Auszeichnungen",
+          "text": "NESA-Afrika Anerkennungsökosystem."
+        },
+        "chapters": {
+          "title": "Chapter",
+          "text": "Regionale Netzwerke in Afrika und Diaspora."
+        },
+        "media": {
+          "title": "Medien",
+          "text": "TV, Radio, Podcasts und Sendungen."
+        },
+        "involved": {
+          "title": "Mitmachen",
+          "text": "Mitglied, Botschafter, Freiwilliger und mehr."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Hervorgehobenes Update",
+      "title": "NESA-Afrika 2026: Standards in Aktion.",
+      "body": "Anerkennung, die Exzellenz in nachhaltige Wirkung in den Regionen übersetzt — getragen von Mitgliederchaptern und verifizierten Partner-Pipelines.",
+      "status": "Berichterstattung in Arbeit",
+      "ctaPrimary": "Geschichte lesen",
+      "ctaSecondary": "Alle Nachrichten",
+      "tag": "NESA-Afrika 2026",
+      "imageCaption": "Anerkennung als Standardmechanismus."
+    },
+    "finalCta": {
+      "eyebrow": "Mitmachen",
+      "title": "Werden Sie Teil der Bildungstransformation Afrikas.",
+      "subtitle": "Helfen Sie uns, Bildung zugänglich, inklusiv und wirkungsvoll in allen Regionen zu machen.",
+      "ctaJoin": "Mitglied werden",
+      "ctaDonate": "Jetzt spenden",
+      "helper": "Nicht sicher, wo Sie anfangen sollen?",
+      "helperLink": "Alle Wege zum Mitmachen erkunden →"
+    },
+    "chaptersBlock": {
+      "title": "Aktivieren Sie Ihre Region",
+      "body": "Lokale Chapter bringen SCEF-Programme zu den Gemeinden — treten Sie einem in Ihrer Nähe bei oder gründen Sie ein neues.",
+      "ctaJoin": "Einem Chapter beitreten",
+      "ctaCreate": "Chapter gründen"
     }
   },
   "about": {
@@ -581,7 +655,7 @@
       "subtitle": "Treten Sie einer panafrikanischen Gemeinschaft von Bildungs-Changemakern bei. Als SCEF-Mitglied erhalten Sie Zugang zu Programmen, Ortsverbänden, Zertifizierungen und Möglichkeiten, die Bildungszukunft Afrikas zu gestalten."
     },
     "cta": {
-      "join": "Jetzt beitreten",
+      "join": "Mitgliedschaft entdecken",
       "ambassador": "Botschafter werden",
       "institutional": "Institutionelle Mitgliedschaft"
     }
@@ -741,8 +815,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Unsere Programme",
-        "subtext": "SCEF erzielt Wirkung durch drei Flaggschiff-Programme und eine Flaggschiff-Plattform. Um fokussiert und skalierbar zu bleiben, werden verwandte Arbeiten als Tracks (Unterprogramme) und Serien (Webinare/Schulungen) unter dem entsprechenden Flaggschiff-Programm geliefert."
+        "title": "Programme, die zusammenarbeiten",
+        "subtext": "Entwickelt, um Zugang, Qualität, Inklusion, Kompetenzen und Anerkennung in den Regionen zu verbessern."
       },
       "flagship": {
         "label": "Flaggschiff-Programme und Plattform",
@@ -878,6 +952,22 @@
         "cta2": "Mitglied werden",
         "cta3": "Ortsverbände erkunden",
         "cta4": "SCEF Media ansehen"
+      }
+    }
+  },
+  "getInvolved": {
+    "options": {
+      "member": {
+        "title": "Mitglied werden",
+        "description": "Greifen Sie auf Programme zu, stimmen Sie bei NESA ab und verbinden Sie sich mit Chaptern in Afrika."
+      },
+      "ambassador": {
+        "title": "Botschafter werden",
+        "description": "Führen Sie Advocacy in Ihrer Region mit offizieller SCEF-Anerkennung."
+      },
+      "volunteer": {
+        "title": "Freiwillig helfen",
+        "description": "Bringen Sie Zeit und Fähigkeiten in wichtige Programme ein."
       }
     }
   }

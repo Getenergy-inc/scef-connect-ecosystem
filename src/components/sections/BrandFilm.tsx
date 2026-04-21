@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 /**
  * Short institutional intro — replaces dense About paragraphs on the homepage.
  * Routes users to /about, /programs, /governance for full detail.
  */
 export const BrandFilm = () => {
+  const { t } = useLocale();
   const links = [
-    { label: "About SCEF", href: "/about" },
-    { label: "Mission", href: "/about#mission" },
-    { label: "Vision", href: "/about#vision" },
-    { label: "Join as Member", href: "/get-involved/membership" },
+    { label: t("home.brandFilm.links.about") || "About SCEF", href: "/about" },
+    { label: t("home.brandFilm.links.mission") || "Mission", href: "/about#mission" },
+    { label: t("home.brandFilm.links.vision") || "Vision", href: "/about#vision" },
+    { label: t("home.brandFilm.links.join") || "Join as Member", href: "/get-involved/membership" },
   ];
 
   return (
@@ -19,18 +21,17 @@ export const BrandFilm = () => {
         <div className="grid gap-12 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">
-              Who We Are
+              {t("home.brandFilm.eyebrow") || "Who We Are"}
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.75rem]">
-              A structured education impact ecosystem.
+              {t("home.brandFilm.title") || "A structured education impact ecosystem."}
             </h2>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
             <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
-              SCEF is a membership-run foundation building systems that help
-              education improve, scale, and stay accountable across Africa — connecting
-              programs, chapters, partners, platforms, and media for measurable outcomes.
+              {t("home.brandFilm.body") ||
+                "SCEF is a membership-run foundation building systems that help education improve, scale, and stay accountable across Africa — connecting programs, chapters, partners, platforms, and media for measurable outcomes."}
             </p>
 
             <div className="mt-12 grid gap-x-8 gap-y-1 sm:grid-cols-2">
