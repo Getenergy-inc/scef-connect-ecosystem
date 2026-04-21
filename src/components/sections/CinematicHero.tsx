@@ -40,22 +40,32 @@ export const CinematicHero = () => {
         />
       </div>
 
-      {/* Cinematic gradient wash */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-scef-blue-darker/85 via-scef-blue-darker/70 to-scef-blue-darker/95" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,hsl(45_92%_42%/0.18),transparent_55%)]" />
+      {/* Cinematic gradient wash — deeper, richer */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-scef-blue-darker/70 via-scef-blue-darker/85 to-scef-blue-darker" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,hsl(45_92%_42%/0.20),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom_left,hsl(217_91%_18%/0.55),transparent_50%)]" />
 
-      {/* Floating keyword overlays */}
-      <div className="pointer-events-none absolute inset-0 -z-10 hidden md:block">
+      {/* Subtle grain/film texture */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        }}
+      />
+
+      {/* Floating keyword overlays — desktop only, more subtle */}
+      <div className="pointer-events-none absolute inset-0 -z-10 hidden lg:block">
         {keywords.map((word, i) => (
           <span
             key={word}
-            className="absolute font-display text-white/[0.06] font-bold select-none"
+            className="absolute font-display text-white/[0.045] font-bold select-none"
             style={{
-              fontSize: `${4 + i * 1.5}rem`,
-              top: `${15 + i * 18}%`,
-              left: i % 2 === 0 ? `${5 + i * 4}%` : "auto",
-              right: i % 2 !== 0 ? `${5 + i * 4}%` : "auto",
-              animation: `floatY ${8 + i}s ease-in-out infinite`,
+              fontSize: `${5 + i * 1.6}rem`,
+              top: `${12 + i * 19}%`,
+              left: i % 2 === 0 ? `${4 + i * 4}%` : "auto",
+              right: i % 2 !== 0 ? `${4 + i * 4}%` : "auto",
+              animation: `floatY ${10 + i}s ease-in-out infinite`,
               animationDelay: `${i * 0.8}s`,
             }}
           >
@@ -64,28 +74,29 @@ export const CinematicHero = () => {
         ))}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto flex min-h-[inherit] flex-col justify-center px-4 py-24 md:py-32">
+      {/* Content — generous spacing */}
+      <div className="relative z-10 container mx-auto flex min-h-[inherit] flex-col justify-center px-6 py-28 md:px-8 md:py-36">
         <div className="max-w-4xl animate-fade-up">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-scef-gold/30 bg-scef-gold/10 px-4 py-1.5 backdrop-blur-sm">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-scef-gold/30 bg-scef-gold/10 px-4 py-1.5 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-scef-gold animate-pulse" />
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-scef-gold-light">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-scef-gold-light">
               Santos Creations Educational Foundation
             </span>
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Empowering Africa Through{" "}
-            <span className="text-gradient-gold">Education, Innovation,</span>{" "}
-            and Opportunity
+          <h1 className="font-display text-[2.5rem] font-bold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[5rem]">
+            Empowering Africa
+            <br />
+            Through{" "}
+            <span className="text-gradient-gold italic">Education</span>.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-            SCEF connects advocacy, digital learning, awards, partnerships, and
-            funding solutions to advance education across 57 African countries.
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+            Advocacy, digital access, recognition, and partnerships — across 57
+            African countries.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
+          <div className="mt-12 flex flex-wrap items-center gap-3">
             <Button
               size="lg"
               className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker shadow-gold hover:bg-scef-gold-hover"
@@ -107,8 +118,8 @@ export const CinematicHero = () => {
           </div>
         </div>
 
-        {/* Bottom meta strip */}
-        <div className="mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-4 border-t border-white/10 pt-8 sm:grid-cols-4">
+        {/* Bottom meta strip — refined, more breathing room */}
+        <div className="mt-20 hidden max-w-2xl grid-cols-4 gap-x-10 border-t border-white/10 pt-8 sm:grid md:mt-24">
           {[
             { k: "Founded", v: "1997" },
             { k: "Countries", v: "57" },
@@ -119,7 +130,7 @@ export const CinematicHero = () => {
               <div className="font-display text-2xl font-bold text-scef-gold">
                 {m.v}
               </div>
-              <div className="text-[11px] uppercase tracking-[0.16em] text-white/55">
+              <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/50">
                 {m.k}
               </div>
             </div>

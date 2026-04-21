@@ -40,17 +40,24 @@ const useCountUp = (target: number, start: boolean, duration = 1600) => {
 const StatItem = ({
   stat,
   start,
+  index,
 }: {
   stat: (typeof stats)[number];
   start: boolean;
+  index: number;
 }) => {
   const v = useCountUp(stat.value, start);
   return (
-    <div className="text-center">
-      <div className="font-display text-3xl font-bold text-scef-blue-darker md:text-4xl tabular-nums">
+    <div
+      className="group relative text-center"
+      style={{
+        transitionDelay: `${index * 80}ms`,
+      }}
+    >
+      <div className="font-display text-4xl font-bold leading-none text-white tabular-nums md:text-5xl lg:text-6xl">
         {formatValue(v, stat.format, stat.suffix)}
       </div>
-      <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+      <div className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">
         {stat.label}
       </div>
     </div>
@@ -80,15 +87,21 @@ export const ImpactBand = () => {
   return (
     <section
       ref={ref}
-      className="relative border-y border-border bg-gradient-to-b from-background via-muted/30 to-background py-16"
+      className="relative overflow-hidden bg-scef-blue-darker py-24 md:py-32"
     >
-      <div className="container mx-auto px-4">
-        <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-scef-gold-dark">
-          Our Reach — Real progress. Real communities.
+      {/* Premium background treatment */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(45_92%_42%/0.10),transparent_60%)]" />
+      <div className="absolute inset-0 bg-scef-pattern opacity-[0.04]" />
+      <div className="absolute left-1/2 top-0 h-px w-1/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-scef-gold/40 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 h-px w-1/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-scef-gold/40 to-transparent" />
+
+      <div className="container relative mx-auto px-6 md:px-8">
+        <p className="mb-14 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-scef-gold">
+          Our Reach
         </p>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
-          {stats.map((s) => (
-            <StatItem key={s.label} stat={s} start={inView} />
+        <div className="grid grid-cols-2 gap-y-14 sm:grid-cols-3 md:grid-cols-5 md:gap-y-0">
+          {stats.map((s, i) => (
+            <StatItem key={s.label} stat={s} start={inView} index={i} />
           ))}
         </div>
       </div>

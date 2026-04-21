@@ -50,48 +50,60 @@ const pillars = [
 
 export const ServicePillars = () => {
   return (
-    <section className="relative bg-scef-blue-darker py-20 text-white md:py-28">
-      <div className="absolute inset-0 bg-scef-pattern opacity-[0.06]" />
-      <div className="container relative mx-auto px-4">
-        <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+    <section className="relative bg-background py-24 text-scef-blue-darker md:py-36">
+      <div className="container relative mx-auto px-6 md:px-8">
+        <div className="mb-16 flex flex-col items-start justify-between gap-6 md:mb-20 md:flex-row md:items-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-scef-gold">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">
               What We Do
             </p>
-            <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-[2.75rem]">
               Six pillars. One mission.
             </h2>
           </div>
           <Link
             to="/programs"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-scef-gold-light hover:text-scef-gold"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-scef-blue-darker hover:text-scef-gold-dark"
           >
             View all programs
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
-        <div className="grid gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map(({ icon: Icon, title, blurb, href }) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {pillars.map(({ icon: Icon, title, blurb, href }, i) => (
             <Link
               key={title}
               to={href}
-              className="group relative flex flex-col gap-6 overflow-hidden bg-scef-blue-darker p-8 transition-all duration-300 hover:bg-scef-blue-dark"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-2xl hover:shadow-scef-blue/5 md:p-10"
             >
-              {/* Hover glow */}
-              <div className="pointer-events-none absolute inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,hsl(45_92%_42%/0.15),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold transition-all duration-300 group-hover:scale-110 group-hover:bg-scef-gold/25">
-                <Icon className="h-6 w-6" />
+              {/* Premium hover gradient */}
+              <div className="pointer-events-none absolute inset-0 -z-0 bg-gradient-to-br from-scef-gold/0 via-scef-gold/0 to-scef-gold/[0.04] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+              {/* Number marker */}
+              <div className="mb-8 flex items-start justify-between">
+                <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-scef-blue-darker text-scef-gold transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-4deg]">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <span className="font-display text-sm font-medium text-muted-foreground/60 tabular-nums">
+                  0{i + 1}
+                </span>
               </div>
-              <div>
-                <h3 className="font-display text-xl font-semibold text-white">
+
+              <div className="flex-1">
+                <h3 className="font-display text-2xl font-semibold leading-tight">
                   {title}
                 </h3>
-                <p className="mt-1.5 text-sm text-white/60">{blurb}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {blurb}
+                </p>
               </div>
-              <div className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-scef-gold-light">
-                View Service
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+
+              <div className="mt-10 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-scef-blue-darker">
+                <span className="transition-colors group-hover:text-scef-gold-dark">
+                  Explore
+                </span>
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:text-scef-gold-dark" />
               </div>
             </Link>
           ))}
