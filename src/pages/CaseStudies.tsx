@@ -8,7 +8,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 import { BarChart3, ArrowRight, MapPin, Users, Award, BookOpen } from "lucide-react";
 
 const impactMetrics = [
-  { value: "54+", label: "Regions Reached", icon: MapPin },
+  { value: "5+", label: "Regions Reached", icon: MapPin },
   { value: "15K+", label: "Learners Impacted", icon: Users },
   { value: "500+", label: "Partners & Sponsors", icon: Award },
   { value: "300+", label: "Recognized Leaders", icon: BookOpen },
@@ -44,7 +44,7 @@ const CaseStudies = () => {
     <>
       <Helmet>
         <title>Impact & Case Studies — SCEF</title>
-        <meta name="description" content="SCEF's measurable impact across 54+ African regions through education programs, partnerships, and standards." />
+        <meta name="description" content="SCEF's measurable impact across 5+ African regions through education programs, partnerships, and standards." />
       </Helmet>
 
       <div className="min-h-screen bg-background" dir={isRTL ? "rtl" : "ltr"}>
@@ -66,7 +66,7 @@ const CaseStudies = () => {
                   Real progress. <span className="text-scef-gold">Real reach.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-                  Measurable outcomes from SCEF programs and partners across 54+ African regions.
+                  Measurable outcomes from SCEF programs and partners across 5+ African regions.
                 </p>
               </div>
             </div>

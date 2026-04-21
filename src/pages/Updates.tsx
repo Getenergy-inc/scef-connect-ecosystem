@@ -56,7 +56,7 @@ const updates = [
     id: 6,
     type: "announcement",
     title: "Pan-African Education Forum 2026",
-    description: "Convening leaders, institutions, and partners across 54+ regions.",
+    description: "Convening leaders, institutions, and partners across 5+ regions.",
     cta: { text: "Reserve Seat", href: "/contact" },
     thumbnail: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200",
     date: "2025-12-20",
