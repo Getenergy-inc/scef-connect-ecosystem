@@ -31,8 +31,8 @@ export const PartnersStakeholdersSection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-10">
-          {stakeholders.map((s) => (
-            <div key={s.titleKey} className="flex items-start gap-3 bg-card rounded-lg p-4 border border-border">
+          {stakeholders.map((s, idx) => (
+            <div key={s.titleKey} className="flex items-start gap-3 bg-card rounded-lg p-4 border border-border hover:border-primary/40 hover:shadow-sm transition-all duration-300 animate-fade-in" style={{ animationDelay: `${idx * 60}ms` }}>
               <s.icon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
                 <h3 className="text-sm font-bold text-foreground">{t(s.titleKey)}</h3>

@@ -75,7 +75,8 @@ export const ProgramsGrid = () => {
               <Link
                 key={item.id}
                 to={item.href}
-                className="group bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-lg transition-all"
+                className="group bg-card rounded-xl p-6 border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${programs.indexOf(item) * 80}ms` }}
               >
                 <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-primary" />

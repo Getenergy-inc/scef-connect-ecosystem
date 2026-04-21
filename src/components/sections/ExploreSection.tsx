@@ -20,8 +20,8 @@ export const ExploreSection = () => {
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {items.map((item) => (
-            <Link key={item.titleKey} to={item.href} className="group bg-card rounded-xl p-5 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+          {items.map((item, idx) => (
+            <Link key={item.titleKey} to={item.href} className="group bg-card rounded-xl p-5 border border-border hover:border-primary/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${idx * 80}ms` }}>
               <item.icon className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
                 {t(item.titleKey)}
