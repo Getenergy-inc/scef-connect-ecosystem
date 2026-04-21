@@ -28,10 +28,8 @@ export const BrandFilm = () => {
 
           <div className="md:col-span-7 md:col-start-6">
             <p className="text-lg leading-relaxed text-foreground/80">
-              Santos Creations Educational Foundation is building a stronger
-              educational future for Africa through technology, advocacy,
-              empowerment, and strategic partnerships — driven by membership,
-              diaspora strength, CSR partners, and grassroots local chapters.
+              SCEF is building a stronger educational future for Africa through
+              digital access, advocacy, partnerships, and impact-driven programs.
             </p>
 
             <div className="mt-10 grid gap-x-6 gap-y-3 sm:grid-cols-2">
