@@ -92,8 +92,8 @@ export const CinematicHero = () => {
           </h1>
 
           <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            Advocacy, digital access, recognition, and partnerships — across 57
-            African countries.
+            Advocacy, digital access, recognition, and partnerships — across 54+
+            regions of Africa.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-3">
@@ -122,7 +122,7 @@ export const CinematicHero = () => {
         <div className="mt-20 hidden max-w-2xl grid-cols-4 gap-x-10 border-t border-white/10 pt-8 sm:grid md:mt-24">
           {[
             { k: "Founded", v: "1997" },
-            { k: "Countries", v: "57" },
+            { k: "Regions", v: "54+" },
             { k: "Programs", v: "8+" },
             { k: "Languages", v: "9" },
           ].map((m) => (

@@ -11,7 +11,7 @@ export const FeaturedUpdate = () => {
               Featured Update
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-              NESA-Africa 2025 enters its regional voting phase.
+              NESA-Africa 2026 enters its regional voting phase.
             </h2>
             <div className="mt-5 flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
               <Calendar className="h-3.5 w-3.5" />
@@ -42,7 +42,7 @@ export const FeaturedUpdate = () => {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(45_92%_42%/0.18),transparent_60%)]" />
                 <div className="absolute inset-0 flex flex-col justify-end p-8 text-white md:p-12">
                   <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-scef-gold/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-scef-gold-light">
-                    NESA-Africa 2025
+                    NESA-Africa 2026
                   </div>
                   <p className="font-display text-2xl font-semibold leading-tight md:text-3xl lg:text-4xl">
                     Recognition as a standards mechanism.
