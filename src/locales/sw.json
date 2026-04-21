@@ -135,23 +135,23 @@
     "opensOn": "Inafunguka tarehe"
   },
   "footer": {
-    "organization": "Santos Creations Educational Foundation",
-    "location": "Lagos, Nigeria",
-    "copyright": "Haki zote zimehifadhiwa.",
     "columns": {
-      "contact": "Wasiliana",
-      "programs": "Viungo vya Haraka",
-      "media": "Majukwaa Yetu",
-      "getInvolved": "Jiunge Nasi"
-    },
-    "social": {
-      "label": "Ungana nasi"
+      "programs": "Programu",
+      "media": "Vyombo vya Habari",
+      "chapters": "Sura za Mitaa",
+      "getInvolved": "Jiunge Nasi",
+      "contact": "Mawasiliano"
     },
     "legal": {
-      "privacy": "Sera ya Faragha",
-      "terms": "Masharti ya Huduma",
+      "privacy": "Faragha",
+      "terms": "Masharti",
       "accessibility": "Upatikanaji"
-    }
+    },
+    "social": {
+      "label": "Tufuate"
+    },
+    "copyright": "© {year} Santos Creations Educational Foundation. Haki zote zimehifadhiwa.",
+    "mission": "Kusimamia Mustakabali wa Elimu wa Afrika kupitia utetezi, ufadhili na uthibitisho wa ubora wa elimu kote barani."
   },
   "home": {
     "board": {
@@ -281,14 +281,14 @@
   },
   "about": {
     "hero": {
-      "title": "Kuhusu Santos Creations Educational Foundation (SCEF)",
-      "subtitle": "SCEF ni taasisi ya elimu ya pana-Afrika inayoendeshwa kwa uanachama inayoimarisha utoaji wa elimu kupitia mifumo ya utawala, upatikanaji wa kidijitali na vyeti, sura za mitaa zinazofuata vigezo, na ushirikiano unaowajibika unaofuatana na UN SDGs na AU Agenda 2063.",
-      "tagline": "Kujenga kiwango cha elimu kinachokua kila wakati barani Afrika.",
-      "description": "SCEF ni taasisi ya elimu ya pana-Afrika inayoendeshwa kwa uanachama inayosukuma Elimu kwa Wote kupitia utawala, sura za mitaa, mafunzo ya kidijitali, utayari wa kazi wa TVET, elimu shirikishi, na ushirikiano unaowazi.",
+      "title": "Kuwawezesha Afrika kupitia Elimu, Ubunifu, na Fursa",
+      "subtitle": "Msingi unaoendeshwa na wanachama unaoendeleza elimu katika maeneo kupitia utetezi, ufikiaji wa kidijitali, na ushirikiano wa kimkakati.",
+      "tagline": "Kujenga kiwango endelevu na kinachokua cha elimu Afrika.",
+      "description": "SCEF inaunganisha programu, matawi, washirika, mifumo, na vyombo vya habari kutoa matokeo yanayoweza kupimika.",
       "regionBadge": "Afrika ya Kikanda • Diaspora ya Afrika",
       "trustLine": "Ilianzishwa 1997 • Ilisajiliwa 2010 • Inafuatana na SDG 4 + Ajenda 2063 • Utawala wa HQ + utekelezaji wa sura",
-      "ctaJoin": "Jiunge na SCEF",
-      "ctaDonate": "Changia",
+      "ctaJoin": "Chunguza Uanachama",
+      "ctaDonate": "Saidia Dhamira",
       "ctaPartner": "Kuwa Mshirika",
       "ctaAmbassador": "Kuwa Balozi",
       "ctaJoinChapter": "Jiunge na Sura ya Mtaa",
@@ -329,8 +329,8 @@
     },
     "who": {
       "badge": "Sisi ni nani",
-      "title": "Mfumo wa Athari ya Elimu Uliopangwa",
-      "body": "Santos Creations Educational Foundation (SCEF) ni mfumo wa athari ya elimu uliopangwa—ulioundwa kusaidia mifumo ya elimu kuboreshwa, kupanuliwa, na kudumisha uwajibikaji. Tunaunganisha sura za mitaa, washirika, majukwaa ya kidijitali, na utetezi wa vyombo vya habari kutoa matokeo yanayopimika katika:",
+      "title": "Mfumo Uliopangwa wa Athari za Kielimu",
+      "body": "SCEF ni msingi unaoendeshwa na wanachama unaojenga mifumo inayosaidia elimu kuboreka, kupanuka, na kuwa na uwajibikaji kote Afrika. Tunaunganisha programu, matawi, washirika, mifumo, na vyombo vya habari.",
       "outcomes": [
         "Msaada wa shule na miundombinu",
         "Ufadhili na msaada wa wanafunzi",
@@ -339,17 +339,17 @@
         "Elimu ya wanawake na wasichana",
         "Utambuzi wa ubora wa elimu (NESA-Africa)"
       ],
-      "ctaPrograms": "Chunguza Programu Zetu",
-      "ctaChapter": "Jiunge na Sura",
-      "ctaDonate": "Changia Sasa",
+      "ctaPrograms": "Chunguza Programu",
+      "ctaChapter": "Jiunge na Tawi",
+      "ctaDonate": "Kuwa Mshirika",
       "ctaUpdates": "Tazama Taarifa"
     },
     "whyWeExist": {
       "title": "Kwa nini tupo",
-      "intro": "Barani Afrika, matokeo ya mafunzo yanazuiliwa na mapungufu ya miundombinu, upatikanaji usio sawa wa mafunzo ya ufundi, mifumo ya ujumuishi iliyopunguzwa, uwajibikaji dhaifu wa fedha, na njia zisizo wazi kutoka kwa mafunzo hadi kazi bora. SCEF ipo kushughulikia vikwazo hivi kupitia mfano wa utekelezaji unaoungwa mkono na utawala na unaoendeshwa na sura, ambao unapimika, shirikishi, na unaoweza kupanuliwa.",
+      "intro": "Mifumo ya elimu Afrika inakabiliwa na changamoto halisi: shule zenye vifaa duni, ufikiaji mdogo wa mafunzo ya ujuzi, mapengo katika ujumuishaji, ufadhili usio na uwajibikaji, na mpito dhaifu kwenda ajira.",
       "expandAll": "Panua yote",
       "collapseAll": "Kunja yote",
-      "closing": "SCEF ipo kubadilisha hilo—kwa kujenga mfano wa utekelezaji unaoungwa mkono na utawala na unaoendeshwa na sura unaofanya mabadiliko ya elimu yapimike, kuwa shirikishi, na kupanuliwa.",
+      "closing": "Tunakuwepo kutatua hili — kwa kujenga mfumo unaopimika, jumuishi, unaopanuka, na unaoendeshwa kupitia matawi ya kimkoa.",
       "challenges": {
         "schools": {
           "title": "Mazingira ya shule yasiyo salama au yasiyojitosheleza",
@@ -405,7 +405,7 @@
       }
     },
     "whatWeDo": {
-      "title": "Tunafanya nini",
+      "title": "Programu Zinazofanya Kazi Pamoja",
       "intro": "Programu kuu zilizobuniwa kufanya kazi pamoja juu ya upatikanaji, ubora, ujumuishi, ujuzi, na utambuzi.",
       "learnMore": "Jifunze zaidi",
       "ctaApply": "Omba / Shiriki",
@@ -470,10 +470,22 @@
       "title": "Uendelevu na Ulinganifu",
       "body": "SCEF inalinganisha programu na SDG 4 na matokeo ya SDGs pana, na inasaidia upanuzi wa kiwango cha Afrika kupitia AU Agenda 2063. Mbinu yetu inaweka kipaumbele:",
       "priorities": {
-        "inclusion": { "label": "Ujumuishi", "desc": "Wasichana na wanafunzi wenye ulemavu" },
-        "ownership": { "label": "Umiliki wa mtaa", "desc": "Utekelezaji wa sura" },
-        "transparency": { "label": "Ripoti wazi", "desc": "Tayari kwa washirika" },
-        "outcomes": { "label": "Matokeo yanayopimika", "desc": "Msaada wa mafunzo unaotegemea ushahidi" }
+        "inclusion": {
+          "label": "Ujumuishi",
+          "desc": "Wasichana na wanafunzi wenye ulemavu"
+        },
+        "ownership": {
+          "label": "Umiliki wa mtaa",
+          "desc": "Utekelezaji wa sura"
+        },
+        "transparency": {
+          "label": "Ripoti wazi",
+          "desc": "Tayari kwa washirika"
+        },
+        "outcomes": {
+          "label": "Matokeo yanayopimika",
+          "desc": "Msaada wa mafunzo unaotegemea ushahidi"
+        }
       },
       "csrFundsTitle": "Usimamizi wa Mfuko wa Elimu (CSR)",
       "csrFundsBody": "Tunasaidia washirika kupanga na kusimamia fedha za CSR za elimu—kwa utawala, usimamizi wa utekelezaji na ripoti za athari.",
@@ -483,13 +495,25 @@
       "ctaEndorse": "Thibitisha SCEF / Programu"
     },
     "getInvolved": {
-      "title": "Jiunge Nasi",
-      "subtitle": "Chagua njia yako",
+      "title": "Chagua Njia Yako",
+      "subtitle": "Jiunge na SCEF kwa njia inayokufaa.",
       "pathways": {
-        "member": { "title": "Jiunge kama Mwanachama", "desc": "Kuwa sehemu ya harakati" },
-        "ambassador": { "title": "Kuwa Balozi", "desc": "Wakilisha SCEF, hamasisha msaada, fuatilia athari" },
-        "partner": { "title": "Mshirika/CSR", "desc": "Fadhili miradi inayopimika kwa uwajibikaji" },
-        "donate": { "title": "Changia", "desc": "Saidia mwanafunzi, shule, au utetezi wa media" }
+        "member": {
+          "title": "Jiunge kama Mwanachama",
+          "desc": "Kuwa sehemu ya harakati"
+        },
+        "ambassador": {
+          "title": "Kuwa Balozi",
+          "desc": "Wakilisha SCEF, hamasisha msaada, fuatilia athari"
+        },
+        "partner": {
+          "title": "Mshirika/CSR",
+          "desc": "Fadhili miradi inayopimika kwa uwajibikaji"
+        },
+        "donate": {
+          "title": "Changia",
+          "desc": "Saidia mwanafunzi, shule, au utetezi wa media"
+        }
       },
       "reassurance": "Unaweza kuanza kidogo—uanachama, mchango wa mara moja, au kujiunga na sura yako ya mtaa."
     },
@@ -569,11 +593,12 @@
       "ctaPartner": "Ushirikiano wa CSR"
     },
     "final": {
-      "title": "Kuwa sehemu ya mabadiliko ya elimu barani Afrika.",
+      "title": "Kuwa sehemu ya mageuzi ya elimu Afrika",
       "ctaJoin": "Jiunge",
       "ctaDonate": "Changia",
       "ctaPartner": "Kuwa Mshirika",
-      "ctaMedia": "Tazama SCEF Media"
+      "ctaMedia": "Tazama SCEF Media",
+      "subtitle": "Tusaidie kufanya elimu ipatikane, ijumuishe, na ilete athari katika maeneo yote."
     }
   },
   "governance": {
@@ -662,19 +687,35 @@
     "snapshot": {
       "bot": {
         "subtitle": "Makao Makuu ya SCEF",
-        "approves": ["Mwelekeo mkakati", "Kuidhinisha bajeti", "Uteuzi wa viongozi"]
+        "approves": [
+          "Mwelekeo mkakati",
+          "Kuidhinisha bajeti",
+          "Uteuzi wa viongozi"
+        ]
       },
       "boa": {
         "subtitle": "Programu & Sura",
-        "approves": ["Mwongozo wa sera", "Mkakati wa ushirikiano", "Mapitio ya utendaji"]
+        "approves": [
+          "Mwongozo wa sera",
+          "Mkakati wa ushirikiano",
+          "Mapitio ya utendaji"
+        ]
       },
       "bod": {
         "subtitle": "Shughuli za Kikanda",
-        "approves": ["Bajeti za kikanda", "Uidhinishaji wa sura", "Utekelezaji wa programu"]
+        "approves": [
+          "Bajeti za kikanda",
+          "Uidhinishaji wa sura",
+          "Utekelezaji wa programu"
+        ]
       },
       "lcps": {
         "subtitle": "Uongozi wa Nchi",
-        "approves": ["Programu za mitaa", "Shughuli za wanachama", "Kufikia jamii"]
+        "approves": [
+          "Programu za mitaa",
+          "Shughuli za wanachama",
+          "Kufikia jamii"
+        ]
       }
     },
     "management": {
@@ -722,12 +763,30 @@
       "title": "Sera & Utii",
       "subtitle": "SCEF inadumisha sera za kina za utawala zinazohakikisha uwazi, uwajibikaji na shughuli za kimaadili.",
       "items": {
-        "constitution": { "title": "Katiba & Sheria Ndogo", "desc": "Hati ya msingi ya utawala" },
-        "ethics": { "title": "Kanuni za Maadili", "desc": "Viwango kwa wadhamini, wafanyakazi na watu wa kujitolea" },
-        "financial": { "title": "Sera ya Fedha", "desc": "Viwango vya usimamizi wa fedha na kuripoti" },
-        "antiCorruption": { "title": "Sera ya Kupambana na Rushwa", "desc": "Kuvumilia sifuri kwa udanganyifu na rushwa" },
-        "conflict": { "title": "Mgongano wa Maslahi", "desc": "Itifaki za ufunuo na usimamizi" },
-        "whistleblower": { "title": "Ulinzi wa Wapiga Kengele", "desc": "Taratibu salama za kuripoti" }
+        "constitution": {
+          "title": "Katiba & Sheria Ndogo",
+          "desc": "Hati ya msingi ya utawala"
+        },
+        "ethics": {
+          "title": "Kanuni za Maadili",
+          "desc": "Viwango kwa wadhamini, wafanyakazi na watu wa kujitolea"
+        },
+        "financial": {
+          "title": "Sera ya Fedha",
+          "desc": "Viwango vya usimamizi wa fedha na kuripoti"
+        },
+        "antiCorruption": {
+          "title": "Sera ya Kupambana na Rushwa",
+          "desc": "Kuvumilia sifuri kwa udanganyifu na rushwa"
+        },
+        "conflict": {
+          "title": "Mgongano wa Maslahi",
+          "desc": "Itifaki za ufunuo na usimamizi"
+        },
+        "whistleblower": {
+          "title": "Ulinzi wa Wapiga Kengele",
+          "desc": "Taratibu salama za kuripoti"
+        }
       }
     },
     "contact": {
@@ -791,27 +850,145 @@
     "ctaJoinChapter": "Jiunge na Sura ya Mtaa"
   },
   "programs": {
-    "hero": {
-      "badge": "Kazi Yetu",
-      "title": "Programu & Mipango",
-      "subtitle": "SCEF huleta athari kupitia programu kuu zilizoundwa kufanya kazi pamoja kuhusu upatikanaji, ubora, ujumuishaji, ujuzi na utambuzi."
-    },
-    "categories": {
-      "education": {
-        "title": "Programu za Elimu",
-        "subtitle": "Mipango kuu inayoshughulikia upatikanaji, ubora na ujumuishaji katika elimu barani Afrika."
+    "page": {
+      "hero": {
+        "title": "Programu Zetu",
+        "subtext": "SCEF hutoa athari kupitia programu kuu tatu na jukwaa kuu moja. Ili kubaki makini na kuwa na uwezo wa kupanuka, kazi zinazohusiana hutolewa kama Njia (programu ndogo) na Mfululizo (webinari/mafunzo) chini ya programu kuu inayofaa."
+      },
+      "flagship": {
+        "label": "Programu na Jukwaa Kuu",
+        "heading": "Programu 3 + Jukwaa 1",
+        "nesa": {
+          "title": "NESA Afrika",
+          "subtitle": "Tuzo ya Kiwango Kipya cha Elimu Afrika",
+          "description": "Viwango vya bara, utambuzi, na uwajibikaji kwa ubora wa elimu.",
+          "clarityLine": "NESA Afrika inaendeshwa na Tovuti ya Uteuzi na Kupiga Kura ya NESA.Africa na kuenezwa kupitia NESA Africa TV / NESA Awards TV.",
+          "bullets": [
+            "Uteuzi na kupiga kura (tovuti rasmi)",
+            "Uhukumu, kategoria, na utambuzi",
+            "Utangazaji, kuhesabu kurudi, kurudia (Awards TV)"
+          ],
+          "cta": {
+            "primary": "Teua / Piga Kura (NESA.Africa)",
+            "secondary1": "Tazama NESA Africa TV",
+            "secondary2": "Tazama Msimu wa Tuzo"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid Afrika",
+          "subtitle": "Msaada wa Elimu Afrika",
+          "description": "Msaada wa moja kwa moja wa elimu kwa wanafunzi na shule — ufikiaji, usawa, ujumuishaji, na miundombinu.",
+          "bullets": [
+            "Udhamini na msaada wa wanafunzi",
+            "Msaada wa shule na utoaji wa jamii",
+            "Njia za miundombinu, usawa, ujumuishaji + webinari"
+          ],
+          "cta": {
+            "primary": "Omba Msaada / Fadhili Mwanafunzi",
+            "secondary1": "Chunguza Njia za EduAid",
+            "secondary2": "Jiunge na Webinari za EduAid"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Elimu Mtandaoni Afrika)",
+          "subtitle": "Kujifunza na Vyeti",
+          "description": "Maendeleo ya ujuzi, vyeti, na uthibitishaji kwa utayari wa kazi.",
+          "bullets": [
+            "Njia za kujifunza na mitihani",
+            "Utoaji na uthibitishaji wa vyeti",
+            "Vyeti vya tija mahali pa kazi"
+          ],
+          "cta": {
+            "primary": "Chunguza Vyeti / Weka Mtihani",
+            "secondary1": "Thibitisha Cheti"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Jukwaa Kuu",
+          "description": "Rasilimali za kujifunza bure na kushiriki maarifa ya jamii.",
+          "bullets": [
+            "Vinjari nyenzo bure",
+            "Pakia rasilimali na kuchangia",
+            "Kusaidia ushiriki wa kusoma na kujifunza"
+          ],
+          "cta": {
+            "primary": "Vinjari Nyenzo Bure",
+            "secondary1": "Jiunge na Mtandao wa Wachangiaji"
+          }
+        }
+      },
+      "tracks": {
+        "title": "Njia za EduAid Afrika (Programu Ndogo)",
+        "oneline": "Njia hizi zipo chini ya EduAid Afrika ili kuweka kwingineko makini na rahisi kuvinjari.",
+        "note": "RMSA, Elimu ya Wanawake na Wasichana, na Msaada wa Mahitaji Maalum ni njia za EduAid Afrika — si programu tofauti.",
+        "rmsa": {
+          "title": "RMSA: Jenga Upya Shule Yangu Afrika",
+          "tag": "Njia ya Miundombinu",
+          "description": "Ukarabati na maboresho ya shule na mazingira ya kujifunza.",
+          "cta1": "Tuma Ombi la Shule",
+          "cta2": "Fanya Udhamini wa Ukarabati"
+        },
+        "womenGirls": {
+          "title": "Elimu ya Wanawake na Wasichana",
+          "tag": "Njia ya Usawa",
+          "description": "Msaada kwa ufikiaji, kubaki, na mafanikio ya wasichana na wanawake.",
+          "cta1": "Fadhili Elimu ya Wasichana",
+          "cta2": "Jiunge na Timu ya Utetezi"
+        },
+        "specialNeeds": {
+          "title": "Msaada wa Elimu kwa Mahitaji Maalum",
+          "tag": "Njia ya Ujumuishaji",
+          "description": "Msaada wa elimu jumuishi na uingiliaji kati wa kujifunza kwa msaada.",
+          "cta1": "Omba Msaada",
+          "cta2": "Fadhili Kujifunza kwa Msaada"
+        },
+        "webinars": {
+          "title": "Webinari za EduAid",
+          "tag": "Mfululizo wa Kujifunza na Kufikia",
+          "description": "Webinari na vikao vya kujenga uwezo kwa jamii na washirika.",
+          "cta1": "Jiunge na Webinari Ijayo",
+          "cta2": "Tazama Marudiano"
+        }
       },
       "eoa": {
-        "title": "Education Online Africa",
-        "subtitle": "Mafunzo ya kidijitali, vyeti na njia za kuajiriwa kwa wanafunzi wa Afrika na diaspora."
+        "sectionTitle": "Njia ya Vyeti vya EOA",
+        "productTitle": "Vyeti vya Tija Mahali pa Kazi Afrika",
+        "productDescription": "Mafunzo ya vitendo ya ujuzi wa tija + tathmini + uthibitishaji wa cheti.",
+        "cta1": "Anza Kujifunza",
+        "cta2": "Weka Mtihani",
+        "cta3": "Thibitisha Cheti"
       },
-      "recognition": {
-        "title": "Utambuzi & Tuzo",
-        "subtitle": "Kusherehekea ubora na kusukuma uboreshaji endelevu katika viwango vya elimu."
-      },
-      "media": {
-        "title": "Majukwaa ya Vyombo vya Habari",
-        "subtitle": "Majukwaa ya utangazaji na maudhui kwa utetezi wa elimu na usambazaji wa maarifa."
+      "pathways": {
+        "title": "Chagua Njia Yako",
+        "individuals": {
+          "title": "Watu Binafsi",
+          "link1": "Jiunge kama Mwanachama",
+          "link2": "Omba Msaada wa EduAid",
+          "link3": "Jifunze na EOA"
+        },
+        "schools": {
+          "title": "Shule",
+          "link1": "Omba Msaada (EduAid)",
+          "link2": "Omba RMSA",
+          "link3": "Jiunge na eLibrary"
+        },
+        "partners": {
+          "title": "Washirika / CSR",
+          "link1": "Fanya Udhamini wa Njia",
+          "link2": "Fadhili Udhamini",
+          "link3": "Fanya Udhamini wa NESA"
+        },
+        "communities": {
+          "title": "Jamii",
+          "link1": "Jiunge na Sura ya Mtaa",
+          "link2": "Jitolee",
+          "link3": "Tazama SCEF Media"
+        },
+        "cta1": "Changia / Fanya Udhamini",
+        "cta2": "Jiunge kama Mwanachama",
+        "cta3": "Chunguza Sura za Mtaa",
+        "cta4": "Tazama SCEF Media"
       }
     }
   },
@@ -1507,18 +1684,33 @@
       "welcome": "Karibu EduAid Africa",
       "title": "Kuwezesha Elimu, Kuwezesha Mustakabali Kote Afrika.",
       "description": "Jiunge nasi kubadilisha mandhari ya elimu kupitia ufadhili, michango, mipango ya CSR, miradi ya jamii, na maonyesho ya elimu ya kimataifa.",
-      "stat1": { "label": "Shule zilizorekebishwa" },
-      "stat2": { "label": "Ufadhili uliotolewa" },
-      "stat3": { "label": "Walimu waliofunzwa" },
+      "stat1": {
+        "label": "Shule zilizorekebishwa"
+      },
+      "stat2": {
+        "label": "Ufadhili uliotolewa"
+      },
+      "stat3": {
+        "label": "Walimu waliofunzwa"
+      },
       "primaryCta": "Anza Mkusanyiko wa Fedha",
       "secondaryCta": "Changia Sasa"
     },
     "vision": {
       "title": "Dira na Malengo ya 2032",
       "description": "Tunatarajia kufikia malengo haya ya SMART ifikapo 2032",
-      "goal1": { "title": "Kuwezesha wanafunzi milioni 10", "desc": "kupitia ufadhili, e-learning, na mafunzo ya ufundi" },
-      "goal2": { "title": "Kurekebisha au Kujenga shule 10,000", "desc": "katika bara la Afrika" },
-      "goal3": { "title": "Kufunza walimu 500,000 katika ICT", "desc": "na mbinu za kufundisha za kisasa" }
+      "goal1": {
+        "title": "Kuwezesha wanafunzi milioni 10",
+        "desc": "kupitia ufadhili, e-learning, na mafunzo ya ufundi"
+      },
+      "goal2": {
+        "title": "Kurekebisha au Kujenga shule 10,000",
+        "desc": "katika bara la Afrika"
+      },
+      "goal3": {
+        "title": "Kufunza walimu 500,000 katika ICT",
+        "desc": "na mbinu za kufundisha za kisasa"
+      }
     },
     "objectives": {
       "badge": "Dhamira Yetu",
@@ -1605,25 +1797,6 @@
       "volunteer": "Kuwa Mjitolea"
     }
   },
-  "footer": {
-    "columns": {
-      "programs": "Programu",
-      "media": "Vyombo vya Habari",
-      "chapters": "Sura za Mitaa",
-      "getInvolved": "Jiunge Nasi",
-      "contact": "Mawasiliano"
-    },
-    "legal": {
-      "privacy": "Faragha",
-      "terms": "Masharti",
-      "accessibility": "Upatikanaji"
-    },
-    "social": {
-      "label": "Tufuate"
-    },
-    "copyright": "© {year} Santos Creations Educational Foundation. Haki zote zimehifadhiwa.",
-    "mission": "Kusimamia Mustakabali wa Elimu wa Afrika kupitia utetezi, ufadhili na uthibitisho wa ubora wa elimu kote barani."
-  },
   "messages": {
     "title": "Ujumbe",
     "subtitle": "Wasiliana na timu na matawi yako",
@@ -1649,132 +1822,5 @@
     "save": "Hifadhi",
     "cancel": "Ghairi",
     "creating": "Inaunda..."
-  },
-  "programs": {
-    "page": {
-      "hero": {
-        "title": "Programu Zetu",
-        "subtext": "SCEF hutoa athari kupitia programu kuu tatu na jukwaa kuu moja. Ili kubaki makini na kuwa na uwezo wa kupanuka, kazi zinazohusiana hutolewa kama Njia (programu ndogo) na Mfululizo (webinari/mafunzo) chini ya programu kuu inayofaa."
-      },
-      "flagship": {
-        "label": "Programu na Jukwaa Kuu",
-        "heading": "Programu 3 + Jukwaa 1",
-        "nesa": {
-          "title": "NESA Afrika",
-          "subtitle": "Tuzo ya Kiwango Kipya cha Elimu Afrika",
-          "description": "Viwango vya bara, utambuzi, na uwajibikaji kwa ubora wa elimu.",
-          "clarityLine": "NESA Afrika inaendeshwa na Tovuti ya Uteuzi na Kupiga Kura ya NESA.Africa na kuenezwa kupitia NESA Africa TV / NESA Awards TV.",
-          "bullets": ["Uteuzi na kupiga kura (tovuti rasmi)", "Uhukumu, kategoria, na utambuzi", "Utangazaji, kuhesabu kurudi, kurudia (Awards TV)"],
-          "cta": {
-            "primary": "Teua / Piga Kura (NESA.Africa)",
-            "secondary1": "Tazama NESA Africa TV",
-            "secondary2": "Tazama Msimu wa Tuzo"
-          }
-        },
-        "eduaid": {
-          "title": "EduAid Afrika",
-          "subtitle": "Msaada wa Elimu Afrika",
-          "description": "Msaada wa moja kwa moja wa elimu kwa wanafunzi na shule — ufikiaji, usawa, ujumuishaji, na miundombinu.",
-          "bullets": ["Udhamini na msaada wa wanafunzi", "Msaada wa shule na utoaji wa jamii", "Njia za miundombinu, usawa, ujumuishaji + webinari"],
-          "cta": {
-            "primary": "Omba Msaada / Fadhili Mwanafunzi",
-            "secondary1": "Chunguza Njia za EduAid",
-            "secondary2": "Jiunge na Webinari za EduAid"
-          }
-        },
-        "eoa": {
-          "title": "EOA (Elimu Mtandaoni Afrika)",
-          "subtitle": "Kujifunza na Vyeti",
-          "description": "Maendeleo ya ujuzi, vyeti, na uthibitishaji kwa utayari wa kazi.",
-          "bullets": ["Njia za kujifunza na mitihani", "Utoaji na uthibitishaji wa vyeti", "Vyeti vya tija mahali pa kazi"],
-          "cta": {
-            "primary": "Chunguza Vyeti / Weka Mtihani",
-            "secondary1": "Thibitisha Cheti"
-          }
-        },
-        "elibrary": {
-          "title": "eLibrary Nigeria",
-          "subtitle": "Jukwaa Kuu",
-          "description": "Rasilimali za kujifunza bure na kushiriki maarifa ya jamii.",
-          "bullets": ["Vinjari nyenzo bure", "Pakia rasilimali na kuchangia", "Kusaidia ushiriki wa kusoma na kujifunza"],
-          "cta": {
-            "primary": "Vinjari Nyenzo Bure",
-            "secondary1": "Jiunge na Mtandao wa Wachangiaji"
-          }
-        }
-      },
-      "tracks": {
-        "title": "Njia za EduAid Afrika (Programu Ndogo)",
-        "oneline": "Njia hizi zipo chini ya EduAid Afrika ili kuweka kwingineko makini na rahisi kuvinjari.",
-        "note": "RMSA, Elimu ya Wanawake na Wasichana, na Msaada wa Mahitaji Maalum ni njia za EduAid Afrika — si programu tofauti.",
-        "rmsa": {
-          "title": "RMSA: Jenga Upya Shule Yangu Afrika",
-          "tag": "Njia ya Miundombinu",
-          "description": "Ukarabati na maboresho ya shule na mazingira ya kujifunza.",
-          "cta1": "Tuma Ombi la Shule",
-          "cta2": "Fanya Udhamini wa Ukarabati"
-        },
-        "womenGirls": {
-          "title": "Elimu ya Wanawake na Wasichana",
-          "tag": "Njia ya Usawa",
-          "description": "Msaada kwa ufikiaji, kubaki, na mafanikio ya wasichana na wanawake.",
-          "cta1": "Fadhili Elimu ya Wasichana",
-          "cta2": "Jiunge na Timu ya Utetezi"
-        },
-        "specialNeeds": {
-          "title": "Msaada wa Elimu kwa Mahitaji Maalum",
-          "tag": "Njia ya Ujumuishaji",
-          "description": "Msaada wa elimu jumuishi na uingiliaji kati wa kujifunza kwa msaada.",
-          "cta1": "Omba Msaada",
-          "cta2": "Fadhili Kujifunza kwa Msaada"
-        },
-        "webinars": {
-          "title": "Webinari za EduAid",
-          "tag": "Mfululizo wa Kujifunza na Kufikia",
-          "description": "Webinari na vikao vya kujenga uwezo kwa jamii na washirika.",
-          "cta1": "Jiunge na Webinari Ijayo",
-          "cta2": "Tazama Marudiano"
-        }
-      },
-      "eoa": {
-        "sectionTitle": "Njia ya Vyeti vya EOA",
-        "productTitle": "Vyeti vya Tija Mahali pa Kazi Afrika",
-        "productDescription": "Mafunzo ya vitendo ya ujuzi wa tija + tathmini + uthibitishaji wa cheti.",
-        "cta1": "Anza Kujifunza",
-        "cta2": "Weka Mtihani",
-        "cta3": "Thibitisha Cheti"
-      },
-      "pathways": {
-        "title": "Chagua Njia Yako",
-        "individuals": {
-          "title": "Watu Binafsi",
-          "link1": "Jiunge kama Mwanachama",
-          "link2": "Omba Msaada wa EduAid",
-          "link3": "Jifunze na EOA"
-        },
-        "schools": {
-          "title": "Shule",
-          "link1": "Omba Msaada (EduAid)",
-          "link2": "Omba RMSA",
-          "link3": "Jiunge na eLibrary"
-        },
-        "partners": {
-          "title": "Washirika / CSR",
-          "link1": "Fanya Udhamini wa Njia",
-          "link2": "Fadhili Udhamini",
-          "link3": "Fanya Udhamini wa NESA"
-        },
-        "communities": {
-          "title": "Jamii",
-          "link1": "Jiunge na Sura ya Mtaa",
-          "link2": "Jitolee",
-          "link3": "Tazama SCEF Media"
-        },
-        "cta1": "Changia / Fanya Udhamini",
-        "cta2": "Jiunge kama Mwanachama",
-        "cta3": "Chunguza Sura za Mtaa",
-        "cta4": "Tazama SCEF Media"
-      }
-    }
   }
 }
