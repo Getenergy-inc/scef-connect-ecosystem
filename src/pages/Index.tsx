@@ -2,12 +2,13 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
-import { InstitutionalStats } from "@/components/sections/InstitutionalStats";
+import { ValueStrip } from "@/components/sections/ValueStrip";
+import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
 import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
+import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
+import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
-import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
-import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
@@ -16,21 +17,21 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>SCEF — Africa's Continuous Education Standards System</title>
+        <title>SCEF — Empowering Africa Through Education, Innovation & Opportunity</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation — a Pan-African membership institution advancing education standards across 5+ regions through programs, recognition, and partnerships since 1997."
+          content="Santos Creations Educational Foundation — a membership-driven Pan-African foundation advancing education across regions through advocacy, digital access, and strategic partnerships."
         />
         <meta
           name="keywords"
-          content="African education, SCEF, NESA Africa, EduAid Africa, education standards, eLibrary Nigeria, Pan-African education, Rebuild My School Africa"
+          content="African education, SCEF, NESA Africa, EduAid Africa, education standards, eLibrary Nigeria, Pan-African education, Rebuild My School Africa, membership"
         />
         <link rel="canonical" href="https://santoscreations.org" />
 
-        <meta property="og:title" content="SCEF — Africa's Continuous Education Standards System" />
+        <meta property="og:title" content="SCEF — Empowering Africa Through Education, Innovation & Opportunity" />
         <meta
           property="og:description"
-          content="A Pan-African institution driving advocacy, digital learning, awards, and partnerships across Africa."
+          content="A membership-driven Pan-African foundation advancing education across regions through advocacy, digital access, and strategic partnerships."
         />
         <meta property="og:type" content="website" />
 
@@ -41,7 +42,7 @@ const Index = () => {
             name: "Santos Creations Educational Foundation",
             alternateName: "SCEF",
             url: "https://santoscreations.org",
-            description: "Pan-African education governance institution",
+            description: "Membership-driven Pan-African education foundation",
             foundingDate: "1997",
             areaServed: "Africa",
           })}
@@ -53,38 +54,43 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Hero — split layout */}
+          {/* 1. Hero */}
           <LandingHero />
 
-          {/* 2. Credibility band */}
-          <InstitutionalStats />
+          {/* 2. Value strip */}
+          <ValueStrip />
 
-          {/* 3. Programs */}
+          {/* 3. Who we are */}
+          <Reveal>
+            <WhoWeAreLean />
+          </Reveal>
+
+          {/* 4. Programs */}
           <Reveal>
             <ProgramsThatTransform />
           </Reveal>
 
-          {/* 4. Impact areas — dark band */}
+          {/* 5. Impact strip — labels only */}
+          <Reveal>
+            <ImpactStripLabels />
+          </Reveal>
+
+          {/* 6. How SCEF works */}
+          <Reveal>
+            <HowSCEFWorks />
+          </Reveal>
+
+          {/* 7. Focus areas */}
           <Reveal>
             <ImpactAreasBand />
           </Reveal>
 
-          {/* 5. Featured update */}
-          <Reveal>
-            <FeaturedUpdate />
-          </Reveal>
-
-          {/* 6. Get involved */}
+          {/* 8. Get involved — primary conversion */}
           <Reveal>
             <ChooseYourPath />
           </Reveal>
 
-          {/* 7. Endorsements */}
-          <Reveal>
-            <EndorsedBySection />
-          </Reveal>
-
-          {/* 8. Final CTA */}
+          {/* 9. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
