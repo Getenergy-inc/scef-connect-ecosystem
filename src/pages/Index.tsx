@@ -5,6 +5,7 @@ import { CinematicHero } from "@/components/sections/CinematicHero";
 import { BrandFilm } from "@/components/sections/BrandFilm";
 import { ServicePillars } from "@/components/sections/ServicePillars";
 import { ImpactBand } from "@/components/sections/ImpactBand";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { ExploreHub } from "@/components/sections/ExploreHub";
 import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
@@ -73,6 +74,11 @@ const Index = () => {
           {/* 4. Impact band */}
           <Reveal>
             <ImpactBand />
+          </Reveal>
+
+          {/* 4b. Endorsed by (FAWE, CSACEFA, etc.) */}
+          <Reveal delay={60}>
+            <EndorsedBySection />
           </Reveal>
 
           {/* 5. Explore SCEF — destination router */}
