@@ -46,17 +46,22 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
   }, [locale, isRTL]);
 
   const t = (key: string): string => {
-    const keys = key.split('.');
-    let value: any = translations[locale];
-    for (const k of keys) {
-      // Handle both object keys and array indices
-      if (Array.isArray(value) && !isNaN(Number(k))) {
-        value = value[Number(k)];
-      } else {
-        value = value?.[k];
+    const lookup = (source: any): string | undefined => {
+      let value: any = source;
+      for (const k of key.split('.')) {
+        if (value == null) return undefined;
+        if (Array.isArray(value) && !isNaN(Number(k))) {
+          value = value[Number(k)];
+        } else {
+          value = value[k];
+        }
       }
-    }
-    return typeof value === 'string' ? value : key;
+      return typeof value === 'string' ? value : undefined;
+    };
+
+    // Try current locale, then fall back to English, then return empty string.
+    // Never return the raw key — that would leak technical identifiers to the UI.
+    return lookup(translations[locale]) ?? lookup(translations.en) ?? '';
   };
 
   return (
