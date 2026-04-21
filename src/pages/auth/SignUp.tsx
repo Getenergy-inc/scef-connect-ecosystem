@@ -13,7 +13,7 @@ import { mapAuthErrorToUserMessage } from "@/lib/errorMapper";
 import { logger } from "@/lib/logger";
 import { PathPicker } from "@/components/auth/PathPicker";
 import { AccountForm, type AccountFormValues } from "@/components/auth/AccountForm";
-import { PathStub } from "@/components/auth/PathStub";
+import { PathFormRouter } from "@/components/auth/paths/PathFormRouter";
 import { GoogleButton } from "@/components/auth/GoogleButton";
 import { ENGAGEMENT_PATHS, PATH_NEXT_STEP, type EngagementPath } from "@/lib/onboarding";
 
