@@ -70,6 +70,12 @@ const AdminIndex = () => {
       icon: CreditCard,
       href: "/admin/finance/disbursements",
     },
+    {
+      title: "CSR Funding Funnel",
+      description: "Inquiries → projects → milestones → reports",
+      icon: Handshake,
+      href: "/admin/csr-funding-funnel",
+    },
   ];
 
   return (
