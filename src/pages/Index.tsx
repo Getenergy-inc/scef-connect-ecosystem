@@ -13,6 +13,9 @@ import { CTASection } from "@/components/sections/CTASection";
 import { NesaAfricaCard } from "@/components/sections/NesaAfricaCard";
 import { ImpactStats } from "@/components/sections/ImpactStats";
 import { CVOSpotlight } from "@/components/sections/CVOSpotlight";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { LatestNews } from "@/components/sections/LatestNews";
+import { UpcomingEvents } from "@/components/sections/UpcomingEvents";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const Index = () => {
@@ -76,6 +79,15 @@ const Index = () => {
           
           {/* CVO Leadership Spotlight */}
           <CVOSpotlight />
+          
+          {/* Upcoming Events */}
+          <UpcomingEvents />
+          
+          {/* Latest News */}
+          <LatestNews />
+          
+          {/* Testimonials */}
+          <Testimonials />
           
           {/* Governance Snapshot */}
           <GovernanceSnapshot />
