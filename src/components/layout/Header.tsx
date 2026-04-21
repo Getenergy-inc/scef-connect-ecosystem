@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
-  Bell, MessageSquare, Settings, Activity, Users, Scale
+  Bell, MessageSquare, Settings, Activity, Users, Scale,
+  Layers
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -63,13 +64,17 @@ export const Header = () => {
         { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
       ]
     },
-    // NESA Awards - Only award tiers (streamlined)
+    // NESA Awards - All tiers + categories + calendar
     { name: "Awards", href: "/awards/platinum", key: "awards",
       children: [
+        { name: "Categories (17)", href: "/categories", icon: Layers },
+        { divider: true },
         { name: "Platinum Certificate", href: "/awards/platinum" },
         { name: "Africa Education Icon", href: "/awards/icon" },
         { name: "Gold Certificate", href: "/awards/gold" },
         { name: "Blue Garnet Award", href: "/awards/blue-garnet" },
+        { divider: true },
+        { name: "NESA Calendar", href: "/calendar" },
       ]
     },
     { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
@@ -83,6 +88,7 @@ export const Header = () => {
         { name: t("nav.dropdown.media.hub"), href: "/media" },
         { divider: true },
         { name: t("nav.dropdown.media.nesaTv"), href: "/media/nesa-tv" },
+        { name: t("nav.dropdown.media.nesaAwardsTv"), href: "/media/nesa-awards-tv" },
         { name: t("nav.dropdown.media.radio"), href: "/media/its-in-me-radio" },
         { divider: true },
         { name: t("nav.dropdown.media.platinumShow"), href: "/media/nesa-awards-tv/platinum" },
