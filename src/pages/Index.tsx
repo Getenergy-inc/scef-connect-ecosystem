@@ -1,13 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
-import { CinematicHero } from "@/components/sections/CinematicHero";
-import { BrandFilm } from "@/components/sections/BrandFilm";
-import { ServicePillars } from "@/components/sections/ServicePillars";
-import { ImpactBand } from "@/components/sections/ImpactBand";
-import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
-import { ExploreHub } from "@/components/sections/ExploreHub";
-import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
+import { LandingHero } from "@/components/sections/LandingHero";
+import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
+import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
+import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
@@ -58,40 +55,25 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Cinematic full-screen hero */}
-          <CinematicHero />
+          {/* 1. Split hero: copy left, photo right, pillar strip beneath */}
+          <LandingHero />
 
-          {/* 2. Brand intro — short, link-led */}
+          {/* 2. Programs that transform lives — 7 colorful icon tiles */}
           <Reveal>
-            <BrandFilm />
+            <ProgramsThatTransform />
           </Reveal>
 
-          {/* 3. Service pillars — 6 tiles */}
-          <Reveal delay={60}>
-            <ServicePillars />
-          </Reveal>
-
-          {/* 4. Impact band */}
+          {/* 3. Impact areas — horizontal dark band */}
           <Reveal>
-            <ImpactBand />
+            <ImpactAreasBand />
           </Reveal>
 
-          {/* 4b. Endorsed by (FAWE, CSACEFA, etc.) */}
-          <Reveal delay={60}>
-            <EndorsedBySection />
-          </Reveal>
-
-          {/* 5. Explore SCEF — destination router */}
-          <Reveal delay={60}>
-            <ExploreHub />
-          </Reveal>
-
-          {/* 6. Featured update — single story, links to all news */}
+          {/* 4. Choose your path — 5 colored CTA cards */}
           <Reveal>
-            <FeaturedUpdate />
+            <ChooseYourPath />
           </Reveal>
 
-          {/* 7. Final CTA */}
+          {/* 5. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
