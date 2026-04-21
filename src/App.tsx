@@ -34,6 +34,7 @@ import NotFound from "./pages/NotFound";
 import Sitemap from "./pages/Sitemap";
 import Vacancies from "./pages/Vacancies";
 import PartnerWithUs from "./pages/PartnerWithUs";
+import CsrFundManagement from "./pages/CsrFundManagement";
 
 // Legal Pages
 import Privacy from "./pages/Privacy";
@@ -251,6 +252,7 @@ const App = () => (
               <Route path="/governance" element={<Governance />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/partner-with-us" element={<PartnerWithUs />} />
+              <Route path="/csr-fund-management" element={<CsrFundManagement />} />
               
               {/* Divisions Routes */}
               <Route path="/divisions" element={<Divisions />} />
