@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_assistant_logs: {
+        Row: {
+          created_at: string
+          id: string
+          model: string | null
+          output_preview: string | null
+          prompt_summary: string | null
+          related_entity_id: string | null
+          related_entity_type: string | null
+          tokens_used: number | null
+          tool_name: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          model?: string | null
+          output_preview?: string | null
+          prompt_summary?: string | null
+          related_entity_id?: string | null
+          related_entity_type?: string | null
+          tokens_used?: number | null
+          tool_name: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          model?: string | null
+          output_preview?: string | null
+          prompt_summary?: string | null
+          related_entity_id?: string | null
+          related_entity_type?: string | null
+          tokens_used?: number | null
+          tool_name?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       ambassador_profiles: {
         Row: {
           advocacy_focus: string[] | null
@@ -1864,6 +1903,227 @@ export type Database = {
         }
         Relationships: []
       }
+      staff_departments: {
+        Row: {
+          created_at: string
+          description: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          name: string
+          slug: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          slug: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          slug?: string
+        }
+        Relationships: []
+      }
+      staff_profiles: {
+        Row: {
+          access_level: string
+          approved_at: string | null
+          approved_by: string | null
+          created_at: string
+          department_slug: string | null
+          employee_id: string | null
+          id: string
+          job_role: string | null
+          office_type: string | null
+          reporting_line: string | null
+          status: string
+          supervisor_id: string | null
+          updated_at: string
+          user_id: string
+          work_region: string | null
+        }
+        Insert: {
+          access_level?: string
+          approved_at?: string | null
+          approved_by?: string | null
+          created_at?: string
+          department_slug?: string | null
+          employee_id?: string | null
+          id?: string
+          job_role?: string | null
+          office_type?: string | null
+          reporting_line?: string | null
+          status?: string
+          supervisor_id?: string | null
+          updated_at?: string
+          user_id: string
+          work_region?: string | null
+        }
+        Update: {
+          access_level?: string
+          approved_at?: string | null
+          approved_by?: string | null
+          created_at?: string
+          department_slug?: string | null
+          employee_id?: string | null
+          id?: string
+          job_role?: string | null
+          office_type?: string | null
+          reporting_line?: string | null
+          status?: string
+          supervisor_id?: string | null
+          updated_at?: string
+          user_id?: string
+          work_region?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "staff_profiles_department_slug_fkey"
+            columns: ["department_slug"]
+            isOneToOne: false
+            referencedRelation: "staff_departments"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
+      staff_reports: {
+        Row: {
+          ai_assisted: boolean | null
+          created_at: string
+          department_slug: string | null
+          highlights: string | null
+          id: string
+          issues_encountered: string | null
+          key_tasks_completed: string | null
+          next_priorities: string | null
+          pending_tasks: string | null
+          period_end: string | null
+          report_date: string
+          report_type: string
+          review_notes: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          source_report_ids: string[] | null
+          status: string
+          submitted_at: string | null
+          support_needed: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ai_assisted?: boolean | null
+          created_at?: string
+          department_slug?: string | null
+          highlights?: string | null
+          id?: string
+          issues_encountered?: string | null
+          key_tasks_completed?: string | null
+          next_priorities?: string | null
+          pending_tasks?: string | null
+          period_end?: string | null
+          report_date: string
+          report_type: string
+          review_notes?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          source_report_ids?: string[] | null
+          status?: string
+          submitted_at?: string | null
+          support_needed?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ai_assisted?: boolean | null
+          created_at?: string
+          department_slug?: string | null
+          highlights?: string | null
+          id?: string
+          issues_encountered?: string | null
+          key_tasks_completed?: string | null
+          next_priorities?: string | null
+          pending_tasks?: string | null
+          period_end?: string | null
+          report_date?: string
+          report_type?: string
+          review_notes?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          source_report_ids?: string[] | null
+          status?: string
+          submitted_at?: string | null
+          support_needed?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      staff_tasks: {
+        Row: {
+          ai_generated: boolean | null
+          assigned_by: string | null
+          completed_at: string | null
+          created_at: string
+          department_slug: string | null
+          description: string | null
+          due_date: string | null
+          due_time: string | null
+          id: string
+          priority: string
+          status: string
+          tags: string[] | null
+          task_type: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ai_generated?: boolean | null
+          assigned_by?: string | null
+          completed_at?: string | null
+          created_at?: string
+          department_slug?: string | null
+          description?: string | null
+          due_date?: string | null
+          due_time?: string | null
+          id?: string
+          priority?: string
+          status?: string
+          tags?: string[] | null
+          task_type?: string
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ai_generated?: boolean | null
+          assigned_by?: string | null
+          completed_at?: string | null
+          created_at?: string
+          department_slug?: string | null
+          description?: string | null
+          due_date?: string | null
+          due_time?: string | null
+          id?: string
+          priority?: string
+          status?: string
+          tags?: string[] | null
+          task_type?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -2091,7 +2351,12 @@ export type Database = {
         }
         Returns: boolean
       }
+      has_staff_access: { Args: { _user_id: string }; Returns: boolean }
       is_admin: { Args: { _user_id: string }; Returns: boolean }
+      is_dept_manager: {
+        Args: { _dept_slug: string; _user_id: string }
+        Returns: boolean
+      }
       is_room_admin: {
         Args: { _room_id: string; _user_id: string }
         Returns: boolean

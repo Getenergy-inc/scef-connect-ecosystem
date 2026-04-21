@@ -1,5 +1,5 @@
 import { 
-  Users, MapPin, Megaphone, HandHeart, Building2, Award, GraduationCap,
+  Users, MapPin, Megaphone, HandHeart, Building2, Award, GraduationCap, Briefcase,
   type LucideIcon 
 } from "lucide-react";
 
@@ -10,7 +10,8 @@ export type EngagementPath =
   | "volunteer"
   | "sponsor"
   | "endorser"
-  | "awards";
+  | "awards"
+  | "staff";
 
 export interface PathOption {
   id: EngagementPath;
@@ -64,6 +65,13 @@ export const ENGAGEMENT_PATHS: PathOption[] = [
     description: "Apply, judge, nominate, or sponsor NESA-Africa.",
     icon: Users,
   },
+  {
+    id: "staff",
+    title: "Join as Staff / Internal Team",
+    description: "Apply for internal staff access. Approval required.",
+    icon: Briefcase,
+    badge: "Approval required",
+  },
 ];
 
 export const PATH_NEXT_STEP: Record<EngagementPath, { label: string; href: string }> = {
@@ -74,4 +82,5 @@ export const PATH_NEXT_STEP: Record<EngagementPath, { label: string; href: strin
   sponsor: { label: "Submit your CSR mandate", href: "/csr-funding-intake" },
   endorser: { label: "Submit endorsement details", href: "/partner-with-us" },
   awards: { label: "Explore NESA participation", href: "/awards" },
+  staff: { label: "Awaiting admin approval", href: "/dashboard" },
 };
