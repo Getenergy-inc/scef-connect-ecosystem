@@ -31,6 +31,7 @@ import Updates from "./pages/Updates";
 import Reports from "./pages/Reports";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
+import Sitemap from "./pages/Sitemap";
 import Vacancies from "./pages/Vacancies";
 import PartnerWithUs from "./pages/PartnerWithUs";
 
@@ -270,6 +271,7 @@ const App = () => (
               <Route path="/terms" element={<Terms />} />
               <Route path="/accessibility" element={<Accessibility />} />
               <Route path="/help" element={<Help />} />
+              <Route path="/sitemap" element={<Sitemap />} />
               
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
