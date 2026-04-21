@@ -155,6 +155,39 @@
     "mission": "Gobernando el futuro educativo de África a través de la defensa, financiación y certificación de la excelencia educativa en todo el continente."
   },
   "home": {
+    "heroV2": {
+      "eyebrow": "Fundación Panafricana de Educación · Desde 1997",
+      "line1": "Empoderando a África a través de",
+      "highlight": "la educación, la innovación,",
+      "line2": "y la oportunidad.",
+      "subtitle": "Una fundación impulsada por sus miembros que promueve la educación en todas las regiones mediante la incidencia, el acceso digital y alianzas estratégicas.",
+      "ctaPrimary": "Explorar membresía",
+      "ctaSecondary": "Apoyar la misión",
+      "imageAlt": "Escolares africanos con uniformes verdes juntos en la escuela",
+      "scrollCue": "Desplázate para explorar",
+      "pillars": {
+        "Education Advocacy": {
+          "title": "Promoción educativa",
+          "sub": "Ampliar el acceso a cada estudiante"
+        },
+        "Skills & Innovation": {
+          "title": "Habilidades e innovación",
+          "sub": "Preparando para un impacto real"
+        },
+        "Inclusion & Equity": {
+          "title": "Inclusión y equidad",
+          "sub": "Abriendo oportunidades para todos"
+        },
+        "Accountability": {
+          "title": "Rendición de cuentas",
+          "sub": "Resultados medibles"
+        },
+        "Pan-African Impact": {
+          "title": "Impacto panafricano",
+          "sub": "Escalando en todas las regiones"
+        }
+      }
+    },
     "hero": {
       "eyebrow": "África Regional • Diáspora Africana",
       "title": "Construyendo un estándar educativo en constante crecimiento en África",
