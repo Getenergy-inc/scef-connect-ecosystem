@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { logger } from "@/lib/logger";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 
 const PartnerWithUs = () => {
   const { t, isRTL } = useLocale();
@@ -441,6 +442,7 @@ const PartnerWithUs = () => {
               </div>
             </div>
           </section>
+          <EndorsedBySection />
         </main>
 
         <Footer />

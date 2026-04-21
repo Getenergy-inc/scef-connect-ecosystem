@@ -16,6 +16,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import aboutHeroImage from "@/assets/hero-classroom.jpg";
 import history1997 from "@/assets/history/history-1997-origins.jpg";
 import history2003 from "@/assets/history/history-2003-advocacy.jpg";
@@ -1623,6 +1624,7 @@ const About = () => {
           
           {/* CRS Partners */}
           <CRSPartnersSection variant="compact" />
+          <EndorsedBySection />
         </main>
         
         <Footer />
