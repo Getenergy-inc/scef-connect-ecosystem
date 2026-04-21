@@ -155,39 +155,6 @@
     "mission": "通过倡导、资助和认证整个非洲大陆的教育卓越，引领非洲教育的未来。"
   },
   "home": {
-    "heroV2": {
-      "eyebrow": "泛非教育基金会 · 自1997年",
-      "line1": "通过",
-      "highlight": "教育、创新",
-      "line2": "与机会赋能非洲。",
-      "subtitle": "一个由会员驱动的基金会,通过倡导、数字接入和战略合作,推动各地区的教育发展。",
-      "ctaPrimary": "了解会员资格",
-      "ctaSecondary": "支持使命",
-      "imageAlt": "身着绿色校服的非洲学童一同站在学校里",
-      "scrollCue": "滚动以探索",
-      "pillars": {
-        "Education Advocacy": {
-          "title": "教育倡导",
-          "sub": "为每位学习者拓展机会"
-        },
-        "Skills & Innovation": {
-          "title": "技能与创新",
-          "sub": "为真实世界的影响做好准备"
-        },
-        "Inclusion & Equity": {
-          "title": "包容与公平",
-          "sub": "为所有人打开机会之门"
-        },
-        "Accountability": {
-          "title": "问责",
-          "sub": "交付可衡量的成果"
-        },
-        "Pan-African Impact": {
-          "title": "泛非影响",
-          "sub": "覆盖各地区的规模化"
-        }
-      }
-    },
     "hero": {
       "eyebrow": "非洲地区 • 非洲侨民",
       "title": "在非洲建立持续增长的教育标准",

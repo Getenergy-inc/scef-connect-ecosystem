@@ -176,39 +176,6 @@
         }
       }
     },
-    "heroV2": {
-      "eyebrow": "Fundação Pan-Africana de Educação · Desde 1997",
-      "line1": "Empoderando a África por meio de",
-      "highlight": "educação, inovação,",
-      "line2": "e oportunidade.",
-      "subtitle": "Uma fundação impulsionada por membros que avança a educação em todas as regiões através de advocacia, acesso digital e parcerias estratégicas.",
-      "ctaPrimary": "Explorar adesão",
-      "ctaSecondary": "Apoiar a missão",
-      "imageAlt": "Crianças africanas em uniformes verdes juntas na escola",
-      "scrollCue": "Role para explorar",
-      "pillars": {
-        "Education Advocacy": {
-          "title": "Defesa da educação",
-          "sub": "Ampliar o acesso para cada aluno"
-        },
-        "Skills & Innovation": {
-          "title": "Habilidades e inovação",
-          "sub": "Preparando para impacto real"
-        },
-        "Inclusion & Equity": {
-          "title": "Inclusão e equidade",
-          "sub": "Abrindo oportunidades para todos"
-        },
-        "Accountability": {
-          "title": "Responsabilidade",
-          "sub": "Entregando resultados mensuráveis"
-        },
-        "Pan-African Impact": {
-          "title": "Impacto pan-africano",
-          "sub": "Escalando por todas as regiões"
-        }
-      }
-    },
     "hero": {
       "eyebrow": "África Regional • Diáspora Africana",
       "title": "Construindo um padrão de educação em constante crescimento em África",

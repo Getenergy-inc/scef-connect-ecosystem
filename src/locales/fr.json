@@ -176,39 +176,6 @@
         }
       }
     },
-    "heroV2": {
-      "eyebrow": "Fondation panafricaine pour l'éducation · Depuis 1997",
-      "line1": "Renforcer l'Afrique par",
-      "highlight": "l'éducation, l'innovation,",
-      "line2": "et l'opportunité.",
-      "subtitle": "Une fondation portée par ses membres qui fait progresser l'éducation à travers les régions grâce au plaidoyer, à l'accès numérique et à des partenariats stratégiques.",
-      "ctaPrimary": "Découvrir l'adhésion",
-      "ctaSecondary": "Soutenir la mission",
-      "imageAlt": "Écoliers africains en uniforme vert se tenant ensemble à l'école",
-      "scrollCue": "Faites défiler pour explorer",
-      "pillars": {
-        "Education Advocacy": {
-          "title": "Plaidoyer éducatif",
-          "sub": "Élargir l'accès pour chaque apprenant"
-        },
-        "Skills & Innovation": {
-          "title": "Compétences & innovation",
-          "sub": "Préparer à un impact concret"
-        },
-        "Inclusion & Equity": {
-          "title": "Inclusion & équité",
-          "sub": "Ouvrir des opportunités pour tous"
-        },
-        "Accountability": {
-          "title": "Responsabilité",
-          "sub": "Des résultats mesurables"
-        },
-        "Pan-African Impact": {
-          "title": "Impact panafricain",
-          "sub": "À l'échelle de toutes les régions"
-        }
-      }
-    },
     "hero": {
       "eyebrow": "Afrique Régionale • Diaspora Africaine",
       "title": "Construire un standard éducatif en constante croissance en Afrique",

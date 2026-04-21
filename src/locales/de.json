@@ -155,39 +155,6 @@
     "mission": "Die Zukunft der Bildung in Afrika durch Advocacy, Finanzierung und Zertifizierung von Bildungsexzellenz auf dem gesamten Kontinent gestalten."
   },
   "home": {
-    "heroV2": {
-      "eyebrow": "Panafrikanische Bildungsstiftung · Seit 1997",
-      "line1": "Afrika stärken durch",
-      "highlight": "Bildung, Innovation",
-      "line2": "und Chancen.",
-      "subtitle": "Eine mitgliedergetragene Stiftung, die Bildung über alle Regionen hinweg durch Advocacy, digitalen Zugang und strategische Partnerschaften voranbringt.",
-      "ctaPrimary": "Mitgliedschaft entdecken",
-      "ctaSecondary": "Mission unterstützen",
-      "imageAlt": "Afrikanische Schulkinder in grünen Uniformen stehen gemeinsam an der Schule",
-      "scrollCue": "Scrollen zum Erkunden",
-      "pillars": {
-        "Education Advocacy": {
-          "title": "Bildungs-Advocacy",
-          "sub": "Zugang für jeden Lernenden erweitern"
-        },
-        "Skills & Innovation": {
-          "title": "Skills & Innovation",
-          "sub": "Vorbereitung auf echte Wirkung"
-        },
-        "Inclusion & Equity": {
-          "title": "Inklusion & Gerechtigkeit",
-          "sub": "Chancen für alle eröffnen"
-        },
-        "Accountability": {
-          "title": "Verantwortlichkeit",
-          "sub": "Messbare Ergebnisse liefern"
-        },
-        "Pan-African Impact": {
-          "title": "Panafrikanische Wirkung",
-          "sub": "Skalierung über Regionen hinweg"
-        }
-      }
-    },
     "hero": {
       "eyebrow": "Regionales Afrika • Afrikanische Diaspora",
       "title": "Einen kontinuierlich wachsenden Bildungsstandard in Afrika aufbauen",
