@@ -5,7 +5,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 export const FeaturedUpdate = () => {
   const { t } = useLocale();
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-20 md:py-24">
       <div className="container mx-auto px-6 md:px-8">
         <div className="grid items-center gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
