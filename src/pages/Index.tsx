@@ -10,6 +10,8 @@ import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
+import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -90,7 +92,17 @@ const Index = () => {
             <ChooseYourPath />
           </Reveal>
 
-          {/* 9. Final CTA */}
+          {/* 9. Endorsements (FAWE, CSACEFA & partners) */}
+          <Reveal>
+            <EndorsedBySection />
+          </Reveal>
+
+          {/* 10. CRS & operational partners */}
+          <Reveal>
+            <CRSPartnersSection />
+          </Reveal>
+
+          {/* 11. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
