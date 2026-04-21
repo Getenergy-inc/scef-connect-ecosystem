@@ -18,9 +18,9 @@ export const FinalCTABand = () => {
           Join Us
         </p>
         <h2 className="mx-auto mt-5 max-w-3xl font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
-          Shape the future of{" "}
-          <span className="text-gradient-gold italic">education</span> in
-          Africa.
+          Join our membership-run movement achieving{" "}
+          <span className="text-gradient-gold italic">Education for All</span>{" "}
+          in Africa.
         </h2>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3 md:mt-14">
@@ -29,8 +29,8 @@ export const FinalCTABand = () => {
             className="group h-13 bg-scef-gold px-8 py-3 text-base font-semibold text-scef-blue-darker shadow-gold transition-all duration-300 hover:bg-scef-gold-hover hover:shadow-[0_20px_50px_-12px_hsl(45_92%_42%/0.5)]"
             asChild
           >
-            <Link to="/donate">
-              Donate Now
+            <Link to="/get-involved/membership">
+              Become a Member
               <ArrowRight className="ms-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
@@ -40,7 +40,7 @@ export const FinalCTABand = () => {
             className="h-13 border-white/30 bg-white/5 px-8 py-3 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/60 hover:bg-white/10 hover:text-white"
             asChild
           >
-            <Link to="/partners">Partner With SCEF</Link>
+            <Link to="/donate">Donate Now</Link>
           </Button>
         </div>
       </div>
