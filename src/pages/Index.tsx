@@ -20,7 +20,7 @@ const Index = () => {
         <title>SCEF — Empowering Africa Through Education, Innovation & Opportunity</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation: a continental institution for education standards across 57 African countries — programs, awards, advocacy and partnerships."
+          content="Santos Creations Educational Foundation — a continental institution advancing education standards across 54+ African regions through programs, awards, advocacy, and partnerships."
         />
         <meta
           name="keywords"
