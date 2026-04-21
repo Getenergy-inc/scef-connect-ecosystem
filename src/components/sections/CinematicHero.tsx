@@ -91,8 +91,9 @@ export const CinematicHero = () => {
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            SCEF advances learning across regions through advocacy, digital
-            access, recognition platforms, and strategic partnerships.
+            SCEF is a membership-run educational institutionalized NGO advocating
+            Achieving Education for All in Africa through digital access,
+            regional advocacy, and strategic partnerships.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-3">
@@ -101,8 +102,8 @@ export const CinematicHero = () => {
               className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker shadow-gold hover:bg-scef-gold-hover"
               asChild
             >
-              <Link to="/programs">
-                Explore Our Services
+              <Link to="/get-involved/membership">
+                Explore Membership
                 <ArrowRight className="ms-2 h-4 w-4" />
               </Link>
             </Button>
