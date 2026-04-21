@@ -2,35 +2,37 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
+import { InstitutionalStats } from "@/components/sections/InstitutionalStats";
+import { BrandFilm } from "@/components/sections/BrandFilm";
 import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
+import { CoreObjectives } from "@/components/sections/CoreObjectives";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
+import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
-import { useLocale } from "@/contexts/LocaleContext";
 
 const Index = () => {
-  const { t } = useLocale();
-
   return (
     <>
       <Helmet>
-        <title>SCEF — Empowering Africa Through Education, Innovation & Opportunity</title>
+        <title>SCEF — Africa's Continuous Education Standards System</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation — a continental institution advancing education standards across 5+ African regions through programs, awards, advocacy, and partnerships."
+          content="Santos Creations Educational Foundation — a Pan-African membership institution advancing education standards across 5+ regions through programs, recognition, and partnerships since 1997."
         />
         <meta
           name="keywords"
-          content="African education, SCEF, NESA Africa, EduAid Africa, education standards, eLibrary Nigeria, Pan-African education"
+          content="African education, SCEF, NESA Africa, EduAid Africa, education standards, eLibrary Nigeria, Pan-African education, Rebuild My School Africa"
         />
         <link rel="canonical" href="https://santoscreations.org" />
 
-        <meta property="og:title" content="SCEF — Empowering Africa Through Education" />
+        <meta property="og:title" content="SCEF — Africa's Continuous Education Standards System" />
         <meta
           property="og:description"
-          content="A continental institution driving advocacy, digital learning, awards, and partnerships across Africa."
+          content="A Pan-African institution driving advocacy, digital learning, awards, and partnerships across Africa."
         />
         <meta property="og:type" content="website" />
 
@@ -51,29 +53,51 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
 
-        {/* Spacer for fixed header */}
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Split hero: copy left, photo right, pillar strip beneath */}
+          {/* 1. Split hero — copy left, photo right, pillar strip beneath */}
           <LandingHero />
 
-          {/* 2. Programs that transform lives — 7 colorful icon tiles */}
+          {/* 2. Institutional credibility — founding year, regions, vision */}
+          <InstitutionalStats />
+
+          {/* 3. Who we are — short institutional intro */}
+          <Reveal>
+            <BrandFilm />
+          </Reveal>
+
+          {/* 4. Programs that transform lives — 7 colorful tiles */}
           <Reveal>
             <ProgramsThatTransform />
           </Reveal>
 
-          {/* 3. Impact areas — horizontal dark band */}
+          {/* 5. Six core objectives — required institutional content */}
+          <Reveal>
+            <CoreObjectives />
+          </Reveal>
+
+          {/* 6. Impact areas — horizontal dark band */}
           <Reveal>
             <ImpactAreasBand />
           </Reveal>
 
-          {/* 4. Choose your path — 5 colored CTA cards */}
+          {/* 7. Featured update — NESA-Africa 2026 spotlight */}
+          <Reveal>
+            <FeaturedUpdate />
+          </Reveal>
+
+          {/* 8. Choose your path — 5 colored CTA cards */}
           <Reveal>
             <ChooseYourPath />
           </Reveal>
 
-          {/* 5. Final CTA */}
+          {/* 9. Endorsed by — partner logos (FAWE, CSACEFA, etc.) */}
+          <Reveal>
+            <EndorsedBySection />
+          </Reveal>
+
+          {/* 10. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
