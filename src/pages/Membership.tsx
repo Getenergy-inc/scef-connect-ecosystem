@@ -185,6 +185,9 @@ const Membership = () => {
                 <p className="text-xl text-white/80 leading-relaxed">
                   {t("membership.hero.subtitle")}
                 </p>
+                <p className="mt-4 text-sm text-scef-gold/90 font-medium tracking-wide">
+                  Membership-run Educational Institutionalized NGO advocating Achieving Education for All in Africa.
+                </p>
                 
                 {/* Show join context if coming from join-online flow */}
                 {joinContext && (

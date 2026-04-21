@@ -123,8 +123,11 @@ const Partners = () => {
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   {t("partners.hero.title")}
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed mb-8">
+                <p className="text-xl text-white/80 leading-relaxed mb-4">
                   {t("partners.hero.subtitle")}
+                </p>
+                <p className="text-sm text-scef-gold/90 font-medium mb-8">
+                  Partner with a membership-run Educational Institutionalized NGO advocating Achieving Education for All in Africa.
                 </p>
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/partner-with-us">
