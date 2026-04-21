@@ -64,17 +64,13 @@ export const Header = () => {
         { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
       ]
     },
-    // NESA Awards - Only award tiers (no role portals)
+    // NESA Awards - Only award tiers (streamlined)
     { name: "Awards", href: "/awards/platinum", key: "awards",
       children: [
-        { name: "Categories (17)", href: "/categories", icon: Layers },
-        { divider: true },
         { name: "Platinum Certificate", href: "/awards/platinum" },
         { name: "Africa Education Icon", href: "/awards/icon" },
         { name: "Gold Certificate", href: "/awards/gold" },
         { name: "Blue Garnet Award", href: "/awards/blue-garnet" },
-        { divider: true },
-        { name: "NESA Calendar", href: "/calendar" },
       ]
     },
     { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
@@ -88,14 +84,13 @@ export const Header = () => {
         { name: t("nav.dropdown.media.hub"), href: "/media" },
         { divider: true },
         { name: t("nav.dropdown.media.nesaTv"), href: "/media/nesa-tv" },
-        { name: t("nav.dropdown.media.nesaAwardsTv"), href: "/media/nesa-awards-tv" },
+        { name: t("nav.dropdown.media.radio"), href: "/media/its-in-me-radio" },
         { divider: true },
         { name: t("nav.dropdown.media.platinumShow"), href: "/media/nesa-awards-tv/platinum" },
         { name: t("nav.dropdown.media.africaIcon"), href: "/media/nesa-awards-tv/africa-icon" },
         { name: t("nav.dropdown.media.goldCertificate"), href: "/media/nesa-awards-tv/gold-certificate" },
         { name: t("nav.dropdown.media.blueGarnetGala"), href: "/media/nesa-awards-tv/blue-garnet-gala" },
         { divider: true },
-        { name: t("nav.dropdown.media.radio"), href: "/media/its-in-me-radio" },
         { name: t("nav.dropdown.media.webinars"), href: "/media/eduaid-webinars" },
         { name: t("nav.dropdown.media.tourism"), href: "/media/education-tourism-show" },
       ]
