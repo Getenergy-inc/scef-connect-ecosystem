@@ -13,7 +13,7 @@ import { mapAuthErrorToUserMessage } from "@/lib/errorMapper";
 import { logger } from "@/lib/logger";
 import { PathPicker } from "@/components/auth/PathPicker";
 import { AccountForm, type AccountFormValues } from "@/components/auth/AccountForm";
-import { PathStub } from "@/components/auth/PathStub";
+import { PathFormRouter } from "@/components/auth/paths/PathFormRouter";
 import { GoogleButton } from "@/components/auth/GoogleButton";
 import { ENGAGEMENT_PATHS, PATH_NEXT_STEP, type EngagementPath } from "@/lib/onboarding";
 
@@ -34,6 +34,7 @@ const SignUp = () => {
   const [step, setStep] = useState<Step>(1);
   const [path, setPath] = useState<EngagementPath | null>(initialPath ?? null);
   const [account, setAccount] = useState<AccountFormValues | null>(null);
+  const [userId, setUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -67,8 +68,9 @@ const SignUp = () => {
       });
       if (error) throw error;
 
-      const userId = data.user?.id;
-      if (userId) {
+      const newUserId = data.user?.id;
+      if (newUserId) {
+        setUserId(newUserId);
         await supabase
           .from("profiles")
           .update({
@@ -80,7 +82,13 @@ const SignUp = () => {
             engagement_path: path,
             onboarding_step: "profile",
           })
-          .eq("user_id", userId);
+          .eq("user_id", newUserId);
+
+        // Assign path-specific app role (member is already added by handle_new_user trigger)
+        await supabase.rpc("assign_path_role" as never, {
+          _user_id: newUserId,
+          _path: path,
+        } as never);
       }
 
       setAccount(values);
@@ -99,7 +107,7 @@ const SignUp = () => {
     if (session?.user) {
       await supabase
         .from("profiles")
-        .update({ onboarding_step: "confirmation" })
+        .update({ onboarding_step: "confirmation", onboarding_completed: true })
         .eq("user_id", session.user.id);
     }
     setStep(4);
@@ -220,25 +228,34 @@ const SignUp = () => {
                           Set up your {currentPathMeta?.title.toLowerCase()} profile
                         </h2>
                         <p className="text-sm text-muted-foreground">
-                          We'll capture the essentials now. You can complete the full questionnaire from your dashboard at any time.
+                          We only ask what's relevant to your path. You can update this anytime from your dashboard.
                         </p>
                       </div>
 
-                      <PathStub path={path} />
+                      {userId ? (
+                        <PathFormRouter
+                          path={path}
+                          userId={userId}
+                          onComplete={handleProfileContinue}
+                        />
+                      ) : (
+                        <p className="text-sm text-destructive">
+                          Session not ready. Please go back and try again.
+                        </p>
+                      )}
 
                       <div className="flex items-center gap-2 text-xs text-muted-foreground bg-muted/40 rounded-lg p-3">
                         <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
                         <span>Your data is stored securely and only visible to you and SCEF administrators.</span>
                       </div>
 
-                      <div className="flex items-center justify-between pt-2">
-                        <Button variant="ghost" onClick={() => setStep(2)}>
+                      <div className="flex items-center justify-between pt-1">
+                        <Button variant="ghost" size="sm" onClick={() => setStep(2)}>
                           <ArrowLeft className="w-4 h-4 mr-1" />
                           Back
                         </Button>
-                        <Button size="lg" onClick={handleProfileContinue}>
-                          Continue
-                          <ArrowRight className="w-4 h-4 ml-2" />
+                        <Button variant="link" size="sm" onClick={handleProfileContinue}>
+                          Skip for now
                         </Button>
                       </div>
                     </>
