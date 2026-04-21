@@ -5,11 +5,11 @@ import heroImg from "@/assets/hero-schoolgirl.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const pillars = [
-  { icon: BookOpen, title: "Education Advocacy", sub: "For Every Learner" },
-  { icon: GraduationCap, title: "Skills & Innovation", sub: "For Real-World Impact" },
-  { icon: Users, title: "Inclusion & Equity", sub: "For a Better Future" },
-  { icon: ShieldCheck, title: "Accountability", sub: "For Lasting Change" },
-  { icon: Globe2, title: "Pan-African Impact", sub: "Across Our Regions" },
+  { icon: BookOpen, title: "Education Advocacy", sub: "Access for every learner" },
+  { icon: GraduationCap, title: "Skills & Innovation", sub: "Real-world impact" },
+  { icon: Users, title: "Inclusion & Equity", sub: "Opportunity for all" },
+  { icon: ShieldCheck, title: "Accountability", sub: "Measurable outcomes" },
+  { icon: Globe2, title: "Pan-African Impact", sub: "Scaling across regions" },
 ];
 
 /**
