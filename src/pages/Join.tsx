@@ -15,7 +15,7 @@ import {
   HandHeart,
   CheckCircle2,
 } from "lucide-react";
-import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
+
 
 /**
  * Join SCEF — dedicated conversion page.
