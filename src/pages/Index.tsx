@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
-import { ValueStrip } from "@/components/sections/ValueStrip";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
 import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
@@ -11,7 +10,7 @@ import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
-import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
+import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -56,53 +55,50 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Hero */}
+          {/* 1. Hero (includes pillar strip — single source of truth for values) */}
           <LandingHero />
 
-          {/* 2. Value strip */}
-          <ValueStrip />
-
-          {/* 3. Who we are */}
+          {/* 2. Who we are */}
           <Reveal>
             <WhoWeAreLean />
           </Reveal>
 
-          {/* 4. Programs */}
+          {/* 3. Programs */}
           <Reveal>
             <ProgramsThatTransform />
           </Reveal>
 
-          {/* 5. Impact strip — labels only */}
+          {/* 4. Impact snapshot — labels only */}
           <Reveal>
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 6. How SCEF works */}
+          {/* 5. How SCEF works */}
           <Reveal>
             <HowSCEFWorks />
           </Reveal>
 
-          {/* 7. Focus areas */}
+          {/* 6. Focus areas */}
           <Reveal>
             <ImpactAreasBand />
           </Reveal>
 
-          {/* 8. Get involved — primary conversion */}
+          {/* 7. Get involved — primary conversion */}
           <Reveal>
             <ChooseYourPath />
           </Reveal>
 
-          {/* 9. Endorsements (FAWE, CSACEFA & partners) */}
+          {/* 8. Trusted & endorsed by */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 10. CRS & operational partners */}
+          {/* 9. Supporting partners (lean strip) */}
           <Reveal>
-            <CRSPartnersSection />
+            <CRSPartnersStrip />
           </Reveal>
 
-          {/* 11. Final CTA */}
+          {/* 10. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
