@@ -29,16 +29,19 @@ export const LandingHero = () => {
         <div className="grid items-center gap-10 py-12 md:grid-cols-12 md:gap-12 md:py-20 lg:py-24">
           {/* LEFT — Copy */}
           <div className="md:col-span-6 lg:col-span-5">
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold-light ring-1 ring-white/15">
+              {t("home.heroV2.eyebrow") || "Pan-African Education Foundation · Since 1997"}
+            </p>
             <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.75rem]">
-              {t("home.heroV2.line1") || "Empowering Africa Through Education,"}{" "}
-              {t("home.heroV2.line2") || "Innovation, and"}{" "}
+              {t("home.heroV2.line1") || "Africa's continuous"}{" "}
               <span className="text-scef-gold">
-                {t("home.heroV2.highlight") || "Opportunity"}
-              </span>
+                {t("home.heroV2.highlight") || "education standards"}
+              </span>{" "}
+              {t("home.heroV2.line2") || "system."}
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
               {t("home.heroV2.subtitle") ||
-                "A membership-driven foundation advancing education across regions through advocacy, digital access, and strategic partnerships."}
+                "We connect programs, chapters, partners, and media into one accountable ecosystem — advancing learning across 5+ African regions toward 2035."}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button
