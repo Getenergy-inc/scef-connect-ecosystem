@@ -14,6 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
+      ambassador_profiles: {
+        Row: {
+          advocacy_focus: string[] | null
+          created_at: string
+          experience_summary: string | null
+          hours_per_month: number | null
+          id: string
+          preferred_programs: string[] | null
+          public_profile_links: Json | null
+          status: string
+          tier_interest: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          advocacy_focus?: string[] | null
+          created_at?: string
+          experience_summary?: string | null
+          hours_per_month?: number | null
+          id?: string
+          preferred_programs?: string[] | null
+          public_profile_links?: Json | null
+          status?: string
+          tier_interest?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          advocacy_focus?: string[] | null
+          created_at?: string
+          experience_summary?: string | null
+          hours_per_month?: number | null
+          id?: string
+          preferred_programs?: string[] | null
+          public_profile_links?: Json | null
+          status?: string
+          tier_interest?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      applications: {
+        Row: {
+          application_type: string
+          id: string
+          notes: string | null
+          payload: Json | null
+          related_entity_id: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          submitted_at: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          application_type: string
+          id?: string
+          notes?: string | null
+          payload?: Json | null
+          related_entity_id?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          submitted_at?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          application_type?: string
+          id?: string
+          notes?: string | null
+          payload?: Json | null
+          related_entity_id?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          submitted_at?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       audit_logs: {
         Row: {
           action_type: string
@@ -1031,6 +1115,51 @@ export type Database = {
         }
         Relationships: []
       }
+      endorser_profiles: {
+        Row: {
+          collaboration_interests: string[] | null
+          created_at: string
+          endorsement_scope: string | null
+          endorsement_type: string | null
+          id: string
+          institution_name: string
+          institution_type: string | null
+          public_display_permission: boolean | null
+          representative_name: string | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          collaboration_interests?: string[] | null
+          created_at?: string
+          endorsement_scope?: string | null
+          endorsement_type?: string | null
+          id?: string
+          institution_name: string
+          institution_type?: string | null
+          public_display_permission?: boolean | null
+          representative_name?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          collaboration_interests?: string[] | null
+          created_at?: string
+          endorsement_scope?: string | null
+          endorsement_type?: string | null
+          id?: string
+          institution_name?: string
+          institution_type?: string | null
+          public_display_permission?: boolean | null
+          representative_name?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           chapter_id: string | null
@@ -1288,6 +1417,92 @@ export type Database = {
         }
         Relationships: []
       }
+      membership_types: {
+        Row: {
+          billing_cycle: string | null
+          created_at: string
+          currency: string | null
+          description: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          name: string
+          price: number | null
+          slug: string
+        }
+        Insert: {
+          billing_cycle?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          price?: number | null
+          slug: string
+        }
+        Update: {
+          billing_cycle?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          price?: number | null
+          slug?: string
+        }
+        Relationships: []
+      }
+      memberships: {
+        Row: {
+          created_at: string
+          end_date: string | null
+          id: string
+          membership_status: string
+          membership_type_id: string
+          payment_status: string
+          renewal_date: string | null
+          start_date: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          membership_status?: string
+          membership_type_id: string
+          payment_status?: string
+          renewal_date?: string | null
+          start_date?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          membership_status?: string
+          membership_type_id?: string
+          payment_status?: string
+          renewal_date?: string | null
+          start_date?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "memberships_membership_type_id_fkey"
+            columns: ["membership_type_id"]
+            isOneToOne: false
+            referencedRelation: "membership_types"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       message_reactions: {
         Row: {
           created_at: string
@@ -1358,51 +1573,75 @@ export type Database = {
       }
       profiles: {
         Row: {
+          age_band: string | null
           avatar_url: string | null
           bio: string | null
           chapter_id: string | null
           city: string | null
+          communication_preferences: Json | null
           country: string | null
           created_at: string
           email: string | null
+          engagement_path: string | null
           first_name: string | null
           id: string
           last_name: string | null
+          occupation: string | null
+          onboarding_completed: boolean | null
+          onboarding_step: string | null
+          organization: string | null
           phone: string | null
+          preferred_language: string | null
           relationship_to_country: string | null
           state: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
+          age_band?: string | null
           avatar_url?: string | null
           bio?: string | null
           chapter_id?: string | null
           city?: string | null
+          communication_preferences?: Json | null
           country?: string | null
           created_at?: string
           email?: string | null
+          engagement_path?: string | null
           first_name?: string | null
           id?: string
           last_name?: string | null
+          occupation?: string | null
+          onboarding_completed?: boolean | null
+          onboarding_step?: string | null
+          organization?: string | null
           phone?: string | null
+          preferred_language?: string | null
           relationship_to_country?: string | null
           state?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
+          age_band?: string | null
           avatar_url?: string | null
           bio?: string | null
           chapter_id?: string | null
           city?: string | null
+          communication_preferences?: Json | null
           country?: string | null
           created_at?: string
           email?: string | null
+          engagement_path?: string | null
           first_name?: string | null
           id?: string
           last_name?: string | null
+          occupation?: string | null
+          onboarding_completed?: boolean | null
+          onboarding_step?: string | null
+          organization?: string | null
           phone?: string | null
+          preferred_language?: string | null
           relationship_to_country?: string | null
           state?: string | null
           updated_at?: string
@@ -1544,6 +1783,87 @@ export type Database = {
           },
         ]
       }
+      services: {
+        Row: {
+          category: string | null
+          created_at: string
+          description: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          name: string
+          slug: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          slug: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          slug?: string
+        }
+        Relationships: []
+      }
+      sponsor_profiles: {
+        Row: {
+          budget_range: string | null
+          created_at: string
+          csr_focus_areas: string[] | null
+          id: string
+          industry: string | null
+          organization_name: string
+          partnership_status: string
+          preferred_regions: string[] | null
+          reporting_frequency: string | null
+          sponsor_type: string | null
+          support_type: string[] | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          budget_range?: string | null
+          created_at?: string
+          csr_focus_areas?: string[] | null
+          id?: string
+          industry?: string | null
+          organization_name: string
+          partnership_status?: string
+          preferred_regions?: string[] | null
+          reporting_frequency?: string | null
+          sponsor_type?: string | null
+          support_type?: string[] | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          budget_range?: string | null
+          created_at?: string
+          csr_focus_areas?: string[] | null
+          id?: string
+          industry?: string | null
+          organization_name?: string
+          partnership_status?: string
+          preferred_regions?: string[] | null
+          reporting_frequency?: string | null
+          sponsor_type?: string | null
+          support_type?: string[] | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -1564,6 +1884,38 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      user_service_preferences: {
+        Row: {
+          created_at: string
+          id: string
+          preference_level: string | null
+          service_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          preference_level?: string | null
+          service_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          preference_level?: string | null
+          service_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_service_preferences_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       vacancies: {
         Row: {

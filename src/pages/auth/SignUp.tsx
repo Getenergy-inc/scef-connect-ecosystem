@@ -1,189 +1,91 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { 
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Mail, Lock, User, BookOpen, ArrowRight, MapPin, Users, Globe } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { mapAuthErrorToUserMessage } from "@/lib/errorMapper";
 import { logger } from "@/lib/logger";
+import { PathPicker } from "@/components/auth/PathPicker";
+import { AccountForm, type AccountFormValues } from "@/components/auth/AccountForm";
+import { PathStub } from "@/components/auth/PathStub";
+import { GoogleButton } from "@/components/auth/GoogleButton";
+import { ENGAGEMENT_PATHS, PATH_NEXT_STEP, type EngagementPath } from "@/lib/onboarding";
 
-// Country list (simplified)
-const countries = [
-  "Nigeria", "Ghana", "Kenya", "South Africa", "Egypt", "Morocco", "Tanzania",
-  "Uganda", "Ethiopia", "Rwanda", "Senegal", "Cameroon", "Ivory Coast", "Angola",
-  "Mozambique", "Zimbabwe", "Zambia", "Botswana", "Namibia", "Malawi",
-  // Non-African
-  "United States", "United Kingdom", "Canada", "France", "Germany", "Netherlands",
-  "Belgium", "Italy", "Spain", "Portugal", "Australia", "India", "China", "Japan",
-  "Brazil", "Mexico", "UAE", "Saudi Arabia", "Qatar", "Other"
+type Step = 1 | 2 | 3 | 4;
+
+const STEPS: { num: Step; label: string }[] = [
+  { num: 1, label: "Engagement Path" },
+  { num: 2, label: "Create Account" },
+  { num: 3, label: "Profile Setup" },
+  { num: 4, label: "Confirmation" },
 ];
 
-type RelationshipType = "resident" | "diaspora" | "friend";
-
 const SignUp = () => {
-  const [searchParams] = useSearchParams();
-  const redirectTo = searchParams.get("redirect") || "/dashboard";
   const navigate = useNavigate();
-  
-  const [step, setStep] = useState(1);
+  const [searchParams] = useSearchParams();
+  const initialPath = searchParams.get("path") as EngagementPath | null;
+
+  const [step, setStep] = useState<Step>(1);
+  const [path, setPath] = useState<EngagementPath | null>(initialPath ?? null);
+  const [account, setAccount] = useState<AccountFormValues | null>(null);
   const [loading, setLoading] = useState(false);
-  
-  // Form data
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [country, setCountry] = useState("");
-  const [relationship, setRelationship] = useState<RelationshipType | "">("");
-  const [selectedChapter, setSelectedChapter] = useState("");
-  const [acceptTerms, setAcceptTerms] = useState(false);
-  
-  // Available chapters
-  const [chapters, setChapters] = useState<any[]>([]);
 
   useEffect(() => {
-    // Check if already logged in
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        navigate(redirectTo);
-      }
+      if (session?.user) navigate("/dashboard");
     });
-  }, [navigate, redirectTo]);
+  }, [navigate]);
 
-  useEffect(() => {
-    // Fetch chapters when country changes
-    if (country) {
-      fetchChapters();
-    }
-  }, [country]);
+  const progressValue = (step / STEPS.length) * 100;
 
-  const fetchChapters = async () => {
-    const { data } = await supabase
-      .from("chapters")
-      .select("id, name, country, chapter_type, status")
-      .eq("status", "active")
-      .order("name");
-    
-    if (data) {
-      // Filter by country if African, or show all online chapters
-      const filtered = data.filter(c => 
-        c.country.toLowerCase() === country.toLowerCase() ||
-        c.chapter_type === "online"
-      );
-      setChapters(filtered.length > 0 ? filtered : data);
-    }
-  };
-
-  const handleStep1Submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
-      return;
-    }
-    if (password.length < 6) {
-      toast.error("Password must be at least 6 characters");
+  const handlePathNext = () => {
+    if (!path) {
+      toast.error("Please choose an engagement path to continue.");
       return;
     }
     setStep(2);
   };
 
-  const handleStep2Submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!country || !relationship) {
-      toast.error("Please select your country and relationship");
-      return;
-    }
-    setStep(3);
-  };
-
-  const handleFinalSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!acceptTerms) {
-      toast.error("Please accept the terms and conditions");
-      return;
-    }
-
+  const handleAccountSubmit = async (values: AccountFormValues) => {
+    if (!path) return;
     setLoading(true);
-
     try {
+      const redirectUrl = `${window.location.origin}/dashboard`;
       const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
+        email: values.email,
+        password: values.password,
         options: {
-          emailRedirectTo: `${window.location.origin}${redirectTo}`,
-          data: {
-            first_name: firstName,
-            last_name: lastName,
-            phone,
-            country,
-            relationship_to_country: relationship,
-            chapter_id: selectedChapter || null,
-          },
+          emailRedirectTo: redirectUrl,
+          data: { first_name: values.firstName, last_name: values.lastName },
         },
       });
-
       if (error) throw error;
 
-      // Update profile with chapter and relationship
-      if (data.user) {
+      const userId = data.user?.id;
+      if (userId) {
         await supabase
           .from("profiles")
           .update({
-            country,
-            relationship_to_country: relationship,
-            chapter_id: selectedChapter || null,
-            phone,
+            first_name: values.firstName,
+            last_name: values.lastName,
+            phone: values.phone || null,
+            country: values.country,
+            state: values.region || null,
+            engagement_path: path,
+            onboarding_step: "profile",
           })
-          .eq("user_id", data.user.id);
-
-        // If chapter selected, add to chapter_members and create welcome thread
-        if (selectedChapter && selectedChapter !== "online-global") {
-          await supabase.from("chapter_members").insert({
-            chapter_id: selectedChapter,
-            user_id: data.user.id,
-          });
-
-          // Create welcome inbox thread
-          const { data: thread } = await supabase
-            .from("chapter_inbox_threads")
-            .insert({
-              chapter_id: selectedChapter,
-              user_id: data.user.id,
-              subject: "Welcome to your SCEF Chapter!",
-            })
-            .select()
-            .single();
-
-          if (thread) {
-            // Add welcome message
-            await supabase.from("chapter_inbox_messages").insert({
-              thread_id: thread.id,
-              sender_type: "system",
-              content: `Welcome to SCEF, ${firstName}! 🎉\n\nYou've been successfully registered under your local chapter. This is your dedicated channel for chapter correspondence, announcements, and support.\n\nHere's what you can do next:\n• Complete your profile\n• Fund your GFA Wallet\n• Explore our programs\n• Connect with other members\n\nIf you have any questions, simply reply to this thread and our chapter team will assist you.\n\n— Your SCEF Chapter Team`,
-            });
-          }
-        }
+          .eq("user_id", userId);
       }
 
-      toast.success("Account created successfully! Welcome to SCEF.");
-      navigate("/dashboard/welcome");
+      setAccount(values);
+      toast.success("Account created. Almost there!");
+      setStep(3);
     } catch (error: unknown) {
       logger.error("Sign up error:", error);
       toast.error(mapAuthErrorToUserMessage(error));
@@ -192,344 +94,186 @@ const SignUp = () => {
     }
   };
 
-  const relationshipOptions = [
-    { 
-      value: "resident", 
-      label: "Resident", 
-      description: "I currently live in this country",
-      icon: MapPin
-    },
-    { 
-      value: "diaspora", 
-      label: "Diaspora", 
-      description: "I am from this country but live abroad",
-      icon: Globe
-    },
-    { 
-      value: "friend", 
-      label: "Friend", 
-      description: "I support African education from outside",
-      icon: Users
-    },
-  ];
+  const handleProfileContinue = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session?.user) {
+      await supabase
+        .from("profiles")
+        .update({ onboarding_step: "confirmation" })
+        .eq("user_id", session.user.id);
+    }
+    setStep(4);
+  };
+
+  const handleFinish = () => {
+    if (!path) { navigate("/dashboard"); return; }
+    navigate(PATH_NEXT_STEP[path].href);
+  };
+
+  const currentPathMeta = path ? ENGAGEMENT_PATHS.find((p) => p.id === path) : null;
 
   return (
     <>
       <Helmet>
-        <title>Sign Up | SCEF - Santos Creations Educational Foundation</title>
-        <meta name="description" content="Join SCEF to support education across Africa. Create an account and become part of our global community." />
+        <title>Join SCEF | Create Your Account</title>
+        <meta name="description" content="Sign up to SCEF — choose how you want to engage: as a member, chapter participant, ambassador, sponsor, endorser, or NESA awards participant." />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-scef-blue-darker via-scef-blue-dark to-scef-blue-darker">
         <Header />
-        
-        <main className="pt-32 pb-20">
+
+        <main className="pt-28 pb-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-lg mx-auto">
-              {/* Logo & Title */}
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-scef-gold to-scef-gold-light flex items-center justify-center shadow-gold mb-4">
-                  <BookOpen className="w-10 h-10 text-scef-blue-darker" />
-                </div>
-                <h1 className="font-display text-3xl font-bold text-white mb-2">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-6">
+                <h1 className="font-display text-3xl md:text-4xl font-bold text-white mb-2">
                   Join SCEF
                 </h1>
-                <p className="text-white/70">
-                  Create your account and join our global community
+                <p className="text-white/70 text-sm md:text-base">
+                  One unified account. Multiple ways to make impact across Africa.
                 </p>
               </div>
 
-              {/* Progress Steps */}
-              <div className="flex items-center justify-center gap-2 mb-8">
-                {[1, 2, 3].map((s) => (
-                  <div key={s} className="flex items-center">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
-                      step >= s 
-                        ? "bg-scef-gold text-scef-blue-dark" 
-                        : "bg-white/20 text-white/60"
-                    }`}>
-                      {s}
-                    </div>
-                    {s < 3 && (
-                      <div className={`w-12 h-1 mx-1 rounded transition-colors ${
-                        step > s ? "bg-scef-gold" : "bg-white/20"
-                      }`} />
-                    )}
-                  </div>
-                ))}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2 text-xs text-white/70">
+                  <span>Step {step} of {STEPS.length}</span>
+                  <span>{STEPS[step - 1].label}</span>
+                </div>
+                <Progress value={progressValue} className="h-1.5 bg-white/10" />
               </div>
 
-              <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle>
-                    {step === 1 && "Account Details"}
-                    {step === 2 && "Your Location"}
-                    {step === 3 && "Choose Your Chapter"}
-                  </CardTitle>
-                  <CardDescription>
-                    {step === 1 && "Enter your email and create a password"}
-                    {step === 2 && "Tell us where you're from"}
-                    {step === 3 && "Select a local chapter to join"}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {/* Step 1: Account Details */}
+              <Card className="bg-card border-border shadow-xl">
+                <CardContent className="pt-6 pb-6 space-y-5">
                   {step === 1 && (
-                    <form onSubmit={handleStep1Submit} className="space-y-5">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="firstName">First Name</Label>
-                          <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                            <Input
-                              id="firstName"
-                              type="text"
-                              placeholder="John"
-                              value={firstName}
-                              onChange={(e) => setFirstName(e.target.value)}
-                              className="pl-10"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="lastName">Last Name</Label>
-                          <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                            <Input
-                              id="lastName"
-                              type="text"
-                              placeholder="Doe"
-                              value={lastName}
-                              onChange={(e) => setLastName(e.target.value)}
-                              className="pl-10"
-                              required
-                            />
-                          </div>
-                        </div>
+                    <>
+                      <div>
+                        <h2 className="font-semibold text-lg text-foreground mb-1">
+                          How would you like to engage with SCEF?
+                        </h2>
+                        <p className="text-sm text-muted-foreground">
+                          Pick the path that fits you best — you can add more roles later.
+                        </p>
                       </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address</Label>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                          <Input
-                            id="email"
-                            type="email"
-                            placeholder="you@example.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="pl-10"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone (Optional)</Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          placeholder="+1 234 567 8900"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="password">Password</Label>
-                        <div className="relative">
-                          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                          <Input
-                            id="password"
-                            type="password"
-                            placeholder="••••••••"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="pl-10"
-                            required
-                            minLength={6}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="confirmPassword">Confirm Password</Label>
-                        <div className="relative">
-                          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                          <Input
-                            id="confirmPassword"
-                            type="password"
-                            placeholder="••••••••"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="pl-10"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <Button type="submit" className="w-full" size="lg">
-                        Continue
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </form>
-                  )}
-
-                  {/* Step 2: Location & Relationship */}
-                  {step === 2 && (
-                    <form onSubmit={handleStep2Submit} className="space-y-6">
-                      <div className="space-y-2">
-                        <Label>Country</Label>
-                        <Select value={country} onValueChange={setCountry}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select your country" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {countries.map((c) => (
-                              <SelectItem key={c} value={c}>{c}</SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      <div className="space-y-3">
-                        <Label>Your Relationship to {country || "this country"}</Label>
-                        <div className="grid gap-3">
-                          {relationshipOptions.map((option) => (
-                            <button
-                              key={option.value}
-                              type="button"
-                              onClick={() => setRelationship(option.value as RelationshipType)}
-                              className={`flex items-start gap-4 p-4 rounded-xl border-2 text-left transition-all ${
-                                relationship === option.value
-                                  ? "border-primary bg-primary/5"
-                                  : "border-border hover:border-primary/50"
-                              }`}
-                            >
-                              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                                relationship === option.value 
-                                  ? "bg-primary text-primary-foreground"
-                                  : "bg-muted text-muted-foreground"
-                              }`}>
-                                <option.icon className="w-5 h-5" />
-                              </div>
-                              <div>
-                                <p className="font-semibold">{option.label}</p>
-                                <p className="text-sm text-muted-foreground">{option.description}</p>
-                              </div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex gap-3">
-                        <Button 
-                          type="button" 
-                          variant="outline" 
-                          onClick={() => setStep(1)}
-                          className="flex-1"
-                        >
-                          Back
+                      <PathPicker selected={path} onSelect={setPath} />
+                      <div className="flex items-center justify-between pt-2">
+                        <Button variant="ghost" asChild>
+                          <Link to="/auth/sign-in">Already have an account?</Link>
                         </Button>
-                        <Button type="submit" className="flex-1">
+                        <Button size="lg" onClick={handlePathNext} disabled={!path}>
                           Continue
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                       </div>
-                    </form>
+                    </>
                   )}
 
-                  {/* Step 3: Chapter Selection */}
-                  {step === 3 && (
-                    <form onSubmit={handleFinalSubmit} className="space-y-6">
-                      <div className="space-y-2">
-                        <Label>Select Your Local Chapter</Label>
-                        <Select value={selectedChapter} onValueChange={setSelectedChapter}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Choose a chapter" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="">Skip for now</SelectItem>
-                            {chapters.map((c) => (
-                              <SelectItem key={c.id} value={c.id}>
-                                {c.name} ({c.country}) - {c.chapter_type}
-                              </SelectItem>
-                            ))}
-                            <SelectItem value="online-global">
-                              Online Global Chapter
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <p className="text-xs text-muted-foreground">
-                          You can change this later or join multiple chapters
+                  {step === 2 && (
+                    <>
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h2 className="font-semibold text-lg text-foreground mb-1">
+                            Create your account
+                          </h2>
+                          <p className="text-sm text-muted-foreground">
+                            {currentPathMeta && (
+                              <>Joining as: <span className="text-foreground font-medium">{currentPathMeta.title}</span></>
+                            )}
+                          </p>
+                        </div>
+                        <Button variant="ghost" size="sm" onClick={() => setStep(1)}>
+                          <ArrowLeft className="w-4 h-4 mr-1" />
+                          Change
+                        </Button>
+                      </div>
+
+                      <GoogleButton redirectTo="/dashboard" label="Sign up with Google" />
+
+                      <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                          <span className="w-full border-t border-border" />
+                        </div>
+                        <div className="relative flex justify-center text-xs uppercase">
+                          <span className="bg-card px-2 text-muted-foreground">or with email</span>
+                        </div>
+                      </div>
+
+                      <AccountForm
+                        defaultValues={account ?? undefined}
+                        onSubmit={handleAccountSubmit}
+                        loading={loading}
+                        submitLabel="Create Account & Continue"
+                      />
+
+                      <p className="text-[11px] text-muted-foreground text-center pt-2">
+                        By creating an account you agree to our{" "}
+                        <Link to="/terms" className="underline hover:text-foreground">Terms</Link>
+                        {" "}and{" "}
+                        <Link to="/privacy" className="underline hover:text-foreground">Privacy Policy</Link>.
+                      </p>
+                    </>
+                  )}
+
+                  {step === 3 && path && (
+                    <>
+                      <div>
+                        <h2 className="font-semibold text-lg text-foreground mb-1">
+                          Set up your {currentPathMeta?.title.toLowerCase()} profile
+                        </h2>
+                        <p className="text-sm text-muted-foreground">
+                          We'll capture the essentials now. You can complete the full questionnaire from your dashboard at any time.
                         </p>
                       </div>
 
-                      <div className="bg-muted/50 rounded-lg p-4 space-y-3">
-                        <h4 className="font-semibold text-sm">What you get:</h4>
-                        <ul className="text-sm space-y-2 text-muted-foreground">
-                          <li className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            Personal Dashboard & Profile
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            GFA Wallet for donations & payments
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            Chapter correspondence & updates
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            Access to all SCEF programs
-                          </li>
-                        </ul>
+                      <PathStub path={path} />
+
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground bg-muted/40 rounded-lg p-3">
+                        <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
+                        <span>Your data is stored securely and only visible to you and SCEF administrators.</span>
                       </div>
 
-                      <div className="flex items-start gap-3">
-                        <Checkbox
-                          id="terms"
-                          checked={acceptTerms}
-                          onCheckedChange={(checked) => setAcceptTerms(checked as boolean)}
-                        />
-                        <label htmlFor="terms" className="text-sm text-muted-foreground leading-relaxed">
-                          I agree to the <a href="/terms" className="text-primary hover:underline">Terms of Service</a> and{" "}
-                          <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
-                        </label>
-                      </div>
-
-                      <div className="flex gap-3">
-                        <Button 
-                          type="button" 
-                          variant="outline" 
-                          onClick={() => setStep(2)}
-                          className="flex-1"
-                        >
+                      <div className="flex items-center justify-between pt-2">
+                        <Button variant="ghost" onClick={() => setStep(2)}>
+                          <ArrowLeft className="w-4 h-4 mr-1" />
                           Back
                         </Button>
-                        <Button 
-                          type="submit" 
-                          className="flex-1"
-                          disabled={loading || !acceptTerms}
-                        >
-                          {loading ? "Creating Account..." : "Create Account"}
+                        <Button size="lg" onClick={handleProfileContinue}>
+                          Continue
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                       </div>
-                    </form>
+                    </>
                   )}
 
-                  <div className="mt-6 text-center">
-                    <button
-                      type="button"
-                      onClick={() => navigate("/auth")}
-                      className="text-sm text-primary hover:underline"
-                    >
-                      Already have an account? Sign in
-                    </button>
-                  </div>
+                  {step === 4 && path && (
+                    <>
+                      <div className="text-center space-y-3 py-4">
+                        <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto">
+                          <CheckCircle2 className="w-8 h-8" />
+                        </div>
+                        <h2 className="font-display text-2xl font-bold text-foreground">
+                          Welcome to SCEF{account?.firstName ? `, ${account.firstName}` : ""}!
+                        </h2>
+                        <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                          Your account is ready. Here's your recommended next step to start making impact.
+                        </p>
+                      </div>
+
+                      <Card className="p-4 bg-primary/5 border-primary/20">
+                        <p className="text-xs text-muted-foreground mb-1">Recommended next step</p>
+                        <p className="font-semibold text-foreground">{PATH_NEXT_STEP[path].label}</p>
+                      </Card>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <Button variant="outline" size="lg" onClick={() => navigate("/dashboard")}>
+                          Go to Dashboard
+                        </Button>
+                        <Button size="lg" onClick={handleFinish}>
+                          {PATH_NEXT_STEP[path].label}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </div>
+                    </>
+                  )}
                 </CardContent>
               </Card>
             </div>
