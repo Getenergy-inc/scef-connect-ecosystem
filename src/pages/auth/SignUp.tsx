@@ -107,7 +107,7 @@ const SignUp = () => {
     if (session?.user) {
       await supabase
         .from("profiles")
-        .update({ onboarding_step: "confirmation" })
+        .update({ onboarding_step: "confirmation", onboarding_completed: true })
         .eq("user_id", session.user.id);
     }
     setStep(4);
