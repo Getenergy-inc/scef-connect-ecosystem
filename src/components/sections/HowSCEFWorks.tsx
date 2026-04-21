@@ -2,11 +2,11 @@ import { Layers, MapPin, Globe2, Radio, Handshake } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const blocks = [
-  { icon: Layers, title: "Programs", sub: "Deliver impact" },
-  { icon: MapPin, title: "Chapters", sub: "Drive regional execution" },
+  { icon: Layers, title: "Programs", sub: "Deliver education outcomes" },
+  { icon: MapPin, title: "Chapters", sub: "Execute locally" },
   { icon: Globe2, title: "Platforms", sub: "Scale access" },
   { icon: Radio, title: "Media", sub: "Build awareness" },
-  { icon: Handshake, title: "Partnerships", sub: "Sustain impact" },
+  { icon: Handshake, title: "Partnerships & CSR Funding", sub: "Sustain and expand impact" },
 ];
 
 /**

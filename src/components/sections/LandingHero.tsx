@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, BookOpen, GraduationCap, Users, ShieldCheck, Globe2 } from "lucide-react";
+import { ArrowRight, Handshake, BookOpen, GraduationCap, Users, ShieldCheck, Globe2 } from "lucide-react";
 import heroImg from "@/assets/hero-schoolgirl.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
 import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
@@ -9,7 +9,7 @@ const pillars = [
   { icon: BookOpen, title: "Education Advocacy", sub: "Expanding access for every learner" },
   { icon: GraduationCap, title: "Skills & Innovation", sub: "Preparing for real-world impact" },
   { icon: Users, title: "Inclusion & Equity", sub: "Opening opportunities for all" },
-  { icon: ShieldCheck, title: "Accountability", sub: "Delivering measurable outcomes" },
+  { icon: ShieldCheck, title: "Accountability & Funding", sub: "Managing education impact transparently" },
   { icon: Globe2, title: "Pan-African Impact", sub: "Scaling across regions" },
 ];
 
@@ -42,7 +42,7 @@ export const LandingHero = () => {
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
               {t("home.heroV2.subtitle") ||
-                "A membership-driven foundation advancing education across regions through advocacy, digital access, and strategic partnerships."}
+                "A membership-driven foundation and education CSR fund management partner — advancing education across regions through advocacy, digital access, and accountable funding systems."}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button
@@ -61,9 +61,9 @@ export const LandingHero = () => {
                 className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
                 asChild
               >
-                <Link to="/donate">
-                  {t("home.heroV2.ctaSecondary") || "Support the Mission"}
-                  <Heart className="ms-2 h-4 w-4" />
+                <Link to="/partner-with-us">
+                  {t("home.heroV2.ctaSecondary") || "Partner With Us"}
+                  <Handshake className="ms-2 h-4 w-4" />
                 </Link>
               </Button>
               <QuickJumpMenu variant="dark" />

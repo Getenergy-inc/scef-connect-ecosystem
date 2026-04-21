@@ -39,8 +39,12 @@ export const EndorsedBySection = () => {
             {t("home.endorsedBy.eyebrow") || "Trust & Recognition"}
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight text-scef-blue-darker md:text-[2rem]">
-            {t("home.endorsedBy.title") || "Trusted & Endorsed By Leading Organizations"}
+            {t("home.endorsedBy.title") || "Trusted & Aligned with Leading Institutions"}
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            {t("home.endorsedBy.subtitle") ||
+              "SCEF collaborates with regional and global education bodies to ensure that programs and funded initiatives meet international standards and deliver measurable impact."}
+          </p>
         </div>
 
         <div className="grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
