@@ -35,6 +35,8 @@ import Sitemap from "./pages/Sitemap";
 import Vacancies from "./pages/Vacancies";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import CsrFundManagement from "./pages/CsrFundManagement";
+import CsrFundingIntake from "./pages/CsrFundingIntake";
+import FundingFunnel from "./pages/admin/FundingFunnel";
 
 // Legal Pages
 import Privacy from "./pages/Privacy";
@@ -234,6 +236,7 @@ const App = () => (
               <Route path="/admin/finance/overview" element={<FinanceOverview />} />
               <Route path="/admin/finance/bank-accounts" element={<BankAccounts />} />
               <Route path="/admin/finance/disbursements" element={<Disbursements />} />
+              <Route path="/admin/csr-funding-funnel" element={<FundingFunnel />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
@@ -253,6 +256,7 @@ const App = () => (
               <Route path="/partners" element={<Partners />} />
               <Route path="/partner-with-us" element={<PartnerWithUs />} />
               <Route path="/csr-fund-management" element={<CsrFundManagement />} />
+              <Route path="/csr-funding-intake" element={<CsrFundingIntake />} />
               
               {/* Divisions Routes */}
               <Route path="/divisions" element={<Divisions />} />
