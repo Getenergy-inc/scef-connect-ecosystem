@@ -1,58 +1,59 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
+/**
+ * Final CTA band — institutional dark blue with three primary CTAs.
+ * Matches landing reference: Join SCEF (gold), Donate (outline), Partner (outline).
+ */
 export const FinalCTABand = () => {
   const { t } = useLocale();
   return (
-    <section className="relative overflow-hidden bg-scef-blue-darker py-28 text-white md:py-40">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,hsl(45_92%_42%/0.18),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_80%,hsl(217_91%_30%/0.4),transparent_55%)]" />
-      <div className="absolute inset-0 bg-scef-pattern opacity-[0.04]" />
-      <div className="absolute left-1/2 top-0 h-px w-1/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-scef-gold/50 to-transparent" />
+    <section className="relative overflow-hidden bg-scef-blue-darker py-16 text-white md:py-20">
+      <div className="absolute inset-0 bg-scef-pattern opacity-[0.06]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(45_92%_42%/0.10),transparent_60%)]" />
 
-      <div className="container relative mx-auto px-6 text-center md:px-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-scef-gold">
-          {t("home.finalCta.eyebrow") || "Join Us"}
-        </p>
-        <h2 className="mx-auto mt-5 max-w-3xl font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
-          {t("home.finalCta.title") || "Be part of Africa's education transformation."}
-        </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-          {t("home.finalCta.subtitle") ||
-            "Help us make education accessible, inclusive, and impactful across regions."}
-        </p>
+      <div className="container relative mx-auto px-6 md:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.5rem]">
+            {t("home.finalCta.title") || "Be part of Africa's education transformation."}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
+            {t("home.finalCta.subtitle") ||
+              "Together, we can build a brighter future for generations to come."}
+          </p>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-3 md:mt-14">
-          <Button
-            size="lg"
-            className="group h-13 bg-scef-gold px-8 py-3 text-base font-semibold text-scef-blue-darker shadow-gold transition-all duration-300 hover:bg-scef-gold-hover hover:shadow-[0_20px_50px_-12px_hsl(45_92%_42%/0.5)]"
-            asChild
-          >
-            <Link to="/get-involved/membership">
-              {t("home.finalCta.ctaJoin") || "Become a Member"}
-              <ArrowRight className="ms-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="h-13 border-white/30 bg-white/5 px-8 py-3 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/60 hover:bg-white/10 hover:text-white"
-            asChild
-          >
-            <Link to="/donate">{t("home.finalCta.ctaDonate") || "Donate Now"}</Link>
-          </Button>
-        </div>
-
-        <div className="mt-6 text-sm text-white/70">
-          {t("home.finalCta.helper") || "Not sure where to start?"}{" "}
-          <Link
-            to="/join"
-            className="font-semibold text-scef-gold underline-offset-4 hover:underline"
-          >
-            {t("home.finalCta.helperLink") || "Explore all ways to join →"}
-          </Link>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Button
+              size="lg"
+              className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
+              asChild
+            >
+              <Link to="/get-involved/membership">
+                {t("home.finalCta.ctaJoin") || "Join SCEF"}
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
+              asChild
+            >
+              <Link to="/donate">
+                {t("home.finalCta.ctaDonate") || "Donate"}
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
+              asChild
+            >
+              <Link to="/partner-with-us">
+                {t("home.finalCta.ctaPartner") || "Partner With Us"}
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
