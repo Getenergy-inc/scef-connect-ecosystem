@@ -122,7 +122,7 @@ export const CinematicHero = () => {
         <div className="mt-20 hidden max-w-2xl grid-cols-4 gap-x-10 border-t border-white/10 pt-8 sm:grid md:mt-24">
           {[
             { k: "Founded", v: "1997" },
-            { k: "Regions", v: "54+" },
+            { k: "Regions", v: "5+" },
             { k: "Programs", v: "8+" },
             { k: "Languages", v: "9" },
           ].map((m) => (
