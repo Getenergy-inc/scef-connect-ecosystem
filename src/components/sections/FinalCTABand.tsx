@@ -18,10 +18,12 @@ export const FinalCTABand = () => {
           Join Us
         </p>
         <h2 className="mx-auto mt-5 max-w-3xl font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
-          Join our membership-run movement achieving{" "}
-          <span className="text-gradient-gold italic">Education for All</span>{" "}
-          in Africa.
+          Be part of Africa's{" "}
+          <span className="text-gradient-gold italic">education transformation</span>.
         </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+          Help us make education accessible, inclusive, and impactful across regions.
+        </p>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3 md:mt-14">
           <Button
