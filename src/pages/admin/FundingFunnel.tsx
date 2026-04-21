@@ -96,8 +96,8 @@ const STATUS_BADGE: Record<string, string> = {
 
 const FundingFunnel = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, loading: authLoading } = useAuthState();
-  const { isAdmin, isSuperAdmin, loading: roleLoading } = useUserRole();
+  const { user, isAuthenticated, loading: authLoading } = useAuthState();
+  const { isAdmin, isSuperAdmin, loading: roleLoading } = useUserRole(user?.id ?? null);
   const isAuthorized = isAdmin || isSuperAdmin;
 
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
