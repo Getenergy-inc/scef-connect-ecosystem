@@ -506,7 +506,7 @@
         },
         {
           "q": "Je, mnafanya kazi kote nchini?",
-          "a": "Ndiyo—kupitia sura za mitaa zilizopangwa na ushirikiano wa diaspora. Tunafanya kazi katika nchi 54+ za Afrika na jamii za diaspora, kila moja ikiwa na uongozi wa mtaa unaofuatana na viwango vya utawala wa SCEF."
+          "a": "Ndiyo—kupitia sura za mitaa zilizopangwa na ushirikiano wa diaspora. Tunafanya kazi katika mikoa 5+ za Afrika na jamii za diaspora, kila moja ikiwa na uongozi wa mtaa unaofuatana na viwango vya utawala wa SCEF."
         },
         {
           "q": "Washirika wanafuatiliaje athari?",
@@ -649,7 +649,7 @@
       },
       "lcps": {
         "title": "Marais wa Sura za Mitaa (LCPs)",
-        "count": "Nchi 54+",
+        "count": "Mikoa 5+",
         "description": "Uongozi wa ardhini unaotekeleza programu na kusimamia ushiriki wa jamii katika ngazi ya nchi.",
         "responsibilities": [
           "Utekelezaji wa programu katika ngazi ya nchi",

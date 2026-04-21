@@ -22,7 +22,7 @@ const responsibilities = [
 ];
 
 const platforms = [
-  { name: "Education Online Africa", desc: "Continental e-learning platform serving students across 54+ countries with courses, certifications, and digital credentials" },
+  { name: "Education Online Africa", desc: "Continental e-learning platform serving students across 5+ regions with courses, certifications, and digital credentials" },
   { name: "eLibrary Nigeria", desc: "Africa's digital library with free access to educational resources, journals, and research materials" },
   { name: "GFA Wallet", desc: "Institutional financial infrastructure for donations, membership fees, AGC tokens, and certification payments" },
   { name: "Chapter Management Portal", desc: "Comprehensive system for local chapter onboarding, compliance tracking, and performance reporting" },

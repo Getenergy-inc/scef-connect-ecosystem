@@ -80,7 +80,7 @@ const SantosMedia = () => {
                     Santos Media is SCEF's broadcasting and content production division. We create, produce, and distribute institutional-quality educational content across television, radio, and digital platforms—telling Africa's education story to the world.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    From the NESA Africa Awards to educational documentaries, from webinars to podcasts—we operate four distinct media properties serving audiences across 54+ African countries and the global diaspora. Our content is designed for institutional credibility and mass engagement.
+                    From the NESA Africa Awards to educational documentaries, from webinars to podcasts—we operate four distinct media properties serving audiences across 5+ African regions and the global diaspora. Our content is designed for institutional credibility and mass engagement.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[

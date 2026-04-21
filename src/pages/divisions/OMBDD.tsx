@@ -150,7 +150,7 @@ const OMBDD = () => {
                 Become a Sponsor
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Partner with Africa's leading education institution. Gain visibility across 54+ countries while supporting transformative education programs.
+                Partner with Africa's leading education institution. Gain visibility across 5+ regions while supporting transformative education programs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>

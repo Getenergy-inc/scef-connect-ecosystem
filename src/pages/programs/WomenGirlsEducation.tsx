@@ -52,7 +52,7 @@ const programPillars = [
 
 const impactStats = [
   { value: "45,000+", label: "Girls & Women Supported", icon: Users },
-  { value: "28", label: "African Countries", icon: Globe },
+  { value: "5+", label: "African Regions", icon: Globe },
   { value: "89%", label: "Completion Rate", icon: TrendingUp },
   { value: "$3.2M", label: "Invested Annually", icon: Target },
 ];

@@ -655,7 +655,7 @@ const NESAAfrica = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 {[
                   { value: "15+", label: "Years Running" },
-                  { value: "54", label: "African Countries" },
+                  { value: "5+", label: "African Regions" },
                   { value: "10,000+", label: "Nominees" },
                   { value: "1,000+", label: "Awardees" },
                 ].map((stat) => (

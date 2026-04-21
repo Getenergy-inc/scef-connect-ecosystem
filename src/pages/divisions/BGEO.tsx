@@ -73,7 +73,7 @@ const governanceBodies = [
   },
   {
     name: "Local Chapter Presidents",
-    count: "54+ Countries",
+    count: "5+ Regions",
     role: "Country-level execution and community engagement",
     icon: Globe,
   },
@@ -273,7 +273,7 @@ const BGEO = () => {
                 Learn More About Our Governance
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Explore our governance framework, meet our leadership, and understand how SCEF maintains institutional integrity across 54+ countries.
+                Explore our governance framework, meet our leadership, and understand how SCEF maintains institutional integrity across 5+ regions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>

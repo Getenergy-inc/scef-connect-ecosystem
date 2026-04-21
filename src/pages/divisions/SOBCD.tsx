@@ -11,7 +11,7 @@ import {
 const responsibilities = [
   "Institutional governance framework development and enforcement",
   "Financial oversight, audit coordination, and fiduciary compliance",
-  "Legal and regulatory adherence across 54+ jurisdictions",
+  "Legal and regulatory adherence across 5+ regions",
   "Policy development, review cycles, and institutional reform",
   "Enterprise risk management and mitigation protocols",
   "Board secretariat functions and trustee support",
@@ -73,7 +73,7 @@ const SOBCD = () => {
                     SOBCD serves as the institutional custodian of SCEF's governance framework. We ensure that all programs, chapters, divisions, and initiatives operate within established legal, financial, and ethical standards—maintaining the trust that governments, donors, and partners place in the organization.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    Our division provides the strategic oversight and compliance infrastructure that enables scalable, sustainable growth while maintaining the highest standards of accountability. We are the bridge between SCEF's mission and the regulatory, financial, and governance requirements of operating across 54+ African countries and the diaspora.
+                    Our division provides the strategic oversight and compliance infrastructure that enables scalable, sustainable growth while maintaining the highest standards of accountability. We are the bridge between SCEF's mission and the regulatory, financial, and governance requirements of operating across 5+ African regions and the diaspora.
                   </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
