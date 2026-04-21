@@ -124,7 +124,7 @@ const ReviewInner = () => {
         <div className="max-w-md mx-auto">
           <Card>
             <CardContent className="pt-6 space-y-3 text-center">
-              <ShieldAlert className="w-10 h-10 text-amber-500 mx-auto" />
+              <ShieldAlert className="w-10 h-10 text-muted-foreground mx-auto" />
               <h2 className="font-display text-lg font-semibold text-foreground">Manager access required</h2>
               <p className="text-sm text-muted-foreground">
                 The review queue is available to managers, directors, and executives.

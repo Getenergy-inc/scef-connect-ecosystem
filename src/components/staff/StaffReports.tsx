@@ -340,7 +340,7 @@ const StaffReportsInner = () => {
                               {r.key_tasks_completed || "(no completed tasks listed)"}
                             </p>
                             {r.review_notes && (
-                              <p className="text-xs italic text-amber-700 mt-1">
+                              <p className="text-xs italic text-warning mt-1" style={{ color: "hsl(38 92% 38%)" }}>
                                 Reviewer: {r.review_notes}
                               </p>
                             )}
