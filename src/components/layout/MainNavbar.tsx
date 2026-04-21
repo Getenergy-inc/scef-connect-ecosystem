@@ -304,8 +304,8 @@ export const MainNavbar = () => {
                 className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
                 asChild
               >
-                <Link to="/membership" onClick={() => setMobileMenuOpen(false)}>
-                  Become a Member
+              <Link to="/join" onClick={() => setMobileMenuOpen(false)}>
+                  Join SCEF
                 </Link>
               </Button>
             </div>

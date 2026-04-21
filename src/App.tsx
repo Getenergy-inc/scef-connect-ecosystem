@@ -21,6 +21,7 @@ import Donate from "./pages/Donate";
 import DonationSuccess from "./pages/DonationSuccess";
 import Wallet from "./pages/Wallet";
 import GetInvolved from "./pages/GetInvolved";
+import Join from "./pages/Join";
 import Membership from "./pages/Membership";
 import Governance from "./pages/Governance";
 import Certifications from "./pages/Certifications";
@@ -229,6 +230,7 @@ const App = () => (
               <Route path="/admin/finance/disbursements" element={<Disbursements />} />
               
               {/* Get Involved Routes */}
+              <Route path="/join" element={<Join />} />
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/get-involved/membership" element={<Membership />} />
               <Route path="/get-involved/ambassador" element={<Ambassador />} />

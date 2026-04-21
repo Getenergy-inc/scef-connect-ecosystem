@@ -63,12 +63,13 @@ export const siteContent = {
     },
     {
       name: "Get Involved",
-      href: "/get-involved",
+      href: "/join",
       children: [
-        { name: "Become a Member", href: "/membership", description: "Join our membership-run NGO advancing Education for All" },
-        { name: "Become an Ambassador", href: "/get-involved#ambassador", description: "Represent SCEF in your region" },
+        { name: "Become a Member", href: "/membership", description: "Primary path — global participation" },
+        { name: "Join a Local Chapter", href: "/local-chapters", description: "Regional engagement near you" },
+        { name: "Become an Ambassador", href: "/get-involved/ambassador", description: "Lead advocacy in your region" },
         { name: "Volunteer", href: "/get-involved#volunteer", description: "Contribute your time & skills" },
-        { name: "Partner With Us", href: "/partners", description: "Institutional & corporate partnerships" },
+        { name: "Partner With Us", href: "/partner-with-us", description: "Institutional & corporate partnerships" },
         { name: "Donate", href: "/donate", description: "Fund education across Africa" },
       ],
     },
@@ -109,9 +110,10 @@ export const siteContent = {
   // Homepage Configuration
   homepage: {
     hero: {
-      headline: "Achieving Education for All in 57 African Countries – Driven by Membership, Diaspora Strength, CSR Partnerships, and Grassroots Empowerment",
-      primaryCta: { text: "Join as a Member", href: "/membership" },
-      secondaryCta: { text: "Become Ambassador", href: "/get-involved#ambassador" },
+      headline: "Empowering Africa Through Education, Innovation, and Opportunity",
+      subheadline: "SCEF is a membership-driven organization advancing education across regions through advocacy, digital access, and partnerships.",
+      primaryCta: { text: "Explore Membership", href: "/membership" },
+      secondaryCta: { text: "Support the Mission", href: "/donate" },
       bgImage: "/hero-education.jpg",
     },
     digitalBoard: {
