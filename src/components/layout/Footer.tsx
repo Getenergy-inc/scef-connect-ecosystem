@@ -166,6 +166,9 @@ export const Footer = () => {
       {/* Subtle gold gradient line at top */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-scef-gold/60 to-transparent" />
 
+      {/* Endorsed By strip — shows on every page */}
+      <FooterEndorsements />
+
       {/* Top CTA band */}
       <div className="relative border-b border-white/5">
         <div className="container mx-auto px-4 py-10 md:py-12">
