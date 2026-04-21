@@ -259,7 +259,7 @@ const Join = () => {
               </div>
             </div>
           </section>
-          <EndorsedBySection />
+          
         </main>
 
         <Footer />
