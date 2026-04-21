@@ -358,8 +358,8 @@ const CsrFundManagement = () => {
                       className="h-12 bg-scef-blue-darker px-7 font-semibold text-white hover:bg-scef-blue"
                       asChild
                     >
-                      <Link to="/partner-with-us">
-                        Partner With Us <ArrowRight className="ms-2 h-4 w-4" />
+                      <Link to="/csr-funding-intake">
+                        Start Funding Intake <ArrowRight className="ms-2 h-4 w-4" />
                       </Link>
                     </Button>
                     <Button
