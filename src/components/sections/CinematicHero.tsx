@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-classroom.jpg";
-import heroVideo from "@/assets/nesa-hero-bg-video.mp4";
 
 /**
  * Cinematic, full-screen institutional hero.
@@ -17,25 +16,12 @@ export const CinematicHero = () => {
       className="relative isolate overflow-hidden text-white"
       style={{ minHeight: "min(94vh, 920px)" }}
     >
-      {/* Background video with image poster fallback */}
+      {/* Background image with subtle Ken Burns zoom */}
       <div className="absolute inset-0 -z-20">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={heroImage}
-          className="h-full w-full object-cover animate-[heroZoom_28s_ease-in-out_infinite_alternate]"
-          aria-hidden="true"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-        {/* Image fallback layer (covered by video when it loads) */}
         <img
           src={heroImage}
           alt=""
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          className="h-full w-full object-cover animate-[heroZoom_28s_ease-in-out_infinite_alternate]"
           aria-hidden="true"
         />
       </div>
