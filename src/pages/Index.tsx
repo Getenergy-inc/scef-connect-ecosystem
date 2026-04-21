@@ -92,7 +92,17 @@ const Index = () => {
             <ChooseYourPath />
           </Reveal>
 
-          {/* 9. Final CTA */}
+          {/* 9. Endorsements (FAWE, CSACEFA & partners) */}
+          <Reveal>
+            <EndorsedBySection />
+          </Reveal>
+
+          {/* 10. CRS & operational partners */}
+          <Reveal>
+            <CRSPartnersSection />
+          </Reveal>
+
+          {/* 11. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
