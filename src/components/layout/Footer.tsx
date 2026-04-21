@@ -399,7 +399,7 @@ export const Footer = () => {
             </div>
 
             <p className="text-xs text-white/50 text-center md:text-right">
-              © {new Date().getFullYear()} Santos Creations Educational Foundation
+              © 2026 Santos Creations Educational Foundation
             </p>
           </div>
         </div>
