@@ -70,29 +70,41 @@ export const ChooseYourPath = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {paths.map(({ icon: Icon, title, blurb, cta, href, iconColor, iconBg, btn }) => (
-            <div
-              key={title}
-              className="group flex flex-col items-center rounded-xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
-                <Icon className="h-7 w-7" strokeWidth={2} />
-              </div>
-              <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker md:text-lg">
-                {t(`home.paths.cards.${title}.title`) || title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {t(`home.paths.cards.${title}.blurb`) || blurb}
-              </p>
-              <Link
-                to={href}
-                className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md ${btn} px-4 py-2.5 text-sm font-semibold text-white transition-colors`}
+          {paths.map(({ icon: Icon, title, blurb, cta, href, iconColor, iconBg, btn }, idx) => {
+            const isPrimary = idx === 0;
+            return (
+              <div
+                key={title}
+                className={`group relative flex flex-col items-center rounded-xl border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  isPrimary
+                    ? "border-scef-gold/60 shadow-md ring-1 ring-scef-gold/30 lg:scale-[1.03]"
+                    : "border-border"
+                }`}
               >
-                {t(`home.paths.cards.${title}.cta`) || cta}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          ))}
+                {isPrimary && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-scef-gold px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-scef-blue-darker shadow">
+                    {t("home.paths.recommended") || "Recommended"}
+                  </span>
+                )}
+                <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
+                  <Icon className="h-7 w-7" strokeWidth={2} />
+                </div>
+                <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker md:text-lg">
+                  {t(`home.paths.cards.${title}.title`) || title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {t(`home.paths.cards.${title}.blurb`) || blurb}
+                </p>
+                <Link
+                  to={href}
+                  className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md ${btn} px-4 py-2.5 text-sm font-semibold text-white transition-colors`}
+                >
+                  {t(`home.paths.cards.${title}.cta`) || cta}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

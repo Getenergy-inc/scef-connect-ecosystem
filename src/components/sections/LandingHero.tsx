@@ -33,15 +33,15 @@ export const LandingHero = () => {
               {t("home.heroV2.eyebrow") || "Pan-African Education Foundation · Since 1997"}
             </p>
             <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.75rem]">
-              {t("home.heroV2.line1") || "Africa's continuous"}{" "}
+              {t("home.heroV2.line1") || "Empowering Africa through"}{" "}
               <span className="text-scef-gold">
-                {t("home.heroV2.highlight") || "education standards"}
+                {t("home.heroV2.highlight") || "education, innovation,"}
               </span>{" "}
-              {t("home.heroV2.line2") || "system."}
+              {t("home.heroV2.line2") || "and opportunity."}
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
               {t("home.heroV2.subtitle") ||
-                "We connect programs, chapters, partners, and media into one accountable ecosystem — advancing learning across 5+ African regions toward 2035."}
+                "A membership-driven foundation advancing education across regions through advocacy, digital access, and strategic partnerships."}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button

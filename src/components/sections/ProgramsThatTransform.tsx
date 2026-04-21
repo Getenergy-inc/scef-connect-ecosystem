@@ -99,6 +99,10 @@ export const ProgramsThatTransform = () => {
           <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
             {t("home.programsV2.title") || "Programs That Transform Lives"}
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            {t("home.programsV2.intro") ||
+              "Our programs improve access, quality, inclusion, skills, and recognition across regions."}
+          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-5">
