@@ -76,9 +76,11 @@ export const ServicePillars = () => {
             <Link
               key={title}
               to={href}
-              className="group relative flex flex-col gap-6 bg-scef-blue-darker p-8 transition-all hover:bg-scef-blue-dark"
+              className="group relative flex flex-col gap-6 overflow-hidden bg-scef-blue-darker p-8 transition-all duration-300 hover:bg-scef-blue-dark"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold transition-transform group-hover:scale-110">
+              {/* Hover glow */}
+              <div className="pointer-events-none absolute inset-0 -z-0 bg-[radial-gradient(circle_at_top_left,hsl(45_92%_42%/0.15),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold transition-all duration-300 group-hover:scale-110 group-hover:bg-scef-gold/25">
                 <Icon className="h-6 w-6" />
               </div>
               <div>

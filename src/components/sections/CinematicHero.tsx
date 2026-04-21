@@ -121,6 +121,18 @@ export const CinematicHero = () => {
         </div>
       </div>
 
+      {/* Scroll cue */}
+      <div className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 md:block">
+        <div className="flex flex-col items-center gap-2 text-white/55">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.25em]">
+            Scroll
+          </span>
+          <span className="relative block h-9 w-5 rounded-full border border-white/40">
+            <span className="absolute left-1/2 top-1.5 block h-1.5 w-0.5 -translate-x-1/2 animate-[scrollDot_1.8s_ease-in-out_infinite] rounded-full bg-scef-gold" />
+          </span>
+        </div>
+      </div>
+
       <style>{`
         @keyframes heroZoom {
           from { transform: scale(1); }
@@ -129,6 +141,11 @@ export const CinematicHero = () => {
         @keyframes floatY {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-18px); }
+        }
+        @keyframes scrollDot {
+          0% { transform: translate(-50%, 0); opacity: 1; }
+          70% { transform: translate(-50%, 14px); opacity: 0; }
+          100% { transform: translate(-50%, 0); opacity: 0; }
         }
       `}</style>
     </section>
