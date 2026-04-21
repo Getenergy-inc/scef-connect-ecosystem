@@ -278,6 +278,74 @@
       "ctaJoin": "Jiunge",
       "ctaDonate": "Changia",
       "ctaPartner": "Shirikiana (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "Sisi ni Nani",
+      "title": "Mfumo uliopangwa wa athari za kielimu.",
+      "body": "SCEF ni msingi unaoendeshwa na wanachama unaojenga mifumo inayosaidia elimu kuboreka, kupanuka na kuwa na uwajibikaji kote Afrika — ukiunganisha programu, matawi, washirika, mifumo na vyombo vya habari.",
+      "links": {
+        "about": "Kuhusu SCEF",
+        "mission": "Dhamira",
+        "vision": "Maono",
+        "join": "Jiunge kama Mwanachama"
+      }
+    },
+    "pillars": {
+      "eyebrow": "Tunachofanya",
+      "title": "Programu zinazofanya kazi pamoja.",
+      "subtitle": "Zimeundwa kuboresha ufikiaji, ubora, ujumuishaji, ujuzi na utambuzi katika maeneo.",
+      "viewAll": "Tazama programu zote"
+    },
+    "explore": {
+      "eyebrow": "Chunguza SCEF",
+      "title": "Chagua njia yako.",
+      "subtitle": "Jiunge na SCEF kwa njia inayokufaa — mwanachama, balozi, mshirika, mfadhili au kiongozi wa tawi.",
+      "joinBadge": "Jiunge",
+      "cards": {
+        "about": {
+          "title": "Kuhusu SCEF",
+          "text": "Taasisi, dhamira na maono yetu."
+        },
+        "programs": {
+          "title": "Programu",
+          "text": "Miradi inayoungwa mkono na wanachama Afrika."
+        },
+        "awards": {
+          "title": "Tuzo",
+          "text": "Mfumo wa utambuzi wa NESA-Afrika."
+        },
+        "chapters": {
+          "title": "Matawi",
+          "text": "Mitandao ya kikanda Afrika na diaspora."
+        },
+        "media": {
+          "title": "Vyombo vya Habari",
+          "text": "TV, redio, podikasti na matangazo."
+        },
+        "involved": {
+          "title": "Shiriki",
+          "text": "Mwanachama, balozi, kujitolea na zaidi."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Habari Maalum",
+      "title": "NESA-Afrika 2026: viwango katika vitendo.",
+      "body": "Utambuzi unaobadilisha ubora kuwa athari ya kudumu katika maeneo — unaoendeshwa na matawi ya wanachama na njia za washirika zilizothibitishwa.",
+      "status": "Ripoti zinaendelea",
+      "ctaPrimary": "Soma hadithi",
+      "ctaSecondary": "Habari zote",
+      "tag": "NESA-Afrika 2026",
+      "imageCaption": "Utambuzi kama utaratibu wa viwango."
+    },
+    "finalCta": {
+      "eyebrow": "Jiunge Nasi",
+      "title": "Kuwa sehemu ya mageuzi ya elimu Afrika.",
+      "subtitle": "Tusaidie kufanya elimu ipatikane, ijumuishe na ilete athari katika maeneo yote.",
+      "ctaJoin": "Kuwa Mwanachama",
+      "ctaDonate": "Changia Sasa",
+      "helper": "Huna uhakika pa kuanzia?",
+      "helperLink": "Chunguza njia zote za kujiunga →"
     }
   },
   "about": {

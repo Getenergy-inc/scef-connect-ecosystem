@@ -211,6 +211,74 @@
       "ctaJoin": "Mitglied werden",
       "ctaDonate": "Spenden",
       "ctaPartner": "Partnerschaft (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "Wer wir sind",
+      "title": "Ein strukturiertes Ökosystem für Bildungswirkung.",
+      "body": "SCEF ist eine mitgliedergeführte Stiftung, die Systeme aufbaut, damit Bildung sich verbessern, skalieren und rechenschaftspflichtig bleiben kann — durch Verbindung von Programmen, Chaptern, Partnern, Plattformen und Medien für messbare Ergebnisse.",
+      "links": {
+        "about": "Über SCEF",
+        "mission": "Mission",
+        "vision": "Vision",
+        "join": "Mitglied werden"
+      }
+    },
+    "pillars": {
+      "eyebrow": "Was wir tun",
+      "title": "Programme, die zusammenarbeiten.",
+      "subtitle": "Entwickelt, um Zugang, Qualität, Inklusion, Kompetenzen und Anerkennung in den Regionen zu verbessern.",
+      "viewAll": "Alle Programme ansehen"
+    },
+    "explore": {
+      "eyebrow": "SCEF erkunden",
+      "title": "Wählen Sie Ihren Weg.",
+      "subtitle": "Schließen Sie sich SCEF auf die Weise an, die zu Ihnen passt — Mitglied, Botschafter, Partner, Spender oder Chapter-Leiter.",
+      "joinBadge": "Beitreten",
+      "cards": {
+        "about": {
+          "title": "Über SCEF",
+          "text": "Unsere Institution, Mission und Vision."
+        },
+        "programs": {
+          "title": "Programme",
+          "text": "Von Mitgliedern getragene Initiativen in Afrika."
+        },
+        "awards": {
+          "title": "Auszeichnungen",
+          "text": "NESA-Afrika Anerkennungsökosystem."
+        },
+        "chapters": {
+          "title": "Chapter",
+          "text": "Regionale Netzwerke in Afrika und Diaspora."
+        },
+        "media": {
+          "title": "Medien",
+          "text": "TV, Radio, Podcasts und Sendungen."
+        },
+        "involved": {
+          "title": "Mitmachen",
+          "text": "Mitglied, Botschafter, Freiwilliger und mehr."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Hervorgehobenes Update",
+      "title": "NESA-Afrika 2026: Standards in Aktion.",
+      "body": "Anerkennung, die Exzellenz in nachhaltige Wirkung in den Regionen übersetzt — getragen von Mitgliederchaptern und verifizierten Partner-Pipelines.",
+      "status": "Berichterstattung in Arbeit",
+      "ctaPrimary": "Geschichte lesen",
+      "ctaSecondary": "Alle Nachrichten",
+      "tag": "NESA-Afrika 2026",
+      "imageCaption": "Anerkennung als Standardmechanismus."
+    },
+    "finalCta": {
+      "eyebrow": "Mitmachen",
+      "title": "Werden Sie Teil der Bildungstransformation Afrikas.",
+      "subtitle": "Helfen Sie uns, Bildung zugänglich, inklusiv und wirkungsvoll in allen Regionen zu machen.",
+      "ctaJoin": "Mitglied werden",
+      "ctaDonate": "Jetzt spenden",
+      "helper": "Nicht sicher, wo Sie anfangen sollen?",
+      "helperLink": "Alle Wege zum Mitmachen erkunden →"
     }
   },
   "about": {

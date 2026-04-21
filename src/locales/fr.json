@@ -278,6 +278,74 @@
       "ctaJoin": "Devenir membre",
       "ctaDonate": "Faire un don",
       "ctaPartner": "Devenir partenaire (CSR)"
+    },
+    "brandFilm": {
+      "eyebrow": "Qui nous sommes",
+      "title": "Un écosystème structuré d'impact éducatif.",
+      "body": "SCEF est une fondation portée par ses membres qui construit des systèmes pour aider l'éducation à s'améliorer, à grandir et à rester redevable à travers l'Afrique — en reliant programmes, sections, partenaires, plateformes et médias pour des résultats mesurables.",
+      "links": {
+        "about": "À propos de SCEF",
+        "mission": "Mission",
+        "vision": "Vision",
+        "join": "Devenir membre"
+      }
+    },
+    "pillars": {
+      "eyebrow": "Ce que nous faisons",
+      "title": "Des programmes qui fonctionnent ensemble.",
+      "subtitle": "Conçus pour améliorer l'accès, la qualité, l'inclusion, les compétences et la reconnaissance dans les régions.",
+      "viewAll": "Voir tous les programmes"
+    },
+    "explore": {
+      "eyebrow": "Explorer SCEF",
+      "title": "Choisissez votre voie.",
+      "subtitle": "Rejoignez SCEF de la manière qui vous convient — membre, ambassadeur, partenaire, donateur ou responsable de section.",
+      "joinBadge": "Rejoindre",
+      "cards": {
+        "about": {
+          "title": "À propos",
+          "text": "Notre institution, mission et vision."
+        },
+        "programs": {
+          "title": "Programmes",
+          "text": "Initiatives soutenues par les membres en Afrique."
+        },
+        "awards": {
+          "title": "Prix",
+          "text": "Écosystème de reconnaissance NESA-Afrique."
+        },
+        "chapters": {
+          "title": "Sections",
+          "text": "Réseaux régionaux en Afrique et diaspora."
+        },
+        "media": {
+          "title": "Médias",
+          "text": "TV, radio, podcasts et diffusions."
+        },
+        "involved": {
+          "title": "S'impliquer",
+          "text": "Membre, ambassadeur, bénévole et plus."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Actualité en vedette",
+      "title": "NESA-Afrique 2026 : des normes à l'action.",
+      "body": "Une reconnaissance qui traduit l'excellence en impact durable dans les régions — portée par les sections membres et des pipelines de partenaires vérifiés.",
+      "status": "Rapports en cours",
+      "ctaPrimary": "Lire l'article",
+      "ctaSecondary": "Toutes les actualités",
+      "tag": "NESA-Afrique 2026",
+      "imageCaption": "La reconnaissance comme mécanisme de normes."
+    },
+    "finalCta": {
+      "eyebrow": "Rejoignez-nous",
+      "title": "Faites partie de la transformation éducative de l'Afrique.",
+      "subtitle": "Aidez-nous à rendre l'éducation accessible, inclusive et impactante dans toutes les régions.",
+      "ctaJoin": "Devenir membre",
+      "ctaDonate": "Faire un don",
+      "helper": "Vous ne savez pas par où commencer ?",
+      "helperLink": "Explorez toutes les façons de rejoindre →"
     }
   },
   "about": {
