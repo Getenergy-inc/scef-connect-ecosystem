@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, BookOpen, GraduationCap, Users, ShieldCheck, Globe2 } from "lucide-react";
 import heroImg from "@/assets/hero-schoolgirl.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
+import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
 
 const pillars = [
   { icon: BookOpen, title: "Education Advocacy", sub: "Expanding access for every learner" },
@@ -65,6 +66,7 @@ export const LandingHero = () => {
                   <Heart className="ms-2 h-4 w-4" />
                 </Link>
               </Button>
+              <QuickJumpMenu variant="dark" />
             </div>
           </div>
 
