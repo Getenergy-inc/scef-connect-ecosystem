@@ -60,22 +60,34 @@ const Index = () => {
           <CinematicHero />
 
           {/* 2. Brand intro — short, link-led */}
-          <BrandFilm />
+          <Reveal>
+            <BrandFilm />
+          </Reveal>
 
           {/* 3. Service pillars — 6 tiles */}
-          <ServicePillars />
+          <Reveal delay={60}>
+            <ServicePillars />
+          </Reveal>
 
           {/* 4. Impact band */}
-          <ImpactBand />
+          <Reveal>
+            <ImpactBand />
+          </Reveal>
 
           {/* 5. Explore SCEF — destination router */}
-          <ExploreHub />
+          <Reveal delay={60}>
+            <ExploreHub />
+          </Reveal>
 
           {/* 6. Featured update — single story, links to all news */}
-          <FeaturedUpdate />
+          <Reveal>
+            <FeaturedUpdate />
+          </Reveal>
 
           {/* 7. Final CTA */}
-          <FinalCTABand />
+          <Reveal>
+            <FinalCTABand />
+          </Reveal>
         </main>
 
         <Footer />
