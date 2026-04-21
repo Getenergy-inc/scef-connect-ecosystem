@@ -114,6 +114,8 @@ import PlatinumAward from "./pages/awards/PlatinumAward";
 import IconAward from "./pages/awards/IconAward";
 import GoldAward from "./pages/awards/GoldAward";
 import BlueGarnetAward from "./pages/awards/BlueGarnetAward";
+import Awards from "./pages/Awards";
+import StartChapter from "./pages/chapters/StartChapter";
 
 // Vote & Nominate Pages
 import Vote from "./pages/Vote";
@@ -157,6 +159,7 @@ const App = () => (
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/chapters/join-online" element={<JoinOnline />} />
               <Route path="/chapters/join" element={<JoinOnline />} />
+              <Route path="/chapters/start" element={<StartChapter />} />
               
               {/* Media Routes */}
               <Route path="/media" element={<Media />} />
@@ -176,6 +179,7 @@ const App = () => (
               <Route path="/case-studies" element={<CaseStudies />} />
               
               {/* NESA Award Routes */}
+              <Route path="/awards" element={<Awards />} />
               <Route path="/awards/platinum" element={<PlatinumAward />} />
               <Route path="/awards/icon" element={<IconAward />} />
               <Route path="/awards/gold" element={<GoldAward />} />

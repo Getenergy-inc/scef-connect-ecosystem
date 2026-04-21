@@ -13,13 +13,17 @@ export const siteContent = {
     { name: "Management Team", href: "/governance#management" },
   ],
 
-  // Main Navigation — 2026 IA (premium, low cognitive load)
+  // Main Navigation — 2026 IA (6-part, premium, low cognitive load)
   navLinks: [
     {
       name: "About",
       href: "/about",
       children: [
-        { name: "About SCEF", href: "/about", description: "Our mission, vision & 2035 strategy" },
+        { name: "Overview", href: "/about", description: "Who we are & what we stand for" },
+        { name: "Our History", href: "/about#history", description: "From 1997 to a Pan-African institution" },
+        { name: "Vision 2035", href: "/about#vision", description: "Our long-term agenda" },
+        { name: "Governance", href: "/governance", description: "Boards, councils & leadership" },
+        { name: "Our Divisions", href: "/divisions", description: "Six operational divisions" },
         { name: "Our Work", href: "/programs", description: "How we deliver impact across Africa" },
       ],
     },
@@ -29,25 +33,58 @@ export const siteContent = {
       megaMenu: true,
       groups: [
         {
-          title: "Education Programs",
+          title: "Education & Access",
           items: [
-            { name: "EduAid Africa", href: "/programs/eduaid-africa", description: "Scholarships & learning support", icon: "GraduationCap" },
-            { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa", description: "Restoring schools across the continent", icon: "School" },
-            { name: "Women & Girls Education", href: "/programs/women-girls-education", description: "Equity & empowerment in learning", icon: "Heart" },
-            { name: "Special Needs Education", href: "/programs/special-needs-education", description: "Inclusive learning pathways", icon: "Accessibility" },
+            { name: "EduAid Africa", href: "/programs/eduaid-africa", description: "Advocacy-driven access to education", icon: "GraduationCap" },
+            { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa", description: "Member-supported school renewal", icon: "School" },
+            { name: "Women & Girls Education", href: "/programs/women-girls-education", description: "Empowering through education", icon: "Heart" },
+            { name: "Special Needs Education", href: "/programs/special-needs-education", description: "Inclusive advocacy for all learners", icon: "Accessibility" },
           ],
         },
         {
           title: "Digital Learning",
           items: [
-            { name: "Education Online Africa", href: "/programs/digital-learning", description: "Pan-African digital skills hub", icon: "Laptop" },
-            { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria", description: "Free digital library access", icon: "Library" },
+            { name: "Education Online Africa", href: "/programs/digital-learning", description: "Digital learning & certification", icon: "Laptop" },
+            { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria", description: "Accessible knowledge hub", icon: "Library" },
           ],
         },
         {
-          title: "Recognition & Awards",
+          title: "Flagship Initiatives",
           items: [
-            { name: "NESA-Africa (2026–2037)", href: "/programs/nesa-africa", description: "Continental education awards engine", icon: "Award" },
+            { name: "NESA-Africa", href: "/programs/nesa-africa", description: "Continental education awards engine", icon: "Award" },
+            { name: "All Programs", href: "/programs", description: "Browse the full programs hub", icon: "LayoutGrid" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Awards",
+      href: "/awards",
+      megaMenu: true,
+      groups: [
+        {
+          title: "Award Programs",
+          items: [
+            { name: "NESA-Africa", href: "/programs/nesa-africa", description: "Continental awards engine", icon: "Award" },
+            { name: "Platinum Certificate", href: "/awards/platinum", description: "Lifetime contribution honour", icon: "Crown" },
+            { name: "Africa Education Icon", href: "/awards/icon", description: "Continental icons of impact", icon: "Star" },
+            { name: "Gold Certificate", href: "/awards/gold", description: "Excellence across categories", icon: "Medal" },
+            { name: "Blue Garnet Award", href: "/awards/blue-garnet", description: "Flagship recognition", icon: "Sparkles" },
+          ],
+        },
+        {
+          title: "Explore Awards",
+          items: [
+            { name: "Categories (17)", href: "/categories", description: "Full category architecture", icon: "LayoutGrid" },
+            { name: "NESA Calendar", href: "/calendar", description: "2026 cycle dates & milestones", icon: "Clapperboard" },
+          ],
+        },
+        {
+          title: "Participation",
+          items: [
+            { name: "Get Involved with NESA", href: "/get-involved", description: "Pathways into the awards", icon: "Heart" },
+            { name: "Apply to Join NRC", href: "/get-involved/nrc", description: "Nominee Review Committee", icon: "Award" },
+            { name: "Become a Judge", href: "/get-involved/judge", description: "Join the jury panel", icon: "Medal" },
           ],
         },
       ],
@@ -56,21 +93,9 @@ export const siteContent = {
       name: "Chapters",
       href: "/local-chapters",
       children: [
-        { name: "Find a Chapter", href: "/local-chapters", description: "Discover chapters near you" },
-        { name: "Start a Chapter", href: "/local-chapters#start", description: "Lead SCEF in your region" },
-        { name: "Chapter Directory", href: "/chapters", description: "Browse the full network" },
-      ],
-    },
-    {
-      name: "Get Involved",
-      href: "/join",
-      children: [
-        { name: "Become a Member", href: "/membership", description: "Primary path — global participation" },
-        { name: "Join a Local Chapter", href: "/local-chapters", description: "Regional engagement near you" },
-        { name: "Become an Ambassador", href: "/get-involved/ambassador", description: "Lead advocacy in your region" },
-        { name: "Volunteer", href: "/get-involved#volunteer", description: "Contribute your time & skills" },
-        { name: "Partner With Us", href: "/partner-with-us", description: "Institutional & corporate partnerships" },
-        { name: "Donate", href: "/donate", description: "Fund education across Africa" },
+        { name: "Browse Chapters", href: "/chapters", description: "Discover the full network" },
+        { name: "Join a Chapter", href: "/chapters/join-online", description: "Engage in your region" },
+        { name: "Start a Chapter", href: "/chapters/start", description: "Lead SCEF where you live" },
       ],
     },
     {
@@ -87,15 +112,7 @@ export const siteContent = {
           ],
         },
         {
-          title: "Shows & Broadcasts",
-          items: [
-            { name: "It's In Me Radio", href: "/media/its-in-me-radio", description: "Voices of African youth", icon: "Radio" },
-            { name: "EduAid Webinars & Podcast", href: "/media/eduaid-webinars", description: "Conversations with educators", icon: "Mic" },
-            { name: "Education Tourism Show", href: "/media/education-tourism-show", description: "Learning across borders", icon: "Plane" },
-          ],
-        },
-        {
-          title: "Events & Ceremonies",
+          title: "Signature Shows",
           items: [
             { name: "Platinum Recognition Show", href: "/media/nesa-awards-tv/platinum", description: "Honoring lifetime contribution", icon: "Crown" },
             { name: "Africa Icon Blue Garnet Awards", href: "/media/nesa-awards-tv/africa-icon", description: "Continental icons of impact", icon: "Star" },
@@ -103,6 +120,25 @@ export const siteContent = {
             { name: "Blue Garnet Gala", href: "/media/nesa-awards-tv/blue-garnet-gala", description: "The flagship gala night", icon: "Sparkles" },
           ],
         },
+        {
+          title: "Audio & Learning Media",
+          items: [
+            { name: "It's In Me Radio", href: "/media/its-in-me-radio", description: "Voices of African youth", icon: "Radio" },
+            { name: "EduAid Webinars & Podcast", href: "/media/eduaid-webinars", description: "Conversations with educators", icon: "Mic" },
+            { name: "Education Tourism Show", href: "/media/education-tourism-show", description: "Learning across borders", icon: "Plane" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Get Involved",
+      href: "/join",
+      children: [
+        { name: "Become a Member", href: "/membership", description: "Global participation" },
+        { name: "Become an Ambassador", href: "/get-involved/ambassador", description: "Lead advocacy in your region" },
+        { name: "Volunteer", href: "/get-involved#volunteer", description: "Contribute time & skills" },
+        { name: "Partnership / CSR", href: "/partner-with-us", description: "Institutional partnerships" },
+        { name: "Donate", href: "/donate", description: "Fund education across Africa" },
       ],
     },
   ],

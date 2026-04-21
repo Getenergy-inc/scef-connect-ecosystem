@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {
   Building2,
   Layers,
-  TrendingUp,
+  Award,
   Newspaper,
   MapPin,
   HeartHandshake,
@@ -11,42 +11,12 @@ import {
 import { MembershipBadge } from "@/components/ui/membership-badge";
 
 const cards = [
-  {
-    icon: Building2,
-    title: "About SCEF",
-    text: "Membership-run NGO story.",
-    href: "/about",
-  },
-  {
-    icon: Layers,
-    title: "Programs",
-    text: "Member-backed initiatives.",
-    href: "/programs",
-  },
-  {
-    icon: TrendingUp,
-    title: "Impact",
-    text: "Advocacy outcomes across regions.",
-    href: "/case-studies",
-  },
-  {
-    icon: MapPin,
-    title: "Chapters",
-    text: "Member networks across Africa & diaspora.",
-    href: "/local-chapters",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Get Involved",
-    text: "Join as a member today.",
-    href: "/get-involved/membership",
-  },
-  {
-    icon: Newspaper,
-    title: "Media",
-    text: "Member spotlights, shows and broadcasts.",
-    href: "/media",
-  },
+  { icon: Building2, title: "About SCEF", text: "Our institution, mission & vision.", href: "/about" },
+  { icon: Layers, title: "Programs", text: "Member-backed initiatives across Africa.", href: "/programs" },
+  { icon: Award, title: "Awards", text: "NESA-Africa recognition ecosystem.", href: "/awards" },
+  { icon: MapPin, title: "Chapters", text: "Regional networks across Africa & diaspora.", href: "/local-chapters" },
+  { icon: Newspaper, title: "Media", text: "TV, radio, podcasts & broadcasts.", href: "/media" },
+  { icon: HeartHandshake, title: "Get Involved", text: "Member, ambassador, volunteer & more.", href: "/join" },
 ];
 
 export const ExploreHub = () => {
