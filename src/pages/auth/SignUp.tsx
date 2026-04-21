@@ -68,8 +68,9 @@ const SignUp = () => {
       });
       if (error) throw error;
 
-      const userId = data.user?.id;
-      if (userId) {
+      const newUserId = data.user?.id;
+      if (newUserId) {
+        setUserId(newUserId);
         await supabase
           .from("profiles")
           .update({
@@ -81,7 +82,13 @@ const SignUp = () => {
             engagement_path: path,
             onboarding_step: "profile",
           })
-          .eq("user_id", userId);
+          .eq("user_id", newUserId);
+
+        // Assign path-specific app role (member is already added by handle_new_user trigger)
+        await supabase.rpc("assign_path_role" as never, {
+          _user_id: newUserId,
+          _path: path,
+        } as never);
       }
 
       setAccount(values);
