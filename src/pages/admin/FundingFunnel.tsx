@@ -292,7 +292,7 @@ const FundingFunnel = () => {
 
   if (!isAuthorized) {
     return (
-      <DashboardLayout>
+      <DashboardLayout role="admin" title="CSR Funding Funnel">
         <Card className="max-w-2xl mx-auto mt-12">
           <CardContent className="p-12 text-center">
             <ShieldAlert className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
@@ -328,7 +328,7 @@ const FundingFunnel = () => {
       <Helmet>
         <title>CSR Funding Funnel | SCEF Admin</title>
       </Helmet>
-      <DashboardLayout>
+      <DashboardLayout role="admin" title="CSR Funding Funnel">
         <div className="space-y-6">
           <div>
             <h1 className="text-3xl font-bold font-heading text-scef-blue-darker">
