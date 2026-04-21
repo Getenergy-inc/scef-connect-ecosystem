@@ -176,6 +176,39 @@
         }
       }
     },
+    "heroV2": {
+      "eyebrow": "Msingi wa Elimu wa Pan-Afrika · Tangu 1997",
+      "line1": "Kuwawezesha Afrika kupitia",
+      "highlight": "elimu, ubunifu,",
+      "line2": "na fursa.",
+      "subtitle": "Msingi unaoendeshwa na wanachama unaokuza elimu katika maeneo yote kupitia utetezi, ufikiaji wa kidijitali na ushirikiano wa kimkakati.",
+      "ctaPrimary": "Chunguza Uanachama",
+      "ctaSecondary": "Saidia Dhamira",
+      "imageAlt": "Watoto wa shule wa Kiafrika katika sare za kijani wakiwa pamoja shuleni",
+      "scrollCue": "Sogeza kuchunguza",
+      "pillars": {
+        "Education Advocacy": {
+          "title": "Utetezi wa Elimu",
+          "sub": "Kupanua ufikiaji kwa kila mwanafunzi"
+        },
+        "Skills & Innovation": {
+          "title": "Ujuzi na Ubunifu",
+          "sub": "Kujiandaa kwa athari halisi"
+        },
+        "Inclusion & Equity": {
+          "title": "Ujumuishaji na Usawa",
+          "sub": "Kufungua fursa kwa wote"
+        },
+        "Accountability": {
+          "title": "Uwajibikaji",
+          "sub": "Kutoa matokeo yanayopimika"
+        },
+        "Pan-African Impact": {
+          "title": "Athari ya Pan-Afrika",
+          "sub": "Kupanuka katika maeneo yote"
+        }
+      }
+    },
     "hero": {
       "eyebrow": "Afrika ya Kikanda • Diaspora ya Afrika",
       "title": "Kujenga kiwango cha elimu kinachoendelea kukua barani Afrika",
