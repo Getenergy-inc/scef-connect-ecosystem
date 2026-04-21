@@ -22,8 +22,10 @@ export const MainNavbar = () => {
   return (
     <nav
       className={cn(
-        "bg-scef-blue transition-all duration-300",
-        scrolled && "shadow-lg"
+        "transition-all duration-300",
+        scrolled
+          ? "bg-scef-blue shadow-lg backdrop-blur-md"
+          : "bg-scef-blue/70 backdrop-blur-md"
       )}
     >
       <div className="container mx-auto px-4 py-3">

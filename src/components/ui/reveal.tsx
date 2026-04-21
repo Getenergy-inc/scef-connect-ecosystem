@@ -9,14 +9,12 @@ export const Reveal = ({
   children,
   className,
   delay = 0,
-  as: Tag = "div",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
 }) => {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
@@ -36,9 +34,8 @@ export const Reveal = ({
   }, []);
 
   return (
-    // @ts-expect-error — dynamic tag
-    <Tag
-      ref={ref as never}
+    <div
+      ref={ref}
       className={cn(
         "transition-all duration-700 ease-out will-change-transform",
         shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
@@ -47,6 +44,6 @@ export const Reveal = ({
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </div>
   );
 };
