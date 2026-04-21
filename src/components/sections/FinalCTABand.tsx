@@ -16,14 +16,14 @@ export const FinalCTABand = () => {
       <div className="container relative mx-auto px-6 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-scef-gold-light">
-            {t("home.finalCta.eyebrow") || "Vision 2035"}
+            {t("home.finalCta.eyebrow") || "Join the Movement"}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.5rem]">
-            {t("home.finalCta.title") || "Build the standards. Scale the impact."}
+            {t("home.finalCta.title") || "Be part of Africa's education transformation"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
             {t("home.finalCta.subtitle") ||
-              "Join a continental network of members, chapters, and partners shaping Africa's education future."}
+              "Together, we can expand access, improve quality, and create lasting impact."}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

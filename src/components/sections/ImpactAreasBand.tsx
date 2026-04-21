@@ -20,10 +20,10 @@ export const ImpactAreasBand = () => {
           {/* Headline */}
           <div className="md:col-span-3">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[hsl(145_63%_55%)]">
-              {t("home.impactAreas.eyebrow") || "Our Impact Areas"}
+              {t("home.impactAreas.eyebrow") || "Focus Areas"}
             </p>
             <h2 className="mt-2 font-display text-2xl font-bold leading-tight md:text-[1.75rem]">
-              {t("home.impactAreas.title") || "Creating Change Where It Matters"}
+              {t("home.impactAreas.title") || "Driving Impact Where It Matters"}
             </h2>
           </div>
 
