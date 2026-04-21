@@ -121,6 +121,15 @@ import BlueGarnetAward from "./pages/awards/BlueGarnetAward";
 import Awards from "./pages/Awards";
 import StartChapter from "./pages/chapters/StartChapter";
 
+// Staff Office
+import StaffDashboard from "./pages/staff/Index";
+import StaffTasks from "./pages/staff/Tasks";
+import StaffWeekly from "./pages/staff/Weekly";
+import StaffMonthly from "./pages/staff/Monthly";
+import StaffReports from "./pages/staff/Reports";
+import StaffAI from "./pages/staff/AI";
+import StaffReview from "./pages/staff/Review";
+
 // Vote & Nominate Pages
 import Vote from "./pages/Vote";
 import Nominate from "./pages/Nominate";
@@ -279,6 +288,15 @@ const App = () => (
               <Route path="/help" element={<Help />} />
               <Route path="/sitemap" element={<Sitemap />} />
               
+              {/* Staff Office Routes */}
+              <Route path="/staff" element={<StaffDashboard />} />
+              <Route path="/staff/tasks" element={<StaffTasks />} />
+              <Route path="/staff/weekly" element={<StaffWeekly />} />
+              <Route path="/staff/monthly" element={<StaffMonthly />} />
+              <Route path="/staff/reports" element={<StaffReports />} />
+              <Route path="/staff/ai" element={<StaffAI />} />
+              <Route path="/staff/review" element={<StaffReview />} />
+
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
