@@ -8,6 +8,7 @@ import { ImpactBand } from "@/components/sections/ImpactBand";
 import { ExploreHub } from "@/components/sections/ExploreHub";
 import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
+import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -91,6 +92,7 @@ const Index = () => {
         </main>
 
         <Footer />
+        <StickyMobileJoin />
       </div>
     </>
   );
