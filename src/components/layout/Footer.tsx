@@ -393,6 +393,9 @@ export const Footer = () => {
               <Link to="/accessibility" className="hover:text-scef-gold transition-colors">
                 {t("footer.legal.accessibility")}
               </Link>
+              <Link to="/sitemap" className="hover:text-scef-gold transition-colors">
+                Sitemap
+              </Link>
               <Link to="/contact" className="hover:text-scef-gold transition-colors">
                 Contact
               </Link>
