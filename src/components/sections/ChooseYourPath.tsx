@@ -6,7 +6,7 @@ const paths = [
   {
     icon: Users,
     title: "Become a Member",
-    blurb: "Join a global community committed to transforming education in Africa.",
+    blurb: "Join a global network shaping education.",
     cta: "Join Now",
     href: "/get-involved/membership",
     iconColor: "text-[hsl(145_63%_35%)]",
@@ -16,7 +16,7 @@ const paths = [
   {
     icon: MapPin,
     title: "Join a Local Chapter",
-    blurb: "Connect locally and drive change in your community and region.",
+    blurb: "Drive impact in your community.",
     cta: "Find a Chapter",
     href: "/local-chapters",
     iconColor: "text-scef-blue",
@@ -26,7 +26,7 @@ const paths = [
   {
     icon: UserPlus,
     title: "Become an Ambassador",
-    blurb: "Represent SCEF and lead advocacy for quality education.",
+    blurb: "Lead advocacy and represent SCEF.",
     cta: "Apply Now",
     href: "/get-involved/ambassador",
     iconColor: "text-[hsl(265_60%_50%)]",
@@ -36,7 +36,7 @@ const paths = [
   {
     icon: Handshake,
     title: "Partner or Sponsor",
-    blurb: "Collaborate with us to scale education impact across Africa.",
+    blurb: "Collaborate to scale education impact.",
     cta: "Partner With Us",
     href: "/partner-with-us",
     iconColor: "text-[hsl(22_88%_52%)]",
@@ -46,7 +46,7 @@ const paths = [
   {
     icon: Heart,
     title: "Donate",
-    blurb: "Your support helps us reach more learners and communities.",
+    blurb: "Support access to education across regions.",
     cta: "Donate Now",
     href: "/donate",
     iconColor: "text-[hsl(340_75%_50%)]",

@@ -25,7 +25,11 @@ export const WhoWeAreLean = () => {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             {t("home.who.body1") ||
-              "SCEF is a membership-run foundation building systems that help education improve, scale, and stay accountable across Africa — connecting programs, chapters, partners, platforms, and media for measurable outcomes."}
+              "SCEF is a membership-run foundation building systems that help education improve, scale, and stay accountable across Africa."}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+            {t("home.who.body2") ||
+              "We connect programs, chapters, partners, platforms, and media to deliver measurable outcomes in access, quality, inclusion, and skills."}
           </p>
         </div>
 
