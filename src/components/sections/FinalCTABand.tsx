@@ -16,14 +16,14 @@ export const FinalCTABand = () => {
       <div className="container relative mx-auto px-6 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-scef-gold-light">
-            {t("home.finalCta.eyebrow") || "Join the Movement"}
+            {t("home.finalCta.eyebrow") || "Join Us"}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.5rem]">
             {t("home.finalCta.title") || "Be part of Africa's education transformation"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
             {t("home.finalCta.subtitle") ||
-              "Together, we can expand access, improve quality, and create lasting impact."}
+              "Help us make education accessible, inclusive, and impactful across regions."}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -33,7 +33,7 @@ export const FinalCTABand = () => {
               asChild
             >
               <Link to="/get-involved/membership">
-                {t("home.finalCta.ctaJoin") || "Join SCEF"}
+                {t("home.finalCta.ctaJoin") || "Become a Member"}
               </Link>
             </Button>
             <Button
@@ -43,7 +43,7 @@ export const FinalCTABand = () => {
               asChild
             >
               <Link to="/donate">
-                {t("home.finalCta.ctaDonate") || "Donate"}
+                {t("home.finalCta.ctaDonate") || "Donate Now"}
               </Link>
             </Button>
             <Button

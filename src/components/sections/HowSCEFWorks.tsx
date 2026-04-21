@@ -3,7 +3,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 
 const blocks = [
   { icon: Layers, title: "Programs", sub: "Deliver impact" },
-  { icon: MapPin, title: "Chapters", sub: "Regional execution" },
+  { icon: MapPin, title: "Chapters", sub: "Drive regional execution" },
   { icon: Globe2, title: "Platforms", sub: "Scale access" },
   { icon: Radio, title: "Media", sub: "Build awareness" },
   { icon: Handshake, title: "Partnerships", sub: "Sustain impact" },

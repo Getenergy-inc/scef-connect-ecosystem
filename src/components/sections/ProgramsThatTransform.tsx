@@ -25,7 +25,7 @@ const programs: Program[] = [
   {
     icon: Award,
     title: "NESA Africa",
-    blurb: "Recognizing and advancing excellence in education.",
+    blurb: "Recognizing and advancing education excellence.",
     href: "/programs/nesa-africa",
     color: "text-scef-gold",
     bg: "bg-scef-gold/15",
@@ -34,7 +34,7 @@ const programs: Program[] = [
   {
     icon: HandHeart,
     title: "EduAid Africa",
-    blurb: "Scholarships and support pathways for learners.",
+    blurb: "Scholarships and structured support pathways.",
     href: "/programs/eduaid-africa",
     color: "text-white",
     bg: "bg-scef-blue",
@@ -43,7 +43,7 @@ const programs: Program[] = [
   {
     icon: Home,
     title: "Rebuild My School Africa",
-    blurb: "Improving school environments and infrastructure.",
+    blurb: "Improving school environments.",
     href: "/programs/rebuild-my-school-africa",
     color: "text-white",
     bg: "bg-[hsl(145_63%_35%)]",
@@ -52,7 +52,7 @@ const programs: Program[] = [
   {
     icon: Laptop,
     title: "Education Online Africa",
-    blurb: "Digital learning and certification for the future.",
+    blurb: "Digital learning and certification.",
     href: "/programs/digital-learning",
     color: "text-white",
     bg: "bg-[hsl(265_60%_50%)]",
@@ -61,7 +61,7 @@ const programs: Program[] = [
   {
     icon: Sparkles,
     title: "Women & Girls Education",
-    blurb: "Expanding access and empowering communities.",
+    blurb: "Expanding access and empowerment.",
     href: "/programs/women-girls-education",
     color: "text-white",
     bg: "bg-[hsl(340_75%_50%)]",
@@ -70,7 +70,7 @@ const programs: Program[] = [
   {
     icon: HeartHandshake,
     title: "Special Needs Education",
-    blurb: "Inclusive learning and support for every ability.",
+    blurb: "Inclusive learning support.",
     href: "/programs/special-needs-education",
     color: "text-white",
     bg: "bg-[hsl(175_60%_38%)]",
@@ -79,7 +79,7 @@ const programs: Program[] = [
   {
     icon: BookOpen,
     title: "eLibrary Nigeria",
-    blurb: "Accessible digital knowledge for everyone.",
+    blurb: "Accessible digital knowledge.",
     href: "/programs/elibrary-nigeria",
     color: "text-white",
     bg: "bg-[hsl(22_88%_52%)]",
