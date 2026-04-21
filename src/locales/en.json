@@ -607,7 +607,7 @@
       "reportingDesc": "Live impact metrics and regional data are being consolidated. Full reporting dashboard coming soon.",
       "reportingStatus": "Reporting in progress",
       "stats": {
-        "countries": "Countries/Regions",
+        "countries": "Regions",
         "chapters": "Active Chapters",
         "learners": "Learners Supported",
         "schools": "Schools Supported",
@@ -1840,7 +1840,7 @@
     },
     "impact": {
       "chapters": "Chapter Network",
-      "countries": "Countries Reached",
+      "countries": "Regions Reached",
       "recognition": "Recognition Programs",
       "learners": "Learners Supported"
     },
@@ -1973,7 +1973,7 @@
     "impact": {
       "girlsEnrolled": "Girls Enrolled",
       "specialNeeds": "Special Needs Learners",
-      "countries": "Countries Active",
+      "countries": "Regions Active",
       "resources": "Resources Created"
     },
     "approach": {
@@ -2174,7 +2174,7 @@
       "badge": "Local Presence",
       "title": "EduAid Local Chapters",
       "description": "Our growing network of local chapters brings EduAid's mission to communities across Africa, enabling grassroots impact and sustainable change.",
-      "point1": "Present in 15+ African countries",
+      "point1": "Present across multiple African regions",
       "point2": "2,000+ active chapter members",
       "browse": "Browse Chapters",
       "start": "Start a Chapter"
