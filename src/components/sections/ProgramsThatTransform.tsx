@@ -101,7 +101,7 @@ export const ProgramsThatTransform = () => {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {t("home.programsV2.intro") ||
-              "Our programs improve access, quality, inclusion, skills, and recognition across regions."}
+              "Our programs are part of a structured system supported by partnerships and CSR-driven funding — delivering measurable education outcomes across regions."}
           </p>
         </div>
 
