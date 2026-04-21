@@ -228,18 +228,25 @@ const Donate = () => {
         <Header />
         
         <main className="pt-24 pb-20">
-          {/* Hero */}
-          <section className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white py-20">
-            <div className="container mx-auto px-4 text-center">
-              <div className="w-24 h-24 mx-auto rounded-2xl overflow-hidden mb-6 shadow-xl">
+          {/* Hero — cinematic */}
+          <section className="relative bg-gradient-to-br from-scef-blue-darker via-scef-blue to-scef-blue-dark text-white py-24 md:py-32 overflow-hidden">
+            <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-scef-blue-darker/40 rounded-full blur-3xl" />
+            <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
+              <div className="w-20 h-20 mx-auto rounded-2xl overflow-hidden mb-8 shadow-2xl ring-1 ring-white/10">
                 <img src={gfaWalletLogo} alt="GFA Wallet" className="w-full h-full object-contain" />
               </div>
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-2">
-                {t("donate.hero.title") || "Fund Education. Change Lives."}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-8">
+                Donate
+              </div>
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] tracking-tight">
+                Fund education. <span className="text-scef-gold">Change lives.</span>
               </h1>
-              <p className="text-lg text-scef-gold font-semibold mb-2">Powered by GFA Wallet • GetFinance Africa</p>
-              <p className="text-white/80 max-w-2xl mx-auto">
-                {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and educational programs across Africa."}
+              <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed mb-3">
+                {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and education programs across 54+ African regions."}
+              </p>
+              <p className="text-xs uppercase tracking-widest text-scef-gold/80 font-semibold">
+                Powered by GFA Wallet · GetFinance Africa
               </p>
             </div>
           </section>

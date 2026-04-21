@@ -1,61 +1,65 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
+import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Play, Volume2, FileText, Image, Calendar, ExternalLink } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
+import { Play, Volume2, FileText, Image as ImageIcon, Calendar, ArrowRight, Newspaper } from "lucide-react";
 
-// Sample updates data (will be from CMS/database)
 const updates = [
   {
     id: 1,
     type: "video",
-    title: "NESA-Africa 2025 Nominations Now Open",
-    description: "Submit your nominations for the most prestigious education awards in Africa. Regional rotation hosting begins 2027.",
+    title: "NESA-Africa 2026 Nominations Now Open",
+    description: "Submit your nominations for Africa's premier education recognition platform.",
     cta: { text: "Submit Nomination", href: "/programs/nesa-africa" },
-    thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
-    date: "2025-01-03",
-    status: "active",
+    thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200",
+    date: "2026-01-03",
   },
   {
     id: 2,
     type: "flyer",
-    title: "EduAid Scholarship Application",
-    description: "Applications for the 2025 scholarship cycle are now open. Don't miss this opportunity to advance your education!",
+    title: "EduAid Scholarship Cycle 2026",
+    description: "Applications now open for the 2026 cycle. Advance your education journey.",
     cta: { text: "Apply Now", href: "/programs/eduaid-africa" },
-    thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
-    date: "2025-01-02",
-    status: "active",
+    thumbnail: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200",
+    date: "2026-01-02",
   },
   {
     id: 3,
     type: "announcement",
-    title: "AEPC Certification Program Launch",
-    description: "Africa Education & Productivity Certification now available across 10 countries. Get certified today!",
+    title: "AEPC Certification Expansion",
+    description: "Africa Education & Productivity Certification expands across new regions.",
     cta: { text: "Learn More", href: "/certifications" },
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800",
-    date: "2025-01-01",
-    status: "active",
+    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200",
+    date: "2026-01-01",
   },
   {
     id: 4,
     type: "audio",
-    title: "It's In Me Radio: Latest Episode",
-    description: "Listen to inspiring stories from educators and students transforming their communities across Africa.",
+    title: "It's In Me Radio — Latest Episode",
+    description: "Voices of educators and learners shaping Africa's future.",
     cta: { text: "Listen Now", href: "/media" },
-    thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800",
-    date: "2024-12-30",
-    status: "active",
+    thumbnail: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200",
+    date: "2025-12-30",
   },
   {
     id: 5,
     type: "video",
-    title: "Local Chapter Training Webinar",
-    description: "Watch our latest training session for Local Chapter Presidents on governance and compliance.",
+    title: "Local Chapter Leadership Webinar",
+    description: "Training session for Chapter Presidents on governance and impact reporting.",
     cta: { text: "Watch Now", href: "/governance" },
-    thumbnail: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800",
-    date: "2024-12-28",
-    status: "archived",
+    thumbnail: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200",
+    date: "2025-12-28",
+  },
+  {
+    id: 6,
+    type: "announcement",
+    title: "Pan-African Education Forum 2026",
+    description: "Convening leaders, institutions, and partners across 54+ regions.",
+    cta: { text: "Reserve Seat", href: "/contact" },
+    thumbnail: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200",
+    date: "2025-12-20",
   },
 ];
 
@@ -63,121 +67,164 @@ const typeIcons = {
   video: Play,
   audio: Volume2,
   announcement: FileText,
-  flyer: Image,
-};
-
-const typeColors = {
-  video: "bg-scef-gold text-scef-blue-dark",
-  audio: "bg-primary text-primary-foreground",
-  announcement: "bg-primary text-primary-foreground",
-  flyer: "bg-scef-gold text-scef-blue-dark",
+  flyer: ImageIcon,
 };
 
 const Updates = () => {
+  const featured = updates[0];
+  const rest = updates.slice(1);
+
   return (
     <>
       <Helmet>
-        <title>Updates | SCEF - Santos Creations Educational Foundation</title>
-        <meta name="description" content="Latest updates, announcements, and news from SCEF - scholarships, programs, events, and more." />
+        <title>News & Updates | SCEF</title>
+        <meta name="description" content="Latest news, announcements, and updates from SCEF and partner programs across Africa." />
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <HeaderScreenshot />
-        
-        {/* Spacer for fixed header */}
-        <div className="h-[88px] md:h-[96px]" />
+        <Header />
 
-        <main className="py-12">
-          <div className="container mx-auto px-4">
-            {/* Back Link */}
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8 font-medium"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Link>
+        <main>
+          {/* HERO — cinematic minimal */}
+          <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-scef-blue overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-scef-blue-darker via-scef-blue to-scef-blue" />
+            <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-scef-gold/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-scef-blue-darker/40 rounded-full blur-3xl" />
 
-            {/* Page Header */}
-            <div className="mb-12">
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-                Education Updates
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Stay informed with the latest announcements, opportunities, and news from SCEF and our programs across Africa.
-              </p>
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="max-w-3xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-8">
+                  <Newspaper className="w-3.5 h-3.5" />
+                  News & Updates
+                </div>
+                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                  Stories from <span className="text-scef-gold">Africa's</span> education movement
+                </h1>
+                <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
+                  Announcements, programs, and milestones — curated from SCEF and our regional partners.
+                </p>
+              </div>
             </div>
+          </section>
 
-            {/* Updates Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {updates.map((update) => {
-                const TypeIcon = typeIcons[update.type as keyof typeof typeIcons];
-                const typeColor = typeColors[update.type as keyof typeof typeColors];
-
-                return (
-                  <div
-                    key={update.id}
-                    className="bg-card rounded-2xl overflow-hidden border-2 border-black hover:shadow-xl transition-all duration-300"
-                  >
-                    {/* Image */}
-                    <div className="relative aspect-video">
+          {/* FEATURED STORY */}
+          <section className="py-16 md:py-24 bg-background">
+            <div className="container mx-auto px-4">
+              <Reveal>
+                <Link
+                  to={featured.cta.href}
+                  className="group block relative rounded-3xl overflow-hidden bg-card border border-border hover:border-scef-gold/40 transition-all duration-500 shadow-sm hover:shadow-2xl"
+                >
+                  <div className="grid md:grid-cols-2 gap-0">
+                    <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
                       <img
-                        src={update.thumbnail}
-                        alt={update.title}
-                        className="w-full h-full object-cover"
+                        src={featured.thumbnail}
+                        alt={featured.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      
-                      {/* Type Badge */}
-                      <div className={`absolute top-3 left-3 px-2.5 py-1 rounded-full ${typeColor} text-xs font-bold flex items-center gap-1.5 border border-black`}>
-                        <TypeIcon className="w-3 h-3" />
-                        {update.type.charAt(0).toUpperCase() + update.type.slice(1)}
-                      </div>
-
-                      {/* Play button for video */}
-                      {update.type === "video" && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-14 h-14 rounded-full bg-scef-gold flex items-center justify-center shadow-lg border-2 border-black">
-                            <Play className="w-5 h-5 text-scef-blue-dark ml-0.5" />
-                          </div>
-                        </div>
-                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/40 via-transparent to-transparent" />
+                      <span className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-scef-gold text-scef-blue-dark text-xs font-bold uppercase tracking-wider">
+                        Featured
+                      </span>
                     </div>
-
-                    {/* Content */}
-                    <div className="p-5">
-                      {/* Date */}
-                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
+                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-widest mb-4">
                         <Calendar className="w-3.5 h-3.5" />
-                        {new Date(update.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
+                        {new Date(featured.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                       </div>
-
-                      <h2 className="font-display text-lg font-bold text-foreground mb-2">
-                        {update.title}
+                      <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4 leading-tight group-hover:text-scef-blue transition-colors">
+                        {featured.title}
                       </h2>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {update.description}
+                      <p className="text-muted-foreground text-base md:text-lg mb-6 leading-relaxed">
+                        {featured.description}
                       </p>
-
-                      <Button
-                        size="sm"
-                        className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold border border-black"
-                        asChild
-                      >
-                        <Link to={update.cta.href}>
-                          {update.cta.text}
-                          <ExternalLink className="w-3 h-3 ml-1.5" />
-                        </Link>
-                      </Button>
+                      <span className="inline-flex items-center gap-2 text-scef-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                        {featured.cta.text}
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </div>
                   </div>
-                );
-              })}
+                </Link>
+              </Reveal>
             </div>
-          </div>
+          </section>
+
+          {/* GRID */}
+          <section className="pb-24 bg-background">
+            <div className="container mx-auto px-4">
+              <Reveal>
+                <div className="flex items-end justify-between mb-10">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-scef-gold font-semibold mb-2">More Updates</p>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">Recent stories</h3>
+                  </div>
+                </div>
+              </Reveal>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {rest.map((update, i) => {
+                  const TypeIcon = typeIcons[update.type as keyof typeof typeIcons];
+                  return (
+                    <Reveal key={update.id} delay={i * 60}>
+                      <Link
+                        to={update.cta.href}
+                        className="group block bg-card rounded-2xl overflow-hidden border border-border hover:border-scef-gold/40 hover:shadow-xl transition-all duration-500 h-full"
+                      >
+                        <div className="relative aspect-video overflow-hidden">
+                          <img
+                            src={update.thumbnail}
+                            alt={update.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/30 via-transparent to-transparent" />
+                          <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/90 backdrop-blur-sm text-foreground text-[10px] font-bold uppercase tracking-wider">
+                            <TypeIcon className="w-3 h-3" />
+                            {update.type}
+                          </span>
+                        </div>
+                        <div className="p-6">
+                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
+                            <Calendar className="w-3 h-3" />
+                            {new Date(update.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                          </div>
+                          <h3 className="font-display text-lg font-bold text-foreground mb-2 leading-snug group-hover:text-scef-blue transition-colors line-clamp-2">
+                            {update.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                            {update.description}
+                          </p>
+                          <span className="inline-flex items-center gap-1.5 text-scef-blue text-sm font-semibold group-hover:gap-2.5 transition-all">
+                            {update.cta.text}
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
+                        </div>
+                      </Link>
+                    </Reveal>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="py-20 bg-gradient-to-br from-scef-blue-darker to-scef-blue text-white">
+            <div className="container mx-auto px-4 text-center max-w-2xl">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                Stay close to the work.
+              </h2>
+              <p className="text-white/70 mb-8">
+                Subscribe to receive curated updates from SCEF and partner programs.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Button size="lg" className="bg-scef-gold text-scef-blue-dark hover:bg-scef-gold-light font-semibold" asChild>
+                  <Link to="/membership">Become a Member</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                  <Link to="/contact">Contact SCEF</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
         </main>
 
         <Footer />

@@ -91,14 +91,18 @@ const GetInvolved = () => {
         <Header />
         
         <main className="pt-24 pb-20">
-          {/* Hero */}
-          <section className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-dark text-white py-20">
-            <div className="container mx-auto px-4 text-center">
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                {t("nav.top.getInvolved")}
+          {/* Hero — cinematic */}
+          <section className="relative bg-gradient-to-br from-scef-blue-darker via-scef-blue to-scef-blue-dark text-white py-24 md:py-32 overflow-hidden">
+            <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
+            <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-8">
+                Get Involved
+              </div>
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] tracking-tight">
+                Be part of the <span className="text-scef-gold">movement</span>
               </h1>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                {t("about.hero.subtitle")}
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+                Choose your path — member, ambassador, volunteer, or career.
               </p>
             </div>
           </section>
