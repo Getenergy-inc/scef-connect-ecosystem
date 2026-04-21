@@ -58,7 +58,7 @@ const platforms = [
 
 const impactStats = [
   { value: "250,000+", label: "Active Learners", icon: Users },
-  { value: "35", label: "African Countries", icon: Globe },
+  { value: "5+", label: "African Regions", icon: Globe },
   { value: "15,000+", label: "Courses Available", icon: BookOpen },
   { value: "85%", label: "Completion Rate", icon: TrendingUp },
 ];

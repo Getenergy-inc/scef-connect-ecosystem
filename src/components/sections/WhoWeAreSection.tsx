@@ -74,7 +74,7 @@ export const WhoWeAreSection = () => {
                 </div>
                 <div className="bg-scef-blue rounded-2xl p-6 border-2 border-black">
                   <div className="text-4xl font-display font-bold text-scef-gold mb-2">5+</div>
-                  <p className="text-sm text-white/80">African Countries</p>
+                  <p className="text-sm text-white/80">African Regions</p>
                 </div>
               </div>
               <div className="space-y-4 pt-8">

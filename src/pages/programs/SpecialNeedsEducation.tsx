@@ -53,7 +53,7 @@ const supportAreas = [
 const impactStats = [
   { value: "15,300+", label: "Students Supported", icon: Users },
   { value: "850+", label: "Schools Equipped", icon: School },
-  { value: "22", label: "African Countries", icon: Globe },
+  { value: "5+", label: "African Regions", icon: Globe },
   { value: "92%", label: "Integration Success", icon: TrendingUp },
 ];
 
