@@ -11,8 +11,12 @@ export const FeaturedUpdate = () => {
               Featured Update
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-              NESA-Africa 2026 enters its regional voting phase.
+              SCEF members drive 2026 education advocacy push.
             </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Institutionalized member efforts advancing universal access across
+              African regions.
+            </p>
             <div className="mt-5 flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
               <Calendar className="h-3.5 w-3.5" />
               <span>Reporting in progress</span>
