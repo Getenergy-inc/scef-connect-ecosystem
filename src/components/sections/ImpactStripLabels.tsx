@@ -3,8 +3,8 @@ import { useLocale } from "@/contexts/LocaleContext";
 
 const items = [
   { icon: Globe2, label: "Regions Reached", desc: "Across African regions and the diaspora" },
-  { icon: GraduationCap, label: "Learners Impacted", desc: "Through programs, chapters and platforms" },
-  { icon: Handshake, label: "Partners & Sponsors", desc: "Institutions advancing education access" },
+  { icon: GraduationCap, label: "Learners Impacted", desc: "Through programs, chapters, and funded initiatives" },
+  { icon: Handshake, label: "Partners & Sponsors", desc: "Organizations supporting education through CSR and collaboration" },
   { icon: Trophy, label: "Recognized Leaders", desc: "Honoured through NESA-Africa recognition" },
   { icon: HeartHandshake, label: "Volunteers", desc: "Members driving advocacy on the ground" },
 ];
