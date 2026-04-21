@@ -9,6 +9,7 @@ import {
   CheckCircle2, Users, Heart, Award, Briefcase
 } from "lucide-react";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 
 const colorClasses = {
   gold: "bg-scef-gold/20 text-scef-gold-dark border-scef-gold/40",
@@ -282,6 +283,7 @@ const Partners = () => {
               </div>
             </div>
           </section>
+          <EndorsedBySection />
         </main>
         
         <Footer />

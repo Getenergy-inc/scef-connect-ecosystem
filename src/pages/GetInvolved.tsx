@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useLocale } from "@/contexts/LocaleContext";
 import { Users, Award, HandHeart, ArrowRight, CheckCircle, Briefcase } from "lucide-react";
 import { emailDirectory } from "@/config/emailDirectory";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 
 const GetInvolved = () => {
   const { t } = useLocale();
@@ -171,6 +172,7 @@ const GetInvolved = () => {
               </div>
             </div>
           </section>
+          <EndorsedBySection />
         </main>
 
         <Footer />

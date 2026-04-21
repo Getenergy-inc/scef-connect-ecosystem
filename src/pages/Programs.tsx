@@ -12,6 +12,7 @@ import { EOACertificationSection } from "@/components/programs/EOACertificationS
 import { StakeholderPathwaysSection } from "@/components/programs/StakeholderPathwaysSection";
 import { programsPageContent } from "@/config/programsPageContent";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/ui/scroll-animation";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import heroImage from "@/assets/hero-classroom.jpg";
 
 const Programs = () => {
@@ -166,6 +167,7 @@ const Programs = () => {
 
           {/* ========== STAKEHOLDER PATHWAYS ========== */}
           <StakeholderPathwaysSection />
+          <EndorsedBySection />
         </main>
         
         <Footer />
