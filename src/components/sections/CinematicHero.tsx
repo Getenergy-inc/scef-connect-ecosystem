@@ -85,15 +85,14 @@ export const CinematicHero = () => {
           </div>
 
           <h1 className="font-display text-[2.5rem] font-bold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[5rem]">
-            Empowering Africa
-            <br />
-            Through{" "}
-            <span className="text-gradient-gold italic">Education</span>.
+            Empowering Africa Through{" "}
+            <span className="text-gradient-gold italic">Education</span>,
+            Innovation, and Opportunity.
           </h1>
 
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            Advocacy, digital access, recognition, and partnerships — across 54+
-            regions of Africa.
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+            SCEF advances learning across regions through advocacy, digital
+            access, recognition platforms, and strategic partnerships.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-3">

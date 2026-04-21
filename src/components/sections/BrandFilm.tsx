@@ -8,9 +8,8 @@ import { ArrowUpRight } from "lucide-react";
 export const BrandFilm = () => {
   const links = [
     { label: "About SCEF", href: "/about" },
-    { label: "Our Mission", href: "/about#mission" },
-    { label: "Our Vision", href: "/about#vision" },
-    { label: "Governance", href: "/governance" },
+    { label: "Mission", href: "/about#mission" },
+    { label: "Vision", href: "/about#vision" },
   ];
 
   return (
