@@ -2,11 +2,11 @@ import { Globe2, GraduationCap, Handshake, Trophy, HeartHandshake } from "lucide
 import { useLocale } from "@/contexts/LocaleContext";
 
 const items = [
-  { icon: Globe2, label: "Regions Reached" },
-  { icon: GraduationCap, label: "Learners Impacted" },
-  { icon: Handshake, label: "Partners & Sponsors" },
-  { icon: Trophy, label: "Recognized Leaders" },
-  { icon: HeartHandshake, label: "Volunteers" },
+  { icon: Globe2, label: "Regions Reached", desc: "Across African regions and the diaspora" },
+  { icon: GraduationCap, label: "Learners Impacted", desc: "Through programs, chapters and platforms" },
+  { icon: Handshake, label: "Partners & Sponsors", desc: "Institutions advancing education access" },
+  { icon: Trophy, label: "Recognized Leaders", desc: "Honoured through NESA-Africa recognition" },
+  { icon: HeartHandshake, label: "Volunteers", desc: "Members driving advocacy on the ground" },
 ];
 
 /**
@@ -27,7 +27,7 @@ export const ImpactStripLabels = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 md:gap-5">
-          {items.map(({ icon: Icon, label }) => (
+          {items.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}
               className="group flex flex-col items-center justify-center rounded-xl border border-border bg-background p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-md"
@@ -38,6 +38,9 @@ export const ImpactStripLabels = () => {
               <div className="text-sm font-semibold leading-tight text-scef-blue-darker">
                 {t(`home.impact.items.${label}`) || label}
               </div>
+              <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">
+                {desc}
+              </p>
             </div>
           ))}
         </div>

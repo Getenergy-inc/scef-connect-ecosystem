@@ -22,7 +22,7 @@ const Privacy = () => {
               
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground mb-6">
-                  Last updated: January 2025
+                  Last updated: January 2026
                 </p>
                 
                 <section className="mb-8">

@@ -161,7 +161,7 @@ export const SuperAdminDashboard = ({ profile, user }: SuperAdminDashboardProps)
         {/* Platform Overview */}
         <div className="grid grid-cols-2 gap-4">
           {[
-            { icon: MapPin, label: "Countries Active", value: statsLoading ? null : `${stats?.activeChapters || 0} / 54`, color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950" },
+            { icon: MapPin, label: "Regions Active", value: statsLoading ? null : `${stats?.activeChapters || 0}`, color: "text-teal-500", bg: "bg-teal-50 dark:bg-teal-950" },
             { icon: Briefcase, label: "Active Programs", value: statsLoading ? null : String(stats?.activePrograms || 0), color: "text-purple-500", bg: "bg-purple-50 dark:bg-purple-950" },
             { icon: BookOpen, label: "eLibrary Resources", value: statsLoading ? null : (stats?.elibraryResources || 0).toLocaleString(), color: "text-blue-500", bg: "bg-blue-50 dark:bg-blue-950" },
             { icon: Award, label: "Total Chapters", value: statsLoading ? null : String(stats?.totalChapters || 0), color: "text-orange-500", bg: "bg-orange-50 dark:bg-orange-950" },

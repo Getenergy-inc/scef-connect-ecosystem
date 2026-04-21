@@ -19,10 +19,10 @@ const infrastructureTypes = [
 ];
 
 const impactStats = [
-  { value: "250+", label: "Schools Rebuilt" },
-  { value: "150,000+", label: "Students Impacted" },
-  { value: "18", label: "Countries" },
-  { value: "500+", label: "Classrooms Built" },
+  { value: "Reporting in progress", label: "Schools Rebuilt" },
+  { value: "Reporting in progress", label: "Learners Impacted" },
+  { value: "Reporting in progress", label: "Regions Reached" },
+  { value: "Reporting in progress", label: "Classrooms Built" },
 ];
 
 const featuredProjects = [
