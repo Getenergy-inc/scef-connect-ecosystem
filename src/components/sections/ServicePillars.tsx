@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { MembershipBadge } from "@/components/ui/membership-badge";
+import { useLocale } from "@/contexts/LocaleContext";
 
 const pillars = [
   {
@@ -56,26 +57,28 @@ const pillars = [
 ];
 
 export const ServicePillars = () => {
+  const { t } = useLocale();
   return (
     <section className="relative bg-background py-24 text-scef-blue-darker md:py-36">
       <div className="container relative mx-auto px-6 md:px-8">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:mb-20 md:flex-row md:items-end">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">
-              What We Do
+              {t("home.pillars.eyebrow") || "What We Do"}
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-[2.75rem]">
-              Programs that work together.
+              {t("home.pillars.title") || "Programs that work together."}
             </h2>
             <p className="mt-3 max-w-xl text-base text-muted-foreground">
-              Designed to improve access, quality, inclusion, skills, and recognition across regions.
+              {t("home.pillars.subtitle") ||
+                "Designed to improve access, quality, inclusion, skills, and recognition across regions."}
             </p>
           </div>
           <Link
             to="/programs"
             className="inline-flex items-center gap-2 text-sm font-semibold text-scef-blue-darker hover:text-scef-gold-dark"
           >
-            View all programs
+            {t("home.pillars.viewAll") || "View all programs"}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

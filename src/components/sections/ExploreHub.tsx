@@ -9,17 +9,19 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { MembershipBadge } from "@/components/ui/membership-badge";
+import { useLocale } from "@/contexts/LocaleContext";
 
 const cards = [
-  { icon: Building2, title: "About SCEF", text: "Our institution, mission & vision.", href: "/about" },
-  { icon: Layers, title: "Programs", text: "Member-backed initiatives across Africa.", href: "/programs" },
-  { icon: Award, title: "Awards", text: "NESA-Africa recognition ecosystem.", href: "/awards" },
-  { icon: MapPin, title: "Chapters", text: "Regional networks across Africa & diaspora.", href: "/local-chapters" },
-  { icon: Newspaper, title: "Media", text: "TV, radio, podcasts & broadcasts.", href: "/media" },
-  { icon: HeartHandshake, title: "Get Involved", text: "Member, ambassador, volunteer & more.", href: "/join" },
+  { icon: Building2, key: "about", title: "About SCEF", text: "Our institution, mission & vision.", href: "/about" },
+  { icon: Layers, key: "programs", title: "Programs", text: "Member-backed initiatives across Africa.", href: "/programs" },
+  { icon: Award, key: "awards", title: "Awards", text: "NESA-Africa recognition ecosystem.", href: "/awards" },
+  { icon: MapPin, key: "chapters", title: "Chapters", text: "Regional networks across Africa & diaspora.", href: "/local-chapters" },
+  { icon: Newspaper, key: "media", title: "Media", text: "TV, radio, podcasts & broadcasts.", href: "/media" },
+  { icon: HeartHandshake, key: "involved", title: "Get Involved", text: "Member, ambassador, volunteer & more.", href: "/join" },
 ];
 
 export const ExploreHub = () => {
+  const { t } = useLocale();
   return (
     <section className="relative overflow-hidden bg-muted/30 py-24 md:py-36">
       {/* Soft ambient background */}
