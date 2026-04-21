@@ -43,6 +43,16 @@ export const FinalCTABand = () => {
             <Link to="/donate">Donate Now</Link>
           </Button>
         </div>
+
+        <div className="mt-6 text-sm text-white/70">
+          Not sure where to start?{" "}
+          <Link
+            to="/join"
+            className="font-semibold text-scef-gold underline-offset-4 hover:underline"
+          >
+            Explore all ways to join →
+          </Link>
+        </div>
       </div>
     </section>
   );
