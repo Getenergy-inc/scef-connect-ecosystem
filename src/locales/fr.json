@@ -135,23 +135,23 @@
     "opensOn": "Ouverture le"
   },
   "footer": {
-    "organization": "Santos Creations Educational Foundation",
-    "location": "Lagos, Nigeria",
-    "copyright": "Tous droits réservés.",
     "columns": {
-      "contact": "Contact",
-      "programs": "Liens rapides",
-      "media": "Nos plateformes",
-      "getInvolved": "S'impliquer"
+      "programs": "Programmes",
+      "media": "Médias",
+      "chapters": "Chapitres locaux",
+      "getInvolved": "S'impliquer",
+      "contact": "Contact"
+    },
+    "legal": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "accessibility": "Accessibilité"
     },
     "social": {
       "label": "Suivez-nous"
     },
-    "legal": {
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions d'utilisation",
-      "accessibility": "Accessibilité"
-    }
+    "copyright": "© {year} Santos Creations Educational Foundation. Tous droits réservés.",
+    "mission": "Gouverner l'avenir de l'éducation en Afrique par le plaidoyer, le financement et la certification de l'excellence éducative à travers le continent."
   },
   "home": {
     "board": {
@@ -281,14 +281,14 @@
   },
   "about": {
     "hero": {
-      "title": "À propos de Santos Creations Educational Foundation (SCEF)",
-      "subtitle": "SCEF est une fondation panafricaine axée sur l'adhésion, renforçant l'éducation à travers la gouvernance, l'accès numérique, la certification, les chapitres locaux conformes, et des partenariats responsables alignés sur les ODD de l'ONU et l'Agenda 2063 de l'UA.",
-      "tagline": "Construire un standard éducatif en croissance continue en Afrique.",
-      "description": "SCEF est une fondation panafricaine axée sur l'adhésion promouvant l'Éducation pour Tous via la gouvernance, les chapitres locaux, l'apprentissage numérique, la préparation à l'emploi TVET, l'éducation inclusive et des partenariats transparents.",
+      "title": "Autonomiser l'Afrique par l'éducation, l'innovation et l'opportunité",
+      "subtitle": "Une fondation portée par ses membres qui fait progresser l'éducation à travers les régions par le plaidoyer, l'accès numérique et des partenariats stratégiques.",
+      "tagline": "Construire une norme d'éducation continue et toujours croissante en Afrique.",
+      "description": "SCEF connecte programmes, sections, partenaires, plateformes et médias pour livrer des résultats mesurables en accès, qualité, inclusion et compétences.",
       "regionBadge": "Afrique régionale • Diaspora africaine",
       "trustLine": "Fondée 1997 • Enregistrée 2010 • Alignée ODD 4 + Agenda 2063 • Gouvernance HQ + livraison par chapitres",
-      "ctaJoin": "Rejoindre SCEF",
-      "ctaDonate": "Faire un don",
+      "ctaJoin": "Découvrir l'adhésion",
+      "ctaDonate": "Soutenir la mission",
       "ctaPartner": "Devenir partenaire",
       "ctaAmbassador": "Devenir ambassadeur",
       "ctaJoinChapter": "Rejoindre un chapitre",
@@ -329,8 +329,8 @@
     },
     "who": {
       "badge": "Qui nous sommes",
-      "title": "Un écosystème d'impact éducatif structuré",
-      "body": "Santos Creations Educational Foundation (SCEF) est un écosystème d'impact éducatif structuré—conçu pour aider les systèmes éducatifs à s'améliorer, se développer et rester responsables. Nous connectons chapitres locaux, partenaires, plateformes numériques et plaidoyer médiatique pour livrer des résultats mesurables en :",
+      "title": "Un écosystème structuré d'impact éducatif",
+      "body": "SCEF est une fondation portée par ses membres qui construit des systèmes pour aider l'éducation à s'améliorer, à grandir et à rester redevable à travers l'Afrique. Nous relions programmes, sections, partenaires, plateformes et médias pour livrer des résultats mesurables en accès, qualité, inclusion et compétences.",
       "outcomes": [
         "Soutien aux écoles & infrastructure",
         "Bourses & soutien aux apprenants",
@@ -339,17 +339,17 @@
         "Éducation des femmes et des filles",
         "Reconnaissance de la qualité éducative (NESA-Africa)"
       ],
-      "ctaPrograms": "Explorer nos programmes",
-      "ctaChapter": "Rejoindre un chapitre",
-      "ctaDonate": "Faire un don",
+      "ctaPrograms": "Explorer les programmes",
+      "ctaChapter": "Rejoindre une section",
+      "ctaDonate": "Devenir partenaire",
       "ctaUpdates": "Voir les mises à jour"
     },
     "whyWeExist": {
       "title": "Pourquoi nous existons",
-      "intro": "À travers l'Afrique, les résultats d'apprentissage sont limités par les lacunes d'infrastructure, l'accès inégal à la formation professionnelle, des systèmes d'inclusion limités, une faible responsabilité du financement et des parcours peu clairs de l'apprentissage vers un emploi décent. SCEF existe pour relever ces défis grâce à un modèle de livraison soutenu par la gouvernance et piloté par les chapitres, qui est mesurable, inclusif et évolutif.",
+      "intro": "Les systèmes éducatifs en Afrique font face à de vrais défis : écoles sous-équipées, accès limité à la formation aux compétences, lacunes d'apprentissage inclusif, financement sans redevabilité, et faible transition vers l'emploi.",
       "expandAll": "Tout développer",
       "collapseAll": "Tout réduire",
-      "closing": "SCEF existe pour changer cela—en construisant un modèle de livraison soutenu par la gouvernance et piloté par les chapitres qui rend la transformation éducative mesurable, inclusive et évolutive.",
+      "closing": "Nous existons pour résoudre cela — en construisant un système mesurable, inclusif, évolutif et porté par les sections régionales.",
       "challenges": {
         "schools": {
           "title": "Environnements scolaires non sécurisés ou sous-équipés",
@@ -405,7 +405,7 @@
       }
     },
     "whatWeDo": {
-      "title": "Ce que nous faisons",
+      "title": "Des programmes qui fonctionnent ensemble",
       "intro": "Programmes phares conçus pour travailler ensemble sur l'accès, la qualité, l'inclusion, les compétences et la reconnaissance.",
       "learnMore": "En savoir plus",
       "ctaApply": "Postuler / Participer",
@@ -470,10 +470,22 @@
       "title": "Durabilité & Alignement",
       "body": "SCEF aligne ses programmes sur l'ODD 4 et les résultats ODD plus larges, et soutient l'évolutivité à l'échelle africaine via l'Agenda 2063 de l'UA. Notre approche priorise :",
       "priorities": {
-        "inclusion": { "label": "Inclusion", "desc": "Filles et apprenants handicapés" },
-        "ownership": { "label": "Appropriation locale", "desc": "Livraison par chapitres" },
-        "transparency": { "label": "Reporting transparent", "desc": "Prêt pour les partenaires" },
-        "outcomes": { "label": "Résultats mesurables", "desc": "Soutien basé sur les preuves" }
+        "inclusion": {
+          "label": "Inclusion",
+          "desc": "Filles et apprenants handicapés"
+        },
+        "ownership": {
+          "label": "Appropriation locale",
+          "desc": "Livraison par chapitres"
+        },
+        "transparency": {
+          "label": "Reporting transparent",
+          "desc": "Prêt pour les partenaires"
+        },
+        "outcomes": {
+          "label": "Résultats mesurables",
+          "desc": "Soutien basé sur les preuves"
+        }
       },
       "csrFundsTitle": "Gestion de fonds CSR pour l'éducation",
       "csrFundsBody": "Nous aidons les partenaires à structurer, déployer et suivre les fonds CSR pour l'éducation — avec gouvernance, supervision d'exécution et reporting d'impact.",
@@ -483,13 +495,25 @@
       "ctaEndorse": "Endosser SCEF / Programmes"
     },
     "getInvolved": {
-      "title": "S'impliquer",
-      "subtitle": "Choisissez votre parcours",
+      "title": "Choisissez votre voie",
+      "subtitle": "Rejoignez SCEF de la manière qui vous convient.",
       "pathways": {
-        "member": { "title": "Rejoindre comme membre", "desc": "Faites partie du mouvement" },
-        "ambassador": { "title": "Devenir ambassadeur", "desc": "Représentez SCEF, mobilisez le soutien, suivez l'impact" },
-        "partner": { "title": "Partenaire/CSR", "desc": "Financez des projets mesurables avec responsabilité" },
-        "donate": { "title": "Faire un don", "desc": "Soutenez un apprenant, une école ou le plaidoyer média" }
+        "member": {
+          "title": "Rejoindre comme membre",
+          "desc": "Faites partie du mouvement"
+        },
+        "ambassador": {
+          "title": "Devenir ambassadeur",
+          "desc": "Représentez SCEF, mobilisez le soutien, suivez l'impact"
+        },
+        "partner": {
+          "title": "Partenaire/CSR",
+          "desc": "Financez des projets mesurables avec responsabilité"
+        },
+        "donate": {
+          "title": "Faire un don",
+          "desc": "Soutenez un apprenant, une école ou le plaidoyer média"
+        }
       },
       "reassurance": "Vous pouvez commencer petit—adhésion, don unique, ou rejoindre votre chapitre local."
     },
@@ -569,11 +593,12 @@
       "ctaPartner": "Partenariat CSR"
     },
     "final": {
-      "title": "Faites partie de la transformation de l'éducation en Afrique.",
+      "title": "Faites partie de la transformation éducative de l'Afrique",
       "ctaJoin": "Rejoindre",
       "ctaDonate": "Faire un don",
       "ctaPartner": "Devenir partenaire",
-      "ctaMedia": "Regarder SCEF Media"
+      "ctaMedia": "Regarder SCEF Media",
+      "subtitle": "Aidez-nous à rendre l'éducation accessible, inclusive et impactante à travers les régions."
     }
   },
   "governance": {
@@ -662,19 +687,35 @@
     "snapshot": {
       "bot": {
         "subtitle": "Siège SCEF",
-        "approves": ["Direction stratégique", "Approbation du budget", "Nominations seniors"]
+        "approves": [
+          "Direction stratégique",
+          "Approbation du budget",
+          "Nominations seniors"
+        ]
       },
       "boa": {
         "subtitle": "Programmes & Chapitres",
-        "approves": ["Orientation politique", "Stratégie de partenariat", "Revue de performance"]
+        "approves": [
+          "Orientation politique",
+          "Stratégie de partenariat",
+          "Revue de performance"
+        ]
       },
       "bod": {
         "subtitle": "Opérations régionales",
-        "approves": ["Budgets régionaux", "Approbations de chapitres", "Exécution des programmes"]
+        "approves": [
+          "Budgets régionaux",
+          "Approbations de chapitres",
+          "Exécution des programmes"
+        ]
       },
       "lcps": {
         "subtitle": "Leadership pays",
-        "approves": ["Programmes locaux", "Activités des membres", "Engagement communautaire"]
+        "approves": [
+          "Programmes locaux",
+          "Activités des membres",
+          "Engagement communautaire"
+        ]
       }
     },
     "management": {
@@ -722,12 +763,30 @@
       "title": "Politiques & Conformité",
       "subtitle": "SCEF maintient des politiques de gouvernance complètes assurant transparence, responsabilité et opérations éthiques.",
       "items": {
-        "constitution": { "title": "Constitution & Statuts", "desc": "Document fondateur de gouvernance" },
-        "ethics": { "title": "Code d'éthique", "desc": "Normes pour administrateurs, personnel et bénévoles" },
-        "financial": { "title": "Politique financière", "desc": "Normes de gestion fiscale et reporting" },
-        "antiCorruption": { "title": "Politique anti-corruption", "desc": "Tolérance zéro pour fraude et corruption" },
-        "conflict": { "title": "Conflit d'intérêts", "desc": "Protocoles de divulgation et gestion" },
-        "whistleblower": { "title": "Protection des lanceurs d'alerte", "desc": "Mécanismes de signalement sécurisés" }
+        "constitution": {
+          "title": "Constitution & Statuts",
+          "desc": "Document fondateur de gouvernance"
+        },
+        "ethics": {
+          "title": "Code d'éthique",
+          "desc": "Normes pour administrateurs, personnel et bénévoles"
+        },
+        "financial": {
+          "title": "Politique financière",
+          "desc": "Normes de gestion fiscale et reporting"
+        },
+        "antiCorruption": {
+          "title": "Politique anti-corruption",
+          "desc": "Tolérance zéro pour fraude et corruption"
+        },
+        "conflict": {
+          "title": "Conflit d'intérêts",
+          "desc": "Protocoles de divulgation et gestion"
+        },
+        "whistleblower": {
+          "title": "Protection des lanceurs d'alerte",
+          "desc": "Mécanismes de signalement sécurisés"
+        }
       }
     },
     "contact": {
@@ -791,27 +850,145 @@
     "ctaJoinChapter": "Rejoindre un chapitre local"
   },
   "programs": {
-    "hero": {
-      "badge": "Notre travail",
-      "title": "Programmes & Initiatives",
-      "subtitle": "SCEF délivre l'impact à travers des programmes phares conçus pour travailler ensemble sur l'accès, la qualité, l'inclusion, les compétences et la reconnaissance."
-    },
-    "categories": {
-      "education": {
-        "title": "Programmes éducatifs",
-        "subtitle": "Initiatives principales abordant l'accès, la qualité et l'inclusion dans l'éducation à travers l'Afrique."
+    "page": {
+      "hero": {
+        "title": "Nos Programmes",
+        "subtext": "SCEF délivre des résultats à travers trois programmes phares et une plateforme phare. Pour rester ciblé et évolutif, les travaux connexes sont délivrés sous forme de Filières (sous-programmes) et de Séries (webinaires/formations) sous le programme approprié."
+      },
+      "flagship": {
+        "label": "Programmes & Plateforme Phares",
+        "heading": "3 Programmes + 1 Plateforme",
+        "nesa": {
+          "title": "NESA Afrique",
+          "subtitle": "Nouveau Prix Standard Éducatif Afrique",
+          "description": "Normes continentales, reconnaissance et responsabilité pour l'excellence éducative.",
+          "clarityLine": "NESA Afrique est alimenté par le Portail de Nomination & Vote NESA.Africa et amplifié par NESA Africa TV / NESA Awards TV.",
+          "bullets": [
+            "Nomination & vote (portail officiel)",
+            "Jury, catégories et reconnaissance",
+            "Diffusion, comptes à rebours, replays (Awards TV)"
+          ],
+          "cta": {
+            "primary": "Nommer / Voter (NESA.Africa)",
+            "secondary1": "Regarder NESA Africa TV",
+            "secondary2": "Voir la Saison des Prix"
+          }
+        },
+        "eduaid": {
+          "title": "EduAid Afrique",
+          "subtitle": "Aide Éducative Afrique",
+          "description": "Soutien éducatif direct pour les apprenants et les écoles — accès, équité, inclusion et infrastructure.",
+          "bullets": [
+            "Bourses et soutien aux apprenants",
+            "Soutien aux écoles et livraison communautaire",
+            "Filières pour infrastructure, équité, inclusion + webinaires"
+          ],
+          "cta": {
+            "primary": "Demander un Soutien / Financer un Apprenant",
+            "secondary1": "Explorer les Filières EduAid",
+            "secondary2": "Rejoindre les Webinaires EduAid"
+          }
+        },
+        "eoa": {
+          "title": "EOA (Éducation en Ligne Afrique)",
+          "subtitle": "Apprentissage & Certification",
+          "description": "Développement des compétences, certification et vérification pour la préparation à l'emploi.",
+          "bullets": [
+            "Parcours d'apprentissage et examens",
+            "Délivrance et vérification de certificats",
+            "Certifications de productivité au travail"
+          ],
+          "cta": {
+            "primary": "Explorer les Certifications / Réserver un Examen",
+            "secondary1": "Vérifier un Certificat"
+          }
+        },
+        "elibrary": {
+          "title": "eLibrary Nigeria",
+          "subtitle": "Plateforme Phare",
+          "description": "Ressources d'apprentissage gratuites et partage de connaissances communautaire.",
+          "bullets": [
+            "Parcourir les ressources gratuites",
+            "Télécharger des ressources et contribuer",
+            "Soutenir l'engagement dans la lecture"
+          ],
+          "cta": {
+            "primary": "Parcourir les Ressources Gratuites",
+            "secondary1": "Rejoindre le Réseau des Contributeurs"
+          }
+        }
+      },
+      "tracks": {
+        "title": "Filières EduAid Afrique (Sous-Programmes)",
+        "oneline": "Ces filières sont sous EduAid Afrique pour garder le portefeuille ciblé et facile à naviguer.",
+        "note": "RMSA, l'Éducation des Femmes & Filles, et le Soutien aux Besoins Spéciaux sont des filières EduAid Afrique — pas des programmes séparés.",
+        "rmsa": {
+          "title": "RMSA : Reconstruire Mon École Afrique",
+          "tag": "Filière Infrastructure",
+          "description": "Rénovation et améliorations des écoles et environnements d'apprentissage.",
+          "cta1": "Soumettre une Demande d'École",
+          "cta2": "Sponsoriser une Rénovation"
+        },
+        "womenGirls": {
+          "title": "Éducation des Femmes & Filles",
+          "tag": "Filière Équité",
+          "description": "Soutien à l'accès, la rétention et la réussite des filles et des femmes.",
+          "cta1": "Sponsoriser l'Éducation des Filles",
+          "cta2": "Rejoindre l'Équipe de Plaidoyer"
+        },
+        "specialNeeds": {
+          "title": "Soutien à l'Éducation Spécialisée",
+          "tag": "Filière Inclusion",
+          "description": "Soutien éducatif inclusif et interventions d'apprentissage assisté.",
+          "cta1": "Demander un Soutien",
+          "cta2": "Sponsoriser l'Apprentissage Assisté"
+        },
+        "webinars": {
+          "title": "Webinaires EduAid",
+          "tag": "Série Apprentissage & Sensibilisation",
+          "description": "Webinaires et sessions de renforcement des capacités pour les communautés et partenaires.",
+          "cta1": "Rejoindre le Prochain Webinaire",
+          "cta2": "Regarder les Replays"
+        }
       },
       "eoa": {
-        "title": "Education Online Africa",
-        "subtitle": "Apprentissage numérique, certification et parcours d'employabilité pour les apprenants africains et de la diaspora."
+        "sectionTitle": "Filière Certification EOA",
+        "productTitle": "Certifications de Productivité au Travail Africaine",
+        "productDescription": "Formation pratique aux compétences de productivité + évaluation + vérification de certificat.",
+        "cta1": "Commencer à Apprendre",
+        "cta2": "Réserver un Examen",
+        "cta3": "Vérifier un Certificat"
       },
-      "recognition": {
-        "title": "Reconnaissance & Prix",
-        "subtitle": "Célébrer l'excellence et stimuler l'amélioration continue des standards éducatifs."
-      },
-      "media": {
-        "title": "Plateformes média",
-        "subtitle": "Plateformes de diffusion et de contenu pour le plaidoyer éducatif et la dissémination des connaissances."
+      "pathways": {
+        "title": "Choisissez Votre Parcours",
+        "individuals": {
+          "title": "Particuliers",
+          "link1": "Devenir Membre",
+          "link2": "Demander le Soutien EduAid",
+          "link3": "Apprendre avec EOA"
+        },
+        "schools": {
+          "title": "Écoles",
+          "link1": "Demander un Soutien (EduAid)",
+          "link2": "Postuler pour RMSA",
+          "link3": "Rejoindre eLibrary"
+        },
+        "partners": {
+          "title": "Partenaires / RSE",
+          "link1": "Sponsoriser une Filière",
+          "link2": "Financer des Bourses",
+          "link3": "Sponsoriser NESA"
+        },
+        "communities": {
+          "title": "Communautés",
+          "link1": "Rejoindre un Chapitre Local",
+          "link2": "Devenir Bénévole",
+          "link3": "Regarder SCEF Media"
+        },
+        "cta1": "Donner / Sponsoriser",
+        "cta2": "Devenir Membre",
+        "cta3": "Explorer les Chapitres Locaux",
+        "cta4": "Regarder SCEF Media"
       }
     }
   },
@@ -1507,18 +1684,33 @@
       "welcome": "Bienvenue chez EduAid Africa",
       "title": "Autonomiser l'éducation, permettre des avenirs à travers l'Afrique.",
       "description": "Rejoignez-nous pour transformer le paysage éducatif grâce aux bourses, dons, initiatives RSE, projets communautaires et expositions éducatives mondiales.",
-      "stat1": { "label": "Écoles rénovées" },
-      "stat2": { "label": "Bourses attribuées" },
-      "stat3": { "label": "Enseignants formés" },
+      "stat1": {
+        "label": "Écoles rénovées"
+      },
+      "stat2": {
+        "label": "Bourses attribuées"
+      },
+      "stat3": {
+        "label": "Enseignants formés"
+      },
       "primaryCta": "Lancer une collecte",
       "secondaryCta": "Faire un don"
     },
     "vision": {
       "title": "Vision et objectifs pour 2032",
       "description": "Nous envisageons d'atteindre ces objectifs SMART d'ici 2032",
-      "goal1": { "title": "Autonomiser 10 millions d'étudiants", "desc": "grâce aux bourses, e-learning et formation professionnelle" },
-      "goal2": { "title": "Rénover ou construire 10 000 écoles", "desc": "à travers le continent africain" },
-      "goal3": { "title": "Former 500 000 enseignants aux TIC", "desc": "et aux méthodologies pédagogiques modernes" }
+      "goal1": {
+        "title": "Autonomiser 10 millions d'étudiants",
+        "desc": "grâce aux bourses, e-learning et formation professionnelle"
+      },
+      "goal2": {
+        "title": "Rénover ou construire 10 000 écoles",
+        "desc": "à travers le continent africain"
+      },
+      "goal3": {
+        "title": "Former 500 000 enseignants aux TIC",
+        "desc": "et aux méthodologies pédagogiques modernes"
+      }
     },
     "objectives": {
       "badge": "Notre mission",
@@ -1605,25 +1797,6 @@
       "volunteer": "Devenir bénévole"
     }
   },
-  "footer": {
-    "columns": {
-      "programs": "Programmes",
-      "media": "Médias",
-      "chapters": "Chapitres locaux",
-      "getInvolved": "S'impliquer",
-      "contact": "Contact"
-    },
-    "legal": {
-      "privacy": "Confidentialité",
-      "terms": "Conditions",
-      "accessibility": "Accessibilité"
-    },
-    "social": {
-      "label": "Suivez-nous"
-    },
-    "copyright": "© {year} Santos Creations Educational Foundation. Tous droits réservés.",
-    "mission": "Gouverner l'avenir de l'éducation en Afrique par le plaidoyer, le financement et la certification de l'excellence éducative à travers le continent."
-  },
   "messages": {
     "title": "Messages",
     "subtitle": "Connectez-vous avec vos équipes et chapitres",
@@ -1701,132 +1874,5 @@
     "save": "Enregistrer",
     "cancel": "Annuler",
     "creating": "Création..."
-  },
-  "programs": {
-    "page": {
-      "hero": {
-        "title": "Nos Programmes",
-        "subtext": "SCEF délivre des résultats à travers trois programmes phares et une plateforme phare. Pour rester ciblé et évolutif, les travaux connexes sont délivrés sous forme de Filières (sous-programmes) et de Séries (webinaires/formations) sous le programme approprié."
-      },
-      "flagship": {
-        "label": "Programmes & Plateforme Phares",
-        "heading": "3 Programmes + 1 Plateforme",
-        "nesa": {
-          "title": "NESA Afrique",
-          "subtitle": "Nouveau Prix Standard Éducatif Afrique",
-          "description": "Normes continentales, reconnaissance et responsabilité pour l'excellence éducative.",
-          "clarityLine": "NESA Afrique est alimenté par le Portail de Nomination & Vote NESA.Africa et amplifié par NESA Africa TV / NESA Awards TV.",
-          "bullets": ["Nomination & vote (portail officiel)", "Jury, catégories et reconnaissance", "Diffusion, comptes à rebours, replays (Awards TV)"],
-          "cta": {
-            "primary": "Nommer / Voter (NESA.Africa)",
-            "secondary1": "Regarder NESA Africa TV",
-            "secondary2": "Voir la Saison des Prix"
-          }
-        },
-        "eduaid": {
-          "title": "EduAid Afrique",
-          "subtitle": "Aide Éducative Afrique",
-          "description": "Soutien éducatif direct pour les apprenants et les écoles — accès, équité, inclusion et infrastructure.",
-          "bullets": ["Bourses et soutien aux apprenants", "Soutien aux écoles et livraison communautaire", "Filières pour infrastructure, équité, inclusion + webinaires"],
-          "cta": {
-            "primary": "Demander un Soutien / Financer un Apprenant",
-            "secondary1": "Explorer les Filières EduAid",
-            "secondary2": "Rejoindre les Webinaires EduAid"
-          }
-        },
-        "eoa": {
-          "title": "EOA (Éducation en Ligne Afrique)",
-          "subtitle": "Apprentissage & Certification",
-          "description": "Développement des compétences, certification et vérification pour la préparation à l'emploi.",
-          "bullets": ["Parcours d'apprentissage et examens", "Délivrance et vérification de certificats", "Certifications de productivité au travail"],
-          "cta": {
-            "primary": "Explorer les Certifications / Réserver un Examen",
-            "secondary1": "Vérifier un Certificat"
-          }
-        },
-        "elibrary": {
-          "title": "eLibrary Nigeria",
-          "subtitle": "Plateforme Phare",
-          "description": "Ressources d'apprentissage gratuites et partage de connaissances communautaire.",
-          "bullets": ["Parcourir les ressources gratuites", "Télécharger des ressources et contribuer", "Soutenir l'engagement dans la lecture"],
-          "cta": {
-            "primary": "Parcourir les Ressources Gratuites",
-            "secondary1": "Rejoindre le Réseau des Contributeurs"
-          }
-        }
-      },
-      "tracks": {
-        "title": "Filières EduAid Afrique (Sous-Programmes)",
-        "oneline": "Ces filières sont sous EduAid Afrique pour garder le portefeuille ciblé et facile à naviguer.",
-        "note": "RMSA, l'Éducation des Femmes & Filles, et le Soutien aux Besoins Spéciaux sont des filières EduAid Afrique — pas des programmes séparés.",
-        "rmsa": {
-          "title": "RMSA : Reconstruire Mon École Afrique",
-          "tag": "Filière Infrastructure",
-          "description": "Rénovation et améliorations des écoles et environnements d'apprentissage.",
-          "cta1": "Soumettre une Demande d'École",
-          "cta2": "Sponsoriser une Rénovation"
-        },
-        "womenGirls": {
-          "title": "Éducation des Femmes & Filles",
-          "tag": "Filière Équité",
-          "description": "Soutien à l'accès, la rétention et la réussite des filles et des femmes.",
-          "cta1": "Sponsoriser l'Éducation des Filles",
-          "cta2": "Rejoindre l'Équipe de Plaidoyer"
-        },
-        "specialNeeds": {
-          "title": "Soutien à l'Éducation Spécialisée",
-          "tag": "Filière Inclusion",
-          "description": "Soutien éducatif inclusif et interventions d'apprentissage assisté.",
-          "cta1": "Demander un Soutien",
-          "cta2": "Sponsoriser l'Apprentissage Assisté"
-        },
-        "webinars": {
-          "title": "Webinaires EduAid",
-          "tag": "Série Apprentissage & Sensibilisation",
-          "description": "Webinaires et sessions de renforcement des capacités pour les communautés et partenaires.",
-          "cta1": "Rejoindre le Prochain Webinaire",
-          "cta2": "Regarder les Replays"
-        }
-      },
-      "eoa": {
-        "sectionTitle": "Filière Certification EOA",
-        "productTitle": "Certifications de Productivité au Travail Africaine",
-        "productDescription": "Formation pratique aux compétences de productivité + évaluation + vérification de certificat.",
-        "cta1": "Commencer à Apprendre",
-        "cta2": "Réserver un Examen",
-        "cta3": "Vérifier un Certificat"
-      },
-      "pathways": {
-        "title": "Choisissez Votre Parcours",
-        "individuals": {
-          "title": "Particuliers",
-          "link1": "Devenir Membre",
-          "link2": "Demander le Soutien EduAid",
-          "link3": "Apprendre avec EOA"
-        },
-        "schools": {
-          "title": "Écoles",
-          "link1": "Demander un Soutien (EduAid)",
-          "link2": "Postuler pour RMSA",
-          "link3": "Rejoindre eLibrary"
-        },
-        "partners": {
-          "title": "Partenaires / RSE",
-          "link1": "Sponsoriser une Filière",
-          "link2": "Financer des Bourses",
-          "link3": "Sponsoriser NESA"
-        },
-        "communities": {
-          "title": "Communautés",
-          "link1": "Rejoindre un Chapitre Local",
-          "link2": "Devenir Bénévole",
-          "link3": "Regarder SCEF Media"
-        },
-        "cta1": "Donner / Sponsoriser",
-        "cta2": "Devenir Membre",
-        "cta3": "Explorer les Chapitres Locaux",
-        "cta4": "Regarder SCEF Media"
-      }
-    }
   }
 }

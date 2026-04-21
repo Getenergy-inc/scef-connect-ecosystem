@@ -214,14 +214,14 @@
   },
   "about": {
     "hero": {
-      "title": "Über Santos Creations Educational Foundation (SCEF)",
-      "subtitle": "SCEF ist eine panafrikanische mitgliedergetriebene Bildungsstiftung, die die Bildungsbereitstellung durch Governance-Systeme, digitalen Zugang und Zertifizierung, mediale Wissensvermittlung, konforme Ortsverbände, verantwortungsvolle Finanzierungspartnerschaften und skalierbaren Impact stärkt, ausgerichtet an den UN-SDGs und der AU Agenda 2063.",
-      "tagline": "Einen kontinuierlich wachsenden Bildungsstandard in Afrika aufbauen.",
-      "description": "SCEF ist eine panafrikanische mitgliedergetriebene Bildungsstiftung, die Bildung für alle durch Governance, Ortsverbände, digitales Lernen, berufliche Arbeitsfähigkeit, inklusive Bildung und transparente Partnerschaften fördert.",
+      "title": "Afrika stärken durch Bildung, Innovation und Chancen",
+      "subtitle": "Eine mitgliedergetragene Stiftung, die Bildung in den Regionen durch Advocacy, digitalen Zugang und strategische Partnerschaften voranbringt.",
+      "tagline": "Aufbau eines kontinuierlichen, stetig wachsenden Bildungsstandards in Afrika.",
+      "description": "SCEF verbindet Programme, Chapter, Partner, Plattformen und Medien, um messbare Ergebnisse in Zugang, Qualität, Inklusion und Kompetenzen zu liefern.",
       "regionBadge": "Regionales Afrika • Diaspora Afrika",
       "trustLine": "Gegründet 1997 • Registriert 2010 • Ausgerichtet an SDG 4 + AU Agenda 2063 • HQ-geführte Governance + ortsverbandsgetriebene Umsetzung",
-      "ctaJoin": "SCEF beitreten",
-      "ctaDonate": "Spenden",
+      "ctaJoin": "Mitgliedschaft entdecken",
+      "ctaDonate": "Mission unterstützen",
       "ctaPartner": "Mit uns partnern",
       "ctaAmbassador": "Botschafter werden",
       "ctaJoinChapter": "Ortsverband beitreten",
@@ -262,8 +262,8 @@
     },
     "who": {
       "badge": "Wer wir sind",
-      "title": "Ein strukturiertes Bildungs-Impact-Ökosystem",
-      "body": "Santos Creations Educational Foundation (SCEF) ist ein strukturiertes Bildungs-Impact-Ökosystem—aufgebaut, um Bildungssystemen zu helfen, sich zu verbessern, zu skalieren und verantwortlich zu bleiben. Wir verbinden Ortsverbände, Partner, digitale Plattformen und Medienadvokatur, um messbare Ergebnisse zu liefern in:",
+      "title": "Ein strukturiertes Ökosystem für Bildungswirkung",
+      "body": "SCEF ist eine mitgliedergeführte Stiftung, die Systeme aufbaut, damit Bildung sich verbessern, skalieren und rechenschaftspflichtig bleiben kann. Wir verbinden Programme, Chapter, Partner, Plattformen und Medien.",
       "outcomes": [
         "Schulunterstützung & Infrastruktur",
         "Stipendien & Lernenden-Unterstützung",
@@ -272,16 +272,16 @@
         "Frauen- und Mädchenbildung",
         "Anerkennung von Bildungsqualität (NESA-Afrika)"
       ],
-      "ctaPrograms": "Unsere Programme erkunden",
-      "ctaChapter": "Ortsverband beitreten",
-      "ctaDonate": "Jetzt spenden"
+      "ctaPrograms": "Programme erkunden",
+      "ctaChapter": "Einem Chapter beitreten",
+      "ctaDonate": "Partner werden"
     },
     "whyWeExist": {
       "title": "Warum wir existieren",
-      "intro": "In ganz Afrika sind Lernergebnisse durch Infrastrukturlücken, ungleichen Zugang zur Berufsausbildung, begrenzte Inklusionssysteme, schwache Finanzierungsverantwortlichkeit und unklare Wege vom Lernen zu anständiger Arbeit eingeschränkt. SCEF existiert, um diese Einschränkungen durch ein governance-gestütztes, ortsverbandsgetriebenes Umsetzungsmodell anzugehen, das messbar, inklusiv und skalierbar ist.",
+      "intro": "Bildungssysteme in Afrika stehen vor echten Herausforderungen: schlecht ausgestattete Schulen, begrenzter Zugang zu Kompetenztraining, Lücken im inklusiven Lernen, Finanzierung ohne Rechenschaft und schwacher Übergang ins Berufsleben.",
       "expandAll": "Alle erweitern",
       "collapseAll": "Alle reduzieren",
-      "closing": "SCEF existiert, um das zu ändern—durch den Aufbau eines governance-gestützten, ortsverbandsgetriebenen Umsetzungsmodells, das Bildungstransformation messbar, inklusiv und skalierbar macht.",
+      "closing": "Wir existieren, um das zu lösen — durch ein messbares, inklusives, skalierbares System, getragen von regionalen Chaptern.",
       "challenges": {
         "schools": {
           "title": "Unsichere oder schlecht ausgestattete Schulumgebungen",
@@ -371,11 +371,19 @@
       ]
     },
     "final": {
-      "title": "Werden Sie Teil der Bildungstransformation Afrikas.",
+      "title": "Werden Sie Teil der Bildungstransformation Afrikas",
       "ctaJoin": "Beitreten",
       "ctaDonate": "Spenden",
       "ctaPartner": "Partnern",
-      "ctaMedia": "SCEF Medien ansehen"
+      "ctaMedia": "SCEF Medien ansehen",
+      "subtitle": "Helfen Sie uns, Bildung zugänglich, inklusiv und wirkungsvoll in allen Regionen zu machen."
+    },
+    "whatWeDo": {
+      "title": "Programme, die zusammenarbeiten"
+    },
+    "getInvolved": {
+      "title": "Wählen Sie Ihren Weg",
+      "subtitle": "Schließen Sie sich SCEF auf die Weise an, die zu Ihnen passt."
     }
   },
   "divisions": {
@@ -510,19 +518,35 @@
     "snapshot": {
       "bot": {
         "subtitle": "SCEF-Hauptsitz",
-        "approves": ["Strategische Ausrichtung", "Budgetgenehmigung", "Senior-Ernennungen"]
+        "approves": [
+          "Strategische Ausrichtung",
+          "Budgetgenehmigung",
+          "Senior-Ernennungen"
+        ]
       },
       "boa": {
         "subtitle": "Programme & Ortsverbände",
-        "approves": ["Politische Orientierung", "Partnerschaftsstrategie", "Leistungsüberprüfung"]
+        "approves": [
+          "Politische Orientierung",
+          "Partnerschaftsstrategie",
+          "Leistungsüberprüfung"
+        ]
       },
       "bod": {
         "subtitle": "Regionale Operationen",
-        "approves": ["Regionale Budgets", "Ortsverbandsgenehmigungen", "Programmausführung"]
+        "approves": [
+          "Regionale Budgets",
+          "Ortsverbandsgenehmigungen",
+          "Programmausführung"
+        ]
       },
       "lcps": {
         "subtitle": "Landesführung",
-        "approves": ["Lokale Programme", "Mitgliederaktivitäten", "Gemeinschaftsreichweite"]
+        "approves": [
+          "Lokale Programme",
+          "Mitgliederaktivitäten",
+          "Gemeinschaftsreichweite"
+        ]
       }
     },
     "management": {
@@ -581,18 +605,33 @@
       "welcome": "Willkommen bei EduAid Africa",
       "title": "Bildung stärken, Zukunft in Afrika ermöglichen.",
       "description": "Schließen Sie sich uns an, um die Bildungslandschaft durch Stipendien, Spenden, CSR-Initiativen, Gemeinschaftsprojekte und globale Bildungsmessen zu transformieren.",
-      "stat1": { "label": "Renovierte Schulen" },
-      "stat2": { "label": "Vergebene Stipendien" },
-      "stat3": { "label": "Ausgebildete Lehrer" },
+      "stat1": {
+        "label": "Renovierte Schulen"
+      },
+      "stat2": {
+        "label": "Vergebene Stipendien"
+      },
+      "stat3": {
+        "label": "Ausgebildete Lehrer"
+      },
       "primaryCta": "Spendensammlung starten",
       "secondaryCta": "Jetzt spenden"
     },
     "vision": {
       "title": "Vision und Ziele für 2032",
       "description": "Wir streben an, diese SMART-Ziele bis 2032 zu erreichen",
-      "goal1": { "title": "10 Millionen Schüler stärken", "desc": "durch Stipendien, E-Learning und Berufsausbildung" },
-      "goal2": { "title": "10.000 Schulen renovieren oder bauen", "desc": "auf dem afrikanischen Kontinent" },
-      "goal3": { "title": "500.000 Lehrer in IKT ausbilden", "desc": "und moderne Lehrmethoden" }
+      "goal1": {
+        "title": "10 Millionen Schüler stärken",
+        "desc": "durch Stipendien, E-Learning und Berufsausbildung"
+      },
+      "goal2": {
+        "title": "10.000 Schulen renovieren oder bauen",
+        "desc": "auf dem afrikanischen Kontinent"
+      },
+      "goal3": {
+        "title": "500.000 Lehrer in IKT ausbilden",
+        "desc": "und moderne Lehrmethoden"
+      }
     },
     "objectives": {
       "badge": "Unsere Mission",
@@ -712,7 +751,11 @@
           "subtitle": "Neuer Bildungsstandard-Preis Afrika",
           "description": "Kontinentale Standards, Anerkennung und Rechenschaftspflicht für Bildungsexzellenz.",
           "clarityLine": "NESA Afrika wird vom NESA.Africa Nominierungs- und Abstimmungsportal betrieben und durch NESA Africa TV / NESA Awards TV verstärkt.",
-          "bullets": ["Nominierung und Abstimmung (offizielles Portal)", "Jury, Kategorien und Anerkennung", "Übertragung, Countdowns, Wiederholungen (Awards TV)"],
+          "bullets": [
+            "Nominierung und Abstimmung (offizielles Portal)",
+            "Jury, Kategorien und Anerkennung",
+            "Übertragung, Countdowns, Wiederholungen (Awards TV)"
+          ],
           "cta": {
             "primary": "Nominieren / Abstimmen (NESA.Africa)",
             "secondary1": "NESA Africa TV ansehen",
@@ -723,7 +766,11 @@
           "title": "EduAid Afrika",
           "subtitle": "Bildungshilfe Afrika",
           "description": "Direkte Bildungsunterstützung für Lernende und Schulen — Zugang, Gerechtigkeit, Inklusion und Infrastruktur.",
-          "bullets": ["Stipendien und Lernendenunterstützung", "Schulunterstützung und Gemeinschaftslieferung", "Tracks für Infrastruktur, Gerechtigkeit, Inklusion + Webinare"],
+          "bullets": [
+            "Stipendien und Lernendenunterstützung",
+            "Schulunterstützung und Gemeinschaftslieferung",
+            "Tracks für Infrastruktur, Gerechtigkeit, Inklusion + Webinare"
+          ],
           "cta": {
             "primary": "Unterstützung beantragen / Lernenden fördern",
             "secondary1": "EduAid Tracks erkunden",
@@ -734,7 +781,11 @@
           "title": "EOA (Bildung Online Afrika)",
           "subtitle": "Lernen und Zertifizierung",
           "description": "Kompetenzentwicklung, Zertifizierung und Verifizierung für Arbeitsbereitschaft.",
-          "bullets": ["Lernpfade und Prüfungen", "Zertifikatsausstellung und Verifizierung", "Produktivitätszertifizierungen am Arbeitsplatz"],
+          "bullets": [
+            "Lernpfade und Prüfungen",
+            "Zertifikatsausstellung und Verifizierung",
+            "Produktivitätszertifizierungen am Arbeitsplatz"
+          ],
           "cta": {
             "primary": "Zertifizierungen erkunden / Prüfung buchen",
             "secondary1": "Zertifikat verifizieren"
@@ -744,7 +795,11 @@
           "title": "eLibrary Nigeria",
           "subtitle": "Flaggschiff-Plattform",
           "description": "Kostenlose Lernressourcen und gemeinschaftlicher Wissensaustausch.",
-          "bullets": ["Kostenlose Materialien durchsuchen", "Ressourcen hochladen und beitragen", "Lese- und Lernengagement unterstützen"],
+          "bullets": [
+            "Kostenlose Materialien durchsuchen",
+            "Ressourcen hochladen und beitragen",
+            "Lese- und Lernengagement unterstützen"
+          ],
           "cta": {
             "primary": "Kostenlose Materialien durchsuchen",
             "secondary1": "Beitragenden-Netzwerk beitreten"
