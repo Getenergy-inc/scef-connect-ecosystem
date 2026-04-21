@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
  * Numbers reflect institutional foundational targets ("Reporting in progress" rule).
  */
 const stats = [
-  { value: 54, suffix: "", label: "Countries reach" },
-  { value: 15000, suffix: "+", label: "Students reached", format: "k" },
-  { value: 500, suffix: "+", label: "Partners & sponsors" },
-  { value: 300, suffix: "+", label: "Awarded leaders" },
+  { value: 54, suffix: "+", label: "Regions Reached" },
+  { value: 15000, suffix: "+", label: "Learners Impacted", format: "k" },
+  { value: 500, suffix: "+", label: "Partners & Sponsors" },
+  { value: 300, suffix: "+", label: "Recognized Leaders" },
   { value: 200, suffix: "+", label: "Volunteers" },
 ];
 
