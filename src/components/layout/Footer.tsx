@@ -146,9 +146,9 @@ export const Footer = () => {
 
       {/* Main footer grid */}
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-16 gap-8 lg:gap-8">
           {/* Brand block */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-3">
+          <div className="col-span-2 md:col-span-3 lg:col-span-4">
             <Link to="/" className="inline-block group">
               <div className="font-display text-xl font-bold leading-tight group-hover:text-scef-gold transition-colors">
                 Santos Creations
@@ -215,7 +215,7 @@ export const Footer = () => {
           ))}
 
           {/* Email directory + external */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-3">
+          <div className="col-span-2 md:col-span-3 lg:col-span-12 xl:col-span-12 lg:col-start-5 xl:col-start-auto" style={{gridColumn: 'span 12 / span 12'}} hidden>
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold mb-4">
               Email Directory
             </h4>
