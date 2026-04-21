@@ -3,9 +3,7 @@ import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
 import { InstitutionalStats } from "@/components/sections/InstitutionalStats";
-import { BrandFilm } from "@/components/sections/BrandFilm";
 import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
-import { CoreObjectives } from "@/components/sections/CoreObjectives";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
 import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
@@ -52,52 +50,41 @@ const Index = () => {
 
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Split hero — copy left, photo right, pillar strip beneath */}
+          {/* 1. Hero — split layout */}
           <LandingHero />
 
-          {/* 2. Institutional credibility — founding year, regions, vision */}
+          {/* 2. Credibility band */}
           <InstitutionalStats />
 
-          {/* 3. Who we are — short institutional intro */}
-          <Reveal>
-            <BrandFilm />
-          </Reveal>
-
-          {/* 4. Programs that transform lives — 7 colorful tiles */}
+          {/* 3. Programs */}
           <Reveal>
             <ProgramsThatTransform />
           </Reveal>
 
-          {/* 5. Six core objectives — required institutional content */}
-          <Reveal>
-            <CoreObjectives />
-          </Reveal>
-
-          {/* 6. Impact areas — horizontal dark band */}
+          {/* 4. Impact areas — dark band */}
           <Reveal>
             <ImpactAreasBand />
           </Reveal>
 
-          {/* 7. Featured update — NESA-Africa 2026 spotlight */}
+          {/* 5. Featured update */}
           <Reveal>
             <FeaturedUpdate />
           </Reveal>
 
-          {/* 8. Choose your path — 5 colored CTA cards */}
+          {/* 6. Get involved */}
           <Reveal>
             <ChooseYourPath />
           </Reveal>
 
-          {/* 9. Endorsed by — partner logos (FAWE, CSACEFA, etc.) */}
+          {/* 7. Endorsements */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 10. Final CTA */}
+          {/* 8. Final CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>

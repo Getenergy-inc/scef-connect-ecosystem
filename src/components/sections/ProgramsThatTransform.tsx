@@ -90,7 +90,7 @@ const programs: Program[] = [
 export const ProgramsThatTransform = () => {
   const { t } = useLocale();
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-background py-20 md:py-24">
       <div className="container mx-auto px-6 md:px-8">
         <div className="mb-12 text-center md:mb-14">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[hsl(145_63%_35%)]">
