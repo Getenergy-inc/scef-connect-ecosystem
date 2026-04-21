@@ -6,6 +6,7 @@ import { VolunteerPathForm } from "./VolunteerPathForm";
 import { SponsorPathForm } from "./SponsorPathForm";
 import { EndorserPathForm } from "./EndorserPathForm";
 import { AwardsPathForm } from "./AwardsPathForm";
+import { StaffPathForm } from "./StaffPathForm";
 
 interface Props {
   path: EngagementPath;
@@ -29,6 +30,8 @@ export const PathFormRouter = ({ path, userId, onComplete }: Props) => {
       return <EndorserPathForm userId={userId} onComplete={onComplete} />;
     case "awards":
       return <AwardsPathForm userId={userId} onComplete={onComplete} />;
+    case "staff":
+      return <StaffPathForm userId={userId} onComplete={onComplete} />;
     default:
       return null;
   }
