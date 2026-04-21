@@ -86,8 +86,11 @@ const Governance = () => {
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   {t("governance.hero.title").split('.')[0]}. <span className="text-gradient-gold">{t("governance.hero.title").split('.')[1]}</span>
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed mb-8">
+                <p className="text-xl text-white/80 leading-relaxed mb-3">
                   {t("governance.hero.subtitle")}
+                </p>
+                <p className="text-sm text-scef-gold/90 font-medium mb-8">
+                  Governance for a membership-run Educational Institutionalized NGO advocating Achieving Education for All in Africa.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a href="#bot" className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-medium transition-colors">

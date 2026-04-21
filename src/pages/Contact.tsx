@@ -55,6 +55,9 @@ const Contact = () => {
                 <p className="text-xl text-cream/80 leading-relaxed">
                   Have questions about our programs, want to partner with us, or interested in joining SCEF? We'd love to hear from you.
                 </p>
+                <p className="mt-4 text-sm text-scef-gold/90 font-medium">
+                  Connect with a membership-run Educational Institutionalized NGO advocating Achieving Education for All in Africa.
+                </p>
               </div>
             </div>
           </section>

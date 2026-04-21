@@ -8,6 +8,7 @@ import {
   HeartHandshake,
   ArrowUpRight,
 } from "lucide-react";
+import { MembershipBadge } from "@/components/ui/membership-badge";
 
 const cards = [
   {
@@ -81,10 +82,15 @@ export const ExploreHub = () => {
                 <ArrowUpRight className="h-5 w-5 text-muted-foreground/60 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-scef-gold-dark" />
               </div>
               <div className="relative">
-                <h3 className="font-display text-xl font-semibold leading-tight text-scef-blue-darker">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-display text-xl font-semibold leading-tight text-scef-blue-darker">
+                    {title}
+                  </h3>
+                  {title === "Get Involved" && (
+                    <MembershipBadge variant="gold" label="Join" className="text-[9px] px-2 py-0.5" />
+                  )}
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {text}
                 </p>
               </div>

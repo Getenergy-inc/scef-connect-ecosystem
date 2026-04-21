@@ -143,6 +143,9 @@ const Divisions = () => {
                 <p className="text-xl text-white/80 leading-relaxed">
                   SCEF operates through six specialized divisions, each with clear mandates, accountability structures, and operational scope to deliver on our institutional mission.
                 </p>
+                <p className="mt-4 text-sm text-scef-gold/90 font-medium">
+                  Operational engine of a membership-run NGO advocating Achieving Education for All in Africa.
+                </p>
               </div>
             </div>
           </section>
