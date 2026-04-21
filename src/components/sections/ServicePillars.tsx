@@ -8,6 +8,7 @@ import {
   Handshake,
   ArrowRight,
 } from "lucide-react";
+import { MembershipBadge } from "@/components/ui/membership-badge";
 
 const pillars = [
   {
@@ -86,14 +87,17 @@ export const ServicePillars = () => {
               {/* Premium hover gradient */}
               <div className="pointer-events-none absolute inset-0 -z-0 bg-gradient-to-br from-scef-gold/0 via-scef-gold/0 to-scef-gold/[0.04] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              {/* Number marker */}
+              {/* Number marker + member badge */}
               <div className="mb-8 flex items-start justify-between">
                 <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-scef-blue-darker text-scef-gold transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-4deg]">
                   <Icon className="h-6 w-6" />
                 </div>
-                <span className="font-display text-sm font-medium text-muted-foreground/60 tabular-nums">
-                  0{i + 1}
-                </span>
+                <div className="flex flex-col items-end gap-2">
+                  <MembershipBadge variant="outline" label="Member-backed" className="opacity-0 -translate-y-1 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0" />
+                  <span className="font-display text-sm font-medium text-muted-foreground/60 tabular-nums">
+                    0{i + 1}
+                  </span>
+                </div>
               </div>
 
               <div className="flex-1">
