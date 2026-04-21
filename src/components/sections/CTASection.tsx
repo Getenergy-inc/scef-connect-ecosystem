@@ -18,7 +18,7 @@ export const CTASection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in">
           <div className="bg-white/10 rounded-xl p-6 text-center border border-white/10">
             <Users className="w-8 h-8 text-scef-gold mx-auto mb-3" />
             <h3 className="font-bold text-white mb-4">{t("home.final.ctaJoin")}</h3>

@@ -26,8 +26,8 @@ export const GovernanceSnapshot = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-          {layers.map((layer) => (
-            <div key={layer.titleKey} className="bg-card rounded-xl p-5 border border-border">
+          {layers.map((layer, idx) => (
+            <div key={layer.titleKey} className="bg-card rounded-xl p-5 border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300 animate-fade-in" style={{ animationDelay: `${idx * 80}ms` }}>
               <layer.icon className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-display text-base font-bold text-foreground mb-1">{t(layer.titleKey)}</h3>
               <span className="text-xs text-scef-gold font-semibold">{t(layer.countKey)}</span>

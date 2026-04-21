@@ -11,6 +11,8 @@ import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { NesaAfricaCard } from "@/components/sections/NesaAfricaCard";
+import { ImpactStats } from "@/components/sections/ImpactStats";
+import { CVOSpotlight } from "@/components/sections/CVOSpotlight";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const Index = () => {
@@ -63,11 +65,17 @@ const Index = () => {
           {/* Our Programs */}
           <ProgramsGrid />
           
+          {/* Impact Stats */}
+          <ImpactStats />
+          
           {/* NESA Africa 2025 Card */}
           <NesaAfricaCard />
           
           {/* Explore Section */}
           <ExploreSection />
+          
+          {/* CVO Leadership Spotlight */}
+          <CVOSpotlight />
           
           {/* Governance Snapshot */}
           <GovernanceSnapshot />

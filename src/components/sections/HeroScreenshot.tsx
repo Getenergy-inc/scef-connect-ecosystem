@@ -17,7 +17,7 @@ export const HeroScreenshot = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-16">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl animate-fade-in">
           <p className="text-scef-gold font-semibold text-sm mb-3 tracking-wide uppercase">
             {t("home.hero.eyebrow")}
           </p>

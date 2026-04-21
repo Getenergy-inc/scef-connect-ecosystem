@@ -36,13 +36,14 @@ export const EndorsedBySection = () => {
         </h2>
 
         <div className="flex flex-wrap justify-center items-center gap-8">
-          {endorsements.map((e) => (
+          {endorsements.map((e, idx) => (
             <a
               key={e.id}
               href={e.website_url || "#"}
               target={e.website_url ? "_blank" : undefined}
               rel={e.website_url ? "noopener noreferrer" : undefined}
-              className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
+              className="flex flex-col items-center gap-2 hover-scale animate-fade-in"
+              style={{ animationDelay: `${idx * 60}ms` }}
               title={e.name}
             >
               <div className="w-20 h-20 rounded-full overflow-hidden bg-white shadow border border-border">
