@@ -2079,6 +2079,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      assign_path_role: {
+        Args: { _path: string; _user_id: string }
+        Returns: undefined
+      }
       cleanup_old_partnership_inquiries: { Args: never; Returns: number }
       has_role: {
         Args: {
