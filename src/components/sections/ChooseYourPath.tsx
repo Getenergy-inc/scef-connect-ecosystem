@@ -67,6 +67,9 @@ export const ChooseYourPath = () => {
           <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
             {t("home.paths.title") || "Choose Your Path to Impact"}
           </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            {t("home.paths.intro") || "Five clear pathways. Pick the one that fits how you want to contribute."}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
