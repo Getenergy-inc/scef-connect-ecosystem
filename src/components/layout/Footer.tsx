@@ -40,11 +40,18 @@ const footerColumns = [
     ],
   },
   {
-    title: "Get Involved",
+    title: "Membership",
     links: [
       { name: "Become a Member", href: "/membership" },
+      { name: "Member Benefits", href: "/membership#benefits" },
+      { name: "Member Directory", href: "/membership#directory" },
       { name: "Become an Ambassador", href: "/get-involved#ambassador" },
       { name: "Volunteer", href: "/get-involved#volunteer" },
+    ],
+  },
+  {
+    title: "Get Involved",
+    links: [
       { name: "Partner With Us", href: "/partners" },
       { name: "Vacancies", href: "/vacancies" },
       { name: "Donate", href: "/donate" },
@@ -151,7 +158,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="mt-4 text-sm text-white/65 leading-relaxed max-w-xs">
-              A continental institution advancing education standards across 54+ African regions.
+              A membership-run Educational Institutionalized NGO advocating Achieving Education for All across African regions.
             </p>
 
             <ul className="mt-5 space-y-2.5">
