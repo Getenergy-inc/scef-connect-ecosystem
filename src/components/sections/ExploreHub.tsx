@@ -12,39 +12,39 @@ import {
 const cards = [
   {
     icon: Building2,
-    title: "About Us",
-    text: "Mission, vision, leadership and values.",
+    title: "About SCEF",
+    text: "Membership-run NGO story.",
     href: "/about",
   },
   {
     icon: Layers,
-    title: "Services",
-    text: "Programs, awards, advocacy and learning.",
+    title: "Programs",
+    text: "Member-backed initiatives.",
     href: "/programs",
   },
   {
     icon: TrendingUp,
-    title: "Impact Stories",
-    text: "Outcomes, case studies and reports.",
+    title: "Impact",
+    text: "Advocacy outcomes across regions.",
     href: "/case-studies",
   },
   {
-    icon: Newspaper,
-    title: "News & Updates",
-    text: "Announcements, press and campaigns.",
-    href: "/updates",
-  },
-  {
     icon: MapPin,
-    title: "Country Portals",
-    text: "Local chapters across Africa & diaspora.",
+    title: "Chapters",
+    text: "Member networks across Africa & diaspora.",
     href: "/local-chapters",
   },
   {
     icon: HeartHandshake,
     title: "Get Involved",
-    text: "Volunteer, donate, partner or sponsor.",
-    href: "/get-involved",
+    text: "Join as a member today.",
+    href: "/get-involved/membership",
+  },
+  {
+    icon: Newspaper,
+    title: "Media",
+    text: "Member spotlights, shows and broadcasts.",
+    href: "/media",
   },
 ];
 
