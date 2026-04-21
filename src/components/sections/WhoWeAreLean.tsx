@@ -21,15 +21,15 @@ export const WhoWeAreLean = () => {
             {t("home.who.eyebrow") || "Who We Are"}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-            {t("home.who.title") || "A Structured Education Impact Ecosystem"}
+            {t("home.who.title") || "A Structured Education Impact & CSR Ecosystem"}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             {t("home.who.body1") ||
-              "SCEF is a membership-run foundation building systems that help education improve, scale, and stay accountable across Africa."}
+              "SCEF is a membership-run foundation and education CSR fund management services NGO — building systems that help education improve, scale, and stay accountable across Africa."}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
             {t("home.who.body2") ||
-              "We connect programs, chapters, partners, platforms, and media to deliver measurable outcomes in access, quality, inclusion, and skills."}
+              "We connect programs, chapters, partners, platforms, and funding mechanisms to deliver measurable outcomes in access, quality, inclusion, and skills."}
           </p>
         </div>
 

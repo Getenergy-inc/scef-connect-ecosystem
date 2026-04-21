@@ -23,7 +23,7 @@ export const FinalCTABand = () => {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
             {t("home.finalCta.subtitle") ||
-              "Help us make education accessible, inclusive, and impactful across regions."}
+              "Support, fund, or lead initiatives that expand access, improve quality, and deliver measurable education impact across regions."}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

@@ -36,7 +36,7 @@ const paths = [
   {
     icon: Handshake,
     title: "Partner or Sponsor",
-    blurb: "Collaborate to scale education impact.",
+    blurb: "Fund and scale education impact through structured CSR programs.",
     cta: "Partner With Us",
     href: "/partner-with-us",
     iconColor: "text-[hsl(22_88%_52%)]",

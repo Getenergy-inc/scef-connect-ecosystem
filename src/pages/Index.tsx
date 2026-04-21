@@ -11,6 +11,7 @@ import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
+import { CSRFundManagement } from "@/components/sections/CSRFundManagement";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -66,6 +67,11 @@ const Index = () => {
           {/* 3. Programs */}
           <Reveal>
             <ProgramsThatTransform />
+          </Reveal>
+
+          {/* 3.5 CSR & Education Fund Management — institutional positioning */}
+          <Reveal>
+            <CSRFundManagement />
           </Reveal>
 
           {/* 4. Impact snapshot — labels only */}
