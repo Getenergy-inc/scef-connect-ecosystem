@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
+import heroVideo from "@/assets/nesa-hero-bg-video.mp4";
 
 /**
  * Cinematic, full-screen institutional hero.
- * Uses existing hero image with slow Ken Burns motion + animated keyword overlays
- * (no external video dependency). Premium dark gradient + gold accent CTA.
+ * Fullscreen autoplay muted looping video with image fallback (Ken Burns).
+ * Premium dark gradient wash + gold accent CTAs.
  */
 export const CinematicHero = () => {
   const keywords = ["Educate.", "Empower.", "Advocate.", "Transform."];
@@ -14,14 +15,28 @@ export const CinematicHero = () => {
   return (
     <section
       className="relative isolate overflow-hidden text-white"
-      style={{ minHeight: "min(92vh, 880px)" }}
+      style={{ minHeight: "min(94vh, 920px)" }}
     >
-      {/* Background image with slow zoom */}
+      {/* Background video with image poster fallback */}
       <div className="absolute inset-0 -z-20">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={heroImage}
+          className="h-full w-full object-cover animate-[heroZoom_28s_ease-in-out_infinite_alternate]"
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        {/* Image fallback layer (covered by video when it loads) */}
         <img
           src={heroImage}
-          alt="African students learning across classrooms and digital devices"
-          className="h-full w-full object-cover animate-[heroZoom_22s_ease-in-out_infinite_alternate]"
+          alt=""
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          aria-hidden="true"
         />
       </div>
 
