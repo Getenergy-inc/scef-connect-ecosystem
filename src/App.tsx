@@ -71,6 +71,7 @@ import VacanciesAdminPage from "./pages/admin/VacanciesAdminPage";
 import FinanceOverview from "./pages/admin/FinanceOverview";
 import BankAccounts from "./pages/admin/BankAccounts";
 import Disbursements from "./pages/admin/Disbursements";
+import StaffApprovals from "./pages/admin/StaffApprovals";
 
 // Resources
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
@@ -246,6 +247,7 @@ const App = () => (
               <Route path="/admin/finance/bank-accounts" element={<BankAccounts />} />
               <Route path="/admin/finance/disbursements" element={<Disbursements />} />
               <Route path="/admin/csr-funding-funnel" element={<FundingFunnel />} />
+              <Route path="/admin/staff-approvals" element={<StaffApprovals />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />

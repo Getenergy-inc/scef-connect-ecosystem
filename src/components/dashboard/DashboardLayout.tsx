@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,9 +9,14 @@ import {
   Heart, MapPin, Award, Users, LayoutDashboard, Shield,
   Briefcase, Flag, ClipboardList, MessageSquare, BarChart3,
   Search, CreditCard, ChevronDown, FileText, Handshake,
-  Image, Megaphone, UserCheck
+  Image, Megaphone, UserCheck, ShieldCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useUserRole } from "@/hooks/useUserRole";
+import { RoleSwitcher } from "./RoleSwitcher";
+import type { Database } from "@/integrations/supabase/types";
+
+type AppRole = Database["public"]["Enums"]["app_role"];
 
 interface NavItem {
   icon: React.ElementType;
@@ -84,6 +89,7 @@ const cmsAdminItems: NavItem[] = [
   { icon: Handshake, label: "CRS Partners", href: "/admin/crs-partners" },
   { icon: Briefcase, label: "Vacancies", href: "/admin/vacancies" },
   { icon: BookOpen, label: "eLibrary", href: "/dashboard/elibrary" },
+  { icon: ShieldCheck, label: "Staff Approvals", href: "/admin/staff-approvals" },
 ];
 
 const roleBadges: Record<string, { label: string; className: string }> = {
@@ -100,6 +106,12 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
   const navigate = useNavigate();
   const navItems = roleNavItems[role] || roleNavItems.member;
   const badge = roleBadges[role] || roleBadges.member;
+
+  const [userId, setUserId] = useState<string | null>(null);
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => setUserId(session?.user?.id ?? null));
+  }, []);
+  const { roles } = useUserRole(userId);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -267,6 +279,11 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
               </div>
             )}
             
+            <RoleSwitcher
+              roles={roles}
+              activeRole={role as AppRole}
+              variant={isSuperAdmin ? "dark" : "light"}
+            />
             <Button 
               variant="ghost" 
               size="icon" 
