@@ -10,6 +10,8 @@ import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
+import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
+import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
