@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Als Mitglied beitreten",
     "donateNow": "Jetzt spenden",
-    "becomeAmbassador": "Botschafter werden",
+    "becomeAmbassador": "Jetzt bewerben",
     "joinChapter": "Ortsverband beitreten",
     "partnerCsr": "Partnerschaft / CSR",
     "watchMedia": "SCEF Medien ansehen",
@@ -279,6 +279,12 @@
       "ctaDonate": "Jetzt spenden",
       "helper": "Nicht sicher, wo Sie anfangen sollen?",
       "helperLink": "Alle Wege zum Mitmachen erkunden →"
+    },
+    "chaptersBlock": {
+      "title": "Aktivieren Sie Ihre Region",
+      "body": "Lokale Chapter bringen SCEF-Programme zu den Gemeinden — treten Sie einem in Ihrer Nähe bei oder gründen Sie ein neues.",
+      "ctaJoin": "Einem Chapter beitreten",
+      "ctaCreate": "Chapter gründen"
     }
   },
   "about": {
@@ -649,7 +655,7 @@
       "subtitle": "Treten Sie einer panafrikanischen Gemeinschaft von Bildungs-Changemakern bei. Als SCEF-Mitglied erhalten Sie Zugang zu Programmen, Ortsverbänden, Zertifizierungen und Möglichkeiten, die Bildungszukunft Afrikas zu gestalten."
     },
     "cta": {
-      "join": "Jetzt beitreten",
+      "join": "Mitgliedschaft entdecken",
       "ambassador": "Botschafter werden",
       "institutional": "Institutionelle Mitgliedschaft"
     }
@@ -809,8 +815,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Unsere Programme",
-        "subtext": "SCEF erzielt Wirkung durch drei Flaggschiff-Programme und eine Flaggschiff-Plattform. Um fokussiert und skalierbar zu bleiben, werden verwandte Arbeiten als Tracks (Unterprogramme) und Serien (Webinare/Schulungen) unter dem entsprechenden Flaggschiff-Programm geliefert."
+        "title": "Programme, die zusammenarbeiten",
+        "subtext": "Entwickelt, um Zugang, Qualität, Inklusion, Kompetenzen und Anerkennung in den Regionen zu verbessern."
       },
       "flagship": {
         "label": "Flaggschiff-Programme und Plattform",
@@ -946,6 +952,22 @@
         "cta2": "Mitglied werden",
         "cta3": "Ortsverbände erkunden",
         "cta4": "SCEF Media ansehen"
+      }
+    }
+  },
+  "getInvolved": {
+    "options": {
+      "member": {
+        "title": "Mitglied werden",
+        "description": "Greifen Sie auf Programme zu, stimmen Sie bei NESA ab und verbinden Sie sich mit Chaptern in Afrika."
+      },
+      "ambassador": {
+        "title": "Botschafter werden",
+        "description": "Führen Sie Advocacy in Ihrer Region mit offizieller SCEF-Anerkennung."
+      },
+      "volunteer": {
+        "title": "Freiwillig helfen",
+        "description": "Bringen Sie Zeit und Fähigkeiten in wichtige Programme ein."
       }
     }
   }

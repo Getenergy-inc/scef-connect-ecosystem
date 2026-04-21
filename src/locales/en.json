@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Join as a Member",
     "donateNow": "Donate Now",
-    "becomeAmbassador": "Become an Ambassador",
+    "becomeAmbassador": "Apply Now",
     "joinChapter": "Join a Local Chapter",
     "partnerCsr": "Partner / CSR",
     "watchMedia": "Watch SCEF Media",
@@ -254,11 +254,11 @@
       "title": "How SCEF Works (6 Divisions)"
     },
     "chaptersBlock": {
-      "title": "Join a Local Chapter",
-      "body": "Find your country chapter, connect with changemakers, and participate in real-impact projects.",
+      "title": "Activate your region",
+      "body": "Local chapters bring SCEF programs to communities — join one near you or lead a new one.",
       "ctaBrowse": "Browse",
-      "ctaJoin": "Join",
-      "ctaCreate": "Create",
+      "ctaJoin": "Join a Chapter",
+      "ctaCreate": "Start a Chapter",
       "ctaLeader": "Apply as Leader"
     },
     "partnerships": {
@@ -1268,8 +1268,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Our Programs",
-        "subtext": "SCEF delivers impact through three flagship programs and one flagship platform. To stay focused and scalable, related work is delivered as Tracks (sub-programs) and Series (webinars/training) under the appropriate flagship."
+        "title": "Programs that work together",
+        "subtext": "Designed to improve access, quality, inclusion, skills, and recognition across regions."
       },
       "flagship": {
         "label": "Flagship Programs & Platform",
@@ -1441,7 +1441,7 @@
       }
     },
     "cta": {
-      "join": "Join Now",
+      "join": "Explore Membership",
       "ambassador": "Become an Ambassador",
       "institutional": "Institutional Membership"
     }
@@ -1648,15 +1648,15 @@
     "options": {
       "member": {
         "title": "Become a Member",
-        "description": "Join our pan-African community of education advocates and changemakers."
+        "description": "Access programs, vote in NESA, and connect with chapters across Africa."
       },
       "ambassador": {
         "title": "Become an Ambassador",
-        "description": "Champion SCEF's programs and represent us in your community and networks."
+        "description": "Lead advocacy in your region with official SCEF recognition."
       },
       "volunteer": {
         "title": "Volunteer",
-        "description": "Contribute your skills and time to support SCEF's programs and operations."
+        "description": "Contribute time and skills to programs that matter."
       },
       "chapter": {
         "title": "Join a Chapter",

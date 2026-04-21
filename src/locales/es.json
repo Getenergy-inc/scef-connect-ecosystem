@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Unirse como Miembro",
     "donateNow": "Donar Ahora",
-    "becomeAmbassador": "Convertirse en Embajador",
+    "becomeAmbassador": "Postular",
     "joinChapter": "Unirse a un Capítulo Local",
     "partnerCsr": "Asociación / RSC",
     "watchMedia": "Ver SCEF Media",
@@ -279,6 +279,12 @@
       "ctaDonate": "Donar Ahora",
       "helper": "¿No sabes por dónde empezar?",
       "helperLink": "Explora todas las formas de unirte →"
+    },
+    "chaptersBlock": {
+      "title": "Activa tu región",
+      "body": "Los capítulos locales llevan los programas de SCEF a las comunidades — únete a uno cerca de ti o lidera uno nuevo.",
+      "ctaJoin": "Únete a un Capítulo",
+      "ctaCreate": "Inicia un Capítulo"
     }
   },
   "about": {
@@ -649,7 +655,7 @@
       "subtitle": "Únete a una comunidad panafricana de agentes de cambio educativo. Como miembro de SCEF, obtienes acceso a programas, capítulos, certificaciones y oportunidades para dar forma al futuro educativo de África."
     },
     "cta": {
-      "join": "Unirse Ahora",
+      "join": "Explorar Membresía",
       "ambassador": "Convertirse en Embajador",
       "institutional": "Membresía Institucional"
     }
@@ -809,8 +815,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Nuestros Programas",
-        "subtext": "SCEF genera impacto a través de tres programas insignia y una plataforma insignia. Para mantenernos enfocados y escalables, el trabajo relacionado se entrega como Rutas (subprogramas) y Series (webinarios/formación) bajo el programa insignia apropiado."
+        "title": "Programas que trabajan juntos",
+        "subtext": "Diseñados para mejorar el acceso, la calidad, la inclusión, las habilidades y el reconocimiento en las regiones."
       },
       "flagship": {
         "label": "Programas y Plataforma Insignia",
@@ -946,6 +952,22 @@
         "cta2": "Convertirse en Miembro",
         "cta3": "Explorar Capítulos Locales",
         "cta4": "Ver SCEF Media"
+      }
+    }
+  },
+  "getInvolved": {
+    "options": {
+      "member": {
+        "title": "Hazte Miembro",
+        "description": "Accede a programas, vota en los NESA y conéctate con capítulos en África."
+      },
+      "ambassador": {
+        "title": "Hazte Embajador",
+        "description": "Lidera la defensa en tu región con reconocimiento oficial de SCEF."
+      },
+      "volunteer": {
+        "title": "Voluntariado",
+        "description": "Aporta tiempo y habilidades a programas que importan."
       }
     }
   }

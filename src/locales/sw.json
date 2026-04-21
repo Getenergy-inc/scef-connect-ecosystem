@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Jiunge kama Mwanachama",
     "donateNow": "Changia Sasa",
-    "becomeAmbassador": "Kuwa Balozi",
+    "becomeAmbassador": "Omba Sasa",
     "joinChapter": "Jiunge na Sura ya Mtaa",
     "partnerCsr": "Ushirikiano / CSR",
     "watchMedia": "Tazama SCEF Media",
@@ -254,11 +254,11 @@
       "title": "Jinsi SCEF inavyofanya kazi (Idara 6)"
     },
     "chaptersBlock": {
-      "title": "Jiunge na Sura ya Mtaa",
-      "body": "Pata sura ya nchi yako, kutana na wachochezi wa mabadiliko, na jiunge na miradi yenye athari halisi.",
+      "title": "Amilisha eneo lako",
+      "body": "Matawi ya ndani huleta programu za SCEF kwa jamii — jiunge na tawi karibu nawe au anzisha jipya.",
       "ctaBrowse": "Tazama Sura",
-      "ctaJoin": "Jiunge",
-      "ctaCreate": "Anzisha",
+      "ctaJoin": "Jiunge na Tawi",
+      "ctaCreate": "Anzisha Tawi",
       "ctaLeader": "Omba Uongozi"
     },
     "partnerships": {
@@ -921,8 +921,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Programu Zetu",
-        "subtext": "SCEF hutoa athari kupitia programu kuu tatu na jukwaa kuu moja. Ili kubaki makini na kuwa na uwezo wa kupanuka, kazi zinazohusiana hutolewa kama Njia (programu ndogo) na Mfululizo (webinari/mafunzo) chini ya programu kuu inayofaa."
+        "title": "Programu zinazofanya kazi pamoja",
+        "subtext": "Zimeundwa kuboresha ufikiaji, ubora, ujumuishaji, ujuzi na utambuzi katika maeneo."
       },
       "flagship": {
         "label": "Programu na Jukwaa Kuu",
@@ -1094,7 +1094,7 @@
       }
     },
     "cta": {
-      "join": "Jiunge Sasa",
+      "join": "Chunguza Uanachama",
       "ambassador": "Kuwa Balozi",
       "institutional": "Uanachama wa Kitaasisi"
     }
@@ -1288,15 +1288,15 @@
     "options": {
       "member": {
         "title": "Kuwa Mwanachama",
-        "description": "Jiunge na jamii yetu ya pana-Afrika ya watetezi wa elimu na wachochezi wa mabadiliko."
+        "description": "Pata programu, piga kura katika NESA, na ungana na matawi Afrika."
       },
       "ambassador": {
         "title": "Kuwa Balozi",
-        "description": "Unga mkono programu za SCEF na utuwakilishe katika jamii na mitandao yako."
+        "description": "Ongoza utetezi katika eneo lako kwa utambuzi rasmi wa SCEF."
       },
       "volunteer": {
-        "title": "Jitolee",
-        "description": "Changia ujuzi na muda wako kusaidia programu na shughuli za SCEF."
+        "title": "Kujitolea",
+        "description": "Toa muda na ujuzi wako kwa programu muhimu."
       },
       "chapter": {
         "title": "Jiunge na Sura",

@@ -81,7 +81,7 @@
   "cta": {
     "joinMember": "Rejoindre comme membre",
     "donateNow": "Faire un don",
-    "becomeAmbassador": "Devenir ambassadeur",
+    "becomeAmbassador": "Postuler",
     "joinChapter": "Rejoindre un chapitre local",
     "partnerCsr": "Partenariat / CSR",
     "watchMedia": "Regarder SCEF Media",
@@ -254,11 +254,11 @@
       "title": "Comment SCEF fonctionne (6 divisions)"
     },
     "chaptersBlock": {
-      "title": "Rejoindre un chapitre local",
-      "body": "Trouvez votre chapitre pays, rejoignez des acteurs du changement et participez à des projets concrets.",
+      "title": "Activez votre région",
+      "body": "Les sections locales apportent les programmes SCEF aux communautés — rejoignez-en une près de chez vous ou créez-en une nouvelle.",
       "ctaBrowse": "Parcourir",
-      "ctaJoin": "Rejoindre",
-      "ctaCreate": "Créer",
+      "ctaJoin": "Rejoindre une section",
+      "ctaCreate": "Créer une section",
       "ctaLeader": "Postuler comme leader"
     },
     "partnerships": {
@@ -921,8 +921,8 @@
   "programs": {
     "page": {
       "hero": {
-        "title": "Nos Programmes",
-        "subtext": "SCEF délivre des résultats à travers trois programmes phares et une plateforme phare. Pour rester ciblé et évolutif, les travaux connexes sont délivrés sous forme de Filières (sous-programmes) et de Séries (webinaires/formations) sous le programme approprié."
+        "title": "Des programmes qui fonctionnent ensemble",
+        "subtext": "Conçus pour améliorer l'accès, la qualité, l'inclusion, les compétences et la reconnaissance dans les régions."
       },
       "flagship": {
         "label": "Programmes & Plateforme Phares",
@@ -1094,7 +1094,7 @@
       }
     },
     "cta": {
-      "join": "Rejoindre maintenant",
+      "join": "Découvrir l'adhésion",
       "ambassador": "Devenir ambassadeur",
       "institutional": "Adhésion institutionnelle"
     }
@@ -1288,15 +1288,15 @@
     "options": {
       "member": {
         "title": "Devenir membre",
-        "description": "Rejoignez notre communauté panafricaine de défenseurs de l'éducation et d'acteurs du changement."
+        "description": "Accédez aux programmes, votez aux NESA et connectez-vous aux sections en Afrique."
       },
       "ambassador": {
         "title": "Devenir ambassadeur",
-        "description": "Défendez les programmes de SCEF et représentez-nous dans votre communauté et vos réseaux."
+        "description": "Dirigez le plaidoyer dans votre région avec une reconnaissance officielle SCEF."
       },
       "volunteer": {
-        "title": "Bénévolat",
-        "description": "Contribuez vos compétences et votre temps pour soutenir les programmes et opérations de SCEF."
+        "title": "Bénévole",
+        "description": "Apportez votre temps et vos compétences à des programmes qui comptent."
       },
       "chapter": {
         "title": "Rejoindre un chapitre",
