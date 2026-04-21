@@ -1,110 +1,82 @@
 import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
-import { HeroScreenshot } from "@/components/sections/HeroScreenshot";
-import { DigitalBoard } from "@/components/sections/DigitalBoard";
-import { ProgramsGrid } from "@/components/sections/ProgramsGrid";
-import { ExploreSection } from "@/components/sections/ExploreSection";
-import { GovernanceSnapshot } from "@/components/sections/GovernanceSnapshot";
-import { PartnersStakeholdersSection } from "@/components/sections/PartnersStakeholdersSection";
-import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
-import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
-import { CTASection } from "@/components/sections/CTASection";
-import { NesaAfricaCard } from "@/components/sections/NesaAfricaCard";
-import { ImpactStats } from "@/components/sections/ImpactStats";
-import { CVOSpotlight } from "@/components/sections/CVOSpotlight";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { LatestNews } from "@/components/sections/LatestNews";
-import { UpcomingEvents } from "@/components/sections/UpcomingEvents";
+import { CinematicHero } from "@/components/sections/CinematicHero";
+import { BrandFilm } from "@/components/sections/BrandFilm";
+import { ServicePillars } from "@/components/sections/ServicePillars";
+import { ImpactBand } from "@/components/sections/ImpactBand";
+import { ExploreHub } from "@/components/sections/ExploreHub";
+import { FeaturedUpdate } from "@/components/sections/FeaturedUpdate";
+import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const Index = () => {
   const { t } = useLocale();
-  
+
   return (
     <>
       <Helmet>
-        <title>{t("home.hero.title")} - SCEF</title>
-        <meta 
-          name="description" 
-          content={t("home.hero.summary")} 
+        <title>SCEF — Empowering Africa Through Education, Innovation & Opportunity</title>
+        <meta
+          name="description"
+          content="Santos Creations Educational Foundation: a continental institution for education standards across 57 African countries — programs, awards, advocacy and partnerships."
         />
-        <meta name="keywords" content="African education, SCEF, education governance, Pan-African, scholarships Africa, NESA Africa, AEPC certification" />
-        <link rel="canonical" href="https://scef.org" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="SCEF - Santos Creations Educational Foundation" />
-        <meta property="og:description" content={t("home.hero.summary")} />
+        <meta
+          name="keywords"
+          content="African education, SCEF, NESA Africa, EduAid Africa, education standards, eLibrary Nigeria, Pan-African education"
+        />
+        <link rel="canonical" href="https://santoscreations.org" />
+
+        <meta property="og:title" content="SCEF — Empowering Africa Through Education" />
+        <meta
+          property="og:description"
+          content="A continental institution driving advocacy, digital learning, awards, and partnerships across Africa."
+        />
         <meta property="og:type" content="website" />
-        
-        {/* Structured Data */}
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "NGO",
-            "name": "Santos Creations Educational Foundation",
-            "alternateName": "SCEF",
-            "url": "https://scef.org",
-            "description": "Pan-African education governance institution",
-            "foundingDate": "1997",
-            "areaServed": "Africa"
+            name: "Santos Creations Educational Foundation",
+            alternateName: "SCEF",
+            url: "https://santoscreations.org",
+            description: "Pan-African education governance institution",
+            foundingDate: "1997",
+            areaServed: "Africa",
           })}
         </script>
       </Helmet>
-      
-      <div className="min-h-screen">
+
+      <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        
+
         {/* Spacer for fixed header */}
         <div className="h-[88px] md:h-[96px]" />
-        
+
         <main>
-          {/* Hero with Digital Board */}
-          <HeroScreenshot />
-          
-          {/* Digital Board Section */}
-          <DigitalBoard />
-          
-          {/* Our Programs */}
-          <ProgramsGrid />
-          
-          {/* Impact Stats */}
-          <ImpactStats />
-          
-          {/* NESA Africa 2025 Card */}
-          <NesaAfricaCard />
-          
-          {/* Explore Section */}
-          <ExploreSection />
-          
-          {/* CVO Leadership Spotlight */}
-          <CVOSpotlight />
-          
-          {/* Upcoming Events */}
-          <UpcomingEvents />
-          
-          {/* Latest News */}
-          <LatestNews />
-          
-          {/* Testimonials */}
-          <Testimonials />
-          
-          {/* Governance Snapshot */}
-          <GovernanceSnapshot />
-          
-          {/* Endorsed By */}
-          <EndorsedBySection />
-          
-          {/* Partners & Stakeholders */}
-          <PartnersStakeholdersSection />
-          
-          {/* CRS Partners */}
-          <CRSPartnersSection variant="compact" />
-          
-          {/* Final CTA */}
-          <CTASection />
+          {/* 1. Cinematic full-screen hero */}
+          <CinematicHero />
+
+          {/* 2. Brand intro — short, link-led */}
+          <BrandFilm />
+
+          {/* 3. Service pillars — 6 tiles */}
+          <ServicePillars />
+
+          {/* 4. Impact band */}
+          <ImpactBand />
+
+          {/* 5. Explore SCEF — destination router */}
+          <ExploreHub />
+
+          {/* 6. Featured update — single story, links to all news */}
+          <FeaturedUpdate />
+
+          {/* 7. Final CTA */}
+          <FinalCTABand />
         </main>
-        
+
         <Footer />
       </div>
     </>
