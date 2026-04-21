@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { Sparkles, ListTodo, Users, FileText, MessageSquare, Handshake, Building2, Loader2, Copy } from "lucide-react";
+import { Sparkles, ListTodo, Users, MessageSquare, Handshake, Building2, Loader2, Copy } from "lucide-react";
 
 type ToolKey =
   | "task_breakdown"
