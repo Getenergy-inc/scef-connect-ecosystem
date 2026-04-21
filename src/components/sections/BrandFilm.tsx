@@ -10,6 +10,7 @@ export const BrandFilm = () => {
     { label: "About SCEF", href: "/about" },
     { label: "Mission", href: "/about#mission" },
     { label: "Vision", href: "/about#vision" },
+    { label: "Join as Member", href: "/get-involved/membership" },
   ];
 
   return (
@@ -21,14 +22,14 @@ export const BrandFilm = () => {
               Who We Are
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.75rem]">
-              A continental institution for education.
+              A membership-run institution for education.
             </h2>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
             <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
-              Building Africa's educational future through digital access,
-              advocacy, and partnerships.
+              A membership-run Educational Institutionalized NGO advocating
+              Achieving Education for All across Africa.
             </p>
 
             <div className="mt-12 grid gap-x-8 gap-y-1 sm:grid-cols-2">
