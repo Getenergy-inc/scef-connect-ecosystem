@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-classroom.jpg";
+import heroVideo from "@/assets/nesa-hero-bg-video.mp4";
 
 /**
  * Cinematic, full-screen institutional hero.
- * Fullscreen autoplay muted looping video with image fallback (Ken Burns).
+ * Fullscreen autoplay muted looping video over a static image fallback.
  * Premium dark gradient wash + gold accent CTAs.
  */
 export const CinematicHero = () => {
@@ -16,7 +17,7 @@ export const CinematicHero = () => {
       className="relative isolate overflow-hidden text-white"
       style={{ minHeight: "min(94vh, 920px)" }}
     >
-      {/* Background image with subtle Ken Burns zoom */}
+      {/* Static image fallback — visible until video loads, also used on devices that block autoplay */}
       <div className="absolute inset-0 -z-20">
         <img
           src={heroImage}
@@ -25,6 +26,19 @@ export const CinematicHero = () => {
           aria-hidden="true"
         />
       </div>
+
+      {/* Cinematic video — autoplay muted looping */}
+      <video
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        src={heroVideo}
+        poster={heroImage}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
 
       {/* Cinematic gradient wash — deeper, richer */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-scef-blue-darker/70 via-scef-blue-darker/85 to-scef-blue-darker" />

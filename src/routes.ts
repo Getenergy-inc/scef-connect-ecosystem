@@ -29,6 +29,8 @@ export const ROUTES = {
   LOCAL_CHAPTERS: "/local-chapters",
   CHAPTERS: "/chapters",
   JOIN_CHAPTER: "/chapters/join-online",
+  START_CHAPTER: "/chapters/start",
+  AWARDS: "/awards",
   
   // Get Involved
   GET_INVOLVED: "/get-involved",
