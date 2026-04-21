@@ -64,14 +64,14 @@ const Index = () => {
             <WhoWeAreLean />
           </Reveal>
 
-          {/* 3. Programs */}
-          <Reveal>
-            <ProgramsThatTransform />
-          </Reveal>
-
-          {/* 3.5 CSR & Education Fund Management — institutional positioning */}
+          {/* 3. CSR & Education Fund Management — institutional positioning */}
           <Reveal>
             <CSRFundManagement />
+          </Reveal>
+
+          {/* 4. Programs */}
+          <Reveal>
+            <ProgramsThatTransform />
           </Reveal>
 
           {/* 4. Impact snapshot — labels only */}
