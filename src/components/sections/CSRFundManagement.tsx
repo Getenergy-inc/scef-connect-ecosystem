@@ -78,13 +78,19 @@ export const CSRFundManagement = () => {
             "Ensuring every investment in education delivers real, measurable outcomes."}
         </p>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
-            to="/partner-with-us"
+            to="/csr-fund-management"
             className="inline-flex items-center gap-2 rounded-md bg-scef-blue-darker px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-scef-blue"
           >
-            {t("home.csr.ctaPartner") || "Partner With Us"}
+            {t("home.csr.ctaLearn") || "Learn How It Works"}
             <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/partner-with-us"
+            className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3 text-sm font-semibold text-scef-blue-darker transition-colors hover:border-scef-gold hover:text-scef-gold-dark"
+          >
+            {t("home.csr.ctaPartner") || "Partner With Us"}
           </Link>
         </div>
       </div>
