@@ -176,6 +176,24 @@
         }
       }
     },
+    "heroV2": {
+      "eyebrow": "Pan-African Education Foundation · Since 1997",
+      "line1": "Empowering Africa through",
+      "highlight": "education, innovation,",
+      "line2": "and opportunity.",
+      "subtitle": "A membership-driven foundation advancing education across regions through advocacy, digital access, and strategic partnerships.",
+      "ctaPrimary": "Explore Membership",
+      "ctaSecondary": "Support the Mission",
+      "imageAlt": "African schoolchildren in green uniforms standing together at school",
+      "scrollCue": "Scroll to explore",
+      "pillars": {
+        "Education Advocacy": { "title": "Education Advocacy", "sub": "Expanding access for every learner" },
+        "Skills & Innovation": { "title": "Skills & Innovation", "sub": "Preparing for real-world impact" },
+        "Inclusion & Equity": { "title": "Inclusion & Equity", "sub": "Opening opportunities for all" },
+        "Accountability": { "title": "Accountability", "sub": "Delivering measurable outcomes" },
+        "Pan-African Impact": { "title": "Pan-African Impact", "sub": "Scaling across regions" }
+      }
+    },
     "hero": {
       "eyebrow": "Regional Africa • Diaspora Africa",
       "title": "Building a continuous, ever-growing standard of education in Africa",
