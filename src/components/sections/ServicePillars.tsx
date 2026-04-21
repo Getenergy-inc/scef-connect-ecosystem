@@ -65,8 +65,11 @@ export const ServicePillars = () => {
               What We Do
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-[2.75rem]">
-              Six pillars. One mission.
+              Programs that work together.
             </h2>
+            <p className="mt-3 max-w-xl text-base text-muted-foreground">
+              Designed to improve access, quality, inclusion, skills, and recognition across regions.
+            </p>
           </div>
           <Link
             to="/programs"

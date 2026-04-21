@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-classroom.jpg";
 import heroVideo from "@/assets/nesa-hero-bg-video.mp4";
+import { useLocale } from "@/contexts/LocaleContext";
 
 /**
  * Cinematic, full-screen institutional hero.
@@ -10,6 +11,7 @@ import heroVideo from "@/assets/nesa-hero-bg-video.mp4";
  * Premium dark gradient wash + gold accent CTAs.
  */
 export const CinematicHero = () => {
+  const { t } = useLocale();
   const keywords = ["Educate.", "Empower.", "Advocate.", "Transform."];
 
   return (
@@ -91,8 +93,8 @@ export const CinematicHero = () => {
           </h1>
 
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            A membership-driven foundation advancing education across regions
-            through advocacy, digital access, and strategic partnerships.
+            {t("home.hero.subtitle") ||
+              "A membership-driven foundation advancing education across regions through advocacy, digital access, and strategic partnerships."}
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-3">

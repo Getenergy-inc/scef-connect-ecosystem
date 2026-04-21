@@ -33,6 +33,9 @@ export const ExploreHub = () => {
           <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.75rem]">
             Choose your path.
           </h2>
+          <p className="mt-3 text-base text-muted-foreground">
+            Join SCEF in the way that fits you — member, ambassador, partner, donor, or chapter lead.
+          </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

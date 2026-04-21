@@ -22,14 +22,15 @@ export const BrandFilm = () => {
               Who We Are
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.75rem]">
-              A membership-run institution for education.
+              A structured education impact ecosystem.
             </h2>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">
             <p className="text-lg leading-relaxed text-foreground/75 md:text-xl">
-              A membership-run Educational Institutionalized NGO advocating
-              Achieving Education for All across Africa.
+              SCEF is a membership-run foundation building systems that help
+              education improve, scale, and stay accountable across Africa — connecting
+              programs, chapters, partners, platforms, and media for measurable outcomes.
             </p>
 
             <div className="mt-12 grid gap-x-8 gap-y-1 sm:grid-cols-2">
