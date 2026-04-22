@@ -68,8 +68,8 @@ export default function CategoriesIndex() {
   return (
     <>
       <Helmet>
-        <title>Award Categories | NESA-Africa 2025</title>
-        <meta name="description" content="Explore the 17 official NESA-Africa 2025 award categories recognizing excellence in education across Africa." />
+        <title>Award Categories | NESA-Africa 2026</title>
+        <meta name="description" content="Explore the 17 official NESA-Africa 2026 award categories recognizing excellence in education across Africa." />
       </Helmet>
 
       <Header />
@@ -80,7 +80,7 @@ export default function CategoriesIndex() {
         <section className="relative py-16 px-4 border-b border-white/10">
           <div className="max-w-7xl mx-auto text-center">
             <Badge className="mb-4 bg-scef-gold/20 text-scef-gold border-scef-gold/50">
-              NESA-Africa 2025
+              NESA-Africa 2026
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Award Categories
@@ -212,7 +212,7 @@ export default function CategoriesIndex() {
                 <div className="mb-6">
                   <h2 className="text-2xl font-bold text-white mb-2">All {TOTAL_CATEGORIES} Categories</h2>
                   <p className="text-white/60">
-                    Complete list of NESA-Africa 2025 award categories.
+                    Complete list of NESA-Africa 2026 award categories.
                   </p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
