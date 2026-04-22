@@ -78,6 +78,7 @@ import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
 import NRC from "./pages/get-involved/NRC";
 import Judge from "./pages/get-involved/Judge";
+import Volunteer from "./pages/get-involved/Volunteer";
 
 // Media Pages
 import EduAidWebinars from "./pages/media/EduAidWebinars";
@@ -256,6 +257,10 @@ const App = () => (
               <Route path="/get-involved/ambassador" element={<Ambassador />} />
               <Route path="/get-involved/nrc" element={<NRC />} />
               <Route path="/get-involved/judge" element={<Judge />} />
+              <Route path="/get-involved/volunteer" element={<Volunteer />} />
+              <Route path="/get-involved/join-chapter" element={<JoinOnline />} />
+              <Route path="/volunteer" element={<Volunteer />} />
+              <Route path="/ambassador" element={<Ambassador />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/donation-success" element={<DonationSuccess />} />
