@@ -204,7 +204,7 @@ const Nominate = () => {
                     <Crown className="w-8 h-8 mx-auto mb-2" style={{ color: nesaColors.gold }} />
                     <h4 className="font-semibold text-white text-sm mb-1">{sub.name}</h4>
                     <p className="text-xs" style={{ color: nesaColors.textMuted }}>
-                      {sub.iconsPerSubcategory} Icons • 2005–2025
+                      {sub.iconsPerSubcategory} Icons • 2006–2026
                     </p>
                   </div>
                 ))}
