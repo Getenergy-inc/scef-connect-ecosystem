@@ -51,15 +51,15 @@ const Nominate = () => {
       subtitle: 'Lifetime Impact Recognition',
       icon: Crown,
       color: '#C4A052',
-      description: 'Honours 9 Icons across 3 subcategories for documented impact from 2005–2025. Non-competitive lifetime recognition.',
+      description: 'Honours 9 Icons across 3 subcategories for documented impact from 2006–2026. Non-competitive lifetime recognition.',
       features: [
         '3 Icon subcategories',
         '9 Icons total (3 per subcategory)',
-        '2005–2025 impact window',
+        '2006–2026 impact window',
         'Expert panel selection',
       ],
       link: 'https://nesa.africa/nomination/sub-categories/africa-lifetime-education-icon',
-      deadline: 'Closes 30 April 2026',
+      deadline: 'Closes 31 May 2026',
     },
     {
       id: 'competitive',
@@ -82,10 +82,10 @@ const Nominate = () => {
   return (
     <>
       <Helmet>
-        <title>Nominate - NESA-Africa 2025 | SCEF</title>
-        <meta 
-          name="description" 
-          content={`Nominate Africa's education changemakers for NESA-Africa 2025 awards. Choose from Platinum, Icon, or Competitive tracks across ${TOTAL_CATEGORIES} categories.`}
+        <title>Nominate - NESA-Africa 2026 | SCEF</title>
+        <meta
+          name="description"
+          content={`Nominate Africa's education changemakers for NESA-Africa 2026 awards. Choose from Platinum, Icon, or Competitive tracks across ${TOTAL_CATEGORIES} categories.`}
         />
       </Helmet>
       
@@ -106,7 +106,7 @@ const Nominate = () => {
                 }}
               >
                 <Award className="w-4 h-4" />
-                <span>NESA-Africa 2025 Nominations</span>
+                <span>NESA-Africa 2026 Nominations</span>
               </div>
               
               <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
@@ -204,7 +204,7 @@ const Nominate = () => {
                     <Crown className="w-8 h-8 mx-auto mb-2" style={{ color: nesaColors.gold }} />
                     <h4 className="font-semibold text-white text-sm mb-1">{sub.name}</h4>
                     <p className="text-xs" style={{ color: nesaColors.textMuted }}>
-                      {sub.iconsPerSubcategory} Icons • 2005–2025
+                      {sub.iconsPerSubcategory} Icons • 2006–2026
                     </p>
                   </div>
                 ))}

@@ -58,10 +58,10 @@ const Vote = () => {
   return (
     <>
       <Helmet>
-        <title>Vote - NESA-Africa 2025 | SCEF</title>
-        <meta 
-          name="description" 
-          content={`Vote for your favorite education changemakers in the NESA-Africa 2025 awards. ${TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories. Gold stage: 100% public vote. Blue Garnet: 40% public + 60% jury.`}
+        <title>Vote - NESA-Africa 2026 | SCEF</title>
+        <meta
+          name="description"
+          content={`Vote for your favorite education changemakers in the NESA-Africa 2026 awards. ${TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories. Gold stage: 100% public vote. Blue Garnet: 40% public + 60% jury.`}
         />
       </Helmet>
       
@@ -82,7 +82,7 @@ const Vote = () => {
                 }}
               >
                 <VoteIcon className="w-4 h-4" />
-                <span>NESA-Africa 2025 Voting</span>
+                <span>NESA-Africa 2026 Voting</span>
               </div>
               
               <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">

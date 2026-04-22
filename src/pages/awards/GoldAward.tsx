@@ -54,7 +54,7 @@ export default function GoldAward() {
   return (
     <>
       <Helmet>
-        <title>Gold Certificate | NESA-Africa 2025</title>
+        <title>Gold Certificate | NESA-Africa 2026</title>
         <meta name="description" content={`Competitive Gold Certificate awards across ${competitiveCategories.length} categories and ${TOTAL_COMPETITIVE_SUBCATEGORIES} subcategories. Public voting only - no judges. Advancing to Blue Garnet consideration.`} />
       </Helmet>
 
@@ -69,7 +69,7 @@ export default function GoldAward() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full mb-6">
                 <Award className="w-5 h-5 text-white" />
-                <span className="text-white font-medium">NESA-Africa 2025 Awards</span>
+                <span className="text-white font-medium">NESA-Africa 2026 Awards</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Gold <span className="text-amber-200">Certificate</span>

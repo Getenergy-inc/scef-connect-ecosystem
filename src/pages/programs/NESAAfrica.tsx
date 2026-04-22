@@ -14,55 +14,65 @@ import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
 import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
-import { 
-  TOTAL_CATEGORIES, 
+import {
+  TOTAL_CATEGORIES,
   TOTAL_COMPETITIVE_SUBCATEGORIES,
   getCompetitiveCategories,
   getCategoriesByTier,
-  formatScope
+  formatScope,
 } from "@/config/nesaCategoriesConfig";
+import {
+  PRIMARY_EVENT_DATE,
+  PRIMARY_EVENT_NAME,
+  PRIMARY_EVENT_LOCATION,
+} from "@/config/nesaSeasonConfig";
 
-// Key Event Dates for Countdowns
+// ========================================
+// 2026 Season Event Dates — Single Source of Truth
+// ========================================
+// Live TV Shows (3)
 const tvShowEvents = [
   {
     name: "Platinum Recognition Show",
-    date: new Date("2026-02-28T18:00:00"),
+    date: new Date("2026-06-11T18:00:00"),
     type: "show" as const,
   },
   {
-    name: "Africa Icon Recognition Show",
-    date: new Date("2026-03-28T18:00:00"),
+    name: "Africa Education Icon Show",
+    date: new Date("2026-06-25T18:00:00"),
     type: "show" as const,
   },
   {
     name: "Gold Certificate Winners Show",
-    date: new Date("2026-05-17T18:00:00"),
+    date: new Date("2026-10-01T18:00:00"),
     type: "show" as const,
   },
 ];
 
+// Public Voting Windows (2)
 const votingEvents = [
   {
-    name: "Gold Public Voting Opens",
-    date: new Date("2026-04-10T00:00:00"),
+    name: "Gold Certificate Voting Opens",
+    date: new Date("2026-07-13T00:00:00"),
     type: "voting" as const,
   },
   {
     name: "Blue Garnet Voting Opens",
-    date: new Date("2026-05-18T00:00:00"),
+    date: new Date("2026-10-02T00:00:00"),
     type: "voting" as const,
   },
 ];
 
+// Gala & Legacy Events (2)
 const galaEvents = [
   {
     name: "Blue Garnet Awards Gala",
-    date: new Date("2026-06-27T18:00:00"),
+    date: PRIMARY_EVENT_DATE,
     type: "gala" as const,
   },
   {
     name: "Rebuild My School Africa Launch",
-    date: new Date("2026-06-28T09:00:00"),
+    date: new Date("2026-10-23T09:00:00"),
     type: "legacy" as const,
   },
 ];
@@ -99,70 +109,70 @@ const programmePillars = [
   },
 ];
 
-// Updated 2025 Programme Timeline
+// Updated 2026 Programme Timeline
 const programmeTimeline = [
-  { 
-    phase: "EduAid-Africa Webinars", 
-    date: "14 Oct 2025 – Jun 2026", 
+  {
+    phase: "EduAid-Africa Webinars",
+    date: "14 Oct 2025 – Oct 2026",
     desc: "Public education series on SDG 4, CSR, STEM, inclusion, and NESA standards",
     type: "awareness",
-    active: true 
+    active: true,
   },
-  { 
-    phase: "Platinum Recognition Show", 
-    date: "28 February 2026", 
+  {
+    phase: "Platinum Recognition Show",
+    date: "11 June 2026",
     desc: "3-hour TV Show — Non-competitive baseline recognition of service",
     type: "recognition",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Africa Education Icon Show", 
-    date: "28 March 2026", 
-    desc: "3-hour TV Show — Lifetime impact recognition (9 Icons, 2005–2025)",
+  {
+    phase: "Africa Education Icon Show",
+    date: "25 June 2026",
+    desc: "3-hour TV Show — Lifetime impact recognition (9 Icons, 2006–2026)",
     type: "recognition",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Icon Nominations Close", 
-    date: "30 April 2026", 
+  {
+    phase: "Icon Nominations Close",
+    date: "31 May 2026",
     desc: "Final deadline for Africa Education Icon nominations",
     type: "deadline",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Gold Public Voting", 
-    date: "10 Apr – 16 May 2026", 
+  {
+    phase: "Gold Certificate Voting Opens",
+    date: "13 Jul 2026",
     desc: `Mass participation voting across ${TOTAL_COMPETITIVE_SUBCATEGORIES} sub-categories`,
     type: "voting",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Gold Certificate Winners Show", 
-    date: "17 May 2026", 
+  {
+    phase: "Gold Certificate Winners Show",
+    date: "1 October 2026",
     desc: `3-hour TV Show — ${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold winners announced`,
     type: "recognition",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Blue Garnet Voting", 
-    date: "18 May – 17 Jun 2026", 
+  {
+    phase: "Blue Garnet Voting Opens",
+    date: "2 Oct – 18 Oct 2026",
     desc: "40% public vote + 60% independent jury review",
     type: "voting",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Blue Garnet Awards Gala", 
-    date: "27 June 2026", 
+  {
+    phase: "Blue Garnet Awards Gala",
+    date: "22 October 2026",
     desc: "Grand ceremony in Lagos + live broadcast — 9 Blue Garnet winners",
     type: "gala",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Rebuild My School Africa", 
-    date: "Jun 2026 – Jun 2027", 
+  {
+    phase: "Rebuild My School Africa Launch",
+    date: "23 Oct 2026 – Oct 2027",
     desc: "Legacy phase: 5 Special Needs facilities across Africa's regions",
     type: "legacy",
-    active: false 
+    active: false,
   },
 ];
 
@@ -171,8 +181,8 @@ const awardPhases = [
   {
     title: "Platinum Certificate",
     subtitle: "Baseline Recognition of Service",
-    period: "February – June 2026",
-    showDate: "28 February 2026",
+    period: "April – June 2026",
+    showDate: "11 June 2026",
     icon: Medal,
     features: [
       "Non-competitive entry layer",
@@ -186,12 +196,12 @@ const awardPhases = [
   {
     title: "Africa Education Icon",
     subtitle: "Lifetime Impact Recognition",
-    period: "March – April 2026",
-    showDate: "28 March 2026",
+    period: "May – June 2026",
+    showDate: "25 June 2026",
     icon: Crown,
     features: [
       "Honours 9 Icons only",
-      "Documented impact 2005–2025",
+      "Documented impact 2006–2026",
       "African regions + diaspora + Friends of Africa",
       "Non-competitive lifetime recognition",
       "Independent verification",
@@ -201,8 +211,8 @@ const awardPhases = [
   {
     title: "Gold Certificate",
     subtitle: "Competitive Classification Stage",
-    period: "10 April – 16 May 2026",
-    showDate: "17 May 2026",
+    period: "13 July – 20 Sep 2026",
+    showDate: "1 October 2026",
     icon: Trophy,
     features: [
       `${TOTAL_CATEGORIES} Award Categories`,
@@ -216,8 +226,8 @@ const awardPhases = [
   {
     title: "Blue Garnet Award",
     subtitle: "Highest Competitive Honour",
-    period: "18 May – 17 June 2026",
-    showDate: "27 June 2026 (Gala)",
+    period: "2 Oct – 18 Oct 2026",
+    showDate: "22 October 2026 (Gala)",
     icon: Gem,
     features: [
       `From ${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold Certificate winners`,
@@ -257,7 +267,7 @@ const nominationPaths = [
   {
     title: "Lifetime Achievement",
     badge: "Africa Icon Blue Garnet Award",
-    period: "2005–2025",
+    period: "2006–2026",
     desc: "Reserved for lifetime achievement. Nominees must have 10+ years institutional achievements.",
     features: ["Institutional Achievements", "Long-term Impact", "Legacy Recognition"],
     link: "https://nesa.africa/nomination/sub-categories/africa-lifetime-education-icon",
@@ -287,12 +297,12 @@ const NESAAfrica = () => {
   return (
     <>
       <Helmet>
-        <title>NESA-Africa 2025 | Project & Programmes Layout - SCEF</title>
-        <meta 
-          name="description" 
-          content="NESA-Africa 2025: A standards-based continental education recognition programme. EduAid Webinars (Oct 2025), Awards Cycle (Feb–Jun 2026), Legacy Phase (Jun 2026–2027)." 
+        <title>NESA-Africa 2026 | Project & Programmes Layout - SCEF</title>
+        <meta
+          name="description"
+          content="NESA-Africa 2026: A standards-based continental education recognition programme. Blue Garnet Awards Gala — 22 October 2026. Live TV shows, public voting windows, and the legacy Rebuild My School Africa launch."
         />
-        <meta property="og:title" content="NESA-Africa 2025 | Project & Programmes Layout" />
+        <meta property="og:title" content="NESA-Africa 2026 | Project & Programmes Layout" />
         <meta property="og:description" content="Standards-led education accountability cycle: Education → Recognition → Public Participation → Legacy Impact" />
         <meta property="og:image" content="https://nesa.africa/images/headhero.png" />
         <link rel="canonical" href="https://santoscreations.org/programs/nesa-africa" />
@@ -387,7 +397,7 @@ const NESAAfrica = () => {
                   }}
                 >
                   <Award className="w-5 h-5 animate-pulse" />
-                  <span>NESA-Africa 2025 — Nominations Open Now</span>
+                  <span>NESA-Africa 2026 — Nominations Open Now</span>
                 </div>
                 
                 {/* Main Heading with enhanced styling */}
@@ -416,8 +426,8 @@ const NESAAfrica = () => {
                 </p>
                 
                 <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-3xl mx-auto" style={{ color: nesaColors.textMuted }}>
-                  At the New Education Standard Award Africa (NESA–Africa) 2025, we celebrate the real 
-                  changemakers shaping the future of education across Africa. A pan-African celebration 
+                  At the New Education Standard Award Africa (NESA–Africa) 2026, we celebrate the real
+                  changemakers shaping the future of education across Africa. A pan-African celebration
                   of educational transformation, social impact, and legacy.
                 </p>
                 
@@ -512,7 +522,7 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-center gap-8 flex-wrap text-center">
                 <p className="font-bold" style={{ color: nesaColors.gold }}>
-                  Blue Garnet Awards Gala • 27 June 2026 • Lagos, Nigeria
+                  Blue Garnet Awards Gala • 22 October 2026 • Lagos, Nigeria
                 </p>
                 <span style={{ color: nesaColors.textMuted }}>|</span>
                 <p style={{ color: nesaColors.textMuted }}>
@@ -527,15 +537,27 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-10">
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
-                  Upcoming <span style={{ color: nesaColors.gold }}>TV Shows, Voting & Events</span>
+                  Countdown to <span style={{ color: nesaColors.gold }}>NESA-Africa 2026</span>
                 </h2>
                 <p style={{ color: nesaColors.textMuted }} className="max-w-xl mx-auto">
-                  Live countdown to NESA-Africa's major milestones, public voting windows, and broadcast events
+                  One season. Three live TV shows, two public voting windows, and the Blue Garnet Awards Gala in Lagos.
                 </p>
               </div>
-              
-              {/* TV Shows Row */}
-              <div className="mb-8">
+
+              {/* PRIMARY COUNTDOWN — Blue Garnet Awards Gala (22 Oct 2026) */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <EventCountdown
+                  targetDate={PRIMARY_EVENT_DATE}
+                  eventName={PRIMARY_EVENT_NAME}
+                  eventType="gala"
+                  featured
+                  location={PRIMARY_EVENT_LOCATION}
+                />
+              </div>
+
+              {/* GROUPED COUNTDOWNS — 3 + 2 + 2 structure */}
+              {/* Live TV Shows */}
+              <div className="mb-10">
                 <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
                   📺 Live TV Shows
                 </h3>
@@ -550,9 +572,9 @@ const NESAAfrica = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* Public Voting Windows Row */}
-              <div className="mb-8">
+
+              {/* Public Voting Windows */}
+              <div className="mb-10">
                 <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
                   🗳️ Public Voting Windows
                 </h3>
@@ -567,8 +589,8 @@ const NESAAfrica = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* Gala & Legacy Events Row */}
+
+              {/* Gala & Legacy Events */}
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
                   🏆 Gala & Legacy Events
@@ -904,7 +926,7 @@ const NESAAfrica = () => {
                     Rebuild My School <span style={{ color: nesaColors.gold }}>Africa</span>
                   </h2>
                   <p style={{ color: nesaColors.gold }} className="text-lg font-medium mb-4">
-                    📅 June 2026 – June 2027 • Implemented via EduAid-Africa
+                    📅 Launches 23 October 2026 – Oct 2027 • Implemented via EduAid-Africa
                   </p>
                   <p style={{ color: nesaColors.textMuted }} className="max-w-2xl mx-auto">
                     Translate recognition into direct, measurable education impact by rebuilding or 
@@ -966,7 +988,7 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4 text-center">
               <blockquote className="max-w-3xl mx-auto">
                 <p className="font-display text-2xl md:text-3xl font-bold text-white mb-6">
-                  "NESA-Africa 2025 is not an event. It is a{" "}
+                  "NESA-Africa 2026 is not an event. It is a{" "}
                   <span style={{ color: nesaColors.gold }}>standards-led education accountability cycle</span>{" "}
                   that connects:"
                 </p>

@@ -36,8 +36,8 @@ export default function NigeriaCategories() {
   return (
     <>
       <Helmet>
-        <title>Nigeria Award Categories | NESA-Africa 2025</title>
-        <meta name="description" content="Explore NESA-Africa 2025 award categories specific to Nigerian organizations, states, and institutions." />
+        <title>Nigeria Award Categories | NESA-Africa 2026</title>
+        <meta name="description" content="Explore NESA-Africa 2026 award categories specific to Nigerian organizations, states, and institutions." />
       </Helmet>
 
       <Header />

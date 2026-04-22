@@ -464,12 +464,12 @@ export const NESA_CATEGORIES: NESACategory[] = [
   },
 
   // ----------------------------------------
-  // CATEGORY 17: Africa Education Icon Award (2005–2025)
+  // CATEGORY 17: Africa Education Icon Award (2006–2026)
   // ----------------------------------------
   {
     id: 'africa-education-icon',
     categoryNumber: 17,
-    name: 'Africa Education Icon Award (2005–2025)',
+    name: 'Africa Education Icon Award (2006–2026)',
     slug: 'africa-education-icon-award',
     scope: 'ICON',
     description: 'Lifetime achievement award for individuals with transformational impact on African education.',
@@ -634,7 +634,7 @@ export const iconSubcategories: IconSubcategory[] = [
   {
     id: 'philanthropy',
     name: 'Africa Education Philanthropy Icon of the Decade',
-    description: 'Sustained education philanthropy (2005–2025 impact window)',
+    description: 'Sustained education philanthropy (2006–2026 impact window)',
     iconsPerSubcategory: 3,
   },
   {
