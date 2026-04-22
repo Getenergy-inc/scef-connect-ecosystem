@@ -926,7 +926,7 @@ const NESAAfrica = () => {
                     Rebuild My School <span style={{ color: nesaColors.gold }}>Africa</span>
                   </h2>
                   <p style={{ color: nesaColors.gold }} className="text-lg font-medium mb-4">
-                    📅 June 2026 – June 2027 • Implemented via EduAid-Africa
+                    📅 Launches 23 October 2026 – Oct 2027 • Implemented via EduAid-Africa
                   </p>
                   <p style={{ color: nesaColors.textMuted }} className="max-w-2xl mx-auto">
                     Translate recognition into direct, measurable education impact by rebuilding or 
