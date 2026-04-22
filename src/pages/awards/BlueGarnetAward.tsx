@@ -35,7 +35,7 @@ export default function BlueGarnetAward() {
   return (
     <>
       <Helmet>
-        <title>Blue Garnet Awards | NESA-Africa 2025</title>
+        <title>Blue Garnet Awards | NESA-Africa 2026</title>
         <meta name="description" content="The pinnacle of NESA recognition. Blue Garnet Gala in Lagos on June 27, 2026. 60% jury + 40% public voting. Live broadcast worldwide." />
       </Helmet>
 
@@ -50,7 +50,7 @@ export default function BlueGarnetAward() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full mb-6">
                 <Award className="w-5 h-5 text-scef-gold" />
-                <span className="text-white/90 font-medium">NESA-Africa 2025 Awards</span>
+                <span className="text-white/90 font-medium">NESA-Africa 2026 Awards</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6">
                 Blue <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Garnet</span>

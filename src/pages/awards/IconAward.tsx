@@ -31,7 +31,7 @@ export default function IconAward() {
   return (
     <>
       <Helmet>
-        <title>Africa Education Icon | NESA-Africa 2025</title>
+        <title>Africa Education Icon | NESA-Africa 2026</title>
         <meta name="description" content="9 Icons honoured for a decade of exceptional contribution to education across Africa. Three subcategories recognizing philanthropy, literary advocacy, and technical education." />
       </Helmet>
 
@@ -46,7 +46,7 @@ export default function IconAward() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full mb-6">
                 <Star className="w-5 h-5 text-scef-gold" />
-                <span className="text-white/90 font-medium">NESA-Africa 2025 Awards</span>
+                <span className="text-white/90 font-medium">NESA-Africa 2026 Awards</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Africa Education <span className="text-scef-gold">Icon</span>
