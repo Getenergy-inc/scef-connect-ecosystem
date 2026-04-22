@@ -85,14 +85,42 @@ const StaffApprovals = () => {
 
   const updateStatus = async (id: string, status: "active" | "suspended" | "archived") => {
     setBusyId(id);
+    const target = rows.find((r) => r.id === id);
     const { error } = await supabase.from("staff_profiles").update({ status }).eq("id", id);
-    setBusyId(null);
     if (error) {
+      setBusyId(null);
       toast.error("Update failed");
       return;
     }
+
+    // Sync the user_roles table so RoleSwitcher / dashboards pick up the staff role.
+    if (target?.user_id) {
+      if (status === "active") {
+        await supabase
+          .from("user_roles")
+          .insert({ user_id: target.user_id, role: "staff" })
+          // ignore unique-violation if already present
+          .then(({ error: insErr }) => {
+            if (insErr && !String(insErr.message).toLowerCase().includes("duplicate")) {
+              console.warn("Role grant warning:", insErr.message);
+            }
+          });
+      } else if (status === "suspended" || status === "archived") {
+        await supabase
+          .from("user_roles")
+          .delete()
+          .eq("user_id", target.user_id)
+          .eq("role", "staff");
+      }
+    }
+
+    setBusyId(null);
     toast.success(
-      status === "active" ? "Staff access activated" : status === "suspended" ? "Access suspended" : "Profile archived"
+      status === "active"
+        ? "Staff access activated & role granted"
+        : status === "suspended"
+        ? "Access suspended & role revoked"
+        : "Profile archived"
     );
     fetchRows();
   };
