@@ -58,9 +58,25 @@ const GetInvolved = () => {
         "Make direct impact",
       ],
       cta: t("getInvolved.options.volunteer.title"),
-      href: "/volunteer",
+      href: "/get-involved/volunteer",
       email: emailDirectory.volunteer,
       color: "from-forest to-forest-light",
+    },
+    {
+      id: "chapter",
+      title: "Join a Chapter",
+      description: "Connect with SCEF members in your country, state, or diaspora community.",
+      icon: Users,
+      benefits: [
+        "Local & diaspora chapters",
+        "On-the-ground programs",
+        "Country leadership pathway",
+        "Region-specific events",
+        "Community-led initiatives",
+      ],
+      cta: "Find or Start a Chapter",
+      href: "/get-involved/join-chapter",
+      color: "from-scef-blue to-scef-blue-dark",
     },
     {
       id: "careers",
@@ -111,7 +127,7 @@ const GetInvolved = () => {
           {/* Options */}
           <section className="py-16">
             <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
                 {involvementOptions.map((option) => (
                   <Card key={option.id} className="relative overflow-hidden group hover:shadow-xl transition-shadow">
                     <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${option.color}`} />
