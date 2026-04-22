@@ -36,7 +36,7 @@ export default function BlueGarnetAward() {
     <>
       <Helmet>
         <title>Blue Garnet Awards | NESA-Africa 2026</title>
-        <meta name="description" content="The pinnacle of NESA recognition. Blue Garnet Gala in Lagos on June 27, 2026. 60% jury + 40% public voting. Live broadcast worldwide." />
+        <meta name="description" content="The pinnacle of NESA recognition. Blue Garnet Gala in Lagos on October 22, 2026. 60% jury + 40% public voting. Live broadcast worldwide." />
       </Helmet>
 
       <Header />
