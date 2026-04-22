@@ -181,8 +181,8 @@ const awardPhases = [
   {
     title: "Platinum Certificate",
     subtitle: "Baseline Recognition of Service",
-    period: "February – June 2026",
-    showDate: "28 February 2026",
+    period: "April – June 2026",
+    showDate: "11 June 2026",
     icon: Medal,
     features: [
       "Non-competitive entry layer",
@@ -196,12 +196,12 @@ const awardPhases = [
   {
     title: "Africa Education Icon",
     subtitle: "Lifetime Impact Recognition",
-    period: "March – April 2026",
-    showDate: "28 March 2026",
+    period: "May – June 2026",
+    showDate: "25 June 2026",
     icon: Crown,
     features: [
       "Honours 9 Icons only",
-      "Documented impact 2005–2025",
+      "Documented impact 2006–2026",
       "African regions + diaspora + Friends of Africa",
       "Non-competitive lifetime recognition",
       "Independent verification",
@@ -211,8 +211,8 @@ const awardPhases = [
   {
     title: "Gold Certificate",
     subtitle: "Competitive Classification Stage",
-    period: "10 April – 16 May 2026",
-    showDate: "17 May 2026",
+    period: "13 July – 20 Sep 2026",
+    showDate: "1 October 2026",
     icon: Trophy,
     features: [
       `${TOTAL_CATEGORIES} Award Categories`,
@@ -226,8 +226,8 @@ const awardPhases = [
   {
     title: "Blue Garnet Award",
     subtitle: "Highest Competitive Honour",
-    period: "18 May – 17 June 2026",
-    showDate: "27 June 2026 (Gala)",
+    period: "2 Oct – 18 Oct 2026",
+    showDate: "22 October 2026 (Gala)",
     icon: Gem,
     features: [
       `From ${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold Certificate winners`,
@@ -267,7 +267,7 @@ const nominationPaths = [
   {
     title: "Lifetime Achievement",
     badge: "Africa Icon Blue Garnet Award",
-    period: "2005–2025",
+    period: "2006–2026",
     desc: "Reserved for lifetime achievement. Nominees must have 10+ years institutional achievements.",
     features: ["Institutional Achievements", "Long-term Impact", "Legacy Recognition"],
     link: "https://nesa.africa/nomination/sub-categories/africa-lifetime-education-icon",
@@ -297,12 +297,12 @@ const NESAAfrica = () => {
   return (
     <>
       <Helmet>
-        <title>NESA-Africa 2025 | Project & Programmes Layout - SCEF</title>
-        <meta 
-          name="description" 
-          content="NESA-Africa 2025: A standards-based continental education recognition programme. EduAid Webinars (Oct 2025), Awards Cycle (Feb–Jun 2026), Legacy Phase (Jun 2026–2027)." 
+        <title>NESA-Africa 2026 | Project & Programmes Layout - SCEF</title>
+        <meta
+          name="description"
+          content="NESA-Africa 2026: A standards-based continental education recognition programme. Blue Garnet Awards Gala — 22 October 2026. Live TV shows, public voting windows, and the legacy Rebuild My School Africa launch."
         />
-        <meta property="og:title" content="NESA-Africa 2025 | Project & Programmes Layout" />
+        <meta property="og:title" content="NESA-Africa 2026 | Project & Programmes Layout" />
         <meta property="og:description" content="Standards-led education accountability cycle: Education → Recognition → Public Participation → Legacy Impact" />
         <meta property="og:image" content="https://nesa.africa/images/headhero.png" />
         <link rel="canonical" href="https://santoscreations.org/programs/nesa-africa" />
@@ -397,7 +397,7 @@ const NESAAfrica = () => {
                   }}
                 >
                   <Award className="w-5 h-5 animate-pulse" />
-                  <span>NESA-Africa 2025 — Nominations Open Now</span>
+                  <span>NESA-Africa 2026 — Nominations Open Now</span>
                 </div>
                 
                 {/* Main Heading with enhanced styling */}
@@ -426,8 +426,8 @@ const NESAAfrica = () => {
                 </p>
                 
                 <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-3xl mx-auto" style={{ color: nesaColors.textMuted }}>
-                  At the New Education Standard Award Africa (NESA–Africa) 2025, we celebrate the real 
-                  changemakers shaping the future of education across Africa. A pan-African celebration 
+                  At the New Education Standard Award Africa (NESA–Africa) 2026, we celebrate the real
+                  changemakers shaping the future of education across Africa. A pan-African celebration
                   of educational transformation, social impact, and legacy.
                 </p>
                 
@@ -522,7 +522,7 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-center gap-8 flex-wrap text-center">
                 <p className="font-bold" style={{ color: nesaColors.gold }}>
-                  Blue Garnet Awards Gala • 27 June 2026 • Lagos, Nigeria
+                  Blue Garnet Awards Gala • 22 October 2026 • Lagos, Nigeria
                 </p>
                 <span style={{ color: nesaColors.textMuted }}>|</span>
                 <p style={{ color: nesaColors.textMuted }}>
