@@ -537,15 +537,27 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4">
               <div className="text-center mb-10">
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
-                  Upcoming <span style={{ color: nesaColors.gold }}>TV Shows, Voting & Events</span>
+                  Countdown to <span style={{ color: nesaColors.gold }}>NESA-Africa 2026</span>
                 </h2>
                 <p style={{ color: nesaColors.textMuted }} className="max-w-xl mx-auto">
-                  Live countdown to NESA-Africa's major milestones, public voting windows, and broadcast events
+                  One season. Three live TV shows, two public voting windows, and the Blue Garnet Awards Gala in Lagos.
                 </p>
               </div>
-              
-              {/* TV Shows Row */}
-              <div className="mb-8">
+
+              {/* PRIMARY COUNTDOWN — Blue Garnet Awards Gala (22 Oct 2026) */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <EventCountdown
+                  targetDate={PRIMARY_EVENT_DATE}
+                  eventName={PRIMARY_EVENT_NAME}
+                  eventType="gala"
+                  featured
+                  location={PRIMARY_EVENT_LOCATION}
+                />
+              </div>
+
+              {/* GROUPED COUNTDOWNS — 3 + 2 + 2 structure */}
+              {/* Live TV Shows */}
+              <div className="mb-10">
                 <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
                   📺 Live TV Shows
                 </h3>
@@ -560,9 +572,9 @@ const NESAAfrica = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* Public Voting Windows Row */}
-              <div className="mb-8">
+
+              {/* Public Voting Windows */}
+              <div className="mb-10">
                 <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
                   🗳️ Public Voting Windows
                 </h3>
@@ -577,8 +589,8 @@ const NESAAfrica = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* Gala & Legacy Events Row */}
+
+              {/* Gala & Legacy Events */}
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4 text-center opacity-80">
                   🏆 Gala & Legacy Events
