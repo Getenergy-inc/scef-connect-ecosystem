@@ -988,7 +988,7 @@ const NESAAfrica = () => {
             <div className="container mx-auto px-4 text-center">
               <blockquote className="max-w-3xl mx-auto">
                 <p className="font-display text-2xl md:text-3xl font-bold text-white mb-6">
-                  "NESA-Africa 2025 is not an event. It is a{" "}
+                  "NESA-Africa 2026 is not an event. It is a{" "}
                   <span style={{ color: nesaColors.gold }}>standards-led education accountability cycle</span>{" "}
                   that connects:"
                 </p>
