@@ -707,7 +707,7 @@ const NESAAfrica = () => {
                   Programme <span style={{ color: nesaColors.gold }}>Overview</span>
                 </h2>
                 <p style={{ color: nesaColors.textMuted }} className="max-w-3xl mx-auto text-lg">
-                  NESA-Africa 2025 is a standards-based continental education recognition and accountability 
+                  NESA-Africa 2026 is a standards-based continental education recognition and accountability 
                   programme designed to document verified education service, engage the public through 
                   structured participation, and leave a post-award legacy through inclusive education infrastructure.
                 </p>

@@ -9,7 +9,7 @@ const boardItems = [
   {
     id: 1,
     type: "video",
-    title: "NESA-Africa 2025 Nominations Now Open",
+    title: "NESA-Africa 2026 Nominations Now Open",
     description: "Submit your nominations for the most prestigious education awards in Africa. Regional rotation hosting begins 2027.",
     cta: { text: "Submit Nomination", href: "/programs/nesa-africa" },
     thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",

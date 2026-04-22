@@ -36,7 +36,7 @@ const eduaidColors = {
   textMuted: "#B0B0B0",
 };
 
-// Webinar themes aligned with NESA-Africa 2025 programme
+// Webinar themes aligned with NESA-Africa 2026 programme
 const webinarThemes = [
   {
     id: "sdg4",
@@ -170,7 +170,7 @@ const EduAidWebinars = () => {
         <title>EduAid Webinar Series | SCEF</title>
         <meta 
           name="description" 
-          content="Join the EduAid-Africa Webinar Series — the official public education framework for NESA-Africa 2025. Sessions on SDG 4, CSR, STEM, inclusion, and more." 
+          content="Join the EduAid-Africa Webinar Series — the official public education framework for NESA-Africa 2026. Sessions on SDG 4, CSR, STEM, inclusion, and more." 
         />
       </Helmet>
 
@@ -203,7 +203,7 @@ const EduAidWebinars = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-white/80 mb-4 max-w-2xl mx-auto">
-              The official public education and engagement framework for NESA-Africa 2025
+              The official public education and engagement framework for NESA-Africa 2026
             </p>
 
             <p style={{ color: eduaidColors.gold }} className="text-lg font-medium mb-8">
@@ -451,10 +451,10 @@ const EduAidWebinars = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Part of the NESA-Africa 2025 Programme
+              Part of the NESA-Africa 2026 Programme
             </h2>
             <p className="text-muted-foreground mb-8">
-              The webinar series is Phase 1 of the NESA-Africa 2025 awards cycle, preparing stakeholders 
+              The webinar series is Phase 1 of the NESA-Africa 2026 awards cycle, preparing stakeholders 
               for nominations, voting, and meaningful participation.
             </p>
 

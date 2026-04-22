@@ -658,11 +658,11 @@ export const TOTAL_ICONS = iconSubcategories.reduce((sum, sub) => sum + sub.icon
 // SEASON CONFIGURATION
 // ========================================
 export const NESA_SEASON = {
-  seasonId: '2025',
+  seasonId: '2026',
   hostYear: 2026,
-  seasonName: 'NESA-Africa 2025',
+  seasonName: 'NESA-Africa 2026',
   impactWindow: {
-    icon: { start: 2005, end: 2025 },
-    general: { start: 2024, end: 2025 },
+    icon: { start: 2006, end: 2026 },
+    general: { start: 2025, end: 2026 },
   },
 };

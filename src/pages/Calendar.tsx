@@ -84,10 +84,10 @@ const Calendar = () => {
   return (
     <>
       <Helmet>
-        <title>NESA-Africa 2025 Calendar | SCEF</title>
+        <title>NESA-Africa 2026 Calendar | SCEF</title>
         <meta 
           name="description" 
-          content="View the complete NESA-Africa 2025-2026 event calendar. Key dates for nominations, voting, recognition shows, and the Blue Garnet Awards Gala." 
+          content="View the complete NESA-Africa 2026 event calendar. Key dates for nominations, voting, recognition shows, and the Blue Garnet Awards Gala." 
         />
       </Helmet>
       
@@ -108,7 +108,7 @@ const Calendar = () => {
                 }}
               >
                 <CalendarIcon className="w-4 h-4" />
-                <span>NESA-Africa 2025–2026</span>
+                <span>NESA-Africa 2026</span>
               </div>
               
               <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">

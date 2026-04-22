@@ -98,7 +98,7 @@ export default function CategoryDetail() {
   return (
     <>
       <Helmet>
-        <title>{category.name} | NESA-Africa 2025</title>
+        <title>{category.name} | NESA-Africa 2026</title>
         <meta name="description" content={category.description} />
       </Helmet>
 
