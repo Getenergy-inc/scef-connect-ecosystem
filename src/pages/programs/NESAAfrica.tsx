@@ -14,55 +14,65 @@ import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
 import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
-import { 
-  TOTAL_CATEGORIES, 
+import {
+  TOTAL_CATEGORIES,
   TOTAL_COMPETITIVE_SUBCATEGORIES,
   getCompetitiveCategories,
   getCategoriesByTier,
-  formatScope
+  formatScope,
 } from "@/config/nesaCategoriesConfig";
+import {
+  PRIMARY_EVENT_DATE,
+  PRIMARY_EVENT_NAME,
+  PRIMARY_EVENT_LOCATION,
+} from "@/config/nesaSeasonConfig";
 
-// Key Event Dates for Countdowns
+// ========================================
+// 2026 Season Event Dates — Single Source of Truth
+// ========================================
+// Live TV Shows (3)
 const tvShowEvents = [
   {
     name: "Platinum Recognition Show",
-    date: new Date("2026-02-28T18:00:00"),
+    date: new Date("2026-06-11T18:00:00"),
     type: "show" as const,
   },
   {
-    name: "Africa Icon Recognition Show",
-    date: new Date("2026-03-28T18:00:00"),
+    name: "Africa Education Icon Show",
+    date: new Date("2026-06-25T18:00:00"),
     type: "show" as const,
   },
   {
     name: "Gold Certificate Winners Show",
-    date: new Date("2026-05-17T18:00:00"),
+    date: new Date("2026-10-01T18:00:00"),
     type: "show" as const,
   },
 ];
 
+// Public Voting Windows (2)
 const votingEvents = [
   {
-    name: "Gold Public Voting Opens",
-    date: new Date("2026-04-10T00:00:00"),
+    name: "Gold Certificate Voting Opens",
+    date: new Date("2026-07-13T00:00:00"),
     type: "voting" as const,
   },
   {
     name: "Blue Garnet Voting Opens",
-    date: new Date("2026-05-18T00:00:00"),
+    date: new Date("2026-10-02T00:00:00"),
     type: "voting" as const,
   },
 ];
 
+// Gala & Legacy Events (2)
 const galaEvents = [
   {
     name: "Blue Garnet Awards Gala",
-    date: new Date("2026-06-27T18:00:00"),
+    date: PRIMARY_EVENT_DATE,
     type: "gala" as const,
   },
   {
     name: "Rebuild My School Africa Launch",
-    date: new Date("2026-06-28T09:00:00"),
+    date: new Date("2026-10-23T09:00:00"),
     type: "legacy" as const,
   },
 ];
