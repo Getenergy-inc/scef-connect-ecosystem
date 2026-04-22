@@ -67,8 +67,8 @@ const designationOptions = [
     description: "Direct education access support (scholarships/learning support).",
   },
   {
-    id: "nesa-2025",
-    label: "NESA-Africa 2025 — Standards & Awards Delivery",
+    id: "nesa-2026",
+    label: "NESA-Africa 2026 — Standards & Awards Delivery",
     description: "Supports verification, public education, and programme delivery (no influence on outcomes).",
   },
   {
