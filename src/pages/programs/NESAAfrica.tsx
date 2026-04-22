@@ -109,70 +109,70 @@ const programmePillars = [
   },
 ];
 
-// Updated 2025 Programme Timeline
+// Updated 2026 Programme Timeline
 const programmeTimeline = [
-  { 
-    phase: "EduAid-Africa Webinars", 
-    date: "14 Oct 2025 – Jun 2026", 
+  {
+    phase: "EduAid-Africa Webinars",
+    date: "14 Oct 2025 – Oct 2026",
     desc: "Public education series on SDG 4, CSR, STEM, inclusion, and NESA standards",
     type: "awareness",
-    active: true 
+    active: true,
   },
-  { 
-    phase: "Platinum Recognition Show", 
-    date: "28 February 2026", 
+  {
+    phase: "Platinum Recognition Show",
+    date: "11 June 2026",
     desc: "3-hour TV Show — Non-competitive baseline recognition of service",
     type: "recognition",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Africa Education Icon Show", 
-    date: "28 March 2026", 
-    desc: "3-hour TV Show — Lifetime impact recognition (9 Icons, 2005–2025)",
+  {
+    phase: "Africa Education Icon Show",
+    date: "25 June 2026",
+    desc: "3-hour TV Show — Lifetime impact recognition (9 Icons, 2006–2026)",
     type: "recognition",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Icon Nominations Close", 
-    date: "30 April 2026", 
+  {
+    phase: "Icon Nominations Close",
+    date: "31 May 2026",
     desc: "Final deadline for Africa Education Icon nominations",
     type: "deadline",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Gold Public Voting", 
-    date: "10 Apr – 16 May 2026", 
+  {
+    phase: "Gold Certificate Voting Opens",
+    date: "13 Jul 2026",
     desc: `Mass participation voting across ${TOTAL_COMPETITIVE_SUBCATEGORIES} sub-categories`,
     type: "voting",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Gold Certificate Winners Show", 
-    date: "17 May 2026", 
+  {
+    phase: "Gold Certificate Winners Show",
+    date: "1 October 2026",
     desc: `3-hour TV Show — ${TOTAL_COMPETITIVE_SUBCATEGORIES} Gold winners announced`,
     type: "recognition",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Blue Garnet Voting", 
-    date: "18 May – 17 Jun 2026", 
+  {
+    phase: "Blue Garnet Voting Opens",
+    date: "2 Oct – 18 Oct 2026",
     desc: "40% public vote + 60% independent jury review",
     type: "voting",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Blue Garnet Awards Gala", 
-    date: "27 June 2026", 
+  {
+    phase: "Blue Garnet Awards Gala",
+    date: "22 October 2026",
     desc: "Grand ceremony in Lagos + live broadcast — 9 Blue Garnet winners",
     type: "gala",
-    active: false 
+    active: false,
   },
-  { 
-    phase: "Rebuild My School Africa", 
-    date: "Jun 2026 – Jun 2027", 
+  {
+    phase: "Rebuild My School Africa Launch",
+    date: "23 Oct 2026 – Oct 2027",
     desc: "Legacy phase: 5 Special Needs facilities across Africa's regions",
     type: "legacy",
-    active: false 
+    active: false,
   },
 ];
 
