@@ -62,57 +62,80 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Hero (includes pillar strip — single source of truth for values) */}
+          {/* 1. Institutional hero (kept) */}
           <LandingHero />
 
-          {/* 2. Who we are */}
+          {/* 2. RMSA hero — flagship interactive layer */}
+          <RmsaHero />
+
+          {/* 3. Special Needs Schools Initiative */}
           <Reveal>
-            <WhoWeAreLean />
+            <SpecialNeedsSection />
           </Reveal>
 
-          {/* 3. CSR & Education Fund Management — institutional positioning */}
+          {/* 4. How RMSA works */}
           <Reveal>
-            <CSRFundManagement />
+            <HowRmsaWorks />
           </Reveal>
 
-          {/* 4. Programs */}
-          <Reveal>
-            <ProgramsThatTransform />
-          </Reveal>
-
-          {/* 4. Impact snapshot — labels only */}
+          {/* 5. Impact snapshot — incl. Schools Rebuilt */}
           <Reveal>
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 5. How SCEF works */}
+          {/* 6. Wallet + Voting (AGC) */}
+          <Reveal>
+            <WalletVotingSection />
+          </Reveal>
+
+          {/* 7. Featured school campaigns */}
+          <Reveal>
+            <FeaturedCampaigns />
+          </Reveal>
+
+          {/* 8. Who we are — institutional context */}
+          <Reveal>
+            <WhoWeAreLean />
+          </Reveal>
+
+          {/* 9. CSR & Education Fund Management */}
+          <Reveal>
+            <CSRFundManagement />
+          </Reveal>
+
+          {/* 10. Programs */}
+          <Reveal>
+            <ProgramsThatTransform />
+          </Reveal>
+
+          {/* 11. How SCEF works */}
           <Reveal>
             <HowSCEFWorks />
           </Reveal>
 
-          {/* 6. Focus areas */}
+          {/* 12. Focus areas */}
           <Reveal>
             <ImpactAreasBand />
           </Reveal>
 
-          {/* 7. Get involved — primary conversion */}
+          {/* 13. Get involved */}
           <Reveal>
             <ChooseYourPath />
           </Reveal>
 
-          {/* 8. Trusted & endorsed by */}
+          {/* 14. Trusted & endorsed by */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 9. Supporting partners (lean strip) */}
+          {/* 15. Supporting partners */}
           <Reveal>
             <CRSPartnersStrip />
           </Reveal>
 
-          {/* 10. Final CTA */}
+          {/* 16. RMSA-led final CTA */}
           <Reveal>
-            <FinalCTABand />
+            <RmsaFinalCTA />
           </Reveal>
         </main>
 
