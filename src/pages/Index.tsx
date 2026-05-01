@@ -14,7 +14,7 @@ import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
-import { FinalCTABand } from "@/components/sections/FinalCTABand";
+
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
 import { CSRFundManagement } from "@/components/sections/CSRFundManagement";
