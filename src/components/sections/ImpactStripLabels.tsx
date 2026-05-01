@@ -1,12 +1,13 @@
-import { Globe2, GraduationCap, Handshake, Trophy, HeartHandshake } from "lucide-react";
+import { Globe2, GraduationCap, Handshake, Trophy, HeartHandshake, School } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const items = [
-  { icon: Globe2, label: "Regions Reached", desc: "Across African regions and the diaspora" },
-  { icon: GraduationCap, label: "Learners Impacted", desc: "Through programs, chapters, and funded initiatives" },
-  { icon: Handshake, label: "Partners & Sponsors", desc: "Organizations supporting education through CSR and collaboration" },
-  { icon: Trophy, label: "Recognized Leaders", desc: "Honoured through NESA-Africa recognition" },
-  { icon: HeartHandshake, label: "Volunteers", desc: "Members driving advocacy on the ground" },
+  { icon: Globe2, label: "Regions & Chapters Active", desc: "Across African regions and the diaspora" },
+  { icon: GraduationCap, label: "Students & Schools Supported", desc: "Through programs, chapters, and funded initiatives" },
+  { icon: Handshake, label: "CSR & Funding Partners", desc: "Organizations supporting education through CSR and collaboration" },
+  { icon: Trophy, label: "Education Change Makers", desc: "Honoured through NESA-Africa recognition" },
+  { icon: HeartHandshake, label: "Volunteers & Ambassadors", desc: "Members driving advocacy on the ground" },
+  { icon: School, label: "Schools Rebuilt", desc: "Renewed and equipped through Rebuild My School Africa" },
 ];
 
 /**
@@ -26,7 +27,7 @@ export const ImpactStripLabels = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 md:gap-5">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 md:gap-5">
           {items.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}
