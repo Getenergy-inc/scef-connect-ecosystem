@@ -2,13 +2,19 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
+import { RmsaHero } from "@/components/sections/RmsaHero";
+import { SpecialNeedsSection } from "@/components/sections/SpecialNeedsSection";
+import { HowRmsaWorks } from "@/components/sections/HowRmsaWorks";
+import { WalletVotingSection } from "@/components/sections/WalletVotingSection";
+import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
+import { RmsaFinalCTA } from "@/components/sections/RmsaFinalCTA";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
 import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
 import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
 import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
-import { FinalCTABand } from "@/components/sections/FinalCTABand";
+
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
 import { CSRFundManagement } from "@/components/sections/CSRFundManagement";
@@ -56,57 +62,80 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Hero (includes pillar strip — single source of truth for values) */}
+          {/* 1. Institutional hero (kept) */}
           <LandingHero />
 
-          {/* 2. Who we are */}
+          {/* 2. RMSA hero — flagship interactive layer */}
+          <RmsaHero />
+
+          {/* 3. Special Needs Schools Initiative */}
           <Reveal>
-            <WhoWeAreLean />
+            <SpecialNeedsSection />
           </Reveal>
 
-          {/* 3. CSR & Education Fund Management — institutional positioning */}
+          {/* 4. How RMSA works */}
           <Reveal>
-            <CSRFundManagement />
+            <HowRmsaWorks />
           </Reveal>
 
-          {/* 4. Programs */}
-          <Reveal>
-            <ProgramsThatTransform />
-          </Reveal>
-
-          {/* 4. Impact snapshot — labels only */}
+          {/* 5. Impact snapshot — incl. Schools Rebuilt */}
           <Reveal>
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 5. How SCEF works */}
+          {/* 6. Wallet + Voting (AGC) */}
+          <Reveal>
+            <WalletVotingSection />
+          </Reveal>
+
+          {/* 7. Featured school campaigns */}
+          <Reveal>
+            <FeaturedCampaigns />
+          </Reveal>
+
+          {/* 8. Who we are — institutional context */}
+          <Reveal>
+            <WhoWeAreLean />
+          </Reveal>
+
+          {/* 9. CSR & Education Fund Management */}
+          <Reveal>
+            <CSRFundManagement />
+          </Reveal>
+
+          {/* 10. Programs */}
+          <Reveal>
+            <ProgramsThatTransform />
+          </Reveal>
+
+          {/* 11. How SCEF works */}
           <Reveal>
             <HowSCEFWorks />
           </Reveal>
 
-          {/* 6. Focus areas */}
+          {/* 12. Focus areas */}
           <Reveal>
             <ImpactAreasBand />
           </Reveal>
 
-          {/* 7. Get involved — primary conversion */}
+          {/* 13. Get involved */}
           <Reveal>
             <ChooseYourPath />
           </Reveal>
 
-          {/* 8. Trusted & endorsed by */}
+          {/* 14. Trusted & endorsed by */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 9. Supporting partners (lean strip) */}
+          {/* 15. Supporting partners */}
           <Reveal>
             <CRSPartnersStrip />
           </Reveal>
 
-          {/* 10. Final CTA */}
+          {/* 16. RMSA-led final CTA */}
           <Reveal>
-            <FinalCTABand />
+            <RmsaFinalCTA />
           </Reveal>
         </main>
 
