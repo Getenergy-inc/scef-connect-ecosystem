@@ -8,6 +8,7 @@ import { HowRmsaWorks } from "@/components/sections/HowRmsaWorks";
 import { WalletVotingSection } from "@/components/sections/WalletVotingSection";
 import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
 import { RmsaFinalCTA } from "@/components/sections/RmsaFinalCTA";
+import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
 import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
@@ -91,6 +92,11 @@ const Index = () => {
           {/* 7. Featured school campaigns */}
           <Reveal>
             <FeaturedCampaigns />
+          </Reveal>
+
+          {/* 7b. Before & After transformations */}
+          <Reveal>
+            <BeforeAfterSection />
           </Reveal>
 
           {/* 8. Who we are — institutional context */}
