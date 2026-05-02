@@ -89,7 +89,7 @@ export const FeaturedCampaigns = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent" />
                 <span
                   className={`absolute left-3 top-3 inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${
-                    c.category === "Special Needs"
+                    c.category === "Special Needs" || c.category === "Vocational" || c.category === "Early Years"
                       ? "bg-scef-gold text-[#0A0A0A]"
                       : "bg-[#0B5D3B] text-white"
                   }`}
