@@ -292,7 +292,7 @@ const CsrFundManagement = () => {
                   </h2>
                 </div>
 
-                <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   {process.map(({ step, icon: Icon, title, desc }) => (
                     <div
                       key={step}
