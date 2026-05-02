@@ -350,7 +350,170 @@ const CsrFundManagement = () => {
             </section>
           </Reveal>
 
-          {/* ACCOUNTABILITY */}
+          {/* KEY INTERVENTION AREAS */}
+          <Reveal>
+            <section className="bg-background py-20 md:py-24">
+              <div className="container mx-auto px-6 md:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">
+                    Key CSR Intervention Areas
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
+                    Five Pillars of Education Investment
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                    Every CSR program is mapped into one of five intervention pillars — each with verified delivery partners, governance, and reporting.
+                  </p>
+                </div>
+
+                <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                  {interventions.map(({ icon: Icon, title, items }) => (
+                    <div
+                      key={title}
+                      className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-md"
+                    >
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
+                        <Icon className="h-6 w-6" strokeWidth={1.75} />
+                      </div>
+                      <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker">
+                        {title}
+                      </h3>
+                      <ul className="mt-3 space-y-1.5">
+                        {items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground"
+                          >
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-scef-gold-dark" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </Reveal>
+
+          {/* LOCAL CHAPTER IMPLEMENTATION MODEL */}
+          <Reveal>
+            <section className="bg-card py-20 md:py-24">
+              <div className="container mx-auto px-6 md:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[hsl(145_63%_35%)]">
+                    Local Chapter Implementation Model
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
+                    Delivered by SCEF Chapters Across Africa
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                    CSR projects are executed through SCEF's Local Chapter Network — ensuring local relevance, community engagement, and efficient project execution.
+                  </p>
+                </div>
+
+                <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
+                  <div className="rounded-xl border border-border bg-background p-6">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-scef-blue/10 text-scef-blue ring-1 ring-scef-blue/20">
+                        <MapPin className="h-5 w-5" />
+                      </div>
+                      <h3 className="font-display text-base font-bold text-scef-blue-darker">
+                        Local Execution
+                      </h3>
+                    </div>
+                    <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                      <li>• Each country operates a chapter microsite</li>
+                      <li>• Managed by Local Chapter Presidents (LCPs)</li>
+                      <li>• Supported by local Board of Advisors (BOA)</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-xl border border-border bg-background p-6">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
+                        <Building2 className="h-5 w-5" />
+                      </div>
+                      <h3 className="font-display text-base font-bold text-scef-blue-darker">
+                        HQ Oversight
+                      </h3>
+                    </div>
+                    <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                      <li>• Reports to SCEF HQ Board of Directors (BOD)</li>
+                      <li>• Strategic governance from Board of Trustees (BOT)</li>
+                      <li>• Quarterly cross-chapter performance reviews</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </Reveal>
+
+          {/* PARTNER BENEFITS */}
+          <Reveal>
+            <section className="bg-background py-20 md:py-24">
+              <div className="container mx-auto px-6 md:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">
+                    Key Benefits for CSR Partners
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
+                    Why Organizations Partner With SCEF
+                  </h2>
+                </div>
+
+                <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
+                  {partnerBenefits.map(({ icon: Icon, text }) => (
+                    <div
+                      key={text}
+                      className="flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-scef-gold/40 hover:shadow-md"
+                    >
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
+                        <Icon className="h-5 w-5" strokeWidth={1.75} />
+                      </div>
+                      <p className="text-sm font-medium leading-relaxed text-scef-blue-darker md:text-[15px]">
+                        {text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </Reveal>
+
+          {/* GOVERNANCE & COMPLIANCE */}
+          <Reveal>
+            <section className="bg-card py-20 md:py-24">
+              <div className="container mx-auto px-6 md:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[hsl(145_63%_35%)]">
+                    Governance & Compliance
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
+                    Aligned with Global Standards
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                    SCEF ensures all CSR fund management adheres to international frameworks and multi-level governance.
+                  </p>
+                </div>
+
+                <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {governance.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl border border-border bg-background p-5"
+                    >
+                      <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-scef-gold-dark" />
+                      <span className="text-sm font-medium leading-relaxed text-scef-blue-darker">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </Reveal>
+
+
           <Reveal>
             <section className="relative overflow-hidden bg-scef-blue-darker py-20 text-white md:py-24">
               <div className="absolute inset-0 bg-scef-pattern opacity-[0.05]" />
