@@ -72,6 +72,87 @@ const process = [
   { step: "04", icon: LineChart, title: "Tracking & Reporting", desc: "Quarterly outcome reports with verified data and partner-facing dashboards." },
 ];
 
+const process = [
+  {
+    step: "01",
+    icon: ClipboardList,
+    title: "Fund Allocation",
+    desc: "CSR partners commit funding to scholarships, school rebuilding, special needs interventions, vocational training, or digital learning.",
+  },
+  {
+    step: "02",
+    icon: Target,
+    title: "Project Deployment via EduAid-Africa",
+    desc: "Funds are channeled into Rebuild My School Africa, Special Needs Interventions, Scholarship Schemes, and Career & Digital Learning programs.",
+  },
+  {
+    step: "03",
+    icon: Wallet,
+    title: "Wallet-Based Financial Management (GFA & AGC)",
+    desc: "Managed via the EduAid Wallet (GFA) and AfriGold Coin (AGC) — enabling escrow, staged disbursement, and real-time tracking.",
+  },
+  {
+    step: "04",
+    icon: LineChart,
+    title: "Monitoring, Evaluation & Reporting",
+    desc: "Real-time dashboards with UN RBM, ESG, and SDG 4-aligned reporting at the project and beneficiary level.",
+  },
+  {
+    step: "05",
+    icon: Megaphone,
+    title: "Public Engagement Layer",
+    desc: "Visibility through public donation campaigns, AGC-powered voting, and storytelling on NESA TV and It's In Me Radio.",
+  },
+];
+
+const interventions = [
+  {
+    icon: School,
+    title: "School Infrastructure Development",
+    items: ["Classroom renovation", "Learning environment upgrades", "Digital classroom integration"],
+  },
+  {
+    icon: Accessibility,
+    title: "Special Needs Education Support",
+    items: ["Schools for the blind", "Schools for the deaf", "Autism & inclusive learning centers", "Assistive learning tools"],
+  },
+  {
+    icon: GraduationCap,
+    title: "Scholarships & Grants",
+    items: ["Student sponsorships", "Merit & need-based scholarships", "Teacher and institutional grants"],
+  },
+  {
+    icon: Wrench,
+    title: "Vocational & Skills Development",
+    items: ["Technical training centers", "Youth empowerment programs", "Job-readiness initiatives"],
+  },
+  {
+    icon: Laptop,
+    title: "Digital Education & Access",
+    items: ["Online learning platforms", "Educational content access", "ICT integration in schools"],
+  },
+];
+
+const partnerBenefits = [
+  { icon: Wallet, text: "Transparent fund management via wallet system" },
+  { icon: LineChart, text: "Real-time tracking of donations and impact" },
+  { icon: ShieldCheck, text: "Verified project deployment" },
+  { icon: Megaphone, text: "Public visibility and brand positioning" },
+  { icon: FileCheck, text: "Structured ESG and SDG reporting" },
+  { icon: Users, text: "Direct engagement with beneficiaries" },
+  { icon: Award, text: "Participation in NESA-Africa recognition" },
+];
+
+const governance = [
+  "UN Result-Based Management (RBM) framework",
+  "ESG (Environmental, Social, Governance) principles",
+  "SDG 4 — Quality Education alignment",
+  "Financial transparency via GFA Wallet system",
+  "BOT — Global oversight",
+  "BOD — Strategic execution",
+  "BOA — Local advisory & monitoring",
+];
+
 const accountability = [
   "Segregated program accounts and audit-ready records",
   "RBAC governance: Board, finance, and chapter approvals",
