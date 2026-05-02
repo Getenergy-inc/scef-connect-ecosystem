@@ -1,30 +1,54 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, Heart, Vote, ArrowRight } from "lucide-react";
-import classroomImg from "@/assets/hero-classroom.jpg";
-import schoolgirlImg from "@/assets/hero-schoolgirl.jpg";
-import educationImg from "@/assets/hero-education.jpg";
+import suppliesImg from "@/assets/rmsa/school-supplies-distribution.jpg";
+import signLanguageImg from "@/assets/rmsa/sign-language-girls.jpg";
+import wheelchairImg from "@/assets/rmsa/wheelchair-classroom.jpg";
+import brailleWritingImg from "@/assets/rmsa/braille-writing.jpg";
+import vocationalImg from "@/assets/rmsa/vocational-training.jpg";
+import earlyLearningImg from "@/assets/rmsa/early-learning-art.jpg";
 
 const campaigns = [
   {
-    image: classroomImg,
+    image: suppliesImg,
     name: "Hope Primary School",
     country: "Nigeria",
     category: "General",
     progress: 0,
   },
   {
-    image: schoolgirlImg,
+    image: signLanguageImg,
     name: "Sunrise Deaf Academy",
     country: "Kenya",
     category: "Special Needs",
     progress: 0,
   },
   {
-    image: educationImg,
+    image: wheelchairImg,
     name: "Ubuntu Inclusive School",
-    country: "South Africa",
+    country: "Rwanda",
     category: "Inclusive",
+    progress: 0,
+  },
+  {
+    image: brailleWritingImg,
+    name: "Light of Hope Braille Center",
+    country: "Ghana",
+    category: "Special Needs",
+    progress: 0,
+  },
+  {
+    image: vocationalImg,
+    name: "Wakisa Skills Academy",
+    country: "Uganda",
+    category: "Vocational",
+    progress: 0,
+  },
+  {
+    image: earlyLearningImg,
+    name: "Little Scholars Early Learning",
+    country: "Côte d'Ivoire",
+    category: "Early Years",
     progress: 0,
   },
 ];
