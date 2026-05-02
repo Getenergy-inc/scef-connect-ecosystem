@@ -20,6 +20,18 @@ import {
   Target,
   LineChart,
   Mail,
+  Wallet,
+  Coins,
+  Radio,
+  Tv,
+  Megaphone,
+  Eye,
+  Ear,
+  Accessibility,
+  Wrench,
+  Award,
+  Briefcase,
+  CheckCircle2,
 } from "lucide-react";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
