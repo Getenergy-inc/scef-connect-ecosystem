@@ -66,13 +66,6 @@ const focusAreas = [
 ];
 
 const process = [
-  { step: "01", icon: ClipboardList, title: "Scoping & Design", desc: "We co-design a CSR program aligned with your impact goals and priority regions." },
-  { step: "02", icon: Target, title: "Allocation & Setup", desc: "Funds are ring-fenced, governance is documented, and chapters are assigned." },
-  { step: "03", icon: Building2, title: "Local Delivery", desc: "Programs run through verified local chapters, schools, and partner institutions." },
-  { step: "04", icon: LineChart, title: "Tracking & Reporting", desc: "Quarterly outcome reports with verified data and partner-facing dashboards." },
-];
-
-const process = [
   {
     step: "01",
     icon: ClipboardList,
