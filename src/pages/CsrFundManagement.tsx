@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -171,6 +172,19 @@ const CsrFundManagement = () => {
       return data as Endorsement[];
     },
   });
+
+  // Smooth-scroll to in-page anchors (e.g., /csr-fund-management#wallet-management)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const id = window.location.hash.replace("#", "");
+    if (!id) return;
+    // Wait a tick so content (and Reveal animations) mounts before scrolling
+    const timer = window.setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <>
