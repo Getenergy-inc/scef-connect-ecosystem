@@ -2,7 +2,9 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
-import { RmsaHero } from "@/components/sections/RmsaHero";
+import { HeroDigitalBoard } from "@/components/sections/HeroDigitalBoard";
+import { LiveActivityFeed } from "@/components/sections/LiveActivityFeed";
+import { ChoosePathToImpact } from "@/components/sections/ChoosePathToImpact";
 import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
@@ -23,94 +25,97 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>SCEF — Be Part of Africa&apos;s Education Transformation</title>
+        <title>SCEF — Empowering Africa Through Education, Innovation & Opportunity</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation: scholarships, school rebuilding, women & girls empowerment, special needs education, training, career guidance and CSR education funds management."
+          content="Santos Creations Educational Foundation: a membership-driven Pan-African education foundation advancing advocacy, scholarships, school rebuilding, training, career pathways and transparent CSR funding."
         />
-        <link rel="canonical" href="https://santoscreations.org/home" />
+        <link rel="canonical" href="https://santoscreations.org/" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
+        {/* Header (with built-in ticker on top) */}
         <HeaderScreenshot />
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. HERO */}
+          {/* 3. HERO */}
           <LandingHero />
 
-          {/* 2. RMSA */}
-          <RmsaHero />
+          {/* 4. HERO DIGITAL BOARD (rotating slider) */}
+          <HeroDigitalBoard />
 
-          {/* 3. PROGRAM ECOSYSTEM (with new Training & MCML cards) */}
+          {/* 5. LIVE ACTIVITY FEED */}
+          <LiveActivityFeed />
+
+          {/* 6. SIX CORE SERVICES */}
           <Reveal>
             <SixCoreServices />
           </Reveal>
 
-          {/* 4. TRAINING & DEVELOPMENT */}
+          {/* 7. CHOOSE YOUR PATH TO IMPACT */}
+          <Reveal>
+            <ChoosePathToImpact />
+          </Reveal>
+
+          {/* 8. FEATURED CAMPAIGNS */}
+          <Reveal>
+            <FeaturedCampaigns />
+          </Reveal>
+
+          {/* 9. TRAINING & DEVELOPMENT (+ EduAid Webinar Calendar preview) */}
           <Reveal>
             <TrainingDevelopment />
           </Reveal>
-
-          {/* 5. EDUAID WEBINAR CALENDAR (preview on landing) */}
           <Reveal>
             <EduAidWebinarCalendar preview />
           </Reveal>
 
-          {/* 6. MY CAREER MY LIFE */}
+          {/* 10. MY CAREER MY LIFE (+ calendar + media) */}
           <Reveal>
             <MyCareerMyLife />
           </Reveal>
-
-          {/* 7. MCML CALENDAR (preview) */}
           <Reveal>
             <EduAidWebinarCalendar
               preview
               rows={myCareerMyLifeCalendar}
               eyebrow="Starts August 2026"
               title="My Career My Life Monthly Advocacy Calendar"
-              subtitle="Twelve months of student-focused career guidance for JSS, SS2 and SS3 students across schools, chapters and partner networks."
+              subtitle="Twelve months of student-focused career guidance for JSS, SS2 and SS3 students."
               ctaHref="/programs/my-career-my-life"
               ctaLabel="View Full MCML Calendar"
             />
           </Reveal>
-
-          {/* 8. MCML ADVOCACY & MEDIA PRODUCTION */}
           <Reveal>
             <MCMLMedia />
           </Reveal>
 
-          {/* 9. SCHOOL REGISTRATION & ADOPT-A-SCHOOL */}
+          {/* School registration */}
           <Reveal>
             <SchoolRegistration />
           </Reveal>
 
-          {/* 10. IMPACT */}
+          {/* Impact strip */}
           <Reveal>
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 11. FEATURED CAMPAIGNS */}
-          <Reveal>
-            <FeaturedCampaigns />
-          </Reveal>
-
-          {/* 12. CSR FUND MANAGEMENT */}
+          {/* 11. CSR & EDUCATION FUND MANAGEMENT */}
           <Reveal>
             <CSRFundManagement />
           </Reveal>
 
-          {/* 13. LOCAL CHAPTERS */}
+          {/* 12. LOCAL CHAPTERS */}
           <Reveal>
             <LocalChaptersSnapshot />
           </Reveal>
 
-          {/* 14. ENDORSED BY */}
+          {/* 13. TRUST & PARTNERS */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 15. FINAL CTA */}
+          {/* 14. FINAL CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>

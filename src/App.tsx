@@ -9,6 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 // Core Pages
 import Index from "./pages/Index";
 import Home from "./pages/Home";
+import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
@@ -166,7 +167,8 @@ const App = () => (
             <Routes>
               {/* Core Routes */}
               <Route path="/" element={<Home />} />
-              <Route path="/welcome" element={<Index />} />
+              <Route path="/welcome" element={<Welcome />} />
+              <Route path="/welcome-classic" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               
