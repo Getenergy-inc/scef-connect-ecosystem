@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Trophy, Monitor, BookOpen, Compass } from "lucide-react";
+import { ArrowRight, GraduationCap, Trophy, BookOpen, Heart } from "lucide-react";
 import eduaidImg from "@/assets/eduaid-hero.jpg";
 import nesaImg from "@/assets/nesa-africa-stage-thumbnail.jpg";
-import onlineImg from "@/assets/hero-education.jpg";
 import libraryImg from "@/assets/hero-programs.jpg";
+import womenGirlsImg from "@/assets/digital-board/women-girls-education-flyer.jpg";
 
 const services = [
   {
     icon: GraduationCap,
     title: "EduAid-Africa",
     blurb:
-      "Our flagship education funding and delivery platform — scholarships, CSR partnerships, school rebuilding (RMSA), monthly teacher training, inclusive education and TVET, all delivered as integrated EduAid-Africa services.",
+      "Our flagship education funding and delivery platform — scholarships, CSR partnerships, school rebuilding (RMSA), monthly teacher training, inclusive education, TVET, Education Online Africa (digital learning & certification) and My Career My Life (career guidance), all delivered as integrated EduAid-Africa services.",
     image: eduaidImg,
     cta: "Explore EduAid-Africa",
     href: "/programs/eduaid-africa",
@@ -25,13 +25,13 @@ const services = [
     href: "/programs/nesa-africa",
   },
   {
-    icon: Monitor,
-    title: "Education Online Africa",
+    icon: Heart,
+    title: "Women & Girls Empowerment",
     blurb:
-      "Digital learning, training, certification, and career development for students, teachers, and institutions.",
-    image: onlineImg,
-    cta: "Start Learning",
-    href: "/programs/digital-learning",
+      "Advancing equal access, safe learning, mentorship, and leadership pathways for women and girls across Africa — from primary classrooms to career and enterprise.",
+    image: womenGirlsImg,
+    cta: "Support Women & Girls",
+    href: "/programs/women-girls-education",
   },
   {
     icon: BookOpen,
@@ -41,15 +41,6 @@ const services = [
     image: libraryImg,
     cta: "Access eLibrary",
     href: "/programs/elibrary-nigeria",
-  },
-  {
-    icon: Compass,
-    title: "My Career My Life",
-    blurb:
-      "Career guidance and life-path advocacy for JSS and SS2/SS3 students — subject choices, TVET, digital skills, entrepreneurship, and mentorship.",
-    image: libraryImg,
-    cta: "Explore My Career My Life",
-    href: "/programs/my-career-my-life",
   },
 ];
 
