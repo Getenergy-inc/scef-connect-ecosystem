@@ -9,6 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 // Core Pages
 import Index from "./pages/Index";
 import Home from "./pages/Home";
+import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
@@ -105,7 +106,7 @@ import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 
 // Dashboard Pages
-import Welcome from "./pages/dashboard/Welcome";
+import DashboardWelcome from "./pages/dashboard/Welcome";
 import ChapterInbox from "./pages/chapter/Inbox";
 import Profile from "./pages/dashboard/Profile";
 import Activity from "./pages/dashboard/Activity";
@@ -166,7 +167,8 @@ const App = () => (
             <Routes>
               {/* Core Routes */}
               <Route path="/" element={<Home />} />
-              <Route path="/welcome" element={<Index />} />
+              <Route path="/welcome" element={<Welcome />} />
+              <Route path="/welcome-classic" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               
@@ -231,7 +233,7 @@ const App = () => (
               
               {/* Dashboard Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/dashboard/welcome" element={<Welcome />} />
+              <Route path="/dashboard/welcome" element={<DashboardWelcome />} />
               <Route path="/dashboard/profile" element={<Profile />} />
               <Route path="/dashboard/activity" element={<Activity />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
