@@ -14,7 +14,6 @@ import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CSRFundManagement } from "@/components/sections/CSRFundManagement";
 import { SixCoreServices } from "@/components/sections/SixCoreServices";
 import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
-import { TrainingDevelopment } from "@/components/sections/TrainingDevelopment";
 import { EduAidWebinarCalendar } from "@/components/sections/EduAidWebinarCalendar";
 import { MyCareerMyLife } from "@/components/sections/MyCareerMyLife";
 import { MCMLMedia } from "@/components/sections/MCMLMedia";
@@ -77,10 +76,7 @@ const Home = () => {
             <FeaturedCampaigns />
           </Reveal>
 
-          {/* 9. TRAINING & DEVELOPMENT (+ EduAid Webinar Calendar preview) */}
-          <Reveal>
-            <TrainingDevelopment />
-          </Reveal>
+          {/* 9. EDUAID-AFRICA TRAINING CALENDAR (service of EduAid-Africa) */}
           <Reveal>
             <EduAidWebinarCalendar preview />
           </Reveal>

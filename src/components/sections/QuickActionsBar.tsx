@@ -19,7 +19,7 @@ const actions = [
   { icon: Vote, label: "Vote with AGC", href: "/vote" },
   { icon: ClipboardList, label: "Register Your School", href: "/programs/my-career-my-life" },
   { icon: Users, label: "Join a Chapter", href: "/chapters/join-online" },
-  { icon: GraduationCap, label: "Sponsor Training", href: "/programs/training-development" },
+  { icon: GraduationCap, label: "Sponsor Training", href: "/programs/eduaid-africa" },
   { icon: Handshake, label: "Become a Partner", href: "/partner-with-us" },
 ];
 
