@@ -6,7 +6,7 @@ import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuthState as useAuth } from "@/hooks/useAuthState";
 import { useToast } from "@/hooks/use-toast";
 import { SCHOLARSHIP_APP_TYPE } from "@/lib/scholarship";
 

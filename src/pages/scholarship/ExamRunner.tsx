@@ -5,7 +5,7 @@ import { AlertTriangle, Check, ChevronLeft, ChevronRight, Clock, Loader2, Send, 
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuthState as useAuth } from "@/hooks/useAuthState";
 import { useToast } from "@/hooks/use-toast";
 import {
   AlertDialog,
