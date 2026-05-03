@@ -231,6 +231,11 @@ const ExamRunner = () => {
               Less than 1 minute remaining — your exam will auto-submit when the timer reaches zero.
             </div>
           )}
+          {data.attempt.is_preview && (
+            <div className="bg-scef-gold/15 px-6 py-2 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-scef-blue-darker md:px-8">
+              Admin Preview Mode · Test attempt — results are not recorded for any applicant
+            </div>
+          )}
         </div>
 
         <main className="container mx-auto grid gap-8 px-6 py-10 md:grid-cols-[1fr_280px] md:px-8">
