@@ -1588,6 +1588,218 @@ const About = () => {
             </div>
           </section>
 
+          {/* CSR FUNDS MANAGEMENT (SCEF-FMS) — FEATURED */}
+          <section id="csr-fms" className="py-20 bg-background border-y border-border">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="rounded-3xl overflow-hidden border-2 border-scef-gold/40 bg-gradient-to-br from-scef-blue via-scef-blue to-scef-blue-darker shadow-2xl">
+                  <div className="p-8 md:p-12">
+                    <div className="flex flex-wrap items-center gap-3 mb-6">
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-scef-gold text-scef-blue text-xs font-bold uppercase tracking-wider">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        {t("about.extras.csrFms.badge")}
+                      </span>
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
+                        <Coins className="w-3.5 h-3.5 text-scef-gold" />
+                        SCEF–FMS
+                      </span>
+                    </div>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                      {t("about.extras.csrFms.title")}
+                    </h2>
+                    <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-3xl">
+                      {t("about.extras.csrFms.lead")}
+                    </p>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+                      {(t("about.extras.csrFms.pillars") as unknown as { title: string; desc: string }[]).map((p, i) => (
+                        <div key={i} className="bg-white/5 border border-white/15 rounded-2xl p-5 hover:bg-white/10 transition-colors">
+                          <div className="w-10 h-10 rounded-lg bg-scef-gold/20 flex items-center justify-center mb-3">
+                            <CheckCircle2 className="w-5 h-5 text-scef-gold" />
+                          </div>
+                          <h3 className="font-semibold text-white mb-1.5">{p.title}</h3>
+                          <p className="text-sm text-white/70 leading-relaxed">{p.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-6 border-t border-white/15">
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-scef-gold font-semibold mb-2">
+                          {t("about.extras.csrFms.partnersTitle")}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {(t("about.extras.csrFms.partners") as unknown as string[]).map((name) => (
+                            <span key={name} className="px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm text-white">
+                              {name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <Button asChild size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold shrink-0">
+                        <Link to="/csr-fund-management">
+                          {t("about.extras.csrFms.cta")}
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* GOVERNANCE & LEADERSHIP */}
+          <section id="governance" className="py-20 bg-muted/30 border-b border-border">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    {t("about.extras.governance.title")}
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    {t("about.extras.governance.subtitle")}
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                  {(t("about.extras.governance.tiers") as unknown as { code: string; title: string; desc: string }[]).map((tier, i) => {
+                    const Icon = i === 0 ? Shield : i === 1 ? Users : i === 2 ? Briefcase : Crown;
+                    return (
+                      <div key={tier.code} className="relative bg-card rounded-2xl p-6 border-2 border-border hover:border-scef-gold transition-colors">
+                        <div className="absolute -top-3 left-6 px-2.5 py-1 bg-scef-gold text-scef-blue text-xs font-bold rounded-full">
+                          {tier.code}
+                        </div>
+                        <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4 mt-2">
+                          <Icon className="w-6 h-6 text-scef-blue" />
+                        </div>
+                        <h3 className="font-display font-bold text-foreground mb-2">{tier.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{tier.desc}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="text-center mt-10">
+                  <Button asChild variant="outline" className="border-2 border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white">
+                    <Link to="/governance">
+                      {t("about.extras.governance.cta")}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* MEMBERSHIP & AMBASSADOR PROGRAM */}
+          <section id="membership" className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    {t("about.extras.membership.title")}
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    {t("about.extras.membership.subtitle")}
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Members */}
+                  <div className="bg-card rounded-2xl border-2 border-border p-6">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center">
+                        <Users className="w-5 h-5 text-scef-blue" />
+                      </div>
+                      <h3 className="font-display text-xl font-bold text-foreground">
+                        {t("about.extras.membership.memberTitle")}
+                      </h3>
+                    </div>
+                    <Accordion type="single" collapsible className="w-full">
+                      {(t("about.extras.membership.members") as unknown as { name: string; desc: string }[]).map((m, i) => (
+                        <AccordionItem key={i} value={`m-${i}`}>
+                          <AccordionTrigger className="text-left">{m.name}</AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground">{m.desc}</AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                    <Button asChild className="w-full mt-6 bg-scef-blue text-white hover:bg-scef-blue-darker">
+                      <Link to="/get-involved/membership">
+                        {t("about.extras.membership.ctaMember")}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Ambassadors */}
+                  <div className="bg-card rounded-2xl border-2 border-scef-gold/40 p-6">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-lg bg-scef-gold/15 flex items-center justify-center">
+                        <Award className="w-5 h-5 text-scef-gold" />
+                      </div>
+                      <h3 className="font-display text-xl font-bold text-foreground">
+                        {t("about.extras.membership.ambassadorTitle")}
+                      </h3>
+                    </div>
+                    <Accordion type="single" collapsible className="w-full">
+                      {(t("about.extras.membership.ambassadors") as unknown as { name: string; desc: string }[]).map((a, i) => (
+                        <AccordionItem key={i} value={`a-${i}`}>
+                          <AccordionTrigger className="text-left">{a.name}</AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground">{a.desc}</AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                    <Button asChild className="w-full mt-6 bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold">
+                      <Link to="/get-involved/ambassador">
+                        {t("about.extras.membership.ctaAmbassador")}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SCEF 2035 TARGETS */}
+          <section id="targets-2035" className="py-20 bg-scef-blue text-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-scef-gold/20 text-scef-gold text-xs font-bold uppercase tracking-wider mb-4 border border-scef-gold/30">
+                    <Target className="w-3.5 h-3.5" />
+                    2035
+                  </span>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                    {t("about.extras.targets2035.title")}
+                  </h2>
+                  <p className="text-lg text-white/75 max-w-2xl mx-auto">
+                    {t("about.extras.targets2035.subtitle")}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                  {(t("about.extras.targets2035.items") as unknown as { value: string; label: string }[]).map((item, i) => (
+                    <div key={i} className="bg-white/5 backdrop-blur border border-white/15 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                      <p className="font-display text-3xl md:text-4xl font-bold text-scef-gold mb-2">
+                        {item.value}
+                      </p>
+                      <p className="text-sm text-white/80">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/70 text-sm border border-white/20">
+                    <Clock className="w-4 h-4" />
+                    {t("about.extras.targets2035.note")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* FINAL CTA */}
           <section id="final-cta" className="py-20 bg-scef-blue-darker text-white">
             <div className="container mx-auto px-4 text-center">
