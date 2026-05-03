@@ -37,10 +37,10 @@ const items = [
   {
     icon: BookOpen,
     title: "Programs & Services",
-    summary: "Nine flagship initiatives advancing African education.",
+    summary: "Flagship initiatives advancing African education.",
     bullets: [
-      "EduAid-Africa · Rebuild My School Africa · NESA-Africa",
-      "Education Online Africa · eLibrary Nigeria/Africa",
+      "EduAid-Africa (includes Rebuild My School Africa & Training)",
+      "NESA-Africa · Education Online Africa · eLibrary Nigeria/Africa",
       "Women & Girls · Special Needs · My Career My Life · SCEF Media",
     ],
     ctaLabel: "Explore All Programs",
@@ -48,15 +48,15 @@ const items = [
   },
   {
     icon: GraduationCap,
-    title: "Training & Development",
-    summary: "EduAid-Africa Monthly Training Calendar — starting July 2026.",
+    title: "EduAid-Africa Training (a service of EduAid-Africa)",
+    summary: "Monthly training calendar delivered under EduAid-Africa — starting July 2026.",
     bullets: [
       "Teacher training, school leadership, inclusive education",
       "TVET, digital learning, monitoring & evaluation",
       "Certification pathways for African educators",
     ],
-    ctaLabel: "View Training Calendar",
-    ctaHref: "/programs/training-development",
+    ctaLabel: "View EduAid-Africa",
+    ctaHref: "/programs/eduaid-africa",
   },
   {
     icon: Compass,

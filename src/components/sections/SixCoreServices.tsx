@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Users, Compass } from "lucide-react";
+import { ArrowRight, GraduationCap, Trophy, Monitor, BookOpen, Compass } from "lucide-react";
 import eduaidImg from "@/assets/eduaid-hero.jpg";
-import rmsaImg from "@/assets/rmsa/school-before-after.jpg";
 import nesaImg from "@/assets/nesa-africa-stage-thumbnail.jpg";
 import onlineImg from "@/assets/hero-education.jpg";
 import libraryImg from "@/assets/hero-programs.jpg";
@@ -11,19 +10,10 @@ const services = [
     icon: GraduationCap,
     title: "EduAid-Africa",
     blurb:
-      "Digital education funding platform for scholarships, grants, CSR partnerships, and school intervention programs.",
+      "Our flagship education funding and delivery platform — scholarships, CSR partnerships, school rebuilding (RMSA), monthly teacher training, inclusive education and TVET, all delivered as integrated EduAid-Africa services.",
     image: eduaidImg,
     cta: "Explore EduAid-Africa",
     href: "/programs/eduaid-africa",
-  },
-  {
-    icon: School,
-    title: "Rebuild My School Africa",
-    blurb:
-      "School infrastructure and inclusion service rebuilding schools, supporting special needs and vocational learning.",
-    image: rmsaImg,
-    cta: "Rebuild a School",
-    href: "/programs/rebuild-my-school-africa",
   },
   {
     icon: Trophy,
@@ -51,15 +41,6 @@ const services = [
     image: libraryImg,
     cta: "Access eLibrary",
     href: "/programs/elibrary-nigeria",
-  },
-  {
-    icon: Users,
-    title: "Training & Development",
-    blurb:
-      "Monthly EduAid-Africa webinars for teachers, school managers, inclusive education, TVET, and chapter leadership — starting July 2026.",
-    image: onlineImg,
-    cta: "View Training Calendar",
-    href: "/programs/training-development",
   },
   {
     icon: Compass,
