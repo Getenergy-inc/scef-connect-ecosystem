@@ -24,7 +24,7 @@ import { WaysToSupport } from "@/components/sections/WaysToSupport";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
-const Index = () => {
+const Home = () => {
   return (
     <>
       <Helmet>
@@ -164,4 +164,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
