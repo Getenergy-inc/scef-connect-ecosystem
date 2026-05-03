@@ -228,6 +228,9 @@ export default function ScholarshipExamsAdmin() {
                         </CardDescription>
                       </div>
                       <div className="flex flex-wrap items-center gap-2">
+                        <Button size="sm" variant="default" onClick={() => startPreview(e)} title="Run a timed test attempt as admin (does not count against applicants)">
+                          <PlayCircle className="w-4 h-4 mr-1" /> Preview
+                        </Button>
                         <Button asChild size="sm" variant="secondary">
                           <Link to={`/admin/scholarship/exams/${e.id}/questions`}>
                             <ListChecks className="w-4 h-4 mr-1" /> Questions
