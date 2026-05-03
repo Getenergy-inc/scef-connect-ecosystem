@@ -76,6 +76,9 @@ const Index = () => {
           {/* 1b. Hero Digital Board — rotating campaign carousel */}
           <AnnouncementBoard />
 
+          {/* 1c. Live Activity Feed — "happening now" strip */}
+          <LiveActivityFeed />
+
           {/* 2. PRIMARY ACTION — Rebuild My School Africa (strongest conversion engine) */}
           <RmsaHero />
 
