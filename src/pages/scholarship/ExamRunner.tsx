@@ -25,6 +25,7 @@ type AttemptData = {
     status: "in_progress" | "submitted" | "expired";
     started_at: string;
     expires_at: string;
+    is_preview?: boolean;
   };
   exam: { title: string; duration_minutes: number; pass_score_percent: number };
   questions: Question[];
