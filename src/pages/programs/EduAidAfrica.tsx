@@ -19,6 +19,7 @@ import EduAidWallOfAchievers from "@/components/eduaid/EduAidWallOfAchievers";
 import EduAidGetInTouch from "@/components/eduaid/EduAidGetInTouch";
 import EduAidFAQs from "@/components/eduaid/EduAidFAQs";
 import EduAidDonationSection from "@/components/eduaid/EduAidDonationSection";
+import EduAidIntegratedServices from "@/components/eduaid/EduAidIntegratedServices";
 
 export default function EduAidAfrica() {
   const { t } = useLocale();
@@ -82,6 +83,11 @@ export default function EduAidAfrica() {
         {/* Core Objectives */}
         <ScrollAnimation animation="fadeUp" delay={0.15}>
           <EduAidObjectives />
+        </ScrollAnimation>
+
+        {/* Integrated Services (EOA, MCML, RMSA, Training) */}
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <EduAidIntegratedServices />
         </ScrollAnimation>
 
         {/* Programs & Initiatives */}
