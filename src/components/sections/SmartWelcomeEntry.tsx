@@ -41,14 +41,14 @@ export const SmartWelcomeEntry = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <p className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-3">
-            Welcome to SCEF
+            Pathway to Your Experience
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
-            Choose how you want to engage
+            Choose your entry — this takes you to your experience
           </h2>
           <p className="text-neutral-600 text-base md:text-lg leading-relaxed">
-            Empowering Africa through education, innovation, opportunity,
-            transparent funding, and community-driven impact.
+            Tell us how you want to engage with SCEF and we'll guide you to
+            the right tools, dashboards, and opportunities.
           </p>
         </div>
 
