@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Wallet, Users, Compass } from "lucide-react";
+import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Users, Compass } from "lucide-react";
 import eduaidImg from "@/assets/eduaid-hero.jpg";
 import rmsaImg from "@/assets/rmsa/school-before-after.jpg";
 import nesaImg from "@/assets/nesa-africa-stage-thumbnail.jpg";
 import onlineImg from "@/assets/hero-education.jpg";
 import libraryImg from "@/assets/hero-programs.jpg";
-import walletImg from "@/assets/gfa-wallet-logo.jpg";
 
 const services = [
   {
@@ -54,15 +53,6 @@ const services = [
     href: "/programs/elibrary-nigeria",
   },
   {
-    icon: Wallet,
-    title: "GFA Wallet / AGC",
-    blurb:
-      "Financial infrastructure powering transparent donations, scholarship disbursements, voting, and impact tracking with AGC.",
-    image: walletImg,
-    cta: "Open EduAid Wallet",
-    href: "/wallet",
-  },
-  {
     icon: Users,
     title: "Training & Development",
     blurb:
@@ -91,12 +81,12 @@ export const SixCoreServices = () => {
             What we deliver
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-            Our 6 Core Education Services
+            Our Core Education Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Six integrated services advancing African education — from funding
-            and infrastructure to recognition, learning, knowledge, and
-            transparent finance.
+            Integrated services advancing African education — from funding and
+            infrastructure to recognition, learning, training, and career
+            guidance.
           </p>
         </div>
 
