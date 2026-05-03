@@ -10,7 +10,8 @@ import {
   Shield, Building2, Tv, Laptop, TrendingUp, CheckCircle2,
   GraduationCap, Handshake, BookOpen, School, Wrench,
   Accessibility, ChevronDown, ChevronUp, Download, BarChart3,
-  Radio, Play, FileText, MapPin, Clock, Sparkles, Menu, AlertCircle
+  Radio, Play, FileText, MapPin, Clock, Sparkles, Menu, AlertCircle,
+  Briefcase, Coins, Crown
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
