@@ -17,7 +17,7 @@ const actions = [
   { icon: Heart, label: "Donate", href: "/donate" },
   { icon: School, label: "Nominate a School", href: "/nominate" },
   { icon: Vote, label: "Vote with AGC", href: "/vote" },
-  { icon: ClipboardList, label: "Register Your School", href: "/programs/my-career-my-life" },
+  { icon: ClipboardList, label: "Register Your School", href: "/programs/eduaid-africa#register-school" },
   { icon: Users, label: "Join a Chapter", href: "/chapters/join-online" },
   { icon: GraduationCap, label: "Sponsor Training", href: "/programs/eduaid-africa" },
   { icon: Handshake, label: "Become a Partner", href: "/partner-with-us" },
