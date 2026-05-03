@@ -10,11 +10,7 @@ import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
 import { RmsaFinalCTA } from "@/components/sections/RmsaFinalCTA";
 import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
-import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
-import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
-import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
-import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
@@ -68,108 +64,90 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. Institutional hero (kept) */}
+          {/* 1. HERO — clear value + 4 primary CTAs */}
           <LandingHero />
 
-          {/* 2. RMSA hero — flagship interactive layer */}
+          {/* 2. PRIMARY ACTION — Rebuild My School Africa (strongest conversion engine) */}
           <RmsaHero />
 
-          {/* 2b. Six core education services */}
+          {/* 3. WHAT SCEF DOES — 6 core education services */}
           <Reveal>
             <SixCoreServices />
           </Reveal>
 
-          {/* 3. Special Needs Schools Initiative */}
+          {/* 4. SPECIAL NEEDS — emotional, inclusion-first */}
           <Reveal>
             <SpecialNeedsSection />
           </Reveal>
 
-          {/* 4. How RMSA works */}
+          {/* 5. HOW IT WORKS — 5 simple steps */}
           <Reveal>
             <HowRmsaWorks />
           </Reveal>
 
-          {/* 5. Impact snapshot — incl. Schools Rebuilt */}
+          {/* 6. IMPACT SNAPSHOT — visual numbers */}
           <Reveal>
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 6. Wallet + Voting (AGC) */}
+          {/* 7. WALLET + VOTING — Fund · Vote · Track */}
           <Reveal>
             <WalletVotingSection />
           </Reveal>
 
-          {/* 7. Featured school campaigns */}
+          {/* 8. FEATURED CAMPAIGNS — image · name · progress · donate/vote */}
           <Reveal>
             <FeaturedCampaigns />
           </Reveal>
 
-          {/* 7b. Before & After transformations */}
+          {/* 8b. Before & After transformations (visual proof) */}
           <Reveal>
             <BeforeAfterSection />
           </Reveal>
 
-          {/* 8. Who we are — institutional context */}
-          <Reveal>
-            <WhoWeAreLean />
-          </Reveal>
-
-          {/* 9. CSR & Education Fund Management */}
+          {/* 9. CSR & EDUCATION FUND MANAGEMENT — process steps for serious users */}
           <Reveal>
             <CSRFundManagement />
           </Reveal>
 
-          {/* 9b. Ways to support */}
+          {/* 10. WAYS TO SUPPORT EDUCATION IN AFRICA */}
           <Reveal>
             <WaysToSupport />
           </Reveal>
 
-          {/* 9c. Advocacy services */}
+          {/* 11. ADVOCACY & MEDIA — Voice & Visibility (NESA TV, It's In Me, Campaigns) */}
           <Reveal>
             <AdvocacyServices />
           </Reveal>
 
-          {/* 9d. Stories of transformation */}
+          {/* 11b. Stories of transformation */}
           <Reveal>
             <StoriesOfTransformation />
           </Reveal>
 
-          {/* 9e. Local chapters snapshot */}
+          {/* 12. LOCAL CHAPTERS — join / view */}
           <Reveal>
             <LocalChaptersSnapshot />
           </Reveal>
 
-          {/* 10. Programs */}
+          {/* --- Secondary institutional context (demoted below conversion flow) --- */}
+
+          {/* Who we are — institutional context */}
           <Reveal>
-            <ProgramsThatTransform />
+            <WhoWeAreLean />
           </Reveal>
 
-          {/* 11. How SCEF works */}
-          <Reveal>
-            <HowSCEFWorks />
-          </Reveal>
-
-          {/* 12. Focus areas */}
-          <Reveal>
-            <ImpactAreasBand />
-          </Reveal>
-
-          {/* 13. Get involved */}
-          <Reveal>
-            <ChooseYourPath />
-          </Reveal>
-
-          {/* 14. Trusted & endorsed by */}
+          {/* Trusted & endorsed by */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 15. Supporting partners */}
+          {/* Supporting partners */}
           <Reveal>
             <CRSPartnersStrip />
           </Reveal>
 
-          {/* 16. RMSA-led final CTA */}
+          {/* 13. FINAL CTA — Donate · Nominate · Partner */}
           <Reveal>
             <RmsaFinalCTA />
           </Reveal>
