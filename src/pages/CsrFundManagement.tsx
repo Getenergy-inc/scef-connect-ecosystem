@@ -68,30 +68,35 @@ const focusAreas = [
 const process = [
   {
     step: "01",
+    slug: "fund-allocation",
     icon: ClipboardList,
     title: "Fund Allocation",
     desc: "CSR partners commit funding to scholarships, school rebuilding, special needs interventions, vocational training, or digital learning.",
   },
   {
     step: "02",
+    slug: "project-deployment",
     icon: Target,
     title: "Project Deployment via EduAid-Africa",
     desc: "Funds are channeled into Rebuild My School Africa, Special Needs Interventions, Scholarship Schemes, and Career & Digital Learning programs.",
   },
   {
     step: "03",
+    slug: "wallet-management",
     icon: Wallet,
     title: "Wallet-Based Financial Management (GFA & AGC)",
     desc: "Managed via the EduAid Wallet (GFA) and AfriGold Coin (AGC) — enabling escrow, staged disbursement, and real-time tracking.",
   },
   {
     step: "04",
+    slug: "monitoring",
     icon: LineChart,
     title: "Monitoring, Evaluation & Reporting",
     desc: "Real-time dashboards with UN RBM, ESG, and SDG 4-aligned reporting at the project and beneficiary level.",
   },
   {
     step: "05",
+    slug: "public-engagement",
     icon: Megaphone,
     title: "Public Engagement Layer",
     desc: "Visibility through public donation campaigns, AGC-powered voting, and storytelling on NESA TV and It's In Me Radio.",
@@ -394,7 +399,7 @@ const CsrFundManagement = () => {
 
           {/* PROCESS */}
           <Reveal>
-            <section className="bg-background py-20 md:py-24">
+            <section id="process" className="scroll-mt-28 bg-background py-20 md:py-24">
               <div className="container mx-auto px-6 md:px-8">
                 <div className="mx-auto max-w-3xl text-center">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[hsl(145_63%_35%)]">
@@ -406,10 +411,11 @@ const CsrFundManagement = () => {
                 </div>
 
                 <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  {process.map(({ step, icon: Icon, title, desc }) => (
+                  {process.map(({ step, slug, icon: Icon, title, desc }) => (
                     <div
                       key={step}
-                      className="relative rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-md"
+                      id={slug}
+                      className="relative scroll-mt-28 rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-md target:border-scef-gold target:ring-2 target:ring-scef-gold/30"
                     >
                       <span className="absolute right-5 top-5 font-display text-3xl font-bold text-scef-gold/30">
                         {step}
