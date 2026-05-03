@@ -120,6 +120,8 @@ import AmbassadorPortal from "./pages/portal/AmbassadorPortal";
 import ChapterAdminPortal from "./pages/portal/ChapterAdmin";
 import SponsorPortal from "./pages/portal/Sponsor";
 import AdminIndex from "./pages/admin/Index";
+import ScholarshipExamsAdmin from "./pages/admin/ScholarshipExamsAdmin";
+import ScholarshipExamQuestionsAdmin from "./pages/admin/ScholarshipExamQuestionsAdmin";
 
 // NESA Award Pages
 import PlatinumAward from "./pages/awards/PlatinumAward";
@@ -255,6 +257,8 @@ const App = () => (
               <Route path="/admin/finance/disbursements" element={<Disbursements />} />
               <Route path="/admin/csr-funding-funnel" element={<FundingFunnel />} />
               <Route path="/admin/staff-approvals" element={<StaffApprovals />} />
+              <Route path="/admin/scholarship/exams" element={<ScholarshipExamsAdmin />} />
+              <Route path="/admin/scholarship/exams/:examId/questions" element={<ScholarshipExamQuestionsAdmin />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
