@@ -533,7 +533,7 @@ const EduAidScholarship2026 = () => {
                   </ul>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <Button asChild className="h-11 bg-scef-blue-darker px-6 font-semibold hover:bg-scef-blue">
-                      <Link to="/scholarship/apply">
+                      <Link to="/scholarship/exam">
                         Register for Scholarship Exam <ArrowRight className="ms-2 h-4 w-4" />
                       </Link>
                     </Button>

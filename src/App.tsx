@@ -40,6 +40,9 @@ import FundingFunnel from "./pages/admin/FundingFunnel";
 import EduAidScholarship2026 from "./pages/scholarship/EduAidScholarship2026";
 import ScholarshipApply from "./pages/scholarship/Apply";
 import ScholarshipMyApplication from "./pages/scholarship/MyApplication";
+import ScholarshipExamRegister from "./pages/scholarship/ExamRegister";
+import ScholarshipExamRunner from "./pages/scholarship/ExamRunner";
+import ScholarshipExamResult from "./pages/scholarship/ExamResult";
 
 // Legal Pages
 import Privacy from "./pages/Privacy";
@@ -274,6 +277,9 @@ const App = () => (
               <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
               <Route path="/scholarship/apply" element={<ScholarshipApply />} />
               <Route path="/scholarship/my-application" element={<ScholarshipMyApplication />} />
+              <Route path="/scholarship/exam" element={<ScholarshipExamRegister />} />
+              <Route path="/scholarship/exam/:attemptId" element={<ScholarshipExamRunner />} />
+              <Route path="/scholarship/exam/:attemptId/result" element={<ScholarshipExamResult />} />
               
               {/* Governance & Partners */}
               <Route path="/governance" element={<Governance />} />
