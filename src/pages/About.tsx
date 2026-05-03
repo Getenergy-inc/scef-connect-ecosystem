@@ -1612,7 +1612,7 @@ const About = () => {
                     </p>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                      {(t("about.extras.csrFms.pillars") as unknown as { title: string; desc: string }[]).map((p, i) => (
+                      {((tRaw<{ title: string; desc: string }[]>("about.extras.csrFms.pillars") ?? []) as { title: string; desc: string }[]).map((p, i) => (
                         <div key={i} className="bg-white/5 border border-white/15 rounded-2xl p-5 hover:bg-white/10 transition-colors">
                           <div className="w-10 h-10 rounded-lg bg-scef-gold/20 flex items-center justify-center mb-3">
                             <CheckCircle2 className="w-5 h-5 text-scef-gold" />
@@ -1629,7 +1629,7 @@ const About = () => {
                           {t("about.extras.csrFms.partnersTitle")}
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {(t("about.extras.csrFms.partners") as unknown as string[]).map((name) => (
+                          {((tRaw<string[]>("about.extras.csrFms.partners") ?? []) as string[]).map((name) => (
                             <span key={name} className="px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm text-white">
                               {name}
                             </span>
@@ -1663,7 +1663,7 @@ const About = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-                  {(t("about.extras.governance.tiers") as unknown as { code: string; title: string; desc: string }[]).map((tier, i) => {
+                  {((tRaw<{ code: string; title: string; desc: string }[]>("about.extras.governance.tiers") ?? []) as { code: string; title: string; desc: string }[]).map((tier, i) => {
                     const Icon = i === 0 ? Shield : i === 1 ? Users : i === 2 ? Briefcase : Crown;
                     return (
                       <div key={tier.code} className="relative bg-card rounded-2xl p-6 border-2 border-border hover:border-scef-gold transition-colors">
@@ -1717,7 +1717,7 @@ const About = () => {
                       </h3>
                     </div>
                     <Accordion type="single" collapsible className="w-full">
-                      {(t("about.extras.membership.members") as unknown as { name: string; desc: string }[]).map((m, i) => (
+                      {((tRaw<{ name: string; desc: string }[]>("about.extras.membership.members") ?? []) as { name: string; desc: string }[]).map((m, i) => (
                         <AccordionItem key={i} value={`m-${i}`}>
                           <AccordionTrigger className="text-left">{m.name}</AccordionTrigger>
                           <AccordionContent className="text-muted-foreground">{m.desc}</AccordionContent>
@@ -1743,7 +1743,7 @@ const About = () => {
                       </h3>
                     </div>
                     <Accordion type="single" collapsible className="w-full">
-                      {(t("about.extras.membership.ambassadors") as unknown as { name: string; desc: string }[]).map((a, i) => (
+                      {((tRaw<{ name: string; desc: string }[]>("about.extras.membership.ambassadors") ?? []) as { name: string; desc: string }[]).map((a, i) => (
                         <AccordionItem key={i} value={`a-${i}`}>
                           <AccordionTrigger className="text-left">{a.name}</AccordionTrigger>
                           <AccordionContent className="text-muted-foreground">{a.desc}</AccordionContent>
@@ -1780,7 +1780,7 @@ const About = () => {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                  {(t("about.extras.targets2035.items") as unknown as { value: string; label: string }[]).map((item, i) => (
+                  {((tRaw<{ value: string; label: string }[]>("about.extras.targets2035.items") ?? []) as { value: string; label: string }[]).map((item, i) => (
                     <div key={i} className="bg-white/5 backdrop-blur border border-white/15 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
                       <p className="font-display text-3xl md:text-4xl font-bold text-scef-gold mb-2">
                         {item.value}
