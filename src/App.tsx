@@ -277,6 +277,9 @@ const App = () => (
               <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
               <Route path="/scholarship/apply" element={<ScholarshipApply />} />
               <Route path="/scholarship/my-application" element={<ScholarshipMyApplication />} />
+              <Route path="/scholarship/exam" element={<ScholarshipExamRegister />} />
+              <Route path="/scholarship/exam/:attemptId" element={<ScholarshipExamRunner />} />
+              <Route path="/scholarship/exam/:attemptId/result" element={<ScholarshipExamResult />} />
               
               {/* Governance & Partners */}
               <Route path="/governance" element={<Governance />} />
