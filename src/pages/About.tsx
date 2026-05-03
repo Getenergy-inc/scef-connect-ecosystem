@@ -48,7 +48,7 @@ const divisionLinks = {
 };
 
 const About = () => {
-  const { t, isRTL } = useLocale();
+  const { t, tRaw, isRTL } = useLocale();
   const [activeSection, setActiveSection] = useState("who-we-are");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [heroExpanded, setHeroExpanded] = useState(false);
