@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
+import { WelcomeAboutIntro } from "@/components/sections/WelcomeAboutIntro";
 import { HeroDigitalBoard } from "@/components/sections/HeroDigitalBoard";
 import { LiveActivityFeed } from "@/components/sections/LiveActivityFeed";
 import { ChoosePathToImpact } from "@/components/sections/ChoosePathToImpact";
@@ -15,11 +16,8 @@ import { CSRFundManagement } from "@/components/sections/CSRFundManagement";
 import { SixCoreServices } from "@/components/sections/SixCoreServices";
 import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { EduAidWebinarCalendar } from "@/components/sections/EduAidWebinarCalendar";
-import { MyCareerMyLife } from "@/components/sections/MyCareerMyLife";
-import { MCMLMedia } from "@/components/sections/MCMLMedia";
 import { SchoolRegistration } from "@/components/sections/SchoolRegistration";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
-import { myCareerMyLifeCalendar } from "@/config/trainingCalendar";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -44,60 +42,48 @@ const Home = () => {
           {/* 1. HERO */}
           <LandingHero />
 
-          {/* 2. SMART WELCOME ENTRY (Visitor / Member / Staff) */}
+          {/* 2. WELCOME + ABOUT INTRO */}
+          <Reveal>
+            <WelcomeAboutIntro />
+          </Reveal>
+
+          {/* 3. OUR CORE SERVICES */}
+          <div id="core-services">
+            <Reveal>
+              <SixCoreServices />
+            </Reveal>
+          </div>
+
+          {/* 4. PATHWAY TO YOUR EXPERIENCE (Visitor / Member / Staff) */}
           <SmartWelcomeEntry />
 
-          {/* 3. QUICK ACTIONS BAR */}
+          {/* 5. QUICK ACTIONS BAR */}
           <QuickActionsBar />
 
-          {/* 4. EXPLORE SCEF ECOSYSTEM (accordion) */}
+          {/* 6. EXPLORE SCEF ECOSYSTEM (accordion) */}
           <Reveal>
             <ExploreEcosystem />
           </Reveal>
 
-          {/* 5. HERO DIGITAL BOARD (rotating slider) */}
+          {/* 7. HERO DIGITAL BOARD (rotating slider) */}
           <HeroDigitalBoard />
 
-          {/* 6. LIVE ACTIVITY FEED */}
+          {/* 8. LIVE ACTIVITY FEED */}
           <LiveActivityFeed />
 
-          {/* 7. CORE SERVICES */}
-          <Reveal>
-            <SixCoreServices />
-          </Reveal>
-
-          {/* 8. CHOOSE YOUR PATH TO IMPACT */}
+          {/* 9. CHOOSE YOUR PATH TO IMPACT */}
           <Reveal>
             <ChoosePathToImpact />
           </Reveal>
 
-          {/* 8. FEATURED CAMPAIGNS */}
+          {/* 10. FEATURED CAMPAIGNS */}
           <Reveal>
             <FeaturedCampaigns />
           </Reveal>
 
-          {/* 9. EDUAID-AFRICA TRAINING CALENDAR (service of EduAid-Africa) */}
+          {/* 11. EDUAID-AFRICA TRAINING CALENDAR (service of EduAid-Africa) */}
           <Reveal>
             <EduAidWebinarCalendar preview />
-          </Reveal>
-
-          {/* 10. MY CAREER MY LIFE (+ calendar + media) */}
-          <Reveal>
-            <MyCareerMyLife />
-          </Reveal>
-          <Reveal>
-            <EduAidWebinarCalendar
-              preview
-              rows={myCareerMyLifeCalendar}
-              eyebrow="Starts August 2026"
-              title="My Career My Life Monthly Advocacy Calendar"
-              subtitle="Twelve months of student-focused career guidance for JSS, SS2 and SS3 students."
-              ctaHref="/programs/my-career-my-life"
-              ctaLabel="View Full MCML Calendar"
-            />
-          </Reveal>
-          <Reveal>
-            <MCMLMedia />
           </Reveal>
 
           {/* School registration */}
@@ -110,22 +96,22 @@ const Home = () => {
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 11. CSR & EDUCATION FUND MANAGEMENT */}
+          {/* 12. CSR & EDUCATION FUND MANAGEMENT */}
           <Reveal>
             <CSRFundManagement />
           </Reveal>
 
-          {/* 12. LOCAL CHAPTERS */}
+          {/* 13. LOCAL CHAPTERS */}
           <Reveal>
             <LocalChaptersSnapshot />
           </Reveal>
 
-          {/* 13. TRUST & PARTNERS */}
+          {/* 14. TRUST & PARTNERS */}
           <Reveal>
             <EndorsedBySection />
           </Reveal>
 
-          {/* 14. FINAL CTA */}
+          {/* 15. FINAL CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
