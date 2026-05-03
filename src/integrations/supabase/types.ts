@@ -1822,6 +1822,193 @@ export type Database = {
           },
         ]
       }
+      scholarship_exam_answers: {
+        Row: {
+          answered_at: string
+          attempt_id: string
+          id: string
+          question_id: string
+          selected_index: number | null
+        }
+        Insert: {
+          answered_at?: string
+          attempt_id: string
+          id?: string
+          question_id: string
+          selected_index?: number | null
+        }
+        Update: {
+          answered_at?: string
+          attempt_id?: string
+          id?: string
+          question_id?: string
+          selected_index?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scholarship_exam_answers_attempt_id_fkey"
+            columns: ["attempt_id"]
+            isOneToOne: false
+            referencedRelation: "scholarship_exam_attempts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scholarship_exam_answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "scholarship_exam_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      scholarship_exam_attempts: {
+        Row: {
+          application_id: string | null
+          created_at: string
+          exam_id: string
+          expires_at: string
+          id: string
+          passed: boolean | null
+          score_percent: number | null
+          score_points: number | null
+          started_at: string
+          status: string
+          submitted_at: string | null
+          total_points: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          application_id?: string | null
+          created_at?: string
+          exam_id: string
+          expires_at: string
+          id?: string
+          passed?: boolean | null
+          score_percent?: number | null
+          score_points?: number | null
+          started_at?: string
+          status?: string
+          submitted_at?: string | null
+          total_points?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          application_id?: string | null
+          created_at?: string
+          exam_id?: string
+          expires_at?: string
+          id?: string
+          passed?: boolean | null
+          score_percent?: number | null
+          score_points?: number | null
+          started_at?: string
+          status?: string
+          submitted_at?: string | null
+          total_points?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scholarship_exam_attempts_exam_id_fkey"
+            columns: ["exam_id"]
+            isOneToOne: false
+            referencedRelation: "scholarship_exams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      scholarship_exam_questions: {
+        Row: {
+          correct_index: number
+          created_at: string
+          exam_id: string
+          id: string
+          options: Json
+          points: number
+          position: number
+          prompt: string
+        }
+        Insert: {
+          correct_index: number
+          created_at?: string
+          exam_id: string
+          id?: string
+          options: Json
+          points?: number
+          position: number
+          prompt: string
+        }
+        Update: {
+          correct_index?: number
+          created_at?: string
+          exam_id?: string
+          id?: string
+          options?: Json
+          points?: number
+          position?: number
+          prompt?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scholarship_exam_questions_exam_id_fkey"
+            columns: ["exam_id"]
+            isOneToOne: false
+            referencedRelation: "scholarship_exams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      scholarship_exams: {
+        Row: {
+          category_slug: string | null
+          closes_at: string | null
+          created_at: string
+          description: string | null
+          duration_minutes: number
+          id: string
+          is_published: boolean
+          max_attempts: number
+          opens_at: string | null
+          pass_score_percent: number
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category_slug?: string | null
+          closes_at?: string | null
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number
+          id?: string
+          is_published?: boolean
+          max_attempts?: number
+          opens_at?: string | null
+          pass_score_percent?: number
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category_slug?: string | null
+          closes_at?: string | null
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number
+          id?: string
+          is_published?: boolean
+          max_attempts?: number
+          opens_at?: string | null
+          pass_score_percent?: number
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       services: {
         Row: {
           category: string | null
