@@ -188,32 +188,63 @@ const CsrFundManagement = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* HERO */}
-          <section className="relative bg-scef-blue-darker text-white">
-            <div className="pointer-events-none absolute inset-0 bg-scef-pattern opacity-[0.05]" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(217_91%_25%/0.6),transparent_55%)]" />
+          {/* HERO — CSR pitch / landing */}
+          <section className="relative isolate overflow-hidden bg-scef-blue-darker text-white">
+            <div className="absolute inset-0">
+              <img
+                src={csrHero}
+                alt="African learners supported through CSR education funding"
+                className="h-full w-full object-cover opacity-40"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-scef-blue-darker/95 via-scef-blue-darker/85 to-[#0A0A0A]/95" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(45_92%_42%/0.18),transparent_55%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-scef-pattern opacity-[0.05]" />
+            </div>
 
             <div className="container relative mx-auto px-6 md:px-8">
-              <div className="grid items-center gap-10 py-12 md:grid-cols-12 md:gap-12 md:py-20 lg:py-24">
-                <div className="md:col-span-6 lg:col-span-7">
-                  <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold-light ring-1 ring-white/15">
-                    CSR & Education Fund Management
+              <div className="grid items-center gap-10 py-16 md:grid-cols-12 md:gap-12 md:py-24 lg:py-28">
+                <div className="md:col-span-7">
+                  <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-scef-gold/40 bg-scef-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold">
+                    <span className="h-1.5 w-1.5 rounded-full bg-scef-gold" />
+                    CSR for Education Funds Management
                   </p>
-                  <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.5rem]">
-                    Managing Education Impact{" "}
-                    <span className="text-scef-gold">with Accountability</span>
+                  <h1 className="font-display text-[2.5rem] font-bold leading-[1.04] tracking-tight md:text-5xl lg:text-[3.75rem]">
+                    Invest in Africa&apos;s education.{" "}
+                    <span className="bg-gradient-to-r from-scef-gold to-[#F1C75B] bg-clip-text text-transparent">
+                      Track every outcome.
+                    </span>
                   </h1>
-                  <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-                    A trusted partner for organizations, institutions, and donors funding education across African regions — from program design to verified delivery and reporting.
+                  <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+                    SCEF is your trusted fiscal and program management partner —
+                    deploying CSR funds through EduAid-Africa and the GFA Wallet
+                    with transparent governance, local chapter delivery, and
+                    RBM/ESG/SDG-aligned reporting.
                   </p>
+
+                  <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
+                    {[
+                      "UN RBM-aligned reporting",
+                      "ESG & SDG 4 reporting",
+                      "Wallet-based escrow & disbursement",
+                      "Local chapter execution",
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-scef-gold" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
                   <div className="mt-8 flex flex-wrap items-center gap-3">
                     <Button
                       size="lg"
                       className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
                       asChild
                     >
-                      <Link to="/partner-with-us">
-                        Partner With Us <ArrowRight className="ms-2 h-4 w-4" />
+                      <Link to="/csr-funding-intake">
+                        <Megaphone className="me-2 h-4 w-4" />
+                        Launch a CSR Education Campaign
                       </Link>
                     </Button>
                     <Button
@@ -222,23 +253,105 @@ const CsrFundManagement = () => {
                       className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
                       asChild
                     >
-                      <Link to="/donate">
-                        Fund a Project <Handshake className="ms-2 h-4 w-4" />
+                      <Link to="/partner-with-us">
+                        <Handshake className="me-2 h-4 w-4" />
+                        Talk to Partnerships
                       </Link>
                     </Button>
                   </div>
-                </div>
 
-                <div className="md:col-span-6 lg:col-span-5">
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/40">
-                    <img
-                      src={csrHero}
-                      alt="African students benefiting from education funding programs"
-                      className="h-full w-full object-cover aspect-[4/3]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/40 via-transparent to-transparent" />
+                  <div className="mt-6 flex flex-wrap gap-2 text-xs">
+                    {[
+                      { label: "Sponsor a School", to: "/programs/rebuild-my-school-africa" },
+                      { label: "Fund Scholarships", to: "/programs/eduaid-africa" },
+                      { label: "Support Special Needs", to: "/programs/special-needs-education" },
+                      { label: "Track Impact", to: "/csr-fund-management" },
+                    ].map((p) => (
+                      <Link
+                        key={p.label}
+                        to={p.to}
+                        className="rounded-full border border-white/20 bg-white/5 px-3 py-1 font-medium text-white/80 transition-colors hover:border-scef-gold/50 hover:bg-scef-gold/10 hover:text-scef-gold"
+                      >
+                        {p.label}
+                      </Link>
+                    ))}
                   </div>
                 </div>
+
+                <div className="md:col-span-5">
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md md:p-8">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold">
+                      Partner platform at a glance
+                    </p>
+                    <dl className="mt-5 grid grid-cols-2 gap-5">
+                      {[
+                        { k: "Programs managed", v: "6 core" },
+                        { k: "Reporting", v: "RBM · ESG · SDG 4" },
+                        { k: "Disbursement", v: "GFA Wallet + AGC" },
+                        { k: "Delivery network", v: "Local chapters" },
+                        { k: "Verified impact", v: "Reporting in progress" },
+                        { k: "Public visibility", v: "NESA TV · Radio" },
+                      ].map((s) => (
+                        <div key={s.k}>
+                          <dt className="text-[11px] uppercase tracking-wider text-white/55">
+                            {s.k}
+                          </dt>
+                          <dd className="mt-1 font-display text-base font-bold text-white">
+                            {s.v}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <Link
+                      to="/csr-funding-intake"
+                      className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-scef-gold px-5 py-3 text-sm font-semibold text-scef-blue-darker transition-colors hover:bg-scef-gold-hover"
+                    >
+                      Start Partner Intake <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* PARTNER LOGOS STRIP */}
+          <section className="border-y border-border bg-card py-10">
+            <div className="container mx-auto px-6 md:px-8">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                Trusted by institutional partners & endorsers
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 opacity-80">
+                {endorsements && endorsements.length > 0 ? (
+                  endorsements.slice(0, 8).map((e) => (
+                    <a
+                      key={e.id}
+                      href={e.website_url || "#"}
+                      target={e.website_url ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      className="group flex items-center"
+                      title={e.name}
+                    >
+                      <img
+                        src={e.logo_url}
+                        alt={e.name}
+                        loading="lazy"
+                        className="h-10 w-auto object-contain grayscale transition-all duration-300 group-hover:grayscale-0 md:h-12"
+                      />
+                    </a>
+                  ))
+                ) : (
+                  <p className="text-sm italic text-muted-foreground">
+                    Partner directory loading…
+                  </p>
+                )}
+              </div>
+              <div className="mt-6 text-center">
+                <Link
+                  to="/partners"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker hover:text-scef-gold-dark"
+                >
+                  View all partners <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             </div>
           </section>
