@@ -15,11 +15,11 @@ import {
 import { useLocale } from "@/contexts/LocaleContext";
 
 const steps = [
-  { icon: Coins, title: "Fund Allocation", blurb: "CSR partners commit to scholarships, infrastructure, special needs, vocational or digital learning." },
-  { icon: Rocket, title: "Project Deployment", blurb: "Funds deployed via EduAid-Africa programs and Rebuild My School Africa." },
-  { icon: Wallet, title: "Wallet Management", blurb: "GFA Wallet & AGC enable escrow, staged disbursement and real-time tracking." },
-  { icon: BarChart3, title: "Monitoring & Reporting", blurb: "RBM, ESG and SDG 4-aligned dashboards with project-level financials." },
-  { icon: Megaphone, title: "Public Engagement", blurb: "Visibility via NESA TV, It's In Me Radio and AGC-powered voting campaigns." },
+  { slug: "fund-allocation", icon: Coins, title: "Fund Allocation", blurb: "CSR partners commit to scholarships, infrastructure, special needs, vocational or digital learning." },
+  { slug: "project-deployment", icon: Rocket, title: "Project Deployment", blurb: "Funds deployed via EduAid-Africa programs and Rebuild My School Africa." },
+  { slug: "wallet-management", icon: Wallet, title: "Wallet Management", blurb: "GFA Wallet & AGC enable escrow, staged disbursement and real-time tracking." },
+  { slug: "monitoring", icon: BarChart3, title: "Monitoring & Reporting", blurb: "RBM, ESG and SDG 4-aligned dashboards with project-level financials." },
+  { slug: "public-engagement", icon: Megaphone, title: "Public Engagement", blurb: "Visibility via NESA TV, It's In Me Radio and AGC-powered voting campaigns." },
 ];
 
 const interventions = [
@@ -62,21 +62,25 @@ export const CSRFundManagement = () => {
               aria-hidden
               className="pointer-events-none absolute left-[10%] right-[10%] top-7 hidden h-px bg-gradient-to-r from-transparent via-scef-gold/40 to-transparent lg:block"
             />
-            {steps.map(({ icon: Icon, title, blurb }, idx) => (
-              <div key={title} className="relative flex flex-col items-center text-center">
-                <div className="relative z-10 mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-scef-blue-darker text-scef-gold ring-4 ring-card shadow-md">
+            {steps.map(({ slug, icon: Icon, title, blurb }, idx) => (
+              <Link
+                key={title}
+                to={`/csr-fund-management#${slug}`}
+                className="group relative flex flex-col items-center rounded-xl p-3 text-center transition-colors hover:bg-background"
+              >
+                <div className="relative z-10 mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-scef-blue-darker text-scef-gold ring-4 ring-card shadow-md transition-transform group-hover:scale-105">
                   <Icon className="h-6 w-6" strokeWidth={1.75} />
                   <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-scef-gold text-[10px] font-bold text-scef-blue-darker">
                     {idx + 1}
                   </span>
                 </div>
-                <h3 className="font-display text-sm font-bold leading-tight text-scef-blue-darker md:text-[15px]">
+                <h3 className="font-display text-sm font-bold leading-tight text-scef-blue-darker group-hover:text-scef-gold-dark md:text-[15px]">
                   {title}
                 </h3>
                 <p className="mt-2 max-w-[14rem] text-xs leading-relaxed text-muted-foreground">
                   {blurb}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
