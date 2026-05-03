@@ -68,6 +68,8 @@ import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
 import DigitalLearning from "./pages/programs/DigitalLearning";
 import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import InclusionAccess from "./pages/programs/InclusionAccess";
+import TrainingDevelopment from "./pages/programs/TrainingDevelopment";
+import MyCareerMyLifePage from "./pages/programs/MyCareerMyLife";
 
 // Admin Pages
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
@@ -178,6 +180,8 @@ const App = () => (
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
               <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
+              <Route path="/programs/training-development" element={<TrainingDevelopment />} />
+              <Route path="/programs/my-career-my-life" element={<MyCareerMyLifePage />} />
               
               {/* Chapters Routes */}
               <Route path="/local-chapters" element={<LocalChapters />} />
