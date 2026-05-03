@@ -37,6 +37,12 @@ import {
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/reveal";
 import { supabase } from "@/integrations/supabase/client";
 import csrHero from "@/assets/hero-schoolgirl.jpg";
@@ -719,6 +725,67 @@ const CsrFundManagement = () => {
               </section>
             </Reveal>
           )}
+
+          {/* FAQ */}
+          <Reveal>
+            <section id="faq" className="scroll-mt-28 bg-card py-20 md:py-24">
+              <div className="container mx-auto px-6 md:px-8">
+                <div className="mx-auto max-w-3xl text-center">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">
+                    Partner FAQ
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
+                    How CSR Funds Are Managed, Reported & Disbursed
+                  </h2>
+                  <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                    Common questions from corporate, institutional and
+                    philanthropic partners engaging SCEF.
+                  </p>
+                </div>
+
+                <div className="mx-auto mt-10 max-w-3xl">
+                  <Accordion type="single" collapsible className="w-full space-y-3">
+                    {[
+                      { q: "How are CSR funds received and held?", a: "Partners commit funds via signed engagement letters. Funds are received into segregated, audit-ready program accounts and mirrored in the GFA Wallet ledger so every contribution is traceable from inception to disbursement." },
+                      { q: "How are funds disbursed to schools and beneficiaries?", a: "Disbursements flow through the GFA Wallet using staged, milestone-based releases. Each tranche requires multi-level approval (finance + program lead + chapter sign-off) and supporting documentation before release. Payouts use Paystack, Flutterwave, Bancable or TranscertPay rails depending on the destination country." },
+                      { q: "What governance and approval controls are in place?", a: "Engagements are governed by a four-tier RBAC structure — Board of Trustees (BOT) for global oversight, Board of Directors (BOD) for strategic execution, Board of Advisors (BOA) for local advisory, and Local Chapter Presidents (LCPs) for delivery. No single role can both initiate and release a payment." },
+                      { q: "How is impact measured and reported?", a: "We use UN Result-Based Management (RBM) frameworks aligned to ESG and SDG 4 — Quality Education. Partners receive project-level dashboards covering inputs, activities, outputs, outcomes and verified beneficiary data. Custom reporting cadences (monthly, quarterly, annual) are agreed at intake." },
+                      { q: "What does the GFA Wallet & AGC layer add?", a: "GFA Wallet provides the financial rails (escrow, multi-currency support, reconciliation). AGC (AfriGold Coin) powers transparent voting on community-selected interventions and creates an on-chain audit trail for fund movements where partners require it." },
+                      { q: "Can partners visit projects or audit independently?", a: "Yes. Partners can commission independent verification, request site visits coordinated through the relevant Local Chapter, and access raw beneficiary records under signed data-handling agreements. We also support third-party audits at the partner's cost." },
+                      { q: "What are the fees and overheads?", a: "SCEF charges a transparent program management fee disclosed in the engagement letter. The fee covers due diligence, financial administration, monitoring, evaluation and reporting. All non-fee funds are routed to program delivery via the GFA Wallet." },
+                      { q: "What public visibility do CSR partners receive?", a: "Partners are featured across NESA TV, It's In Me Radio, EduAid campaign storytelling, the SCEF partners directory and — where eligible — recognition tracks at NESA-Africa. Visibility levels are agreed at intake to match brand and CSR strategy." },
+                      { q: "How long does onboarding take?", a: "Standard partner onboarding (intake → due diligence → engagement letter → first disbursement) typically completes within 2–4 weeks for established programs. Custom-designed initiatives or new intervention areas may require 6–8 weeks for scoping and approvals." },
+                      { q: "Which currencies and regions are supported?", a: "Disbursements are supported across SCEF's active African chapters. Multi-currency settlement is handled at the wallet layer, with FX recorded on every transaction for full reporting transparency." },
+                    ].map((item, idx) => (
+                      <AccordionItem
+                        key={idx}
+                        value={`faq-${idx}`}
+                        className="rounded-xl border border-border bg-background px-5 transition-colors hover:border-scef-gold/40 data-[state=open]:border-scef-gold/50"
+                      >
+                        <AccordionTrigger className="py-5 text-left font-display text-base font-bold text-scef-blue-darker hover:no-underline md:text-lg">
+                          {item.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+                          {item.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+
+                <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic leading-relaxed text-muted-foreground">
+                  Have a question not covered here?{" "}
+                  <Link
+                    to="/partner-with-us"
+                    className="font-semibold not-italic text-scef-blue-darker underline-offset-4 hover:text-scef-gold-dark hover:underline"
+                  >
+                    Talk to our partnerships team
+                  </Link>
+                  .
+                </p>
+              </div>
+            </section>
+          </Reveal>
 
           {/* FINAL CTA */}
           <Reveal>
