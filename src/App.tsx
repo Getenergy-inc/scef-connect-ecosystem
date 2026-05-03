@@ -40,6 +40,9 @@ import FundingFunnel from "./pages/admin/FundingFunnel";
 import EduAidScholarship2026 from "./pages/scholarship/EduAidScholarship2026";
 import ScholarshipApply from "./pages/scholarship/Apply";
 import ScholarshipMyApplication from "./pages/scholarship/MyApplication";
+import ScholarshipExamRegister from "./pages/scholarship/ExamRegister";
+import ScholarshipExamRunner from "./pages/scholarship/ExamRunner";
+import ScholarshipExamResult from "./pages/scholarship/ExamResult";
 
 // Legal Pages
 import Privacy from "./pages/Privacy";
