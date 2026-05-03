@@ -19,6 +19,7 @@ interface LocaleContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: (key: string) => string;
+  tRaw: <T = any>(key: string) => T | undefined;
   isRTL: boolean;
 }
 
