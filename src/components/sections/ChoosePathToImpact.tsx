@@ -17,7 +17,7 @@ const paths = [
   { icon: UserPlus, title: "Support Women & Girls", href: "/programs/women-girls-education" },
   { icon: Accessibility, title: "Support Special Needs Schools", href: "/programs/special-needs-education" },
   { icon: Building2, title: "Register Your School", href: "/programs/training-development#register" },
-  { icon: GraduationCap, title: "Sponsor Training", href: "/partner-with-us" },
+  { icon: GraduationCap, title: "Sponsor Training", href: "/programs/eduaid-africa" },
   { icon: Users, title: "Join a Local Chapter", href: "/chapters/join" },
   { icon: Handshake, title: "Become a Partner", href: "/partner-with-us" },
 ];
