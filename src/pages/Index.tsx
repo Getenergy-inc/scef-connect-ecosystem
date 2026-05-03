@@ -10,9 +10,7 @@ import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
 import { RmsaFinalCTA } from "@/components/sections/RmsaFinalCTA";
 import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
-import { AnnouncementTicker } from "@/components/sections/AnnouncementTicker";
-import { AnnouncementBoard } from "@/components/sections/AnnouncementBoard";
-import { LiveActivityFeed } from "@/components/sections/LiveActivityFeed";
+import { SCEFDigitalBoard } from "@/components/sections/SCEFDigitalBoard";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
@@ -67,17 +65,11 @@ const Index = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 0. Slim top ticker — live announcements (smooth marquee, pause on hover) */}
-          <AnnouncementTicker />
+          {/* 0. SCEF Smart Digital Board — ticker + hero carousel + live activity */}
+          <SCEFDigitalBoard />
 
           {/* 1. HERO — clear value + 4 primary CTAs */}
           <LandingHero />
-
-          {/* 1b. Hero Digital Board — rotating campaign carousel */}
-          <AnnouncementBoard />
-
-          {/* 1c. Live Activity Feed — "happening now" strip */}
-          <LiveActivityFeed />
 
           {/* 2. PRIMARY ACTION — Rebuild My School Africa (strongest conversion engine) */}
           <RmsaHero />
