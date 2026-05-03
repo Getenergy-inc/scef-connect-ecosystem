@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Wallet, Users, Compass } from "lucide-react";
+import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Users, Compass } from "lucide-react";
 import eduaidImg from "@/assets/eduaid-hero.jpg";
 import rmsaImg from "@/assets/rmsa/school-before-after.jpg";
 import nesaImg from "@/assets/nesa-africa-stage-thumbnail.jpg";
 import onlineImg from "@/assets/hero-education.jpg";
 import libraryImg from "@/assets/hero-programs.jpg";
-import walletImg from "@/assets/gfa-wallet-logo.jpg";
 
 const services = [
   {
