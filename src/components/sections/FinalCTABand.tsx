@@ -19,42 +19,33 @@ export const FinalCTABand = () => {
             {t("home.finalCta.eyebrow") || "Join Us"}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.5rem]">
-            {t("home.finalCta.title") || "Be part of Africa's education transformation"}
+            Help Us Build the Future of Education in Africa
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-            {t("home.finalCta.subtitle") ||
-              "Support, fund, or lead initiatives that expand access, improve quality, and deliver measurable education impact across regions."}
+            Whether you donate, nominate a school, join a chapter, support
+            girls&apos; education, adopt a special needs school, sponsor
+            training, or register your school for career guidance — your action
+            helps transform education across Africa.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button
-              size="lg"
-              className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
-              asChild
-            >
-              <Link to="/get-involved/membership">
-                {t("home.finalCta.ctaJoin") || "Become a Member"}
-              </Link>
+            <Button size="lg" className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover" asChild>
+              <Link to="/donate">Donate</Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
-              asChild
-            >
-              <Link to="/donate">
-                {t("home.finalCta.ctaDonate") || "Donate Now"}
-              </Link>
+            <Button size="lg" className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90" asChild>
+              <Link to="/nominate">Nominate a School</Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
-              asChild
-            >
-              <Link to="/partner-with-us">
-                {t("home.finalCta.ctaPartner") || "Partner With Us"}
-              </Link>
+            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link to="/programs/training-development#register">Register Your School</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link to="/partner-with-us">Sponsor Training</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link to="/get-involved/volunteer">Volunteer for MCML</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link to="/partner-with-us">Become a Partner</Link>
             </Button>
           </div>
         </div>

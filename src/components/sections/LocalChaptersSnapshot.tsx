@@ -21,7 +21,10 @@ export const LocalChaptersSnapshot = () => {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             Country and regional chapters drive school nominations, donations
-            and intervention delivery in their own communities.
+            and intervention delivery in their own communities — and coordinate
+            school registration, volunteer recruitment, physical training,
+            media documentation and regional reporting for EduAid-Africa
+            webinars and My Career My Life sessions.
           </p>
         </div>
 

@@ -11,6 +11,7 @@ import {
   GraduationCap,
   Wrench,
   Monitor,
+  Users,
 } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -28,6 +29,7 @@ const interventions = [
   { icon: GraduationCap, label: "Scholarships & Grants" },
   { icon: Wrench, label: "Vocational & Skills" },
   { icon: Monitor, label: "Digital Education" },
+  { icon: Users, label: "Training & Career Development" },
 ];
 
 /**

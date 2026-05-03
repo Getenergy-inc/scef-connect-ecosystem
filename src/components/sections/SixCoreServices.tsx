@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Wallet } from "lucide-react";
+import { ArrowRight, GraduationCap, School, Trophy, Monitor, BookOpen, Wallet, Users, Compass } from "lucide-react";
 import eduaidImg from "@/assets/eduaid-hero.jpg";
 import rmsaImg from "@/assets/rmsa/school-before-after.jpg";
 import nesaImg from "@/assets/nesa-africa-stage-thumbnail.jpg";
@@ -61,6 +61,24 @@ const services = [
     image: walletImg,
     cta: "Open EduAid Wallet",
     href: "/wallet",
+  },
+  {
+    icon: Users,
+    title: "Training & Development",
+    blurb:
+      "Monthly EduAid-Africa webinars for teachers, school managers, inclusive education, TVET, and chapter leadership — starting July 2026.",
+    image: onlineImg,
+    cta: "View Training Calendar",
+    href: "/programs/training-development",
+  },
+  {
+    icon: Compass,
+    title: "My Career My Life",
+    blurb:
+      "Career guidance and life-path advocacy for JSS and SS2/SS3 students — subject choices, TVET, digital skills, entrepreneurship, and mentorship.",
+    image: libraryImg,
+    cta: "Explore My Career My Life",
+    href: "/programs/my-career-my-life",
   },
 ];
 

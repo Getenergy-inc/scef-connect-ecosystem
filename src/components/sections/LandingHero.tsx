@@ -34,15 +34,14 @@ export const LandingHero = () => {
               {t("home.heroV2.eyebrow") || "Pan-African Education Foundation · Since 1997"}
             </p>
             <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.75rem]">
-              {t("home.heroV2.line1") || "Empowering Africa through"}{" "}
-              <span className="text-scef-gold">
-                {t("home.heroV2.highlight") || "education, innovation,"}
-              </span>{" "}
-              {t("home.heroV2.line2") || "and opportunity."}
+              Be Part of Africa&apos;s{" "}
+              <span className="text-scef-gold">Education Transformation</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
-              {t("home.heroV2.subtitle") ||
-                "A membership-driven foundation and education CSR fund management partner — advancing education across regions through advocacy, digital access, and accountable funding systems."}
+              Santos Creations Educational Foundation advances Education for All
+              through scholarships, school rebuilding, women and girls
+              empowerment, special needs education, digital learning, career
+              guidance, local chapters, and transparent CSR education funding.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button
@@ -50,10 +49,25 @@ export const LandingHero = () => {
                 className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
                 asChild
               >
-                <Link to="/get-involved/membership">
-                  {t("home.heroV2.ctaPrimary") || "Explore Membership"}
+                <Link to="/donate">
+                  Donate
                   <ArrowRight className="ms-2 h-4 w-4" />
                 </Link>
+              </Button>
+              <Button
+                size="lg"
+                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
+                asChild
+              >
+                <Link to="/nominate">Nominate a School</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
+                asChild
+              >
+                <Link to="/vote">Vote with AGC</Link>
               </Button>
               <Button
                 size="lg"
@@ -62,9 +76,17 @@ export const LandingHero = () => {
                 asChild
               >
                 <Link to="/partner-with-us">
-                  {t("home.heroV2.ctaSecondary") || "Partner With Us"}
+                  Become a Partner
                   <Handshake className="ms-2 h-4 w-4" />
                 </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="ghost"
+                className="h-12 px-5 font-semibold text-scef-gold hover:bg-white/10 hover:text-scef-gold"
+                asChild
+              >
+                <Link to="/chapters/join">Join a Local Chapter →</Link>
               </Button>
               <QuickJumpMenu variant="dark" />
             </div>

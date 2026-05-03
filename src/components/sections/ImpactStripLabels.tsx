@@ -1,4 +1,4 @@
-import { Globe2, GraduationCap, Handshake, Trophy, HeartHandshake, School } from "lucide-react";
+import { Globe2, GraduationCap, Handshake, Trophy, HeartHandshake, School, Users, Compass, Mic, Building2 } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const items = [
@@ -8,6 +8,10 @@ const items = [
   { icon: Trophy, label: "Education Change Makers", desc: "Honoured through NESA-Africa recognition" },
   { icon: HeartHandshake, label: "Volunteers & Ambassadors", desc: "Members driving advocacy on the ground" },
   { icon: School, label: "Schools Rebuilt", desc: "Renewed and equipped through Rebuild My School Africa" },
+  { icon: Users, label: "Teachers Trained", desc: "Through EduAid-Africa monthly capacity programs" },
+  { icon: Building2, label: "Schools Registered for Training", desc: "Onboarded for SCEF training and adopt-a-school" },
+  { icon: Compass, label: "Students Reached via MCML", desc: "Through My Career My Life advocacy sessions" },
+  { icon: Mic, label: "Career Sessions Delivered", desc: "Live webinars, school visits and recorded segments" },
 ];
 
 /**
@@ -27,7 +31,7 @@ export const ImpactStripLabels = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 md:gap-5">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-5">
           {items.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}
