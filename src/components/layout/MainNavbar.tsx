@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteContent } from "@/config/siteContent";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import scefLogo from "@/assets/scef-logo.png";
 
 const ICONS: Record<string, LucideIcon> = {
   GraduationCap, School, Heart, Accessibility, Laptop, Library, Award,
@@ -53,12 +54,27 @@ export const MainNavbar = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between gap-6">
           {/* Brand Lockup */}
-          <Link to="/" className="flex flex-col group shrink-0">
-            <span className="font-display font-bold text-xl md:text-2xl text-white leading-tight group-hover:text-scef-gold transition-colors">
-              {siteContent.brand.name}
+          <Link
+            to="/"
+            className="flex items-center gap-3 group shrink-0"
+            aria-label={`${siteContent.brand.name} — Home`}
+          >
+            <span className="inline-flex items-center justify-center rounded-md bg-white/95 px-2.5 py-1.5 shadow-sm ring-1 ring-white/30 transition-transform group-hover:scale-[1.02]">
+              <img
+                src={scefLogo}
+                alt={siteContent.brand.name}
+                className="h-9 md:h-11 w-auto object-contain"
+                loading="eager"
+                decoding="async"
+              />
             </span>
-            <span className="text-xs md:text-sm text-white/70 leading-tight">
-              {siteContent.brand.tagline}
+            <span className="hidden sm:flex flex-col leading-tight">
+              <span className="font-display font-semibold text-[13px] md:text-sm text-white">
+                {siteContent.brand.name}
+              </span>
+              <span className="text-[10px] md:text-xs text-white/70">
+                {siteContent.brand.tagline}
+              </span>
             </span>
           </Link>
 
