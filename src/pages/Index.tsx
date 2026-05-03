@@ -10,11 +10,7 @@ import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
 import { RmsaFinalCTA } from "@/components/sections/RmsaFinalCTA";
 import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
-import { ProgramsThatTransform } from "@/components/sections/ProgramsThatTransform";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
-import { HowSCEFWorks } from "@/components/sections/HowSCEFWorks";
-import { ImpactAreasBand } from "@/components/sections/ImpactAreasBand";
-import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
