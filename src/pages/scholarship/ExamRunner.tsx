@@ -25,6 +25,7 @@ type AttemptData = {
     status: "in_progress" | "submitted" | "expired";
     started_at: string;
     expires_at: string;
+    is_preview?: boolean;
   };
   exam: { title: string; duration_minutes: number; pass_score_percent: number };
   questions: Question[];
@@ -228,6 +229,11 @@ const ExamRunner = () => {
           {lowTime && (
             <div className="bg-destructive/10 px-6 py-2 text-center text-xs font-semibold text-destructive md:px-8">
               Less than 1 minute remaining — your exam will auto-submit when the timer reaches zero.
+            </div>
+          )}
+          {data.attempt.is_preview && (
+            <div className="bg-scef-gold/15 px-6 py-2 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-scef-blue-darker md:px-8">
+              Admin Preview Mode · Test attempt — results are not recorded for any applicant
             </div>
           )}
         </div>

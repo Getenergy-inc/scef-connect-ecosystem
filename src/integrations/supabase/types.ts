@@ -1868,6 +1868,7 @@ export type Database = {
           exam_id: string
           expires_at: string
           id: string
+          is_preview: boolean
           passed: boolean | null
           score_percent: number | null
           score_points: number | null
@@ -1884,6 +1885,7 @@ export type Database = {
           exam_id: string
           expires_at: string
           id?: string
+          is_preview?: boolean
           passed?: boolean | null
           score_percent?: number | null
           score_points?: number | null
@@ -1900,6 +1902,7 @@ export type Database = {
           exam_id?: string
           expires_at?: string
           id?: string
+          is_preview?: boolean
           passed?: boolean | null
           score_percent?: number | null
           score_points?: number | null

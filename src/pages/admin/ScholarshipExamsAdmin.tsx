@@ -12,7 +12,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogTrigger } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Loader2, Plus, Pencil, Trash2, ListChecks, GraduationCap } from "lucide-react";
+import { Loader2, Plus, Pencil, Trash2, ListChecks, GraduationCap, PlayCircle } from "lucide-react";
 
 type Exam = {
   id: string;
@@ -109,6 +109,22 @@ export default function ScholarshipExamsAdmin() {
       .update({ is_published: !e.is_published }).eq("id", e.id);
     if (error) { toast.error(error.message); return; }
     await load();
+  };
+
+  const startPreview = async (e: Exam) => {
+    const tid = toast.loading(`Starting preview for "${e.title}"…`);
+    const { data, error } = await supabase.functions.invoke("scholarship-exam", {
+      body: { action: "preview", exam_id: e.id },
+    });
+    toast.dismiss(tid);
+    if (error || (data as any)?.error) {
+      toast.error((data as any)?.error ?? error?.message ?? "Could not start preview");
+      return;
+    }
+    const attemptId = (data as any)?.attempt_id;
+    if (!attemptId) { toast.error("No attempt returned"); return; }
+    toast.success("Preview attempt started — admin test mode");
+    navigate(`/scholarship/exam/${attemptId}`);
   };
 
   if (loading) {
@@ -212,6 +228,9 @@ export default function ScholarshipExamsAdmin() {
                         </CardDescription>
                       </div>
                       <div className="flex flex-wrap items-center gap-2">
+                        <Button size="sm" variant="default" onClick={() => startPreview(e)} title="Run a timed test attempt as admin (does not count against applicants)">
+                          <PlayCircle className="w-4 h-4 mr-1" /> Preview
+                        </Button>
                         <Button asChild size="sm" variant="secondary">
                           <Link to={`/admin/scholarship/exams/${e.id}/questions`}>
                             <ListChecks className="w-4 h-4 mr-1" /> Questions

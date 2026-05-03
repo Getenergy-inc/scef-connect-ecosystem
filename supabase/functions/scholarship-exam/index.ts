@@ -46,6 +46,62 @@ Deno.serve(async (req) => {
   const action = String(body?.action ?? "");
 
   try {
+    // ---------------- ADMIN PREVIEW ----------------
+    // Admins start an isolated test attempt against any exam (published or draft).
+    // Preview attempts skip eligibility + max-attempts and are flagged is_preview=true.
+    if (action === "preview") {
+      const examId = String(body?.exam_id ?? "");
+      if (!examId) return json({ error: "exam_id is required" }, 400);
+
+      // Verify admin role
+      const { data: roles } = await admin
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", user.id);
+      const isAdminUser = (roles ?? []).some((r: any) =>
+        ["admin", "super_admin", "hq_admin"].includes(String(r.role)),
+      );
+      if (!isAdminUser) return json({ error: "Admins only" }, 403);
+
+      const { data: exam, error: examErr } = await admin
+        .from("scholarship_exams")
+        .select("id, duration_minutes")
+        .eq("id", examId)
+        .maybeSingle();
+      if (examErr || !exam) return json({ error: "Exam not found" }, 404);
+
+      // Reuse a live preview attempt for this admin if it exists
+      const now = new Date();
+      const { data: existing } = await admin
+        .from("scholarship_exam_attempts")
+        .select("id, status, expires_at")
+        .eq("user_id", user.id)
+        .eq("exam_id", exam.id)
+        .eq("is_preview", true)
+        .order("started_at", { ascending: false });
+      const live = (existing ?? []).find(
+        (a: any) => a.status === "in_progress" && new Date(a.expires_at) > now,
+      );
+      if (live) return json({ attempt_id: live.id, expires_at: live.expires_at, preview: true });
+
+      const expires_at = new Date(now.getTime() + exam.duration_minutes * 60_000).toISOString();
+      const { data: attempt, error: insErr } = await admin
+        .from("scholarship_exam_attempts")
+        .insert({
+          exam_id: exam.id,
+          user_id: user.id,
+          application_id: null,
+          status: "in_progress",
+          started_at: now.toISOString(),
+          expires_at,
+          is_preview: true,
+        })
+        .select("id, expires_at")
+        .single();
+      if (insErr || !attempt) return json({ error: "Could not start preview attempt" }, 500);
+      return json({ attempt_id: attempt.id, expires_at: attempt.expires_at, preview: true });
+    }
+
     // ---------------- REGISTER ----------------
     if (action === "register") {
       const examSlug = String(body?.exam_slug ?? "");
@@ -158,6 +214,7 @@ Deno.serve(async (req) => {
           score_points: attempt.score_points,
           total_points: attempt.total_points,
           passed: attempt.passed,
+          is_preview: attempt.is_preview === true,
         },
         exam,
         questions: questions ?? [],
