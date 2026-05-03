@@ -12,7 +12,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogTrigger } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Loader2, Plus, Pencil, Trash2, ListChecks, GraduationCap } from "lucide-react";
+import { Loader2, Plus, Pencil, Trash2, ListChecks, GraduationCap, PlayCircle } from "lucide-react";
 
 type Exam = {
   id: string;
