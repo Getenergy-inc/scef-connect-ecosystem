@@ -111,6 +111,22 @@ export default function ScholarshipExamsAdmin() {
     await load();
   };
 
+  const startPreview = async (e: Exam) => {
+    const tid = toast.loading(`Starting preview for "${e.title}"…`);
+    const { data, error } = await supabase.functions.invoke("scholarship-exam", {
+      body: { action: "preview", exam_id: e.id },
+    });
+    toast.dismiss(tid);
+    if (error || (data as any)?.error) {
+      toast.error((data as any)?.error ?? error?.message ?? "Could not start preview");
+      return;
+    }
+    const attemptId = (data as any)?.attempt_id;
+    if (!attemptId) { toast.error("No attempt returned"); return; }
+    toast.success("Preview attempt started — admin test mode");
+    navigate(`/scholarship/exam/${attemptId}`);
+  };
+
   if (loading) {
     return (
       <DashboardLayout role="super_admin" title="Scholarship Exams">
