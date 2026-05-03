@@ -19,6 +19,11 @@ import { ChooseYourPath } from "@/components/sections/ChooseYourPath";
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
 import { CRSPartnersStrip } from "@/components/sections/CRSPartnersStrip";
 import { CSRFundManagement } from "@/components/sections/CSRFundManagement";
+import { SixCoreServices } from "@/components/sections/SixCoreServices";
+import { AdvocacyServices } from "@/components/sections/AdvocacyServices";
+import { StoriesOfTransformation } from "@/components/sections/StoriesOfTransformation";
+import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
+import { WaysToSupport } from "@/components/sections/WaysToSupport";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -69,6 +74,11 @@ const Index = () => {
           {/* 2. RMSA hero — flagship interactive layer */}
           <RmsaHero />
 
+          {/* 2b. Six core education services */}
+          <Reveal>
+            <SixCoreServices />
+          </Reveal>
+
           {/* 3. Special Needs Schools Initiative */}
           <Reveal>
             <SpecialNeedsSection />
@@ -107,6 +117,26 @@ const Index = () => {
           {/* 9. CSR & Education Fund Management */}
           <Reveal>
             <CSRFundManagement />
+          </Reveal>
+
+          {/* 9b. Ways to support */}
+          <Reveal>
+            <WaysToSupport />
+          </Reveal>
+
+          {/* 9c. Advocacy services */}
+          <Reveal>
+            <AdvocacyServices />
+          </Reveal>
+
+          {/* 9d. Stories of transformation */}
+          <Reveal>
+            <StoriesOfTransformation />
+          </Reveal>
+
+          {/* 9e. Local chapters snapshot */}
+          <Reveal>
+            <LocalChaptersSnapshot />
           </Reveal>
 
           {/* 10. Programs */}
