@@ -54,15 +54,6 @@ const services = [
     href: "/programs/elibrary-nigeria",
   },
   {
-    icon: Wallet,
-    title: "GFA Wallet / AGC",
-    blurb:
-      "Financial infrastructure powering transparent donations, scholarship disbursements, voting, and impact tracking with AGC.",
-    image: walletImg,
-    cta: "Open EduAid Wallet",
-    href: "/wallet",
-  },
-  {
     icon: Users,
     title: "Training & Development",
     blurb:
