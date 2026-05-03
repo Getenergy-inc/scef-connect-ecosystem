@@ -214,6 +214,7 @@ Deno.serve(async (req) => {
           score_points: attempt.score_points,
           total_points: attempt.total_points,
           passed: attempt.passed,
+          is_preview: attempt.is_preview === true,
         },
         exam,
         questions: questions ?? [],
