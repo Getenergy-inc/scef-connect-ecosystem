@@ -81,12 +81,12 @@ export const SixCoreServices = () => {
             What we deliver
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-            Our 6 Core Education Services
+            Our Core Education Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Six integrated services advancing African education — from funding
-            and infrastructure to recognition, learning, knowledge, and
-            transparent finance.
+            Integrated services advancing African education — from funding and
+            infrastructure to recognition, learning, training, and career
+            guidance.
           </p>
         </div>
 
