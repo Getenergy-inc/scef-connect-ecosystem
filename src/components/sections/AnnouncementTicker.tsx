@@ -12,14 +12,13 @@ import { Megaphone } from "lucide-react";
 type Item = { icon: string; label: string; href: string };
 
 const ITEMS: Item[] = [
-  { icon: "🎓", label: "EduAid-Africa Scholarship 2026–2027 — Now Open", href: "/scholarship/eduaid-2026" },
-  { icon: "🏫", label: "Nominate a Special Needs School in Your Region", href: "/programs/special-needs-education" },
-  { icon: "📣", label: "NESA-Africa Awards — Call for Entries", href: "/programs/nesa-africa" },
-  { icon: "💰", label: "Fund a School via GFA Wallet", href: "/wallet/donate" },
-  { icon: "🗳", label: "Vote with AGC — Prioritize Campaigns", href: "/vote" },
-  { icon: "📺", label: "Watch NESA TV — Education Leaders Speak", href: "/media/nesa-tv" },
-  { icon: "🎙", label: "It's In Me Radio — Youth Empowerment Stories", href: "/media/its-in-me-radio" },
-  { icon: "📚", label: "Explore eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
+  { icon: "🎓", label: "Scholarship 2026 Open", href: "/scholarship/eduaid-2026" },
+  { icon: "🏫", label: "Nominate a School", href: "/nominate" },
+  { icon: "💰", label: "Donate Now", href: "/donate" },
+  { icon: "🗳", label: "Vote with AGC", href: "/vote" },
+  { icon: "📺", label: "Watch NESA TV", href: "/media/nesa-tv" },
+  { icon: "📅", label: "EduAid Training Calendar — July 2026", href: "/programs/training-development" },
+  { icon: "🎯", label: "My Career My Life — August 2026", href: "/programs/my-career-my-life" },
 ];
 
 export const AnnouncementTicker = () => {

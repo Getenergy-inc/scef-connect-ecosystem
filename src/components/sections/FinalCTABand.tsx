@@ -19,13 +19,11 @@ export const FinalCTABand = () => {
             {t("home.finalCta.eyebrow") || "Join Us"}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.5rem]">
-            Help Us Build the Future of Education in Africa
+            Be part of Africa&apos;s education transformation.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-            Whether you donate, nominate a school, join a chapter, support
-            girls&apos; education, adopt a special needs school, sponsor
-            training, or register your school for career guidance — your action
-            helps transform education across Africa.
+            Donate, nominate a school, vote with AGC, register your school, or
+            partner with SCEF — every action moves African education forward.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -36,13 +34,10 @@ export const FinalCTABand = () => {
               <Link to="/nominate">Nominate a School</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link to="/vote">Vote with AGC</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
               <Link to="/programs/training-development#register">Register Your School</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
-              <Link to="/partner-with-us">Sponsor Training</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
-              <Link to="/get-involved/volunteer">Volunteer for MCML</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
               <Link to="/partner-with-us">Become a Partner</Link>
