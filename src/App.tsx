@@ -106,7 +106,7 @@ import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 
 // Dashboard Pages
-import Welcome from "./pages/dashboard/Welcome";
+import DashboardWelcome from "./pages/dashboard/Welcome";
 import ChapterInbox from "./pages/chapter/Inbox";
 import Profile from "./pages/dashboard/Profile";
 import Activity from "./pages/dashboard/Activity";
