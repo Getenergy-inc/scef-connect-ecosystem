@@ -37,6 +37,9 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import CsrFundManagement from "./pages/CsrFundManagement";
 import CsrFundingIntake from "./pages/CsrFundingIntake";
 import FundingFunnel from "./pages/admin/FundingFunnel";
+import EduAidScholarship2026 from "./pages/scholarship/EduAidScholarship2026";
+import ScholarshipApply from "./pages/scholarship/Apply";
+import ScholarshipMyApplication from "./pages/scholarship/MyApplication";
 
 // Legal Pages
 import Privacy from "./pages/Privacy";
@@ -266,6 +269,11 @@ const App = () => (
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/wallet/donate" element={<Donate />} />
+
+              {/* Scholarship */}
+              <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
+              <Route path="/scholarship/apply" element={<ScholarshipApply />} />
+              <Route path="/scholarship/my-application" element={<ScholarshipMyApplication />} />
               
               {/* Governance & Partners */}
               <Route path="/governance" element={<Governance />} />
