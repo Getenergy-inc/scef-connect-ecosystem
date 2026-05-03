@@ -10,6 +10,17 @@ import {
   Wallet,
   ClipboardCheck,
   HelpCircle,
+  UserPlus,
+  ListChecks,
+  FileUp,
+  Send,
+  Clock,
+  FileCheck2,
+  Bell,
+  Coins,
+  Wifi,
+  Timer,
+  ShieldCheck,
 } from "lucide-react";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
