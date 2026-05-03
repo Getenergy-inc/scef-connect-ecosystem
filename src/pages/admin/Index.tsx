@@ -5,7 +5,7 @@ import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { 
   LayoutDashboard, Image, Award, Handshake, Briefcase, 
-  Wallet, Building2, CreditCard, ArrowRight 
+  Wallet, Building2, CreditCard, ArrowRight, GraduationCap
 } from "lucide-react";
 import { useAuthState } from "@/hooks/useAuthState";
 
@@ -75,6 +75,12 @@ const AdminIndex = () => {
       description: "Inquiries → projects → milestones → reports",
       icon: Handshake,
       href: "/admin/csr-funding-funnel",
+    },
+    {
+      title: "Scholarship Exams",
+      description: "Create and publish exams, manage questions and points",
+      icon: GraduationCap,
+      href: "/admin/scholarship/exams",
     },
   ];
 
