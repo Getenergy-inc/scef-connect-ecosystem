@@ -233,7 +233,7 @@ const App = () => (
               
               {/* Dashboard Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/dashboard/welcome" element={<Welcome />} />
+              <Route path="/dashboard/welcome" element={<DashboardWelcome />} />
               <Route path="/dashboard/profile" element={<Profile />} />
               <Route path="/dashboard/activity" element={<Activity />} />
               <Route path="/dashboard/elibrary" element={<ELibraryAdminPage />} />
