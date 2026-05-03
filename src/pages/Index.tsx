@@ -12,6 +12,7 @@ import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { WhoWeAreLean } from "@/components/sections/WhoWeAreLean";
 import { AnnouncementTicker } from "@/components/sections/AnnouncementTicker";
 import { AnnouncementBoard } from "@/components/sections/AnnouncementBoard";
+import { LiveActivityFeed } from "@/components/sections/LiveActivityFeed";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
