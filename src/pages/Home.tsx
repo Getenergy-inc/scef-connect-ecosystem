@@ -5,6 +5,9 @@ import { LandingHero } from "@/components/sections/LandingHero";
 import { HeroDigitalBoard } from "@/components/sections/HeroDigitalBoard";
 import { LiveActivityFeed } from "@/components/sections/LiveActivityFeed";
 import { ChoosePathToImpact } from "@/components/sections/ChoosePathToImpact";
+import { SmartWelcomeEntry } from "@/components/sections/SmartWelcomeEntry";
+import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
+import { ExploreEcosystem } from "@/components/sections/ExploreEcosystem";
 import { FeaturedCampaigns } from "@/components/sections/FeaturedCampaigns";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { EndorsedBySection } from "@/components/sections/EndorsedBySection";
@@ -39,21 +42,32 @@ const Home = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 3. HERO */}
+          {/* 1. HERO */}
           <LandingHero />
 
-          {/* 4. HERO DIGITAL BOARD (rotating slider) */}
+          {/* 2. SMART WELCOME ENTRY (Visitor / Member / Staff) */}
+          <SmartWelcomeEntry />
+
+          {/* 3. QUICK ACTIONS BAR */}
+          <QuickActionsBar />
+
+          {/* 4. EXPLORE SCEF ECOSYSTEM (accordion) */}
+          <Reveal>
+            <ExploreEcosystem />
+          </Reveal>
+
+          {/* 5. HERO DIGITAL BOARD (rotating slider) */}
           <HeroDigitalBoard />
 
-          {/* 5. LIVE ACTIVITY FEED */}
+          {/* 6. LIVE ACTIVITY FEED */}
           <LiveActivityFeed />
 
-          {/* 6. SIX CORE SERVICES */}
+          {/* 7. CORE SERVICES */}
           <Reveal>
             <SixCoreServices />
           </Reveal>
 
-          {/* 7. CHOOSE YOUR PATH TO IMPACT */}
+          {/* 8. CHOOSE YOUR PATH TO IMPACT */}
           <Reveal>
             <ChoosePathToImpact />
           </Reveal>
