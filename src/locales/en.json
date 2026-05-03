@@ -187,11 +187,26 @@
       "imageAlt": "African schoolchildren in green uniforms standing together at school",
       "scrollCue": "Scroll to explore",
       "pillars": {
-        "Education Advocacy": { "title": "Education Advocacy", "sub": "Expanding access for every learner" },
-        "Skills & Innovation": { "title": "Skills & Innovation", "sub": "Preparing for real-world impact" },
-        "Inclusion & Equity": { "title": "Inclusion & Equity", "sub": "Opening opportunities for all" },
-        "Accountability": { "title": "Accountability", "sub": "Delivering measurable outcomes" },
-        "Pan-African Impact": { "title": "Pan-African Impact", "sub": "Scaling across regions" }
+        "Education Advocacy": {
+          "title": "Education Advocacy",
+          "sub": "Expanding access for every learner"
+        },
+        "Skills & Innovation": {
+          "title": "Skills & Innovation",
+          "sub": "Preparing for real-world impact"
+        },
+        "Inclusion & Equity": {
+          "title": "Inclusion & Equity",
+          "sub": "Opening opportunities for all"
+        },
+        "Accountability": {
+          "title": "Accountability",
+          "sub": "Delivering measurable outcomes"
+        },
+        "Pan-African Impact": {
+          "title": "Pan-African Impact",
+          "sub": "Scaling across regions"
+        }
       }
     },
     "hero": {
@@ -1033,6 +1048,145 @@
       "ctaDonate": "Donate",
       "ctaPartner": "Partner",
       "ctaMedia": "Watch SCEF Media"
+    },
+    "extras": {
+      "quickNav": {
+        "csrFms": "CSR Funds Mgmt",
+        "governance": "Governance",
+        "membership": "Membership",
+        "targets2035": "2035 Targets"
+      },
+      "csrFms": {
+        "badge": "Featured Service",
+        "title": "CSR for Education — Funds Management Services (SCEF–FMS)",
+        "lead": "SCEF manages education CSR funds with institutional-grade accountability — from verified project selection through audited disbursement and ESG/SDG reporting.",
+        "pillars": [
+          {
+            "title": "Verified Project Selection",
+            "desc": "Independent due-diligence on schools, learners, and partners before any fund is committed."
+          },
+          {
+            "title": "Approvals & Governance",
+            "desc": "Multi-tier approvals across BOT, BOA, and Finance Division before disbursement."
+          },
+          {
+            "title": "Milestone Delivery",
+            "desc": "Funds released against verified milestones — construction, equipment, scholarships, training."
+          },
+          {
+            "title": "Audited Disbursement Tracking",
+            "desc": "Every transaction tracked through the GFA Wallet ledger with audit trail."
+          },
+          {
+            "title": "ESG & SDG Reporting",
+            "desc": "Quarterly outcome reports aligned to SDG 4 and donor ESG frameworks."
+          },
+          {
+            "title": "Quarterly Outcomes",
+            "desc": "Public dashboards and stakeholder briefings on impact achieved."
+          }
+        ],
+        "partnersTitle": "Founding CSR Partners",
+        "partners": [
+          "PKIS",
+          "Get Energy Trading Services"
+        ],
+        "cta": "Partner with SCEF–FMS"
+      },
+      "governance": {
+        "title": "Governance & Leadership",
+        "subtitle": "A four-tier governance architecture ensuring oversight, expertise, execution, and continental leadership.",
+        "tiers": [
+          {
+            "code": "BOT",
+            "title": "Board of Trustees",
+            "desc": "Highest oversight body — fiduciary, ethical, and constitutional stewardship of SCEF."
+          },
+          {
+            "code": "BOA",
+            "title": "Board of Advisors",
+            "desc": "Expert advisory across education, finance, technology, policy, and continental affairs."
+          },
+          {
+            "code": "BOD",
+            "title": "Board of Directors",
+            "desc": "Operational leadership — strategy execution, division oversight, and partner accountability."
+          },
+          {
+            "code": "CVO",
+            "title": "Chief Visionary Officer",
+            "desc": "Engr. Babashola Santos Vincent Aderibigbe — Founder and continental visionary lead."
+          }
+        ],
+        "cta": "View Full Governance"
+      },
+      "membership": {
+        "title": "Membership & Ambassador Program",
+        "subtitle": "SCEF is a membership-driven foundation. Choose how you participate — as a Member or as an Ambassador.",
+        "memberTitle": "Membership Tiers",
+        "members": [
+          {
+            "name": "Standard Member",
+            "desc": "Open access to chapters, voting in AGC processes, and member newsletters."
+          },
+          {
+            "name": "Patron Member",
+            "desc": "Higher commitment with named recognition and program access."
+          },
+          {
+            "name": "Institutional Member",
+            "desc": "For schools, NGOs, and corporates participating in SCEF programs."
+          }
+        ],
+        "ambassadorTitle": "Ambassador Tiers",
+        "ambassadors": [
+          {
+            "name": "Chapter Ambassador",
+            "desc": "Represents SCEF at city or state chapter level."
+          },
+          {
+            "name": "National Ambassador",
+            "desc": "Coordinates ambassador networks within a country chapter."
+          },
+          {
+            "name": "Continental Ambassador",
+            "desc": "Represents SCEF across regions and at multilateral platforms."
+          }
+        ],
+        "ctaMember": "Become a Member",
+        "ctaAmbassador": "Become an Ambassador"
+      },
+      "targets2035": {
+        "title": "SCEF 2035 Targets",
+        "subtitle": "Our continental commitments through 2035 — measurable, time-bound, and reported.",
+        "items": [
+          {
+            "value": "100,000+",
+            "label": "Scholarships awarded"
+          },
+          {
+            "value": "1,000",
+            "label": "Schools rebuilt"
+          },
+          {
+            "value": "4,000,000",
+            "label": "Learners reached"
+          },
+          {
+            "value": "54",
+            "label": "Active chapters"
+          },
+          {
+            "value": "250+",
+            "label": "Ambassadors deployed"
+          },
+          {
+            "value": "$50M",
+            "label": "Funds mobilized"
+          }
+        ],
+        "note": "Reporting in progress — annual progress reports will be published from 2026 onward."
+      }
     }
   },
   "governance": {
