@@ -149,13 +149,6 @@ import Vote from "./pages/Vote";
 import Nominate from "./pages/Nominate";
 import Calendar from "./pages/Calendar";
 
-// New dedicated experience pages
-import AdvocacyTimeline from "./pages/AdvocacyTimeline";
-import Campaigns from "./pages/Campaigns";
-import Ecosystem from "./pages/Ecosystem";
-import LiveActivity from "./pages/LiveActivity";
-import Trust from "./pages/Trust";
-
 // Categories Pages
 import CategoriesIndex from "./pages/categories/Index";
 import CategoryDetail from "./pages/categories/CategoryDetail";
@@ -227,13 +220,6 @@ const App = () => (
               <Route path="/vote" element={<Vote />} />
               <Route path="/nominate" element={<Nominate />} />
               <Route path="/calendar" element={<Calendar />} />
-
-              {/* New dedicated experience routes */}
-              <Route path="/advocacy-timeline" element={<AdvocacyTimeline />} />
-              <Route path="/campaigns" element={<Campaigns />} />
-              <Route path="/ecosystem" element={<Ecosystem />} />
-              <Route path="/live-activity" element={<LiveActivity />} />
-              <Route path="/trust" element={<Trust />} />
               
               {/* Categories Routes */}
               <Route path="/categories" element={<CategoriesIndex />} />
