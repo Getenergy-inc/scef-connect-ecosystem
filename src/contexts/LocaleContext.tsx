@@ -65,8 +65,24 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
     return lookup(translations[locale]) ?? lookup(translations.en) ?? '';
   };
 
+  const tRaw = <T = any>(key: string): T | undefined => {
+    const lookup = (source: any): any => {
+      let value: any = source;
+      for (const k of key.split('.')) {
+        if (value == null) return undefined;
+        if (Array.isArray(value) && !isNaN(Number(k))) {
+          value = value[Number(k)];
+        } else {
+          value = value[k];
+        }
+      }
+      return value;
+    };
+    return (lookup(translations[locale]) ?? lookup(translations.en)) as T | undefined;
+  };
+
   return (
-    <LocaleContext.Provider value={{ locale, setLocale, t, isRTL }}>
+    <LocaleContext.Provider value={{ locale, setLocale, t, tRaw, isRTL }}>
       {children}
     </LocaleContext.Provider>
   );
@@ -77,6 +93,7 @@ const defaultContext: LocaleContextType = {
   locale: 'en',
   setLocale: () => {},
   t: (key: string) => key,
+  tRaw: () => undefined,
   isRTL: false,
 };
 
