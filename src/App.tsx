@@ -154,11 +154,15 @@ import CategoriesIndex from "./pages/categories/Index";
 import CategoryDetail from "./pages/categories/CategoryDetail";
 import NigeriaCategories from "./pages/categories/Nigeria";
 
-// Hall of Fame
+// Contributors (formerly Hall of Fame)
 import HallOfFame from "./pages/HallOfFame";
 import HallOfFameProfile from "./pages/HallOfFameProfile";
 import HallOfFameSubmit from "./pages/HallOfFameSubmit";
 import HallOfFameAdmin from "./pages/admin/HallOfFameAdmin";
+import VerifyCertificate from "./pages/VerifyCertificate";
+
+// School WASH
+import SchoolWash from "./pages/programs/SchoolWash";
 
 const queryClient = new QueryClient();
 
