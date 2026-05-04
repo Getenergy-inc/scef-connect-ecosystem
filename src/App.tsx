@@ -159,6 +159,14 @@ import HallOfFame from "./pages/HallOfFame";
 import HallOfFameProfile from "./pages/HallOfFameProfile";
 import HallOfFameSubmit from "./pages/HallOfFameSubmit";
 import HallOfFameAdmin from "./pages/admin/HallOfFameAdmin";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminDonations from "./pages/admin/AdminDonations";
+import AdminReceipts from "./pages/admin/AdminReceipts";
+import AdminChapters from "./pages/admin/AdminChapters";
+import AdminContributors from "./pages/admin/AdminContributors";
+import AdminSchoolNominations from "./pages/admin/AdminSchoolNominations";
+import AdminCsrPartners from "./pages/admin/AdminCsrPartners";
+import AdminReports from "./pages/admin/AdminReports";
 import VerifyCertificate from "./pages/VerifyCertificate";
 
 // School WASH
@@ -247,7 +255,14 @@ const App = () => (
               <Route path="/hall-of-fame/submit" element={<HallOfFameSubmit />} />
               <Route path="/hall-of-fame/:slug" element={<HallOfFameProfile />} />
               <Route path="/admin/hall-of-fame" element={<HallOfFameAdmin />} />
-              <Route path="/admin/contributors" element={<HallOfFameAdmin />} />
+              <Route path="/admin/contributors" element={<AdminContributors />} />
+              <Route path="/admin/users" element={<AdminUsers />} />
+              <Route path="/admin/donations" element={<AdminDonations />} />
+              <Route path="/admin/receipts" element={<AdminReceipts />} />
+              <Route path="/admin/chapters" element={<AdminChapters />} />
+              <Route path="/admin/school-nominations" element={<AdminSchoolNominations />} />
+              <Route path="/admin/csr" element={<AdminCsrPartners />} />
+              <Route path="/admin/reports" element={<AdminReports />} />
 
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
