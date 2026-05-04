@@ -1313,6 +1313,140 @@ export type Database = {
         }
         Relationships: []
       }
+      hall_of_fame_media: {
+        Row: {
+          caption: string | null
+          created_at: string
+          display_order: number | null
+          id: string
+          media_type: string
+          media_url: string
+          profile_id: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          media_type?: string
+          media_url: string
+          profile_id: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          media_type?: string
+          media_url?: string
+          profile_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hall_of_fame_media_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "hall_of_fame_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      hall_of_fame_profiles: {
+        Row: {
+          admin_notes: string | null
+          badge: string | null
+          consent_public_display: boolean
+          contribution_summary: string | null
+          contribution_type: string | null
+          country: string | null
+          created_at: string
+          full_name: string
+          id: string
+          is_featured: boolean
+          is_verified: boolean
+          meta_description: string | null
+          meta_title: string | null
+          og_image_url: string | null
+          photo_url: string | null
+          program_supported: string | null
+          region: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          role: string
+          slug: string
+          social_links: Json | null
+          status: string
+          submitted_email: string | null
+          testimony: string | null
+          updated_at: string
+          user_id: string | null
+          year_end: number | null
+          year_start: number | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          badge?: string | null
+          consent_public_display?: boolean
+          contribution_summary?: string | null
+          contribution_type?: string | null
+          country?: string | null
+          created_at?: string
+          full_name: string
+          id?: string
+          is_featured?: boolean
+          is_verified?: boolean
+          meta_description?: string | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          photo_url?: string | null
+          program_supported?: string | null
+          region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          role: string
+          slug: string
+          social_links?: Json | null
+          status?: string
+          submitted_email?: string | null
+          testimony?: string | null
+          updated_at?: string
+          user_id?: string | null
+          year_end?: number | null
+          year_start?: number | null
+        }
+        Update: {
+          admin_notes?: string | null
+          badge?: string | null
+          consent_public_display?: boolean
+          contribution_summary?: string | null
+          contribution_type?: string | null
+          country?: string | null
+          created_at?: string
+          full_name?: string
+          id?: string
+          is_featured?: boolean
+          is_verified?: boolean
+          meta_description?: string | null
+          meta_title?: string | null
+          og_image_url?: string | null
+          photo_url?: string | null
+          program_supported?: string | null
+          region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          role?: string
+          slug?: string
+          social_links?: Json | null
+          status?: string
+          submitted_email?: string | null
+          testimony?: string | null
+          updated_at?: string
+          user_id?: string | null
+          year_end?: number | null
+          year_start?: number | null
+        }
+        Relationships: []
+      }
       media_items: {
         Row: {
           created_at: string

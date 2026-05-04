@@ -154,6 +154,12 @@ import CategoriesIndex from "./pages/categories/Index";
 import CategoryDetail from "./pages/categories/CategoryDetail";
 import NigeriaCategories from "./pages/categories/Nigeria";
 
+// Hall of Fame
+import HallOfFame from "./pages/HallOfFame";
+import HallOfFameProfile from "./pages/HallOfFameProfile";
+import HallOfFameSubmit from "./pages/HallOfFameSubmit";
+import HallOfFameAdmin from "./pages/admin/HallOfFameAdmin";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -225,7 +231,13 @@ const App = () => (
               <Route path="/categories" element={<CategoriesIndex />} />
               <Route path="/categories/nigeria" element={<NigeriaCategories />} />
               <Route path="/categories/:slug" element={<CategoryDetail />} />
-              
+
+              {/* Hall of Fame */}
+              <Route path="/hall-of-fame" element={<HallOfFame />} />
+              <Route path="/hall-of-fame/submit" element={<HallOfFameSubmit />} />
+              <Route path="/hall-of-fame/:slug" element={<HallOfFameProfile />} />
+              <Route path="/admin/hall-of-fame" element={<HallOfFameAdmin />} />
+
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
               <Route path="/auth/sign-in" element={<SignIn />} />
