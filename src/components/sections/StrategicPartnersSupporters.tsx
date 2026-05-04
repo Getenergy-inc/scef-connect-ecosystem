@@ -24,12 +24,12 @@ type LogoPartner = {
 };
 
 const verifiedEducationPartners: LogoPartner[] = [
-  { name: "CSACEFA", caption: "Civil Society Action Coalition on Education For All" },
+  { name: "CSACEFA", caption: "Civil Society Action Coalition on Education For All", logoUrl: csacefaLogo },
   { name: "UNESCO", caption: "UNESCO Regional Office for Africa" },
   { name: "UNICEF Africa" },
   { name: "GPE", caption: "Global Partnership for Education" },
   { name: "ADEA", caption: "Association for the Development of Education in Africa" },
-  { name: "FAWE Kenya", caption: "Forum for African Women Educationalists – Kenya Chapter" },
+  { name: "FAWE Kenya", caption: "Forum for African Women Educationalists – Kenya Chapter", logoUrl: faweLogo },
   { name: "ANCEFA", caption: "African Network Campaign on Education for All" },
 ];
 
@@ -40,8 +40,8 @@ const textOnlyReferences: string[] = [
 ];
 
 const operationalPartners: LogoPartner[] = [
-  { name: "PKIS", caption: "PancoKrato Integrated Services — Operational & CSR support partner" },
-  { name: "GetEnergy.ng", caption: "Energy and digital support partner" },
+  { name: "PKIS", caption: "PancoKrato Integrated Services — Operational & CSR support partner", logoUrl: pkisLogo },
+  { name: "GetEnergy.ng", caption: "Energy and digital support partner", logoUrl: getenergyLogo },
 ];
 
 function initials(name: string) {
