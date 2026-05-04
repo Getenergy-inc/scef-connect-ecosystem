@@ -96,7 +96,12 @@ const Home = () => {
             <StrategicPartnersSupporters />
           </Reveal>
 
-          {/* 10b. HALL OF FAME & APPRECIATION WALL */}
+          {/* 10b. LOCAL CHAPTERS + IMPACT SNAPSHOT */}
+          <Reveal>
+            <LocalChaptersImpact />
+          </Reveal>
+
+          {/* 10c. HALL OF FAME & APPRECIATION WALL */}
           <Reveal>
             <HallOfFameSection />
           </Reveal>
