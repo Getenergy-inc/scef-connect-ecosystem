@@ -5,7 +5,8 @@ import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { 
   LayoutDashboard, Image, Award, Handshake, Briefcase, 
-  Wallet, Building2, CreditCard, ArrowRight, GraduationCap
+  Wallet, Building2, CreditCard, ArrowRight, GraduationCap,
+  Users, HandCoins, Receipt, MapPin, UserCheck, School, BarChart3
 } from "lucide-react";
 import { useAuthState } from "@/hooks/useAuthState";
 
@@ -28,6 +29,14 @@ const AdminIndex = () => {
   }
 
   const adminSections = [
+    { title: "Users", description: "All registered users and roles", icon: Users, href: "/admin/users" },
+    { title: "Donations", description: "All donation transactions", icon: HandCoins, href: "/admin/donations" },
+    { title: "Receipts", description: "Issued receipts (SCEF-RCPT-YYYY-NNNNNN)", icon: Receipt, href: "/admin/receipts" },
+    { title: "Chapters", description: "Approve and manage chapters", icon: MapPin, href: "/admin/chapters" },
+    { title: "Contributors", description: "Verify volunteers, ambassadors, interns", icon: UserCheck, href: "/admin/contributors" },
+    { title: "School & WASH Nominations", description: "Review school and WASH submissions", icon: School, href: "/admin/school-nominations" },
+    { title: "CSR Partners", description: "Inquiries, projects, disbursements", icon: Handshake, href: "/admin/csr" },
+    { title: "Reports", description: "Platform-wide metrics", icon: BarChart3, href: "/admin/reports" },
     {
       title: "Digital Board",
       description: "Manage homepage announcements and media",
