@@ -140,7 +140,7 @@ export const siteContent = {
         { name: "Volunteer", href: "/get-involved#volunteer", description: "Contribute time & skills" },
         { name: "Partnership / CSR", href: "/partner-with-us", description: "Institutional partnerships" },
         { name: "Donate", href: "/donate", description: "Fund education across Africa" },
-        { name: "Hall of Fame & Appreciation Wall", href: "/hall-of-fame", description: "Honouring contributors since 2007" },
+        { name: "Meet Our Volunteers & Contributors", href: "/hall-of-fame", description: "Contributors from 2007 till date" },
         { name: "Submit Your Testimony", href: "/hall-of-fame/submit", description: "Share your SCEF story" },
       ],
     },
