@@ -14,6 +14,8 @@ import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
+import { EcosystemAccordion } from "@/components/sections/EcosystemAccordion";
+import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
