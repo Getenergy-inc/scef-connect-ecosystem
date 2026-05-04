@@ -64,6 +64,11 @@ export default function HallOfFameSubmit() {
       const { data: auth } = await supabase.auth.getUser();
       const photo_url = photo ? await uploadFile(photo) : null;
 
+      const yearForBadge = form.year_start ? Number(form.year_start) : new Date().getFullYear();
+      const badgeRoleSlug = form.role.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+      const badgeId = Math.random().toString(36).slice(2, 8).toUpperCase();
+      const badge_code = `SCEF-${badgeRoleSlug}-${yearForBadge}-${badgeId}`;
+
       const { data: created, error } = await supabase
         .from("hall_of_fame_profiles")
         .insert({
@@ -83,6 +88,7 @@ export default function HallOfFameSubmit() {
           photo_url,
           consent_public_display: consent,
           status: "pending",
+          badge_code,
         })
         .select("id")
         .single();
