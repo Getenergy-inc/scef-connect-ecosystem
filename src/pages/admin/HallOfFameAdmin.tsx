@@ -39,7 +39,7 @@ export default function HallOfFameAdmin() {
 
   useEffect(() => { if (isAdmin) load(); }, [tab, isAdmin]);
 
-  if (roleLoading) return <div className="p-12 text-center text-muted-foreground">Loading…</div>;
+  if (authLoading || roleLoading) return <div className="p-12 text-center text-muted-foreground">Loading…</div>;
   if (!isAdmin) return <Navigate to="/" replace />;
 
   async function save(p: HoFProfile, patch: Partial<HoFProfile>) {
