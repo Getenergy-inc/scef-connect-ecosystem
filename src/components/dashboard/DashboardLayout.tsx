@@ -14,6 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useUserRole } from "@/hooks/useUserRole";
 import { RoleSwitcher } from "./RoleSwitcher";
+import { DashboardTrustBanner } from "./DashboardTrustBanner";
 import type { Database } from "@/integrations/supabase/types";
 
 type AppRole = Database["public"]["Enums"]["app_role"];
