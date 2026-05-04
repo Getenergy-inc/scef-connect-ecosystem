@@ -65,7 +65,7 @@ export default function HallOfFameProfile() {
 
   const title = profile.meta_title || `${profile.full_name} — SCEF Hall of Fame`;
   const desc = profile.meta_description || profile.contribution_summary || `${profile.full_name}, ${profile.role} honoured in the SCEF Hall of Fame.`;
-  const url = `https://santoscreations.org/hall-of-fame/${profile.slug}`;
+  const url = `https://santoscreations.org/contributors/${profile.slug}`;
   const image = profile.og_image_url || profile.photo_url || "";
 
   const personSchema = {
@@ -205,7 +205,7 @@ export default function HallOfFameProfile() {
                   </div>
                 )}
                 <Button asChild className="w-full bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover">
-                  <Link to="/hall-of-fame/submit">Submit Your Testimony</Link>
+                  <Link to="/contributors/submit">Submit Your Testimony</Link>
                 </Button>
               </aside>
             </div>
