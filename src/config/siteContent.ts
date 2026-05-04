@@ -126,6 +126,7 @@ export const siteContent = {
             { name: "It's In Me Radio", href: "/media/its-in-me-radio", description: "Voices of African youth", icon: "Radio" },
             { name: "EduAid Webinars & Podcast", href: "/media/eduaid-webinars", description: "Conversations with educators", icon: "Mic" },
             { name: "Education Tourism Show", href: "/media/education-tourism-show", description: "Learning across borders", icon: "Plane" },
+            { name: "Hall of Fame & Appreciation Wall", href: "/hall-of-fame", description: "Honouring SCEF contributors since 2007", icon: "Award" },
           ],
         },
       ],
