@@ -194,6 +194,7 @@ const App = () => (
               <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
               <Route path="/programs/training-development" element={<TrainingDevelopment />} />
               <Route path="/programs/my-career-my-life" element={<MyCareerMyLifePage />} />
+              <Route path="/programs/school-wash" element={<SchoolWash />} />
               
               {/* Chapters Routes */}
               <Route path="/local-chapters" element={<LocalChapters />} />
