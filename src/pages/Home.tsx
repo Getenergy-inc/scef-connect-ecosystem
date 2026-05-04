@@ -13,7 +13,7 @@ import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapsh
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { ScefBrandedMerchandise } from "@/components/sections/ScefBrandedMerchandise";
-import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
+
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
@@ -81,11 +81,6 @@ const Home = () => {
           {/* 9. IMPACT SNAPSHOT */}
           <Reveal>
             <ImpactStripLabels />
-          </Reveal>
-
-          {/* 10. STRATEGIC PARTNERS & VERIFIED SUPPORTERS */}
-          <Reveal>
-            <StrategicPartnersSupporters />
           </Reveal>
 
           {/* 10b. HALL OF FAME & APPRECIATION WALL */}
