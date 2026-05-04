@@ -8,6 +8,7 @@ import {
   ArrowRight, CheckCircle, Lightbulb, Droplets, Wifi, Shield 
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
+import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
 
 const infrastructureTypes = [
   { name: "Classroom Construction", icon: Building, desc: "New classrooms built to modern standards" },
