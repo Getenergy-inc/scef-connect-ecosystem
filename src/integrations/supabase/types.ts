@@ -1906,6 +1906,39 @@ export type Database = {
           },
         ]
       }
+      otp_codes: {
+        Row: {
+          attempts: number
+          code_hash: string
+          consumed_at: string | null
+          created_at: string
+          email: string
+          expires_at: string
+          id: string
+          purpose: string
+        }
+        Insert: {
+          attempts?: number
+          code_hash: string
+          consumed_at?: string | null
+          created_at?: string
+          email: string
+          expires_at: string
+          id?: string
+          purpose?: string
+        }
+        Update: {
+          attempts?: number
+          code_hash?: string
+          consumed_at?: string | null
+          created_at?: string
+          email?: string
+          expires_at?: string
+          id?: string
+          purpose?: string
+        }
+        Relationships: []
+      }
       partnership_inquiries: {
         Row: {
           company_name: string
@@ -2355,40 +2388,70 @@ export type Database = {
       }
       school_nominations: {
         Row: {
+          city: string | null
+          contact_email: string | null
+          contact_name: string | null
+          contact_phone: string | null
           country: string | null
           created_at: string
+          documents: Json | null
           id: string
           is_wash_project: boolean | null
           needs_description: string | null
+          notes: string | null
           region: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
           school_name: string
           status: string | null
+          student_count: number | null
           submitted_by: string | null
           support_type: string | null
+          updated_at: string
         }
         Insert: {
+          city?: string | null
+          contact_email?: string | null
+          contact_name?: string | null
+          contact_phone?: string | null
           country?: string | null
           created_at?: string
+          documents?: Json | null
           id?: string
           is_wash_project?: boolean | null
           needs_description?: string | null
+          notes?: string | null
           region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
           school_name: string
           status?: string | null
+          student_count?: number | null
           submitted_by?: string | null
           support_type?: string | null
+          updated_at?: string
         }
         Update: {
+          city?: string | null
+          contact_email?: string | null
+          contact_name?: string | null
+          contact_phone?: string | null
           country?: string | null
           created_at?: string
+          documents?: Json | null
           id?: string
           is_wash_project?: boolean | null
           needs_description?: string | null
+          notes?: string | null
           region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
           school_name?: string
           status?: string | null
+          student_count?: number | null
           submitted_by?: string | null
           support_type?: string | null
+          updated_at?: string
         }
         Relationships: []
       }
@@ -2893,28 +2956,52 @@ export type Database = {
         Row: {
           amount: number
           created_at: string
+          currency: string
           description: string | null
+          direction: string | null
+          donation_id: string | null
           id: string
+          metadata: Json | null
+          reference: string | null
           reference_id: string | null
+          source: string | null
+          status: string
           transaction_type: string
+          user_id: string | null
           wallet_id: string
         }
         Insert: {
           amount: number
           created_at?: string
+          currency?: string
           description?: string | null
+          direction?: string | null
+          donation_id?: string | null
           id?: string
+          metadata?: Json | null
+          reference?: string | null
           reference_id?: string | null
+          source?: string | null
+          status?: string
           transaction_type: string
+          user_id?: string | null
           wallet_id: string
         }
         Update: {
           amount?: number
           created_at?: string
+          currency?: string
           description?: string | null
+          direction?: string | null
+          donation_id?: string | null
           id?: string
+          metadata?: Json | null
+          reference?: string | null
           reference_id?: string | null
+          source?: string | null
+          status?: string
           transaction_type?: string
+          user_id?: string | null
           wallet_id?: string
         }
         Relationships: [
@@ -3125,6 +3212,8 @@ export type Database = {
         Returns: undefined
       }
       cleanup_old_partnership_inquiries: { Args: never; Returns: number }
+      generate_badge_code: { Args: { _role: string }; Returns: string }
+      generate_receipt_number: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
