@@ -12,8 +12,7 @@ import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
 import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
-import { ScefBrandedMerchandise } from "@/components/sections/ScefBrandedMerchandise";
-
+import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
@@ -83,6 +82,11 @@ const Home = () => {
             <ImpactStripLabels />
           </Reveal>
 
+          {/* 10. STRATEGIC PARTNERS & VERIFIED SUPPORTERS */}
+          <Reveal>
+            <StrategicPartnersSupporters />
+          </Reveal>
+
           {/* 10b. HALL OF FAME & APPRECIATION WALL */}
           <Reveal>
             <HallOfFameSection />
@@ -91,11 +95,6 @@ const Home = () => {
           {/* 11. FINAL CTA */}
           <Reveal>
             <FinalCTABand />
-          </Reveal>
-
-          {/* 12. SCEF BRANDED MERCHANDISE — ADVOCACY STORE (pre-footer) */}
-          <Reveal>
-            <ScefBrandedMerchandise />
           </Reveal>
         </main>
 
