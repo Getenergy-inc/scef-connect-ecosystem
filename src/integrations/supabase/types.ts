@@ -227,6 +227,30 @@ export type Database = {
         }
         Relationships: []
       }
+      certificate_verifications: {
+        Row: {
+          badge_code: string | null
+          id: string
+          searched_at: string
+          searched_by: string | null
+          verified: boolean | null
+        }
+        Insert: {
+          badge_code?: string | null
+          id?: string
+          searched_at?: string
+          searched_by?: string | null
+          verified?: boolean | null
+        }
+        Update: {
+          badge_code?: string | null
+          id?: string
+          searched_at?: string
+          searched_by?: string | null
+          verified?: boolean | null
+        }
+        Relationships: []
+      }
       chapter_inbox_messages: {
         Row: {
           content: string
@@ -306,6 +330,8 @@ export type Database = {
           id: string
           is_admin: boolean | null
           joined_at: string
+          role: string | null
+          status: string | null
           user_id: string
         }
         Insert: {
@@ -313,6 +339,8 @@ export type Database = {
           id?: string
           is_admin?: boolean | null
           joined_at?: string
+          role?: string | null
+          status?: string | null
           user_id: string
         }
         Update: {
@@ -320,6 +348,8 @@ export type Database = {
           id?: string
           is_admin?: boolean | null
           joined_at?: string
+          role?: string | null
+          status?: string | null
           user_id?: string
         }
         Relationships: [
@@ -332,8 +362,50 @@ export type Database = {
           },
         ]
       }
+      chapter_upgrade_requests: {
+        Row: {
+          chapter_id: string | null
+          created_at: string
+          documents: Json | null
+          id: string
+          reason: string | null
+          requested_by: string | null
+          requested_type: string | null
+          status: string | null
+        }
+        Insert: {
+          chapter_id?: string | null
+          created_at?: string
+          documents?: Json | null
+          id?: string
+          reason?: string | null
+          requested_by?: string | null
+          requested_type?: string | null
+          status?: string | null
+        }
+        Update: {
+          chapter_id?: string | null
+          created_at?: string
+          documents?: Json | null
+          id?: string
+          reason?: string | null
+          requested_by?: string | null
+          requested_type?: string | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_upgrade_requests_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chapters: {
         Row: {
+          chapter_leader_id: string | null
           chapter_type: Database["public"]["Enums"]["chapter_type"]
           city: string | null
           country: string
@@ -343,13 +415,17 @@ export type Database = {
           id: string
           image_url: string | null
           member_count: number | null
+          microsite_slug: string | null
           name: string
+          region: string | null
           slug: string
           state: string | null
           status: Database["public"]["Enums"]["chapter_status"]
           updated_at: string
+          wallet_id: string | null
         }
         Insert: {
+          chapter_leader_id?: string | null
           chapter_type?: Database["public"]["Enums"]["chapter_type"]
           city?: string | null
           country: string
@@ -359,13 +435,17 @@ export type Database = {
           id?: string
           image_url?: string | null
           member_count?: number | null
+          microsite_slug?: string | null
           name: string
+          region?: string | null
           slug: string
           state?: string | null
           status?: Database["public"]["Enums"]["chapter_status"]
           updated_at?: string
+          wallet_id?: string | null
         }
         Update: {
+          chapter_leader_id?: string | null
           chapter_type?: Database["public"]["Enums"]["chapter_type"]
           city?: string | null
           country?: string
@@ -375,13 +455,24 @@ export type Database = {
           id?: string
           image_url?: string | null
           member_count?: number | null
+          microsite_slug?: string | null
           name?: string
+          region?: string | null
           slug?: string
           state?: string | null
           status?: Database["public"]["Enums"]["chapter_status"]
           updated_at?: string
+          wallet_id?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "chapters_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "wallets"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       chat_messages: {
         Row: {
@@ -510,6 +601,57 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      contributors: {
+        Row: {
+          badge_code: string | null
+          certificate_url: string | null
+          contribution_summary: string | null
+          country: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          photo_url: string | null
+          program_supported: string | null
+          public_slug: string | null
+          role: string | null
+          testimony: string | null
+          user_id: string | null
+          verification_status: string | null
+        }
+        Insert: {
+          badge_code?: string | null
+          certificate_url?: string | null
+          contribution_summary?: string | null
+          country?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          photo_url?: string | null
+          program_supported?: string | null
+          public_slug?: string | null
+          role?: string | null
+          testimony?: string | null
+          user_id?: string | null
+          verification_status?: string | null
+        }
+        Update: {
+          badge_code?: string | null
+          certificate_url?: string | null
+          contribution_summary?: string | null
+          country?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          photo_url?: string | null
+          program_supported?: string | null
+          public_slug?: string | null
+          role?: string | null
+          testimony?: string | null
+          user_id?: string | null
+          verification_status?: string | null
+        }
+        Relationships: []
       }
       crs_partners: {
         Row: {
@@ -1000,6 +1142,53 @@ export type Database = {
             columns: ["wallet_id"]
             isOneToOne: false
             referencedRelation: "wallets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      donation_receipts: {
+        Row: {
+          amount: number | null
+          currency: string | null
+          donor_name: string | null
+          id: string
+          issued_at: string
+          purpose: string | null
+          receipt_number: string | null
+          receipt_pdf_url: string | null
+          transaction_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          amount?: number | null
+          currency?: string | null
+          donor_name?: string | null
+          id?: string
+          issued_at?: string
+          purpose?: string | null
+          receipt_number?: string | null
+          receipt_pdf_url?: string | null
+          transaction_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          amount?: number | null
+          currency?: string | null
+          donor_name?: string | null
+          id?: string
+          issued_at?: string
+          purpose?: string | null
+          receipt_number?: string | null
+          receipt_pdf_url?: string | null
+          transaction_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "donation_receipts_transaction_id_fkey"
+            columns: ["transaction_id"]
+            isOneToOne: false
+            referencedRelation: "transactions"
             referencedColumns: ["id"]
           },
         ]
@@ -1636,8 +1825,10 @@ export type Database = {
         Row: {
           created_at: string
           end_date: string | null
+          expiry_date: string | null
           id: string
           membership_status: string
+          membership_type: string | null
           membership_type_id: string
           payment_status: string
           renewal_date: string | null
@@ -1648,8 +1839,10 @@ export type Database = {
         Insert: {
           created_at?: string
           end_date?: string | null
+          expiry_date?: string | null
           id?: string
           membership_status?: string
+          membership_type?: string | null
           membership_type_id: string
           payment_status?: string
           renewal_date?: string | null
@@ -1660,8 +1853,10 @@ export type Database = {
         Update: {
           created_at?: string
           end_date?: string | null
+          expiry_date?: string | null
           id?: string
           membership_status?: string
+          membership_type?: string | null
           membership_type_id?: string
           payment_status?: string
           renewal_date?: string | null
@@ -1764,10 +1959,13 @@ export type Database = {
           last_name: string | null
           occupation: string | null
           onboarding_completed: boolean | null
+          onboarding_status: string | null
           onboarding_step: string | null
           organization: string | null
           phone: string | null
           preferred_language: string | null
+          profile_completion: number | null
+          profile_photo_url: string | null
           relationship_to_country: string | null
           state: string | null
           updated_at: string
@@ -1789,10 +1987,13 @@ export type Database = {
           last_name?: string | null
           occupation?: string | null
           onboarding_completed?: boolean | null
+          onboarding_status?: string | null
           onboarding_step?: string | null
           organization?: string | null
           phone?: string | null
           preferred_language?: string | null
+          profile_completion?: number | null
+          profile_photo_url?: string | null
           relationship_to_country?: string | null
           state?: string | null
           updated_at?: string
@@ -1814,10 +2015,13 @@ export type Database = {
           last_name?: string | null
           occupation?: string | null
           onboarding_completed?: boolean | null
+          onboarding_status?: string | null
           onboarding_step?: string | null
           organization?: string | null
           phone?: string | null
           preferred_language?: string | null
+          profile_completion?: number | null
+          profile_photo_url?: string | null
           relationship_to_country?: string | null
           state?: string | null
           updated_at?: string
@@ -2149,6 +2353,45 @@ export type Database = {
         }
         Relationships: []
       }
+      school_nominations: {
+        Row: {
+          country: string | null
+          created_at: string
+          id: string
+          is_wash_project: boolean | null
+          needs_description: string | null
+          region: string | null
+          school_name: string
+          status: string | null
+          submitted_by: string | null
+          support_type: string | null
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          id?: string
+          is_wash_project?: boolean | null
+          needs_description?: string | null
+          region?: string | null
+          school_name: string
+          status?: string | null
+          submitted_by?: string | null
+          support_type?: string | null
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          id?: string
+          is_wash_project?: boolean | null
+          needs_description?: string | null
+          region?: string | null
+          school_name?: string
+          status?: string | null
+          submitted_by?: string | null
+          support_type?: string | null
+        }
+        Relationships: []
+      }
       services: {
         Row: {
           category: string | null
@@ -2451,6 +2694,59 @@ export type Database = {
         }
         Relationships: []
       }
+      transactions: {
+        Row: {
+          agc_amount: number | null
+          amount: number
+          created_at: string
+          currency: string | null
+          id: string
+          payment_provider: string | null
+          provider_reference: string | null
+          purpose: string | null
+          status: string | null
+          type: string | null
+          user_id: string | null
+          wallet_id: string | null
+        }
+        Insert: {
+          agc_amount?: number | null
+          amount: number
+          created_at?: string
+          currency?: string | null
+          id?: string
+          payment_provider?: string | null
+          provider_reference?: string | null
+          purpose?: string | null
+          status?: string | null
+          type?: string | null
+          user_id?: string | null
+          wallet_id?: string | null
+        }
+        Update: {
+          agc_amount?: number | null
+          amount?: number
+          created_at?: string
+          currency?: string | null
+          id?: string
+          payment_provider?: string | null
+          provider_reference?: string | null
+          purpose?: string | null
+          status?: string | null
+          type?: string | null
+          user_id?: string | null
+          wallet_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transactions_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "wallets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -2635,29 +2931,44 @@ export type Database = {
         Row: {
           agc_balance: number | null
           balance: number | null
+          balance_agc: number | null
+          balance_ngn: number | null
+          balance_usd: number | null
           created_at: string
           currency: string | null
           id: string
+          status: string | null
           updated_at: string
           user_id: string
+          wallet_code: string | null
         }
         Insert: {
           agc_balance?: number | null
           balance?: number | null
+          balance_agc?: number | null
+          balance_ngn?: number | null
+          balance_usd?: number | null
           created_at?: string
           currency?: string | null
           id?: string
+          status?: string | null
           updated_at?: string
           user_id: string
+          wallet_code?: string | null
         }
         Update: {
           agc_balance?: number | null
           balance?: number | null
+          balance_agc?: number | null
+          balance_ngn?: number | null
+          balance_usd?: number | null
           created_at?: string
           currency?: string | null
           id?: string
+          status?: string | null
           updated_at?: string
           user_id?: string
+          wallet_code?: string | null
         }
         Relationships: []
       }
