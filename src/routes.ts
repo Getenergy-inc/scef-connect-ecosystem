@@ -24,6 +24,9 @@ export const ROUTES = {
   DIGITAL_LEARNING: "/programs/digital-learning",
   ELIBRARY_NIGERIA: "/programs/elibrary-nigeria",
   INCLUSION_ACCESS: "/programs/inclusion-access",
+  SCHOOL_WASH: "/programs/school-wash",
+  CONTRIBUTORS: "/contributors",
+  VERIFY_CERTIFICATE: "/verify-certificate",
   
   // Chapters
   LOCAL_CHAPTERS: "/local-chapters",
