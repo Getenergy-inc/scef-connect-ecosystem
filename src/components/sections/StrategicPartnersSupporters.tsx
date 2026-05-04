@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, FileText, Handshake } from "lucide-react";
 import csacefaLogo from "@/assets/endorsements/csacefa-logo.jpg";
 import faweLogo from "@/assets/endorsements/fawe-logo.jpg";
+import unescoLogo from "@/assets/endorsements/unesco-logo.png";
+import unicefLogo from "@/assets/endorsements/unicef-logo.png";
+import gpeLogo from "@/assets/endorsements/gpe-logo.png";
+import adeaLogo from "@/assets/endorsements/adea-logo.png";
+import ancefaLogo from "@/assets/endorsements/ancefa-logo.png";
 import pkisLogo from "@/assets/partners/pkis-logo.jpg";
 import getenergyLogo from "@/assets/partners/getenergy-logo.jpg";
 
