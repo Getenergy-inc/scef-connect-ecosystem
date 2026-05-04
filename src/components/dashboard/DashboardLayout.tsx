@@ -14,6 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useUserRole } from "@/hooks/useUserRole";
 import { RoleSwitcher } from "./RoleSwitcher";
+import { DashboardTrustBanner } from "./DashboardTrustBanner";
 import type { Database } from "@/integrations/supabase/types";
 
 type AppRole = Database["public"]["Enums"]["app_role"];
@@ -307,6 +308,7 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
 
         {/* Page Content */}
         <main className="flex-1 p-6 overflow-auto bg-muted/30">
+          <DashboardTrustBanner />
           {children}
         </main>
       </div>
