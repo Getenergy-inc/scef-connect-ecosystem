@@ -307,6 +307,7 @@ export const DashboardLayout = ({ children, role, title }: DashboardLayoutProps)
 
         {/* Page Content */}
         <main className="flex-1 p-6 overflow-auto bg-muted/30">
+          <DashboardTrustBanner />
           {children}
         </main>
       </div>
