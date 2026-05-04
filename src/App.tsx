@@ -237,11 +237,17 @@ const App = () => (
               <Route path="/categories/nigeria" element={<NigeriaCategories />} />
               <Route path="/categories/:slug" element={<CategoryDetail />} />
 
-              {/* Hall of Fame */}
+              {/* Contributors (formerly Hall of Fame) */}
+              <Route path="/contributors" element={<HallOfFame />} />
+              <Route path="/contributors/submit" element={<HallOfFameSubmit />} />
+              <Route path="/contributors/:slug" element={<HallOfFameProfile />} />
+              <Route path="/verify-certificate" element={<VerifyCertificate />} />
+              {/* Legacy redirects (keep mounted under old paths so external links don't break) */}
               <Route path="/hall-of-fame" element={<HallOfFame />} />
               <Route path="/hall-of-fame/submit" element={<HallOfFameSubmit />} />
               <Route path="/hall-of-fame/:slug" element={<HallOfFameProfile />} />
               <Route path="/admin/hall-of-fame" element={<HallOfFameAdmin />} />
+              <Route path="/admin/contributors" element={<HallOfFameAdmin />} />
 
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
