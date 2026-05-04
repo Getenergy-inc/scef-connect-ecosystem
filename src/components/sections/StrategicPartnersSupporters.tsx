@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, FileText, Handshake } from "lucide-react";
+import csacefaLogo from "@/assets/endorsements/csacefa-logo.jpg";
+import faweLogo from "@/assets/endorsements/fawe-logo.jpg";
+import pkisLogo from "@/assets/partners/pkis-logo.jpg";
+import getenergyLogo from "@/assets/partners/getenergy-logo.jpg";
 
 /**
  * Strategic Partners, Endorsers & Operational Supporters
