@@ -247,6 +247,9 @@ const RebuildMySchoolAfrica = () => {
             description="See how RMSA is transforming school infrastructure across Africa, one school at a time."
           />
 
+          {/* School WASH highlight */}
+          <SchoolWashHighlight />
+
           {/* CTA */}
           <section className="py-20 bg-earth">
             <div className="container mx-auto px-4 text-center">
