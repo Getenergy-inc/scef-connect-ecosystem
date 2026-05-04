@@ -92,6 +92,11 @@ export default function EduAidAfrica() {
           <EduAidIntegratedServices />
         </ScrollAnimation>
 
+        {/* School WASH & Sanitation */}
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <SchoolWashHighlight />
+        </ScrollAnimation>
+
         {/* Advocacy & Program Calendars */}
         <ScrollAnimation animation="fadeUp" delay={0.1}>
           <EduAidAdvocacyCalendars />
