@@ -8,14 +8,14 @@ export const HallOfFameSection = () => (
       <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-center">
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-scef-gold">
-            Recognition Wall · Since 2007
+            Meet Our Contributors · 2007 – Present
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] md:text-5xl">
-            Hall of Fame & <span className="text-gradient-gold italic">Appreciation Wall</span>
+            Meet Our <span className="text-gradient-gold italic">Volunteers & Contributors</span> From 2007 Till Date
           </h2>
           <p className="mt-5 max-w-xl text-base text-white/75 md:text-lg">
-            Celebrating SCEF volunteers, ambassadors, partners and supporters from 2007 till date — the people whose
-            contributions shaped African education impact.
+            A living recognition wall honouring the volunteers, ambassadors, staff, donors, partners and supporters whose
+            contributions have powered SCEF's education mission across Africa — from our founding in 2007 to today.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover">
