@@ -407,6 +407,52 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Trust block: registration + verifiable identity */}
+      <div className="border-t border-scef-gold/30 bg-scef-blue-darker/60">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-scef-gold/15 border border-scef-gold/40 flex items-center justify-center">
+                <Heart className="w-4 h-4 text-scef-gold" />
+              </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-scef-gold font-semibold">
+                  Registered Nonprofit Educational Foundation
+                </p>
+                <p className="text-sm text-white font-semibold">
+                  Santos Creations Educational Foundation (SCEF) — Nigeria
+                </p>
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-3 text-xs text-white/75">
+              <div>
+                <p className="text-scef-gold/80 uppercase tracking-wider text-[10px]">Reg. No.</p>
+                <p className="text-white font-mono">IT-41501</p>
+              </div>
+              <div>
+                <p className="text-scef-gold/80 uppercase tracking-wider text-[10px]">Email</p>
+                <a href="mailto:admin@santoscreations.org" className="text-white hover:text-scef-gold">
+                  admin@santoscreations.org
+                </a>
+              </div>
+              <div>
+                <p className="text-scef-gold/80 uppercase tracking-wider text-[10px]">Address</p>
+                <p className="text-white/80">19 Godwin Okigbo St, Surulere, Lagos, NG</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 pt-4 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-white/55">
+            <Link to="/resources/verification" className="hover:text-scef-gold">Verify a Certificate</Link>
+            <span>•</span>
+            <Link to="/governance" className="hover:text-scef-gold">Governance</Link>
+            <span>•</span>
+            <Link to="/reports" className="hover:text-scef-gold">Annual Reports</Link>
+            <span>•</span>
+            <Link to="/contributors" className="hover:text-scef-gold">Contributors (2007–Present)</Link>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
