@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, FileText, Handshake } from "lucide-react";
 import csacefaLogo from "@/assets/endorsements/csacefa-logo.jpg";
 import faweLogo from "@/assets/endorsements/fawe-logo.jpg";
+import unescoLogo from "@/assets/endorsements/unesco-logo.png";
+import unicefLogo from "@/assets/endorsements/unicef-logo.png";
+import gpeLogo from "@/assets/endorsements/gpe-logo.png";
+import adeaLogo from "@/assets/endorsements/adea-logo.png";
+import ancefaLogo from "@/assets/endorsements/ancefa-logo.png";
 import pkisLogo from "@/assets/partners/pkis-logo.jpg";
 import getenergyLogo from "@/assets/partners/getenergy-logo.jpg";
 
@@ -25,12 +30,12 @@ type LogoPartner = {
 
 const verifiedEducationPartners: LogoPartner[] = [
   { name: "CSACEFA", caption: "Civil Society Action Coalition on Education For All", logoUrl: csacefaLogo },
-  { name: "UNESCO", caption: "UNESCO Regional Office for Africa" },
-  { name: "UNICEF Africa" },
-  { name: "GPE", caption: "Global Partnership for Education" },
-  { name: "ADEA", caption: "Association for the Development of Education in Africa" },
+  { name: "UNESCO", caption: "UNESCO Regional Office for Africa", logoUrl: unescoLogo },
+  { name: "UNICEF Africa", logoUrl: unicefLogo },
+  { name: "GPE", caption: "Global Partnership for Education", logoUrl: gpeLogo },
+  { name: "ADEA", caption: "Association for the Development of Education in Africa", logoUrl: adeaLogo },
   { name: "FAWE Kenya", caption: "Forum for African Women Educationalists – Kenya Chapter", logoUrl: faweLogo },
-  { name: "ANCEFA", caption: "African Network Campaign on Education for All" },
+  { name: "ANCEFA", caption: "African Network Campaign on Education for All", logoUrl: ancefaLogo },
 ];
 
 const textOnlyReferences: string[] = [
