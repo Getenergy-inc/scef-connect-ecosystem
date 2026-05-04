@@ -21,6 +21,7 @@ import EduAidFAQs from "@/components/eduaid/EduAidFAQs";
 import EduAidDonationSection from "@/components/eduaid/EduAidDonationSection";
 import EduAidIntegratedServices from "@/components/eduaid/EduAidIntegratedServices";
 import EduAidAdvocacyCalendars from "@/components/eduaid/EduAidAdvocacyCalendars";
+import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
 
 export default function EduAidAfrica() {
   const { t } = useLocale();
