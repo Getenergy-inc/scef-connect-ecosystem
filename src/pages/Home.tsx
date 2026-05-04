@@ -39,7 +39,13 @@ const Home = () => {
           {/* 1. HERO */}
           <LandingHero />
 
-          {/* Welcome + About intro (keep existing content) */}
+          {/* 1b. QUICK ACTIONS BAR */}
+          <QuickActionsBar />
+
+          {/* 1c. WELCOME — EXPLORE OUR ECOSYSTEM (accordion) */}
+          <EcosystemAccordion />
+
+          {/* Welcome + About intro */}
           <Reveal>
             <WelcomeAboutIntro />
           </Reveal>
