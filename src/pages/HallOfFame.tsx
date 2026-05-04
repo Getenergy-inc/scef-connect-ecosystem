@@ -60,7 +60,7 @@ export default function HallOfFame() {
   return (
     <>
       <Helmet>
-        <title>Hall of Fame & Appreciation Wall — SCEF</title>
+        <title>Meet Our Volunteers & Contributors (2007 – Present) — SCEF</title>
         <meta
           name="description"
           content="Celebrating SCEF volunteers, ambassadors, partners, donors and supporters from 2007 till date — the people behind African education impact."
