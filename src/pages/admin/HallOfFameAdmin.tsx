@@ -12,12 +12,14 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
 import { useUserRole } from "@/hooks/useUserRole";
+import { useAuthState } from "@/hooks/useAuthState";
 import { toast } from "sonner";
 import { logger } from "@/lib/logger";
 import { HOF_BADGES, type HoFProfile } from "@/lib/hallOfFame";
 
 export default function HallOfFameAdmin() {
-  const { isAdmin, loading: roleLoading } = useUserRole();
+  const { user, loading: authLoading } = useAuthState();
+  const { isAdmin, loading: roleLoading } = useUserRole(user?.id ?? null);
   const [tab, setTab] = useState<"pending" | "approved" | "rejected">("pending");
   const [items, setItems] = useState<HoFProfile[]>([]);
   const [loading, setLoading] = useState(true);
@@ -30,7 +32,7 @@ export default function HallOfFameAdmin() {
       .select("*")
       .eq("status", tab)
       .order("created_at", { ascending: false });
-    if (error) logger.error(error);
+    if (error) logger.error("HoF admin load", error);
     setItems((data as any) ?? []);
     setLoading(false);
   }
