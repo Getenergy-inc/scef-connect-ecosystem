@@ -77,10 +77,10 @@ export default function HallOfFame() {
           <section className="bg-scef-blue-darker py-20 text-white md:py-28">
             <div className="container mx-auto px-6 md:px-8">
               <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-scef-gold">
-                Recognition Wall · Since 2007
+                Meet Our Contributors · 2007 – Present
               </p>
               <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] md:text-6xl">
-                Hall of Fame & <span className="text-gradient-gold italic">Appreciation Wall</span>
+                Meet Our <span className="text-gradient-gold italic">Volunteers & Contributors</span> From 2007 Till Date
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-white/75">
                 Celebrating the volunteers, ambassadors, staff, donors, partners and contributors who have powered SCEF's
