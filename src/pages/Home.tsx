@@ -81,7 +81,12 @@ const Home = () => {
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 10. FINAL CTA */}
+          {/* 10. STRATEGIC PARTNERS & VERIFIED SUPPORTERS */}
+          <Reveal>
+            <StrategicPartnersSupporters />
+          </Reveal>
+
+          {/* 11. FINAL CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
