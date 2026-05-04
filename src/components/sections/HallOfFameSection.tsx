@@ -19,13 +19,13 @@ export const HallOfFameSection = () => (
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover">
-              <Link to="/hall-of-fame"><Award className="me-2 h-4 w-4" /> View Hall of Fame</Link>
+              <Link to="/contributors"><Award className="me-2 h-4 w-4" /> View Hall of Fame</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white">
-              <Link to="/hall-of-fame/submit"><Sparkles className="me-2 h-4 w-4" /> Submit Your Testimony</Link>
+              <Link to="/contributors/submit"><Sparkles className="me-2 h-4 w-4" /> Submit Your Testimony</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white">
-              <Link to="/hall-of-fame/submit"><UserPlus className="me-2 h-4 w-4" /> Nominate a Contributor</Link>
+              <Link to="/contributors/submit"><UserPlus className="me-2 h-4 w-4" /> Nominate a Contributor</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white">
               <Link to="/get-involved/volunteer"><Heart className="me-2 h-4 w-4" /> Become a Volunteer</Link>

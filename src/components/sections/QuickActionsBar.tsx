@@ -7,6 +7,8 @@ import {
   Users,
   GraduationCap,
   Handshake,
+  Droplets,
+  HandHeart,
 } from "lucide-react";
 
 /**
@@ -20,6 +22,8 @@ const actions = [
   { icon: ClipboardList, label: "Register Your School", href: "/programs/eduaid-africa#register-school" },
   { icon: Users, label: "Join a Chapter", href: "/chapters/join-online" },
   { icon: GraduationCap, label: "Sponsor Training", href: "/programs/eduaid-africa" },
+  { icon: Droplets, label: "Support School WASH", href: "/programs/school-wash" },
+  { icon: HandHeart, label: "Become a Volunteer", href: "/get-involved/volunteer" },
   { icon: Handshake, label: "Become a Partner", href: "/partner-with-us" },
 ];
 

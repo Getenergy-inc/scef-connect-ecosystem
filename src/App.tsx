@@ -154,11 +154,15 @@ import CategoriesIndex from "./pages/categories/Index";
 import CategoryDetail from "./pages/categories/CategoryDetail";
 import NigeriaCategories from "./pages/categories/Nigeria";
 
-// Hall of Fame
+// Contributors (formerly Hall of Fame)
 import HallOfFame from "./pages/HallOfFame";
 import HallOfFameProfile from "./pages/HallOfFameProfile";
 import HallOfFameSubmit from "./pages/HallOfFameSubmit";
 import HallOfFameAdmin from "./pages/admin/HallOfFameAdmin";
+import VerifyCertificate from "./pages/VerifyCertificate";
+
+// School WASH
+import SchoolWash from "./pages/programs/SchoolWash";
 
 const queryClient = new QueryClient();
 
@@ -190,6 +194,7 @@ const App = () => (
               <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
               <Route path="/programs/training-development" element={<TrainingDevelopment />} />
               <Route path="/programs/my-career-my-life" element={<MyCareerMyLifePage />} />
+              <Route path="/programs/school-wash" element={<SchoolWash />} />
               
               {/* Chapters Routes */}
               <Route path="/local-chapters" element={<LocalChapters />} />
@@ -232,11 +237,17 @@ const App = () => (
               <Route path="/categories/nigeria" element={<NigeriaCategories />} />
               <Route path="/categories/:slug" element={<CategoryDetail />} />
 
-              {/* Hall of Fame */}
+              {/* Contributors (formerly Hall of Fame) */}
+              <Route path="/contributors" element={<HallOfFame />} />
+              <Route path="/contributors/submit" element={<HallOfFameSubmit />} />
+              <Route path="/contributors/:slug" element={<HallOfFameProfile />} />
+              <Route path="/verify-certificate" element={<VerifyCertificate />} />
+              {/* Legacy redirects (keep mounted under old paths so external links don't break) */}
               <Route path="/hall-of-fame" element={<HallOfFame />} />
               <Route path="/hall-of-fame/submit" element={<HallOfFameSubmit />} />
               <Route path="/hall-of-fame/:slug" element={<HallOfFameProfile />} />
               <Route path="/admin/hall-of-fame" element={<HallOfFameAdmin />} />
+              <Route path="/admin/contributors" element={<HallOfFameAdmin />} />
 
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />

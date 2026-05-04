@@ -1355,6 +1355,7 @@ export type Database = {
         Row: {
           admin_notes: string | null
           badge: string | null
+          badge_code: string | null
           consent_public_display: boolean
           contribution_summary: string | null
           contribution_type: string | null
@@ -1386,6 +1387,7 @@ export type Database = {
         Insert: {
           admin_notes?: string | null
           badge?: string | null
+          badge_code?: string | null
           consent_public_display?: boolean
           contribution_summary?: string | null
           contribution_type?: string | null
@@ -1417,6 +1419,7 @@ export type Database = {
         Update: {
           admin_notes?: string | null
           badge?: string | null
+          badge_code?: string | null
           consent_public_display?: boolean
           contribution_summary?: string | null
           contribution_type?: string | null
@@ -2657,6 +2660,149 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      wash_nominations: {
+        Row: {
+          admin_notes: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone: string | null
+          country: string
+          created_at: string
+          current_facilities: string | null
+          enrollment_total: number | null
+          evidence_urls: string[] | null
+          girls_enrollment: number | null
+          has_disability_access: boolean | null
+          has_water_access: boolean | null
+          id: string
+          needs_categories: string[]
+          needs_summary: string
+          region: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          school_address: string
+          school_name: string
+          status: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone?: string | null
+          country: string
+          created_at?: string
+          current_facilities?: string | null
+          enrollment_total?: number | null
+          evidence_urls?: string[] | null
+          girls_enrollment?: number | null
+          has_disability_access?: boolean | null
+          has_water_access?: boolean | null
+          id?: string
+          needs_categories?: string[]
+          needs_summary: string
+          region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          school_address: string
+          school_name: string
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          admin_notes?: string | null
+          contact_email?: string
+          contact_name?: string
+          contact_phone?: string | null
+          country?: string
+          created_at?: string
+          current_facilities?: string | null
+          enrollment_total?: number | null
+          evidence_urls?: string[] | null
+          girls_enrollment?: number | null
+          has_disability_access?: boolean | null
+          has_water_access?: boolean | null
+          id?: string
+          needs_categories?: string[]
+          needs_summary?: string
+          region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          school_address?: string
+          school_name?: string
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      wash_sponsorships: {
+        Row: {
+          admin_notes: string | null
+          amount_pledged: number | null
+          created_at: string
+          currency: string | null
+          id: string
+          message: string | null
+          organization: string | null
+          preferred_country: string | null
+          preferred_school_id: string | null
+          sponsor_email: string
+          sponsor_name: string
+          sponsor_phone: string | null
+          sponsorship_type: string
+          status: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          amount_pledged?: number | null
+          created_at?: string
+          currency?: string | null
+          id?: string
+          message?: string | null
+          organization?: string | null
+          preferred_country?: string | null
+          preferred_school_id?: string | null
+          sponsor_email: string
+          sponsor_name: string
+          sponsor_phone?: string | null
+          sponsorship_type: string
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          admin_notes?: string | null
+          amount_pledged?: number | null
+          created_at?: string
+          currency?: string | null
+          id?: string
+          message?: string | null
+          organization?: string | null
+          preferred_country?: string | null
+          preferred_school_id?: string | null
+          sponsor_email?: string
+          sponsor_name?: string
+          sponsor_phone?: string | null
+          sponsorship_type?: string
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wash_sponsorships_preferred_school_id_fkey"
+            columns: ["preferred_school_id"]
+            isOneToOne: false
+            referencedRelation: "wash_nominations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {

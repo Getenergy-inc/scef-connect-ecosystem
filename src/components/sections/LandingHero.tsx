@@ -31,16 +31,16 @@ export const LandingHero = () => {
           {/* LEFT — Copy */}
           <div className="md:col-span-6 lg:col-span-5">
             <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold-light ring-1 ring-white/15">
-              {t("home.heroV2.eyebrow") || "Pan-African Education Foundation · Since 1997"}
+              {t("home.heroV2.eyebrow") || "You Are Welcome to SCEF · Reg. IT-41501"}
             </p>
             <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.75rem]">
-              Empowering Africa through{" "}
-              <span className="text-scef-gold">education, innovation, and opportunity.</span>
+              Advocating and Achieving{" "}
+              <span className="text-scef-gold">Education for All in Africa.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
-              SCEF is a Pan-African education platform advancing scholarships,
-              school support, women and girls empowerment, special needs
-              education, training, career guidance, and transparent funding.
+              Santos Creations Educational Foundation is a Pan-African nonprofit advancing scholarships,
+              school support, school WASH & sanitation, women & girls empowerment, special needs
+              education, training, career guidance and transparent funding.
             </p>
 
             {/* Primary CTAs */}

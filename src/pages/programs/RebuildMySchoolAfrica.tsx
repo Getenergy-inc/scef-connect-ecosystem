@@ -8,6 +8,7 @@ import {
   ArrowRight, CheckCircle, Lightbulb, Droplets, Wifi, Shield 
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
+import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
 
 const infrastructureTypes = [
   { name: "Classroom Construction", icon: Building, desc: "New classrooms built to modern standards" },
@@ -245,6 +246,9 @@ const RebuildMySchoolAfrica = () => {
             videoType="local"
             description="See how RMSA is transforming school infrastructure across Africa, one school at a time."
           />
+
+          {/* School WASH highlight */}
+          <SchoolWashHighlight />
 
           {/* CTA */}
           <section className="py-20 bg-earth">

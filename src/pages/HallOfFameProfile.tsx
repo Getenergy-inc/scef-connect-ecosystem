@@ -56,7 +56,7 @@ export default function HallOfFameProfile() {
         <div className="h-[88px] md:h-[96px]" />
         <div className="container mx-auto px-6 py-20 text-center">
           <h1 className="font-display text-3xl font-bold text-scef-blue-darker">Profile not found</h1>
-          <Button asChild className="mt-6"><Link to="/hall-of-fame">Back to Hall of Fame</Link></Button>
+          <Button asChild className="mt-6"><Link to="/contributors">Back to Contributors</Link></Button>
         </div>
         <Footer />
       </div>
@@ -65,7 +65,7 @@ export default function HallOfFameProfile() {
 
   const title = profile.meta_title || `${profile.full_name} — SCEF Hall of Fame`;
   const desc = profile.meta_description || profile.contribution_summary || `${profile.full_name}, ${profile.role} honoured in the SCEF Hall of Fame.`;
-  const url = `https://santoscreations.org/hall-of-fame/${profile.slug}`;
+  const url = `https://santoscreations.org/contributors/${profile.slug}`;
   const image = profile.og_image_url || profile.photo_url || "";
 
   const personSchema = {
@@ -103,7 +103,7 @@ export default function HallOfFameProfile() {
         <main>
           <section className="bg-scef-blue-darker py-16 text-white md:py-20">
             <div className="container mx-auto px-6 md:px-8">
-              <Link to="/hall-of-fame" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-scef-gold">
+              <Link to="/contributors" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-scef-gold">
                 <ArrowLeft className="h-4 w-4" /> Hall of Fame
               </Link>
               <div className="mt-8 grid gap-10 md:grid-cols-[280px_1fr] md:items-end">
@@ -205,7 +205,7 @@ export default function HallOfFameProfile() {
                   </div>
                 )}
                 <Button asChild className="w-full bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover">
-                  <Link to="/hall-of-fame/submit">Submit Your Testimony</Link>
+                  <Link to="/contributors/submit">Submit Your Testimony</Link>
                 </Button>
               </aside>
             </div>

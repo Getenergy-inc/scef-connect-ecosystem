@@ -21,6 +21,7 @@ import EduAidFAQs from "@/components/eduaid/EduAidFAQs";
 import EduAidDonationSection from "@/components/eduaid/EduAidDonationSection";
 import EduAidIntegratedServices from "@/components/eduaid/EduAidIntegratedServices";
 import EduAidAdvocacyCalendars from "@/components/eduaid/EduAidAdvocacyCalendars";
+import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
 
 export default function EduAidAfrica() {
   const { t } = useLocale();
@@ -89,6 +90,11 @@ export default function EduAidAfrica() {
         {/* Integrated Services (EOA, MCML, RMSA, Training) */}
         <ScrollAnimation animation="fadeUp" delay={0.1}>
           <EduAidIntegratedServices />
+        </ScrollAnimation>
+
+        {/* School WASH & Sanitation */}
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <SchoolWashHighlight />
         </ScrollAnimation>
 
         {/* Advocacy & Program Calendars */}

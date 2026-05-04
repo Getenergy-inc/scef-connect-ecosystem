@@ -65,7 +65,7 @@ export default function HallOfFame() {
           name="description"
           content="Celebrating SCEF volunteers, ambassadors, partners, donors and supporters from 2007 till date — the people behind African education impact."
         />
-        <link rel="canonical" href="https://santoscreations.org/hall-of-fame" />
+        <link rel="canonical" href="https://santoscreations.org/contributors" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -88,7 +88,7 @@ export default function HallOfFame() {
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover">
-                  <Link to="/hall-of-fame/submit">
+                  <Link to="/contributors/submit">
                     Submit Your Testimony <ArrowRight className="ms-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -160,7 +160,7 @@ export default function HallOfFame() {
                     Be the first to share your SCEF story — submissions are reviewed and verified.
                   </p>
                   <Button asChild className="mt-6 bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover">
-                    <Link to="/hall-of-fame/submit">Submit Your Testimony</Link>
+                    <Link to="/contributors/submit">Submit Your Testimony</Link>
                   </Button>
                 </div>
               ) : (
@@ -168,7 +168,7 @@ export default function HallOfFame() {
                   {filtered.map((p) => (
                     <Link
                       key={p.id}
-                      to={`/hall-of-fame/${p.slug}`}
+                      to={`/contributors/${p.slug}`}
                       className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-xl"
                     >
                       <div className="aspect-[4/5] w-full overflow-hidden bg-scef-blue-darker/[0.04]">
