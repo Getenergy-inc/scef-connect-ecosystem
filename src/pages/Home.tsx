@@ -14,6 +14,7 @@ import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
+import LocalChaptersImpact from "@/components/sections/LocalChaptersImpact";
 import { EcosystemAccordion } from "@/components/sections/EcosystemAccordion";
 import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
@@ -95,7 +96,12 @@ const Home = () => {
             <StrategicPartnersSupporters />
           </Reveal>
 
-          {/* 10b. HALL OF FAME & APPRECIATION WALL */}
+          {/* 10b. LOCAL CHAPTERS + IMPACT SNAPSHOT */}
+          <Reveal>
+            <LocalChaptersImpact />
+          </Reveal>
+
+          {/* 10c. HALL OF FAME & APPRECIATION WALL */}
           <Reveal>
             <HallOfFameSection />
           </Reveal>
