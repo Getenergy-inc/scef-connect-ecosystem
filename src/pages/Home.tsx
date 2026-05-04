@@ -12,6 +12,7 @@ import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
 import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
+import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 
