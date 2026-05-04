@@ -154,6 +154,12 @@ import CategoriesIndex from "./pages/categories/Index";
 import CategoryDetail from "./pages/categories/CategoryDetail";
 import NigeriaCategories from "./pages/categories/Nigeria";
 
+// Hall of Fame
+import HallOfFame from "./pages/HallOfFame";
+import HallOfFameProfile from "./pages/HallOfFameProfile";
+import HallOfFameSubmit from "./pages/HallOfFameSubmit";
+import HallOfFameAdmin from "./pages/admin/HallOfFameAdmin";
+
 const queryClient = new QueryClient();
 
 const App = () => (
