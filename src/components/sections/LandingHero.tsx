@@ -38,19 +38,20 @@ export const LandingHero = () => {
               <span className="text-scef-gold">education, innovation, and opportunity.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
-              A membership-driven Pan-African education foundation advancing
-              education through advocacy, digital access, partnerships,
-              transparent funding, local chapters, training, and career
-              pathways.
+              SCEF is a Pan-African education platform advancing scholarships,
+              school support, women and girls empowerment, special needs
+              education, training, career guidance, and transparent funding.
             </p>
+
+            {/* Primary CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button
                 size="lg"
                 className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
                 asChild
               >
-                <Link to="/get-involved/membership">
-                  Explore Membership
+                <Link to="/donate">
+                  Donate
                   <ArrowRight className="ms-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -59,15 +60,34 @@ export const LandingHero = () => {
                 className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
                 asChild
               >
-                <Link to="/donate">Support the Mission</Link>
+                <Link to="/nominate">Nominate a School</Link>
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white"
+                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
                 asChild
               >
-                <Link to="/nominate">Nominate a School</Link>
+                <Link to="/partner-with-us">Become a Partner</Link>
+              </Button>
+            </div>
+
+            {/* Secondary CTAs */}
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
+                asChild
+              >
+                <Link to="/chapters/join-online">Join a Chapter</Link>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
+                asChild
+              >
+                <Link to="/programs/eduaid-africa#register-school">Register Your School</Link>
               </Button>
               <QuickJumpMenu variant="dark" />
             </div>
