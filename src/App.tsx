@@ -231,7 +231,13 @@ const App = () => (
               <Route path="/categories" element={<CategoriesIndex />} />
               <Route path="/categories/nigeria" element={<NigeriaCategories />} />
               <Route path="/categories/:slug" element={<CategoryDetail />} />
-              
+
+              {/* Hall of Fame */}
+              <Route path="/hall-of-fame" element={<HallOfFame />} />
+              <Route path="/hall-of-fame/submit" element={<HallOfFameSubmit />} />
+              <Route path="/hall-of-fame/:slug" element={<HallOfFameProfile />} />
+              <Route path="/admin/hall-of-fame" element={<HallOfFameAdmin />} />
+
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
               <Route path="/auth/sign-in" element={<SignIn />} />
