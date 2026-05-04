@@ -56,7 +56,7 @@ export default function HallOfFameProfile() {
         <div className="h-[88px] md:h-[96px]" />
         <div className="container mx-auto px-6 py-20 text-center">
           <h1 className="font-display text-3xl font-bold text-scef-blue-darker">Profile not found</h1>
-          <Button asChild className="mt-6"><Link to="/hall-of-fame">Back to Hall of Fame</Link></Button>
+          <Button asChild className="mt-6"><Link to="/contributors">Back to Contributors</Link></Button>
         </div>
         <Footer />
       </div>
@@ -103,7 +103,7 @@ export default function HallOfFameProfile() {
         <main>
           <section className="bg-scef-blue-darker py-16 text-white md:py-20">
             <div className="container mx-auto px-6 md:px-8">
-              <Link to="/hall-of-fame" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-scef-gold">
+              <Link to="/contributors" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-scef-gold">
                 <ArrowLeft className="h-4 w-4" /> Hall of Fame
               </Link>
               <div className="mt-8 grid gap-10 md:grid-cols-[280px_1fr] md:items-end">

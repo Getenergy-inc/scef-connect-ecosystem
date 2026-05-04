@@ -99,7 +99,7 @@ export default function HallOfFameSubmit() {
       }
 
       toast.success("Submitted! Our team will review and publish soon.");
-      navigate("/hall-of-fame");
+      navigate("/contributors");
     } catch (err: any) {
       logger.error("HoF submit error", err);
       toast.error(err.message ?? "Could not submit. Please try again.");
@@ -120,7 +120,7 @@ export default function HallOfFameSubmit() {
 
         <main className="py-12 md:py-16">
           <div className="container mx-auto max-w-3xl px-6 md:px-8">
-            <Link to="/hall-of-fame" className="text-sm text-muted-foreground hover:text-scef-blue-darker">← Hall of Fame</Link>
+            <Link to="/contributors" className="text-sm text-muted-foreground hover:text-scef-blue-darker">← Contributors</Link>
             <h1 className="mt-4 font-display text-3xl font-bold text-scef-blue-darker md:text-4xl">Submit Your Testimony</h1>
             <p className="mt-2 text-muted-foreground">
               Tell us how you've been part of SCEF since 2007. Submissions are reviewed before being published.
