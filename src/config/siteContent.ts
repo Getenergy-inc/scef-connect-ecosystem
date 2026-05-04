@@ -58,6 +58,38 @@ export const siteContent = {
       ],
     },
     {
+      name: "Awards",
+      href: "/awards",
+      megaMenu: true,
+      groups: [
+        {
+          title: "Award Tiers",
+          items: [
+            { name: "Platinum Certificate", href: "/awards/platinum", description: "Lifetime contribution honour", icon: "Crown" },
+            { name: "Africa Education Icon", href: "/awards/icon", description: "Continental icons of impact", icon: "Star" },
+            { name: "Gold Certificate", href: "/awards/gold", description: "Excellence across categories", icon: "Medal" },
+            { name: "Blue Garnet Award", href: "/awards/blue-garnet", description: "Flagship recognition", icon: "Sparkles" },
+          ],
+        },
+        {
+          title: "Explore",
+          items: [
+            { name: "Awards Hub", href: "/awards", description: "Full awards ecosystem overview", icon: "Award" },
+            { name: "Categories (17)", href: "/categories", description: "Browse the category architecture", icon: "LayoutGrid" },
+            { name: "NESA Calendar", href: "/calendar", description: "2026 cycle dates & milestones", icon: "Plane" },
+          ],
+        },
+        {
+          title: "Participate",
+          items: [
+            { name: "Nominate", href: "/nominate", description: "Submit a nomination", icon: "Heart" },
+            { name: "Become a Judge", href: "/get-involved/judge", description: "Join the jury panel", icon: "Medal" },
+            { name: "Apply to NRC", href: "/get-involved/nrc", description: "Nominee Review Committee", icon: "Star" },
+          ],
+        },
+      ],
+    },
+    {
       name: "Chapters",
       href: "/local-chapters",
       children: [
