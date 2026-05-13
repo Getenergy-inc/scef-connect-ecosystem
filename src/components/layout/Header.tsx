@@ -107,6 +107,7 @@ export const Header = () => {
         { name: t("nav.dropdown.getInvolved.volunteer"), href: "/get-involved#volunteer" },
         { name: t("nav.dropdown.getInvolved.csr"), href: "/partners" },
         { name: t("nav.dropdown.getInvolved.donate"), href: "/donate" },
+        { name: "Support & Payment Options", href: "/support-us" },
       ]
     },
   ];
