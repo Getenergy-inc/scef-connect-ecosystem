@@ -120,6 +120,11 @@ export const MonthlyAdvocacyCalendar = () => {
                         <span className="text-sm font-medium text-foreground">
                           {p.title}
                         </span>
+                        {programSchedule[p.slug] && (
+                          <span className="text-[11px] text-muted-foreground">
+                            Program Week: {programSchedule[p.slug].weekRange} · Main day: {programSchedule[p.slug].mainDay}
+                          </span>
+                        )}
                         <span className="flex flex-wrap gap-1.5 pt-1">
                           {p.modes.map((m) => (
                             <span
