@@ -62,13 +62,13 @@ export const MonthlyAdvocacyCalendar = () => {
             <CalendarDays className="h-3.5 w-3.5" /> July 2026 – June 2027
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-            Monthly Advocacy, Webinar &amp; Training Calendar
+            Explore Our Monthly Advocacy, Webinar &amp; Training Calendar
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Every month, SCEF leads a focused education, advocacy, and capacity-building theme across Africa — delivered through webinars, school visits, local chapter activities, advocacy walks, media campaigns, and partner-supported training.
+            Every month, SCEF leads a focused education, advocacy, and capacity-building theme across Africa. Each monthly theme runs as a flexible <strong>Program Week</strong>. During that week, any school, NGO, partner, volunteer group, ambassador team, local chapter, or regional team may choose one suitable day to host its own activity — physically, online, or hybrid.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Each monthly theme runs as a flexible <strong>Program Week</strong>, allowing schools, NGOs, partners, volunteers, ambassadors, and local chapters to participate online, physically, or hybrid.
+            Recommended Program Week: the <strong>3rd week</strong> of each month. Recommended main day: <strong>Saturday</strong> of that week — flexible by region.
           </p>
         </div>
 
