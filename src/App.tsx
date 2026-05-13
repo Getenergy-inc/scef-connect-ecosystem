@@ -216,6 +216,8 @@ const App = () => (
               <Route path="/programs/nesa-africa/master-timeline" element={<NesaMasterTimeline />} />
               <Route path="/nesa-africa/master-timeline" element={<NesaMasterTimeline />} />
               <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
+              <Route path="/programs/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
+              <Route path="/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/programs/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
               <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />
               <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
