@@ -18,6 +18,7 @@ import {
  */
 const actions = [
   { icon: Heart, label: "Donate", href: "/donate" },
+  { icon: Sparkles, label: "Support & Payment Options", href: "/support-us" },
   { icon: School, label: "Nominate a School", href: "/nominate" },
   { icon: Vote, label: "Vote with AGC", href: "/vote" },
   { icon: ClipboardList, label: "Register Your School", href: "/programs/eduaid-africa#register-school" },
