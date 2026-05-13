@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { siteContent } from "@/config/siteContent";
 import { 
   Menu, X, ChevronDown, Heart, LogIn, Wallet, ExternalLink, 
   Library, Award, GraduationCap, User, LayoutDashboard, LogOut,
@@ -34,85 +35,47 @@ const externalPlatforms = [
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { t, isRTL } = useLocale();
   const { user, isAuthenticated, loading } = useAuthState();
 
-  const navigation = [
-    { name: t("nav.top.about"), href: "/about", key: "about",
-      children: [
-        { name: t("nav.dropdown.about.overview"), href: "/about" },
-        { name: t("nav.dropdown.about.history"), href: "/about#history" },
-        { name: t("nav.dropdown.about.vision"), href: "/about#vision" },
-        { name: t("nav.dropdown.about.governance"), href: "/governance" },
-        { name: t("nav.dropdown.about.divisions"), href: "/divisions" },
-      ]
-    },
-    { name: t("nav.top.work"), href: "/programs", key: "work",
-      children: [
-        { name: t("nav.dropdown.work.hub"), href: "/programs" },
-        { name: t("nav.dropdown.work.nesa"), href: "/programs/nesa-africa" },
-        { name: t("nav.dropdown.work.eduaid"), href: "/programs/eduaid-africa" },
-        { name: t("nav.dropdown.work.rmsa"), href: "/programs/rebuild-my-school-africa" },
-        { name: t("nav.dropdown.work.elibrary"), href: "/programs/elibrary-nigeria" },
-        { name: t("nav.dropdown.work.womenGirls"), href: "/programs/women-girls-education" },
-        { name: t("nav.dropdown.work.specialNeeds"), href: "/programs/special-needs-education" },
-        { name: t("nav.dropdown.work.eoa"), href: "/programs/digital-learning" },
-        { divider: true },
-        { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
-        { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
-        { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
-      ]
-    },
-    // NESA Awards - All tiers + categories + calendar
-    { name: "Awards", href: "/awards/platinum", key: "awards",
-      children: [
-        { name: "Categories (17)", href: "/categories", icon: Layers },
-        { divider: true },
-        { name: "Platinum Certificate", href: "/awards/platinum" },
-        { name: "Africa Education Icon", href: "/awards/icon" },
-        { name: "Gold Certificate", href: "/awards/gold" },
-        { name: "Blue Garnet Award", href: "/awards/blue-garnet" },
-        { divider: true },
-        { name: "NESA Calendar", href: "/calendar" },
-      ]
-    },
-    { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
-      children: [
-        { name: t("nav.dropdown.chapters.browse"), href: "/chapters" },
-        { name: t("nav.dropdown.chapters.join"), href: "/local-chapters" },
-      ]
-    },
-    { name: t("nav.top.media"), href: "/media", key: "media",
-      children: [
-        { name: t("nav.dropdown.media.hub"), href: "/media" },
-        { divider: true },
-        { name: t("nav.dropdown.media.nesaTv"), href: "/media/nesa-tv" },
-        { name: t("nav.dropdown.media.nesaAwardsTv"), href: "/media/nesa-awards-tv" },
-        { name: t("nav.dropdown.media.radio"), href: "/media/its-in-me-radio" },
-        { divider: true },
-        { name: t("nav.dropdown.media.platinumShow"), href: "/media/nesa-awards-tv/platinum" },
-        { name: t("nav.dropdown.media.africaIcon"), href: "/media/nesa-awards-tv/africa-icon" },
-        { name: t("nav.dropdown.media.goldCertificate"), href: "/media/nesa-awards-tv/gold-certificate" },
-        { name: t("nav.dropdown.media.blueGarnetGala"), href: "/media/nesa-awards-tv/blue-garnet-gala" },
-        { divider: true },
-        { name: t("nav.dropdown.media.webinars"), href: "/media/eduaid-webinars" },
-        { name: t("nav.dropdown.media.tourism"), href: "/media/education-tourism-show" },
-      ]
-    },
-    { name: t("nav.top.getInvolved"), href: "/get-involved", key: "getInvolved",
-      children: [
-        { name: t("nav.dropdown.getInvolved.member"), href: "/membership" },
-        { name: t("nav.dropdown.getInvolved.ambassador"), href: "/get-involved" },
-        { name: t("nav.dropdown.getInvolved.volunteer"), href: "/get-involved#volunteer" },
-        { name: t("nav.dropdown.getInvolved.csr"), href: "/partners" },
-        { name: t("nav.dropdown.getInvolved.donate"), href: "/donate" },
-        { name: "Support & Payment Options", href: "/support-us" },
-      ]
-    },
-  ];
+  // Build the 6-item navigation from the central siteContent config.
+  // Flatten megaMenu groups into children, inserting group-title dividers,
+  // so both desktop and mobile renderers (which expect `children`) work.
+  const navigation = useMemo(() => {
+    return siteContent.navLinks.map((link: any) => {
+      const key = link.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      let children: any[] | undefined;
+
+      if (link.megaMenu && Array.isArray(link.groups)) {
+        children = [];
+        link.groups.forEach((group: any, gIdx: number) => {
+          if (gIdx > 0) children!.push({ divider: true });
+          children!.push({ groupTitle: group.title });
+          group.items.forEach((item: any) => {
+            children!.push({ name: item.name, href: item.href });
+          });
+        });
+      } else if (Array.isArray(link.children)) {
+        children = link.children.map((c: any) => ({ name: c.name, href: c.href }));
+      }
+
+      return { name: link.name, href: link.href, key, children };
+    });
+  }, []);
+
+  const isActiveTop = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname === href || location.pathname.startsWith(href + "/");
+  };
+  const isActiveChild = (href: string) => {
+    const path = href.split("#")[0].split("?")[0];
+    if (!path || path === "/") return location.pathname === "/";
+    return location.pathname === path || location.pathname.startsWith(path + "/");
+  };
 
   // Role portals - shown only to authenticated users in Profile dropdown
   const rolePortals = [
@@ -178,7 +141,13 @@ export const Header = () => {
             >
               <Link
                 to={item.href}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 text-white hover:text-scef-gold hover:bg-white/10"
+                aria-current={isActiveTop(item.href) ? "page" : undefined}
+                className={cn(
+                  "px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 relative",
+                  isActiveTop(item.href)
+                    ? "text-scef-gold bg-white/10 after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:bg-scef-gold after:rounded-full"
+                    : "text-white hover:text-scef-gold hover:bg-white/10"
+                )}
               >
                 {item.name}
                 {item.children && <ChevronDown className="w-3 h-3" />}
@@ -187,20 +156,23 @@ export const Header = () => {
               {/* Dropdown */}
               {item.children && activeDropdown === item.key && (
                 <div className={cn(
-                  "absolute top-full mt-1 w-64 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50",
+                  "absolute top-full mt-1 w-72 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50",
                   isRTL ? "right-0" : "left-0"
                 )}>
                   {item.children.map((child: any, idx: number) => (
                     child.divider ? (
-                      <div key={idx} className="border-t border-border my-1" />
+                      <div key={`d-${idx}`} className="border-t border-border my-1" />
+                    ) : child.groupTitle ? (
+                      <div key={`g-${idx}`} className="px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-scef-grey-dark/60">
+                        {child.groupTitle}
+                      </div>
                     ) : child.external ? (
                       <a
                         key={child.name}
                         href={child.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
-                        
+                        className="flex items-center justify-between px-4 py-2.5 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
                       >
                         {child.name}
                         <ExternalLink className="w-3 h-3 text-scef-gold" />
@@ -209,7 +181,13 @@ export const Header = () => {
                       <Link
                         key={child.name}
                         to={child.href}
-                        className="block px-4 py-3 text-sm text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue transition-colors"
+                        aria-current={isActiveChild(child.href) ? "page" : undefined}
+                        className={cn(
+                          "block px-4 py-2.5 text-sm transition-colors",
+                          isActiveChild(child.href)
+                            ? "bg-scef-blue/5 text-scef-blue font-semibold border-l-2 border-scef-gold"
+                            : "text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue"
+                        )}
                       >
                         {child.name}
                       </Link>
@@ -459,11 +437,18 @@ export const Header = () => {
 
             {navigation.map((item) => (
               item.children ? (
-                <Collapsible key={item.key}>
-                  <div className="flex items-center rounded-lg hover:bg-white/5">
+                <Collapsible key={item.key} defaultOpen={isActiveTop(item.href)}>
+                  <div className={cn(
+                    "flex items-center rounded-lg",
+                    isActiveTop(item.href) ? "bg-white/10" : "hover:bg-white/5"
+                  )}>
                     <Link
                       to={item.href}
-                      className="flex-1 px-3 py-3 text-white hover:text-scef-gold transition-colors font-medium text-sm"
+                      aria-current={isActiveTop(item.href) ? "page" : undefined}
+                      className={cn(
+                        "flex-1 px-3 py-3 transition-colors font-medium text-sm",
+                        isActiveTop(item.href) ? "text-scef-gold" : "text-white hover:text-scef-gold"
+                      )}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -479,7 +464,11 @@ export const Header = () => {
                     <div className={cn("py-1 space-y-0.5 border-white/10", isRTL ? "mr-3 border-r pr-3" : "ml-3 border-l pl-3")}>
                       {item.children.map((child: any, idx: number) => (
                         child.divider ? (
-                          <div key={idx} className="border-t border-white/10 my-2" />
+                          <div key={`d-${idx}`} className="border-t border-white/10 my-2" />
+                        ) : child.groupTitle ? (
+                          <div key={`g-${idx}`} className="px-3 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-white/50">
+                            {child.groupTitle}
+                          </div>
                         ) : child.external ? (
                           <a
                             key={child.name}
@@ -496,7 +485,13 @@ export const Header = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className="block px-3 py-2 text-sm text-white/75 hover:text-scef-gold hover:bg-white/5 rounded-md transition-colors"
+                            aria-current={isActiveChild(child.href) ? "page" : undefined}
+                            className={cn(
+                              "block px-3 py-2 text-sm rounded-md transition-colors",
+                              isActiveChild(child.href)
+                                ? "bg-scef-gold/15 text-scef-gold font-semibold"
+                                : "text-white/75 hover:text-scef-gold hover:bg-white/5"
+                            )}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {child.name}
@@ -510,7 +505,13 @@ export const Header = () => {
                 <Link
                   key={item.key}
                   to={item.href}
-                  className="block px-3 py-3 rounded-lg text-white hover:bg-white/5 hover:text-scef-gold transition-colors font-medium text-sm"
+                  aria-current={isActiveTop(item.href) ? "page" : undefined}
+                  className={cn(
+                    "block px-3 py-3 rounded-lg transition-colors font-medium text-sm",
+                    isActiveTop(item.href)
+                      ? "bg-white/10 text-scef-gold"
+                      : "text-white hover:bg-white/5 hover:text-scef-gold"
+                  )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
