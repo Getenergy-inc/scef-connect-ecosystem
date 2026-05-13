@@ -183,6 +183,7 @@ import History from "./pages/about/History";
 import SendAChildToSchool from "./pages/programs/SendAChildToSchool";
 import MonthlyAdvocacy from "./pages/advocacy/MonthlyAdvocacy";
 import Volunteers from "./pages/Volunteers";
+import MediaArchive from "./pages/media/MediaArchive";
 
 const queryClient = new QueryClient();
 
@@ -404,7 +405,8 @@ const App = () => (
               <Route path="/support-us/bank-accounts" element={<ComingSoon title="Official Bank Accounts" description="Verified SCEF payment channels for donations, sponsorships and fees." />} />
               <Route path="/support-us/merchandise" element={<ComingSoon title="Buy Merchandise" description="Branded SCEF apparel and education-positive merchandise." />} />
               <Route path="/support-us/gala-tickets" element={<ComingSoon title="Award Gala Tickets" description="Reserve your seat at the next NESA-Africa awards gala." />} />
-              <Route path="/media/gallery" element={<ComingSoon title="Media Gallery" description="Photos, highlights and visual stories from SCEF programs." />} />
+              <Route path="/media/archive" element={<MediaArchive />} />
+              <Route path="/media/gallery" element={<MediaArchive />} />
 
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
