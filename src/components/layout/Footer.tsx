@@ -154,6 +154,7 @@ const footerColumns = [
       { name: "Partner With Us", href: "/partners" },
       { name: "Vacancies", href: "/vacancies" },
       { name: "Donate", href: "/donate" },
+      { name: "Support & Payment Options", href: "/support-us" },
     ],
   },
   {
