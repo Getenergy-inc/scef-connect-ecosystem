@@ -136,6 +136,11 @@ const MonthlyProgramPage = () => {
                 </table>
               </div>
 
+              {/* Webinar Registration Form */}
+              <div id="register" className="mt-12 scroll-mt-32">
+                <WebinarRegistrationForm program={program} />
+              </div>
+
               {/* Sections grid */}
               <div className="mt-12 grid gap-4 md:grid-cols-2">
                 {sections.map(({ icon: Icon, title, body }) => (
