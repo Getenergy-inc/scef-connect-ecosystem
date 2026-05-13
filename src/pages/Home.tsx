@@ -15,6 +15,8 @@ import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
 import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
+import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
+import { HistoricalTimeline } from "@/components/sections/HistoricalTimeline";
 
 const Home = () => {
   return (
@@ -50,6 +52,16 @@ const Home = () => {
               <FeaturedPrograms />
             </Reveal>
           </div>
+
+          {/* Powered by Volunteers — documentary storytelling */}
+          <Reveal>
+            <VolunteerStorytelling />
+          </Reveal>
+
+          {/* Historical Timeline 1997 → 2027 */}
+          <Reveal>
+            <HistoricalTimeline />
+          </Reveal>
 
           {/* 4. MONTHLY ADVOCACY, WEBINAR & TRAINING CALENDAR */}
           <Reveal>
