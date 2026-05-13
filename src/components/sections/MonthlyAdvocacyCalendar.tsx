@@ -13,7 +13,7 @@ import {
   MapPin,
   Layers,
 } from "lucide-react";
-import { monthlyPrograms, type ParticipationMode } from "@/config/monthlyCalendar";
+import { monthlyPrograms, programSchedule, type ParticipationMode } from "@/config/monthlyCalendar";
 import { Button } from "@/components/ui/button";
 
 const modeStyles: Record<ParticipationMode, string> = {
