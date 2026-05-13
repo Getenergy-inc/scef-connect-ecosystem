@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import PageShell from "@/components/layout/PageShell";
+import NesaSeason2026Timeline from "@/components/sections/NesaSeason2026Timeline";
 
 interface Phase {
   id: string;
