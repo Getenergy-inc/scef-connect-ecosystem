@@ -35,85 +35,47 @@ const externalPlatforms = [
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { t, isRTL } = useLocale();
   const { user, isAuthenticated, loading } = useAuthState();
 
-  const navigation = [
-    { name: t("nav.top.about"), href: "/about", key: "about",
-      children: [
-        { name: t("nav.dropdown.about.overview"), href: "/about" },
-        { name: t("nav.dropdown.about.history"), href: "/about#history" },
-        { name: t("nav.dropdown.about.vision"), href: "/about#vision" },
-        { name: t("nav.dropdown.about.governance"), href: "/governance" },
-        { name: t("nav.dropdown.about.divisions"), href: "/divisions" },
-      ]
-    },
-    { name: t("nav.top.work"), href: "/programs", key: "work",
-      children: [
-        { name: t("nav.dropdown.work.hub"), href: "/programs" },
-        { name: t("nav.dropdown.work.nesa"), href: "/programs/nesa-africa" },
-        { name: t("nav.dropdown.work.eduaid"), href: "/programs/eduaid-africa" },
-        { name: t("nav.dropdown.work.rmsa"), href: "/programs/rebuild-my-school-africa" },
-        { name: t("nav.dropdown.work.elibrary"), href: "/programs/elibrary-nigeria" },
-        { name: t("nav.dropdown.work.womenGirls"), href: "/programs/women-girls-education" },
-        { name: t("nav.dropdown.work.specialNeeds"), href: "/programs/special-needs-education" },
-        { name: t("nav.dropdown.work.eoa"), href: "/programs/digital-learning" },
-        { divider: true },
-        { name: "Visit NESA.africa", href: "https://nesa.africa", external: true },
-        { name: "Visit EduAid.africa", href: "https://eduaid.africa", external: true },
-        { name: "Visit eLibraryNigeria.com.ng", href: "https://www.elibrarynigeria.com.ng", external: true },
-      ]
-    },
-    // NESA Awards - All tiers + categories + calendar
-    { name: "Awards", href: "/awards/platinum", key: "awards",
-      children: [
-        { name: "Categories (17)", href: "/categories", icon: Layers },
-        { divider: true },
-        { name: "Platinum Certificate", href: "/awards/platinum" },
-        { name: "Africa Education Icon", href: "/awards/icon" },
-        { name: "Gold Certificate", href: "/awards/gold" },
-        { name: "Blue Garnet Award", href: "/awards/blue-garnet" },
-        { divider: true },
-        { name: "NESA Calendar", href: "/calendar" },
-      ]
-    },
-    { name: t("nav.top.chapters"), href: "/chapters", key: "chapters",
-      children: [
-        { name: t("nav.dropdown.chapters.browse"), href: "/chapters" },
-        { name: t("nav.dropdown.chapters.join"), href: "/local-chapters" },
-      ]
-    },
-    { name: t("nav.top.media"), href: "/media", key: "media",
-      children: [
-        { name: t("nav.dropdown.media.hub"), href: "/media" },
-        { divider: true },
-        { name: t("nav.dropdown.media.nesaTv"), href: "/media/nesa-tv" },
-        { name: t("nav.dropdown.media.nesaAwardsTv"), href: "/media/nesa-awards-tv" },
-        { name: t("nav.dropdown.media.radio"), href: "/media/its-in-me-radio" },
-        { divider: true },
-        { name: t("nav.dropdown.media.platinumShow"), href: "/media/nesa-awards-tv/platinum" },
-        { name: t("nav.dropdown.media.africaIcon"), href: "/media/nesa-awards-tv/africa-icon" },
-        { name: t("nav.dropdown.media.goldCertificate"), href: "/media/nesa-awards-tv/gold-certificate" },
-        { name: t("nav.dropdown.media.blueGarnetGala"), href: "/media/nesa-awards-tv/blue-garnet-gala" },
-        { divider: true },
-        { name: t("nav.dropdown.media.webinars"), href: "/media/eduaid-webinars" },
-        { name: t("nav.dropdown.media.tourism"), href: "/media/education-tourism-show" },
-      ]
-    },
-    { name: t("nav.top.getInvolved"), href: "/get-involved", key: "getInvolved",
-      children: [
-        { name: t("nav.dropdown.getInvolved.member"), href: "/membership" },
-        { name: t("nav.dropdown.getInvolved.ambassador"), href: "/get-involved" },
-        { name: t("nav.dropdown.getInvolved.volunteer"), href: "/get-involved#volunteer" },
-        { name: t("nav.dropdown.getInvolved.csr"), href: "/partners" },
-        { name: t("nav.dropdown.getInvolved.donate"), href: "/donate" },
-        { name: "Support & Payment Options", href: "/support-us" },
-      ]
-    },
-  ];
+  // Build the 6-item navigation from the central siteContent config.
+  // Flatten megaMenu groups into children, inserting group-title dividers,
+  // so both desktop and mobile renderers (which expect `children`) work.
+  const navigation = useMemo(() => {
+    return siteContent.navLinks.map((link: any) => {
+      const key = link.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      let children: any[] | undefined;
+
+      if (link.megaMenu && Array.isArray(link.groups)) {
+        children = [];
+        link.groups.forEach((group: any, gIdx: number) => {
+          if (gIdx > 0) children!.push({ divider: true });
+          children!.push({ groupTitle: group.title });
+          group.items.forEach((item: any) => {
+            children!.push({ name: item.name, href: item.href });
+          });
+        });
+      } else if (Array.isArray(link.children)) {
+        children = link.children.map((c: any) => ({ name: c.name, href: c.href }));
+      }
+
+      return { name: link.name, href: link.href, key, children };
+    });
+  }, []);
+
+  const isActiveTop = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname === href || location.pathname.startsWith(href + "/");
+  };
+  const isActiveChild = (href: string) => {
+    const path = href.split("#")[0].split("?")[0];
+    if (!path || path === "/") return location.pathname === "/";
+    return location.pathname === path || location.pathname.startsWith(path + "/");
+  };
 
   // Role portals - shown only to authenticated users in Profile dropdown
   const rolePortals = [
