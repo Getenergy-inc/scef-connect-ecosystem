@@ -9,6 +9,7 @@ import {
   Handshake,
   Droplets,
   HandHeart,
+  Sparkles,
 } from "lucide-react";
 
 /**
