@@ -163,7 +163,9 @@ const EduAidMasterTimeline = () => {
           </div>
         </div>
       </section>
-    </PageShell>
+      <Footer />
+    </>
+
   );
 };
 
