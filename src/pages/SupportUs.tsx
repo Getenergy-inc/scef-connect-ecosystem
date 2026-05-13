@@ -23,7 +23,7 @@ type CTA = {
   title: string;
   purpose: string;
   account: "NESA-Africa" | "EduAid-Africa" | "SCEF" | "EduAid-Africa / SCEF" | "GFA / SCEF" | "NESA-Africa / SCEF" | "SCEF / EduAid-Africa";
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: typeof Award;
   to: string;
 };
 
