@@ -2,21 +2,16 @@ import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
-import { WelcomeAboutIntro } from "@/components/sections/WelcomeAboutIntro";
-import { AccessYourExperience } from "@/components/sections/AccessYourExperience";
-import { DiscoverPlatformCTAs } from "@/components/sections/DiscoverPlatformCTAs";
-import { SixCoreServices } from "@/components/sections/SixCoreServices";
-import { TrainingWebinarsSection } from "@/components/sections/TrainingWebinarsSection";
-import { CareerProgramSection } from "@/components/sections/CareerProgramSection";
-import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
-import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
-import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
-import { FinalCTABand } from "@/components/sections/FinalCTABand";
+import { FeaturedPrograms } from "@/components/sections/FeaturedPrograms";
+import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
+import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
+import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
+import { TrainingWebinarsSection } from "@/components/sections/TrainingWebinarsSection";
+import { DonationChannels } from "@/components/sections/DonationChannels";
+import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
-import LocalChaptersImpact from "@/components/sections/LocalChaptersImpact";
-import { EcosystemAccordion } from "@/components/sections/EcosystemAccordion";
 import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
@@ -25,10 +20,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>SCEF — Empowering Africa Through Education, Innovation & Opportunity</title>
+        <title>SCEF — Empowering Education. Advancing Health. Sustaining Africa's Future.</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation: a membership-driven Pan-African education platform advancing scholarships, school support, women & girls empowerment, special needs education, training, career guidance and transparent funding."
+          content="Santos Creations Educational Foundation (SCEF) — a Pan-African membership-based not-for-profit NGO transforming education through advocacy, scholarships, digital learning, local chapters, ESG, health education and sustainable community impact."
         />
         <link rel="canonical" href="https://santoscreations.org/" />
       </Helmet>
@@ -41,78 +36,57 @@ const Home = () => {
           {/* 1. HERO */}
           <LandingHero />
 
-          {/* 1b. QUICK ACTIONS BAR */}
+          {/* Quick Actions Bar */}
           <QuickActionsBar />
 
-          {/* 1c. WELCOME — EXPLORE OUR ECOSYSTEM (accordion) */}
-          <EcosystemAccordion />
-
-          {/* Welcome + About intro */}
-          <Reveal>
-            <WelcomeAboutIntro />
-          </Reveal>
-
-          {/* 2. ACCESS YOUR EXPERIENCE (Login / Sign Up) */}
-          <AccessYourExperience />
-
-          {/* 3. DISCOVER THE PLATFORM (CTA cards) */}
-          <Reveal>
-            <DiscoverPlatformCTAs />
-          </Reveal>
-
-          {/* 4. PROGRAMS OVERVIEW */}
-          <div id="core-services">
-            <Reveal>
-              <SixCoreServices />
-            </Reveal>
-          </div>
-
-          {/* 5. TRAINING & WEBINARS */}
-          <Reveal>
-            <TrainingWebinarsSection />
-          </Reveal>
-
-          {/* 6. CAREER PROGRAM (MCML) */}
-          <Reveal>
-            <CareerProgramSection />
-          </Reveal>
-
-          {/* 6b. MONTHLY ADVOCACY, WEBINAR & TRAINING CALENDAR */}
-          <Reveal>
-            <MonthlyAdvocacyCalendar />
-          </Reveal>
-
-          {/* 7. JOIN US / GET INVOLVED */}
-          <Reveal>
-            <JoinUsGetInvolved />
-          </Reveal>
-
-          {/* 8. LOCAL CHAPTERS */}
-          <Reveal>
-            <LocalChaptersSnapshot />
-          </Reveal>
-
-          {/* 9. IMPACT SNAPSHOT */}
+          {/* 2. IMPACT / TRUST — 8 focus areas, qualitative */}
           <Reveal>
             <ImpactStripLabels />
           </Reveal>
 
-          {/* 10. STRATEGIC PARTNERS & VERIFIED SUPPORTERS */}
+          {/* 3. FEATURED PROGRAMS — 7 cards, Learn More + Support */}
+          <div id="core-services">
+            <Reveal>
+              <FeaturedPrograms />
+            </Reveal>
+          </div>
+
+          {/* 4. MONTHLY ADVOCACY, WEBINAR & TRAINING CALENDAR */}
+          <Reveal>
+            <MonthlyAdvocacyCalendar />
+          </Reveal>
+
+          {/* 5. SUPPORT OPTIONS — driven by JoinUsGetInvolved + DonationChannels below */}
+          <Reveal>
+            <JoinUsGetInvolved />
+          </Reveal>
+
+          {/* 6. LOCAL CHAPTERS */}
+          <Reveal>
+            <LocalChaptersSnapshot />
+          </Reveal>
+
+          {/* 7. PARTNERSHIPS & STRATEGIC SUPPORTERS */}
           <Reveal>
             <StrategicPartnersSupporters />
           </Reveal>
 
-          {/* 10b. LOCAL CHAPTERS + IMPACT SNAPSHOT */}
+          {/* 8. MEDIA & ADVOCACY (Training & Webinars row) */}
           <Reveal>
-            <LocalChaptersImpact />
+            <TrainingWebinarsSection />
           </Reveal>
 
-          {/* 10c. HALL OF FAME & APPRECIATION WALL */}
+          {/* 9. PAYMENT / DONATION CHANNELS — compact */}
+          <Reveal>
+            <DonationChannels />
+          </Reveal>
+
+          {/* Hall of Fame appreciation */}
           <Reveal>
             <HallOfFameSection />
           </Reveal>
 
-          {/* 11. FINAL CTA */}
+          {/* 10. FINAL CTA */}
           <Reveal>
             <FinalCTABand />
           </Reveal>
