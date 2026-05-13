@@ -330,7 +330,7 @@ export const MainNavbar = () => {
               >
                 <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
                   <Heart className="w-4 h-4 mr-1.5" />
-                  Donate
+                  Donate Now
                 </Link>
               </Button>
               <Button
@@ -338,8 +338,16 @@ export const MainNavbar = () => {
                 className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
                 asChild
               >
-              <Link to="/join" onClick={() => setMobileMenuOpen(false)}>
-                  Join SCEF
+                <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>
+                  Become a Member
+                </Link>
+              </Button>
+              <Button
+                className="bg-white text-scef-blue-dark hover:bg-scef-gold font-semibold"
+                asChild
+              >
+                <Link to="/support-us#sponsor-nesa" onClick={() => setMobileMenuOpen(false)}>
+                  Sponsor NESA-Africa
                 </Link>
               </Button>
             </div>
