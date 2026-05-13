@@ -83,7 +83,9 @@ const ctas = [
 
 const EduAidMasterTimeline = () => {
   return (
-    <PageShell>
+    <>
+      <HeaderScreenshot />
+      <div className="h-[88px] md:h-[96px]" />
       <Helmet>
         <title>EduAid-Africa Master Timeline 2026–2027 | SCEF</title>
         <meta
