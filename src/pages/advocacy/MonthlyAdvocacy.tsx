@@ -4,6 +4,7 @@ import PageShell from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { monthlyPrograms } from "@/config/monthlyCalendar";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 
 const MonthlyAdvocacy = () => (
   <PageShell
@@ -13,6 +14,7 @@ const MonthlyAdvocacy = () => (
     heading="Monthly Advocacy, Webinar & Training Calendar"
     intro="Every month, SCEF leads a focused education, advocacy and capacity-building theme across Africa — delivered through webinars, school visits, local chapter activities, advocacy walks, media campaigns and partner-supported training."
   >
+    <MasterTimelineCTA />
     <section className="container mx-auto px-4 py-12 md:py-16">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {monthlyPrograms.map((p) => (

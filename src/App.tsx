@@ -64,6 +64,7 @@ import LCS from "./pages/divisions/LCS";
 
 // Program Pages
 import NESAAfrica from "./pages/programs/NESAAfrica";
+import NesaMasterTimeline from "./pages/programs/NesaMasterTimeline";
 import EduAidAfrica from "./pages/programs/EduAidAfrica";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
@@ -211,6 +212,8 @@ const App = () => (
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
               <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
+              <Route path="/programs/nesa-africa/master-timeline" element={<NesaMasterTimeline />} />
+              <Route path="/nesa-africa/master-timeline" element={<NesaMasterTimeline />} />
               <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
               <Route path="/programs/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
               <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />

@@ -18,6 +18,7 @@ import {
 import { useLocale } from "@/contexts/LocaleContext";
 import { Heart, Shield, ExternalLink, Wallet, CheckCircle, AlertTriangle, Info } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 import { toast } from "sonner";
 import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 import { logger } from "@/lib/logger";
@@ -228,6 +229,7 @@ const Donate = () => {
         <Header />
         
         <main className="pt-24 pb-20">
+          <MasterTimelineCTA />
           {/* Hero — cinematic */}
           <section className="relative bg-gradient-to-br from-scef-blue-darker via-scef-blue to-scef-blue-dark text-white py-24 md:py-32 overflow-hidden">
             <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />

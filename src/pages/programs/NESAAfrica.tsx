@@ -13,6 +13,7 @@ import {
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
 import {
   TOTAL_CATEGORIES,
@@ -312,6 +313,7 @@ const NESAAfrica = () => {
         <Header />
         
         <main>
+          <MasterTimelineCTA />
           {/* Hero Section - Award Show Dark Theme with Video Background */}
           <section className="relative pt-32 pb-24 overflow-hidden" style={{ backgroundColor: nesaColors.darkAlt }}>
             {/* Video Background */}

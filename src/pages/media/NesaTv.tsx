@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Play, Tv, Award, Calendar, ArrowRight } from "lucide-react";
 import { ROUTES } from "@/routes";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 
 const NesaTv = () => {
   return (
@@ -19,6 +20,7 @@ const NesaTv = () => {
         <Header />
         
         <main className="flex-1">
+          <MasterTimelineCTA />
           {/* Hero */}
           <section className="relative bg-gradient-to-br from-scef-blue via-scef-blue-dark to-scef-dark py-20 overflow-hidden">
             <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
