@@ -1639,6 +1639,57 @@ export type Database = {
         }
         Relationships: []
       }
+      master_timelines: {
+        Row: {
+          badge_label: string | null
+          created_at: string
+          ctas: Json
+          description: string | null
+          display_order: number
+          eyebrow: string | null
+          highlights: Json
+          id: string
+          image_alt: string | null
+          image_url: string | null
+          is_active: boolean
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          badge_label?: string | null
+          created_at?: string
+          ctas?: Json
+          description?: string | null
+          display_order?: number
+          eyebrow?: string | null
+          highlights?: Json
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          is_active?: boolean
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          badge_label?: string | null
+          created_at?: string
+          ctas?: Json
+          description?: string | null
+          display_order?: number
+          eyebrow?: string | null
+          highlights?: Json
+          id?: string
+          image_alt?: string | null
+          image_url?: string | null
+          is_active?: boolean
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       media_items: {
         Row: {
           created_at: string
