@@ -77,6 +77,11 @@ const Home = () => {
             <CareerProgramSection />
           </Reveal>
 
+          {/* 6b. MONTHLY ADVOCACY, WEBINAR & TRAINING CALENDAR */}
+          <Reveal>
+            <MonthlyAdvocacyCalendar />
+          </Reveal>
+
           {/* 7. JOIN US / GET INVOLVED */}
           <Reveal>
             <JoinUsGetInvolved />
