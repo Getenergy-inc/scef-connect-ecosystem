@@ -379,6 +379,25 @@ const App = () => (
               <Route path="/staff/ai" element={<StaffAI />} />
               <Route path="/staff/review" element={<StaffReview />} />
 
+              {/* New IA placeholder routes (2026–2037 work plan) */}
+              <Route path="/about/vision-2037" element={<ComingSoon title="Vision 2037" description="SCEF's continental education agenda from 2026 to 2037 — anchored on SDG 4 and AU Agenda 2063." />} />
+              <Route path="/about/history" element={<ComingSoon title="Our History" description="The SCEF journey since 1997 — milestones, founders and the path to becoming a Pan-African education NGO." />} />
+              <Route path="/programs/send-a-child-to-school" element={<ComingSoon title="Send a Child to School" description="Sponsor a learner's full academic year — fees, books, uniform and meals." />} />
+              <Route path="/advocacy" element={<ComingSoon title="Advocacy & Training" description="SCEF's monthly advocacy, training and capacity-building programs across Africa." />} />
+              <Route path="/advocacy/monthly" element={<ComingSoon title="Monthly Advocacy Services" description="A focused education, advocacy and capacity-building theme every month." />} />
+              <Route path="/advocacy/walks" element={<ComingSoon title="Advocacy Walks" description="Community mobilisation walks for education, health and inclusion." />} />
+              <Route path="/advocacy/school-leadership" element={<ComingSoon title="School Leadership Training" description="Leadership development for school heads, principals and administrators." />} />
+              <Route path="/advocacy/teacher-wellbeing" element={<ComingSoon title="Teacher Wellbeing & Mental Health" description="Care, supervision and mental-health support for African educators." />} />
+              <Route path="/advocacy/health-education" element={<ComingSoon title="Health Education Advocacy" description="Schools as health hubs — adolescent health, hygiene, mental health." />} />
+              <Route path="/advocacy/esg" element={<ComingSoon title="ESG & Environmental Education" description="Sustainability, climate literacy and green schools across Africa." />} />
+              <Route path="/get-involved/internships" element={<ComingSoon title="Internship Opportunities" description="Structured internships across SCEF programs, divisions and chapters." />} />
+              <Route path="/get-involved/referral-rewards" element={<ComingSoon title="Referral & Rewards" description="Grow the SCEF network — earn recognition and member benefits." />} />
+              <Route path="/support-us/bid-to-host" element={<ComingSoon title="Bid to Host Next Event" description="Host an SCEF gala, summit or training week in your city or country." />} />
+              <Route path="/support-us/bank-accounts" element={<ComingSoon title="Official Bank Accounts" description="Verified SCEF payment channels for donations, sponsorships and fees." />} />
+              <Route path="/support-us/merchandise" element={<ComingSoon title="Buy Merchandise" description="Branded SCEF apparel and education-positive merchandise." />} />
+              <Route path="/support-us/gala-tickets" element={<ComingSoon title="Award Gala Tickets" description="Reserve your seat at the next NESA-Africa awards gala." />} />
+              <Route path="/media/gallery" element={<ComingSoon title="Media Gallery" description="Photos, highlights and visual stories from SCEF programs." />} />
+
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
