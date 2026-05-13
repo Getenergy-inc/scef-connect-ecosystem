@@ -4,22 +4,16 @@ import { Footer } from "@/components/layout/Footer";
 import { LandingHero } from "@/components/sections/LandingHero";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FeaturedPrograms } from "@/components/sections/FeaturedPrograms";
-import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
 import { WhoWeAre } from "@/components/home/WhoWeAre";
-import { SupportOptionsGrid } from "@/components/home/SupportOptionsGrid";
-import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
-import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
-import { TrainingWebinarsSection } from "@/components/sections/TrainingWebinarsSection";
-import { DonationChannels } from "@/components/sections/DonationChannels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
 import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
 import { MasterTimelinesDuo } from "@/components/sections/MasterTimelinesDuo";
+import { PremiumStorySections } from "@/components/sections/PremiumStorySections";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
-import { HistoricalTimeline } from "@/components/sections/HistoricalTimeline";
 
 const Home = () => {
   return (
@@ -66,44 +60,14 @@ const Home = () => {
             <MasterTimelinesDuo />
           </Reveal>
 
+          {/* Premium story cards: Journey, Calendar, Support, Chapters, Partners, Training, Channels */}
+          <Reveal>
+            <PremiumStorySections />
+          </Reveal>
+
           {/* Powered by Volunteers — documentary storytelling */}
           <Reveal>
             <VolunteerStorytelling />
-          </Reveal>
-
-          {/* Historical Timeline 1997 → 2027 */}
-          <Reveal>
-            <HistoricalTimeline />
-          </Reveal>
-
-          {/* 4. MONTHLY ADVOCACY, WEBINAR & TRAINING CALENDAR */}
-          <Reveal>
-            <MonthlyAdvocacyCalendar />
-          </Reveal>
-
-          {/* 5. SUPPORT OPTIONS — 12 designated-account action cards */}
-          <Reveal>
-            <SupportOptionsGrid />
-          </Reveal>
-
-          {/* 6. LOCAL CHAPTERS */}
-          <Reveal>
-            <LocalChaptersSnapshot />
-          </Reveal>
-
-          {/* 7. PARTNERSHIPS & STRATEGIC SUPPORTERS */}
-          <Reveal>
-            <StrategicPartnersSupporters />
-          </Reveal>
-
-          {/* 8. MEDIA & ADVOCACY (Training & Webinars row) */}
-          <Reveal>
-            <TrainingWebinarsSection />
-          </Reveal>
-
-          {/* 9. PAYMENT / DONATION CHANNELS — compact */}
-          <Reveal>
-            <DonationChannels />
           </Reveal>
 
           {/* Hall of Fame appreciation */}
