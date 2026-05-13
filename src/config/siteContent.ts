@@ -13,19 +13,18 @@ export const siteContent = {
     { name: "Management Team", href: "/governance#management" },
   ],
 
-  // Main Navigation — World-class NGO IA (10 top-level items)
+  // Main Navigation — Simplified (6 top-level items, mobile-first)
   navLinks: [
-    { name: "Home", href: "/" },
     {
-      name: "About SCEF",
+      name: "About",
       href: "/about",
       children: [
         { name: "Who We Are", href: "/about", description: "Mission, identity & approach" },
         { name: "Vision 2037", href: "/about/vision-2037", description: "Our continental agenda to 2037" },
-        { name: "Mission & Objectives", href: "/about#objectives", description: "The 6 core SCEF objectives" },
         { name: "History", href: "/about/history", description: "Our journey since 1997" },
         { name: "Governance", href: "/governance", description: "CVO, BOT, BOA, Organisational Secretary" },
         { name: "Impact & Reports", href: "/reports", description: "Verified outcomes across Africa" },
+        { name: "Contact", href: "/contact", description: "Reach our team" },
       ],
     },
     {
