@@ -437,11 +437,18 @@ export const Header = () => {
 
             {navigation.map((item) => (
               item.children ? (
-                <Collapsible key={item.key}>
-                  <div className="flex items-center rounded-lg hover:bg-white/5">
+                <Collapsible key={item.key} defaultOpen={isActiveTop(item.href)}>
+                  <div className={cn(
+                    "flex items-center rounded-lg",
+                    isActiveTop(item.href) ? "bg-white/10" : "hover:bg-white/5"
+                  )}>
                     <Link
                       to={item.href}
-                      className="flex-1 px-3 py-3 text-white hover:text-scef-gold transition-colors font-medium text-sm"
+                      aria-current={isActiveTop(item.href) ? "page" : undefined}
+                      className={cn(
+                        "flex-1 px-3 py-3 transition-colors font-medium text-sm",
+                        isActiveTop(item.href) ? "text-scef-gold" : "text-white hover:text-scef-gold"
+                      )}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -457,7 +464,11 @@ export const Header = () => {
                     <div className={cn("py-1 space-y-0.5 border-white/10", isRTL ? "mr-3 border-r pr-3" : "ml-3 border-l pl-3")}>
                       {item.children.map((child: any, idx: number) => (
                         child.divider ? (
-                          <div key={idx} className="border-t border-white/10 my-2" />
+                          <div key={`d-${idx}`} className="border-t border-white/10 my-2" />
+                        ) : child.groupTitle ? (
+                          <div key={`g-${idx}`} className="px-3 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-white/50">
+                            {child.groupTitle}
+                          </div>
                         ) : child.external ? (
                           <a
                             key={child.name}
@@ -474,7 +485,13 @@ export const Header = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className="block px-3 py-2 text-sm text-white/75 hover:text-scef-gold hover:bg-white/5 rounded-md transition-colors"
+                            aria-current={isActiveChild(child.href) ? "page" : undefined}
+                            className={cn(
+                              "block px-3 py-2 text-sm rounded-md transition-colors",
+                              isActiveChild(child.href)
+                                ? "bg-scef-gold/15 text-scef-gold font-semibold"
+                                : "text-white/75 hover:text-scef-gold hover:bg-white/5"
+                            )}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {child.name}
@@ -488,7 +505,13 @@ export const Header = () => {
                 <Link
                   key={item.key}
                   to={item.href}
-                  className="block px-3 py-3 rounded-lg text-white hover:bg-white/5 hover:text-scef-gold transition-colors font-medium text-sm"
+                  aria-current={isActiveTop(item.href) ? "page" : undefined}
+                  className={cn(
+                    "block px-3 py-3 rounded-lg transition-colors font-medium text-sm",
+                    isActiveTop(item.href)
+                      ? "bg-white/10 text-scef-gold"
+                      : "text-white hover:bg-white/5 hover:text-scef-gold"
+                  )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
