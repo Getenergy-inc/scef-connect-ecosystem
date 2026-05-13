@@ -31,12 +31,14 @@ const modeIcon = (m: ParticipationMode) => {
 const ctaButtons: { label: string; to: string }[] = [
   { label: "View Full Calendar", to: "/programs/training-development" },
   { label: "Register for a Webinar", to: "/media/eduaid-webinars" },
+  { label: "Host a Program Day", to: "/contact?topic=host-program-day" },
   { label: "Sponsor a Monthly Program", to: "/wallet/donate?fund=monthly-program" },
   { label: "Register Your School", to: "/get-involved/volunteer" },
   { label: "Adopt a School", to: "/wallet/donate?fund=adopt-school" },
   { label: "Join Local Chapter Activity", to: "/chapters/join-online" },
   { label: "Sponsor Advocacy Walk", to: "/wallet/donate?fund=advocacy-walk" },
-  { label: "Request SCEF Visit", to: "/contact" },
+  { label: "Request SCEF Visit", to: "/contact?topic=scef-visit" },
+  { label: "Submit Chapter Activity", to: "/contact?topic=chapter-activity-report" },
 ];
 
 export const MonthlyAdvocacyCalendar = () => {
