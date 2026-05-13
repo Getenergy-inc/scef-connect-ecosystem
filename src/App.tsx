@@ -215,8 +215,11 @@ const App = () => (
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
               <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
-              <Route path="/programs/nesa-africa/master-timeline" element={<NesaMasterTimeline />} />
-              <Route path="/nesa-africa/master-timeline" element={<NesaMasterTimeline />} />
+              <Route path="/programs/nesa-africa/timeline" element={<NesaTimeline2026 />} />
+              <Route path="/nesa-africa/timeline" element={<NesaTimeline2026 />} />
+              {/* Legacy aliases — redirect to the new official 2026 Season Programme Timeline */}
+              <Route path="/programs/nesa-africa/master-timeline" element={<NesaTimeline2026 />} />
+              <Route path="/nesa-africa/master-timeline" element={<NesaTimeline2026 />} />
               <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
               <Route path="/programs/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
