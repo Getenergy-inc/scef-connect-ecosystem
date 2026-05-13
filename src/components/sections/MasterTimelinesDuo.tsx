@@ -1,38 +1,125 @@
 import { Link } from "react-router-dom";
-import {
-  Award,
-  ArrowRight,
-  CalendarRange,
-  GraduationCap,
-  Sparkles,
-} from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { Award, ArrowRight, CalendarRange, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
-const nesaHighlights = [
-  "Public Pre-Nomination Launch",
-  "Evidence Education Campaign",
-  "Platinum Award TV Show",
-  "Africa Education Icon Online TV Show",
-  "Gold Recognition Online TV Show",
-  "NESA-Africa Momentum Show",
-  "Blue Garnet Awards Gala",
-  "Rebuild My School Africa Transition",
+type CTA = { label: string; to: string; variant?: string };
+type Timeline = {
+  id: string;
+  slug: string;
+  eyebrow: string | null;
+  title: string;
+  description: string | null;
+  image_url: string | null;
+  image_alt: string | null;
+  badge_label: string | null;
+  highlights: string[];
+  ctas: CTA[];
+  display_order: number;
+  is_active: boolean;
+};
+
+const FALLBACK: Timeline[] = [
+  {
+    id: "fallback-nesa",
+    slug: "nesa-africa",
+    eyebrow: "NESA-Africa 2026–2027",
+    title: "Master Timeline 2026–2027",
+    description:
+      "Follow the full NESA-Africa journey from public pre-nomination campaigns and online TV shows to the Blue Garnet Awards Gala and post-gala school impact transition.",
+    image_url:
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=70",
+    image_alt: "NESA-Africa awards gala recognition",
+    badge_label: "Recognition",
+    highlights: [
+      "Public Pre-Nomination Launch",
+      "Evidence Education Campaign",
+      "Platinum Award TV Show",
+      "Africa Education Icon Online TV Show",
+      "Gold Recognition Online TV Show",
+      "NESA-Africa Momentum Show",
+      "Blue Garnet Awards Gala",
+      "Rebuild My School Africa Transition",
+    ],
+    ctas: [
+      { label: "View NESA Timeline", to: "/nesa-africa/master-timeline", variant: "secondary" },
+      { label: "Sponsor NESA-Africa", to: "/wallet/donate?fund=nesa-africa", variant: "heroOutline" },
+      { label: "Buy Gala Ticket", to: "/nesa-africa/gala-tickets", variant: "heroOutline" },
+    ],
+    display_order: 1,
+    is_active: true,
+  },
+  {
+    id: "fallback-eduaid",
+    slug: "eduaid-africa",
+    eyebrow: "EduAid-Africa 2026–2027",
+    title: "Master Timeline 2026–2027",
+    description:
+      "Explore the EduAid-Africa education impact cycle covering scholarships, school support, teacher training, career guidance, girls education, digital learning, monthly webinars, school adoption, and Rebuild My School Africa impact reporting.",
+    image_url:
+      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1600&q=70",
+    image_alt: "African students learning in classroom",
+    badge_label: "Impact",
+    highlights: [
+      "EduAid-Africa Monthly Webinars",
+      "My Career, My Life Sessions",
+      "Send a Child to School Campaign",
+      "Rebuild My School Africa",
+      "Teacher Training & Capacity Development",
+      "Girls & Women Education Support",
+      "eLibrary Africa / eLibrary Nigeria Access",
+      "School Adoption & CSR Funding",
+      "Local Chapter Education Projects",
+      "Impact Reporting & Donor Updates",
+    ],
+    ctas: [
+      { label: "View EduAid Timeline", to: "/eduaid-africa/master-timeline", variant: "default" },
+      { label: "Sponsor EduAid-Africa", to: "/wallet/donate?fund=eduaid-africa", variant: "outline" },
+      { label: "Adopt a School", to: "/wallet/donate?fund=adopt-school", variant: "outline" },
+      { label: "Send a Child to School", to: "/wallet/donate?fund=send-a-child-to-school", variant: "outline" },
+    ],
+    display_order: 2,
+    is_active: true,
+  },
 ];
 
-const eduaidHighlights = [
-  "EduAid-Africa Monthly Webinars",
-  "My Career, My Life Sessions",
-  "Send a Child to School Campaign",
-  "Rebuild My School Africa",
-  "Teacher Training & Capacity Development",
-  "Girls & Women Education Support",
-  "eLibrary Africa / eLibrary Nigeria Access",
-  "School Adoption & CSR Funding",
-  "Local Chapter Education Projects",
-  "Impact Reporting & Donor Updates",
-];
+const isExternal = (to: string) => /^https?:\/\//i.test(to);
 
 export const MasterTimelinesDuo = () => {
+  const { data } = useQuery({
+    queryKey: ["master-timelines"],
+    queryFn: async () => {
+      const { data, error } = await (supabase as any)
+        .from("master_timelines")
+        .select("*")
+        .eq("is_active", true)
+        .order("display_order");
+      if (error) throw error;
+      return (data ?? []) as Timeline[];
+    },
+  });
+
+  const timelines = data && data.length ? data : FALLBACK;
+  const nesa = timelines.find((t) => t.slug === "nesa-africa") ?? FALLBACK[0];
+  const eduaid = timelines.find((t) => t.slug === "eduaid-africa") ?? FALLBACK[1];
+
+  const renderCta = (c: CTA, key: string) => {
+    const variant = (c.variant ?? "default") as any;
+    if (isExternal(c.to)) {
+      return (
+        <Button key={key} asChild variant={variant} size="sm">
+          <a href={c.to} target="_blank" rel="noopener noreferrer">{c.label}</a>
+        </Button>
+      );
+    }
+    return (
+      <Button key={key} asChild variant={variant} size="sm">
+        <Link to={c.to}>{c.label}</Link>
+      </Button>
+    );
+  };
+
   return (
     <section
       id="master-timelines"
@@ -65,33 +152,37 @@ export const MasterTimelinesDuo = () => {
             className="group flex flex-col overflow-hidden rounded-2xl border border-scef-gold/30 bg-scef-blue-darker text-white shadow-sm"
           >
             <div className="relative h-44 w-full overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=70"
-                alt="NESA-Africa awards gala recognition"
-                loading="lazy"
-                className="h-full w-full object-cover opacity-80 transition group-hover:scale-[1.02]"
-              />
+              {nesa.image_url && (
+                <img
+                  src={nesa.image_url}
+                  alt={nesa.image_alt ?? ""}
+                  loading="lazy"
+                  className="h-full w-full object-cover opacity-80 transition group-hover:scale-[1.02]"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker via-scef-blue-darker/40 to-transparent" />
-              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-scef-gold/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-blue-darker">
-                <Award className="h-3.5 w-3.5" /> Recognition
-              </span>
+              {nesa.badge_label && (
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-scef-gold/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-blue-darker">
+                  <Award className="h-3.5 w-3.5" /> {nesa.badge_label}
+                </span>
+              )}
             </div>
 
             <div className="flex flex-1 flex-col p-6 md:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold">
-                NESA-Africa 2026–2027
-              </p>
+              {nesa.eyebrow && (
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold">
+                  {nesa.eyebrow}
+                </p>
+              )}
               <h3 id="nesa-master-heading" className="mt-1 font-display text-2xl font-bold">
-                Master Timeline 2026–2027
+                {nesa.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">
-                Follow the full NESA-Africa journey from public pre-nomination
-                campaigns and online TV shows to the Blue Garnet Awards Gala
-                and post-gala school impact transition.
-              </p>
+              {nesa.description && (
+                <p className="mt-2 text-sm leading-relaxed text-white/80">{nesa.description}</p>
+              )}
 
               <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
-                {nesaHighlights.map((h) => (
+                {nesa.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-2 text-xs text-white/85">
                     <CalendarRange className="mt-0.5 h-3.5 w-3.5 shrink-0 text-scef-gold" />
                     <span>{h}</span>
@@ -100,17 +191,7 @@ export const MasterTimelinesDuo = () => {
               </ul>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                <Button asChild variant="secondary" size="sm">
-                  <Link to="/nesa-africa/master-timeline">
-                    View NESA Timeline <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="heroOutline" size="sm">
-                  <Link to="/wallet/donate?fund=nesa-africa">Sponsor NESA-Africa</Link>
-                </Button>
-                <Button asChild variant="heroOutline" size="sm">
-                  <Link to="/nesa-africa/gala-tickets">Buy Gala Ticket</Link>
-                </Button>
+                {nesa.ctas.map((c, i) => renderCta(c, `nesa-${i}`))}
               </div>
             </div>
           </article>
@@ -121,37 +202,40 @@ export const MasterTimelinesDuo = () => {
             className="group flex flex-col overflow-hidden rounded-2xl border border-scef-blue-darker/15 bg-card shadow-sm"
           >
             <div className="relative h-44 w-full overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1600&q=70"
-                alt="African students learning in classroom"
-                loading="lazy"
-                className="h-full w-full object-cover transition group-hover:scale-[1.02]"
-              />
+              {eduaid.image_url && (
+                <img
+                  src={eduaid.image_url}
+                  alt={eduaid.image_alt ?? ""}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition group-hover:scale-[1.02]"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-scef-blue-darker px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold ring-1 ring-scef-gold/30">
-                <GraduationCap className="h-3.5 w-3.5" /> Impact
-              </span>
+              {eduaid.badge_label && (
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-scef-blue-darker px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold ring-1 ring-scef-gold/30">
+                  <GraduationCap className="h-3.5 w-3.5" /> {eduaid.badge_label}
+                </span>
+              )}
             </div>
 
             <div className="flex flex-1 flex-col p-6 md:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-blue-darker">
-                EduAid-Africa 2026–2027
-              </p>
+              {eduaid.eyebrow && (
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-blue-darker">
+                  {eduaid.eyebrow}
+                </p>
+              )}
               <h3
                 id="eduaid-master-heading"
                 className="mt-1 font-display text-2xl font-bold text-scef-blue-darker"
               >
-                Master Timeline 2026–2027
+                {eduaid.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Explore the EduAid-Africa education impact cycle covering
-                scholarships, school support, teacher training, career
-                guidance, girls education, digital learning, monthly webinars,
-                school adoption, and Rebuild My School Africa impact reporting.
-              </p>
+              {eduaid.description && (
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{eduaid.description}</p>
+              )}
 
               <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
-                {eduaidHighlights.map((h) => (
+                {eduaid.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-2 text-xs text-muted-foreground">
                     <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-scef-gold" />
                     <span>{h}</span>
@@ -160,22 +244,7 @@ export const MasterTimelinesDuo = () => {
               </ul>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                <Button asChild size="sm">
-                  <Link to="/eduaid-africa/master-timeline">
-                    View EduAid Timeline <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link to="/wallet/donate?fund=eduaid-africa">Sponsor EduAid-Africa</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link to="/wallet/donate?fund=adopt-school">Adopt a School</Link>
-                </Button>
-                <Button asChild variant="outline" size="sm">
-                  <Link to="/wallet/donate?fund=send-a-child-to-school">
-                    Send a Child to School
-                  </Link>
-                </Button>
+                {eduaid.ctas.map((c, i) => renderCta(c, `eduaid-${i}`))}
               </div>
             </div>
           </article>
