@@ -15,7 +15,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import PageShell from "@/components/layout/PageShell";
+import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
+import { Footer } from "@/components/layout/Footer";
 
 const sections = [
   {
