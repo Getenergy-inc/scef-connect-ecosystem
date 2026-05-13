@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 
 const infrastructureTypes = [
   { name: "Classroom Construction", icon: Building, desc: "New classrooms built to modern standards" },
@@ -62,6 +63,7 @@ const RebuildMySchoolAfrica = () => {
         <Header />
         
         <main>
+          <MasterTimelineCTA />
           {/* Hero */}
           <section className="relative pt-32 pb-24 bg-earth overflow-hidden">
             <div className="absolute inset-0 bg-african-pattern opacity-10" />
