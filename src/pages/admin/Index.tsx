@@ -86,6 +86,12 @@ const AdminIndex = () => {
       href: "/admin/csr-funding-funnel",
     },
     {
+      title: "Master Timelines",
+      description: "Edit NESA & EduAid timeline cards on the homepage",
+      icon: LayoutDashboard,
+      href: "/admin/master-timelines",
+    },
+    {
       title: "Scholarship Exams",
       description: "Create and publish exams, manage questions and points",
       icon: GraduationCap,

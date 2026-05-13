@@ -190,6 +190,7 @@ import MediaArchive from "./pages/media/MediaArchive";
 import MediaSubmit from "./pages/media/MediaSubmit";
 import MyMediaSubmissions from "./pages/media/MyMediaSubmissions";
 import AdminMediaSubmissions from "./pages/admin/AdminMediaSubmissions";
+import MasterTimelinesAdminPage from "./pages/admin/MasterTimelinesAdminPage";
 
 const queryClient = new QueryClient();
 
@@ -333,6 +334,7 @@ const App = () => (
               <Route path="/admin/scholarship/exams" element={<ScholarshipExamsAdmin />} />
               <Route path="/admin/scholarship/exams/:examId/questions" element={<ScholarshipExamQuestionsAdmin />} />
               <Route path="/admin/media-submissions" element={<AdminMediaSubmissions />} />
+              <Route path="/admin/master-timelines" element={<MasterTimelinesAdminPage />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
