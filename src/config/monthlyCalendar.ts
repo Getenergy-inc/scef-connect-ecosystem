@@ -138,15 +138,59 @@ export const monthlyPrograms: MonthlyProgram[] = [
   },
 ];
 
-export const weeklyStructure: { day: string; activity: string }[] = [
-  { day: "Monday", activity: "Opening webinar" },
-  { day: "Tuesday", activity: "School or institutional training" },
-  { day: "Wednesday", activity: "Local chapter outreach" },
-  { day: "Thursday", activity: "Advocacy campaign / media session" },
-  { day: "Friday", activity: "Partner roundtable / sponsorship session" },
-  { day: "Saturday", activity: "Community walk, edu-tourism, or school visit" },
-  { day: "Sunday", activity: "Report, replay, and certificate processing" },
+/**
+ * Recommended SCEF Program Week dates and main day (3rd week of each month, Saturday).
+ * Local chapters, schools, and partners may still pick any other day in the same week.
+ */
+export const programSchedule: Record<
+  string,
+  { weekRange: string; mainDay: string }
+> = {
+  "july-2026-teacher-training": { weekRange: "July 13–19, 2026", mainDay: "Saturday, July 18, 2026" },
+  "august-2026-school-leadership": { weekRange: "August 10–16, 2026", mainDay: "Saturday, August 15, 2026" },
+  "september-2026-inclusive-education": { weekRange: "September 14–20, 2026", mainDay: "Saturday, September 19, 2026" },
+  "october-2026-digital-learning": { weekRange: "October 12–18, 2026", mainDay: "Saturday, October 17, 2026" },
+  "november-2026-curriculum-assessment": { weekRange: "November 16–22, 2026", mainDay: "Saturday, November 21, 2026" },
+  "december-2026-policy-governance": { weekRange: "December 14–20, 2026", mainDay: "Saturday, December 19, 2026" },
+  "january-2027-career-guidance": { weekRange: "January 11–17, 2027", mainDay: "Saturday, January 16, 2027" },
+  "february-2027-girls-education": { weekRange: "February 15–21, 2027", mainDay: "Saturday, February 20, 2027" },
+  "march-2027-tvet-vocational": { weekRange: "March 15–21, 2027", mainDay: "Saturday, March 20, 2027" },
+  "april-2027-school-funding-csr": { weekRange: "April 12–18, 2027", mainDay: "Saturday, April 17, 2027" },
+  "may-2027-local-chapter-models": { weekRange: "May 10–16, 2027", mainDay: "Saturday, May 15, 2027" },
+  "june-2027-impact-reporting": { weekRange: "June 14–20, 2027", mainDay: "Saturday, June 19, 2027" },
+};
+
+/**
+ * Flexible activity options. During the Program Week, any participating
+ * region, chapter, school or partner may pick one suitable day to deliver
+ * any of these — physically, online, or hybrid.
+ */
+export type FlexibleActivity = {
+  label: string;
+  modes: ParticipationMode[];
+  description: string;
+};
+
+export const flexibleActivities: FlexibleActivity[] = [
+  { label: "Host a Webinar", modes: ["Online", "Hybrid"], description: "Open or themed webinar led by a school, partner, or chapter." },
+  { label: "Run School Training", modes: ["Physical", "Hybrid"], description: "In-school training session for teachers or learners." },
+  { label: "Organize Local Chapter Outreach", modes: ["Physical"], description: "Grassroots outreach led by an SCEF local chapter." },
+  { label: "Lead an Advocacy Walk", modes: ["Physical", "Hybrid"], description: "Community walk amplifying the monthly advocacy theme." },
+  { label: "Host a Media Session", modes: ["Online", "Hybrid"], description: "Studio talk, podcast, or NESA TV / It's In Me Radio episode." },
+  { label: "Conduct a Partner Roundtable", modes: ["Online", "Physical", "Hybrid"], description: "Convene CSR partners, NGOs, or institutions." },
+  { label: "Organize Edu-Tourism", modes: ["Physical"], description: "Cross-school or cross-region educational visit." },
+  { label: "Request SCEF School Visit", modes: ["Physical"], description: "Invite an SCEF team or ambassador to your school." },
+  { label: "Submit Activity Report", modes: ["Online"], description: "Upload attendance, photos, and impact notes after delivery." },
 ];
 
 export const getMonthlyProgram = (slug: string) =>
   monthlyPrograms.find((p) => p.slug === slug);
+
+export const getProgramSchedule = (slug: string) => programSchedule[slug];
+
+/**
+ * @deprecated Replaced by the flexible Program Week model.
+ * Kept only for backward compatibility — do not use in new code.
+ */
+export const weeklyStructure: { day: string; activity: string }[] = [];
+

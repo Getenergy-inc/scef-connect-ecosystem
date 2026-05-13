@@ -22,7 +22,8 @@ import { WebinarRegistrationForm } from "@/components/calendar/WebinarRegistrati
 import {
   getMonthlyProgram,
   monthlyPrograms,
-  weeklyStructure,
+  flexibleActivities,
+  programSchedule,
   type ParticipationMode,
 } from "@/config/monthlyCalendar";
 
@@ -52,6 +53,7 @@ const MonthlyProgramPage = () => {
   const program = getMonthlyProgram(slug);
   if (!program) return <Navigate to="/" replace />;
 
+  const schedule = programSchedule[slug];
   const idx = monthlyPrograms.findIndex((p) => p.slug === slug);
   const prev = idx > 0 ? monthlyPrograms[idx - 1] : null;
   const next = idx < monthlyPrograms.length - 1 ? monthlyPrograms[idx + 1] : null;
@@ -87,6 +89,13 @@ const MonthlyProgramPage = () => {
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
                 {program.summary}
               </p>
+              {schedule && (
+                <div className="mt-5 inline-flex flex-col gap-1 rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/15 sm:flex-row sm:items-center sm:gap-4">
+                  <span><span className="text-white/60">Recommended Program Week:</span> <strong className="text-white">{schedule.weekRange}</strong></span>
+                  <span className="hidden sm:inline text-white/30">·</span>
+                  <span><span className="text-white/60">Main day:</span> <strong className="text-scef-gold">{schedule.mainDay}</strong></span>
+                </div>
+              )}
               <div className="mt-5 flex flex-wrap gap-2">
                 {program.modes.map((m) => (
                   <span
@@ -98,9 +107,10 @@ const MonthlyProgramPage = () => {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap gap-2.5">
-                <Button asChild variant="secondary"><a href="#register">Register for Webinar</a></Button>
-                <Button asChild variant="heroOutline"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Program</Link></Button>
-                <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Join Local Chapter</Link></Button>
+                <Button asChild variant="secondary"><a href="#register">Register for the Program Day</a></Button>
+                <Button asChild variant="heroOutline"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Month&rsquo;s Program</Link></Button>
+                <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Host a Local Chapter Activity</Link></Button>
+                <Button asChild variant="heroOutline"><Link to="/contact?topic=scef-visit">Request SCEF Visit</Link></Button>
               </div>
             </div>
           </section>
@@ -115,25 +125,42 @@ const MonthlyProgramPage = () => {
                 location and capacity. Target audience: <strong>{program.audience}</strong>.
               </p>
 
-              {/* Weekly schedule */}
-              <h3 className="mt-10 font-display text-xl font-bold text-scef-blue-darker">Weekly Schedule</h3>
-              <div className="mt-4 overflow-hidden rounded-xl border border-border">
-                <table className="w-full text-left text-sm">
-                  <thead className="bg-scef-blue-darker text-white">
-                    <tr>
-                      <th className="px-4 py-3 font-semibold">Day</th>
-                      <th className="px-4 py-3 font-semibold">Activity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {weeklyStructure.map((row, i) => (
-                      <tr key={row.day} className={i % 2 === 0 ? "bg-card" : "bg-background"}>
-                        <td className="px-4 py-3 font-semibold text-scef-blue-darker whitespace-nowrap">{row.day}</td>
-                        <td className="px-4 py-3 text-foreground">{row.activity}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              {/* How the Program Week works */}
+              <h3 className="mt-10 font-display text-xl font-bold text-scef-blue-darker">How the Program Week Works</h3>
+              <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                <p>
+                  SCEF provides the monthly theme, program guide, branding materials, advocacy message, webinar structure, registration form, reporting template, certificate pathway, and media documentation support.
+                </p>
+                <p>
+                  Each participating local chapter, school, organisation, or partner may choose <strong>one suitable day</strong> within the Program Week to implement its activity{schedule ? <> — anywhere between <strong className="text-scef-blue-darker">{schedule.weekRange}</strong>, with <strong className="text-scef-blue-darker">{schedule.mainDay}</strong> as the recommended main day</> : null}.
+                </p>
+                <p>
+                  Activities can be delivered <strong>physically, online, or hybrid</strong> depending on local capacity. After the activity, organisers submit attendance, photos, short reports, and impact notes for SCEF documentation, certificates, media archive, and partner reporting.
+                </p>
+              </div>
+
+              {/* Flexible activity cards */}
+              <h3 className="mt-10 font-display text-xl font-bold text-scef-blue-darker">Choose Your Activity</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Pick any one of the activity formats below and run it on your selected day during the Program Week.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {flexibleActivities.map((a) => (
+                  <div key={a.label} className="flex flex-col rounded-xl border border-border bg-card p-4">
+                    <h4 className="font-display text-sm font-bold text-scef-blue-darker">{a.label}</h4>
+                    <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">{a.description}</p>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {a.modes.map((m) => (
+                        <span
+                          key={m}
+                          className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ring-1 ${modeStyles[m]}`}
+                        >
+                          {modeIcon(m)} {m}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
 
               {/* Webinar Registration Form */}
@@ -180,9 +207,16 @@ const MonthlyProgramPage = () => {
                   Sponsor this program week, register your school, or contribute through the GFA Wallet.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2.5">
-                  <Button asChild variant="secondary"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Program</Link></Button>
+                  <Button asChild variant="secondary"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Month&rsquo;s Program</Link></Button>
+                  <Button asChild variant="heroOutline"><a href="#register">Register for the Program Day</a></Button>
+                  <Button asChild variant="heroOutline"><Link to={`/contact?topic=host-program-day&program=${program.slug}`}>Host a Program Day</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/get-involved/volunteer">Register Your School</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/wallet/donate?fund=adopt-school">Adopt a School</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Join Local Chapter Activity</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/wallet/donate?fund=advocacy-walk">Sponsor Advocacy Walk</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to={`/contact?topic=scef-visit&program=${program.slug}`}>Request SCEF Visit</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to={`/contact?topic=chapter-activity-report&program=${program.slug}`}>Submit Chapter Activity</Link></Button>
                   <Button asChild variant="heroOutline"><Link to="/support-us">All Support Options</Link></Button>
-                  <Button asChild variant="heroOutline"><Link to="/contact">Request SCEF Visit</Link></Button>
                 </div>
               </div>
 

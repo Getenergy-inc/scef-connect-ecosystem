@@ -13,7 +13,7 @@ import {
   MapPin,
   Layers,
 } from "lucide-react";
-import { monthlyPrograms, type ParticipationMode } from "@/config/monthlyCalendar";
+import { monthlyPrograms, programSchedule, type ParticipationMode } from "@/config/monthlyCalendar";
 import { Button } from "@/components/ui/button";
 
 const modeStyles: Record<ParticipationMode, string> = {
@@ -31,12 +31,14 @@ const modeIcon = (m: ParticipationMode) => {
 const ctaButtons: { label: string; to: string }[] = [
   { label: "View Full Calendar", to: "/programs/training-development" },
   { label: "Register for a Webinar", to: "/media/eduaid-webinars" },
+  { label: "Host a Program Day", to: "/contact?topic=host-program-day" },
   { label: "Sponsor a Monthly Program", to: "/wallet/donate?fund=monthly-program" },
   { label: "Register Your School", to: "/get-involved/volunteer" },
   { label: "Adopt a School", to: "/wallet/donate?fund=adopt-school" },
   { label: "Join Local Chapter Activity", to: "/chapters/join-online" },
   { label: "Sponsor Advocacy Walk", to: "/wallet/donate?fund=advocacy-walk" },
-  { label: "Request SCEF Visit", to: "/contact" },
+  { label: "Request SCEF Visit", to: "/contact?topic=scef-visit" },
+  { label: "Submit Chapter Activity", to: "/contact?topic=chapter-activity-report" },
 ];
 
 export const MonthlyAdvocacyCalendar = () => {
@@ -60,13 +62,13 @@ export const MonthlyAdvocacyCalendar = () => {
             <CalendarDays className="h-3.5 w-3.5" /> July 2026 – June 2027
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] tracking-tight text-scef-blue-darker md:text-[2.5rem]">
-            Monthly Advocacy, Webinar &amp; Training Calendar
+            Explore Our Monthly Advocacy, Webinar &amp; Training Calendar
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Every month, SCEF leads a focused education, advocacy, and capacity-building theme across Africa — delivered through webinars, school visits, local chapter activities, advocacy walks, media campaigns, and partner-supported training.
+            Every month, SCEF leads a focused education, advocacy, and capacity-building theme across Africa. Each monthly theme runs as a flexible <strong>Program Week</strong>. During that week, any school, NGO, partner, volunteer group, ambassador team, local chapter, or regional team may choose one suitable day to host its own activity — physically, online, or hybrid.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Each monthly theme runs as a flexible <strong>Program Week</strong>, allowing schools, NGOs, partners, volunteers, ambassadors, and local chapters to participate online, physically, or hybrid.
+            Recommended Program Week: the <strong>3rd week</strong> of each month. Recommended main day: <strong>Saturday</strong> of that week — flexible by region.
           </p>
         </div>
 
@@ -118,6 +120,11 @@ export const MonthlyAdvocacyCalendar = () => {
                         <span className="text-sm font-medium text-foreground">
                           {p.title}
                         </span>
+                        {programSchedule[p.slug] && (
+                          <span className="text-[11px] text-muted-foreground">
+                            Program Week: {programSchedule[p.slug].weekRange} · Main day: {programSchedule[p.slug].mainDay}
+                          </span>
+                        )}
                         <span className="flex flex-wrap gap-1.5 pt-1">
                           {p.modes.map((m) => (
                             <span
@@ -159,6 +166,16 @@ export const MonthlyAdvocacyCalendar = () => {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.summary}
               </p>
+              {programSchedule[p.slug] && (
+                <div className="mt-3 rounded-lg bg-scef-blue-darker/[0.04] px-3 py-2 text-[11px] leading-tight">
+                  <p className="font-semibold text-scef-blue-darker">
+                    Program Week · {programSchedule[p.slug].weekRange}
+                  </p>
+                  <p className="text-muted-foreground">
+                    Main day: {programSchedule[p.slug].mainDay}
+                  </p>
+                </div>
+              )}
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.modes.map((m) => (
                   <span
