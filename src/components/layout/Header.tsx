@@ -379,13 +379,18 @@ export const Header = () => {
         <div className="xl:hidden flex items-center gap-2">
           <LanguageSwitcher />
           <button
-            className="p-2 rounded-lg transition-colors"
+            type="button"
+            className="p-2 min-h-11 min-w-11 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-scef-gold focus-visible:ring-offset-2 focus-visible:ring-offset-scef-blue"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-panel"
+            aria-haspopup="dialog"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-white" aria-hidden="true" />
             ) : (
-              <Menu className="w-6 h-6 text-white" />
+              <Menu className="w-6 h-6 text-white" aria-hidden="true" />
             )}
           </button>
         </div>
