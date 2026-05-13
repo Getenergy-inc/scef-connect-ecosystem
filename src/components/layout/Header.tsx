@@ -141,7 +141,13 @@ export const Header = () => {
             >
               <Link
                 to={item.href}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 text-white hover:text-scef-gold hover:bg-white/10"
+                aria-current={isActiveTop(item.href) ? "page" : undefined}
+                className={cn(
+                  "px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1 relative",
+                  isActiveTop(item.href)
+                    ? "text-scef-gold bg-white/10 after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:bg-scef-gold after:rounded-full"
+                    : "text-white hover:text-scef-gold hover:bg-white/10"
+                )}
               >
                 {item.name}
                 {item.children && <ChevronDown className="w-3 h-3" />}
@@ -150,20 +156,23 @@ export const Header = () => {
               {/* Dropdown */}
               {item.children && activeDropdown === item.key && (
                 <div className={cn(
-                  "absolute top-full mt-1 w-64 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50",
+                  "absolute top-full mt-1 w-72 bg-white rounded-xl shadow-xl border border-scef-grey-light overflow-hidden animate-scale-in z-50",
                   isRTL ? "right-0" : "left-0"
                 )}>
                   {item.children.map((child: any, idx: number) => (
                     child.divider ? (
-                      <div key={idx} className="border-t border-border my-1" />
+                      <div key={`d-${idx}`} className="border-t border-border my-1" />
+                    ) : child.groupTitle ? (
+                      <div key={`g-${idx}`} className="px-4 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-scef-grey-dark/60">
+                        {child.groupTitle}
+                      </div>
                     ) : child.external ? (
                       <a
                         key={child.name}
                         href={child.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
-                        
+                        className="flex items-center justify-between px-4 py-2.5 text-sm font-medium hover:bg-scef-gold/10 transition-colors"
                       >
                         {child.name}
                         <ExternalLink className="w-3 h-3 text-scef-gold" />
@@ -172,7 +181,13 @@ export const Header = () => {
                       <Link
                         key={child.name}
                         to={child.href}
-                        className="block px-4 py-3 text-sm text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue transition-colors"
+                        aria-current={isActiveChild(child.href) ? "page" : undefined}
+                        className={cn(
+                          "block px-4 py-2.5 text-sm transition-colors",
+                          isActiveChild(child.href)
+                            ? "bg-scef-blue/5 text-scef-blue font-semibold border-l-2 border-scef-gold"
+                            : "text-scef-grey-dark hover:bg-scef-blue/5 hover:text-scef-blue"
+                        )}
                       >
                         {child.name}
                       </Link>
