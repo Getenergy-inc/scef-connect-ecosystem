@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Heart, Users, Calendar, Mail, MessageCircle } from "lucide-react";
+import { Heart, Users, Calendar, Mail } from "lucide-react";
 
 /**
  * Mobile-first sticky action bar — visible on all public pages.
@@ -20,17 +20,6 @@ export const StickyMobileJoin = () => {
 
   return (
     <>
-      {/* Floating WhatsApp */}
-      <a
-        href="https://wa.me/2348023582528"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-20 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 md:bottom-6 md:h-14 md:w-14"
-      >
-        <MessageCircle className="h-6 w-6" />
-      </a>
-
       {/* Mobile-only sticky action bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-scef-blue-darker/95 px-2 py-2 shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md md:hidden">
         <div className="grid grid-cols-4 gap-1">
