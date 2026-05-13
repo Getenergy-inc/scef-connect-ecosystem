@@ -98,7 +98,7 @@ const MonthlyProgramPage = () => {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap gap-2.5">
-                <Button asChild variant="secondary"><Link to="/media/eduaid-webinars">Register for Webinar</Link></Button>
+                <Button asChild variant="secondary"><a href="#register">Register for Webinar</a></Button>
                 <Button asChild variant="heroOutline"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Program</Link></Button>
                 <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Join Local Chapter</Link></Button>
               </div>
