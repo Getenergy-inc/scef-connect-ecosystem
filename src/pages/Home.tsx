@@ -42,6 +42,9 @@ const Home = () => {
           {/* Quick Actions Bar */}
           <QuickActionsBar />
 
+          {/* NESA-Africa Master Timeline 2026–2027 teaser */}
+          <MasterTimelineCTA />
+
           {/* 2. IMPACT / TRUST — 8 focus areas, qualitative */}
           <Reveal>
             <ImpactStripLabels />
