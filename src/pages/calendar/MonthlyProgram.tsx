@@ -53,6 +53,7 @@ const MonthlyProgramPage = () => {
   const program = getMonthlyProgram(slug);
   if (!program) return <Navigate to="/" replace />;
 
+  const schedule = programSchedule[slug];
   const idx = monthlyPrograms.findIndex((p) => p.slug === slug);
   const prev = idx > 0 ? monthlyPrograms[idx - 1] : null;
   const next = idx < monthlyPrograms.length - 1 ? monthlyPrograms[idx + 1] : null;
