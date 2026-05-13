@@ -8,7 +8,7 @@ import {
   Layers
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   DropdownMenu,
@@ -379,13 +379,18 @@ export const Header = () => {
         <div className="xl:hidden flex items-center gap-2">
           <LanguageSwitcher />
           <button
-            className="p-2 rounded-lg transition-colors"
+            type="button"
+            className="p-2 min-h-11 min-w-11 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-scef-gold focus-visible:ring-offset-2 focus-visible:ring-offset-scef-blue"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-panel"
+            aria-haspopup="dialog"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-white" aria-hidden="true" />
             ) : (
-              <Menu className="w-6 h-6 text-white" />
+              <Menu className="w-6 h-6 text-white" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -394,17 +399,22 @@ export const Header = () => {
       {/* Mobile Off-Canvas Menu */}
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent
+          id="mobile-nav-panel"
           side={isRTL ? "left" : "right"}
-          className="w-[88vw] sm:w-[400px] p-0 bg-scef-blue-dark border-l border-white/10 text-white overflow-y-auto"
+          className="w-[88vw] sm:w-[400px] p-0 bg-scef-blue-dark border-l border-white/10 text-white overflow-y-auto focus:outline-none"
+          aria-label="Main navigation"
         >
           <SheetHeader className="px-5 py-4 border-b border-white/10 text-left">
             <SheetTitle className="text-white flex items-center gap-2">
-              <img src={scefLogo} alt="SCEF" className="h-8 w-auto rounded" />
+              <img src={scefLogo} alt="" aria-hidden="true" className="h-8 w-auto rounded" />
               <span className="text-sm font-semibold">Menu</span>
             </SheetTitle>
+            <SheetDescription className="sr-only">
+              Site navigation. Use Tab to move between links, Enter or Space to expand sub-menus, and Escape to close.
+            </SheetDescription>
           </SheetHeader>
 
-          <div className="px-3 py-4 space-y-1">
+          <nav id="mobile-nav-list" aria-label="Primary" className="px-3 py-4 space-y-1">
             {isAuthenticated && (
               <div className="pb-4 mb-2 border-b border-white/10">
                 <div className="flex items-center gap-3 px-2">
@@ -454,13 +464,19 @@ export const Header = () => {
                       {item.name}
                     </Link>
                     <CollapsibleTrigger
-                      aria-label={`Toggle ${item.name} submenu`}
-                      className="group p-3 text-white/70 hover:text-scef-gold transition-colors"
+                      aria-label={`Expand ${item.name} sub-menu`}
+                      aria-controls={`mobile-submenu-${item.key}`}
+                      className="group p-3 min-h-11 min-w-11 flex items-center justify-center text-white/70 hover:text-scef-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-scef-gold rounded-lg"
                     >
-                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" aria-hidden="true" />
                     </CollapsibleTrigger>
                   </div>
-                  <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                  <CollapsibleContent
+                    id={`mobile-submenu-${item.key}`}
+                    role="region"
+                    aria-label={`${item.name} sub-menu`}
+                    className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up"
+                  >
                     <div className={cn("py-1 space-y-0.5 border-white/10", isRTL ? "mr-3 border-r pr-3" : "ml-3 border-l pl-3")}>
                       {item.children.map((child: any, idx: number) => (
                         child.divider ? (
@@ -601,7 +617,7 @@ export const Header = () => {
                 </div>
               )}
             </div>
-          </div>
+          </nav>
         </SheetContent>
       </Sheet>
     </header>
