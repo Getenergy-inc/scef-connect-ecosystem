@@ -322,6 +322,9 @@ const App = () => (
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/wallet/donate" element={<Donate />} />
+              <Route path="/support-us" element={<SupportUs />} />
+              <Route path="/donate-and-payments" element={<SupportUs />} />
+              <Route path="/get-involved/support" element={<SupportUs />} />
 
               {/* Scholarship */}
               <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
