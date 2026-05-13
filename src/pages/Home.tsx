@@ -9,6 +9,7 @@ import { SixCoreServices } from "@/components/sections/SixCoreServices";
 import { TrainingWebinarsSection } from "@/components/sections/TrainingWebinarsSection";
 import { CareerProgramSection } from "@/components/sections/CareerProgramSection";
 import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
+import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
