@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ArchiveTile } from "@/components/volunteers/ArchiveTile";
 import { ArchiveLightbox } from "@/components/volunteers/ArchiveLightbox";
+import { ContributorDirectory } from "@/components/volunteers/ContributorDirectory";
 import {
   archiveGallery,
   categoryLabels,
@@ -153,6 +154,9 @@ const Volunteers = () => {
               </ol>
             </div>
           </section>
+
+          {/* ============== 2.5 CONTRIBUTOR DIRECTORY ============== */}
+          <ContributorDirectory />
 
           {/* ============== 3. MASONRY GALLERY ============== */}
           <section className="bg-card/40 border-b border-border">
