@@ -18,6 +18,7 @@ import {
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { WebinarRegistrationForm } from "@/components/calendar/WebinarRegistrationForm";
 import {
   getMonthlyProgram,
   monthlyPrograms,
@@ -38,7 +39,7 @@ const modeIcon = (m: ParticipationMode) => {
 };
 
 const sections = [
-  { icon: Video, title: "Webinar Registration", body: "Reserve a seat for the opening webinar and access live + replay sessions." },
+  { icon: Video, title: "Live Webinar Replays", body: "All registered participants receive replay access and the program brief by email." },
   { icon: Users, title: "Local Chapter Activity", body: "Coordinate with your nearest SCEF local chapter for grassroots delivery." },
   { icon: Megaphone, title: "Advocacy Walk / Outreach", body: "Join or host an advocacy walk, media campaign or community outreach." },
   { icon: School, title: "School Training Option", body: "Bring this program week into your school as an institutional training session." },
@@ -97,7 +98,7 @@ const MonthlyProgramPage = () => {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap gap-2.5">
-                <Button asChild variant="secondary"><Link to="/media/eduaid-webinars">Register for Webinar</Link></Button>
+                <Button asChild variant="secondary"><a href="#register">Register for Webinar</a></Button>
                 <Button asChild variant="heroOutline"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Program</Link></Button>
                 <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Join Local Chapter</Link></Button>
               </div>
@@ -133,6 +134,11 @@ const MonthlyProgramPage = () => {
                     ))}
                   </tbody>
                 </table>
+              </div>
+
+              {/* Webinar Registration Form */}
+              <div id="register" className="mt-12 scroll-mt-32">
+                <WebinarRegistrationForm program={program} />
               </div>
 
               {/* Sections grid */}
