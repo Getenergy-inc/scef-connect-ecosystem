@@ -174,6 +174,9 @@ import VerifyCertificate from "./pages/VerifyCertificate";
 // School WASH
 import SchoolWash from "./pages/programs/SchoolWash";
 
+// Coming Soon stub for new pages in the 2026–2037 work plan
+import ComingSoon from "./pages/ComingSoon";
+
 const queryClient = new QueryClient();
 
 const App = () => (
