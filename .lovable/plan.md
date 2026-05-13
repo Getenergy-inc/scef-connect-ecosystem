@@ -1,58 +1,54 @@
-# SCEF World-Class Website Refactor — Phased Plan
+# SCEF World-Class Refactor — Plan
 
-This is a large refactor (nav system, landing page, ~37 core pages, mega menus, CTAs). Shipping it as one change would be unsafe and wasteful — many pages already exist. I'll execute in **5 sequenced phases**, each independently shippable. You approve this plan, then I execute Phase 1 and check in before each next phase.
+This is a large, multi-phase refactor. To keep changes reviewable and avoid regressions, I'll ship it in clearly-scoped phases. Each phase is independently shippable. Reply with the phase number (or "all phases") to start.
 
-## Current State (verified from codebase)
+## Phase A — Visual Foundation (Imagery + Tokens)
+- Curate an authentic image library under `src/assets/photos/` (categories: classrooms, teachers, girls-education, volunteers, advocacy-walks, school-outreach, NESA events, EduAid, landscapes, innovation hubs, ESG, RMSA before/after, eLibrary, leadership).
+- Source: generate documentary-style African photography via the image tool (premium quality where it matters), since I cannot scrape personal Facebook archives. The user can later swap in real archive photos by replacing files in-place.
+- Add image manifest `src/config/photoLibrary.ts` mapping captions, alt text, year, category, credit.
+- Tighten design tokens in `index.css` / `tailwind.config.ts` (no new colors — reuse `scef-blue-darker`, `scef-gold`; add cinematic gradient + parallax utility classes).
 
-Already built and reusable — will NOT be rebuilt:
-- Pages: Home, About, Governance, Programs hub + 11 program pages (EduAid, NESA, RMSA, EOA/DigitalLearning, eLibrary, MyCareerMyLife, WomenGirls, SpecialNeeds, SchoolWash, TrainingDevelopment), Membership, GetInvolved, SupportUs, Donate, LocalChapters, Chapters, StartChapter, JoinOnline, PartnerWithUs, Partners, Media hub, NesaTv, ItsInMeRadio, EduAidWebinars, EducationTourism, Contact, Updates, Reports, CaseStudies, Vacancies, all 12 monthly calendar pages
-- Nav: Header.tsx + MainNavbar.tsx with mega-menu support, Footer.tsx, QuickActionsBar
-- Landing sections: LandingHero, SixCoreServices, MonthlyAdvocacyCalendar, JoinUsGetInvolved, LocalChaptersSnapshot, FinalCTABand, etc.
-- Webinar registration form wired to monthly pages
-- Routes constants in src/routes.ts
+## Phase B — Global Navigation Standardization
+- Update `siteContent.navLinks` to the exact 10-item top nav: Home, About SCEF, Programs, Advocacy & Training, Membership & Ambassadors, Local Chapters, Partner With Us, Support / Donate, News & Media, Contact.
+- Keep right-side CTAs (Become a Member / Donate / Sponsor NESA-Africa) — already in place.
+- Mobile menu: ensure quick CTAs persist in drawer (already in place — verify).
 
-Gaps to fill:
-- Nav IA does not match the requested 10-item top-level structure (currently: About / Programs / Chapters / Media / Get Involved / Login)
-- No dedicated pages for: Vision 2037, History, Send a Child to School, Monthly Advocacy Services hub, Health Education Advocacy, ESG & Environmental Education, Teacher Wellbeing, Ambassadors (standalone), Volunteers (standalone — exists under get-involved), Internships, CSR Sponsorship (standalone), Official Bank Accounts, Merchandise, Award Gala Tickets, Bid to Host
-- Header lacks the 3 right-side CTAs (Become a Member / Donate Now / Sponsor NESA-Africa)
-- Landing hero copy + CTAs need to match new headline/subheadline
-- "Advocacy & Training" and "Membership & Ambassadors" top-level sections don't exist as nav groupings
+## Phase C — Homepage Cinematic Pass
+- Hero: keep current copy + CTAs, swap `hero-schoolgirl.jpg` for new full-bleed cinematic banner; add subtle Ken-Burns animation.
+- New section: **"Powered by Volunteers, Educators & Change Makers Across Africa"** (`VolunteerStorytelling.tsx`) — masonry of 6–8 documentary photos + 4 CTAs (Meet Contributors / Join Movement / Volunteer / Ambassador).
+- New section: **Historical Timeline** strip (1997 → 2027) with milestone cards.
+- Keep existing 10-block sequence, insert volunteer + timeline blocks between Impact and Programs.
 
-## Phase 1 — Navigation IA refactor (this turn if approved)
+## Phase D — Volunteers & Contributors Page
+- New route `/volunteers` → `src/pages/Volunteers.tsx`.
+- Subtitle, masonry grid, year filters (2007, 2013, 2015, 2020, 2024+), contributor story cards, hover animations, CTAs.
+- Driven by `photoLibrary.ts` so user can extend without code changes.
 
-Rewrite `src/config/siteContent.ts` `navLinks` to the new 10-item structure with mega menus matching your spec exactly. Add right-side CTA buttons (Become a Member / Donate Now / Sponsor NESA-Africa) to `MainNavbar.tsx` desktop + mobile. Add new route constants for all new pages (as placeholders pointing to existing pages where overlap exists, e.g. Volunteers → existing `/get-involved/volunteer`). Update Footer columns to mirror new IA.
+## Phase E — About + History Enhancement
+- Update `History.tsx` timeline with the exact milestones from the brief (1997, 2003, 2007, 2013–14, 2015, 2020, 2024–27).
+- Add "Our Journey Through People & Impact" documentary block to `About.tsx`.
 
-Result: new nav live, all existing pages reachable through new menus, missing pages route to a temporary "Coming soon" stub or nearest existing page.
+## Phase F — Programs Imagery Pass
+- Replace placeholder/abstract imagery on each program page (EduAid, NESA, EOA, eLibrary, MyCareerMyLife, RMSA, SendAChild, Women & Girls, Special Needs) with category-matched authentic photos from the library. Add proper alt text.
 
-## Phase 2 — Landing page realignment
+## Phase G — Advocacy & Training + Monthly Calendar Visuals
+- Each monthly page: add themed banner image, weekly schedule (Mon–Sun pattern from brief), sponsorship CTA. Registration form already wired in earlier phases.
 
-Update `LandingHero` copy: headline "Empowering Education. Advancing Health. Sustaining Africa's Future.", new subheadline, primary CTAs (Become a Member / Donate Now / Sponsor NESA-Africa), secondary CTAs (Explore EduAid / Join a Local Chapter / View Monthly Calendar). Reorder `Home.tsx` sections to match the 10-block landing spec, add a compact "Official Donation & Payment Channels" block linking to /support-us (no account dump on home), refresh Impact strip to the 8 listed impact areas (qualitative, no numbers), refresh Featured Programs to the 7 listed cards each with Learn More + Support buttons.
+## Phase H — Media Archive
+- New route `/media/archive` → `SCEF Historical Media Archive` page with subsections (Historical Photos, Volunteer Stories, Event Gallery, Advocacy, Awards, Training, Outreach, EduAid, NESA, NESA TV, It's In Me Radio).
 
-## Phase 3 — Missing core pages (batch A: governance + programs)
+## Phase I — Trust, Donation, Partnership Polish
+- Refine Donate, SupportUs, PartnerWithUs cards with real-context imagery + the exact CTA card list from the brief.
 
-Create: Vision 2037, History, Send a Child to School, Monthly Advocacy Services (hub), Monthly Webinar Calendar (hub linking to existing 12 monthly pages). Each page: SEO Helmet, hero, 2-3 content blocks, clear CTAs, footer.
+## Phase J — Performance, SEO, Accessibility
+- Convert new images to WebP where possible, lazy-load, descriptive alt text, JSON-LD on key pages, lighthouse-friendly checks.
 
-## Phase 4 — Missing core pages (batch B: advocacy + people + partners)
+---
 
-Create: Health Education Advocacy, ESG & Environmental Education, Teacher Wellbeing & Mental Health, Ambassadors (standalone), Internships, CSR Sponsorship (standalone), Official Bank Accounts, Buy Merchandise, Award Gala Tickets, Bid to Host Next Event. Same template pattern as Phase 3.
+## Honest constraints (please read)
+1. **I cannot scrape Facebook** (`facebook.com/vincent.a.santos.7`) — it's behind auth. For Phase A I will generate high-quality, documentary-style African photography via the image tool. You can later drop real archive photos into the same filenames to replace them 1:1 with no code changes.
+2. The full scope is ~40+ files and ~30+ generated images. Doing it in one shot would be slow, expensive, and hard to review. Phased delivery is strongly recommended.
+3. Existing components (LandingHero, FeaturedPrograms, monthly registration, etc.) are already aligned — this refactor adds the missing storytelling layer rather than rebuilding what works.
 
-## Phase 5 — Polish + QA
-
-Verify every nav link resolves (no 404s), every program/support card has a CTA, SEO title + meta description on every new page, mobile hamburger parity, sticky header CTAs visible at all breakpoints. Run dependency scan, check console for runtime errors on home + 5 random new pages.
-
-## Technical notes
-
-- Stack stays as-is: React 18 + Vite + react-router-dom + Tailwind + shadcn (project knowledge mentions Next.js but the actual codebase is Vite — I'll keep Vite, not migrate)
-- All colors via existing semantic tokens (scef-blue-darker, scef-gold) — no hardcoded colors
-- All visible strings should ideally go through LocaleContext, but for speed I'll add English first and flag i18n keys for a follow-up pass (calling this out so it's not a surprise)
-- New pages use a shared `<PageShell>` pattern (hero + sections + CTA band) to keep the 10+ new files small and consistent
-- "Vision 2037" — your existing memory references "Vision 2035". I'll use **2037** as you specified here and note the discrepancy; confirm during Phase 3 if you want me to update the older 2035 references too
-- No business logic / DB changes. Webinar registration + wallet stay untouched.
-
-## What I need from you
-
-1. Approve this phased approach, or tell me to compress/expand phases
-2. Confirm **Vision 2037** (overrides existing 2035 memory) — yes/no
-3. Confirm placeholder pages are OK in Phase 1 (vs. waiting until Phase 3/4 to expose new nav items)
-
-On approval I'll start Phase 1 immediately.
+## Recommended next step
+Reply **"Phase A"** (or "Phase A + B + C") to begin. If you want everything in one go, reply **"all phases"** and I'll execute sequentially in this turn (will take many tool calls and several minutes).
