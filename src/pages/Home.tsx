@@ -61,6 +61,11 @@ const Home = () => {
             </Reveal>
           </div>
 
+          {/* NESA-Africa + EduAid-Africa Master Timelines 2026–2027 */}
+          <Reveal>
+            <MasterTimelinesDuo />
+          </Reveal>
+
           {/* Powered by Volunteers — documentary storytelling */}
           <Reveal>
             <VolunteerStorytelling />
