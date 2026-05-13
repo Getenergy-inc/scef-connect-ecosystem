@@ -18,6 +18,7 @@ import {
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { WebinarRegistrationForm } from "@/components/calendar/WebinarRegistrationForm";
 import {
   getMonthlyProgram,
   monthlyPrograms,
