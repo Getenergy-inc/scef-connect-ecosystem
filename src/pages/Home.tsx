@@ -13,6 +13,7 @@ import { DonationChannels } from "@/components/sections/DonationChannels";
 import { FinalCTABand } from "@/components/sections/FinalCTABand";
 import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
 import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
