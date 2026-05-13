@@ -207,9 +207,16 @@ const MonthlyProgramPage = () => {
                   Sponsor this program week, register your school, or contribute through the GFA Wallet.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2.5">
-                  <Button asChild variant="secondary"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Program</Link></Button>
+                  <Button asChild variant="secondary"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Month&rsquo;s Program</Link></Button>
+                  <Button asChild variant="heroOutline"><a href="#register">Register for the Program Day</a></Button>
+                  <Button asChild variant="heroOutline"><Link to={`/contact?topic=host-program-day&program=${program.slug}`}>Host a Program Day</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/get-involved/volunteer">Register Your School</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/wallet/donate?fund=adopt-school">Adopt a School</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Join Local Chapter Activity</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to="/wallet/donate?fund=advocacy-walk">Sponsor Advocacy Walk</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to={`/contact?topic=scef-visit&program=${program.slug}`}>Request SCEF Visit</Link></Button>
+                  <Button asChild variant="heroOutline"><Link to={`/contact?topic=chapter-activity-report&program=${program.slug}`}>Submit Chapter Activity</Link></Button>
                   <Button asChild variant="heroOutline"><Link to="/support-us">All Support Options</Link></Button>
-                  <Button asChild variant="heroOutline"><Link to="/contact">Request SCEF Visit</Link></Button>
                 </div>
               </div>
 
