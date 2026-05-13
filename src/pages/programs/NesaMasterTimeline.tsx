@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import PageShell from "@/components/layout/PageShell";
+import NesaSeason2026Timeline from "@/components/sections/NesaSeason2026Timeline";
 
 interface Phase {
   id: string;
@@ -151,6 +152,9 @@ const NesaMasterTimeline = () => {
           <Button asChild size="lg" variant="outline"><Link to="/programs/rebuild-my-school-africa">Support Rebuild My School Africa</Link></Button>
         </div>
       </section>
+
+      {/* 2026 Season Programme Timeline */}
+      <NesaSeason2026Timeline />
 
       {/* Section 1: Timeline Summary */}
       <section id="timeline" className="container mx-auto px-4 py-14">
