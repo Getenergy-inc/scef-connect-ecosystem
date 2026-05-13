@@ -1978,6 +1978,54 @@ export type Database = {
           },
         ]
       }
+      monthly_program_assets: {
+        Row: {
+          asset_type: string
+          country: string | null
+          created_at: string
+          file_name: string | null
+          file_size: number | null
+          file_url: string
+          id: string
+          is_published: boolean
+          program_slug: string
+          region: string | null
+          title: string
+          updated_at: string
+          uploaded_by: string | null
+        }
+        Insert: {
+          asset_type: string
+          country?: string | null
+          created_at?: string
+          file_name?: string | null
+          file_size?: number | null
+          file_url: string
+          id?: string
+          is_published?: boolean
+          program_slug: string
+          region?: string | null
+          title: string
+          updated_at?: string
+          uploaded_by?: string | null
+        }
+        Update: {
+          asset_type?: string
+          country?: string | null
+          created_at?: string
+          file_name?: string | null
+          file_size?: number | null
+          file_url?: string
+          id?: string
+          is_published?: boolean
+          program_slug?: string
+          region?: string | null
+          title?: string
+          updated_at?: string
+          uploaded_by?: string | null
+        }
+        Relationships: []
+      }
       otp_codes: {
         Row: {
           attempts: number

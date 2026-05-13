@@ -19,6 +19,7 @@ import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { WebinarRegistrationForm } from "@/components/calendar/WebinarRegistrationForm";
+import { MonthlyProgramAssets } from "@/components/calendar/MonthlyProgramAssets";
 import {
   getMonthlyProgram,
   monthlyPrograms,
@@ -183,22 +184,18 @@ const MonthlyProgramPage = () => {
                 ))}
               </div>
 
-              {/* Certificate + Download */}
-              <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {/* Certificate */}
+              <div className="mt-10">
                 <div className="rounded-xl border border-scef-gold/30 bg-scef-gold/5 p-5">
                   <h4 className="font-display text-base font-bold text-scef-blue-darker">Certificate Option</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Optional paid certificate of participation issued via SCEF Education Online Africa.
                   </p>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-5">
-                  <h4 className="font-display text-base font-bold text-scef-blue-darker">Downloadable Program Brief</h4>
-                  <p className="mt-2 text-sm text-muted-foreground">Reporting in progress — brief PDF will be published before the program week opens.</p>
-                  <Button variant="outline" size="sm" className="mt-3" disabled>
-                    <Download className="mr-1 h-4 w-4" /> Download Brief
-                  </Button>
-                </div>
               </div>
+
+              {/* Program Brief + Regional Reports (with admin upload) */}
+              <MonthlyProgramAssets programSlug={program.slug} programMonth={program.month} />
 
               {/* Final CTA */}
               <div className="mt-12 rounded-2xl bg-scef-blue-darker p-8 text-white md:p-10">
