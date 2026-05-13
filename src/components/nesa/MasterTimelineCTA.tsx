@@ -14,7 +14,7 @@ export const MasterTimelineCTA = ({ className = "" }: Props) => {
   return (
     <section className={`container mx-auto px-4 py-6 ${className}`}>
       <Link
-        to="/programs/nesa-africa/master-timeline"
+        to="/programs/nesa-africa/timeline"
         className="group flex flex-col md:flex-row md:items-center md:justify-between gap-4 rounded-xl border border-scef-gold/40 bg-scef-blue-darker text-white p-5 md:p-6 hover:shadow-lg transition"
       >
         <div className="flex items-start md:items-center gap-3">
@@ -23,13 +23,13 @@ export const MasterTimelineCTA = ({ className = "" }: Props) => {
           </span>
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold">
-              NESA-Africa 2026–2027
+              NESA-Africa · 2026 Season
             </p>
             <p className="font-display text-lg md:text-xl font-bold">
-              Master Timeline 2026–2027
+              2026 Season Programme Timeline
             </p>
             <p className="text-sm text-white/80">
-              Pre-nomination, online TV shows, Blue Garnet Gala, EduAid webinars and Rebuild My School Africa.
+              Pre-nomination 20 May → Blue Garnet Gala 22 Oct 2026 → Rebuild My School Africa & EduAid-Africa impact through Oct 2027.
             </p>
           </div>
         </div>
