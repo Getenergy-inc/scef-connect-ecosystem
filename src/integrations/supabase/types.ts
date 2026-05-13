@@ -3202,6 +3202,60 @@ export type Database = {
           },
         ]
       }
+      webinar_registrations: {
+        Row: {
+          confirmation_sent_at: string | null
+          consent_marketing: boolean
+          country: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          organization: string | null
+          participation_mode: string
+          phone: string | null
+          program_month: string
+          program_slug: string
+          program_title: string
+          role_type: string | null
+          user_id: string | null
+        }
+        Insert: {
+          confirmation_sent_at?: string | null
+          consent_marketing?: boolean
+          country?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          organization?: string | null
+          participation_mode?: string
+          phone?: string | null
+          program_month: string
+          program_slug: string
+          program_title: string
+          role_type?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          confirmation_sent_at?: string | null
+          consent_marketing?: boolean
+          country?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          organization?: string | null
+          participation_mode?: string
+          phone?: string | null
+          program_month?: string
+          program_slug?: string
+          program_title?: string
+          role_type?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
