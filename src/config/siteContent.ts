@@ -13,16 +13,19 @@ export const siteContent = {
     { name: "Management Team", href: "/governance#management" },
   ],
 
-  // Main Navigation — 2026 refactor: About · Programs · Chapters · Media · Get Involved · Login
+  // Main Navigation — World-class NGO IA (10 top-level items)
   navLinks: [
+    { name: "Home", href: "/" },
     {
-      name: "About",
+      name: "About SCEF",
       href: "/about",
       children: [
-        { name: "About SCEF", href: "/about", description: "Who we are & what we stand for" },
-        { name: "Vision & Mission", href: "/about#vision", description: "Our long-term agenda" },
-        { name: "Governance", href: "/governance", description: "Boards, councils & leadership" },
-        { name: "Impact", href: "/reports", description: "Our results across Africa" },
+        { name: "Who We Are", href: "/about", description: "Mission, identity & approach" },
+        { name: "Vision 2037", href: "/about/vision-2037", description: "Our continental agenda to 2037" },
+        { name: "Mission & Objectives", href: "/about#objectives", description: "The 6 core SCEF objectives" },
+        { name: "History", href: "/about/history", description: "Our journey since 1997" },
+        { name: "Governance", href: "/governance", description: "CVO, BOT, BOA, Organisational Secretary" },
+        { name: "Impact & Reports", href: "/reports", description: "Verified outcomes across Africa" },
       ],
     },
     {
@@ -31,84 +34,160 @@ export const siteContent = {
       megaMenu: true,
       groups: [
         {
-          title: "Education & Access",
+          title: "Flagship Programs",
           items: [
             { name: "EduAid-Africa", href: "/programs/eduaid-africa", description: "Scholarships, CSR funding & school support", icon: "GraduationCap" },
-            { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa", description: "School renewal & infrastructure", icon: "School" },
-            { name: "School WASH & Sanitation", href: "/programs/school-wash", description: "Toilets, hygiene, water & inclusion", icon: "Droplets" },
-            { name: "NESA-Africa", href: "/programs/nesa-africa", description: "Continental education awards engine", icon: "Award" },
+            { name: "New Education Standards Award Africa", href: "/programs/nesa-africa", description: "Continental education awards engine", icon: "Award" },
+            { name: "Education Online Africa", href: "/programs/digital-learning", description: "Digital learning & certification", icon: "Laptop" },
+            { name: "eLibrary Africa / Nigeria", href: "/programs/elibrary-nigeria", description: "Accessible knowledge hub", icon: "Library" },
           ],
         },
         {
-          title: "Digital & Inclusion",
+          title: "Schools & Learners",
           items: [
-            { name: "Education Online Africa", href: "/programs/digital-learning", description: "Digital learning & certification", icon: "Laptop" },
-            { name: "eLibrary Africa", href: "/programs/elibrary-nigeria", description: "Accessible knowledge hub", icon: "Library" },
+            { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa", description: "School renewal & infrastructure", icon: "School" },
+            { name: "Send a Child to School", href: "/programs/send-a-child-to-school", description: "Sponsor a learner's full year", icon: "Heart" },
+            { name: "School WASH & Sanitation", href: "/programs/school-wash", description: "Toilets, hygiene & inclusion", icon: "Accessibility" },
+            { name: "My Career, My Life", href: "/programs/my-career-my-life", description: "Career pathways for students", icon: "Star" },
+          ],
+        },
+        {
+          title: "All Programs",
+          items: [
+            { name: "Browse All Programs", href: "/programs", description: "Full programs hub", icon: "LayoutGrid" },
             { name: "Women & Girls Education", href: "/programs/women-girls-education", description: "Empowerment through education", icon: "Heart" },
             { name: "Special Needs Education", href: "/programs/special-needs-education", description: "Inclusive advocacy for all learners", icon: "Accessibility" },
           ],
         },
-        {
-          title: "Training & Career",
-          items: [
-            { name: "Training & Development", href: "/programs/training-development", description: "Teacher & school capacity building", icon: "BookOpen" },
-            { name: "My Career My Life", href: "/programs/my-career-my-life", description: "Career guidance for students", icon: "Compass" },
-            { name: "All Programs", href: "/programs", description: "Browse the full programs hub", icon: "LayoutGrid" },
-          ],
-        },
       ],
     },
     {
-      name: "Chapters",
-      href: "/local-chapters",
-      children: [
-        { name: "Join a Chapter", href: "/chapters/join-online", description: "Engage in your region" },
-        { name: "Start a Chapter", href: "/chapters/start", description: "Lead SCEF where you live" },
-        { name: "Chapter Directory", href: "/chapters", description: "Discover the full network" },
-      ],
-    },
-    {
-      name: "Media",
-      href: "/media",
+      name: "Advocacy & Training",
+      href: "/advocacy",
       megaMenu: true,
       groups: [
         {
-          title: "Video & Audio",
+          title: "Monthly Programs",
           items: [
-            { name: "Media Hub", href: "/media", description: "All SCEF media in one place", icon: "LayoutGrid" },
-            { name: "NESA TV", href: "/media/nesa-tv", description: "Stories shaping African education", icon: "Tv" },
-            { name: "It's In Me Radio", href: "/media/its-in-me-radio", description: "Voices of African youth", icon: "Radio" },
-            { name: "Webinars", href: "/media/eduaid-webinars", description: "Conversations with educators", icon: "Mic" },
+            { name: "Monthly Advocacy Services", href: "/advocacy/monthly", description: "Pan-African campaign weeks", icon: "Sparkles" },
+            { name: "Monthly Webinar Calendar", href: "/calendar", description: "July 2026 – June 2027", icon: "Mic" },
+            { name: "Advocacy Walks", href: "/advocacy/walks", description: "Community mobilisation", icon: "Heart" },
+            { name: "Edu-Tourism", href: "/media/education-tourism-show", description: "Learning expeditions", icon: "Plane" },
           ],
         },
         {
-          title: "Stories & Advocacy",
+          title: "Training Tracks",
           items: [
-            { name: "News & Stories", href: "/updates", description: "The latest from SCEF", icon: "Newspaper" },
-            { name: "Advocacy Campaigns", href: "/case-studies", description: "Education for All in action", icon: "Megaphone" },
-            { name: "Meet Our Contributors", href: "/contributors", description: "Volunteers, interns & ambassadors (2007 – Present)", icon: "Award" },
+            { name: "Teacher Training", href: "/programs/training-development", description: "Classroom innovation & methods", icon: "GraduationCap" },
+            { name: "School Leadership Training", href: "/advocacy/school-leadership", description: "For heads & administrators", icon: "Crown" },
+            { name: "Teacher Wellbeing & Mental Health", href: "/advocacy/teacher-wellbeing", description: "Care for educators", icon: "Heart" },
+          ],
+        },
+        {
+          title: "Thematic Advocacy",
+          items: [
+            { name: "Health Education Advocacy", href: "/advocacy/health-education", description: "Schools as health hubs", icon: "Heart" },
+            { name: "ESG & Environmental Education", href: "/advocacy/esg", description: "Sustainability in schools", icon: "Sparkles" },
+            { name: "Girls & Women Education", href: "/programs/women-girls-education", description: "Gender equity & safeguarding", icon: "Heart" },
           ],
         },
       ],
     },
     {
-      name: "Get Involved",
-      href: "/get-involved",
+      name: "Membership & Ambassadors",
+      href: "/membership",
       children: [
-        { name: "Donate", href: "/donate", description: "Fund education across Africa" },
-        { name: "Become a Volunteer", href: "/get-involved/volunteer", description: "Use your skills for education" },
-        { name: "Meet Our Contributors", href: "/contributors", description: "2007 – Present" },
-        { name: "Submit Your Story", href: "/contributors/submit", description: "Share your SCEF testimony" },
-        { name: "Verify Certificate", href: "/verify-certificate", description: "Authenticate an SCEF badge code" },
-        { name: "CSR & Partnerships", href: "/partner-with-us", description: "Institutional partnerships" },
+        { name: "Membership Overview", href: "/membership", description: "Why join SCEF" },
+        { name: "Membership Categories", href: "/membership#tiers", description: "Tiers, pricing & benefits" },
+        { name: "Ambassador Program", href: "/get-involved/ambassador", description: "Lead the movement" },
+        { name: "Volunteer Opportunities", href: "/get-involved/volunteer", description: "Use your skills" },
+        { name: "Internship Opportunities", href: "/get-involved/internships", description: "Learn while contributing" },
+        { name: "Referral & Rewards", href: "/get-involved/referral-rewards", description: "Grow the network, earn benefits" },
+        { name: "Join Now", href: "/auth/sign-up", description: "Create your member account" },
       ],
     },
     {
-      name: "Login",
-      href: "/auth/sign-in",
+      name: "Local Chapters",
+      href: "/local-chapters",
       children: [
-        { name: "Member Login", href: "/auth/sign-in", description: "Access your dashboard & wallet" },
-        { name: "Staff Login", href: "/auth/sign-in?role=staff", description: "Internal operations & admin" },
+        { name: "About Local Chapters", href: "/local-chapters", description: "How chapters work" },
+        { name: "Start a Local Chapter", href: "/chapters/start", description: "Lead SCEF where you live" },
+        { name: "Local Chapter President (LCP)", href: "/local-chapters#lcp", description: "The LCP role" },
+        { name: "Board of Advisers (BOA)", href: "/governance#boa", description: "Chapter governance" },
+        { name: "Country Chapters", href: "/chapters", description: "Browse the directory" },
+        { name: "Diaspora Chapters", href: "/chapters?type=diaspora", description: "Africans abroad" },
+        { name: "Local Projects", href: "/local-chapters#projects", description: "What chapters deliver" },
+      ],
+    },
+    {
+      name: "Partner With Us",
+      href: "/partner-with-us",
+      children: [
+        { name: "CSR Partnerships", href: "/partner-with-us#csr", description: "Corporate social responsibility" },
+        { name: "Sponsor a School", href: "/support-us#sponsor-school", description: "Adopt a school for a year" },
+        { name: "Sponsor NESA-Africa", href: "/support-us#sponsor-nesa", description: "Awards, gala & nominations" },
+        { name: "Sponsor EduAid-Africa", href: "/support-us#sponsor-eduaid", description: "Scholarships & grants" },
+        { name: "Become a Strategic Partner", href: "/partner-with-us#strategic", description: "Multi-year partnership" },
+        { name: "Bid to Host Next Event", href: "/support-us/bid-to-host", description: "Host an SCEF gala or summit" },
+        { name: "Institutional Partnership", href: "/partner-with-us#institutional", description: "Government & multilateral" },
+      ],
+    },
+    {
+      name: "Support / Donate",
+      href: "/support-us",
+      megaMenu: true,
+      groups: [
+        {
+          title: "Sponsor Programs",
+          items: [
+            { name: "Donate Now", href: "/donate", description: "General support", icon: "Heart" },
+            { name: "Sponsor NESA-Africa", href: "/support-us#sponsor-nesa", description: "Awards & gala", icon: "Award" },
+            { name: "Support My Career, My Life", href: "/support-us#support-mcml", description: "Youth pathways", icon: "Star" },
+            { name: "Rebuild My School Africa", href: "/support-us#rebuild-school", description: "Infrastructure", icon: "School" },
+          ],
+        },
+        {
+          title: "Support Learners",
+          items: [
+            { name: "Send a Child to School", href: "/support-us#send-child", description: "Sponsor a learner", icon: "GraduationCap" },
+            { name: "Support eLibrary Africa", href: "/support-us#support-elibrary", description: "Digital knowledge", icon: "Library" },
+            { name: "Buy Award Gala Ticket", href: "/support-us/gala-tickets", description: "Attend NESA gala", icon: "Crown" },
+            { name: "Attend Seminars & Webinars", href: "/calendar", description: "Pay-what-you-can", icon: "Mic" },
+          ],
+        },
+        {
+          title: "Other Ways",
+          items: [
+            { name: "Buy Merchandise", href: "/support-us/merchandise", description: "Branded SCEF gear", icon: "Sparkles" },
+            { name: "Official Bank Accounts", href: "/support-us/bank-accounts", description: "Verified payment channels", icon: "LayoutGrid" },
+            { name: "All Support Options", href: "/support-us", description: "Full overview", icon: "Heart" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "News & Media",
+      href: "/media",
+      children: [
+        { name: "NESA TV", href: "/media/nesa-tv", description: "Stories shaping African education" },
+        { name: "It's In Me Radio", href: "/media/its-in-me-radio", description: "Voices of African youth" },
+        { name: "Press Releases", href: "/updates?type=press", description: "Official announcements" },
+        { name: "Blog", href: "/updates", description: "Insights & long reads" },
+        { name: "Events", href: "/calendar", description: "Webinars, walks & gala" },
+        { name: "Gallery", href: "/media/gallery", description: "Photos & highlights" },
+        { name: "Reports", href: "/reports", description: "Annual & impact reports" },
+      ],
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+      children: [
+        { name: "General Contact", href: "/contact", description: "Headquarters & main desk" },
+        { name: "Partnership Contact", href: "/contact#partnership", description: "CSR & institutional" },
+        { name: "Membership Contact", href: "/contact#membership", description: "Members & ambassadors" },
+        { name: "EduAid Contact", href: "/contact#eduaid", description: "Scholarships & schools" },
+        { name: "NESA Contact", href: "/contact#nesa", description: "Awards & nominations" },
+        { name: "Volunteer Contact", href: "/contact#volunteer", description: "Volunteers & interns" },
       ],
     },
   ],

@@ -109,63 +109,86 @@ const FooterEndorsements = () => {
 
 const footerColumns = [
   {
-    title: "About",
+    title: "About SCEF",
     links: [
-      { name: "About SCEF", href: "/about" },
-      { name: "Our Work", href: "/programs" },
+      { name: "Who We Are", href: "/about" },
+      { name: "Vision 2037", href: "/about/vision-2037" },
+      { name: "History", href: "/about/history" },
       { name: "Governance", href: "/governance" },
-      { name: "Divisions", href: "/divisions" },
-      { name: "Reports", href: "/reports" },
+      { name: "Impact & Reports", href: "/reports" },
     ],
   },
   {
     title: "Programs",
     links: [
-      { name: "EduAid Africa", href: "/programs/eduaid-africa" },
-      { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
-      { name: "Women & Girls Education", href: "/programs/women-girls-education" },
-      { name: "Special Needs Education", href: "/programs/special-needs-education" },
+      { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
+      { name: "NESA-Africa", href: "/programs/nesa-africa" },
       { name: "Education Online Africa", href: "/programs/digital-learning" },
-      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria" },
-      { name: "NESA-Africa (2026–2037)", href: "/programs/nesa-africa" },
+      { name: "eLibrary Africa / Nigeria", href: "/programs/elibrary-nigeria" },
+      { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
+      { name: "Send a Child to School", href: "/programs/send-a-child-to-school" },
+      { name: "My Career, My Life", href: "/programs/my-career-my-life" },
     ],
   },
   {
-    title: "Chapters",
+    title: "Advocacy & Training",
     links: [
-      { name: "Find a Chapter", href: "/local-chapters" },
-      { name: "Start a Chapter", href: "/local-chapters#start" },
-      { name: "Chapter Directory", href: "/chapters" },
+      { name: "Monthly Advocacy Services", href: "/advocacy/monthly" },
+      { name: "Monthly Webinar Calendar", href: "/calendar" },
+      { name: "Teacher Training", href: "/programs/training-development" },
+      { name: "School Leadership", href: "/advocacy/school-leadership" },
+      { name: "Health Education", href: "/advocacy/health-education" },
+      { name: "ESG & Environment", href: "/advocacy/esg" },
+      { name: "Teacher Wellbeing", href: "/advocacy/teacher-wellbeing" },
     ],
   },
   {
     title: "Membership",
     links: [
       { name: "Become a Member", href: "/membership" },
-      { name: "Member Benefits", href: "/membership#benefits" },
-      { name: "Member Directory", href: "/membership#directory" },
-      { name: "Become an Ambassador", href: "/get-involved#ambassador" },
-      { name: "Volunteer", href: "/get-involved#volunteer" },
+      { name: "Ambassador Program", href: "/get-involved/ambassador" },
+      { name: "Volunteer", href: "/get-involved/volunteer" },
+      { name: "Internships", href: "/get-involved/internships" },
+      { name: "Referral & Rewards", href: "/get-involved/referral-rewards" },
     ],
   },
   {
-    title: "Get Involved",
+    title: "Local Chapters",
     links: [
-      { name: "Partner With Us", href: "/partners" },
-      { name: "Vacancies", href: "/vacancies" },
-      { name: "Donate", href: "/donate" },
-      { name: "Support & Payment Options", href: "/support-us" },
+      { name: "About Local Chapters", href: "/local-chapters" },
+      { name: "Start a Chapter", href: "/chapters/start" },
+      { name: "Country Chapters", href: "/chapters" },
+      { name: "Join a Chapter", href: "/chapters/join-online" },
     ],
   },
   {
-    title: "Media",
+    title: "Partner With Us",
     links: [
-      { name: "Media Hub", href: "/media" },
-      { name: "NESA Africa TV", href: "/media/nesa-tv" },
-      { name: "NESA Awards TV", href: "/media/nesa-awards-tv" },
+      { name: "CSR Partnerships", href: "/partner-with-us#csr" },
+      { name: "Sponsor a School", href: "/support-us#sponsor-school" },
+      { name: "Sponsor NESA-Africa", href: "/support-us#sponsor-nesa" },
+      { name: "Bid to Host Next Event", href: "/support-us/bid-to-host" },
+      { name: "Strategic Partner", href: "/partner-with-us#strategic" },
+    ],
+  },
+  {
+    title: "Support / Donate",
+    links: [
+      { name: "Donate Now", href: "/donate" },
+      { name: "Official Bank Accounts", href: "/support-us/bank-accounts" },
+      { name: "Buy Merchandise", href: "/support-us/merchandise" },
+      { name: "Award Gala Tickets", href: "/support-us/gala-tickets" },
+      { name: "All Support Options", href: "/support-us" },
+    ],
+  },
+  {
+    title: "News & Media",
+    links: [
+      { name: "NESA TV", href: "/media/nesa-tv" },
       { name: "It's In Me Radio", href: "/media/its-in-me-radio" },
-      { name: "EduAid Webinars", href: "/media/eduaid-webinars" },
-      { name: "Education Tourism Show", href: "/media/education-tourism-show" },
+      { name: "Press Releases", href: "/updates?type=press" },
+      { name: "Blog", href: "/updates" },
+      { name: "Events", href: "/calendar" },
     ],
   },
 ];
@@ -249,7 +272,7 @@ export const Footer = () => {
 
       {/* Main footer grid */}
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-8">
           {/* Brand block */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="inline-block group">
