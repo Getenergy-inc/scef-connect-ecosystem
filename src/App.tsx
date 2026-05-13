@@ -66,6 +66,7 @@ import LCS from "./pages/divisions/LCS";
 import NESAAfrica from "./pages/programs/NESAAfrica";
 import NesaMasterTimeline from "./pages/programs/NesaMasterTimeline";
 import EduAidAfrica from "./pages/programs/EduAidAfrica";
+import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
 import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
