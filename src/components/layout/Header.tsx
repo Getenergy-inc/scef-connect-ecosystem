@@ -399,17 +399,22 @@ export const Header = () => {
       {/* Mobile Off-Canvas Menu */}
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent
+          id="mobile-nav-panel"
           side={isRTL ? "left" : "right"}
-          className="w-[88vw] sm:w-[400px] p-0 bg-scef-blue-dark border-l border-white/10 text-white overflow-y-auto"
+          className="w-[88vw] sm:w-[400px] p-0 bg-scef-blue-dark border-l border-white/10 text-white overflow-y-auto focus:outline-none"
+          aria-label="Main navigation"
         >
           <SheetHeader className="px-5 py-4 border-b border-white/10 text-left">
             <SheetTitle className="text-white flex items-center gap-2">
-              <img src={scefLogo} alt="SCEF" className="h-8 w-auto rounded" />
+              <img src={scefLogo} alt="" aria-hidden="true" className="h-8 w-auto rounded" />
               <span className="text-sm font-semibold">Menu</span>
             </SheetTitle>
+            <SheetDescription className="sr-only">
+              Site navigation. Use Tab to move between links, Enter or Space to expand sub-menus, and Escape to close.
+            </SheetDescription>
           </SheetHeader>
 
-          <div className="px-3 py-4 space-y-1">
+          <nav id="mobile-nav-list" aria-label="Primary" className="px-3 py-4 space-y-1">
             {isAuthenticated && (
               <div className="pb-4 mb-2 border-b border-white/10">
                 <div className="flex items-center gap-3 px-2">
