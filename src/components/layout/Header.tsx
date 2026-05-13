@@ -464,13 +464,19 @@ export const Header = () => {
                       {item.name}
                     </Link>
                     <CollapsibleTrigger
-                      aria-label={`Toggle ${item.name} submenu`}
-                      className="group p-3 text-white/70 hover:text-scef-gold transition-colors"
+                      aria-label={`Expand ${item.name} sub-menu`}
+                      aria-controls={`mobile-submenu-${item.key}`}
+                      className="group p-3 min-h-11 min-w-11 flex items-center justify-center text-white/70 hover:text-scef-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-scef-gold rounded-lg"
                     >
-                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" aria-hidden="true" />
                     </CollapsibleTrigger>
                   </div>
-                  <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                  <CollapsibleContent
+                    id={`mobile-submenu-${item.key}`}
+                    role="region"
+                    aria-label={`${item.name} sub-menu`}
+                    className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up"
+                  >
                     <div className={cn("py-1 space-y-0.5 border-white/10", isRTL ? "mr-3 border-r pr-3" : "ml-3 border-l pl-3")}>
                       {item.children.map((child: any, idx: number) => (
                         child.divider ? (
