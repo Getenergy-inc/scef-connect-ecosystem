@@ -72,6 +72,7 @@ import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import InclusionAccess from "./pages/programs/InclusionAccess";
 import TrainingDevelopment from "./pages/programs/TrainingDevelopment";
 import MyCareerMyLifePage from "./pages/programs/MyCareerMyLife";
+import MonthlyProgramPage from "./pages/calendar/MonthlyProgram";
 
 // Admin Pages
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
@@ -204,6 +205,9 @@ const App = () => (
               <Route path="/programs/training-development" element={<TrainingDevelopment />} />
               <Route path="/programs/my-career-my-life" element={<MyCareerMyLifePage />} />
               <Route path="/programs/school-wash" element={<SchoolWash />} />
+
+              {/* Monthly Advocacy & Training Calendar */}
+              <Route path="/calendar/:slug" element={<MonthlyProgramPage />} />
               
               {/* Chapters Routes */}
               <Route path="/local-chapters" element={<LocalChapters />} />
