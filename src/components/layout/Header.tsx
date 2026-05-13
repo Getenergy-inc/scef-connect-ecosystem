@@ -611,7 +611,7 @@ export const Header = () => {
                 </div>
               )}
             </div>
-          </div>
+          </nav>
         </SheetContent>
       </Sheet>
     </header>
