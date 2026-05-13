@@ -6,6 +6,8 @@ import { ImpactStripLabels } from "@/components/sections/ImpactStripLabels";
 import { FeaturedPrograms } from "@/components/sections/FeaturedPrograms";
 import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
+import { WhoWeAre } from "@/components/home/WhoWeAre";
+import { SupportOptionsGrid } from "@/components/home/SupportOptionsGrid";
 import { LocalChaptersSnapshot } from "@/components/sections/LocalChaptersSnapshot";
 import { StrategicPartnersSupporters } from "@/components/sections/StrategicPartnersSupporters";
 import { TrainingWebinarsSection } from "@/components/sections/TrainingWebinarsSection";
@@ -38,6 +40,9 @@ const Home = () => {
         <main>
           {/* 1. HERO */}
           <LandingHero />
+
+          {/* 2. WHO WE ARE — 3 short lines */}
+          <WhoWeAre />
 
           {/* Quick Actions Bar */}
           <QuickActionsBar />
@@ -72,9 +77,9 @@ const Home = () => {
             <MonthlyAdvocacyCalendar />
           </Reveal>
 
-          {/* 5. SUPPORT OPTIONS — driven by JoinUsGetInvolved + DonationChannels below */}
+          {/* 5. SUPPORT OPTIONS — 12 designated-account action cards */}
           <Reveal>
-            <JoinUsGetInvolved />
+            <SupportOptionsGrid />
           </Reveal>
 
           {/* 6. LOCAL CHAPTERS */}
