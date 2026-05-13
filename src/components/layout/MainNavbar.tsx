@@ -192,16 +192,34 @@ export const MainNavbar = () => {
               );
             })}
 
-            {/* Donate CTA */}
-            <Button
-              asChild
-              className="ml-2 bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold shadow-md hover:shadow-lg transition-all"
-            >
-              <Link to="/donate">
-                <Heart className="w-4 h-4 mr-1.5" />
-                Donate
-              </Link>
-            </Button>
+            {/* Right-side primary CTAs */}
+            <div className="ml-2 flex items-center gap-2">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="border-white/40 text-white hover:bg-white hover:text-scef-blue-dark font-semibold"
+              >
+                <Link to="/auth/sign-up">Become a Member</Link>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold shadow-md"
+              >
+                <Link to="/donate">
+                  <Heart className="w-4 h-4 mr-1.5" />
+                  Donate Now
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                className="hidden xl:inline-flex bg-white text-scef-blue-dark hover:bg-scef-gold hover:text-scef-blue-dark font-semibold"
+              >
+                <Link to="/support-us#sponsor-nesa">Sponsor NESA-Africa</Link>
+              </Button>
+            </div>
 
             {/* Search Icon */}
             <button
