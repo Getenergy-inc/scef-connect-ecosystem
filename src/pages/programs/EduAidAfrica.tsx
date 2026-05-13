@@ -22,6 +22,7 @@ import EduAidDonationSection from "@/components/eduaid/EduAidDonationSection";
 import EduAidIntegratedServices from "@/components/eduaid/EduAidIntegratedServices";
 import EduAidAdvocacyCalendars from "@/components/eduaid/EduAidAdvocacyCalendars";
 import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
+import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 
 export default function EduAidAfrica() {
   const { t } = useLocale();
@@ -41,6 +42,7 @@ export default function EduAidAfrica() {
       <Header />
 
       <main className="relative overflow-hidden">
+        <MasterTimelineCTA />
         {/* Main Hero Section - No animation, loads immediately */}
         <EduAidMainHero
           welcomeText={t('eduaid.hero.welcome') || "Welcome to EduAid Africa"}
