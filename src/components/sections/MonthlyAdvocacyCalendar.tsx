@@ -166,6 +166,16 @@ export const MonthlyAdvocacyCalendar = () => {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.summary}
               </p>
+              {programSchedule[p.slug] && (
+                <div className="mt-3 rounded-lg bg-scef-blue-darker/[0.04] px-3 py-2 text-[11px] leading-tight">
+                  <p className="font-semibold text-scef-blue-darker">
+                    Program Week · {programSchedule[p.slug].weekRange}
+                  </p>
+                  <p className="text-muted-foreground">
+                    Main day: {programSchedule[p.slug].mainDay}
+                  </p>
+                </div>
+              )}
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.modes.map((m) => (
                   <span
