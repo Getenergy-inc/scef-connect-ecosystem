@@ -89,6 +89,13 @@ const MonthlyProgramPage = () => {
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
                 {program.summary}
               </p>
+              {schedule && (
+                <div className="mt-5 inline-flex flex-col gap-1 rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/15 sm:flex-row sm:items-center sm:gap-4">
+                  <span><span className="text-white/60">Recommended Program Week:</span> <strong className="text-white">{schedule.weekRange}</strong></span>
+                  <span className="hidden sm:inline text-white/30">·</span>
+                  <span><span className="text-white/60">Main day:</span> <strong className="text-scef-gold">{schedule.mainDay}</strong></span>
+                </div>
+              )}
               <div className="mt-5 flex flex-wrap gap-2">
                 {program.modes.map((m) => (
                   <span
@@ -100,9 +107,10 @@ const MonthlyProgramPage = () => {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap gap-2.5">
-                <Button asChild variant="secondary"><a href="#register">Register for Webinar</a></Button>
-                <Button asChild variant="heroOutline"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Program</Link></Button>
-                <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Join Local Chapter</Link></Button>
+                <Button asChild variant="secondary"><a href="#register">Register for the Program Day</a></Button>
+                <Button asChild variant="heroOutline"><Link to={`/wallet/donate?fund=${program.slug}`}>Sponsor This Month&rsquo;s Program</Link></Button>
+                <Button asChild variant="heroOutline"><Link to="/chapters/join-online">Host a Local Chapter Activity</Link></Button>
+                <Button asChild variant="heroOutline"><Link to="/contact?topic=scef-visit">Request SCEF Visit</Link></Button>
               </div>
             </div>
           </section>
