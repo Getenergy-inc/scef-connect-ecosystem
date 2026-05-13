@@ -72,6 +72,7 @@ import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import InclusionAccess from "./pages/programs/InclusionAccess";
 import TrainingDevelopment from "./pages/programs/TrainingDevelopment";
 import MyCareerMyLifePage from "./pages/programs/MyCareerMyLife";
+import MonthlyProgramPage from "./pages/calendar/MonthlyProgram";
 
 // Admin Pages
 import ELibraryAdminPage from "./pages/dashboard/ELibraryAdminPage";
