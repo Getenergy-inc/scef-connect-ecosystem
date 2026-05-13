@@ -125,25 +125,42 @@ const MonthlyProgramPage = () => {
                 location and capacity. Target audience: <strong>{program.audience}</strong>.
               </p>
 
-              {/* Weekly schedule */}
-              <h3 className="mt-10 font-display text-xl font-bold text-scef-blue-darker">Weekly Schedule</h3>
-              <div className="mt-4 overflow-hidden rounded-xl border border-border">
-                <table className="w-full text-left text-sm">
-                  <thead className="bg-scef-blue-darker text-white">
-                    <tr>
-                      <th className="px-4 py-3 font-semibold">Day</th>
-                      <th className="px-4 py-3 font-semibold">Activity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {weeklyStructure.map((row, i) => (
-                      <tr key={row.day} className={i % 2 === 0 ? "bg-card" : "bg-background"}>
-                        <td className="px-4 py-3 font-semibold text-scef-blue-darker whitespace-nowrap">{row.day}</td>
-                        <td className="px-4 py-3 text-foreground">{row.activity}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              {/* How the Program Week works */}
+              <h3 className="mt-10 font-display text-xl font-bold text-scef-blue-darker">How the Program Week Works</h3>
+              <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                <p>
+                  SCEF provides the monthly theme, program guide, branding materials, advocacy message, webinar structure, registration form, reporting template, certificate pathway, and media documentation support.
+                </p>
+                <p>
+                  Each participating local chapter, school, organisation, or partner may choose <strong>one suitable day</strong> within the Program Week to implement its activity{schedule ? <> — anywhere between <strong className="text-scef-blue-darker">{schedule.weekRange}</strong>, with <strong className="text-scef-blue-darker">{schedule.mainDay}</strong> as the recommended main day</> : null}.
+                </p>
+                <p>
+                  Activities can be delivered <strong>physically, online, or hybrid</strong> depending on local capacity. After the activity, organisers submit attendance, photos, short reports, and impact notes for SCEF documentation, certificates, media archive, and partner reporting.
+                </p>
+              </div>
+
+              {/* Flexible activity cards */}
+              <h3 className="mt-10 font-display text-xl font-bold text-scef-blue-darker">Choose Your Activity</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Pick any one of the activity formats below and run it on your selected day during the Program Week.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {flexibleActivities.map((a) => (
+                  <div key={a.label} className="flex flex-col rounded-xl border border-border bg-card p-4">
+                    <h4 className="font-display text-sm font-bold text-scef-blue-darker">{a.label}</h4>
+                    <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">{a.description}</p>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {a.modes.map((m) => (
+                        <span
+                          key={m}
+                          className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ring-1 ${modeStyles[m]}`}
+                        >
+                          {modeIcon(m)} {m}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
 
               {/* Webinar Registration Form */}
