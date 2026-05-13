@@ -27,11 +27,11 @@ export const ImpactStripLabels = () => {
             {t("home.impact.eyebrow") || "Our Impact"}
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight text-scef-blue-darker md:text-[2rem]">
-            {t("home.impact.title") || "Measurable progress across Africa"}
+            {t("home.impact.title") || "Eight focus areas driving Africa's education future"}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-5">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-5">
           {items.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}
