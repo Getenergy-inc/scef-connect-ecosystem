@@ -251,6 +251,14 @@ const Donate = () => {
               <p className="text-xs uppercase tracking-widest text-scef-gold/80 font-semibold">
                 Powered by GFA Wallet · GetFinance Africa
               </p>
+              <div className="mt-8">
+                <Link
+                  to="/support-us"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-scef-gold text-scef-blue-darker font-semibold hover:bg-scef-gold/90 transition-colors"
+                >
+                  Explore all Support & Payment Options →
+                </Link>
+              </div>
             </div>
           </section>
 
