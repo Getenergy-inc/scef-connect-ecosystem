@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { Award, ArrowRight, CalendarRange, GraduationCap, Sparkles } from "lucide-react";
+import { Award, CalendarRange, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
