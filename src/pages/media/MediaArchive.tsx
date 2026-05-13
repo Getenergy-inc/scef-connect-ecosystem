@@ -170,7 +170,14 @@ const MediaArchive = () => {
               asChild
               className="bg-scef-gold hover:bg-scef-gold-hover text-scef-blue-darker font-semibold"
             >
-              <Link to="/contact">Submit Media</Link>
+              <Link to="/media/submit">Submit Media</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white font-semibold"
+            >
+              <Link to="/media/my-submissions">My Submissions</Link>
             </Button>
             <Button
               asChild

@@ -184,6 +184,8 @@ import SendAChildToSchool from "./pages/programs/SendAChildToSchool";
 import MonthlyAdvocacy from "./pages/advocacy/MonthlyAdvocacy";
 import Volunteers from "./pages/Volunteers";
 import MediaArchive from "./pages/media/MediaArchive";
+import MediaSubmit from "./pages/media/MediaSubmit";
+import MyMediaSubmissions from "./pages/media/MyMediaSubmissions";
 
 const queryClient = new QueryClient();
 
@@ -407,6 +409,8 @@ const App = () => (
               <Route path="/support-us/gala-tickets" element={<ComingSoon title="Award Gala Tickets" description="Reserve your seat at the next NESA-Africa awards gala." />} />
               <Route path="/media/archive" element={<MediaArchive />} />
               <Route path="/media/gallery" element={<MediaArchive />} />
+              <Route path="/media/submit" element={<MediaSubmit />} />
+              <Route path="/media/my-submissions" element={<MyMediaSubmissions />} />
 
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
