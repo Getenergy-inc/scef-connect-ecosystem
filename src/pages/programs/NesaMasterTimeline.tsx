@@ -153,6 +153,9 @@ const NesaMasterTimeline = () => {
         </div>
       </section>
 
+      {/* 2026 Season Programme Timeline */}
+      <NesaSeason2026Timeline />
+
       {/* Section 1: Timeline Summary */}
       <section id="timeline" className="container mx-auto px-4 py-14">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-scef-blue-darker mb-8">
