@@ -47,8 +47,7 @@ const Home = () => {
           {/* Quick Actions Bar */}
           <QuickActionsBar />
 
-          {/* NESA-Africa Master Timeline 2026–2027 teaser */}
-          <MasterTimelineCTA />
+          {/* (NESA + EduAid Master Timelines moved below FeaturedPrograms) */}
 
           {/* 2. IMPACT / TRUST — 8 focus areas, qualitative */}
           <Reveal>
