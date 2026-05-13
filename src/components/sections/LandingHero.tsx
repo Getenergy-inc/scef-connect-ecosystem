@@ -7,10 +7,10 @@ import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
 
 const pillars = [
   { icon: BookOpen, title: "Education Advocacy", sub: "Expanding access for every learner" },
-  { icon: GraduationCap, title: "Skills & Innovation", sub: "Preparing for real-world impact" },
-  { icon: Users, title: "Inclusion & Equity", sub: "Opening opportunities for all" },
-  { icon: ShieldCheck, title: "Accountability & Funding", sub: "Managing education impact transparently" },
-  { icon: Globe2, title: "Pan-African Impact", sub: "Scaling across regions" },
+  { icon: GraduationCap, title: "Training & Innovation", sub: "Teachers, leaders & learners" },
+  { icon: Users, title: "Health & Inclusion", sub: "Schools as safe, healthy spaces" },
+  { icon: ShieldCheck, title: "ESG & Sustainability", sub: "Green, accountable schools" },
+  { icon: Globe2, title: "Pan-African Impact", sub: "Local chapters, continental reach" },
 ];
 
 /**
