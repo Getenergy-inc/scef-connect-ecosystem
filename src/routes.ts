@@ -37,6 +37,7 @@ export const ROUTES = {
   
   // Get Involved
   GET_INVOLVED: "/get-involved",
+  SUPPORT_US: "/support-us",
   MEMBERSHIP: "/membership",
   AMBASSADOR: "/get-involved/ambassador",
   NRC: "/get-involved/nrc",

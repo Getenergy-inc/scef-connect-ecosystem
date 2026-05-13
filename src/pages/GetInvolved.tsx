@@ -121,6 +121,14 @@ const GetInvolved = () => {
               <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
                 Choose your path — member, ambassador, volunteer, or career.
               </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <Button size="lg" asChild className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                  <Link to="/support-us">
+                    Support & Payment Options
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </section>
 

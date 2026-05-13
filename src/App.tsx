@@ -23,6 +23,7 @@ import Donate from "./pages/Donate";
 import DonationSuccess from "./pages/DonationSuccess";
 import Wallet from "./pages/Wallet";
 import GetInvolved from "./pages/GetInvolved";
+import SupportUs from "./pages/SupportUs";
 import Join from "./pages/Join";
 import Membership from "./pages/Membership";
 import Governance from "./pages/Governance";
@@ -322,6 +323,9 @@ const App = () => (
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
               <Route path="/wallet/donate" element={<Donate />} />
+              <Route path="/support-us" element={<SupportUs />} />
+              <Route path="/donate-and-payments" element={<SupportUs />} />
+              <Route path="/get-involved/support" element={<SupportUs />} />
 
               {/* Scholarship */}
               <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
