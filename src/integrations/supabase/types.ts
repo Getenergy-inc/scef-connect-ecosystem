@@ -1681,6 +1681,78 @@ export type Database = {
         }
         Relationships: []
       }
+      media_submissions: {
+        Row: {
+          caption: string
+          category: string
+          consent_accuracy: boolean
+          consent_publish: boolean
+          contributor_email: string
+          contributor_name: string
+          created_at: string
+          id: string
+          location: string | null
+          organization: string | null
+          photo_alt: string | null
+          photo_url: string
+          program: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          reviewer_notes: string | null
+          status: string
+          story: string | null
+          updated_at: string
+          user_id: string | null
+          year: string | null
+        }
+        Insert: {
+          caption: string
+          category: string
+          consent_accuracy?: boolean
+          consent_publish?: boolean
+          contributor_email: string
+          contributor_name: string
+          created_at?: string
+          id?: string
+          location?: string | null
+          organization?: string | null
+          photo_alt?: string | null
+          photo_url: string
+          program?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          reviewer_notes?: string | null
+          status?: string
+          story?: string | null
+          updated_at?: string
+          user_id?: string | null
+          year?: string | null
+        }
+        Update: {
+          caption?: string
+          category?: string
+          consent_accuracy?: boolean
+          consent_publish?: boolean
+          contributor_email?: string
+          contributor_name?: string
+          created_at?: string
+          id?: string
+          location?: string | null
+          organization?: string | null
+          photo_alt?: string | null
+          photo_url?: string
+          program?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          reviewer_notes?: string | null
+          status?: string
+          story?: string | null
+          updated_at?: string
+          user_id?: string | null
+          year?: string | null
+        }
+        Relationships: []
+      }
       meetings: {
         Row: {
           created_at: string
