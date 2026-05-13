@@ -39,7 +39,7 @@ const modeIcon = (m: ParticipationMode) => {
 };
 
 const sections = [
-  { icon: Video, title: "Webinar Registration", body: "Reserve a seat for the opening webinar and access live + replay sessions." },
+  { icon: Video, title: "Live Webinar Replays", body: "All registered participants receive replay access and the program brief by email." },
   { icon: Users, title: "Local Chapter Activity", body: "Coordinate with your nearest SCEF local chapter for grassroots delivery." },
   { icon: Megaphone, title: "Advocacy Walk / Outreach", body: "Join or host an advocacy walk, media campaign or community outreach." },
   { icon: School, title: "School Training Option", body: "Bring this program week into your school as an institutional training session." },
