@@ -22,7 +22,8 @@ import { WebinarRegistrationForm } from "@/components/calendar/WebinarRegistrati
 import {
   getMonthlyProgram,
   monthlyPrograms,
-  weeklyStructure,
+  flexibleActivities,
+  programSchedule,
   type ParticipationMode,
 } from "@/config/monthlyCalendar";
 
