@@ -7,6 +7,8 @@ import {
   Layers
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -411,25 +413,34 @@ export const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-scef-blue-dark border-b border-white/10 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
-          <div className="container mx-auto px-4 py-4 space-y-2">
-            {/* User Info (if authenticated) */}
+      {/* Mobile Off-Canvas Menu */}
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <SheetContent
+          side={isRTL ? "left" : "right"}
+          className="w-[88vw] sm:w-[400px] p-0 bg-scef-blue-dark border-l border-white/10 text-white overflow-y-auto"
+        >
+          <SheetHeader className="px-5 py-4 border-b border-white/10 text-left">
+            <SheetTitle className="text-white flex items-center gap-2">
+              <img src={scefLogo} alt="SCEF" className="h-8 w-auto rounded" />
+              <span className="text-sm font-semibold">Menu</span>
+            </SheetTitle>
+          </SheetHeader>
+
+          <div className="px-3 py-4 space-y-1">
             {isAuthenticated && (
-              <div className="pb-4 border-b border-white/10 mb-4">
-                <div className="flex items-center gap-3 px-4">
+              <div className="pb-4 mb-2 border-b border-white/10">
+                <div className="flex items-center gap-3 px-2">
                   <Avatar className="w-10 h-10 border-2 border-scef-gold">
                     <AvatarFallback className="bg-scef-gold text-scef-blue-dark font-semibold">
                       {getUserInitials()}
                     </AvatarFallback>
                   </Avatar>
-                  <div>
-                    <p className="font-medium text-white">{user?.email}</p>
+                  <div className="min-w-0">
+                    <p className="font-medium text-white truncate text-sm">{user?.email}</p>
                     <p className="text-xs text-white/60">Member</p>
                   </div>
                 </div>
-                <div className="flex gap-2 mt-3 px-4">
+                <div className="flex gap-2 mt-3 px-2">
                   <Button variant="secondary" size="sm" asChild className="flex-1">
                     <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
                       <LayoutDashboard className="w-4 h-4 mr-1" />
@@ -447,65 +458,76 @@ export const Header = () => {
             )}
 
             {navigation.map((item) => (
-              <div key={item.key}>
+              item.children ? (
+                <Collapsible key={item.key}>
+                  <div className="flex items-center rounded-lg hover:bg-white/5">
+                    <Link
+                      to={item.href}
+                      className="flex-1 px-3 py-3 text-white hover:text-scef-gold transition-colors font-medium text-sm"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                    <CollapsibleTrigger
+                      aria-label={`Toggle ${item.name} submenu`}
+                      className="group p-3 text-white/70 hover:text-scef-gold transition-colors"
+                    >
+                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                    </CollapsibleTrigger>
+                  </div>
+                  <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                    <div className={cn("py-1 space-y-0.5 border-white/10", isRTL ? "mr-3 border-r pr-3" : "ml-3 border-l pl-3")}>
+                      {item.children.map((child: any, idx: number) => (
+                        child.divider ? (
+                          <div key={idx} className="border-t border-white/10 my-2" />
+                        ) : child.external ? (
+                          <a
+                            key={child.name}
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 py-2 text-sm text-scef-gold hover:text-scef-gold/80 transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            {child.name}
+                          </a>
+                        ) : (
+                          <Link
+                            key={child.name}
+                            to={child.href}
+                            className="block px-3 py-2 text-sm text-white/75 hover:text-scef-gold hover:bg-white/5 rounded-md transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {child.name}
+                          </Link>
+                        )
+                      ))}
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              ) : (
                 <Link
+                  key={item.key}
                   to={item.href}
-                  className="block px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors font-medium"
+                  className="block px-3 py-3 rounded-lg text-white hover:bg-white/5 hover:text-scef-gold transition-colors font-medium text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
-                {item.children && (
-                  <div className={cn("space-y-1", isRTL ? "mr-4" : "ml-4")}>
-                    {item.children.map((child: any, idx: number) => (
-                      child.divider ? (
-                        <div key={idx} className="border-t border-white/10 my-2" />
-                      ) : child.external ? (
-                        <a
-                          key={child.name}
-                          href={child.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 text-sm text-scef-gold hover:text-scef-gold/80 transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          {child.name}
-                        </a>
-                      ) : (
-                        <Link
-                          key={child.name}
-                          to={child.href}
-                          className="block px-4 py-2 text-sm text-white/70 hover:text-scef-gold transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {child.name}
-                        </Link>
-                      )
-                    ))}
-                  </div>
-                )}
-              </div>
+              )
             ))}
 
-            {/* NRC & Judge Application CTA - Mobile */}
-            <div className="pt-4 border-t border-white/10">
-              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Get Involved with NESA</p>
-              <div className="flex flex-col gap-2 px-4">
-                <Button 
-                  className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
-                  asChild
-                >
+            <div className="pt-4 mt-2 border-t border-white/10">
+              <p className="px-3 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Get Involved with NESA</p>
+              <div className="flex flex-col gap-2 px-2">
+                <Button className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold" asChild>
                   <Link to="/get-involved/nrc" onClick={() => setMobileMenuOpen(false)}>
                     <Users className="w-4 h-4 mr-2" />
                     Apply to Join NRC
                   </Link>
                 </Button>
-                <Button 
-                  variant="outline"
-                  className="border-white/50 text-white hover:bg-white hover:text-scef-blue-dark font-medium"
-                  asChild
-                >
+                <Button variant="outline" className="border-white/50 text-white hover:bg-white hover:text-scef-blue-dark font-medium" asChild>
                   <Link to="/get-involved/judge" onClick={() => setMobileMenuOpen(false)}>
                     <Scale className="w-4 h-4 mr-2" />
                     Become a Judge
@@ -514,9 +536,8 @@ export const Header = () => {
               </div>
             </div>
 
-            {/* External Platforms Section */}
-            <div className="pt-4 border-t border-white/10">
-              <p className="px-4 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Our Platforms</p>
+            <div className="pt-4 mt-2 border-t border-white/10">
+              <p className="px-3 py-2 text-xs uppercase tracking-wider text-white/50 font-semibold">Our Platforms</p>
               <div className="space-y-1">
                 {externalPlatforms.map((platform) => (
                   <a
@@ -524,23 +545,22 @@ export const Header = () => {
                     href={platform.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-white/10 hover:text-scef-gold transition-colors"
+                    className="flex items-center gap-3 px-3 py-3 rounded-lg text-white hover:bg-white/5 hover:text-scef-gold transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <platform.icon className="w-5 h-5 text-scef-gold" />
-                    <span className="font-medium">{platform.name}</span>
+                    <span className="font-medium text-sm">{platform.name}</span>
                     <ExternalLink className={cn("w-3 h-3 text-white/50", isRTL ? "mr-auto" : "ml-auto")} />
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Auth Actions */}
-            <div className="pt-4 border-t border-white/10">
+            <div className="pt-4 mt-2 border-t border-white/10 pb-6">
               {isAuthenticated ? (
-                <div className="flex flex-col gap-2 px-4">
-                  <Button 
-                    variant="outline" 
+                <div className="flex flex-col gap-2 px-2">
+                  <Button
+                    variant="outline"
                     className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -550,7 +570,7 @@ export const Header = () => {
                     <MessageSquare className="w-4 h-4 mr-2" />
                     Chapter Inbox
                   </Button>
-                  <Button 
+                  <Button
                     variant="destructive"
                     onClick={() => {
                       handleSignOut();
@@ -562,42 +582,27 @@ export const Header = () => {
                   </Button>
                 </div>
               ) : (
-                <div className="flex flex-col gap-2 px-4">
-                  <Button 
-                    variant="outline" 
-                    className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
-                    asChild
-                  >
+                <div className="flex flex-col gap-2 px-2">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark" asChild>
                     <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
                       <Heart className="w-4 h-4 mr-1" />
                       {t("nav.top.donate")}
                     </Link>
                   </Button>
                   <div className="flex gap-2">
-                    <Button 
-                      variant="outline"
-                      className="flex-1 border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
-                      asChild
-                    >
-                      <Link to="/auth/sign-in" onClick={() => setMobileMenuOpen(false)}>
-                        Sign In
-                      </Link>
+                    <Button variant="outline" className="flex-1 border-white/30 text-white hover:bg-white hover:text-scef-blue-dark" asChild>
+                      <Link to="/auth/sign-in" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
                     </Button>
-                    <Button 
-                      className="flex-1 bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
-                      asChild
-                    >
-                      <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>
-                        Sign Up
-                      </Link>
+                    <Button className="flex-1 bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold" asChild>
+                      <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
                     </Button>
                   </div>
                 </div>
               )}
             </div>
           </div>
-        </div>
-      )}
+        </SheetContent>
+      </Sheet>
     </header>
   );
 };
