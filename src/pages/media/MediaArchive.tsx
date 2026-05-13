@@ -1,12 +1,13 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { photoLibrary, type PhotoCategory } from "@/config/photoLibrary";
+import { supabase } from "@/integrations/supabase/client";
 import { Search, Image as ImageIcon, Film, Radio, Award, Users, Megaphone, GraduationCap, Building2, Heart } from "lucide-react";
 
-type CategoryFilter = "all" | PhotoCategory;
+type CategoryFilter = "all" | PhotoCategory | string;
 
 const categories: { id: CategoryFilter; label: string; icon: typeof ImageIcon }[] = [
   { id: "all", label: "All Media", icon: ImageIcon },
@@ -30,10 +31,39 @@ const programLinks = [
 const MediaArchive = () => {
   const [query, setQuery] = useState("");
   const [cat, setCat] = useState<CategoryFilter>("all");
+  const [published, setPublished] = useState<
+    { id: string; src: string; alt: string; caption: string; year: string; category: string }[]
+  >([]);
+
+  useEffect(() => {
+    supabase
+      .from("media_submissions")
+      .select("id, photo_url, photo_alt, caption, year, category")
+      .eq("status", "published")
+      .order("reviewed_at", { ascending: false })
+      .limit(200)
+      .then(({ data }) => {
+        setPublished(
+          (data ?? []).map((d: any) => ({
+            id: `sub-${d.id}`,
+            src: d.photo_url,
+            alt: d.photo_alt ?? d.caption,
+            caption: d.caption,
+            year: d.year ?? "",
+            category: d.category ?? "",
+          }))
+        );
+      });
+  }, []);
+
+  const allItems = useMemo(
+    () => [...published, ...photoLibrary.map((p) => ({ ...p, category: p.category as string }))],
+    [published]
+  );
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return photoLibrary.filter((p) => {
+    return allItems.filter((p) => {
       const matchesCat = cat === "all" || p.category === cat;
       const matchesQ =
         !q ||
@@ -43,7 +73,7 @@ const MediaArchive = () => {
         p.category.includes(q);
       return matchesCat && matchesQ;
     });
-  }, [query, cat]);
+  }, [query, cat, allItems]);
 
   return (
     <PageShell
