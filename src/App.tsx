@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SophiaWhatsAppWidget } from "@/components/sophia/SophiaWhatsAppWidget";
 import RouteIndicator from "@/components/dev/RouteIndicator";
 import { LocaleProvider } from "@/contexts/LocaleContext";
 import { HelmetProvider } from "react-helmet-async";
@@ -430,6 +431,7 @@ const App = () => (
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <SophiaWhatsAppWidget />
           </BrowserRouter>
         </TooltipProvider>
       </LocaleProvider>
