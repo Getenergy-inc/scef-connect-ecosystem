@@ -1,17 +1,17 @@
-import { Globe2, GraduationCap, Handshake, Trophy, HeartHandshake, School, Users, Compass, Mic, Building2 } from "lucide-react";
+import {
+  BookOpen, GraduationCap, Heart, Leaf, Stethoscope, Users, Laptop, Compass,
+} from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 
 const items = [
-  { icon: Globe2, label: "Regions & Chapters Active", desc: "Across African regions and the diaspora" },
-  { icon: GraduationCap, label: "Students & Schools Supported", desc: "Through programs, chapters, and funded initiatives" },
-  { icon: Handshake, label: "CSR & Funding Partners", desc: "Organizations supporting education through CSR and collaboration" },
-  { icon: Trophy, label: "Education Change Makers", desc: "Honoured through NESA-Africa recognition" },
-  { icon: HeartHandshake, label: "Volunteers & Ambassadors", desc: "Members driving advocacy on the ground" },
-  { icon: School, label: "Schools Rebuilt", desc: "Renewed and equipped through Rebuild My School Africa" },
-  { icon: Users, label: "Teachers Trained", desc: "Through EduAid-Africa monthly capacity programs" },
-  { icon: Building2, label: "Schools Registered for Training", desc: "Onboarded for SCEF training and adopt-a-school" },
-  { icon: Compass, label: "Students Reached via MCML", desc: "Through My Career My Life advocacy sessions" },
-  { icon: Mic, label: "Career Sessions Delivered", desc: "Live webinars, school visits and recorded segments" },
+  { icon: BookOpen, label: "Education Access", desc: "Removing barriers to quality learning" },
+  { icon: GraduationCap, label: "Teacher Development", desc: "Training, mentoring and wellbeing for educators" },
+  { icon: Heart, label: "Girls & Women Education", desc: "Equity, safeguarding and leadership pathways" },
+  { icon: Leaf, label: "ESG & Sustainability", desc: "Green schools, climate literacy, social impact" },
+  { icon: Stethoscope, label: "Health Education Advocacy", desc: "Schools as safe, healthy spaces" },
+  { icon: Users, label: "Local Chapter Development", desc: "Community-led action across Africa" },
+  { icon: Laptop, label: "Digital Learning", desc: "EOA, eLibrary and technology in classrooms" },
+  { icon: Compass, label: "Youth Career Pathways", desc: "My Career, My Life and TVET tracks" },
 ];
 
 /**
@@ -27,11 +27,11 @@ export const ImpactStripLabels = () => {
             {t("home.impact.eyebrow") || "Our Impact"}
           </p>
           <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight text-scef-blue-darker md:text-[2rem]">
-            {t("home.impact.title") || "Measurable progress across Africa"}
+            {t("home.impact.title") || "Eight focus areas driving Africa's education future"}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-5">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-5">
           {items.map(({ icon: Icon, label, desc }) => (
             <div
               key={label}

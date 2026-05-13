@@ -7,10 +7,10 @@ import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
 
 const pillars = [
   { icon: BookOpen, title: "Education Advocacy", sub: "Expanding access for every learner" },
-  { icon: GraduationCap, title: "Skills & Innovation", sub: "Preparing for real-world impact" },
-  { icon: Users, title: "Inclusion & Equity", sub: "Opening opportunities for all" },
-  { icon: ShieldCheck, title: "Accountability & Funding", sub: "Managing education impact transparently" },
-  { icon: Globe2, title: "Pan-African Impact", sub: "Scaling across regions" },
+  { icon: GraduationCap, title: "Training & Innovation", sub: "Teachers, leaders & learners" },
+  { icon: Users, title: "Health & Inclusion", sub: "Schools as safe, healthy spaces" },
+  { icon: ShieldCheck, title: "ESG & Sustainability", sub: "Green, accountable schools" },
+  { icon: Globe2, title: "Pan-African Impact", sub: "Local chapters, continental reach" },
 ];
 
 /**
@@ -34,13 +34,14 @@ export const LandingHero = () => {
               {t("home.heroV2.eyebrow") || "You Are Welcome to SCEF · Reg. IT-41501"}
             </p>
             <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.75rem]">
-              Advocating and Achieving{" "}
-              <span className="text-scef-gold">Education for All in Africa.</span>
+              Empowering Education.{" "}
+              <span className="text-scef-gold">Advancing Health.</span>{" "}
+              Sustaining Africa's Future.
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
-              Santos Creations Educational Foundation is a Pan-African nonprofit advancing scholarships,
-              school support, school WASH & sanitation, women & girls empowerment, special needs
-              education, training, career guidance and transparent funding.
+              SCEF is a Pan-African membership-based not-for-profit NGO transforming education
+              through advocacy, scholarships, digital learning, local chapters, ESG, health
+              education, and sustainable community impact.
             </p>
 
             {/* Primary CTAs */}
@@ -50,8 +51,8 @@ export const LandingHero = () => {
                 className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
                 asChild
               >
-                <Link to="/donate">
-                  Donate
+                <Link to="/auth/sign-up">
+                  Become a Member
                   <ArrowRight className="ms-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -60,14 +61,14 @@ export const LandingHero = () => {
                 className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
                 asChild
               >
-                <Link to="/nominate">Nominate a School</Link>
+                <Link to="/donate">Donate Now</Link>
               </Button>
               <Button
                 size="lg"
                 className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
                 asChild
               >
-                <Link to="/partner-with-us">Become a Partner</Link>
+                <Link to="/support-us#sponsor-nesa">Sponsor NESA-Africa</Link>
               </Button>
             </div>
 
@@ -79,7 +80,7 @@ export const LandingHero = () => {
                 className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
                 asChild
               >
-                <Link to="/chapters/join-online">Join a Chapter</Link>
+                <Link to="/programs/eduaid-africa">Explore EduAid-Africa</Link>
               </Button>
               <Button
                 size="sm"
@@ -87,7 +88,15 @@ export const LandingHero = () => {
                 className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
                 asChild
               >
-                <Link to="/programs/eduaid-africa#register-school">Register Your School</Link>
+                <Link to="/chapters/join-online">Join a Local Chapter</Link>
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
+                asChild
+              >
+                <Link to="/calendar">View Monthly Calendar</Link>
               </Button>
               <QuickJumpMenu variant="dark" />
             </div>
