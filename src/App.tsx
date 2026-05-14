@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
+import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import LocalChapters from "./pages/LocalChapters";
 import JoinOnline from "./pages/chapters/JoinOnline";
@@ -215,6 +216,7 @@ const App = () => (
               
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
+              <Route path="/impact" element={<Impact />} />
               <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
               <Route path="/programs/nesa-africa/timeline" element={<NesaTimeline2026 />} />
               <Route path="/nesa-africa/timeline" element={<NesaTimeline2026 />} />
