@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
@@ -274,6 +275,12 @@ const RebuildMySchoolAfrica = () => {
           </section>
         </main>
         
+        <ProgramAccountsSection
+          groupIds={['eduaid']}
+          title="Rebuild My School Africa — Verified Accounts"
+          description="Adopt a school or fund infrastructure projects through the verified EduAid-Africa Providus Bank accounts."
+          showFilters
+        />
         <Footer />
       </div>
     </>

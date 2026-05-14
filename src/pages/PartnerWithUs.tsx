@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -445,6 +446,12 @@ const PartnerWithUs = () => {
           
         </main>
 
+        <ProgramAccountsSection
+          groupIds={['scef', 'eduaid', 'nesa', 'gfa']}
+          title="Verified Partnership Payment Channels"
+          description="Corporate partners and CSR funders can route contributions through any verified Providus Bank account in the SCEF ecosystem."
+          showFilters
+        />
         <Footer />
       </div>
     </>

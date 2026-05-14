@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
@@ -1253,6 +1254,12 @@ const NESAAfrica = () => {
           </section>
         </main>
         
+        <ProgramAccountsSection
+          groupIds={['nesa']}
+          title="Sponsor NESA-Africa — Verified Accounts"
+          description="Sponsor awards, gala tickets, NESA TV and recognition campaigns through the verified NESA-Africa Providus Bank accounts."
+          showFilters
+        />
         <Footer />
       </div>
     </>
