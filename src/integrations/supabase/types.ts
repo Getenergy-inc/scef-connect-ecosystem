@@ -2659,6 +2659,280 @@ export type Database = {
         }
         Relationships: []
       }
+      sophia_conversations: {
+        Row: {
+          assigned_to: string | null
+          channel: string
+          confidence_score: number | null
+          created_at: string
+          detected_intent: string | null
+          escalation_department: string | null
+          escalation_required: boolean
+          id: string
+          matched_faq_id: string | null
+          question_text: string
+          response_text: string | null
+          status: string
+          updated_at: string
+          user_email: string | null
+          user_id: string | null
+          user_name: string | null
+          user_phone: string | null
+        }
+        Insert: {
+          assigned_to?: string | null
+          channel: string
+          confidence_score?: number | null
+          created_at?: string
+          detected_intent?: string | null
+          escalation_department?: string | null
+          escalation_required?: boolean
+          id?: string
+          matched_faq_id?: string | null
+          question_text: string
+          response_text?: string | null
+          status?: string
+          updated_at?: string
+          user_email?: string | null
+          user_id?: string | null
+          user_name?: string | null
+          user_phone?: string | null
+        }
+        Update: {
+          assigned_to?: string | null
+          channel?: string
+          confidence_score?: number | null
+          created_at?: string
+          detected_intent?: string | null
+          escalation_department?: string | null
+          escalation_required?: boolean
+          id?: string
+          matched_faq_id?: string | null
+          question_text?: string
+          response_text?: string | null
+          status?: string
+          updated_at?: string
+          user_email?: string | null
+          user_id?: string | null
+          user_name?: string | null
+          user_phone?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sophia_conversations_matched_faq_id_fkey"
+            columns: ["matched_faq_id"]
+            isOneToOne: false
+            referencedRelation: "sophia_faqs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sophia_faq_categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          display_order: number
+          icon: string | null
+          id: string
+          is_active: boolean
+          name: string
+          slug: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          slug: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          slug?: string
+        }
+        Relationships: []
+      }
+      sophia_faq_feedback: {
+        Row: {
+          channel: string | null
+          comment: string | null
+          created_at: string
+          faq_id: string
+          id: string
+          rating: number | null
+          user_identifier: string | null
+          was_helpful: boolean | null
+        }
+        Insert: {
+          channel?: string | null
+          comment?: string | null
+          created_at?: string
+          faq_id: string
+          id?: string
+          rating?: number | null
+          user_identifier?: string | null
+          was_helpful?: boolean | null
+        }
+        Update: {
+          channel?: string | null
+          comment?: string | null
+          created_at?: string
+          faq_id?: string
+          id?: string
+          rating?: number | null
+          user_identifier?: string | null
+          was_helpful?: boolean | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sophia_faq_feedback_faq_id_fkey"
+            columns: ["faq_id"]
+            isOneToOne: false
+            referencedRelation: "sophia_faqs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sophia_faqs: {
+        Row: {
+          audience_type: string | null
+          category: string
+          created_at: string
+          created_by: string | null
+          escalation_department: string | null
+          escalation_required: boolean
+          faq_number: number | null
+          full_answer: string | null
+          id: string
+          keywords: string[] | null
+          language: string
+          priority_level: string
+          question: string
+          related_program: string | null
+          related_url: string | null
+          short_answer: string
+          source: string | null
+          status: string
+          subcategory: string | null
+          support_channel: string | null
+          updated_at: string
+          updated_by: string | null
+          view_count: number
+        }
+        Insert: {
+          audience_type?: string | null
+          category: string
+          created_at?: string
+          created_by?: string | null
+          escalation_department?: string | null
+          escalation_required?: boolean
+          faq_number?: number | null
+          full_answer?: string | null
+          id?: string
+          keywords?: string[] | null
+          language?: string
+          priority_level?: string
+          question: string
+          related_program?: string | null
+          related_url?: string | null
+          short_answer: string
+          source?: string | null
+          status?: string
+          subcategory?: string | null
+          support_channel?: string | null
+          updated_at?: string
+          updated_by?: string | null
+          view_count?: number
+        }
+        Update: {
+          audience_type?: string | null
+          category?: string
+          created_at?: string
+          created_by?: string | null
+          escalation_department?: string | null
+          escalation_required?: boolean
+          faq_number?: number | null
+          full_answer?: string | null
+          id?: string
+          keywords?: string[] | null
+          language?: string
+          priority_level?: string
+          question?: string
+          related_program?: string | null
+          related_url?: string | null
+          short_answer?: string
+          source?: string | null
+          status?: string
+          subcategory?: string | null
+          support_channel?: string | null
+          updated_at?: string
+          updated_by?: string | null
+          view_count?: number
+        }
+        Relationships: []
+      }
+      sophia_unanswered_questions: {
+        Row: {
+          admin_notes: string | null
+          conversation_id: string | null
+          converted_to_faq_id: string | null
+          created_at: string
+          id: string
+          question_text: string
+          status: string
+          suggested_category: string | null
+          updated_at: string
+          user_contact: string | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          conversation_id?: string | null
+          converted_to_faq_id?: string | null
+          created_at?: string
+          id?: string
+          question_text: string
+          status?: string
+          suggested_category?: string | null
+          updated_at?: string
+          user_contact?: string | null
+        }
+        Update: {
+          admin_notes?: string | null
+          conversation_id?: string | null
+          converted_to_faq_id?: string | null
+          created_at?: string
+          id?: string
+          question_text?: string
+          status?: string
+          suggested_category?: string | null
+          updated_at?: string
+          user_contact?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sophia_unanswered_questions_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "sophia_conversations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sophia_unanswered_questions_converted_to_faq_id_fkey"
+            columns: ["converted_to_faq_id"]
+            isOneToOne: false
+            referencedRelation: "sophia_faqs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       sponsor_profiles: {
         Row: {
           budget_range: string | null
