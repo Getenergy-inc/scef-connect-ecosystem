@@ -158,18 +158,25 @@ export default function OfficialAccountsPage() {
               </div>
               {recommended.length > 0 && (
                 <div className="mt-8 rounded-2xl border-2 border-scef-gold/30 bg-scef-gold/5 p-6">
-                  <p className="text-sm text-muted-foreground mb-3">
-                    For <strong className="text-scef-blue-darker">{purpose}</strong>, use the
-                    following account group{recommended.length > 1 ? "s" : ""}:
+                  <p className="text-sm text-muted-foreground mb-4">
+                    For <strong className="text-scef-blue-darker">{purpose}</strong>, GFA Wallet
+                    routes your payment to the correct program account
+                    {recommended.length > 1 ? "s" : ""}: {recommended.map((g) => g.shortName).join(", ")}.
                   </p>
                   <div className="flex flex-wrap gap-3">
+                    <Link
+                      to={`/wallet/donate?purpose=${encodeURIComponent(purpose)}&fund=${recommended[0].id}`}
+                      className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker text-sm font-semibold px-5 py-2.5 hover:bg-scef-gold-hover"
+                    >
+                      <Wallet className="h-4 w-4" /> Pay via GFA Wallet
+                    </Link>
                     {recommended.map((g) => (
                       <a
                         key={g.id}
                         href={`#account-${g.id}`}
-                        className="inline-flex items-center gap-2 rounded-lg bg-scef-blue-darker text-white text-sm font-semibold px-4 py-2 hover:bg-scef-blue"
+                        className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-blue-darker text-scef-blue-darker text-sm font-semibold px-4 py-2 hover:bg-scef-blue-darker hover:text-white"
                       >
-                        {g.shortName} <ArrowRight className="h-4 w-4" />
+                        <Landmark className="h-4 w-4" /> {g.shortName} Bank
                       </a>
                     ))}
                   </div>
