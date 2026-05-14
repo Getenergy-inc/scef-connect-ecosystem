@@ -40,24 +40,17 @@ const Home = () => {
           {/* Quick Actions Bar */}
           <QuickActionsBar />
 
-          {/* (NESA + EduAid Master Timelines moved below FeaturedPrograms) */}
-
-          {/* 2. IMPACT / TRUST — 8 focus areas, qualitative */}
-          <Reveal>
-            <ImpactStripLabels />
-          </Reveal>
-
-          {/* 3. FEATURED PROGRAMS — 7 cards, Learn More + Support */}
-          <div id="core-services">
-            <Reveal>
-              <FeaturedPrograms />
-            </Reveal>
-          </div>
-
           {/* NESA-Africa + EduAid-Africa Master Timelines 2026–2027 */}
           <Reveal>
             <MasterTimelinesDuo />
           </Reveal>
+
+          {/* Compact Impact + Programs summary cards (full content lives on /impact and /programs) */}
+          <div id="core-services">
+            <Reveal>
+              <HomeSummaryCards />
+            </Reveal>
+          </div>
 
           {/* Premium story cards: Journey, Calendar, Support, Chapters, Partners, Training, Channels */}
           <Reveal>
