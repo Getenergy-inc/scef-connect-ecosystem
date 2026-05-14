@@ -74,24 +74,33 @@ const SupportUs = () => {
             <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
             <div className="container mx-auto px-4 relative z-10 max-w-4xl text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-6">
-                Support & Payment Options
+                Support SCEF Through GFA Wallet
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
-                Choose How You Want to Support{" "}
-                <span className="text-scef-gold">Africa's Education Future</span>
+                Pay, Donate, and Sponsor{" "}
+                <span className="text-scef-gold">via GFA Wallet</span>
               </h1>
               <p className="text-lg md:text-xl text-white/75 max-w-3xl mx-auto leading-relaxed">
-                Support SCEF, NESA-Africa, and EduAid-Africa through scholarships, school rebuilding, career guidance, digital library access, advocacy, training, awards, merchandise, gala tickets, edu-tourism, and event hosting partnerships.
+                Make secure payments, donations, sponsorships, registrations, memberships, and
+                program contributions through the GFA Wallet. Bank transfer details remain
+                available for manual payments and institutional partners.
               </p>
               <p className="mt-6 text-sm text-white/60">
-                All payments are processed securely through the GFA Wallet (Paystack, Flutterwave, Bancable, TranscertPay).
+                GFA Wallet routes funds to the correct SCEF, EduAid-Africa, NESA-Africa, or
+                technology program account — with receipts and donor reporting.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <Link to="/payments" className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover">
-                  View Official Bank Accounts <ArrowRight className="h-4 w-4" />
+                <Link to="/wallet/donate" className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover">
+                  Pay via GFA Wallet <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link to="/wallet/donate" className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10">
+                <Link to="/wallet/donate?fund=scef" className="inline-flex items-center gap-2 rounded-lg bg-white/10 border-2 border-scef-gold/40 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/15">
                   Donate via GFA Wallet
+                </Link>
+                <Link to="/payments#official-accounts" className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10">
+                  View Bank Transfer Details
+                </Link>
+                <Link to="/payments#confirm-payment" className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 text-white px-5 py-3 text-sm font-semibold hover:bg-white/10">
+                  Upload Proof of Payment
                 </Link>
               </div>
             </div>

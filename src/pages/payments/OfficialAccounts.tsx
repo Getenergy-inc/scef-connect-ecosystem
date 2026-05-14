@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import OfficialAccountsTable from "@/components/payments/OfficialAccountsTable";
 import PaymentConfirmationForm from "@/components/payments/PaymentConfirmationForm";
+import GFAWalletPaySection from "@/components/payments/GFAWalletPaySection";
 import {
   AccountGroupId,
   accountGroupById,
@@ -21,15 +22,16 @@ import {
   FileCheck2,
   Receipt,
   ClipboardList,
+  Wallet,
+  Landmark,
+  Upload,
 } from "lucide-react";
 
 const heroCtas = [
-  { label: "Donate Now", to: "/wallet/donate", primary: true },
-  { label: "Sponsor NESA-Africa", to: "/wallet/donate?fund=nesa-africa" },
-  { label: "Support EduAid-Africa", to: "/wallet/donate?fund=eduaid" },
-  { label: "Pay Membership Fee", to: "/membership" },
-  { label: "Become a Partner", to: "/partner-with-us" },
-  { label: "View Official Accounts", to: "#official-accounts" },
+  { label: "Pay via GFA Wallet", to: "/wallet/donate", primary: true, icon: Wallet },
+  { label: "Donate via GFA Wallet", to: "/wallet/donate?fund=scef", icon: Wallet },
+  { label: "View Bank Transfer Details", to: "#official-accounts", icon: Landmark },
+  { label: "Upload Proof of Payment", to: "#confirm-payment", icon: Upload },
 ];
 
 const categoryCards = [
@@ -80,10 +82,10 @@ export default function OfficialAccountsPage() {
   return (
     <>
       <Helmet>
-        <title>Official Donation, Sponsorship & Payment Channels — SCEF</title>
+        <title>Support SCEF Through GFA Wallet — Payments & Bank Transfer</title>
         <meta
           name="description"
-          content="Verified Providus Bank accounts for donations, memberships, sponsorships, scholarships, training, advocacy, school support, awards, and digital education infrastructure across the SCEF ecosystem."
+          content="Make secure payments, donations, sponsorships, registrations, memberships, and program contributions through GFA Wallet. Verified Providus Bank transfer details remain available for manual and institutional payments."
         />
         <link rel="canonical" href="https://santoscreations.org/payments" />
       </Helmet>
@@ -96,35 +98,43 @@ export default function OfficialAccountsPage() {
             <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
             <div className="container mx-auto px-4 relative z-10 max-w-5xl text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-6">
-                <ShieldCheck className="h-3.5 w-3.5" /> Verified Payment Channels
+                <Wallet className="h-3.5 w-3.5" /> Powered by GFA Wallet
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
-                Official Donation, Sponsorship &{" "}
-                <span className="text-scef-gold">Payment Channels</span>
+                Support SCEF Through{" "}
+                <span className="text-scef-gold">GFA Wallet</span>
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                Support SCEF, EduAid-Africa, NESA-Africa, and GFA Wallet through
-                verified Providus Bank accounts for donations, memberships,
-                sponsorships, scholarships, training, advocacy, school support,
-                awards, and digital education infrastructure.
+                Make secure payments, donations, sponsorships, registrations, memberships, and
+                program contributions through the GFA Wallet. Bank transfer details remain
+                available for manual payments and institutional partners.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                {heroCtas.map((c) => (
-                  <Link
-                    key={c.label}
-                    to={c.to}
-                    className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
-                      c.primary
-                        ? "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover"
-                        : "border-2 border-scef-gold/50 text-white hover:bg-scef-gold/10"
-                    }`}
-                  >
-                    {c.label} <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
+                {heroCtas.map((c) => {
+                  const Icon = c.icon;
+                  return (
+                    <Link
+                      key={c.label}
+                      to={c.to}
+                      className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
+                        c.primary
+                          ? "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover"
+                          : "border-2 border-scef-gold/50 text-white hover:bg-scef-gold/10"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" /> {c.label}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>
+
+          {/* GFA Wallet primary payment block */}
+          <GFAWalletPaySection
+            title="Pay Securely via GFA Wallet"
+            description="GFA Wallet is the recommended payment option for faster tracking, official receipts, and program reporting. Manual bank transfer remains available below for institutional and corporate payments."
+          />
 
           {/* Section 1: Purpose Selector */}
           <section className="py-16">
@@ -154,18 +164,25 @@ export default function OfficialAccountsPage() {
               </div>
               {recommended.length > 0 && (
                 <div className="mt-8 rounded-2xl border-2 border-scef-gold/30 bg-scef-gold/5 p-6">
-                  <p className="text-sm text-muted-foreground mb-3">
-                    For <strong className="text-scef-blue-darker">{purpose}</strong>, use the
-                    following account group{recommended.length > 1 ? "s" : ""}:
+                  <p className="text-sm text-muted-foreground mb-4">
+                    For <strong className="text-scef-blue-darker">{purpose}</strong>, GFA Wallet
+                    routes your payment to the correct program account
+                    {recommended.length > 1 ? "s" : ""}: {recommended.map((g) => g.shortName).join(", ")}.
                   </p>
                   <div className="flex flex-wrap gap-3">
+                    <Link
+                      to={`/wallet/donate?purpose=${encodeURIComponent(purpose)}&fund=${recommended[0].id}`}
+                      className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker text-sm font-semibold px-5 py-2.5 hover:bg-scef-gold-hover"
+                    >
+                      <Wallet className="h-4 w-4" /> Pay via GFA Wallet
+                    </Link>
                     {recommended.map((g) => (
                       <a
                         key={g.id}
                         href={`#account-${g.id}`}
-                        className="inline-flex items-center gap-2 rounded-lg bg-scef-blue-darker text-white text-sm font-semibold px-4 py-2 hover:bg-scef-blue"
+                        className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-blue-darker text-scef-blue-darker text-sm font-semibold px-4 py-2 hover:bg-scef-blue-darker hover:text-white"
                       >
-                        {g.shortName} <ArrowRight className="h-4 w-4" />
+                        <Landmark className="h-4 w-4" /> {g.shortName} Bank
                       </a>
                     ))}
                   </div>
@@ -210,12 +227,17 @@ export default function OfficialAccountsPage() {
           <section id="official-accounts" className="py-16">
             <div className="container mx-auto px-4 max-w-7xl">
               <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-scef-blue/10 ring-1 ring-scef-blue/20 text-scef-blue-darker text-[11px] font-semibold uppercase tracking-widest mb-3">
+                  <Landmark className="h-3.5 w-3.5" /> Manual Bank Transfer Option
+                </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-scef-blue-darker">
-                  Verified Providus Bank Accounts
+                  Official Bank Transfer Details
                 </h2>
                 <p className="text-muted-foreground mt-3 max-w-3xl mx-auto">
-                  All listed accounts are official verified accounts for the SCEF ecosystem.
-                  Payments should only be made through the verified accounts shown on this page.
+                  GFA Wallet is the recommended payment option for faster tracking, receipts, and
+                  program reporting. Manual bank transfer remains available through verified
+                  Providus Bank accounts. Payments should only be made through the verified
+                  accounts shown on this page.
                 </p>
               </div>
               <div className="space-y-8">
