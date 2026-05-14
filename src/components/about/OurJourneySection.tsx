@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { X, Pencil, Save, RotateCcw } from "lucide-react";
 import foundations from "@/assets/legacy/scef-foundations-team.jpg";
 import exchange from "@/assets/legacy/scef-international-exchange.jpg";
 import community from "@/assets/legacy/scef-community-learning-2009.jpg";
 import leadership from "@/assets/legacy/scef-leadership-collaboration.jpg";
 
 interface Story {
+  id: string;
   src: string;
   title: string;
   label: string;
@@ -14,8 +15,9 @@ interface Story {
   tags: string[];
 }
 
-const stories: Story[] = [
+const defaultStories: Story[] = [
   {
+    id: "foundations",
     src: foundations,
     title: "Foundations of the Vision",
     label: "Early SCEF Contributors",
@@ -25,6 +27,7 @@ const stories: Story[] = [
     tags: ["Education Leadership", "Community Advocacy", "Pan-African Vision", "Grassroots Impact"],
   },
   {
+    id: "community",
     src: community,
     title: "Global Connections & Community Learning",
     label: "International Education Exchange",
@@ -34,17 +37,21 @@ const stories: Story[] = [
     tags: ["International Collaboration", "Youth Development", "Volunteer Engagement", "Education Exchange"],
   },
   {
+    id: "exchange",
     src: exchange,
     title: "Cross-Cultural Solidarity",
     label: "Legacy Volunteers",
+    badge: "Since 2007",
     description:
       "Solidarity moments with partners and volunteers from across continents — strengthening SCEF's commitment to inclusive, dignity-driven education advocacy.",
     tags: ["Global Partners", "Solidarity", "Advocacy"],
   },
   {
+    id: "leadership",
     src: leadership,
     title: "Building the Future Together",
     label: "Community Leadership",
+    badge: "Since 2007",
     description:
       "Today, SCEF continues to grow through partnerships, local chapters, ambassadors, educators, volunteers, media advocates, and supporters working together to empower Africa's future.",
     tags: ["Leadership", "Partnerships", "Local Chapters", "Educational Innovation"],
@@ -59,8 +66,60 @@ const milestones = [
   { year: "2025+", text: "Continental expansion through EduAid-Africa, NESA-Africa, ESG advocacy, local chapters, and GFA Wallet innovation" },
 ];
 
+const STORAGE_KEY = "scef.ourJourney.overrides.v1";
+
+type Override = Partial<Pick<Story, "label" | "badge" | "description">> & { showBadge?: boolean };
+type Overrides = Record<string, Override>;
+
+function loadOverrides(): Overrides {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
 export default function OurJourneySection() {
   const [lightbox, setLightbox] = useState<Story | null>(null);
+  const [overrides, setOverrides] = useState<Overrides>({});
+  const [editMode, setEditMode] = useState(false);
+  const [editing, setEditing] = useState<string | null>(null);
+
+  useEffect(() => {
+    setOverrides(loadOverrides());
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("edit") === "1") setEditMode(true);
+    }
+  }, []);
+
+  const stories = useMemo<Story[]>(
+    () =>
+      defaultStories.map((s) => {
+        const o = overrides[s.id] || {};
+        return {
+          ...s,
+          label: o.label ?? s.label,
+          description: o.description ?? s.description,
+          badge: o.showBadge === false ? undefined : (o.badge ?? s.badge),
+        };
+      }),
+    [overrides]
+  );
+
+  const saveOverride = (id: string, patch: Override) => {
+    const next = { ...overrides, [id]: { ...overrides[id], ...patch } };
+    setOverrides(next);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  };
+
+  const resetOverride = (id: string) => {
+    const next = { ...overrides };
+    delete next[id];
+    setOverrides(next);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  };
 
   return (
     <section id="our-journey" className="py-20 bg-background border-y border-border">
@@ -77,20 +136,47 @@ export default function OurJourneySection() {
             powered by passionate educators, volunteers, youth leaders, development advocates, and
             global contributors since 2007.
           </p>
+
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <button
+              onClick={() => setEditMode((v) => !v)}
+              className={`inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors ${
+                editMode
+                  ? "bg-scef-gold text-scef-blue-darker border-scef-gold"
+                  : "bg-transparent text-muted-foreground border-border hover:border-scef-gold/60"
+              }`}
+              aria-pressed={editMode}
+            >
+              <Pencil className="w-3.5 h-3.5" />
+              {editMode ? "Editing captions — click a card" : "Edit captions"}
+            </button>
+            {editMode && Object.keys(overrides).length > 0 && (
+              <button
+                onClick={() => {
+                  localStorage.removeItem(STORAGE_KEY);
+                  setOverrides({});
+                }}
+                className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full border border-border text-muted-foreground hover:text-foreground"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                Reset all
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Storytelling gallery */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {stories.map((s, i) => (
             <article
-              key={s.title}
+              key={s.id}
               className={`group relative rounded-2xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-500 ${
                 i === 0 ? "lg:col-span-2 lg:row-span-2" : ""
               }`}
             >
               <button
-                onClick={() => setLightbox(s)}
-                aria-label={`Open ${s.title}`}
+                onClick={() => (editMode ? setEditing(s.id) : setLightbox(s))}
+                aria-label={editMode ? `Edit ${s.title}` : `Open ${s.title}`}
                 className="block w-full text-left"
               >
                 <div className={`relative overflow-hidden ${i === 0 ? "aspect-[4/3] lg:aspect-[16/11]" : "aspect-[4/3]"}`}>
@@ -110,6 +196,12 @@ export default function OurJourneySection() {
                   <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-scef-blue-darker text-[10px] font-semibold px-2 py-1 rounded uppercase tracking-wider">
                     {s.label}
                   </span>
+
+                  {editMode && (
+                    <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 bg-scef-gold text-scef-blue-darker text-[10px] font-bold px-2 py-1 rounded-full shadow">
+                      <Pencil className="w-3 h-3" /> Click to edit
+                    </span>
+                  )}
 
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                     <h3 className="font-display text-lg md:text-xl font-bold mb-1.5 leading-tight">
@@ -192,6 +284,137 @@ export default function OurJourneySection() {
           </div>
         </div>
       )}
+
+      {/* Edit modal */}
+      {editing && (
+        <EditCaptionModal
+          story={stories.find((s) => s.id === editing)!}
+          onClose={() => setEditing(null)}
+          onSave={(patch) => {
+            saveOverride(editing, patch);
+            setEditing(null);
+          }}
+          onReset={() => {
+            resetOverride(editing);
+            setEditing(null);
+          }}
+        />
+      )}
     </section>
+  );
+}
+
+function EditCaptionModal({
+  story,
+  onClose,
+  onSave,
+  onReset,
+}: {
+  story: Story;
+  onClose: () => void;
+  onSave: (patch: Override) => void;
+  onReset: () => void;
+}) {
+  const [label, setLabel] = useState(story.label);
+  const [description, setDescription] = useState(story.description);
+  const [badge, setBadge] = useState(story.badge ?? "Since 2007");
+  const [showBadge, setShowBadge] = useState(Boolean(story.badge));
+
+  return (
+    <div
+      role="dialog"
+      aria-label={`Edit ${story.title}`}
+      onClick={onClose}
+      className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 animate-fade-in"
+    >
+      <div
+        className="bg-card border border-border rounded-2xl shadow-2xl w-full max-w-lg p-6"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <p className="text-xs uppercase tracking-wider text-scef-gold font-semibold">Edit caption</p>
+            <h4 className="font-display text-lg font-bold text-scef-blue-darker">{story.title}</h4>
+          </div>
+          <button onClick={onClose} aria-label="Close" className="p-1 rounded hover:bg-muted">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <label className="block text-xs font-semibold text-foreground mb-1">Photo caption / label</label>
+            <input
+              value={label}
+              onChange={(e) => setLabel(e.target.value)}
+              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-scef-gold"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-foreground mb-1">Description</label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows={4}
+              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-scef-gold"
+            />
+          </div>
+
+          <div>
+            <label className="flex items-center gap-2 text-xs font-semibold text-foreground mb-2">
+              <input
+                type="checkbox"
+                checked={showBadge}
+                onChange={(e) => setShowBadge(e.target.checked)}
+                className="rounded"
+              />
+              Show date badge
+            </label>
+            <input
+              value={badge}
+              onChange={(e) => setBadge(e.target.value)}
+              disabled={!showBadge}
+              placeholder="e.g. Since 2007 or 2009"
+              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-scef-gold disabled:opacity-50"
+            />
+          </div>
+        </div>
+
+        <div className="mt-6 flex items-center justify-between gap-3">
+          <button
+            onClick={onReset}
+            className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-2 rounded-md border border-border text-muted-foreground hover:text-foreground"
+          >
+            <RotateCcw className="w-3.5 h-3.5" /> Reset to default
+          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onClose}
+              className="text-sm font-semibold px-4 py-2 rounded-md border border-border hover:bg-muted"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() =>
+                onSave({
+                  label: label.trim(),
+                  description: description.trim(),
+                  badge: badge.trim() || undefined,
+                  showBadge,
+                })
+              }
+              className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-md bg-scef-gold text-scef-blue-darker hover:opacity-90"
+            >
+              <Save className="w-4 h-4" /> Save
+            </button>
+          </div>
+        </div>
+
+        <p className="text-[11px] text-muted-foreground mt-4">
+          Edits are saved on this device. Use Reset to restore the original caption.
+        </p>
+      </div>
+    </div>
   );
 }
