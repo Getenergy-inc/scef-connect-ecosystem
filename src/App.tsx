@@ -210,6 +210,8 @@ const App = () => (
             <RouteIndicator />
             <Routes>
               {/* Core Routes */}
+              <Route path="/support/faqs" element={<SophiaFAQs />} />
+              <Route path="/admin/sophia-faqs" element={<SophiaFAQAdmin />} />
               <Route path="/" element={<Home />} />
               <Route path="/welcome" element={<Welcome />} />
               <Route path="/welcome-classic" element={<Index />} />
