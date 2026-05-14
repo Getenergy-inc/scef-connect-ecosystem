@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import OfficialAccountsTable from "@/components/payments/OfficialAccountsTable";
 import PaymentConfirmationForm from "@/components/payments/PaymentConfirmationForm";
+import GFAWalletPaySection from "@/components/payments/GFAWalletPaySection";
 import {
   AccountGroupId,
   accountGroupById,
@@ -21,15 +22,16 @@ import {
   FileCheck2,
   Receipt,
   ClipboardList,
+  Wallet,
+  Landmark,
+  Upload,
 } from "lucide-react";
 
 const heroCtas = [
-  { label: "Donate Now", to: "/wallet/donate", primary: true },
-  { label: "Sponsor NESA-Africa", to: "/wallet/donate?fund=nesa-africa" },
-  { label: "Support EduAid-Africa", to: "/wallet/donate?fund=eduaid" },
-  { label: "Pay Membership Fee", to: "/membership" },
-  { label: "Become a Partner", to: "/partner-with-us" },
-  { label: "View Official Accounts", to: "#official-accounts" },
+  { label: "Pay via GFA Wallet", to: "/wallet/donate", primary: true, icon: Wallet },
+  { label: "Donate via GFA Wallet", to: "/wallet/donate?fund=scef", icon: Wallet },
+  { label: "View Bank Transfer Details", to: "#official-accounts", icon: Landmark },
+  { label: "Upload Proof of Payment", to: "#confirm-payment", icon: Upload },
 ];
 
 const categoryCards = [
