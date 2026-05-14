@@ -130,6 +130,12 @@ export default function OfficialAccountsPage() {
             </div>
           </section>
 
+          {/* GFA Wallet primary payment block */}
+          <GFAWalletPaySection
+            title="Pay Securely via GFA Wallet"
+            description="GFA Wallet is the recommended payment option for faster tracking, official receipts, and program reporting. Manual bank transfer remains available below for institutional and corporate payments."
+          />
+
           {/* Section 1: Purpose Selector */}
           <section className="py-16">
             <div className="container mx-auto px-4 max-w-5xl">
