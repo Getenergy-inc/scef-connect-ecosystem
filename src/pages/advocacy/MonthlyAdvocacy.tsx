@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { monthlyPrograms } from "@/config/monthlyCalendar";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 
 const MonthlyAdvocacy = () => (
   <PageShell
