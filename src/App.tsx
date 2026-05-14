@@ -423,7 +423,7 @@ const App = () => (
               <Route path="/get-involved/internships" element={<ComingSoon title="Internship Opportunities" description="Structured internships across SCEF programs, divisions and chapters." />} />
               <Route path="/get-involved/referral-rewards" element={<ComingSoon title="Referral & Rewards" description="Grow the SCEF network — earn recognition and member benefits." />} />
               <Route path="/support-us/bid-to-host" element={<ComingSoon title="Bid to Host Next Event" description="Host an SCEF gala, summit or training week in your city or country." />} />
-              <Route path="/support-us/bank-accounts" element={<ComingSoon title="Official Bank Accounts" description="Verified SCEF payment channels for donations, sponsorships and fees." />} />
+              
               <Route path="/support-us/merchandise" element={<ComingSoon title="Buy Merchandise" description="Branded SCEF apparel and education-positive merchandise." />} />
               <Route path="/support-us/gala-tickets" element={<ComingSoon title="Award Gala Tickets" description="Reserve your seat at the next NESA-Africa awards gala." />} />
               <Route path="/media/archive" element={<MediaArchive />} />
