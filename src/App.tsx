@@ -26,6 +26,7 @@ import DonationSuccess from "./pages/DonationSuccess";
 import Wallet from "./pages/Wallet";
 import GetInvolved from "./pages/GetInvolved";
 import SupportUs from "./pages/SupportUs";
+import OfficialAccountsPage from "./pages/payments/OfficialAccounts";
 import Join from "./pages/Join";
 import Membership from "./pages/Membership";
 import Governance from "./pages/Governance";
