@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, Shirt, Utensils, GraduationCap } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/button";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 
 const includes = [
   { icon: GraduationCap, label: "School fees for one academic year" },
