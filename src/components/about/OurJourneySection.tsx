@@ -393,3 +393,118 @@ function EditCaptionModal({
     </div>
   );
 }
+
+function MovementTimeline({ milestones }: { milestones: { year: string; text: string }[] }) {
+  const [revealed, setRevealed] = useState<Set<number>>(new Set());
+  const [lineProgress, setLineProgress] = useState(0);
+  const containerRef = (typeof window !== "undefined" ? require("react") : null) as never;
+
+  const itemRefs = useMemo(
+    () => milestones.map(() => ({ current: null as HTMLDivElement | null })),
+    [milestones.length]
+  );
+  const wrapperRef = useMemo(() => ({ current: null as HTMLDivElement | null }), []);
+
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReduced) {
+      setRevealed(new Set(milestones.map((_, i) => i)));
+      setLineProgress(100);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = Number((entry.target as HTMLElement).dataset.idx);
+            setRevealed((prev) => {
+              if (prev.has(idx)) return prev;
+              const next = new Set(prev);
+              next.add(idx);
+              return next;
+            });
+          }
+        });
+      },
+      { threshold: 0.35, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    itemRefs.forEach((r) => r.current && observer.observe(r.current));
+
+    const onScroll = () => {
+      const el = wrapperRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = rect.height + vh * 0.6;
+      const scrolled = Math.min(Math.max(vh - rect.top, 0), total);
+      setLineProgress(Math.min(100, (scrolled / total) * 100));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [itemRefs, milestones.length, wrapperRef]);
+
+  return (
+    <div className="mt-16">
+      <h3 className="font-display text-xl font-bold text-scef-blue-darker text-center mb-8">
+        SCEF Movement Timeline
+      </h3>
+      <div className="relative" ref={(el) => (wrapperRef.current = el)}>
+        {/* Track */}
+        <div
+          className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-scef-gold/15 md:-translate-x-1/2"
+          aria-hidden
+        />
+        {/* Animated progress line */}
+        <div
+          className="absolute left-4 md:left-1/2 top-0 w-0.5 bg-scef-gold md:-translate-x-1/2 transition-[height] duration-500 ease-out"
+          style={{ height: `${lineProgress}%` }}
+          aria-hidden
+        />
+        <div className="space-y-6">
+          {milestones.map((m, idx) => {
+            const isRevealed = revealed.has(idx);
+            return (
+              <div
+                key={m.year}
+                ref={(el) => (itemRefs[idx].current = el)}
+                data-idx={idx}
+                className={`relative flex md:items-center gap-4 md:gap-8 transition-all duration-700 ease-out ${
+                  idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                } ${
+                  isRevealed
+                    ? "opacity-100 translate-y-0"
+                    : `opacity-0 translate-y-6 ${idx % 2 === 0 ? "md:-translate-x-6" : "md:translate-x-6"}`
+                }`}
+                style={{ transitionDelay: isRevealed ? `${idx * 120}ms` : "0ms" }}
+              >
+                <span
+                  className={`absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-scef-gold ring-4 ring-background z-10 transition-transform duration-500 ${
+                    isRevealed ? "scale-100" : "scale-0"
+                  }`}
+                  style={{ transitionDelay: isRevealed ? `${idx * 120 + 150}ms` : "0ms" }}
+                />
+                <div className="hidden md:block flex-1" />
+                <div className="ml-10 md:ml-0 flex-1 bg-card border border-border rounded-xl p-4 md:p-5 shadow-sm">
+                  <div className="text-scef-gold font-bold text-sm mb-1">{m.year}</div>
+                  <p className="text-sm text-foreground/90 leading-relaxed">{m.text}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
