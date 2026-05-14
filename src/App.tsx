@@ -194,6 +194,8 @@ import MediaSubmit from "./pages/media/MediaSubmit";
 import MyMediaSubmissions from "./pages/media/MyMediaSubmissions";
 import AdminMediaSubmissions from "./pages/admin/AdminMediaSubmissions";
 import MasterTimelinesAdminPage from "./pages/admin/MasterTimelinesAdminPage";
+import SophiaFAQs from "./pages/support/SophiaFAQs";
+import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 
 const queryClient = new QueryClient();
 
