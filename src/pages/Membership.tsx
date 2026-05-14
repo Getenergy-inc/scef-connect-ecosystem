@@ -704,6 +704,12 @@ const Membership = () => {
               </Reveal>
             </div>
           </section>
+
+          <ProgramAccountsSection
+            groupIds={["scef"]}
+            title="Pay Your Membership Fee — Verified Accounts"
+            description="Use the verified SCEF Foundation Providus Bank accounts to pay membership and ambassador fees."
+          />
         </main>
 
         <Footer />
