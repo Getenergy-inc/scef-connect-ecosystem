@@ -194,6 +194,8 @@ import MediaSubmit from "./pages/media/MediaSubmit";
 import MyMediaSubmissions from "./pages/media/MyMediaSubmissions";
 import AdminMediaSubmissions from "./pages/admin/AdminMediaSubmissions";
 import MasterTimelinesAdminPage from "./pages/admin/MasterTimelinesAdminPage";
+import SophiaFAQs from "./pages/support/SophiaFAQs";
+import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 
 const queryClient = new QueryClient();
 
@@ -208,6 +210,8 @@ const App = () => (
             <RouteIndicator />
             <Routes>
               {/* Core Routes */}
+              <Route path="/support/faqs" element={<SophiaFAQs />} />
+              <Route path="/admin/sophia-faqs" element={<SophiaFAQAdmin />} />
               <Route path="/" element={<Home />} />
               <Route path="/welcome" element={<Welcome />} />
               <Route path="/welcome-classic" element={<Index />} />
