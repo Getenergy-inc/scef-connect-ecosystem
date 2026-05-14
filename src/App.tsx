@@ -359,6 +359,9 @@ const App = () => (
               <Route path="/support-us" element={<SupportUs />} />
               <Route path="/donate-and-payments" element={<SupportUs />} />
               <Route path="/get-involved/support" element={<SupportUs />} />
+              <Route path="/payments" element={<OfficialAccountsPage />} />
+              <Route path="/support-us/official-accounts" element={<OfficialAccountsPage />} />
+              <Route path="/support-us/bank-accounts" element={<OfficialAccountsPage />} />
 
               {/* Scholarship */}
               <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
