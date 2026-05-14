@@ -88,6 +88,12 @@ const SendAChildToSchool = () => (
         </Button>
       </div>
     </section>
+
+    <ProgramAccountsSection
+      groupIds={["eduaid"]}
+      title="Send a Child to School — Verified Accounts"
+      description="Sponsor scholarships and full school packages through the verified EduAid-Africa Providus Bank accounts."
+    />
   </PageShell>
 );
 
