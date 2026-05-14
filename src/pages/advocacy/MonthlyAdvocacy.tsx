@@ -67,6 +67,12 @@ const MonthlyAdvocacy = () => (
         </div>
       </div>
     </section>
+    <ProgramAccountsSection
+      groupIds={["scef", "eduaid"]}
+      title="Support Monthly Advocacy — Verified Accounts"
+      description="Sponsor advocacy walks, monthly themes, training programs and webinars through verified SCEF and EduAid-Africa accounts."
+      showFilters
+    />
   </PageShell>
 );
 
