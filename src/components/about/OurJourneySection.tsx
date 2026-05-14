@@ -227,32 +227,7 @@ export default function OurJourneySection() {
           ))}
         </div>
 
-        {/* Mini timeline */}
-        <div className="mt-16">
-          <h3 className="font-display text-xl font-bold text-scef-blue-darker text-center mb-8">
-            SCEF Movement Timeline
-          </h3>
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-scef-gold/30 md:-translate-x-1/2" aria-hidden />
-            <div className="space-y-6">
-              {milestones.map((m, idx) => (
-                <div
-                  key={m.year}
-                  className={`relative flex md:items-center gap-4 md:gap-8 ${
-                    idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-scef-gold ring-4 ring-background z-10" />
-                  <div className="hidden md:block flex-1" />
-                  <div className="ml-10 md:ml-0 flex-1 bg-card border border-border rounded-xl p-4 md:p-5 shadow-sm">
-                    <div className="text-scef-gold font-bold text-sm mb-1">{m.year}</div>
-                    <p className="text-sm text-foreground/90 leading-relaxed">{m.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <MovementTimeline milestones={milestones} />
       </div>
 
       {/* Lightbox */}
