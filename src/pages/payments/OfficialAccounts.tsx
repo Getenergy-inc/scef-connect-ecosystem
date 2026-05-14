@@ -82,10 +82,10 @@ export default function OfficialAccountsPage() {
   return (
     <>
       <Helmet>
-        <title>Official Donation, Sponsorship & Payment Channels — SCEF</title>
+        <title>Support SCEF Through GFA Wallet — Payments & Bank Transfer</title>
         <meta
           name="description"
-          content="Verified Providus Bank accounts for donations, memberships, sponsorships, scholarships, training, advocacy, school support, awards, and digital education infrastructure across the SCEF ecosystem."
+          content="Make secure payments, donations, sponsorships, registrations, memberships, and program contributions through GFA Wallet. Verified Providus Bank transfer details remain available for manual and institutional payments."
         />
         <link rel="canonical" href="https://santoscreations.org/payments" />
       </Helmet>
@@ -98,32 +98,34 @@ export default function OfficialAccountsPage() {
             <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
             <div className="container mx-auto px-4 relative z-10 max-w-5xl text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-6">
-                <ShieldCheck className="h-3.5 w-3.5" /> Verified Payment Channels
+                <Wallet className="h-3.5 w-3.5" /> Powered by GFA Wallet
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
-                Official Donation, Sponsorship &{" "}
-                <span className="text-scef-gold">Payment Channels</span>
+                Support SCEF Through{" "}
+                <span className="text-scef-gold">GFA Wallet</span>
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                Support SCEF, EduAid-Africa, NESA-Africa, and GFA Wallet through
-                verified Providus Bank accounts for donations, memberships,
-                sponsorships, scholarships, training, advocacy, school support,
-                awards, and digital education infrastructure.
+                Make secure payments, donations, sponsorships, registrations, memberships, and
+                program contributions through the GFA Wallet. Bank transfer details remain
+                available for manual payments and institutional partners.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                {heroCtas.map((c) => (
-                  <Link
-                    key={c.label}
-                    to={c.to}
-                    className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
-                      c.primary
-                        ? "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover"
-                        : "border-2 border-scef-gold/50 text-white hover:bg-scef-gold/10"
-                    }`}
-                  >
-                    {c.label} <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
+                {heroCtas.map((c) => {
+                  const Icon = c.icon;
+                  return (
+                    <Link
+                      key={c.label}
+                      to={c.to}
+                      className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
+                        c.primary
+                          ? "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover"
+                          : "border-2 border-scef-gold/50 text-white hover:bg-scef-gold/10"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" /> {c.label}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>
