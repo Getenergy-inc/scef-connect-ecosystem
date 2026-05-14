@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
+import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import LocalChapters from "./pages/LocalChapters";
 import JoinOnline from "./pages/chapters/JoinOnline";
