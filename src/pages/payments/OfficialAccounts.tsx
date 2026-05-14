@@ -227,12 +227,17 @@ export default function OfficialAccountsPage() {
           <section id="official-accounts" className="py-16">
             <div className="container mx-auto px-4 max-w-7xl">
               <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-scef-blue/10 ring-1 ring-scef-blue/20 text-scef-blue-darker text-[11px] font-semibold uppercase tracking-widest mb-3">
+                  <Landmark className="h-3.5 w-3.5" /> Manual Bank Transfer Option
+                </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-scef-blue-darker">
-                  Verified Providus Bank Accounts
+                  Official Bank Transfer Details
                 </h2>
                 <p className="text-muted-foreground mt-3 max-w-3xl mx-auto">
-                  All listed accounts are official verified accounts for the SCEF ecosystem.
-                  Payments should only be made through the verified accounts shown on this page.
+                  GFA Wallet is the recommended payment option for faster tracking, receipts, and
+                  program reporting. Manual bank transfer remains available through verified
+                  Providus Bank accounts. Payments should only be made through the verified
+                  accounts shown on this page.
                 </p>
               </div>
               <div className="space-y-8">
