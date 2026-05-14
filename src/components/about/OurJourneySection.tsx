@@ -397,7 +397,7 @@ function EditCaptionModal({
 function MovementTimeline({ milestones }: { milestones: { year: string; text: string }[] }) {
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [lineProgress, setLineProgress] = useState(0);
-  const containerRef = (typeof window !== "undefined" ? require("react") : null) as never;
+  // refs created via useMemo below
 
   const itemRefs = useMemo(
     () => milestones.map(() => ({ current: null as HTMLDivElement | null })),
