@@ -216,6 +216,7 @@ const App = () => (
               
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
+              <Route path="/impact" element={<Impact />} />
               <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
               <Route path="/programs/nesa-africa/timeline" element={<NesaTimeline2026 />} />
               <Route path="/nesa-africa/timeline" element={<NesaTimeline2026 />} />
