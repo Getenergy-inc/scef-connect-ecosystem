@@ -1692,6 +1692,9 @@ const About = () => {
             </div>
           </section>
 
+          {/* OUR JOURNEY THROUGH PEOPLE, PURPOSE & IMPACT */}
+          <OurJourneySection />
+
           {/* MEMBERSHIP & AMBASSADOR PROGRAM */}
           <section id="membership" className="py-20 bg-background">
             <div className="container mx-auto px-4">
