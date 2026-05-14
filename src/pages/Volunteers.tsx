@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArchiveTile } from "@/components/volunteers/ArchiveTile";
 import { ArchiveLightbox } from "@/components/volunteers/ArchiveLightbox";
 import { ContributorDirectory } from "@/components/volunteers/ContributorDirectory";
+import LegacyContributorsGallery from "@/components/volunteers/LegacyContributorsGallery";
 import {
   archiveGallery,
   categoryLabels,
@@ -114,6 +115,9 @@ const Volunteers = () => {
         </section>
 
         <main className="flex-1">
+          {/* ============== LEGACY CONTRIBUTORS (real archive photos) ============== */}
+          <LegacyContributorsGallery />
+
           {/* ============== 2. DOCUMENTARY TIMELINE ============== */}
           <section className="bg-background border-b border-border">
             <div className="container mx-auto px-4 py-16 md:py-20">
