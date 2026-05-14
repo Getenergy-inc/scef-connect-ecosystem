@@ -23,6 +23,7 @@ import { Badge } from "@/components/ui/badge";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 
 // Brand colors for EduAid
 const eduaidColors = {
@@ -476,7 +477,13 @@ const EduAidWebinars = () => {
         </div>
       </section>
 
-      <Footer />
+      <ProgramAccountsSection
+          groupIds={['eduaid', 'scef']}
+          title="Webinar & Training Payment Accounts"
+          description="Pay webinar and training program fees through verified EduAid-Africa or SCEF Providus Bank accounts."
+          showFilters
+        />
+        <Footer />
     </div>
   );
 };

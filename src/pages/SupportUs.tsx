@@ -86,6 +86,14 @@ const SupportUs = () => {
               <p className="mt-6 text-sm text-white/60">
                 All payments are processed securely through the GFA Wallet (Paystack, Flutterwave, Bancable, TranscertPay).
               </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                <Link to="/payments" className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover">
+                  View Official Bank Accounts <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link to="/wallet/donate" className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10">
+                  Donate via GFA Wallet
+                </Link>
+              </div>
             </div>
           </section>
 

@@ -26,6 +26,7 @@ import DonationSuccess from "./pages/DonationSuccess";
 import Wallet from "./pages/Wallet";
 import GetInvolved from "./pages/GetInvolved";
 import SupportUs from "./pages/SupportUs";
+import OfficialAccountsPage from "./pages/payments/OfficialAccounts";
 import Join from "./pages/Join";
 import Membership from "./pages/Membership";
 import Governance from "./pages/Governance";
@@ -359,6 +360,9 @@ const App = () => (
               <Route path="/support-us" element={<SupportUs />} />
               <Route path="/donate-and-payments" element={<SupportUs />} />
               <Route path="/get-involved/support" element={<SupportUs />} />
+              <Route path="/payments" element={<OfficialAccountsPage />} />
+              <Route path="/support-us/official-accounts" element={<OfficialAccountsPage />} />
+              <Route path="/support-us/bank-accounts" element={<OfficialAccountsPage />} />
 
               {/* Scholarship */}
               <Route path="/scholarship/eduaid-2026" element={<EduAidScholarship2026 />} />
@@ -420,7 +424,7 @@ const App = () => (
               <Route path="/get-involved/internships" element={<ComingSoon title="Internship Opportunities" description="Structured internships across SCEF programs, divisions and chapters." />} />
               <Route path="/get-involved/referral-rewards" element={<ComingSoon title="Referral & Rewards" description="Grow the SCEF network — earn recognition and member benefits." />} />
               <Route path="/support-us/bid-to-host" element={<ComingSoon title="Bid to Host Next Event" description="Host an SCEF gala, summit or training week in your city or country." />} />
-              <Route path="/support-us/bank-accounts" element={<ComingSoon title="Official Bank Accounts" description="Verified SCEF payment channels for donations, sponsorships and fees." />} />
+              
               <Route path="/support-us/merchandise" element={<ComingSoon title="Buy Merchandise" description="Branded SCEF apparel and education-positive merchandise." />} />
               <Route path="/support-us/gala-tickets" element={<ComingSoon title="Award Gala Tickets" description="Reserve your seat at the next NESA-Africa awards gala." />} />
               <Route path="/media/archive" element={<MediaArchive />} />

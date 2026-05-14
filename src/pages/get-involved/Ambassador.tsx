@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -442,6 +443,12 @@ const Ambassador = () => {
           </section>
         </main>
 
+        <ProgramAccountsSection
+          groupIds={['scef']}
+          title="Ambassador Registration — Verified Accounts"
+          description="Pay your ambassador registration through the verified SCEF Foundation Providus Bank accounts."
+          showFilters
+        />
         <Footer />
       </div>
     </>

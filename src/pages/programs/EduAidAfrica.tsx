@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 import { useLocale } from "@/contexts/LocaleContext";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
 
@@ -160,7 +161,13 @@ export default function EduAidAfrica() {
         </ScrollAnimation>
       </main>
 
-      <Footer />
+      <ProgramAccountsSection
+          groupIds={['eduaid']}
+          title="Support EduAid-Africa — Verified Accounts"
+          description="Fund scholarships, school rebuilding, training and digital learning through the verified EduAid-Africa Providus Bank accounts."
+          showFilters
+        />
+        <Footer />
     </>
   );
 }

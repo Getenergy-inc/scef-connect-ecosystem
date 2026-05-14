@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { monthlyPrograms } from "@/config/monthlyCalendar";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
+import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
 
 const MonthlyAdvocacy = () => (
   <PageShell
@@ -66,6 +67,12 @@ const MonthlyAdvocacy = () => (
         </div>
       </div>
     </section>
+    <ProgramAccountsSection
+      groupIds={["scef", "eduaid"]}
+      title="Support Monthly Advocacy — Verified Accounts"
+      description="Sponsor advocacy walks, monthly themes, training programs and webinars through verified SCEF and EduAid-Africa accounts."
+      showFilters
+    />
   </PageShell>
 );
 
