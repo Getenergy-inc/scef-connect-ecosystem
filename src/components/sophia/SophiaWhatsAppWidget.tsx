@@ -90,7 +90,13 @@ export const SophiaWhatsAppWidget = () => {
   useEffect(() => {
     const t = setTimeout(() => setShowTooltip(true), 4000);
     const h = setTimeout(() => setShowTooltip(false), 12000);
-    return () => { clearTimeout(t); clearTimeout(h); };
+    const openHandler = () => { setOpen(true); setShowTooltip(false); };
+    window.addEventListener("sophia:open", openHandler);
+    return () => {
+      clearTimeout(t);
+      clearTimeout(h);
+      window.removeEventListener("sophia:open", openHandler);
+    };
   }, []);
 
   if (HIDDEN_PREFIXES.some((p) => pathname.startsWith(p))) return null;
