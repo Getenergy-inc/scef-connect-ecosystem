@@ -78,6 +78,7 @@ export const LandingHero = () => {
               >
                 <MessageCircle className="me-2 h-4 w-4" />
                 Chat with Sophia
+              </Button>
             </div>
 
             {/* Secondary CTAs */}
