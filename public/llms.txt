@@ -1,0 +1,55 @@
+# Santos Creations Educational Foundation (SCEF)
+
+> A Pan-African NGO advancing education standards across all 54 African countries through advocacy, recognition, scholarships, infrastructure, digital learning, and CSR-backed impact programs.
+
+SCEF runs a continuous, ever-growing standards system for education in Africa. We work with schools, corporate sponsors, donors, volunteers, ambassadors, and communities to make education more inclusive, accessible, sustainable, accountable, and impactful. All payments and memberships flow through the GFA Wallet (Paystack, Flutterwave, Bancable, TranscertPay).
+
+## Core Pages
+- [About SCEF](/about): Mission, vision, governance, six core objectives.
+- [Programs & Initiatives](/programs): Catalogue of all SCEF programs.
+- [Impact](/impact): Reach, outcomes, and verification.
+- [Local Chapters](/chapters): Country, state, and city chapter network.
+- [Partner With Us](/partner-with-us): CSR, sponsorship, and ESG partnerships.
+- [Donate via GFA Wallet](/wallet/donate): Verified donation channels and fund designations.
+- [Verify Certificate](/verify-certificate): Certificate authenticity check.
+- [Sophia FAQ Knowledge Base](/support/faqs): 250+ institutional FAQs.
+
+## Programs
+- [NESA-Africa Awards](/programs/nesa-africa): New Education Standard Award Africa, 135 subcategories, four tiers.
+- [EduAid-Africa](/programs/eduaid-africa): Scholarships, ACDL/AWPC certifications, school grants.
+- [Rebuild My School Africa (RMSA)](/programs/rebuild-my-school-africa): School infrastructure rebuilding.
+- [Women & Girls Education](/programs/women-girls-education): Inclusive access programs.
+- [Special Needs Education](/programs/special-needs-education): Disability-inclusive education support.
+- [Education Online Africa (EOA)](/programs/digital-learning): Continental digital learning platform.
+- [eLibrary Nigeria](/programs/elibrary-nigeria): Public digital library deployment.
+- [School WASH](/programs/school-wash): Water, sanitation, and hygiene in schools.
+- [My Career My Life](/programs/my-career-my-life): Career pathways for youth.
+
+## Media
+- [NESA TV](/media/nesa-tv): Documentary and award broadcast division.
+- [It's In Me Radio](/media/its-in-me-radio): Audio storytelling and advocacy.
+- [EduAid Webinars](/media/eduaid-webinars): Training and webinar calendar.
+- [Education Tourism Show](/media/education-tourism-show): Cross-border education exchange.
+
+## Get Involved
+- [Membership](/get-involved/membership): Tiered membership via GFA Wallet.
+- [Ambassador Program](/get-involved/ambassador): Ambassador tiers and commitments.
+- [Volunteer](/get-involved/volunteer): Volunteer roles, hours, and badges.
+- [Join a Chapter](/chapters/join): Online onboarding to a regional chapter.
+- [Start a Chapter](/chapters/start): Chapter founding application.
+
+## Awards
+- [Platinum Award](/awards/platinum)
+- [Africa Icon Award](/awards/icon)
+- [Gold Certificate](/awards/gold)
+- [Blue Garnet Gala](/awards/blue-garnet)
+- [Nominate](/nominate): Submit a nomination.
+- [Vote](/vote): Public voting portal.
+
+## Optional
+- [Hall of Fame](/hall-of-fame)
+- [Reports](/reports)
+- [Case Studies](/case-studies)
+- [Updates](/updates)
+- [Calendar](/calendar)
+- [Contact](/contact)
