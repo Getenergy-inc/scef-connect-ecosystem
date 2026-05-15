@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Heart, Award, Handshake } from "lucide-react";
 import { photoLibrary } from "@/config/photoLibrary";
 import legacyCohort2009 from "@/assets/legacy/scef-international-cohort-2009.jpg";
+import legacyEarlyTeam from "@/assets/legacy/scef-early-team-portrait.jpg";
+import legacyFounderMentor from "@/assets/legacy/scef-founder-mentorship-moment.jpg";
 
 /**
  * "Powered by Volunteers, Educators & Change Makers Across Africa"
