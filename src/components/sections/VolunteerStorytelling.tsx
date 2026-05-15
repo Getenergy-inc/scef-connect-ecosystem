@@ -145,6 +145,7 @@ export const VolunteerStorytelling = () => {
               </figure>
             </div>
 
+            <div className="grid grid-cols-3 gap-3 md:gap-4">
               {photos.map((p, i) => {
                 // varied row spans for a documentary masonry feel
                 const span =
