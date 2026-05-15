@@ -54,6 +54,7 @@ export const siteContent = {
           title: "All Programs",
           items: [
             { name: "Browse All Programs", href: "/programs", description: "Full programs hub", icon: "LayoutGrid" },
+            { name: "Women & Girls Empowerment", href: "/women-girls-empowerment", description: "Education, leadership, STEM, mentorship & ESG", icon: "Crown" },
             { name: "Women & Girls Education", href: "/programs/women-girls-education", description: "Empowerment through education", icon: "Heart" },
             { name: "Special Needs Education", href: "/programs/special-needs-education", description: "Inclusive advocacy for all learners", icon: "Accessibility" },
           ],

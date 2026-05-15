@@ -14,6 +14,7 @@ import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
 import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
+import { WomenGirlsEmpowerment } from "@/components/sections/WomenGirlsEmpowerment";
 
 const Home = () => {
   return (
@@ -57,6 +58,11 @@ const Home = () => {
               <HomeSummaryCards />
             </Reveal>
           </div>
+
+          {/* Women & Girls Empowerment — primary continental pillar */}
+          <Reveal>
+            <WomenGirlsEmpowerment />
+          </Reveal>
 
           {/* Premium story cards: Journey, Calendar, Support, Chapters, Partners, Training, Channels */}
           <Reveal>
