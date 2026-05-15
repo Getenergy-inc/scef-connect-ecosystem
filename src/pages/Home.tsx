@@ -13,6 +13,7 @@ import { PremiumStorySections } from "@/components/sections/PremiumStorySections
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
+import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 
 const Home = () => {
   return (
@@ -43,6 +44,11 @@ const Home = () => {
           {/* NESA-Africa + EduAid-Africa Master Timelines 2026–2027 */}
           <Reveal>
             <MasterTimelinesDuo />
+          </Reveal>
+
+          {/* Monthly Advocacy & Training Calendar (12 months) */}
+          <Reveal>
+            <MonthlyAdvocacyCalendar />
           </Reveal>
 
           {/* Compact Impact + Programs summary cards (full content lives on /impact and /programs) */}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, GraduationCap, Users, ShieldCheck, Globe2 } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, Users, ShieldCheck, Globe2, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero-schoolgirl.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
 import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
@@ -69,6 +69,15 @@ export const LandingHero = () => {
                 asChild
               >
                 <Link to="/support-us#sponsor-nesa">Sponsor NESA-Africa</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 border-scef-gold/60 bg-transparent px-7 font-semibold text-scef-gold hover:bg-scef-gold/10 hover:text-scef-gold-light"
+                onClick={() => window.dispatchEvent(new CustomEvent("sophia:open"))}
+              >
+                <MessageCircle className="me-2 h-4 w-4" />
+                Chat with Sophia
               </Button>
             </div>
 
