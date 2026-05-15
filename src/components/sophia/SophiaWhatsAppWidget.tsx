@@ -34,22 +34,52 @@ const trackOpen = (source: string) => {
 };
 
 /**
- * Open WhatsApp safely from any context (including nested preview iframes).
- * wa.me sends X-Frame-Options: DENY, so we must escape to the top window.
+ * iOS/Android-safe WhatsApp opener.
+ *
+ * Strategy (in order):
+ *  1. If we're in the top window (normal site visit), DO NOT preventDefault —
+ *     let the native <a target="_blank"> handle it. This is the most reliable
+ *     path on iOS Safari and Android Chrome and never triggers popup blockers.
+ *  2. If we're inside a nested iframe (e.g. Lovable preview), wa.me is blocked
+ *     by X-Frame-Options. preventDefault and try window.open. If the popup is
+ *     blocked, navigate the top frame. As a last resort, navigate this frame.
+ *  3. On WhatsApp-app-capable devices, wa.me automatically deep-links into the
+ *     app; otherwise it falls back to web.whatsapp.com — handled by WhatsApp,
+ *     no extra UA sniffing required.
  */
-const openWhatsApp = (url: string, source: string) => (e: React.MouseEvent) => {
-  e.preventDefault();
-  trackOpen(source);
+const isInIframe = () => {
   try {
-    const win = window.open(url, "_blank", "noopener,noreferrer");
-    if (!win) {
-      // Popup blocked – navigate top frame instead
-      window.top ? (window.top.location.href = url) : (window.location.href = url);
-    }
+    return typeof window !== "undefined" && window.self !== window.top;
   } catch {
-    window.location.href = url;
+    return true; // cross-origin access throws → we're definitely framed
   }
 };
+
+const openWhatsApp = (url: string, source: string) => (e: React.MouseEvent) => {
+  trackOpen(source);
+
+  // Top-window: let the browser handle the anchor natively (best on mobile).
+  if (!isInIframe()) return;
+
+  // Inside an iframe: must escape.
+  e.preventDefault();
+  try {
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+    if (win) return;
+  } catch {
+    /* fall through */
+  }
+  try {
+    if (window.top) {
+      window.top.location.href = url;
+      return;
+    }
+  } catch {
+    /* cross-origin top — fall through */
+  }
+  window.location.href = url;
+};
+
 
 export const SophiaWhatsAppWidget = () => {
   const { pathname } = useLocation();
