@@ -112,7 +112,7 @@ export const SophiaWhatsAppWidget = () => {
                   href={buildLink(a.text)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackOpen(`quick:${a.label}`)}
+                  onClick={openWhatsApp(buildLink(a.text), `quick:${a.label}`)}
                   className="text-[11px] font-medium text-center px-2 py-2 rounded-lg bg-white dark:bg-card border border-[#25D366]/30 text-scef-blue-darker dark:text-foreground hover:bg-[#25D366]/10 hover:border-[#25D366] transition-colors"
                 >
                   {a.label}
@@ -127,7 +127,7 @@ export const SophiaWhatsAppWidget = () => {
               href={WELCOME_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackOpen("primary")}
+              onClick={openWhatsApp(WELCOME_LINK, "primary")}
               className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5B] text-white text-sm font-semibold py-2.5 rounded-lg transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
