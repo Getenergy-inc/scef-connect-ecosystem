@@ -72,6 +72,7 @@ import EduAidAfrica from "./pages/programs/EduAidAfrica";
 import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
+import WomenGirlsEmpowerment from "./pages/WomenGirlsEmpowerment";
 import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
 import DigitalLearning from "./pages/programs/DigitalLearning";
 import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
@@ -232,6 +233,8 @@ const App = () => (
               <Route path="/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/programs/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
               <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />
+              <Route path="/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
+              <Route path="/programs/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
               <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />

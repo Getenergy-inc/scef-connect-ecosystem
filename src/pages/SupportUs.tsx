@@ -41,6 +41,12 @@ const ctas: CTA[] = [
   { title: "Buy Award Gala Tickets", purpose: "NESA-Africa dinner, expo, award ceremony.", account: "NESA-Africa", icon: Ticket, to: "/wallet/donate?fund=gala-tickets" },
   { title: "Join Our Next Edu-Tourism Program", purpose: "Educational tours, cultural learning, youth exposure.", account: "SCEF / EduAid-Africa", icon: Plane, to: "/media/education-tourism-show" },
   { title: "Bid to Host the Next Event", purpose: "Host NESA, EduAid Expo, webinars, regional summits.", account: "NESA-Africa / SCEF", icon: Building2, to: "/partner-with-us" },
+  { title: "Sponsor a Girl Child", purpose: "School fees, uniforms, learning materials, and safe-school support for African girls.", account: "EduAid-Africa", icon: GraduationCap, to: "/wallet/donate?fund=sponsor-a-girl" },
+  { title: "Support Women Leadership", purpose: "Leadership pipelines for women educators, professionals, and chapter executives.", account: "SCEF", icon: Award, to: "/wallet/donate?fund=women-leadership" },
+  { title: "Sponsor Girls in STEM", purpose: "STEM, coding, AI literacy, and digital learning for girls and young women.", account: "EduAid-Africa", icon: BookOpen, to: "/wallet/donate?fund=girls-in-stem" },
+  { title: "Support Menstrual Health Awareness", purpose: "Sanitary kits, awareness campaigns, and reproductive health education.", account: "SCEF", icon: Megaphone, to: "/wallet/donate?fund=menstrual-health" },
+  { title: "Sponsor Women Entrepreneurship", purpose: "Financial literacy, market access, and seed-grant pathways for women-led enterprises.", account: "EduAid-Africa / SCEF", icon: Compass, to: "/wallet/donate?fund=women-entrepreneurship" },
+  { title: "Fund Safe Learning Spaces", purpose: "Safeguarding, anti-harassment, and gender-sensitive school facilities.", account: "EduAid-Africa", icon: Hammer, to: "/wallet/donate?fund=safe-learning-spaces" },
 ];
 
 const accountStyle: Record<CTA["account"], string> = {
