@@ -33,6 +33,24 @@ const trackOpen = (source: string) => {
   } catch {}
 };
 
+/**
+ * Open WhatsApp safely from any context (including nested preview iframes).
+ * wa.me sends X-Frame-Options: DENY, so we must escape to the top window.
+ */
+const openWhatsApp = (url: string, source: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
+  trackOpen(source);
+  try {
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+    if (!win) {
+      // Popup blocked – navigate top frame instead
+      window.top ? (window.top.location.href = url) : (window.location.href = url);
+    }
+  } catch {
+    window.location.href = url;
+  }
+};
+
 export const SophiaWhatsAppWidget = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
