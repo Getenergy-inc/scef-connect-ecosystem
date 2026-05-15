@@ -58,6 +58,15 @@ const RebuildMySchoolAfrica = () => {
           name="description" 
           content="Rebuild My School Africa transforms learning environments by constructing and renovating schools across the continent, creating safe spaces for education." 
         />
+        <link rel="canonical" href="https://santoscreationsorg.lovable.app/programs/rebuild-my-school-africa" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Project",
+          "name": "Rebuild My School Africa (RMSA)",
+          "description": "School infrastructure programme constructing and renovating schools across Africa to deliver safe, modern learning environments.",
+          "url": "https://santoscreationsorg.lovable.app/programs/rebuild-my-school-africa",
+          "founder": { "@type": "NGO", "name": "Santos Creations Educational Foundation" }
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">

@@ -154,6 +154,15 @@ const ELibraryNigeria = () => {
         <meta property="og:description" content="Promoting Nigeria local content e-libraries. Search local and international content e-libraries." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://santoscreations.org/programs/elibrary-nigeria" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Library",
+          "name": "eLibrary Nigeria",
+          "description": "Public digital library promoting Nigerian and international educational content for free access.",
+          "url": "https://santoscreationsorg.lovable.app/programs/elibrary-nigeria",
+          "areaServed": "Nigeria",
+          "parentOrganization": { "@type": "NGO", "name": "Santos Creations Educational Foundation" }
+        })}</script>
       </Helmet>
 
       <Header />
