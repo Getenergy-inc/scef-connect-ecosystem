@@ -46,6 +46,11 @@ const Home = () => {
             <MasterTimelinesDuo />
           </Reveal>
 
+          {/* Monthly Advocacy & Training Calendar (12 months) */}
+          <Reveal>
+            <MonthlyAdvocacyCalendar />
+          </Reveal>
+
           {/* Compact Impact + Programs summary cards (full content lives on /impact and /programs) */}
           <div id="core-services">
             <Reveal>
