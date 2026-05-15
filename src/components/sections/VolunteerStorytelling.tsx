@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Heart, Award, Handshake } from "lucide-react";
 import { photoLibrary } from "@/config/photoLibrary";
 import legacyCohort2009 from "@/assets/legacy/scef-international-cohort-2009.jpg";
+import legacyEarlyTeam from "@/assets/legacy/scef-early-team-portrait.jpg";
+import legacyFounderMentor from "@/assets/legacy/scef-founder-mentorship-moment.jpg";
 
 /**
  * "Powered by Volunteers, Educators & Change Makers Across Africa"
@@ -98,6 +100,50 @@ export const VolunteerStorytelling = () => {
                 </span>
               </figcaption>
             </figure>
+
+            {/* Additional legacy archive duo */}
+            <div className="mb-3 grid grid-cols-2 gap-3 md:mb-4 md:gap-4">
+              <figure className="group relative overflow-hidden rounded-xl ring-1 ring-scef-gold/20">
+                <img
+                  src={legacyEarlyTeam}
+                  alt="SCEF early leadership and contributor team portrait, c. 2010"
+                  loading="lazy"
+                  className="h-full w-full object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/85 via-scef-blue-darker/15 to-transparent" />
+                <div className="absolute left-2 top-2 rounded-full bg-scef-gold px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] text-scef-blue-darker">
+                  Since 2007
+                </div>
+                <figcaption className="absolute inset-x-0 bottom-0 p-3">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-scef-gold">
+                    c. 2010 · Legacy Team
+                  </span>
+                  <span className="mt-1 block text-xs md:text-sm font-semibold text-white leading-tight">
+                    Early SCEF leadership & international contributor team
+                  </span>
+                </figcaption>
+              </figure>
+              <figure className="group relative overflow-hidden rounded-xl ring-1 ring-scef-gold/20">
+                <img
+                  src={legacyFounderMentor}
+                  alt="SCEF founder mentorship moment with early youth contributor"
+                  loading="lazy"
+                  className="h-full w-full object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/85 via-scef-blue-darker/15 to-transparent" />
+                <div className="absolute left-2 top-2 rounded-full bg-scef-gold px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] text-scef-blue-darker">
+                  Mentorship
+                </div>
+                <figcaption className="absolute inset-x-0 bottom-0 p-3">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-scef-gold">
+                    c. 2011 · Mentorship
+                  </span>
+                  <span className="mt-1 block text-xs md:text-sm font-semibold text-white leading-tight">
+                    Founder mentoring an early SCEF youth contributor
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
 
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {photos.map((p, i) => {
