@@ -54,6 +54,7 @@ const openWhatsApp = (url: string, source: string) => (e: React.MouseEvent) => {
 export const SophiaWhatsAppWidget = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [showQR, setShowQR] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
