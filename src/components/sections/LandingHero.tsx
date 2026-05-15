@@ -33,15 +33,15 @@ export const LandingHero = () => {
             <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold-light ring-1 ring-white/15">
               {t("home.heroV2.eyebrow") || "You Are Welcome to SCEF · Reg. IT-41501"}
             </p>
-            <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.75rem]">
+            <h1 className="font-display text-[2.25rem] font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.5rem]">
               Empowering Education.{" "}
               <span className="text-scef-gold">Advancing Health.</span>{" "}
-              Sustaining Africa's Future.
+              Advocating Education for All.{" "}
+              <span className="text-scef-gold-light">Sustaining Africa's Future.</span>
             </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 md:text-lg">
-              SCEF is a Pan-African membership-based not-for-profit NGO transforming education
-              through advocacy, scholarships, digital learning, local chapters, ESG, health
-              education, and sustainable community impact.
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
+              A Pan-African movement advancing quality education, wellbeing, ESG, sustainability,
+              and community impact across Africa.
             </p>
 
             {/* Primary CTAs */}
