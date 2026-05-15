@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { MessageCircle, X, Download } from "lucide-react";
+import { MessageCircle, X, Download, QrCode } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const HIDDEN_PREFIXES = ["/auth", "/dashboard", "/admin", "/staff", "/portal", "/chapter/inbox", "/messages"];
