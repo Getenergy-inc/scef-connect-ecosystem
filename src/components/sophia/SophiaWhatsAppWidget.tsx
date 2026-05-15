@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { MessageCircle, X, Download } from "lucide-react";
+import { MessageCircle, X, Download, QrCode } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const HIDDEN_PREFIXES = ["/auth", "/dashboard", "/admin", "/staff", "/portal", "/chapter/inbox", "/messages"];
@@ -54,6 +54,7 @@ const openWhatsApp = (url: string, source: string) => (e: React.MouseEvent) => {
 export const SophiaWhatsAppWidget = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [showQR, setShowQR] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
@@ -119,6 +120,40 @@ export const SophiaWhatsAppWidget = () => {
                 </a>
               ))}
             </div>
+
+            {/* Tappable QR section */}
+            {showQR && (
+              <div className="mt-3 rounded-xl bg-white dark:bg-card border border-[#25D366]/30 p-3 animate-fade-in">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-scef-blue-darker dark:text-foreground text-center mb-2">
+                  Scan to Chat with Sophia
+                </p>
+                <a
+                  href={WELCOME_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={openWhatsApp(WELCOME_LINK, "qr")}
+                  aria-label="Tap QR code to open WhatsApp chat with Sophia"
+                  className="block mx-auto w-40 h-40 rounded-lg overflow-hidden ring-1 ring-border hover:ring-[#25D366] transition-all"
+                >
+                  <img
+                    src={QR_IMAGE}
+                    alt="QR code linking to wa.me/2348109765897"
+                    loading="lazy"
+                    className="w-full h-full object-contain bg-white"
+                  />
+                </a>
+                <p className="text-[10px] text-muted-foreground text-center mt-2">
+                  Tap or scan with your phone camera
+                </p>
+                <a
+                  href={QR_IMAGE}
+                  download="sophia-scef-whatsapp-qr.jpg"
+                  className="mt-2 inline-flex items-center justify-center gap-1 w-full text-[11px] font-medium text-scef-blue-darker dark:text-foreground hover:text-[#25D366] transition-colors"
+                >
+                  <Download className="w-3 h-3" /> Save QR image
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Footer */}
@@ -133,16 +168,23 @@ export const SophiaWhatsAppWidget = () => {
               <MessageCircle className="w-4 h-4" />
               Start WhatsApp Chat
             </a>
-            <a
-              href={QR_IMAGE}
-              download="sophia-scef-whatsapp-qr.jpg"
-              aria-label="Download Sophia WhatsApp QR code"
+            <button
+              type="button"
+              onClick={() => setShowQR((v) => !v)}
+              aria-label={showQR ? "Hide QR code" : "Show QR code to chat with Sophia"}
+              aria-pressed={showQR}
               title="Scan to chat with Sophia"
-              className="shrink-0 p-2 rounded-lg border border-border bg-background hover:bg-muted transition-colors"
+              className={cn(
+                "shrink-0 p-2 rounded-lg border transition-colors",
+                showQR
+                  ? "bg-[#25D366] border-[#25D366] text-white"
+                  : "bg-background border-border text-foreground hover:bg-muted"
+              )}
             >
-              <Download className="w-4 h-4 text-foreground" />
-            </a>
+              <QrCode className="w-4 h-4" />
+            </button>
           </div>
+
         </div>
       )}
 
