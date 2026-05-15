@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Heart, Award, Handshake } from "lucide-react";
 import { photoLibrary } from "@/config/photoLibrary";
+import legacyCohort2009 from "@/assets/legacy/scef-international-cohort-2009.jpg";
 
 /**
  * "Powered by Volunteers, Educators & Change Makers Across Africa"
