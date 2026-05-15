@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Heart, Award, Handshake } from "lucide-react";
 import { photoLibrary } from "@/config/photoLibrary";
+import legacyCohort2009 from "@/assets/legacy/scef-international-cohort-2009.jpg";
 
 /**
  * "Powered by Volunteers, Educators & Change Makers Across Africa"
@@ -76,6 +77,28 @@ export const VolunteerStorytelling = () => {
 
           {/* Masonry */}
           <div className="md:col-span-7">
+            {/* Featured legacy archive photo */}
+            <figure className="group relative mb-3 overflow-hidden rounded-xl ring-1 ring-scef-gold/30 md:mb-4">
+              <img
+                src={legacyCohort2009}
+                alt="SCEF early international volunteer cohort and contributors group photo, Nigeria, August 2009"
+                loading="lazy"
+                className="h-full w-full object-cover aspect-[16/9] transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/90 via-scef-blue-darker/20 to-transparent" />
+              <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-scef-gold px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-scef-blue-darker">
+                Since 2007 · Legacy Archive
+              </div>
+              <figcaption className="absolute inset-x-0 bottom-0 p-4">
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-scef-gold">
+                  August 2009 · Nigeria
+                </span>
+                <span className="mt-1 block text-sm md:text-base font-semibold text-white leading-tight">
+                  Early SCEF international volunteer cohort — AIESEC collaboration & grassroots education advocacy
+                </span>
+              </figcaption>
+            </figure>
+
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               {photos.map((p, i) => {
                 // varied row spans for a documentary masonry feel
