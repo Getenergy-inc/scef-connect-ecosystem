@@ -13,6 +13,7 @@ import { PremiumStorySections } from "@/components/sections/PremiumStorySections
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
 import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
+import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 
 const Home = () => {
   return (
