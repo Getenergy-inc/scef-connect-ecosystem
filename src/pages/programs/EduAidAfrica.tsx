@@ -38,6 +38,15 @@ export default function EduAidAfrica() {
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="keywords" content="EduAid Africa, scholarships, African education, SCEF, student funding, teacher training, school renovation" />
+        <link rel="canonical" href="https://santoscreationsorg.lovable.app/programs/eduaid-africa" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "EduAid Africa",
+          "url": "https://santoscreationsorg.lovable.app/programs/eduaid-africa",
+          "description": "EduAid Africa provides scholarships, ACDL/AWPC certifications (24-month validity), school grants, teacher training, and school renovations across Africa.",
+          "parentOrganization": { "@type": "NGO", "name": "Santos Creations Educational Foundation" }
+        })}</script>
       </Helmet>
 
       <Header />

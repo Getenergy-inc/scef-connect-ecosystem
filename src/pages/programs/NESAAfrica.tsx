@@ -308,6 +308,17 @@ const NESAAfrica = () => {
         <meta property="og:description" content="Standards-led education accountability cycle: Education → Recognition → Public Participation → Legacy Impact" />
         <meta property="og:image" content="https://nesa.africa/images/headhero.png" />
         <link rel="canonical" href="https://santoscreations.org/programs/nesa-africa" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "NESA-Africa 2026 — Blue Garnet Awards Gala",
+          "description": "New Education Standard Award Africa: continental education recognition programme with 135 subcategories across four tiers (Platinum, Gold, Blue Garnet, Africa Icon).",
+          "startDate": "2026-10-22",
+          "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": { "@type": "Place", "name": "Africa", "address": "Pan-African" },
+          "organizer": { "@type": "NGO", "name": "Santos Creations Educational Foundation", "url": "https://santoscreationsorg.lovable.app" }
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen" style={{ backgroundColor: nesaColors.dark }}>

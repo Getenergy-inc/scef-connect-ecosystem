@@ -128,6 +128,15 @@ const DigitalLearning = () => {
         <meta property="og:title" content="Digital Learning – SCEF" />
         <meta property="og:description" content="E-learning platforms and digital education resources for Africa's students and educators." />
         <meta name="keywords" content="digital learning Africa, e-learning, online education, SCEF digital, African EdTech, mobile learning" />
+        <link rel="canonical" href="https://santoscreationsorg.lovable.app/programs/digital-learning" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "Education Online Africa (EOA) — Digital Learning",
+          "description": "Continental digital learning platform delivering e-learning courses and resources optimized for low-bandwidth African environments.",
+          "url": "https://santoscreationsorg.lovable.app/programs/digital-learning",
+          "parentOrganization": { "@type": "NGO", "name": "Santos Creations Educational Foundation" }
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
