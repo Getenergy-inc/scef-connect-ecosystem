@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, GraduationCap, Users, ShieldCheck, Globe2 } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, Users, ShieldCheck, Globe2, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero-schoolgirl.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
 import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
