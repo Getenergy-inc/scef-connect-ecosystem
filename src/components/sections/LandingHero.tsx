@@ -35,13 +35,17 @@ export const LandingHero = () => {
             </p>
             <h1 className="font-display text-[2.25rem] font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.5rem]">
               Empowering Education.{" "}
-              <span className="text-scef-gold">Advancing Health.</span>{" "}
-              Advocating Education for All.{" "}
+              <span className="text-scef-gold">Advocating Education for All.</span>{" "}
               <span className="text-scef-gold-light">Sustaining Africa's Future.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
-              A Pan-African movement advancing quality education, wellbeing, ESG, sustainability,
-              and community impact across Africa.
+              A Pan-African education movement advancing quality learning access, girls and women empowerment,
+              digital education, ESG awareness, teacher development, youth career pathways, local chapter impact,
+              and CSR for Education Fund Management Services across Africa.
+            </p>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/65">
+              SCEF connects schools, donors, corporate sponsors, volunteers, ambassadors, educators, local chapters,
+              and development partners to build inclusive, accountable, and sustainable education impact across Africa.
             </p>
 
             {/* Primary CTAs */}
