@@ -19,28 +19,29 @@ export const FinalCTABand = () => {
             {t("home.finalCta.eyebrow") || "Join Us"}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.5rem]">
-            Be part of Africa&apos;s education transformation.
+            Join the Movement for Education for All in Africa
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-            Donate, nominate a school, vote with AGC, register your school, or
-            partner with SCEF — every action moves African education forward.
+            Be part of a Pan-African education movement helping children, youth, teachers, women, schools,
+            and communities access quality learning, digital opportunity, sustainable development, and
+            community-led transformation.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button size="lg" className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover" asChild>
-              <Link to="/donate">Donate</Link>
+              <Link to="/auth/sign-up">Become a Member</Link>
             </Button>
             <Button size="lg" className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90" asChild>
-              <Link to="/nominate">Nominate a School</Link>
+              <Link to="/support-us">Sponsor a Program</Link>
+            </Button>
+            <Button size="lg" className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90" asChild>
+              <Link to="/women-girls-empowerment">Support Girls Education</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
-              <Link to="/vote">Vote with AGC</Link>
+              <Link to="/partner-with-us">Partner With SCEF</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
-              <Link to="/programs/training-development#register">Register Your School</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 border-white/40 bg-transparent px-7 font-semibold text-white hover:bg-white/10 hover:text-white" asChild>
-              <Link to="/partner-with-us">Become a Partner</Link>
+              <Link to="/wallet">Pay via GFA Wallet</Link>
             </Button>
           </div>
         </div>
