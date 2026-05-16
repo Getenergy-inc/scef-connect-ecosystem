@@ -56,7 +56,7 @@ export const LandingHero = () => {
                 asChild
               >
                 <Link to="/auth/sign-up">
-                  Become a Member
+                  Join the Movement
                   <ArrowRight className="ms-2 h-4 w-4" />
                 </Link>
               </Button>
