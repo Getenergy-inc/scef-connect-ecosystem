@@ -35,13 +35,17 @@ export const LandingHero = () => {
             </p>
             <h1 className="font-display text-[2.25rem] font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.5rem]">
               Empowering Education.{" "}
-              <span className="text-scef-gold">Advancing Health.</span>{" "}
-              Advocating Education for All.{" "}
+              <span className="text-scef-gold">Advocating Education for All.</span>{" "}
               <span className="text-scef-gold-light">Sustaining Africa's Future.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
-              A Pan-African movement advancing quality education, wellbeing, ESG, sustainability,
-              and community impact across Africa.
+              A Pan-African education movement advancing quality learning access, girls and women empowerment,
+              digital education, ESG awareness, teacher development, youth career pathways, local chapter impact,
+              and CSR for Education Fund Management Services across Africa.
+            </p>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/65">
+              SCEF connects schools, donors, corporate sponsors, volunteers, ambassadors, educators, local chapters,
+              and development partners to build inclusive, accountable, and sustainable education impact across Africa.
             </p>
 
             {/* Primary CTAs */}
@@ -52,7 +56,7 @@ export const LandingHero = () => {
                 asChild
               >
                 <Link to="/auth/sign-up">
-                  Become a Member
+                  Join the Movement
                   <ArrowRight className="ms-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -61,7 +65,7 @@ export const LandingHero = () => {
                 className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
                 asChild
               >
-                <Link to="/donate">Donate Now</Link>
+                <Link to="/donate">Support Education</Link>
               </Button>
               <Button
                 size="lg"
@@ -72,6 +76,20 @@ export const LandingHero = () => {
               </Button>
               <Button
                 size="lg"
+                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
+                asChild
+              >
+                <Link to="/women-girls-empowerment">Support Girls Education</Link>
+              </Button>
+              <Button
+                size="lg"
+                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
+                asChild
+              >
+                <Link to="/wallet">Pay via GFA Wallet</Link>
+              </Button>
+              <Button
+                size="lg"
                 variant="outline"
                 className="h-12 border-scef-gold/60 bg-transparent px-7 font-semibold text-scef-gold hover:bg-scef-gold/10 hover:text-scef-gold-light"
                 onClick={() => window.dispatchEvent(new CustomEvent("sophia:open"))}
@@ -79,6 +97,27 @@ export const LandingHero = () => {
                 <MessageCircle className="me-2 h-4 w-4" />
                 Chat with Sophia
               </Button>
+            </div>
+
+            {/* Key message chips */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {[
+                "Education for All",
+                "Girls & Women Empowerment",
+                "CSR Education Fund Management",
+                "Teacher Development",
+                "Digital Learning",
+                "ESG & Sustainability",
+                "Local Chapter Impact",
+                "Community Transformation",
+              ].map((chip) => (
+                <span
+                  key={chip}
+                  className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/80"
+                >
+                  {chip}
+                </span>
+              ))}
             </div>
 
             {/* Secondary CTAs */}

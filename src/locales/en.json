@@ -383,23 +383,23 @@
   },
   "about": {
     "hero": {
-      "title": "Empowering Africa Through Education, Innovation, and Opportunity",
-      "subtitle": "A membership-driven foundation advancing education across regions through advocacy, digital access, and strategic partnerships.",
-      "tagline": "Building a continuous, ever-growing standard of education in Africa.",
-      "description": "SCEF connects programs, chapters, partners, platforms, and media to deliver measurable outcomes in access, quality, inclusion, and skills.",
+      "title": "Empowering Education. Advocating Education for All. Sustaining Africa's Future.",
+      "subtitle": "A Pan-African membership-based not-for-profit NGO advancing education for all in Africa through advocacy, school support, digital learning, teacher development, girls and women empowerment, ESG education, youth career pathways, and CSR for Education Fund Management Services.",
+      "tagline": "Empowering Education. Advocating Education for All. Sustaining Africa's Future.",
+      "description": "Through its ecosystem of initiatives — EduAid-Africa, NESA-Africa, Education Online Africa, eLibrary Africa, Rebuild My School Africa, My Career My Life, and SCEF Local Chapters — SCEF works with schools, donors, corporate sponsors, volunteers, ambassadors, and communities to make education more inclusive, accessible, sustainable, accountable, and impactful.",
       "regionBadge": "Regional Africa • Diaspora Africa",
       "trustLine": "Founded 1997 • Registered 2010 • SDG 4 + AU Agenda 2063 aligned • HQ-led governance + chapter-driven delivery",
-      "ctaJoin": "Explore Membership",
-      "ctaDonate": "Support the Mission",
+      "ctaJoin": "Join the Movement",
+      "ctaDonate": "Support Education",
       "ctaPartner": "Partner With Us",
       "ctaAmbassador": "Become an Ambassador",
       "ctaJoinChapter": "Join a Local Chapter",
       "ctaCsr": "Partner / CSR",
       "ctaMedia": "Watch SCEF Media",
       "expanded": {
-        "p1": "Santos Creations Educational Foundation (SCEF) is a membership-based, not-for-profit and membership-driven Pan-African education foundation advocating for transforming education across Nigeria and Africa through sustainable practices, innovation, and community-driven initiatives.",
-        "p2": "We also provide CSR for Education Funds Management Services—supporting corporations and institutions to deploy education CSR funds through verified projects, tracked disbursement, measurable outcomes, and accountability reporting aligned with sustainability and ESG expectations.",
-        "p3": "In addition, SCEF delivers Africa-recognised stakeholder and African-institution endorsed certification/endorsement services to validate education quality efforts, strengthen credibility, and support continuous improvement across schools, programs, and partner interventions."
+        "p1": "Santos Creations Educational Foundation (SCEF) is a Pan-African membership-based not-for-profit NGO committed to advocating and advancing education for all in Africa through quality learning access, digital education, teacher development, girls and women empowerment, ESG awareness, youth career pathways, community-led transformation, and CSR for Education Fund Management Services.",
+        "p2": "Through EduAid-Africa, NESA-Africa, Education Online Africa, eLibrary Africa, Rebuild My School Africa, My Career My Life, SCEF Local Chapters, and CSR education partnerships, SCEF works with schools, corporate sponsors, donors, volunteers, ambassadors, and communities to make education more inclusive, accessible, sustainable, accountable, and impactful across Africa.",
+        "p3": "SCEF's CSR for Education Fund Management Services help corporate sponsors, donors, institutions, and development partners support scholarships, school rebuilding, teacher development, girls education, digital learning, ESG advocacy, and local chapter education projects with transparency, accountability, and measurable impact."
       },
       "facts": {
         "founded": "Founded 1997",
