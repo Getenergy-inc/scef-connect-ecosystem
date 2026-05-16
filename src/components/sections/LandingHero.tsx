@@ -76,6 +76,20 @@ export const LandingHero = () => {
               </Button>
               <Button
                 size="lg"
+                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
+                asChild
+              >
+                <Link to="/women-girls-empowerment">Support Girls Education</Link>
+              </Button>
+              <Button
+                size="lg"
+                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
+                asChild
+              >
+                <Link to="/wallet">Pay via GFA Wallet</Link>
+              </Button>
+              <Button
+                size="lg"
                 variant="outline"
                 className="h-12 border-scef-gold/60 bg-transparent px-7 font-semibold text-scef-gold hover:bg-scef-gold/10 hover:text-scef-gold-light"
                 onClick={() => window.dispatchEvent(new CustomEvent("sophia:open"))}
@@ -83,6 +97,27 @@ export const LandingHero = () => {
                 <MessageCircle className="me-2 h-4 w-4" />
                 Chat with Sophia
               </Button>
+            </div>
+
+            {/* Key message chips */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {[
+                "Education for All",
+                "Girls & Women Empowerment",
+                "CSR Education Fund Management",
+                "Teacher Development",
+                "Digital Learning",
+                "ESG & Sustainability",
+                "Local Chapter Impact",
+                "Community Transformation",
+              ].map((chip) => (
+                <span
+                  key={chip}
+                  className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/80"
+                >
+                  {chip}
+                </span>
+              ))}
             </div>
 
             {/* Secondary CTAs */}
