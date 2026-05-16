@@ -152,12 +152,15 @@ export const LandingHero = () => {
 
           {/* RIGHT — Image */}
           <div className="md:col-span-6 lg:col-span-7">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/40 bg-scef-blue-darker">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/40">
               <img
                 src={heroImg}
-                alt={t("home.heroV2.imageAlt") || "SCEF team — Pan-African and international volunteers"}
-                className="h-full w-full object-contain aspect-[16/10] [image-rendering:auto]"
+                alt={t("home.heroV2.imageAlt") || "African schoolchildren in green uniforms standing together at school"}
+                width={1920}
+                height={1080}
+                className="h-full w-full object-cover aspect-[16/10]"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/40 via-transparent to-transparent" />
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-white/55 md:hidden">
               <span className="h-px w-6 bg-scef-gold/60" />
