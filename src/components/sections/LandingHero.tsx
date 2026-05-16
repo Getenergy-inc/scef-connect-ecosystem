@@ -65,7 +65,7 @@ export const LandingHero = () => {
                 className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
                 asChild
               >
-                <Link to="/donate">Donate Now</Link>
+                <Link to="/donate">Support Education</Link>
               </Button>
               <Button
                 size="lg"
