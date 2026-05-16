@@ -20,10 +20,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>SCEF — Empowering Education. Advancing Health. Sustaining Africa's Future.</title>
+        <title>SCEF — Empowering Education. Advocating Education for All. Sustaining Africa's Future.</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation (SCEF) — a Pan-African membership-based not-for-profit NGO transforming education through advocacy, scholarships, digital learning, local chapters, ESG, health education and sustainable community impact."
+          content="Santos Creations Educational Foundation (SCEF) is a Pan-African not-for-profit NGO advancing education for all in Africa through EduAid-Africa, NESA-Africa, girls and women empowerment, CSR education fund management, digital learning, ESG, scholarships, school support, and community impact."
         />
         <link rel="canonical" href="https://santoscreations.org/" />
       </Helmet>
