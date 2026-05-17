@@ -8,6 +8,8 @@ export interface BankAccount {
   accountType?: string;
   accountNumber: string;
   purpose: string;
+  /** Optional per-account bank override. Falls back to group.bank when omitted. */
+  bank?: string;
 }
 
 export interface AccountGroup {

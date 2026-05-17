@@ -73,6 +73,7 @@ function GroupCard({ group, currencyFilter }: { group: AccountGroup; currencyFil
             <table className="w-full text-sm">
               <thead className="bg-muted/40 text-left">
                 <tr>
+                  <th className="px-4 py-3 font-semibold text-scef-blue-darker">Bank</th>
                   <th className="px-4 py-3 font-semibold text-scef-blue-darker">Currency</th>
                   <th className="px-4 py-3 font-semibold text-scef-blue-darker">Account Number</th>
                   <th className="px-4 py-3 font-semibold text-scef-blue-darker">Purpose</th>
@@ -82,6 +83,11 @@ function GroupCard({ group, currencyFilter }: { group: AccountGroup; currencyFil
               <tbody>
                 {accounts.map((a) => (
                   <tr key={a.accountNumber} className="border-t border-border">
+                    <td className="px-4 py-3">
+                      <span className="inline-flex items-center rounded-md bg-scef-blue/10 text-scef-blue-darker ring-1 ring-scef-blue/20 px-2 py-0.5 text-xs font-semibold">
+                        {a.bank || group.bank}
+                      </span>
+                    </td>
                     <td className="px-4 py-3">
                       <span className="inline-flex items-center rounded-md bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30 px-2 py-0.5 text-xs font-bold">
                         {a.currency}
