@@ -142,17 +142,20 @@ export const EduAidAdvocacyCalendars = () => {
           </div>
 
           <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {advocacyDays.map(({ date, name }) => (
+            {advocacyDays.map(({ date, name, medium }) => (
               <li
                 key={name}
-                className="flex items-start gap-3 rounded-xl border border-border bg-white px-4 py-3"
+                className="flex flex-col gap-2 rounded-xl border border-border bg-white px-4 py-3"
               >
-                <span className="mt-0.5 inline-flex min-w-[72px] justify-center rounded-md bg-scef-blue-darker px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-                  {date}
-                </span>
-                <span className="text-sm font-medium leading-snug text-scef-blue-darker">
-                  {name}
-                </span>
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex min-w-[72px] justify-center rounded-md bg-scef-blue-darker px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+                    {date}
+                  </span>
+                  <span className="text-sm font-medium leading-snug text-scef-blue-darker">
+                    {name}
+                  </span>
+                </div>
+                <EduAidServiceBrand title={name} medium={medium} compact />
               </li>
             ))}
           </ul>
