@@ -50,7 +50,8 @@ export const EduAidWebinarCalendar = ({
               <thead className="bg-scef-blue-darker text-white">
                 <tr>
                   <th className="px-5 py-3 font-semibold">Month</th>
-                  <th className="px-5 py-3 font-semibold">Training Focus</th>
+                  <th className="px-5 py-3 font-semibold">EduAid-Africa Service</th>
+                  <th className="px-5 py-3 font-semibold">Medium</th>
                   <th className="px-5 py-3 font-semibold">Target Audience</th>
                 </tr>
               </thead>
@@ -63,7 +64,15 @@ export const EduAidWebinarCalendar = ({
                     <td className="px-5 py-3 font-semibold text-scef-blue-darker whitespace-nowrap">
                       {row.month}
                     </td>
-                    <td className="px-5 py-3 text-foreground">{row.focus}</td>
+                    <td className="px-5 py-3 text-foreground">
+                      <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-scef-gold-dark">EduAid-Africa</span>
+                      {row.focus}
+                    </td>
+                    <td className="px-5 py-3 whitespace-nowrap">
+                      <span className="inline-flex items-center rounded-md bg-scef-gold/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-scef-gold-dark ring-1 ring-scef-gold/30">
+                        {row.medium ?? "Webinar"}
+                      </span>
+                    </td>
                     <td className="px-5 py-3 text-muted-foreground">{row.audience}</td>
                   </tr>
                 ))}

@@ -5,6 +5,20 @@
 
 export type ParticipationMode = "Online" | "Physical" | "Hybrid";
 
+/** Primary medium of service delivery for each EduAid-Africa branded program. */
+export type ServiceMedium =
+  | "Webinar"
+  | "Conference"
+  | "Advocacy Walk"
+  | "School Training"
+  | "Workshop"
+  | "Roundtable"
+  | "Mentorship Circle"
+  | "Media Episode"
+  | "Campaign"
+  | "Showcase"
+  | "Hybrid Program Week";
+
 export type MonthlyProgram = {
   slug: string;
   month: string;       // e.g. "July 2026"
@@ -12,6 +26,10 @@ export type MonthlyProgram = {
   short: string;       // dropdown short label
   summary: string;     // 1–2 sentences for cards & overview
   modes: ParticipationMode[];
+  /** Primary medium of delivery — used in the EduAid-Africa service brand line. */
+  medium: ServiceMedium;
+  /** Owning brand for the service; always EduAid-Africa for monthly programs. */
+  brand?: "EduAid-Africa";
   audience: string;
 };
 
@@ -24,6 +42,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Equipping teachers across Africa with classroom innovation, pedagogy upgrades, and student engagement skills.",
     modes: ["Online", "Physical", "Hybrid"],
+    medium: "Webinar",
     audience: "Teachers, school managers, education NGOs",
   },
   {
@@ -34,6 +53,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Strengthening school owners, principals, and administrators in governance, operations, and institutional leadership.",
     modes: ["Online", "Hybrid"],
+    medium: "Conference",
     audience: "School owners, principals, administrators",
   },
   {
@@ -44,6 +64,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Advancing inclusive classrooms, special needs education and safeguarding for vulnerable learners.",
     modes: ["Online", "Physical", "Hybrid"],
+    medium: "Workshop",
     audience: "Special needs educators, schools, NGOs",
   },
   {
@@ -54,6 +75,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Bringing schools, teachers and students into the digital learning era through EdTech tools and digital labs.",
     modes: ["Online", "Hybrid"],
+    medium: "Webinar",
     audience: "Teachers, ICT coordinators, schools",
   },
   {
@@ -64,6 +86,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Improving curriculum design, learning outcomes and assessment standards across African schools.",
     modes: ["Online", "Hybrid"],
+    medium: "Workshop",
     audience: "Teachers, academic heads, examiners",
   },
   {
@@ -74,6 +97,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Engaging policymakers, NGOs and institutional leaders on education governance, compliance and reform.",
     modes: ["Online", "Physical", "Hybrid"],
+    medium: "Roundtable",
     audience: "Policy makers, NGOs, institutional leaders",
   },
   {
@@ -84,6 +108,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Embedding career guidance frameworks into schools so every learner can plan their pathway.",
     modes: ["Online", "Hybrid"],
+    medium: "Webinar",
     audience: "Counselors, teachers, school leaders",
   },
   {
@@ -94,6 +119,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Championing girls’ education, gender inclusion, and safeguarding in schools and communities.",
     modes: ["Online", "Physical", "Hybrid"],
+    medium: "Advocacy Walk",
     audience: "Girls, women, schools, advocates",
   },
   {
@@ -104,6 +130,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Promoting technical, vocational and entrepreneurship pathways for African youth and out-of-school learners.",
     modes: ["Online", "Physical", "Hybrid"],
+    medium: "School Training",
     audience: "Vocational schools, technical trainers, youth",
   },
   {
@@ -114,6 +141,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Preparing schools and NGOs to access CSR partnerships, grants and structured funding.",
     modes: ["Online", "Hybrid"],
+    medium: "Roundtable",
     audience: "Schools, NGOs, chapter leaders",
   },
   {
@@ -124,6 +152,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Activating local chapters, volunteers and ambassadors around grassroots education advocacy.",
     modes: ["Physical", "Hybrid"],
+    medium: "Campaign",
     audience: "LCPs, volunteers, ambassadors, communities",
   },
   {
@@ -134,6 +163,7 @@ export const monthlyPrograms: MonthlyProgram[] = [
     summary:
       "Closing the year with transparent monitoring, evaluation and public impact reporting across SCEF.",
     modes: ["Online", "Hybrid"],
+    medium: "Showcase",
     audience: "Admins, CSR partners, project managers",
   },
 ];

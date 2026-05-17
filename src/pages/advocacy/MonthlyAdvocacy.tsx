@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { monthlyPrograms } from "@/config/monthlyCalendar";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
+import { EduAidServiceBrand } from "@/components/eduaid/EduAidServiceBrand";
 
 const MonthlyAdvocacy = () => (
   <PageShell
@@ -25,6 +26,7 @@ const MonthlyAdvocacy = () => (
               <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">{p.month}</span>
             </div>
             <h2 className="font-display text-lg font-semibold text-scef-blue-darker mb-2 leading-snug">{p.title}</h2>
+            <EduAidServiceBrand title={p.short} medium={p.medium} className="mb-3" />
             <p className="text-sm text-muted-foreground flex-1">{p.summary}</p>
 
             <div className="flex flex-wrap gap-1.5 mt-4">

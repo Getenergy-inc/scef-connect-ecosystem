@@ -1,15 +1,25 @@
 import { Link } from "react-router-dom";
 import { Calendar, GraduationCap, Compass, Megaphone, Heart, Accessibility, ArrowRight } from "lucide-react";
+import { EduAidServiceBrand, type ServiceMedium } from "@/components/eduaid/EduAidServiceBrand";
 
 /**
  * EduAid-Africa Advocacy & Calendars hub.
  * Surfaces every recurring calendar delivered under EduAid-Africa, plus
  * SCEF advocacy days the foundation observes throughout the year.
  */
-const calendars = [
+const calendars: Array<{
+  icon: typeof GraduationCap;
+  title: string;
+  medium: ServiceMedium;
+  period: string;
+  blurb: string;
+  href: string;
+  cta: string;
+}> = [
   {
     icon: GraduationCap,
     title: "Monthly Training & Webinar Calendar",
+    medium: "Webinar",
     period: "July 2026 – June 2027",
     blurb: "Twelve months of teacher training, school leadership, EdTech, TVET, M&E and chapter development.",
     href: "/programs/training-development",
@@ -18,6 +28,7 @@ const calendars = [
   {
     icon: Compass,
     title: "My Career My Life Advocacy Calendar",
+    medium: "School Training",
     period: "August 2026 – July 2027",
     blurb: "Twelve months of student-focused career guidance for JSS, SS2 and SS3 — culminating in the Annual Student Showcase.",
     href: "/programs/my-career-my-life",
@@ -26,6 +37,7 @@ const calendars = [
   {
     icon: Heart,
     title: "Women & Girls Empowerment Calendar",
+    medium: "Mentorship Circle",
     period: "Year-round",
     blurb: "Mentorship circles, Girls in STEM, safeguarding workshops and leadership clinics under EduAid-Africa.",
     href: "/programs/women-girls-education",
@@ -34,6 +46,7 @@ const calendars = [
   {
     icon: Accessibility,
     title: "Special Needs & Inclusive Education Calendar",
+    medium: "Workshop",
     period: "Year-round",
     blurb: "Inclusive classroom training, assistive technology and special needs school support cycles.",
     href: "/programs/special-needs-education",
@@ -41,17 +54,18 @@ const calendars = [
   },
 ];
 
-const advocacyDays = [
-  { date: "24 January", name: "International Day of Education" },
-  { date: "11 February", name: "International Day of Women & Girls in Science" },
-  { date: "8 March", name: "International Women's Day" },
-  { date: "16 June", name: "Day of the African Child" },
-  { date: "12 August", name: "International Youth Day" },
-  { date: "8 September", name: "International Literacy Day" },
-  { date: "5 October", name: "World Teachers' Day" },
-  { date: "11 October", name: "International Day of the Girl Child" },
-  { date: "20 November", name: "World Children's Day" },
-  { date: "3 December", name: "International Day of Persons with Disabilities" },
+type AdvocacyDay = { date: string; name: string; medium: ServiceMedium };
+const advocacyDays: AdvocacyDay[] = [
+  { date: "24 January", name: "International Day of Education", medium: "Campaign" },
+  { date: "11 February", name: "International Day of Women & Girls in Science", medium: "Webinar" },
+  { date: "8 March", name: "International Women's Day", medium: "Advocacy Walk" },
+  { date: "16 June", name: "Day of the African Child", medium: "Advocacy Walk" },
+  { date: "12 August", name: "International Youth Day", medium: "Conference" },
+  { date: "8 September", name: "International Literacy Day", medium: "Campaign" },
+  { date: "5 October", name: "World Teachers' Day", medium: "Conference" },
+  { date: "11 October", name: "International Day of the Girl Child", medium: "Advocacy Walk" },
+  { date: "20 November", name: "World Children's Day", medium: "Campaign" },
+  { date: "3 December", name: "International Day of Persons with Disabilities", medium: "Workshop" },
 ];
 
 export const EduAidAdvocacyCalendars = () => {
@@ -76,7 +90,7 @@ export const EduAidAdvocacyCalendars = () => {
 
         {/* Program calendars grid */}
         <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2">
-          {calendars.map(({ icon: Icon, title, period, blurb, href, cta }) => (
+          {calendars.map(({ icon: Icon, title, medium, period, blurb, href, cta }) => (
             <article
               key={title}
               className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md md:p-7"
@@ -86,6 +100,7 @@ export const EduAidAdvocacyCalendars = () => {
                   <Icon className="h-6 w-6" strokeWidth={1.75} />
                 </span>
                 <div className="flex-1">
+                  <EduAidServiceBrand title={title} medium={medium} className="mb-2" />
                   <h3 className="font-display text-lg font-bold text-scef-blue-darker md:text-xl">
                     {title}
                   </h3>
@@ -127,17 +142,20 @@ export const EduAidAdvocacyCalendars = () => {
           </div>
 
           <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {advocacyDays.map(({ date, name }) => (
+            {advocacyDays.map(({ date, name, medium }) => (
               <li
                 key={name}
-                className="flex items-start gap-3 rounded-xl border border-border bg-white px-4 py-3"
+                className="flex flex-col gap-2 rounded-xl border border-border bg-white px-4 py-3"
               >
-                <span className="mt-0.5 inline-flex min-w-[72px] justify-center rounded-md bg-scef-blue-darker px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-                  {date}
-                </span>
-                <span className="text-sm font-medium leading-snug text-scef-blue-darker">
-                  {name}
-                </span>
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex min-w-[72px] justify-center rounded-md bg-scef-blue-darker px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+                    {date}
+                  </span>
+                  <span className="text-sm font-medium leading-snug text-scef-blue-darker">
+                    {name}
+                  </span>
+                </div>
+                <EduAidServiceBrand title={name} medium={medium} compact />
               </li>
             ))}
           </ul>
