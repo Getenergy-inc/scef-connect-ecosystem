@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { monthlyPrograms, programSchedule, type ParticipationMode } from "@/config/monthlyCalendar";
 import { Button } from "@/components/ui/button";
+import { EduAidServiceBrand } from "@/components/eduaid/EduAidServiceBrand";
 
 const modeStyles: Record<ParticipationMode, string> = {
   Online: "bg-scef-blue-darker/10 text-scef-blue-darker ring-scef-blue-darker/20",
