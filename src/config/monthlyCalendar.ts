@@ -5,6 +5,20 @@
 
 export type ParticipationMode = "Online" | "Physical" | "Hybrid";
 
+/** Primary medium of service delivery for each EduAid-Africa branded program. */
+export type ServiceMedium =
+  | "Webinar"
+  | "Conference"
+  | "Advocacy Walk"
+  | "School Training"
+  | "Workshop"
+  | "Roundtable"
+  | "Mentorship Circle"
+  | "Media Episode"
+  | "Campaign"
+  | "Showcase"
+  | "Hybrid Program Week";
+
 export type MonthlyProgram = {
   slug: string;
   month: string;       // e.g. "July 2026"
@@ -12,6 +26,10 @@ export type MonthlyProgram = {
   short: string;       // dropdown short label
   summary: string;     // 1–2 sentences for cards & overview
   modes: ParticipationMode[];
+  /** Primary medium of delivery — used in the EduAid-Africa service brand line. */
+  medium: ServiceMedium;
+  /** Owning brand for the service; always EduAid-Africa for monthly programs. */
+  brand?: "EduAid-Africa";
   audience: string;
 };
 
