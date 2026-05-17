@@ -90,7 +90,7 @@ export const EduAidAdvocacyCalendars = () => {
 
         {/* Program calendars grid */}
         <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2">
-          {calendars.map(({ icon: Icon, title, period, blurb, href, cta }) => (
+          {calendars.map(({ icon: Icon, title, medium, period, blurb, href, cta }) => (
             <article
               key={title}
               className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md md:p-7"
@@ -100,6 +100,7 @@ export const EduAidAdvocacyCalendars = () => {
                   <Icon className="h-6 w-6" strokeWidth={1.75} />
                 </span>
                 <div className="flex-1">
+                  <EduAidServiceBrand title={title} medium={medium} className="mb-2" />
                   <h3 className="font-display text-lg font-bold text-scef-blue-darker md:text-xl">
                     {title}
                   </h3>
