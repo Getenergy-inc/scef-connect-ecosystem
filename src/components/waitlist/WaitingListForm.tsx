@@ -65,13 +65,21 @@ export const WaitingListForm = ({ disabled = false, onSuccess }: Props) => {
     }
 
     setSubmitting(true);
-    const result = await submitWaitlistEntry({ ...parsed.data, language: locale });
+    const result = await submitWaitlistEntry({
+      fullName: parsed.data.fullName,
+      country: parsed.data.country,
+      organization: parsed.data.organization,
+      role: parsed.data.role,
+      language: locale,
+    });
     setSubmitting(false);
 
     if (result.ok) {
       setValues({ fullName: "", country: "", organization: "", role: "" });
       onSuccess();
-    } else if (result.reason === "duplicate") {
+      return;
+    }
+    if (result.reason === "duplicate") {
       setSubmitError(t("waitingList.duplicateMessage"));
     } else {
       setSubmitError(t("waitingList.errorMessage"));
