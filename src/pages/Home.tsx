@@ -15,6 +15,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
 import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 import { WomenGirlsEmpowerment } from "@/components/sections/WomenGirlsEmpowerment";
+import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027WaitingList";
 
 const Home = () => {
   return (
@@ -62,6 +63,11 @@ const Home = () => {
           {/* Women & Girls Empowerment — primary continental pillar */}
           <Reveal>
             <WomenGirlsEmpowerment />
+          </Reveal>
+
+          {/* Seychelles 2027 Edu-Tourism Conference — Waiting List */}
+          <Reveal>
+            <Seychelles2027WaitingList />
           </Reveal>
 
           {/* Premium story cards: Journey, Calendar, Support, Chapters, Partners, Training, Channels */}
