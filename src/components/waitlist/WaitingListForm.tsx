@@ -79,7 +79,8 @@ export const WaitingListForm = ({ disabled = false, onSuccess }: Props) => {
       onSuccess();
       return;
     }
-    if (!result.ok && result.reason === "duplicate") {
+    const failure = result as { ok: false; reason: "duplicate" | "error" };
+    if (failure.reason === "duplicate") {
       setSubmitError(t("waitingList.duplicateMessage"));
     } else {
       setSubmitError(t("waitingList.errorMessage"));
