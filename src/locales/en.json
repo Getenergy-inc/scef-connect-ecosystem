@@ -797,6 +797,11 @@
             "Nija Youth Tours — a youth tourism education initiative promoting cultural heritage, history, and leadership through experiential learning"
           ]
         },
+        "2010": {
+          "year": "2010",
+          "title": "Registration and Formalization",
+          "description": "SCEF was registered in 2010, establishing a more formal institutional structure to support long-term program delivery, governance, and partnerships."
+        },
         "2003-2007": {
           "year": "2003–2007",
           "title": "Early Partnerships — Institutional Expansion",
@@ -815,11 +820,6 @@
             "NYSC Kwara",
             "ESSPIN (Education Sector Support Programme in Nigeria)"
           ]
-        },
-        "2010": {
-          "year": "2010",
-          "title": "Registration and Formalization",
-          "description": "SCEF was registered in 2010, establishing a more formal institutional structure to support long-term program delivery, governance, and partnerships."
         },
         "2012-2019": {
           "year": "2012–2019",
@@ -2471,5 +2471,65 @@
     "save": "Save",
     "cancel": "Cancel",
     "creating": "Creating..."
+  },
+  "waitingList": {
+    "badge": "EduAid-Africa · Edu-Tourism Conference · Hybrid",
+    "title": "Seychelles 2027 — Join the Waiting List",
+    "subtitle": "Be the first to secure a seat at the EduAid Africa Indian Ocean Islands Edu-Tourism Conference 2027 — Seychelles Regional Edition.",
+    "description": "Join the waiting list to receive early updates on applications, grants, sponsorship, volunteer opportunities, travel packages and programme announcements.",
+    "dates": "Dates",
+    "datesValue": "15–24 October 2027",
+    "hostHub": "Host Hub",
+    "hostHubValue": "Seychelles",
+    "theme": "Theme",
+    "themeValue": "Girls' Education, Gender Inclusion, Safeguarding & Inclusive Education Support",
+    "regionalFocus": "Regional Focus",
+    "fullName": "Full name",
+    "country": "Country",
+    "organization": "Organisation",
+    "role": "Role",
+    "fullNamePlaceholder": "e.g. Amina Diallo",
+    "countryPlaceholder": "Select your country",
+    "organizationPlaceholder": "School / NGO / Ministry",
+    "rolePlaceholder": "Select your role",
+    "roles": {
+      "educator": "Educator / Teacher",
+      "administrator": "School Administrator",
+      "ngo": "NGO / Civil Society",
+      "government": "Government / Ministry",
+      "student": "Student",
+      "researcher": "Researcher / Academic",
+      "partner": "Partner / Sponsor",
+      "volunteer": "Volunteer / Ambassador",
+      "media": "Media / Press",
+      "other": "Other"
+    },
+    "submit": "Join the Waiting List",
+    "submitting": "Submitting…",
+    "successTitle": "Thank you for joining the waiting list",
+    "successMessage": "Your interest in the EduAid Africa Seychelles 2027 programme has been received. You will receive updates on applications, grants, partnerships, sponsorships and volunteer opportunities.",
+    "statusLabel": "Submission status",
+    "statusValue": "Submitted",
+    "returnHome": "Return to home",
+    "submitAnother": "Register another person",
+    "errorMessage": "We couldn't submit your registration. Please try again.",
+    "duplicateMessage": "This name and organisation are already on the waiting list.",
+    "remainingSpots": "{count} of {total} seats remaining",
+    "almostFull": "Almost full",
+    "waitlistFull": "The waiting list is currently full. Please check back soon.",
+    "pillars": {
+      "learn": "Learn",
+      "serve": "Serve",
+      "tour": "Tour",
+      "partner": "Partner",
+      "transform": "Transform"
+    },
+    "tagline": "Transform Education in Africa.",
+    "validation": {
+      "fullNameRequired": "Full name is required (min 2 characters).",
+      "countryRequired": "Please select your country.",
+      "organizationRequired": "Organisation is required (min 2 characters).",
+      "roleRequired": "Please select your role."
+    }
   }
 }
