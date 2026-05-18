@@ -3397,6 +3397,42 @@ export type Database = {
           },
         ]
       }
+      waitlist_submissions: {
+        Row: {
+          country: string
+          created_at: string
+          full_name: string
+          id: string
+          language: string
+          organization: string
+          role: string
+          source: string
+          submission_status: string
+        }
+        Insert: {
+          country: string
+          created_at?: string
+          full_name: string
+          id?: string
+          language?: string
+          organization: string
+          role: string
+          source?: string
+          submission_status?: string
+        }
+        Update: {
+          country?: string
+          created_at?: string
+          full_name?: string
+          id?: string
+          language?: string
+          organization?: string
+          role?: string
+          source?: string
+          submission_status?: string
+        }
+        Relationships: []
+      }
       wallet_transactions: {
         Row: {
           amount: number
@@ -3713,6 +3749,7 @@ export type Database = {
       cleanup_old_partnership_inquiries: { Args: never; Returns: number }
       generate_badge_code: { Args: { _role: string }; Returns: string }
       generate_receipt_number: { Args: never; Returns: string }
+      get_waitlist_count: { Args: { _source: string }; Returns: number }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

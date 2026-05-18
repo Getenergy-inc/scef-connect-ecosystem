@@ -1,20 +1,41 @@
-import { Mail, MapPin, CalendarDays, Sparkles, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { MapPin, CalendarDays, Sparkles, ArrowRight, Loader2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useLocale } from "@/contexts/LocaleContext";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { WaitingListForm } from "@/components/waitlist/WaitingListForm";
+import { CapacityTracker } from "@/components/waitlist/CapacityTracker";
+import { ConfirmationMessage } from "@/components/waitlist/ConfirmationMessage";
+import { getWaitlistCount } from "@/services/waitlistService";
+import { WAITLIST_CAPACITY } from "@/config/waitlistConfig";
 import seychellesBg from "@/assets/seychelles-2027-conference.jpg";
 
-const EMAIL = "eduaidafrica.santos@gmail.com";
-const SUBJECT = "Seychelles 2027 — Waiting List Registration";
-const BODY =
-  "Hello EduAid-Africa Team,%0D%0A%0D%0AI would like to join the waiting list for the EduAid Africa Indian Ocean Islands Edu-Tourism Conference 2027 — Seychelles Regional Edition (15–24 October 2027).%0D%0A%0D%0AName:%0D%0ACountry:%0D%0AOrganisation / School:%0D%0ARole:%0D%0A%0D%0AThank you.";
-
 const regions = ["Comoros", "Madagascar", "Mauritius", "Seychelles"];
-const pillars = ["Learn", "Serve", "Tour", "Partner", "Transform"];
+const pillarKeys = ["learn", "serve", "tour", "partner", "transform"] as const;
 
 export const Seychelles2027WaitingList = () => {
+  const { t } = useLocale();
+  const [count, setCount] = useState<number | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const refreshCount = async () => {
+    const c = await getWaitlistCount();
+    setCount(c);
+  };
+
+  useEffect(() => {
+    refreshCount();
+  }, []);
+
+  const isFull = (count ?? 0) >= WAITLIST_CAPACITY;
+
   return (
-    <section className="relative py-16 md:py-24 bg-scef-blue-darker overflow-hidden">
-      {/* Background image with overlay */}
+    <section
+      id="seychelles-2027"
+      className="relative py-16 md:py-24 bg-scef-blue-darker overflow-hidden"
+      aria-labelledby="seychelles-2027-heading"
+    >
+      {/* Background */}
       <div className="absolute inset-0">
         <img
           src={seychellesBg}
@@ -24,31 +45,38 @@ export const Seychelles2027WaitingList = () => {
           height={1080}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-scef-blue-darker via-scef-blue-darker/85 to-scef-blue-darker/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-scef-blue-darker via-scef-blue-darker/90 to-scef-blue-darker/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/90 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
-          {/* Content */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          {/* LEFT: Content */}
           <div className="lg:col-span-7 text-white">
-            <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-scef-gold/15 border border-scef-gold/40 backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-scef-gold" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold">
-                EduAid-Africa · Edu-Tourism Conference · Hybrid
-              </span>
+            <div className="flex items-center justify-between gap-4 mb-4 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-scef-gold/15 border border-scef-gold/40 backdrop-blur-sm">
+                <Sparkles className="w-3.5 h-3.5 text-scef-gold" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold">
+                  {t("waitingList.badge")}
+                </span>
+              </div>
+              <div className="rounded-md bg-white/5 border border-white/15 backdrop-blur-sm">
+                <LanguageSwitcher />
+              </div>
             </div>
 
-            <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight mb-4">
-              Seychelles 2027 — Join the Waiting List
+            <h2
+              id="seychelles-2027-heading"
+              className="font-display text-3xl md:text-5xl font-bold leading-tight mb-4"
+            >
+              {t("waitingList.title")}
             </h2>
 
-            <p className="text-base md:text-lg text-white/85 leading-relaxed mb-6 max-w-2xl">
-              Be the first to secure a seat at the{" "}
-              <strong className="text-scef-gold">
-                EduAid Africa Indian Ocean Islands Edu-Tourism Conference 2027
-              </strong>{" "}
-              — Seychelles Regional Edition.
+            <p className="text-base md:text-lg text-white/85 leading-relaxed mb-4 max-w-2xl">
+              {t("waitingList.subtitle")}
+            </p>
+            <p className="text-sm text-white/75 leading-relaxed mb-6 max-w-2xl">
+              {t("waitingList.description")}
             </p>
 
             {/* Meta strip */}
@@ -56,31 +84,37 @@ export const Seychelles2027WaitingList = () => {
               <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-lg p-3 backdrop-blur-sm">
                 <CalendarDays className="w-4 h-4 text-scef-gold mt-0.5 shrink-0" />
                 <div>
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-scef-gold">Dates</div>
-                  <div className="text-sm font-medium">15–24 October 2027</div>
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-scef-gold">
+                    {t("waitingList.dates")}
+                  </div>
+                  <div className="text-sm font-medium">{t("waitingList.datesValue")}</div>
                 </div>
               </div>
               <div className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-lg p-3 backdrop-blur-sm">
                 <MapPin className="w-4 h-4 text-scef-gold mt-0.5 shrink-0" />
                 <div>
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-scef-gold">Host Hub</div>
-                  <div className="text-sm font-medium">Seychelles</div>
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-scef-gold">
+                    {t("waitingList.hostHub")}
+                  </div>
+                  <div className="text-sm font-medium">{t("waitingList.hostHubValue")}</div>
                 </div>
               </div>
             </div>
 
             {/* Theme */}
             <div className="mb-5 max-w-2xl">
-              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-scef-gold mb-1.5">Theme</div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-scef-gold mb-1.5">
+                {t("waitingList.theme")}
+              </div>
               <p className="text-sm md:text-base text-white/90">
-                Girls' Education, Gender Inclusion, Safeguarding &amp; Inclusive Education Support
+                {t("waitingList.themeValue")}
               </p>
             </div>
 
             {/* Regional focus */}
             <div className="mb-6">
               <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-scef-gold mb-2">
-                Regional Focus
+                {t("waitingList.regionalFocus")}
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {regions.map((r) => (
@@ -95,62 +129,57 @@ export const Seychelles2027WaitingList = () => {
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-darker font-semibold"
-              >
-                <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}&body=${BODY}`}>
-                  <Mail className="w-4 h-4 mr-2" /> Join the Waiting List
-                </a>
-              </Button>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="text-sm text-white/80 hover:text-scef-gold underline-offset-4 hover:underline break-all"
-              >
-                {EMAIL}
-              </a>
-            </div>
-
             {/* Pillars */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-7 pt-5 border-t border-white/15">
-              {pillars.map((p, i) => (
-                <div key={p} className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-5 border-t border-white/15">
+              {pillarKeys.map((k, i) => (
+                <div key={k} className="flex items-center gap-2">
                   <span className="font-display text-sm md:text-base font-semibold text-scef-gold">
-                    {p}.
+                    {t(`waitingList.pillars.${k}`)}.
                   </span>
-                  {i < pillars.length - 1 && (
+                  {i < pillarKeys.length - 1 && (
                     <ArrowRight className="w-3 h-3 text-white/40 hidden sm:block" />
                   )}
                 </div>
               ))}
               <span className="text-xs text-white/70 italic w-full sm:w-auto sm:ml-2">
-                Transform Education in Africa.
+                {t("waitingList.tagline")}
               </span>
             </div>
           </div>
 
-          {/* Decorative card */}
-          <div className="lg:col-span-5 hidden lg:block">
-            <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
+          {/* RIGHT: Form / Confirmation */}
+          <div className="lg:col-span-5">
+            <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-7 shadow-2xl">
               <div className="absolute -top-3 -right-3 bg-scef-gold text-scef-blue-darker text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
-                Limited Seats
-              </div>
-              <div className="font-display text-6xl font-bold text-scef-gold leading-none mb-2">
                 2027
               </div>
-              <div className="text-white/80 text-sm uppercase tracking-[0.2em] mb-6">
-                Indian Ocean Islands Edition
-              </div>
-              <ul className="space-y-3 text-sm text-white/90">
-                <li className="flex gap-2"><span className="text-scef-gold">›</span> 10-day immersive conference programme</li>
-                <li className="flex gap-2"><span className="text-scef-gold">›</span> School visits across 4 island nations</li>
-                <li className="flex gap-2"><span className="text-scef-gold">›</span> Cultural &amp; eco-tourism experiences</li>
-                <li className="flex gap-2"><span className="text-scef-gold">›</span> Partnership &amp; safeguarding roundtables</li>
-                <li className="flex gap-2"><span className="text-scef-gold">›</span> Networking with African education leaders</li>
-              </ul>
+
+              {submitted ? (
+                <ConfirmationMessage onReset={() => { setSubmitted(false); refreshCount(); }} />
+              ) : (
+                <>
+                  <div className="mb-4">
+                    {count === null ? (
+                      <div className="flex items-center gap-2 text-xs text-white/60">
+                        <Loader2 className="w-3 h-3 animate-spin" /> …
+                      </div>
+                    ) : (
+                      <CapacityTracker submissionsCount={count} />
+                    )}
+                  </div>
+
+                  <WaitingListForm
+                    disabled={isFull}
+                    onSuccess={() => { setSubmitted(true); refreshCount(); }}
+                  />
+
+                  {isFull && (
+                    <p className="mt-3 text-xs text-scef-gold text-center">
+                      {t("waitingList.waitlistFull")}
+                    </p>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>
