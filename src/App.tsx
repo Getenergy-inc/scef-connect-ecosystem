@@ -197,6 +197,7 @@ import AdminMediaSubmissions from "./pages/admin/AdminMediaSubmissions";
 import MasterTimelinesAdminPage from "./pages/admin/MasterTimelinesAdminPage";
 import SophiaFAQs from "./pages/support/SophiaFAQs";
 import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
+import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
 
 const queryClient = new QueryClient();
 
