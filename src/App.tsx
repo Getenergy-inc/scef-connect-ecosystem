@@ -350,6 +350,7 @@ const App = () => (
               <Route path="/admin/scholarship/exams/:examId/questions" element={<ScholarshipExamQuestionsAdmin />} />
               <Route path="/admin/media-submissions" element={<AdminMediaSubmissions />} />
               <Route path="/admin/master-timelines" element={<MasterTimelinesAdminPage />} />
+              <Route path="/admin/waitlist" element={<WaitlistAdmin />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
