@@ -377,6 +377,7 @@ const App = () => (
               <Route path="/admin/program-waitlist" element={<AdminProgramWaitlist />} />
               <Route path="/programs/waitlist" element={<WaitlistApply />} />
               <Route path="/waitlist" element={<WaitlistApply />} />
+              <Route path="/apply/green-horizon" element={<GreenHorizonApply />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
