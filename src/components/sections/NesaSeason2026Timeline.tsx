@@ -56,7 +56,7 @@ const phase1Events: PhaseEvent[] = [
     title: "Gold Certificate Nominations Close",
     date: "10 July 2026",
     status: "Upcoming",
-    description: "Final deadline for Gold Special Recognition entries before voting and category review.",
+    description: "Final deadline for Influencers Education Impact Award entries before voting and category review.",
     tags: ["Pipeline Lock-In", "Category Review", "Voting Readiness"],
     agc: true,
   },
@@ -84,7 +84,7 @@ const phase1Events: PhaseEvent[] = [
     title: "Gold Certificate Winners Show",
     date: "22 August 2026",
     status: "Upcoming",
-    description: "Official announcement of Gold Special Recognition — 2026 Edition winners.",
+    description: "Official announcement of Influencers Education Impact Award 2026 Edition winners.",
     tags: ["Amplification", "Media Assets", "Winner Visibility"],
     agc: true,
   },
@@ -114,7 +114,7 @@ const phase1Events: PhaseEvent[] = [
     status: "Upcoming",
     description:
       "The peak event of the season — a live continental recognition ceremony and media moment celebrating Africa's education changemakers.",
-    tags: ["Continental Spotlight", "Live Broadcast", "Main Gala"],
+    tags: ["Continental Spotlight", "Live Broadcast", "Main Gala", "Recognition", "Impact"],
     agc: true,
   },
 ];
@@ -277,13 +277,13 @@ const NesaSeason2026Timeline = () => {
               <Link to="/nominate">Nominate Now</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link to="/programs/nesa-africa#categories">View Categories</Link>
+              <Link to="/nesa-africa/categories">View Categories</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/partner-with-us">Partner With Us</Link>
+              <Link to="/csr-partnership">Partner With Us</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/media/nesa-tv">Watch NESA TV</Link>
+              <Link to="/nesa-tv">Watch NESA TV</Link>
             </Button>
           </div>
         </div>
