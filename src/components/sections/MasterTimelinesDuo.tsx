@@ -4,6 +4,7 @@ import { Award, CalendarRange, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import nesaRecognition from "@/assets/nesa-africa-recognition.png";
+import masterTimelinesBg from "@/assets/master-timelines-bg.jpg";
 
 type CTA = { label: string; to: string; variant?: string };
 type Timeline = {
