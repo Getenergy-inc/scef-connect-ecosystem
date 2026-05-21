@@ -44,6 +44,7 @@ import Vacancies from "./pages/Vacancies";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import CsrFundManagement from "./pages/CsrFundManagement";
 import CsrFundingIntake from "./pages/CsrFundingIntake";
+import CsrEducationFundsManagement from "./pages/CsrEducationFundsManagement";
 import FundingFunnel from "./pages/admin/FundingFunnel";
 import EduAidScholarship2026 from "./pages/scholarship/EduAidScholarship2026";
 import ScholarshipApply from "./pages/scholarship/Apply";
