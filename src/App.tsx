@@ -205,6 +205,7 @@ import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
 import AdminProgramWaitlist from "./pages/admin/AdminProgramWaitlist";
 import WaitlistApply from "./pages/programs/WaitlistApply";
+import GreenHorizonApply from "./pages/apply/GreenHorizonApply";
 
 // Conversion pages (visitor-pathway pages)
 import Internship from "./pages/conversion/Internship";
@@ -376,6 +377,7 @@ const App = () => (
               <Route path="/admin/program-waitlist" element={<AdminProgramWaitlist />} />
               <Route path="/programs/waitlist" element={<WaitlistApply />} />
               <Route path="/waitlist" element={<WaitlistApply />} />
+              <Route path="/apply/green-horizon" element={<GreenHorizonApply />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />

@@ -1619,6 +1619,78 @@ export type Database = {
         }
         Relationships: []
       }
+      green_horizon_waitlist: {
+        Row: {
+          admin_notes: string | null
+          applicant_type: string
+          available_practical_training: boolean
+          consent: boolean
+          country: string
+          created_at: string
+          email: string
+          farming_experience: string | null
+          full_name: string
+          id: string
+          lga_community: string | null
+          located_in_borno: boolean
+          motivation: string | null
+          permaculture_interest: boolean
+          phone: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          state: string | null
+          status: string
+          support_needed: string[]
+          updated_at: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          applicant_type: string
+          available_practical_training?: boolean
+          consent?: boolean
+          country?: string
+          created_at?: string
+          email: string
+          farming_experience?: string | null
+          full_name: string
+          id?: string
+          lga_community?: string | null
+          located_in_borno?: boolean
+          motivation?: string | null
+          permaculture_interest?: boolean
+          phone: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          state?: string | null
+          status?: string
+          support_needed?: string[]
+          updated_at?: string
+        }
+        Update: {
+          admin_notes?: string | null
+          applicant_type?: string
+          available_practical_training?: boolean
+          consent?: boolean
+          country?: string
+          created_at?: string
+          email?: string
+          farming_experience?: string | null
+          full_name?: string
+          id?: string
+          lga_community?: string | null
+          located_in_borno?: boolean
+          motivation?: string | null
+          permaculture_interest?: boolean
+          phone?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          state?: string | null
+          status?: string
+          support_needed?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
       hall_of_fame_media: {
         Row: {
           caption: string | null
