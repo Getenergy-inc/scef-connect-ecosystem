@@ -110,7 +110,7 @@ const cards: Card[] = [
       "Supporting girls' education, women leadership, STEM inclusion, safeguarding, mentorship, and wellbeing.",
     href: "/programs/women-girls-empowerment",
     cta: "Explore Program",
-    image: schoolgirlPhoto,
+    image: eduaidWebinar,
     alt: "Women and girls education webinar",
     accent: "green",
   },
