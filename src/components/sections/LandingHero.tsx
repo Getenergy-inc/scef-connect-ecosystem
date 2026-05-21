@@ -61,6 +61,17 @@ export const LandingHero = () => {
               >
                 <Link to="/donate">Support Education Funds</Link>
               </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto h-12 sm:h-11 px-5 text-sm rounded-md bg-transparent text-white border-white/70 hover:bg-white/10 hover:text-white font-semibold"
+              >
+                <Link to="/contact">
+                  <span className="sm:hidden">Manage My CSR Funds</span>
+                  <span className="hidden sm:inline">Contact Us to Manage Your CSR Education Funds</span>
+                </Link>
+              </Button>
             </div>
 
             <p className="mt-6 text-[11px] text-white/85 tracking-wide">
