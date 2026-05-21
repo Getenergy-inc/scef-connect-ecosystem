@@ -56,7 +56,7 @@ const phase1Events: PhaseEvent[] = [
     title: "Gold Certificate Nominations Close",
     date: "10 July 2026",
     status: "Upcoming",
-    description: "Final deadline for Gold Special Recognition entries before voting and category review.",
+    description: "Final deadline for Influencers Education Impact Award entries before voting and category review.",
     tags: ["Pipeline Lock-In", "Category Review", "Voting Readiness"],
     agc: true,
   },
