@@ -72,9 +72,8 @@ export default function EduAidWebinarShowcase() {
           {webinars.map((w) => (
             <article
               key={w.topic}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-[0_20px_50px_-20px_rgba(212,175,55,0.4)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:border-scef-gold/40 hover:shadow-[0_20px_50px_-20px_rgba(212,175,55,0.4)]"
             >
-              {/* Official flyer */}
               <div className="relative aspect-[4/5] overflow-hidden bg-[#0A1628]">
                 <img
                   src={w.image}
@@ -88,8 +87,7 @@ export default function EduAidWebinarShowcase() {
                 </div>
               </div>
 
-              {/* Metadata */}
-              <div className="border-t border-white/10 p-5">
+              <div className="flex flex-1 flex-col border-t border-white/10 p-5">
                 <h3 className="mb-1 text-base font-bold leading-snug text-white">
                   {w.topic}
                 </h3>
@@ -106,6 +104,13 @@ export default function EduAidWebinarShowcase() {
                     <span className="leading-relaxed">{w.speakers}</span>
                   </div>
                 </div>
+                <Link
+                  to={`/eduaid-africa/webinar-register?webinar=${w.slug}`}
+                  className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#1F892B] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#1F892B]/90"
+                >
+                  Register Free
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </article>
           ))}
@@ -114,14 +119,14 @@ export default function EduAidWebinarShowcase() {
         {/* CTA row */}
         <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            to="/media/webinars"
+            to="/eduaid-africa/webinar-register"
             className="inline-flex items-center gap-2 rounded-xl bg-[#1F892B] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1F892B]/30 transition-all hover:bg-[#1F892B]/90 hover:shadow-xl"
           >
             Register for the Next Webinar
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            to="/media/webinars"
+            to="/media/eduaid-webinars"
             className="inline-flex items-center gap-2 rounded-xl border border-scef-gold/60 px-6 py-3 text-sm font-semibold text-scef-gold transition-all hover:bg-scef-gold/10"
           >
             Browse Webinar Archive
