@@ -6,11 +6,13 @@ import nesaLogo from "@/assets/nesa-africa-logo.jpg";
 import eduaidLogo from "@/assets/eduaid-africa-logo.jpg";
 import eduaidWebinar from "@/assets/eduaid-webinar-women-girls.jpg";
 import classroomPhoto from "@/assets/hero-classroom.jpg";
-import elibraryPhoto from "@/assets/hero-education.jpg";
-import schoolgirlPhoto from "@/assets/hero-schoolgirl.jpg";
 import mediaVideo from "@/assets/nesa-hero-bg-video.mp4";
 import mediaPoster from "@/assets/hero-media.jpg";
 import greenHorizonPhoto from "@/assets/green-horizon-agriculture.jpg";
+import teacherTrainingPhoto from "@/assets/photos/scef-classroom-teacher.jpg";
+import girlsStemPhoto from "@/assets/photos/scef-girls-stem.jpg";
+import mentorshipPhoto from "@/assets/photos/scef-volunteers-outreach.jpg";
+import sendChildPhoto from "@/assets/photos/scef-school-walk.jpg";
 
 type Accent = "navy" | "green" | "gold" | "blue";
 
@@ -60,7 +62,7 @@ const cards: Card[] = [
       "Funding education support through partnerships, scholarships, school aid, teacher development, and community programs.",
     href: "/programs/eduaid-africa",
     cta: "Explore EduAid-Africa",
-    image: eduaidWebinar,
+    image: teacherTrainingPhoto,
     alt: "EduAid-Africa education support and partnership program",
     accent: "green",
     badge: eduaidLogo,
@@ -97,7 +99,7 @@ const cards: Card[] = [
       "Expanding access to digital learning resources, online libraries, and education technology for students and schools.",
     href: "/programs/elibrary-nigeria",
     cta: "Explore eLibrary",
-    image: elibraryPhoto,
+    image: girlsStemPhoto,
     alt: "Student using digital learning resources",
     accent: "blue",
   },
@@ -108,7 +110,7 @@ const cards: Card[] = [
       "Supporting girls' education, women leadership, STEM inclusion, safeguarding, mentorship, and wellbeing.",
     href: "/programs/women-girls-empowerment",
     cta: "Explore Program",
-    image: schoolgirlPhoto,
+    image: eduaidWebinar,
     alt: "Women and girls education webinar",
     accent: "green",
   },
@@ -130,7 +132,7 @@ const cards: Card[] = [
       "Career guidance, mentorship and youth pathways across SCEF local chapters and partner schools.",
     href: "/programs/my-career-my-life",
     cta: "Explore My Career, My Life",
-    image: schoolgirlPhoto,
+    image: mentorshipPhoto,
     alt: "Youth career guidance and mentorship",
     accent: "blue",
   },
@@ -141,7 +143,7 @@ const cards: Card[] = [
       "Sponsor a child's school fees, uniforms, books, and learning support through SCEF chapters and partners.",
     href: "/programs/send-a-child-to-school",
     cta: "Sponsor a Child",
-    image: classroomPhoto,
+    image: sendChildPhoto,
     alt: "Send a Child to School scholarship program",
     accent: "navy",
   },
