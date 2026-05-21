@@ -5,25 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-body",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-body tracking-tight",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-scef-blue-dark",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
-        secondary: "bg-scef-gold text-scef-blue-dark hover:bg-scef-gold-hover",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover",
+        ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline h-auto px-0 py-0",
-        hero: "bg-scef-gold text-scef-blue-dark hover:bg-scef-gold-hover hover:shadow-md",
-        heroOutline: "border border-scef-gold/80 bg-transparent text-white hover:bg-scef-gold/15 backdrop-blur-sm",
+        hero: "bg-primary text-primary-foreground hover:bg-scef-blue-dark",
+        heroOutline: "border border-white/70 bg-transparent text-white hover:bg-white/10",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90",
       },
       size: {
-        default: "h-10 px-5 text-sm",
-        sm: "h-8 rounded-md px-3.5 text-[13px]",
-        lg: "h-11 rounded-md px-6 text-sm",
-        xl: "h-12 rounded-md px-7 text-[15px]",
+        default: "h-10 px-4 text-[13px]",
+        sm: "h-8 rounded-md px-3 text-[12px]",
+        lg: "h-11 rounded-md px-5 text-sm",
+        xl: "h-11 rounded-md px-6 text-sm",
         icon: "h-9 w-9",
       },
     },
