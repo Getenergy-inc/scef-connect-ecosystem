@@ -10,6 +10,7 @@ import elibraryPhoto from "@/assets/hero-education.jpg";
 import schoolgirlPhoto from "@/assets/hero-schoolgirl.jpg";
 import mediaVideo from "@/assets/nesa-hero-bg-video.mp4";
 import mediaPoster from "@/assets/hero-media.jpg";
+import greenHorizonPhoto from "@/assets/green-horizon-agriculture.jpg";
 
 type Accent = "navy" | "green" | "gold" | "blue";
 
@@ -118,8 +119,8 @@ const cards: Card[] = [
       "Agriculture livelihood, permaculture training and food security project — piloting in Borno State to support IDPs, farmers, youth, and women.",
     href: "/apply/green-horizon",
     cta: "Join Green Horizon Waitlist",
-    image: classroomPhoto,
-    alt: "Green Horizon Initiative Project — agriculture and livelihood pilot",
+    image: greenHorizonPhoto,
+    alt: "Green Horizon agriculture livelihood and permaculture training project",
     accent: "green",
   },
   {
