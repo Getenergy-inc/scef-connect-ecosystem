@@ -88,10 +88,16 @@ const ChapterSignup = () => {
       return;
     }
     setLoading(true);
+    const d = parsed.data;
     const { error } = await supabase.from("chapter_signups").insert([{
-      ...parsed.data,
-      phone: parsed.data.phone || null,
-      motivation: parsed.data.motivation || null,
+      full_name: d.full_name,
+      email: d.email,
+      country: d.country,
+      city: d.city,
+      chapter_type: d.chapter_type,
+      participation_mode: d.participation_mode,
+      phone: d.phone || null,
+      motivation: d.motivation || null,
     }]);
     setLoading(false);
     if (error) {
