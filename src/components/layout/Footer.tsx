@@ -109,6 +109,21 @@ const FooterEndorsements = () => {
 
 const footerColumns = [
   {
+    title: "Explore",
+    links: [
+      { name: "About SCEF", href: "/about" },
+      { name: "NESA-Africa Timeline", href: "/nesa-africa-timeline" },
+      { name: "EduAid-Africa Timeline", href: "/eduaid-africa-timeline" },
+      { name: "Monthly Calendar", href: "/monthly-program-calendar" },
+      { name: "Our Impact", href: "/our-impact" },
+      { name: "Flagship Programs", href: "/flagship-programs" },
+      { name: "Women & Girls Empowerment", href: "/women-girls-empowerment" },
+      { name: "Sponsor a Program", href: "/sponsor" },
+      { name: "Become a Member", href: "/membership" },
+      { name: "Contact", href: "/contact" },
+    ],
+  },
+  {
     title: "About SCEF",
     links: [
       { name: "Who We Are", href: "/about" },
@@ -118,6 +133,7 @@ const footerColumns = [
       { name: "Impact & Reports", href: "/reports" },
     ],
   },
+
   {
     title: "Programs",
     links: [
