@@ -381,6 +381,8 @@ const App = () => (
               <Route path="/volunteer" element={<Volunteer />} />
               <Route path="/ambassador" element={<Ambassador />} />
               <Route path="/ambassadors" element={<Ambassador />} />
+              <Route path="/ambassador/apply" element={<AmbassadorApply />} />
+              <Route path="/get-involved/ambassador/apply" element={<AmbassadorApply />} />
               <Route path="/volunteer/my-career-my-life" element={<VolunteerMyCareerMyLife />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/donate" element={<Donate />} />
