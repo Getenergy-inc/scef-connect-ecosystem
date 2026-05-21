@@ -54,8 +54,13 @@ export const RecognitionToImpact = () => {
               key={c.to}
               className={`group flex flex-col rounded-2xl p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${c.accent}`}
             >
-              <div className={`flex h-14 w-14 items-center justify-center rounded-xl ${c.iconRing}`}>
-                <Icon className="h-7 w-7" />
+              <div className={`flex h-20 w-20 items-center justify-center rounded-xl p-2 ${c.logoFrame}`}>
+                <img
+                  src={c.logo}
+                  alt={c.logoAlt}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <h3 className="mt-5 font-display text-2xl font-bold">{c.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed opacity-90">
