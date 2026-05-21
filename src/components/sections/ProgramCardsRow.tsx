@@ -99,7 +99,7 @@ const cards: Card[] = [
       "Expanding access to digital learning resources, online libraries, and education technology for students and schools.",
     href: "/programs/elibrary-nigeria",
     cta: "Explore eLibrary",
-    image: elibraryPhoto,
+    image: girlsStemPhoto,
     alt: "Student using digital learning resources",
     accent: "blue",
   },
