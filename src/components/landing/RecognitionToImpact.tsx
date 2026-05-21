@@ -5,21 +5,27 @@ import { ArrowRight, Award, GraduationCap } from "lucide-react";
 const cards = [
   {
     icon: Award,
+    logo: "/assets/nesa-africa-logo.jpg",
+    logoAlt: "NESA-Africa official emblem",
     title: "NESA-Africa",
     body: "Celebrating educators, schools, leaders, and organizations shaping Africa's education future.",
     cta: "View NESA Timeline",
     to: "/nesa-africa-timeline",
     accent: "bg-scef-blue-darker text-white",
     iconRing: "bg-scef-gold/20 text-scef-gold",
+    logoFrame: "bg-scef-blue-dark/40 border border-white/10",
   },
   {
     icon: GraduationCap,
+    logo: "/assets/eduaid-africa-logo.jpg",
+    logoAlt: "EduAid-Africa — funding through partnerships logo",
     title: "EduAid-Africa",
     body: "Turning education visibility into scholarships, school support, teacher development, digital learning, and community impact.",
     cta: "View EduAid Timeline",
     to: "/eduaid-africa-timeline",
     accent: "bg-card text-foreground border border-border",
     iconRing: "bg-scef-blue-darker/10 text-scef-blue-darker",
+    logoFrame: "bg-muted border border-border",
   },
 ] as const;
 
@@ -48,8 +54,13 @@ export const RecognitionToImpact = () => {
               key={c.to}
               className={`group flex flex-col rounded-2xl p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${c.accent}`}
             >
-              <div className={`flex h-14 w-14 items-center justify-center rounded-xl ${c.iconRing}`}>
-                <Icon className="h-7 w-7" />
+              <div className={`flex h-20 w-20 items-center justify-center rounded-xl p-2 ${c.logoFrame}`}>
+                <img
+                  src={c.logo}
+                  alt={c.logoAlt}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <h3 className="mt-5 font-display text-2xl font-bold">{c.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed opacity-90">
