@@ -19,7 +19,19 @@ const NAV: NavItem[] = [
     ],
   },
   {
-    name: "Our Work",
+    name: "CSR Funds Management",
+    href: "/csr-education-funds-management",
+    children: [
+      { name: "CSR Education Funds Management", href: "/csr-education-funds-management", description: "How SCEF manages CSR education funds" },
+      { name: "Request Partnership Proposal", href: "/partner-with-us", description: "Start a CSR partnership conversation" },
+      { name: "Sponsor a Program", href: "/sponsorship", description: "Brand-aligned program sponsorship" },
+      { name: "Adopt a School", href: "/programs/rebuild-my-school-africa", description: "Fund school transformation" },
+      { name: "Fund Scholarships", href: "/sponsorship?program=scholarships", description: "Support learners across Africa" },
+      { name: "Impact Reports", href: "/impact", description: "Outcomes and evidence" },
+    ],
+  },
+  {
+    name: "Programs",
     href: "/programs",
     children: [
       { name: "All Programs", href: "/programs", description: "Browse the full hub" },
@@ -29,6 +41,17 @@ const NAV: NavItem[] = [
       { name: "eLibrary Africa", href: "/programs/elibrary-nigeria", description: "Knowledge hub" },
       { name: "Women & Girls Empowerment", href: "/women-girls-empowerment" },
       { name: "Special Needs Education", href: "/programs/special-needs-education" },
+      { name: "Green Horizon Initiative", href: "/programs/green-horizon-initiative", description: "Livelihood & permaculture" },
+    ],
+  },
+  {
+    name: "Impact",
+    href: "/impact",
+    children: [
+      { name: "Impact Overview", href: "/impact", description: "Outcomes & evidence" },
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Reports", href: "/reports" },
+      { name: "Media", href: "/media" },
     ],
   },
   {
@@ -49,24 +72,15 @@ const NAV: NavItem[] = [
       { name: "Internship", href: "/internship", description: "Hands-on placements" },
       { name: "Donate", href: "/donate", description: "Fund education impact" },
       { name: "Sponsor a Program", href: "/sponsorship", description: "Brand-aligned sponsorship" },
+      { name: "Adopt a School", href: "/programs/rebuild-my-school-africa", description: "School transformation" },
       { name: "Join a Project", href: "/projects", description: "Active delivery roles" },
-      { name: "EduTourism", href: "/edutourism", description: "Learning missions across Africa" },
-      { name: "Friends of Africa", href: "/friends-of-africa", description: "Global partnerships" },
+      { name: "Start / Join Local Chapter", href: "/local-chapters", description: "Community-led chapters" },
       { name: "Diaspora Africa", href: "/diaspora-africa", description: "Diaspora network" },
+      { name: "Friends of Africa", href: "/friends-of-africa", description: "Global partnerships" },
     ],
   },
   {
-    name: "Projects",
-    href: "/impact",
-    children: [
-      { name: "Impact Overview", href: "/impact", description: "Outcomes & evidence" },
-      { name: "Case Studies", href: "/case-studies" },
-      { name: "Reports", href: "/reports" },
-      { name: "Media", href: "/media" },
-    ],
-  },
-  {
-    name: "Contact / Help",
+    name: "Contact",
     href: "/contact",
     children: [
       { name: "Contact Us", href: "/contact" },

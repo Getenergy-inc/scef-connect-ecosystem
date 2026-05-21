@@ -20,6 +20,7 @@ import { GetInvolvedPathways } from "@/components/sections/GetInvolvedPathways";
 import { RecognitionToImpact } from "@/components/sections/RecognitionToImpact";
 import { LocalChapterPathways } from "@/components/sections/LocalChapterPathways";
 import { ApplicationsWaitlistsSection } from "@/components/sections/ApplicationsWaitlistsSection";
+import { CsrFundsManagementSection } from "@/components/sections/CsrFundsManagementSection";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
@@ -96,6 +97,12 @@ const Home = () => {
 
           {/* 5. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
+
+          {/* 4d. CSR EDUCATION FUNDS MANAGEMENT */}
+          <Reveal>
+            <CsrFundsManagementSection />
+          </Reveal>
+
           <QuickActionsBar />
 
 

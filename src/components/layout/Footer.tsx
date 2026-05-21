@@ -21,6 +21,17 @@ const columns: { title: string; links: ColLink[] }[] = [
     ],
   },
   {
+    title: "CSR & Funding",
+    links: [
+      { name: "CSR Education Funds Management", href: "/csr-education-funds-management" },
+      { name: "Sponsor a Program", href: "/sponsorship" },
+      { name: "Adopt a School", href: "/programs/rebuild-my-school-africa" },
+      { name: "Fund Scholarships", href: "/sponsorship?program=scholarships" },
+      { name: "Request Partnership Proposal", href: "/partner-with-us" },
+      { name: "Impact Reports", href: "/impact" },
+    ],
+  },
+  {
     title: "Get Involved",
     links: [
       { name: "Membership", href: "/membership" },
@@ -108,7 +119,7 @@ export const Footer = () => {
         </div>
 
         {/* Link columns */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
           {columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white mb-4">
