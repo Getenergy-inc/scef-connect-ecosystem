@@ -56,13 +56,13 @@ const NesaTimeline2026 = () => {
                   <Link to="/nominate">Nominate Now</Link>
                 </Button>
                 <Button asChild size="lg" variant="heroOutline">
-                  <Link to="/categories">View Categories</Link>
+                  <Link to="/nesa-africa/categories">View Categories</Link>
                 </Button>
                 <Button asChild size="lg" variant="heroOutline">
-                  <Link to="/partner-with-us">Partner With Us</Link>
+                  <Link to="/csr-partnership">Partner With Us</Link>
                 </Button>
                 <Button asChild size="lg" variant="heroOutline">
-                  <Link to="/media/nesa-tv">Watch NESA TV</Link>
+                  <Link to="/nesa-tv">Watch NESA TV</Link>
                 </Button>
               </div>
             </div>
