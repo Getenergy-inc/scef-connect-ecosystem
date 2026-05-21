@@ -103,18 +103,24 @@ export default function WaitlistApply() {
     if (form.hp) return; // honeypot tripped — silently drop
 
     setSubmitting(true);
-    const { hp, ...payload } = parsed.data;
+    const d = parsed.data;
     const { error } = await supabase.from("waitlist_applications").insert({
-      ...payload,
-      region: payload.region || null,
-      city: payload.city || null,
-      age_range: payload.age_range || null,
-      gender: payload.gender || null,
-      preferred_african_region: payload.preferred_african_region || null,
-      motivation: payload.motivation || null,
-      skills_background: payload.skills_background || null,
-      local_chapter_status: payload.local_chapter_status || null,
-      referral_source: payload.referral_source || null,
+      full_name: d.full_name,
+      email: d.email,
+      phone: d.phone,
+      country: d.country,
+      applicant_type: d.applicant_type,
+      program_interest: d.program_interest,
+      consent: d.consent,
+      region: d.region || null,
+      city: d.city || null,
+      age_range: d.age_range || null,
+      gender: d.gender || null,
+      preferred_african_region: d.preferred_african_region || null,
+      motivation: d.motivation || null,
+      skills_background: d.skills_background || null,
+      local_chapter_status: d.local_chapter_status || null,
+      referral_source: d.referral_source || null,
     });
     setSubmitting(false);
 
