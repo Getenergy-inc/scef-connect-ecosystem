@@ -84,7 +84,7 @@ const phase1Events: PhaseEvent[] = [
     title: "Gold Certificate Winners Show",
     date: "22 August 2026",
     status: "Upcoming",
-    description: "Official announcement of Gold Special Recognition — 2026 Edition winners.",
+    description: "Official announcement of Influencers Education Impact Award 2026 Edition winners.",
     tags: ["Amplification", "Media Assets", "Winner Visibility"],
     agc: true,
   },
