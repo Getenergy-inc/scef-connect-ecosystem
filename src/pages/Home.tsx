@@ -75,7 +75,7 @@ const Home = () => {
           <QuickActionsBar />
 
           {/* 3. DEPARTMENT — RECOGNITION & IMPACT */}
-          <EditorialDivider
+          <SectionHeader
             kicker="Department 01 · Recognition & Impact"
             title="The 2026–2027 Master Timelines"
             lede="From continental recognition through NESA-Africa to delivery on the ground through EduAid-Africa — two parallel timelines, one mission."
@@ -85,7 +85,7 @@ const Home = () => {
           </Reveal>
 
           {/* 4. DEPARTMENT — PROGRAMS IN MOTION */}
-          <EditorialDivider
+          <SectionHeader
             kicker="Department 02 · Programs in Motion"
             title="12 months of advocacy, training and delivery"
             lede="A rolling continental calendar of webinars, training weeks and school activations across SCEF chapters."
@@ -95,7 +95,7 @@ const Home = () => {
           </Reveal>
 
           {/* 5. DEPARTMENT — CORE SERVICES & SPOTLIGHTS */}
-          <EditorialDivider
+          <SectionHeader
             kicker="Department 03 · Core Services"
             title="What SCEF delivers across Africa"
           />
@@ -109,7 +109,7 @@ const Home = () => {
           </Reveal>
 
           {/* 6. DEPARTMENT — ANNOUNCEMENTS */}
-          <EditorialDivider
+          <SectionHeader
             kicker="Department 04 · Announcement"
             title="Indian Ocean Islands Edu-Tourism Conference 2027"
             lede="Seychelles Regional Edition. Join the waiting list to reserve your seat."
@@ -119,7 +119,7 @@ const Home = () => {
           </Reveal>
 
           {/* 7. DEPARTMENT — STORIES & PEOPLE */}
-          <EditorialDivider
+          <SectionHeader
             kicker="Department 05 · Stories & People"
             title="The journey, the chapters, the volunteers"
             lede="A documentary view of SCEF — partners, training, channels and the people who carry the work."
