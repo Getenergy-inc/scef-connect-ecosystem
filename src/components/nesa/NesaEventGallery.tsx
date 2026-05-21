@@ -5,9 +5,11 @@ import hostGuests from "@/assets/nesa-gallery/nesa-host-with-guests.jpg";
 import quad from "@/assets/nesa-gallery/nesa-guests-quad.jpg";
 import selfie from "@/assets/nesa-gallery/nesa-guests-selfie.jpg";
 import couple from "@/assets/nesa-gallery/nesa-host-couple.jpg";
+import stageLineup from "@/assets/nesa-gallery/nesa-team-stage-lineup.jpg";
 
 const photos = [
   { src: host, alt: "NESA-Africa host delivering keynote on stage", span: "md:col-span-2 md:row-span-2" },
+  { src: stageLineup, alt: "NESA-Africa hosts, honorees and crew on the New Education Standard Award Africa stage", span: "md:col-span-2 md:row-span-2" },
   { src: team, alt: "NESA-Africa production and partner team on the purple carpet", span: "md:col-span-2" },
   { src: hostGuests, alt: "NESA-Africa host with two guests at the awards backdrop", span: "" },
   { src: couple, alt: "NESA-Africa guests in formal attire at the awards backdrop", span: "" },
