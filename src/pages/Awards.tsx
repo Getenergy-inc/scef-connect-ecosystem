@@ -4,6 +4,7 @@ import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Crown, Star, Medal, Sparkles, LayoutGrid, Calendar, Heart } from "lucide-react";
+import { AwardPathways } from "@/components/awards/AwardPathways";
 
 const tiers = [
   { icon: Crown, title: "Platinum Certificate", desc: "Lifetime contribution honour.", href: "/awards/platinum" },
@@ -52,6 +53,8 @@ const Awards = () => (
             </div>
           </div>
         </section>
+
+        <AwardPathways />
 
         {[
           { label: "Award Programs", items: tiers },
