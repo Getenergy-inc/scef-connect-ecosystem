@@ -331,29 +331,23 @@ export const MainNavbar = () => {
             {/* Mobile CTAs */}
             <div className="pt-4 flex flex-col gap-2">
               <Button
-                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold"
+                size="sm"
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark"
                 asChild
               >
                 <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
-                  <Heart className="w-4 h-4 mr-1.5" />
-                  Donate Now
+                  <Heart className="w-3.5 h-3.5 mr-1" />
+                  Donate
                 </Link>
               </Button>
               <Button
+                size="sm"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white hover:text-scef-blue-dark"
+                className="border-white/30 text-white bg-transparent hover:bg-white hover:text-scef-blue-dark"
                 asChild
               >
                 <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>
                   Become a Member
-                </Link>
-              </Button>
-              <Button
-                className="bg-white text-scef-blue-dark hover:bg-scef-gold font-semibold"
-                asChild
-              >
-                <Link to="/support-us#sponsor-nesa" onClick={() => setMobileMenuOpen(false)}>
-                  Sponsor NESA-Africa
                 </Link>
               </Button>
             </div>
