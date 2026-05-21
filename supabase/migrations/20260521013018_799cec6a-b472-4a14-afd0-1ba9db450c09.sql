@@ -1,0 +1,1 @@
+UPDATE public.endorsements SET is_active = false WHERE logo_url LIKE '%placeholder%' OR logo_url LIKE '%via.placeholder%';
