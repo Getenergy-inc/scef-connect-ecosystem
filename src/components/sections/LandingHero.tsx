@@ -33,14 +33,14 @@ export const LandingHero = () => {
       <div className="relative container mx-auto max-w-6xl px-5 sm:px-6 md:px-8">
         <div className="py-14 sm:py-20 md:py-28 max-w-xl md:max-w-2xl">
           {/* Mobile-only readable content card; transparent on md+ */}
-          <div className="rounded-xl bg-scef-blue-darker/70 ring-1 ring-white/10 p-5 sm:p-6 md:p-0 md:bg-transparent md:ring-0">
+          <div className="rounded-xl bg-scef-blue-darker/95 ring-1 ring-white/15 shadow-xl p-5 sm:p-6 md:p-0 md:bg-transparent md:ring-0 md:shadow-none">
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-scef-gold">
               Santos Creations Educational Foundation
             </p>
-            <h1 className="font-display text-white text-[clamp(1.65rem,6.2vw,3.1rem)] font-bold leading-[1.15] tracking-tight">
+            <h1 className="font-display text-white text-[clamp(1.6rem,6vw,3.1rem)] font-bold leading-[1.15] tracking-tight">
               Managing CSR Education Funds for Real Impact Across Africa
             </h1>
-            <p className="mt-5 text-[15px] sm:text-base md:text-lg leading-[1.75] text-white max-w-[600px]">
+            <p className="mt-5 text-[16px] sm:text-base md:text-lg leading-[1.65] text-white max-w-[600px]">
               SCEF is a membership-based Pan-African NGO and CSR Education Funds Management
               organization helping partners fund scholarships, school transformation, teacher
               development, vocational training, digital learning, and community-led education
