@@ -1,59 +1,87 @@
 import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { Heart, UserPlus, LogIn, Wallet, Wallet as WalletIcon, CheckSquare } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
+/**
+ * Slim institutional utility bar — dark, compact, one row.
+ * Left: primary user actions. Right: language + wallet/tasks shortcuts.
+ */
 export const TopUtilityNav = () => {
-  const { t, isRTL } = useLocale();
+  const { isRTL } = useLocale();
 
-  const utilityLinks = [
-    { name: t("nav.utility.bot"), href: "/governance#bot" },
-    { name: t("nav.utility.boa"), href: "/governance#boa" },
-    { name: t("nav.utility.bod"), href: "/governance#bod" },
-    { name: t("nav.utility.lcps"), href: "/governance#lcps" },
-    { name: t("nav.utility.management"), href: "/governance#management" },
+  const leftLinks = [
+    { name: "Donate", href: "/donate", icon: Heart },
+    { name: "Become a Member", href: "/auth/sign-up", icon: UserPlus },
+    { name: "Log In / Sign Up", href: "/auth/sign-in", icon: LogIn },
+    { name: "Wallet Access (GFA)", href: "/wallet", icon: Wallet },
+  ];
+
+  const rightLinks = [
+    { name: "My Wallet", href: "/wallet", icon: WalletIcon },
+    { name: "Tasks", href: "/dashboard/activity", icon: CheckSquare },
   ];
 
   return (
-    <div className="bg-scef-blue-darker text-white/75 text-[11px] border-b border-white/5" dir={isRTL ? "rtl" : "ltr"}>
+    <div
+      className="bg-scef-blue-darker text-white/80 text-[11.5px] border-b border-white/5"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
       <div className="container mx-auto px-4">
-        {/* Desktop: Horizontal links */}
-        <div className="hidden md:flex items-center justify-between h-7">
-          <div className="flex items-center">
-            {utilityLinks.map((link, index) => (
-              <span key={link.name} className="flex items-center">
+        {/* Desktop */}
+        <div className="hidden md:flex items-center justify-between h-8">
+          <ul className="flex items-center">
+            {leftLinks.map((link, i) => (
+              <li key={link.name} className="flex items-center">
                 <Link
                   to={link.href}
-                  className="px-2.5 py-0.5 hover:text-scef-gold transition-colors font-medium tracking-tight"
+                  className="px-3 py-1 hover:text-scef-gold transition-colors font-medium tracking-tight whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
-                {index < utilityLinks.length - 1 && (
-                  <span className="text-white/20 select-none">·</span>
+                {i < leftLinks.length - 1 && (
+                  <span className="text-white/15 select-none">·</span>
                 )}
-              </span>
+              </li>
             ))}
+          </ul>
+
+          <div className="flex items-center gap-1">
+            <LanguageSwitcher />
+            <span className="text-white/15 mx-2 select-none">·</span>
+            {rightLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={cn(
+                    "flex items-center gap-1.5 px-2.5 py-1 hover:text-scef-gold transition-colors font-medium tracking-tight whitespace-nowrap",
+                    isRTL && "flex-row-reverse"
+                  )}
+                >
+                  <Icon className="w-3 h-3 opacity-70" />
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
-          <LanguageSwitcher />
         </div>
 
-        {/* Mobile: Horizontal scroll */}
+        {/* Mobile: horizontal scroll, compact */}
         <div className="md:hidden overflow-x-auto scrollbar-hide">
-          <div className="flex items-center gap-3 py-1.5 px-1 whitespace-nowrap">
-            {utilityLinks.map((link) => (
+          <div className="flex items-center gap-4 py-1.5 px-1 whitespace-nowrap text-[11px]">
+            {[...leftLinks, ...rightLinks].map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={cn(
-                  "flex items-center gap-1 text-white/70 hover:text-scef-gold transition-colors font-medium",
-                  isRTL && "flex-row-reverse"
-                )}
+                className="text-white/75 hover:text-scef-gold transition-colors font-medium"
               >
                 {link.name}
-                <ChevronRight className={cn("w-3 h-3", isRTL && "rotate-180")} />
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

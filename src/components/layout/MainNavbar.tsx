@@ -3,51 +3,41 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import scefLogo from "@/assets/scef-logo.png";
 
 type NavChild = { name: string; href: string; description?: string };
 type NavItem = { name: string; href: string; children?: NavChild[] };
 
 const NAV: NavItem[] = [
   {
-    name: "About",
+    name: "About SCEF",
     href: "/about",
     children: [
       { name: "Who We Are", href: "/about", description: "Mission, identity & approach" },
       { name: "Vision 2037", href: "/about/vision-2037", description: "Our continental agenda" },
       { name: "History", href: "/about/history", description: "Our journey since 1997" },
-      { name: "Governance", href: "/governance", description: "CVO, leadership & structure" },
-      { name: "Board of Trustees", href: "/governance#bot" },
-      { name: "Board of Advisors", href: "/governance#boa" },
-      { name: "Board of Directors", href: "/governance#bod" },
-      { name: "Local Chapter Presidents", href: "/governance#lcps" },
-      { name: "Management Team", href: "/governance#management" },
+      { name: "Governance", href: "/governance", description: "Leadership & structure" },
     ],
   },
   {
-    name: "Programs",
+    name: "Our Work",
     href: "/programs",
     children: [
       { name: "All Programs", href: "/programs", description: "Browse the full hub" },
-      { name: "NESA-Africa", href: "/programs/nesa-africa", description: "Continental awards engine" },
       { name: "EduAid-Africa", href: "/programs/eduaid-africa", description: "Scholarships & CSR" },
-      { name: "Education Online Africa", href: "/programs/digital-learning", description: "Digital learning" },
-      { name: "eLibrary Nigeria", href: "/programs/elibrary-nigeria", description: "Knowledge hub" },
+      { name: "NESA-Africa", href: "/programs/nesa-africa", description: "Continental awards engine" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa", description: "Infrastructure renewal" },
-      { name: "Women & Girls Empowerment", href: "/women-girls-empowerment", description: "Leadership & STEM" },
-      { name: "Special Needs Education", href: "/programs/special-needs-education", description: "Inclusive advocacy" },
+      { name: "eLibrary Africa", href: "/programs/elibrary-nigeria", description: "Knowledge hub" },
+      { name: "Women & Girls Empowerment", href: "/women-girls-empowerment" },
+      { name: "Special Needs Education", href: "/programs/special-needs-education" },
     ],
   },
-  { name: "Impact", href: "/impact" },
   {
-    name: "Timelines",
-    href: "/calendar",
+    name: "Local Chapters",
+    href: "/local-chapters",
     children: [
-      { name: "Events Calendar", href: "/calendar", description: "Webinars, walks & gala" },
-      { name: "NESA-Africa Master Timeline", href: "/programs/nesa-africa/master-timeline", description: "2026 awards cycle" },
-      { name: "EduAid-Africa Master Timeline", href: "/eduaid-africa/master-timeline", description: "Scholarship cycle" },
-      { name: "Monthly Advocacy", href: "/advocacy/monthly", description: "Pan-African campaigns" },
+      { name: "Browse Chapters", href: "/local-chapters", description: "Find your country chapter" },
+      { name: "Join a Chapter", href: "/chapters/join-online", description: "Online membership" },
+      { name: "Start a Chapter", href: "/chapters/start-chapter", description: "Bring SCEF to your city" },
     ],
   },
   {
@@ -55,24 +45,31 @@ const NAV: NavItem[] = [
     href: "/get-involved",
     children: [
       { name: "Membership", href: "/membership", description: "Tiers & benefits" },
-      { name: "Ambassador Program", href: "/get-involved/ambassador", description: "Lead the movement" },
-      { name: "Volunteer", href: "/get-involved/volunteer", description: "Use your skills" },
-      { name: "Chapters", href: "/local-chapters", description: "Join or start one" },
-      { name: "Partner With Us", href: "/partner-with-us", description: "CSR & strategic" },
-      { name: "Donate", href: "/donate", description: "Support the mission" },
+      { name: "Ambassador Program", href: "/get-involved/ambassador" },
+      { name: "Volunteer", href: "/get-involved/volunteer" },
+      { name: "Partner With Us", href: "/partner-with-us" },
+      { name: "Donate", href: "/donate" },
     ],
   },
   {
-    name: "Media",
-    href: "/media",
+    name: "Projects",
+    href: "/impact",
     children: [
-      { name: "NESA TV", href: "/media/nesa-tv", description: "Stories shaping education" },
-      { name: "It's In Me Radio", href: "/media/its-in-me-radio", description: "Voices of African youth" },
-      { name: "News & Press", href: "/updates", description: "Announcements & blog" },
-      { name: "Gallery", href: "/media/gallery", description: "Photos & highlights" },
+      { name: "Impact Overview", href: "/impact", description: "Outcomes & evidence" },
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Reports", href: "/reports" },
+      { name: "Media", href: "/media" },
     ],
   },
-  { name: "Contact", href: "/contact" },
+  {
+    name: "Contact / Help",
+    href: "/contact",
+    children: [
+      { name: "Contact Us", href: "/contact" },
+      { name: "Help Center", href: "/help" },
+      { name: "Verify Certificate", href: "/resources/verification" },
+    ],
+  },
 ];
 
 export const MainNavbar = () => {
@@ -99,32 +96,23 @@ export const MainNavbar = () => {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between gap-6 h-12">
-          {/* Brand */}
+        <div className="flex items-center justify-between gap-6 h-14">
+          {/* Brand — clean text mark */}
           <Link
             to="/"
-            className="flex items-center gap-2 shrink-0"
-            aria-label="SCEF — Home"
+            className="flex flex-col leading-tight shrink-0"
+            aria-label="Santos Creations Educational Foundation — Home"
           >
-            <img
-              src={scefLogo}
-              alt="SCEF"
-              className="h-6 w-auto object-contain"
-              loading="eager"
-              decoding="async"
-            />
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-display font-semibold text-[12px] text-scef-blue-darker tracking-tight">
-                SCEF
-              </span>
-              <span className="text-[9.5px] text-muted-foreground -mt-0.5 tracking-tight">
-                Santos Creations Educational Foundation
-              </span>
+            <span className="font-display font-bold text-[15px] text-scef-blue-darker tracking-tight">
+              Santos Creations
+            </span>
+            <span className="text-[10.5px] text-muted-foreground -mt-0.5 tracking-wide uppercase">
+              Educational Foundation
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center h-full">
+          <div className="hidden lg:flex items-center h-full flex-1 justify-center">
             <ul className="flex items-center h-full">
               {NAV.map((item) => {
                 const hasMenu = !!item.children?.length;
@@ -145,10 +133,10 @@ export const MainNavbar = () => {
                     <Link
                       to={item.href}
                       className={cn(
-                        "relative h-full px-3 inline-flex items-center gap-1 text-[12.5px] font-medium tracking-tight transition-colors",
+                        "relative h-full px-3.5 inline-flex items-center gap-1 text-[13px] font-medium tracking-tight transition-colors",
                         active
                           ? "text-primary"
-                          : "text-scef-blue-darker/80 hover:text-primary"
+                          : "text-scef-blue-darker/85 hover:text-primary"
                       )}
                     >
                       {item.name}
@@ -187,17 +175,18 @@ export const MainNavbar = () => {
             </ul>
           </div>
 
-          {/* Right cluster */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <LanguageSwitcher />
-            <Button asChild size="sm" className="h-8 px-3.5 text-[12px] rounded-md">
+          {/* Right CTA */}
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
+            <Button asChild size="sm" variant="outline" className="h-8 px-3 text-[12px] rounded-md border-scef-blue-darker/20 text-scef-blue-darker hover:bg-scef-blue-darker hover:text-white">
+              <Link to="/donate">Donate</Link>
+            </Button>
+            <Button asChild size="sm" className="h-8 px-3 text-[12px] rounded-md">
               <Link to="/auth/sign-up">Become a Member</Link>
             </Button>
           </div>
 
           {/* Mobile */}
           <div className="lg:hidden flex items-center gap-1">
-            <LanguageSwitcher />
             <button
               className="p-2 text-scef-blue-darker"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -256,8 +245,13 @@ export const MainNavbar = () => {
                 </div>
               );
             })}
-            <div className="pt-3">
-              <Button size="sm" className="w-full" asChild>
+            <div className="pt-3 flex gap-2">
+              <Button size="sm" variant="outline" className="flex-1" asChild>
+                <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
+                  Donate
+                </Link>
+              </Button>
+              <Button size="sm" className="flex-1" asChild>
                 <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>
                   Become a Member
                 </Link>
