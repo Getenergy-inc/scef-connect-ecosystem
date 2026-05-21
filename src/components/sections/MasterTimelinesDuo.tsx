@@ -4,6 +4,7 @@ import { Award, CalendarRange, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import nesaRecognition from "@/assets/nesa-africa-recognition.png";
+import masterTimelinesBg from "@/assets/master-timelines-bg.jpg";
 
 type CTA = { label: string; to: string; variant?: string };
 type Timeline = {
@@ -126,25 +127,38 @@ export const MasterTimelinesDuo = () => {
     <section
       id="master-timelines"
       aria-labelledby="master-timelines-heading"
-      className="bg-gradient-to-b from-background to-muted/30 py-16 md:py-20"
+      className="relative py-16 md:py-20 bg-scef-blue-darker"
     >
-      <div className="container mx-auto px-6 md:px-8">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${masterTimelinesBg})` }}
+        aria-hidden="true"
+      />
+      {/* Readability overlay */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-scef-blue-darker/85 via-scef-blue-darker/80 to-scef-blue-darker/90"
+        aria-hidden="true"
+      />
+      <div className="relative container mx-auto px-6 md:px-8">
+
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold">
             SCEF 2026–2027
           </p>
           <h2
             id="master-timelines-heading"
-            className="mt-2 font-display text-3xl font-bold tracking-tight text-scef-blue-darker md:text-4xl"
+            className="mt-2 font-display text-3xl font-bold tracking-tight text-white md:text-4xl"
           >
             Recognition to Impact — Two Master Timelines
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+          <p className="mt-3 text-base leading-relaxed text-white/80">
             From recognition to impact — NESA-Africa celebrates education
             excellence, while EduAid-Africa turns visibility into scholarships,
             school support, teacher development, and sustainable learning
             opportunities.
           </p>
+
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
