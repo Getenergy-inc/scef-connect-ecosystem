@@ -98,6 +98,7 @@ import StaffApprovals from "./pages/admin/StaffApprovals";
 // Resources
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
+import AmbassadorApply from "./pages/ambassador/AmbassadorApply";
 import NRC from "./pages/get-involved/NRC";
 import Judge from "./pages/get-involved/Judge";
 import Volunteer from "./pages/get-involved/Volunteer";
@@ -380,6 +381,8 @@ const App = () => (
               <Route path="/volunteer" element={<Volunteer />} />
               <Route path="/ambassador" element={<Ambassador />} />
               <Route path="/ambassadors" element={<Ambassador />} />
+              <Route path="/ambassador/apply" element={<AmbassadorApply />} />
+              <Route path="/get-involved/ambassador/apply" element={<AmbassadorApply />} />
               <Route path="/volunteer/my-career-my-life" element={<VolunteerMyCareerMyLife />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/donate" element={<Donate />} />

@@ -53,6 +53,78 @@ export type Database = {
         }
         Relationships: []
       }
+      ambassador_applications: {
+        Row: {
+          age_range: string | null
+          city: string | null
+          community_name: string | null
+          country: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          institution: string | null
+          languages: string | null
+          leadership_experience: string | null
+          motivation: string
+          phone: string | null
+          profession: string | null
+          region: string | null
+          role_type: string
+          social_handles: string | null
+          status: string
+          time_commitment: string | null
+          updated_at: string
+          year_of_study: string | null
+        }
+        Insert: {
+          age_range?: string | null
+          city?: string | null
+          community_name?: string | null
+          country: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          institution?: string | null
+          languages?: string | null
+          leadership_experience?: string | null
+          motivation: string
+          phone?: string | null
+          profession?: string | null
+          region?: string | null
+          role_type: string
+          social_handles?: string | null
+          status?: string
+          time_commitment?: string | null
+          updated_at?: string
+          year_of_study?: string | null
+        }
+        Update: {
+          age_range?: string | null
+          city?: string | null
+          community_name?: string | null
+          country?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          institution?: string | null
+          languages?: string | null
+          leadership_experience?: string | null
+          motivation?: string
+          phone?: string | null
+          profession?: string | null
+          region?: string | null
+          role_type?: string
+          social_handles?: string | null
+          status?: string
+          time_commitment?: string | null
+          updated_at?: string
+          year_of_study?: string | null
+        }
+        Relationships: []
+      }
       ambassador_profiles: {
         Row: {
           advocacy_focus: string[] | null
