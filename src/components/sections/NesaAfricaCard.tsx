@@ -10,9 +10,9 @@ export const NesaAfricaCard = () => {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 items-center">
           <div className="rounded-xl overflow-hidden border border-white/10">
             <img
-              src="/assets/nesa-africa-2025-card.jpg"
-              alt="NESA Africa 2026"
-              className="w-full h-auto"
+              src={nesaRecognition}
+              alt="NESA-Africa education recognition"
+              className="w-full h-auto object-cover"
               loading="lazy"
             />
           </div>
