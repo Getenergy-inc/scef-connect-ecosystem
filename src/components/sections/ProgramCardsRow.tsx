@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import eduaidLogo from "@/assets/eduaid-africa-logo.jpg";
-import nesaLogo from "@/assets/nesa-africa-logo.jpg";
 import rmsaPhoto from "@/assets/photos/scef-school-rebuild.jpg";
 import elibraryPhoto from "@/assets/hero-education.jpg";
+import { MotionEduAidLogo } from "@/components/brand/MotionEduAidLogo";
+import { MotionNESALogo } from "@/components/brand/MotionNESALogo";
 
 type Card = {
   title: string;
   description: string;
   href: string;
   cta: string;
-  image: string;
-  alt: string;
-  isLogo?: boolean;
+  /** Either a photo src or a logo brand key */
+  image?: string;
+  alt?: string;
+  logo?: "eduaid" | "nesa";
 };
+
 
 const cards: Card[] = [
   {
