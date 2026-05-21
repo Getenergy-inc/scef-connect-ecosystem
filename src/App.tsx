@@ -74,6 +74,7 @@ import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import WebinarRegister from "./pages/eduaid/WebinarRegister";
 import VolunteerMyCareerMyLife from "./pages/volunteer/MyCareerMyLife";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
+import GreenHorizonInitiative from "./pages/programs/GreenHorizonInitiative";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
 import WomenGirlsEmpowerment from "./pages/WomenGirlsEmpowerment";
 import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
@@ -248,6 +249,8 @@ const App = () => (
               <Route path="/eduaid-africa/webinar-register" element={<WebinarRegister />} />
               <Route path="/programs/eduaid-africa/webinar-register" element={<WebinarRegister />} />
               <Route path="/programs/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
+              <Route path="/programs/green-horizon-initiative" element={<GreenHorizonInitiative />} />
+              <Route path="/green-horizon-initiative" element={<GreenHorizonInitiative />} />
               <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />
               <Route path="/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
               <Route path="/programs/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
