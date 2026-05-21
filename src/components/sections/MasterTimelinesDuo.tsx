@@ -154,14 +154,12 @@ export const MasterTimelinesDuo = () => {
             className="group flex flex-col overflow-hidden rounded-2xl border border-scef-gold/30 bg-scef-blue-darker text-white shadow-sm"
           >
             <div className="relative h-44 w-full overflow-hidden">
-              {nesa.image_url && (
-                <img
-                  src={nesa.image_url}
-                  alt={nesa.image_alt ?? ""}
-                  loading="lazy"
-                  className="h-full w-full object-cover opacity-80 transition group-hover:scale-[1.02]"
-                />
-              )}
+              <img
+                src={nesaRecognition}
+                alt="NESA-Africa education recognition"
+                loading="lazy"
+                className="h-full w-full object-cover opacity-90 transition group-hover:scale-[1.02]"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker via-scef-blue-darker/40 to-transparent" />
               {nesa.badge_label && (
                 <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-scef-gold/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-blue-darker">
