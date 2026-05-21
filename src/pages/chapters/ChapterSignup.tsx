@@ -88,11 +88,11 @@ const ChapterSignup = () => {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.from("chapter_signups").insert({
+    const { error } = await supabase.from("chapter_signups").insert([{
       ...parsed.data,
       phone: parsed.data.phone || null,
       motivation: parsed.data.motivation || null,
-    });
+    }]);
     setLoading(false);
     if (error) {
       toast.error("Could not submit. Please try again.");
