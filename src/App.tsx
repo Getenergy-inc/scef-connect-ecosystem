@@ -203,6 +203,8 @@ import MasterTimelinesAdminPage from "./pages/admin/MasterTimelinesAdminPage";
 import SophiaFAQs from "./pages/support/SophiaFAQs";
 import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
+import AdminProgramWaitlist from "./pages/admin/AdminProgramWaitlist";
+import WaitlistApply from "./pages/programs/WaitlistApply";
 
 // Conversion pages (visitor-pathway pages)
 import Internship from "./pages/conversion/Internship";
