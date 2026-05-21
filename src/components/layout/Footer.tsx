@@ -26,18 +26,18 @@ const columns: { title: string; links: ColLink[] }[] = [
     links: [
       { name: "EduAid-Africa", href: "/programs/eduaid-africa" },
       { name: "NESA-Africa", href: "/programs/nesa-africa" },
-      { name: "eLibrary Africa", href: "/programs/elibrary-nigeria" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
+      { name: "eLibrary Africa", href: "/programs/elibrary-nigeria" },
       { name: "Send a Child to School", href: "/programs/send-a-child-to-school" },
     ],
   },
   {
     title: "Get Involved",
     links: [
+      { name: "Donate", href: "/donate" },
       { name: "Become a Member", href: "/membership" },
       { name: "Sponsor a Program", href: "/support-us" },
       { name: "Adopt a School", href: "/support-us#sponsor-school" },
-      { name: "Volunteer", href: "/get-involved/volunteer" },
       { name: "Partner With SCEF", href: "/partner-with-us" },
     ],
   },
