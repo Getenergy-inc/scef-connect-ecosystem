@@ -1,1855 +1,418 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLocale } from "@/contexts/LocaleContext";
-import { useEffect, useState } from "react";
-import { 
-  Target, Eye, Heart, Users, Award, Globe, ArrowRight, 
-  Shield, Building2, Tv, Laptop, TrendingUp, CheckCircle2,
-  GraduationCap, Handshake, BookOpen, School, Wrench,
-  Accessibility, ChevronDown, ChevronUp, Download, BarChart3,
-  Radio, Play, FileText, MapPin, Clock, Sparkles, Menu, AlertCircle,
-  Briefcase, Coins, Crown
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Users, Target, Eye, Award, HandCoins, Globe, MapPin, Megaphone,
+  GraduationCap, Heart, BookOpen, School, Sparkles, ArrowRight,
+  Building2, Shield, Plane,
 } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
-import OurJourneySection from "@/components/about/OurJourneySection";
 
-import aboutHeroImage from "@/assets/hero-classroom.jpg";
-import history1997 from "@/assets/history/history-1997-origins.jpg";
-import history2003 from "@/assets/history/history-2003-advocacy.jpg";
-import history2003_2007 from "@/assets/history/history-2003-2007-partnerships.jpg";
-import history2010 from "@/assets/history/history-2010-registration.jpg";
-import history2012_2019 from "@/assets/history/history-2012-2019-youth.jpg";
-import history2012_2021 from "@/assets/history/history-2012-2021-elibrary.jpg";
-import history2002_2025 from "@/assets/history/history-2002-2025-global.jpg";
-import history2024 from "@/assets/history/history-2024-fms.jpg";
-import historyToday from "@/assets/history/history-today-pan-african.jpg";
+import heroImg from "@/assets/hero-classroom.jpg";
+import chaptersImg from "@/assets/hero-chapters.jpg";
+import schoolgirlImg from "@/assets/hero-schoolgirl.jpg";
+import nesaImg from "@/assets/nesa-africa-recognition.png";
+import eduaidImg from "@/assets/eduaid-africa-logo.jpg";
+import diasporaImg from "@/assets/history/history-2002-2025-global.jpg";
 
-const divisionIcons = {
-  bgeo: Shield,
-  sobcd: Building2,
-  tdsd: Laptop,
-  ombdd: TrendingUp,
-  santosMedia: Tv,
-  lcs: Globe,
-};
+const identityItems = [
+  { icon: Users, label: "A membership-based NGO" },
+  { icon: Globe, label: "A Pan-African education advocacy platform" },
+  { icon: MapPin, label: "A local chapter-driven movement" },
+  { icon: Plane, label: "A diaspora and Friends of Africa engagement network" },
+  { icon: Award, label: "A recognition-to-impact ecosystem" },
+  { icon: School, label: "A community project and education-support organization" },
+];
 
-const divisionLinks = {
-  bgeo: "/governance",
-  sobcd: "/divisions/sobcd",
-  tdsd: "/divisions/tdsd",
-  ombdd: "/divisions/ombdd",
-  santosMedia: "/divisions/santos-media",
-  lcs: "/divisions/lcs",
-};
+const whatWeDo = [
+  { icon: Megaphone, label: "Education advocacy and awareness" },
+  { icon: Users, label: "Membership and local chapter development" },
+  { icon: GraduationCap, label: "Scholarships and learner support" },
+  { icon: School, label: "School support and adoption" },
+  { icon: BookOpen, label: "Teacher training and capacity development" },
+  { icon: Sparkles, label: "Digital learning and eLibrary access" },
+  { icon: Target, label: "Career guidance through My Career, My Life" },
+  { icon: Heart, label: "Girls and women education empowerment" },
+  { icon: HandCoins, label: "Volunteer and ambassador programs" },
+  { icon: Plane, label: "Diaspora Africa engagement" },
+  { icon: Globe, label: "Friends of Africa partnerships" },
+  { icon: Award, label: "Monthly webinars, campaigns, and training programs" },
+];
+
+const governanceLinks = [
+  { label: "Board of Trustees (BOT)", href: "/governance#bot" },
+  { label: "Board of Advisors (BOA)", href: "/governance#boa" },
+  { label: "Board of Directors (BOD)", href: "/governance#bod" },
+  { label: "Local Chapter Presidents (LCPs)", href: "/governance#lcps" },
+  { label: "Management Team", href: "/governance#management" },
+];
 
 const About = () => {
-  const { t, tRaw, isRTL } = useLocale();
-  const [activeSection, setActiveSection] = useState("who-we-are");
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [heroExpanded, setHeroExpanded] = useState(false);
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [whyWeExistAccordion, setWhyWeExistAccordion] = useState<string[]>([]);
-
-  // Detect mobile and set initial accordion state
-  useEffect(() => {
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      // Desktop: first item open by default, Mobile: all collapsed
-      if (!mobile) {
-        setWhyWeExistAccordion(["schools"]);
-      } else {
-        setWhyWeExistAccordion([]);
-      }
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const challengeKeys = ["schools", "tvet", "inclusion", "funding", "pathways"];
-  
-  const expandAllChallenges = () => setWhyWeExistAccordion(challengeKeys);
-  const collapseAllChallenges = () => setWhyWeExistAccordion([]);
-
-  const quickNavItems = [
-    { id: "who-we-are", label: t("about.quickNav.whoWeAre") },
-    { id: "history", label: t("nav.dropdown.about.history") },
-    { id: "why-we-exist", label: t("about.quickNav.whyWeExist") },
-    { id: "what-we-do", label: t("about.quickNav.whatWeDo") },
-    { id: "tvet-inclusion", label: t("about.quickNav.tvetInclusion") },
-    { id: "objectives", label: t("about.quickNav.objectives") },
-    { id: "divisions", label: t("about.quickNav.howWeWork") },
-    { id: "impact", label: t("about.quickNav.impact") },
-    { id: "csr-fms", label: t("about.extras.quickNav.csrFms") },
-    { id: "governance", label: t("about.extras.quickNav.governance") },
-    { id: "membership", label: t("about.extras.quickNav.membership") },
-    { id: "targets-2035", label: t("about.extras.quickNav.targets2035") },
-    { id: "sustainability", label: t("about.quickNav.sustainability") },
-    { id: "get-involved", label: t("about.quickNav.getInvolved") },
-    { id: "faqs", label: t("about.quickNav.faqs") },
-  ];
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-    setMobileNavOpen(false);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = quickNavItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 150;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(quickNavItems[i].id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [quickNavItems]);
-
-  const programs = [
-    { key: "nesa", title: t("about.programs.cards.nesa"), desc: t("about.whatWeDo.programs.nesa.desc"), icon: Award, href: "/programs/nesa-africa" },
-    { key: "eduaid", title: t("about.programs.cards.eduaid"), desc: t("about.whatWeDo.programs.eduaid.desc"), icon: GraduationCap, href: "/programs/eduaid-africa" },
-    { key: "rmsa", title: t("about.programs.cards.rmsa"), desc: t("about.whatWeDo.programs.rmsa.desc"), icon: School, href: "/programs/rebuild-my-school-africa" },
-    { key: "eoa", title: t("about.programs.cards.eoa"), desc: t("about.whatWeDo.programs.eoa.desc"), icon: Laptop, href: "/programs/digital-learning" },
-    { key: "womenGirls", title: t("about.programs.cards.womenGirls"), desc: t("about.whatWeDo.programs.womenGirls.desc"), icon: Heart, href: "/programs/women-girls-education" },
-    { key: "specialNeeds", title: t("about.programs.cards.specialNeeds"), desc: t("about.whatWeDo.programs.specialNeeds.desc"), icon: Accessibility, href: "/programs/special-needs-education" },
-    { key: "elibrary", title: t("about.programs.cards.elibrary"), desc: t("about.whatWeDo.programs.elibrary.desc"), icon: BookOpen, href: "/programs/elibrary-nigeria" },
-    { key: "nesaTv", title: t("about.whatWeDo.programs.nesaTv.title"), desc: t("about.whatWeDo.programs.nesaTv.desc"), icon: Tv, href: "/media/nesa-tv" },
-  ];
-
-  const divisionKeys = ["bgeo", "sobcd", "tdsd", "ombdd", "santosMedia", "lcs"] as const;
-
-  const divisionsData = divisionKeys.map(key => ({
-    key,
-    code: t(`divisions.items.${key}.code`),
-    title: t(`divisions.items.${key}.title`),
-    lead: t(`divisions.items.${key}.lead`),
-    mandate: t(`divisions.items.${key}.mandate`),
-  }));
-
-  const faqs = [
-    { q: t("about.faqs.items.0.q"), a: t("about.faqs.items.0.a") },
-    { q: t("about.faqs.items.1.q"), a: t("about.faqs.items.1.a") },
-    { q: t("about.faqs.items.2.q"), a: t("about.faqs.items.2.a") },
-    { q: t("about.faqs.items.3.q"), a: t("about.faqs.items.3.a") },
-  ];
-
-  const whoWeAreOutcomes = [
-    t("about.who.outcomes.0"),
-    t("about.who.outcomes.1"),
-    t("about.who.outcomes.2"),
-    t("about.who.outcomes.3"),
-    t("about.who.outcomes.4"),
-    t("about.who.outcomes.5"),
-  ];
-
-  // whyWeExistChallenges is now handled via accordion with challengeKeys above
-
-  const tvetEmpowerPoints = [
-    t("about.tvetSpotlight.empowerPoints.0"),
-    t("about.tvetSpotlight.empowerPoints.1"),
-    t("about.tvetSpotlight.empowerPoints.2"),
-  ];
-
-  const objectives = [
-    { title: t("about.objectives.items.0"), shortTitle: t("about.objectives.shortTitles.0"), tools: ["NESA-Africa", t("about.objectives.tools.certificationSystems")] },
-    { title: t("about.objectives.items.1"), shortTitle: t("about.objectives.shortTitles.1"), tools: ["EOA", "eLibrary Nigeria", "ACDL/AWPC"] },
-    { title: t("about.objectives.items.2"), shortTitle: t("about.objectives.shortTitles.2"), tools: ["NESA Africa TV", "It's In Me Radio", t("about.objectives.tools.webinars")] },
-    { title: t("about.objectives.items.3"), shortTitle: t("about.objectives.shortTitles.3"), tools: [t("about.objectives.tools.localChapters"), t("about.objectives.tools.complianceFramework")] },
-    { title: t("about.objectives.items.4"), shortTitle: t("about.objectives.shortTitles.4"), tools: ["SCEF–FMS", t("about.objectives.tools.csrPrograms"), t("about.objectives.tools.esgReporting")] },
-    { title: t("about.objectives.items.5"), shortTitle: t("about.objectives.shortTitles.5"), tools: [t("about.objectives.tools.regionalChapters"), t("about.objectives.tools.diaspora"), t("about.objectives.tools.partnerships")] },
-  ];
-
-  const sustainabilityPriorities = [
-    { label: t("about.sustainability.priorities.inclusion.label"), desc: t("about.sustainability.priorities.inclusion.desc") },
-    { label: t("about.sustainability.priorities.ownership.label"), desc: t("about.sustainability.priorities.ownership.desc") },
-    { label: t("about.sustainability.priorities.transparency.label"), desc: t("about.sustainability.priorities.transparency.desc") },
-    { label: t("about.sustainability.priorities.outcomes.label"), desc: t("about.sustainability.priorities.outcomes.desc") },
-  ];
-
-  const getInvolvedPathways = [
-    { icon: Users, title: t("about.getInvolved.pathways.member.title"), desc: t("about.getInvolved.pathways.member.desc"), href: "/get-involved/membership", color: "scef-blue" },
-    { icon: Award, title: t("about.getInvolved.pathways.ambassador.title"), desc: t("about.getInvolved.pathways.ambassador.desc"), href: "/get-involved/ambassador", color: "scef-gold" },
-    { icon: Handshake, title: t("about.getInvolved.pathways.partner.title"), desc: t("about.getInvolved.pathways.partner.desc"), href: "/partner-with-us", color: "scef-blue" },
-    { icon: Heart, title: t("about.getInvolved.pathways.donate.title"), desc: t("about.getInvolved.pathways.donate.desc"), href: "/donate", color: "scef-gold" },
-    { icon: Globe, title: t("about.getInvolved.pathways.chapter.title"), desc: t("about.getInvolved.pathways.chapter.desc"), href: "/chapters/join-online", color: "scef-blue" },
-    { icon: Users, title: t("about.getInvolved.pathways.volunteer.title"), desc: t("about.getInvolved.pathways.volunteer.desc"), href: "/get-involved/volunteer", color: "scef-gold" },
-  ];
-
-  const impactAccountabilityItems = [
-    t("about.impact.accountability.0"),
-    t("about.impact.accountability.1"),
-    t("about.impact.accountability.2"),
-    t("about.impact.accountability.3"),
-    t("about.impact.accountability.4"),
-  ];
-
   return (
     <>
       <Helmet>
-        <title>{t("about.hero.title")}</title>
-        <meta name="description" content={t("about.hero.subtitle")} />
-        <meta name="keywords" content="SCEF, Pan-African education, TVET, inclusive education, education governance, local chapters, Africa education, SDG 4, AU Agenda 2063" />
-        <link rel="canonical" href="https://scef.org/about" />
+        <title>About SCEF — Membership-Based Pan-African Education NGO</title>
+        <meta
+          name="description"
+          content="Santos Creations Educational Foundation (SCEF) is a membership-based Pan-African NGO advocating for the achievement of Education for All in Africa."
+        />
+        <link rel="canonical" href="/about" />
       </Helmet>
-      
-      <div className="min-h-screen bg-background" dir={isRTL ? "rtl" : "ltr"}>
-        <Header />
-        
-        <main>
-          {/* HERO SECTION */}
-          <section id="top" className="relative bg-scef-blue overflow-hidden">
-            <div className="grid lg:grid-cols-2">
-              {/* Left: Hero Content */}
-              <div className="relative py-20 lg:py-28 px-6 lg:px-12 flex flex-col justify-center bg-gradient-to-br from-scef-blue via-scef-blue to-scef-blue-darker">
-                <div className="absolute inset-0 bg-gradient-to-r from-scef-blue/0 to-scef-blue/80 lg:hidden" />
-                <div className="absolute top-0 right-0 w-96 h-96 bg-scef-gold/10 rounded-full blur-3xl" />
-                
-                <div className="relative z-10 max-w-xl">
-                  {/* Eyebrow */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/20 text-scef-gold text-sm font-semibold mb-6 border border-scef-gold/30">
-                    <Globe className="w-4 h-4" />
-                    {t("about.hero.regionBadge")}
-                  </div>
-                  
-                  <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-                    {t("about.hero.title")}
-                  </h1>
-                  
-                  <h2 className="text-lg md:text-xl text-white/85 leading-relaxed mb-6 font-medium">
-                    {t("about.hero.tagline")}
-                  </h2>
-                  
-                  {/* Short visible preview */}
-                  <p className="text-base text-white/70 leading-relaxed mb-4">
-                    {t("about.hero.description")}
-                  </p>
+      <Header />
 
-                  {/* Collapsible "Read more" section */}
-                  <Collapsible open={heroExpanded} onOpenChange={setHeroExpanded}>
-                    <CollapsibleContent className="text-base text-white/70 leading-relaxed space-y-4 mb-4">
-                      <p>{t("about.hero.expanded.p1")}</p>
-                      <p>{t("about.hero.expanded.p2")}</p>
-                      <p>{t("about.hero.expanded.p3")}</p>
-                    </CollapsibleContent>
-                    <CollapsibleTrigger asChild>
-                      <button className="inline-flex items-center gap-2 text-scef-gold hover:text-scef-gold-light text-sm font-medium mb-6 transition-colors">
-                        {heroExpanded ? (
-                          <>{t("labels.readLess")} <ChevronUp className="w-4 h-4" /></>
-                        ) : (
-                          <>{t("labels.readMore")} <ChevronDown className="w-4 h-4" /></>
-                        )}
-                      </button>
-                    </CollapsibleTrigger>
-                  </Collapsible>
-
-                  {/* Quick Facts chips */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
-                      {t("about.hero.facts.founded")}
-                    </span>
-                    <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
-                      {t("about.hero.facts.registered")}
-                    </span>
-                    <span className="px-3 py-1.5 rounded-full bg-scef-gold/20 text-scef-gold text-xs font-medium border border-scef-gold/30">
-                      {t("about.hero.facts.alignment")}
-                    </span>
-                  </div>
-
-                  {/* Primary CTAs */}
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold shadow-lg" asChild>
-                      <Link to="/get-involved/membership">
-                        {t("about.hero.ctaJoin")}
-                      </Link>
-                    </Button>
-                    <Button size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-semibold" asChild>
-                      <Link to="/partner-with-us">
-                        {t("about.hero.ctaPartner")}
-                      </Link>
-                    </Button>
-                    <Button size="lg" variant="outline" className="border-2 border-scef-gold/60 text-scef-gold hover:bg-scef-gold/10 backdrop-blur-sm font-semibold" asChild>
-                      <Link to="/donate">
-                        <Heart className="w-4 h-4" />
-                        {t("about.hero.ctaDonate")}
-                      </Link>
-                    </Button>
-                  </div>
-
-                  {/* Secondary CTA */}
-                  <div className="text-sm text-white/60">
-                    <Link to="/chapters/join-online" className="text-scef-gold hover:text-scef-gold-light underline underline-offset-2">
-                      {t("about.hero.ctaJoinChapter")} →
-                    </Link>
-                    <p className="mt-1 text-xs">
-                      {t("about.hero.joinChapterHelper")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Right: Hero Image */}
-              <div className="relative hidden lg:block">
-                <img 
-                  src={aboutHeroImage}
-                  alt={t("about.hero.imageAlt")}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-scef-blue/40" />
-              </div>
+      <main className="min-h-screen bg-background">
+        {/* 1. HERO */}
+        <section className="relative overflow-hidden border-b">
+          <div className="absolute inset-0">
+            <img src={heroImg} alt="African learners in classroom" className="h-full w-full object-cover" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-r from-scef-blue-darker/90 via-scef-blue-darker/80 to-scef-blue-darker/40" />
+          </div>
+          <div className="relative container mx-auto max-w-6xl px-6 py-20 md:py-28 text-white">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-scef-gold">
+              About SCEF
+            </p>
+            <h1 className="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight max-w-4xl">
+              About Santos Creations Educational Foundation
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl">
+              SCEF is a membership-based Pan-African NGO with the vision of advocating
+              for the achievement of Education for All in Africa.
+            </p>
+            <p className="mt-4 text-[15px] leading-relaxed text-white/80 max-w-3xl">
+              SCEF connects members, volunteers, ambassadors, local chapters, diaspora
+              supporters, donors, sponsors, institutions, and community partners to
+              advance education access, recognition, school transformation, teacher
+              development, digital learning, and sustainable education impact across Africa.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button asChild size="lg" className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-darker font-semibold">
+                <Link to="/membership">Become a Member <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/40 text-white hover:bg-white/20 hover:text-white">
+                <Link to="/get-involved">Get Involved</Link>
+              </Button>
             </div>
-            
-            {/* Mobile Hero Image */}
-            <div className="lg:hidden relative h-64">
-              <img 
-                src={aboutHeroImage}
-                alt={t("about.hero.imageAlt")}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-scef-blue/80 to-transparent" />
-            </div>
-          </section>
-          
-          {/* THREE PILLAR CARDS */}
-          <section className="py-12 bg-background border-b border-border">
-            <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-3 gap-6">
-                {/* Card 1: Standards & Recognition */}
-                <div className="bg-card rounded-2xl p-6 border-2 border-scef-gold/20 hover:border-scef-gold/40 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
-                    <Award className="w-6 h-6 text-scef-gold" />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{t("about.missionSnapshot.standards.title")}</h3>
-                  <p className="text-sm text-scef-gold font-medium mb-3">{t("about.missionSnapshot.standards.subtitle")}</p>
-                  <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.standards.point1")}</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.standards.point2")}</li>
-                  </ul>
-                  <Button variant="outline" size="sm" asChild className="w-full">
-                    <a href="https://nesa.africa" target="_blank" rel="noopener noreferrer">
-                      {t("about.missionSnapshot.visitNesa")} <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-                
-                {/* Card 2: Scholarships & Funding */}
-                <div className="bg-card rounded-2xl p-6 border-2 border-scef-blue/20 hover:border-scef-blue/40 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4">
-                    <GraduationCap className="w-6 h-6 text-scef-blue" />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{t("about.missionSnapshot.scholarships.title")}</h3>
-                  <p className="text-sm text-scef-blue font-medium mb-3">{t("about.missionSnapshot.scholarships.subtitle")}</p>
-                  <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> {t("about.missionSnapshot.scholarships.point1")}</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-blue shrink-0 mt-0.5" /> {t("about.missionSnapshot.scholarships.point2")}</li>
-                  </ul>
-                  <Button variant="outline" size="sm" asChild className="w-full">
-                    <a href="https://edu-aid-chi.vercel.app" target="_blank" rel="noopener noreferrer">
-                      {t("about.missionSnapshot.visitEduaid")} <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-                
-                {/* Card 3: Inclusion & Access */}
-                <div className="bg-card rounded-2xl p-6 border-2 border-scef-gold/20 hover:border-scef-gold/40 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4">
-                    <Accessibility className="w-6 h-6 text-scef-gold" />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{t("about.missionSnapshot.inclusion.title")}</h3>
-                  <p className="text-sm text-scef-gold font-medium mb-3">{t("about.missionSnapshot.inclusion.subtitle")}</p>
-                  <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.inclusion.point1")}</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" /> {t("about.missionSnapshot.inclusion.point2")}</li>
-                  </ul>
-                  <Button variant="outline" size="sm" asChild className="w-full">
-                    <Link to="/programs/inclusion-access">
-                      {t("about.whatWeDo.learnMore")} <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* STICKY ANCHOR NAV */}
-          <nav className="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-            <div className="container mx-auto px-4">
-              {/* Desktop Nav */}
-              <div className="hidden md:flex items-center gap-1 py-3 overflow-x-auto scrollbar-hide">
-                {quickNavItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={cn(
-                      "px-4 py-2 text-sm font-medium rounded-full whitespace-nowrap transition-all",
-                      activeSection === item.id
-                        ? "bg-scef-blue text-white"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    )}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-              
-              {/* Mobile Nav Dropdown */}
-              <div className="md:hidden py-3">
-                <Collapsible open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
-                  <CollapsibleTrigger asChild>
-                    <button className="w-full flex items-center justify-between px-4 py-2 bg-muted rounded-lg">
-                      <span className="text-sm font-medium text-foreground">
-                        {quickNavItems.find(item => item.id === activeSection)?.label || t("about.quickNav.navigate")}
-                      </span>
-                      <Menu className="w-4 h-4 text-muted-foreground" />
-                    </button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 space-y-1">
-                    {quickNavItems.map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className={cn(
-                          "w-full px-4 py-2 text-sm text-left rounded-lg transition-colors",
-                          activeSection === item.id
-                            ? "bg-scef-blue text-white"
-                            : "text-muted-foreground hover:bg-muted"
-                        )}
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              </div>
-            </div>
-          </nav>
-
-          {/* WHO WE ARE */}
-          <section id="who-we-are" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-6">
-                  <Target className="w-4 h-4" />
-                  {t("about.who.badge")}
-                </div>
-                
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  {t("about.who.title")}
-                </h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  {t("about.who.body")}
-                </p>
-
-                <div className="grid md:grid-cols-2 gap-4 mb-10">
-                  {whoWeAreOutcomes.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-4 bg-muted/50 rounded-xl">
-                      <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
-                      <span className="text-foreground">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                    <Link to="/programs">
-                      {t("about.who.ctaPrograms")} <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link to="/chapters">{t("about.who.ctaChapter")}</Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link to="/donate">{t("about.who.ctaDonate")}</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CVO LEADERSHIP SPOTLIGHT */}
-          <section className="py-16 bg-gradient-to-r from-scef-blue to-scef-blue-darker">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                {/* CVO Photo */}
-                <div className="w-40 h-40 md:w-52 md:h-52 rounded-2xl overflow-hidden border-4 border-scef-gold/40 shadow-2xl shrink-0">
-                  <img 
-                    src="/assets/governance/babashola-aderibigbe.jpg" 
-                    alt="Babashola Aderibigbe — Chief Visionary Officer, SCEF"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                {/* Quote & Info */}
-                <div className="text-center md:text-left">
-                  <blockquote className="text-lg md:text-xl text-white/90 italic leading-relaxed mb-4">
-                    "Education is not just a right — it is the most powerful engine for transformation across Africa. At SCEF, we are building the systems that make quality education measurable, inclusive, and sustainable."
-                  </blockquote>
-                  <div className="flex flex-col items-center md:items-start gap-1">
-                    <span className="text-scef-gold font-display font-bold text-lg">Babashola Aderibigbe</span>
-                    <span className="text-white/60 text-sm">Chief Visionary Officer &amp; Founder, SCEF</span>
-                  </div>
-                  <div className="mt-4">
-                    <Button variant="outline" size="sm" className="border-scef-gold/40 text-scef-gold hover:bg-scef-gold/10" asChild>
-                      <Link to="/governance">
-                        Meet the Leadership <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* OUR HISTORY */}
-          <section id="history" className="py-20 bg-muted/30 border-y border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-gold/10 text-scef-gold text-sm font-medium mb-6">
-                    <Clock className="w-4 h-4" />
-                    {t("about.history.badge")}
-                  </div>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    {t("about.history.title")}
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    {t("about.history.intro")}
-                  </p>
-                </div>
-
-                {/* Timeline Cards with Images */}
-                <div className="space-y-10">
-                  {/* 1997 - Origins */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-2 relative h-56 md:h-auto">
-                        <img src={history1997} alt="SCEF origins — children with books in Nigeria, 1997" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">1997</span>
-                        </div>
-                      </div>
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.1997.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{t("about.history.timeline.1997.description")}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2003 - Advocacy Launch */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2003.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2003.description")}</p>
-                        <ul className="space-y-2">
-                          <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <Radio className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span><strong className="text-foreground">"It's In Me"</strong> — youth empowerment radio program</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <Tv className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span><strong className="text-foreground">"A Time with Santos"</strong> — TV program</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <MapPin className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span><strong className="text-foreground">Nija Youth Tours</strong> — cultural education initiative</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
-                        <img src={history2003} alt="Media advocacy — radio and TV production, 2003" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 right-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2003</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2003-2007 - Early Partnerships */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-2 relative h-56 md:h-auto">
-                        <img src={history2003_2007} alt="Partnership signing ceremony, 2003-2007" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">2003–2007</span>
-                        </div>
-                      </div>
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2003-2007.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2003-2007.description")}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {["Kwara State Ministry of Education", "PharmAccess Foundation", "AIESEC", "VSO", "ESSPIN", "Radio Kwara", "Kwara TV"].map((partner, i) => (
-                            <span key={i} className="px-2 py-1 text-xs rounded-full bg-scef-gold/10 text-scef-gold border border-scef-gold/20">
-                              {partner}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2010 - Registration */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2010.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{t("about.history.timeline.2010.description")}</p>
-                      </div>
-                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
-                        <img src={history2010} alt="Official SCEF registration, 2010" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 right-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2010</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2012-2019 - Youth Development */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-2 relative h-56 md:h-auto">
-                        <img src={history2012_2019} alt="Youth ICT training program, 2012-2019" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">2012–2019</span>
-                        </div>
-                      </div>
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2012-2019.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2012-2019.description")}</p>
-                        <ul className="space-y-2">
-                          <li className="flex items-start gap-2 text-sm">
-                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Trained and empowered <strong className="text-foreground">15,000+ youth</strong></span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Delivered ICT and entrepreneurial training</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <CheckCircle2 className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Expanded operational influence statewide</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2012-2021 - eLibrary */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2012-2021.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2012-2021.description")}</p>
-                        <ul className="space-y-2">
-                          <li className="flex items-start gap-2 text-sm">
-                            <BookOpen className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Public access to digital educational resources</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <Laptop className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Digital literacy training for students & educators</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <Globe className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-muted-foreground">Development of eLibraryNigeria.ng</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
-                        <img src={history2012_2021} alt="Digital library with students on tablets, 2012-2021" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 right-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2012–2021</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2002-2025 - Global Engagement */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-2 relative h-56 md:h-auto">
-                        <img src={history2002_2025} alt="Global team collaboration and video conference, 2002-2025" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-blue text-white text-sm font-bold shadow-lg">2002–2025</span>
-                        </div>
-                      </div>
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2002-2025-engagement.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2002-2025-engagement.description")}</p>
-                        <div className="bg-scef-gold/10 rounded-lg p-4 border border-scef-gold/20">
-                          <p className="text-sm text-foreground font-semibold mb-2">2,000+ participants worldwide including:</p>
-                          <ul className="text-sm text-muted-foreground space-y-1">
-                            <li>• Staff, interns, volunteers, consultants</li>
-                            <li>• BOT & BOA members</li>
-                            <li>• Online and office support teams</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 2024-Present - SCEF-FMS */}
-                  <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1 order-2">
-                        <h3 className="font-display text-xl font-bold text-foreground mb-3">{t("about.history.timeline.2024-present.title")}</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-4">{t("about.history.timeline.2024-present.description")}</p>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">PKIS (PanCokrato) — since 2003</span>
-                          <span className="px-3 py-1 text-xs rounded-full bg-scef-blue text-white font-medium">Get Energy — since 2024</span>
-                        </div>
-                      </div>
-                      <div className="md:col-span-2 relative h-56 md:h-auto md:order-2 order-1">
-                        <img src={history2024} alt="SCEF-FMS fintech platform launch, 2024" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute top-4 right-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-scef-gold text-scef-blue text-sm font-bold shadow-lg">2024–Present</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Today - Pan-African Model */}
-                  <div className="bg-gradient-to-r from-scef-blue to-scef-blue-darker rounded-2xl overflow-hidden shadow-lg">
-                    <div className="grid md:grid-cols-5 gap-0">
-                      <div className="md:col-span-2 relative h-56 md:h-auto">
-                        <img src={historyToday} alt="Pan-African education summit with continental leaders" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-scef-blue/40 hidden md:block" />
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-scef-gold to-scef-gold-light text-scef-blue text-sm font-bold shadow-lg">Today</span>
-                        </div>
-                      </div>
-                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="font-display text-xl font-bold text-white mb-3">{t("about.history.timeline.today.title")}</h3>
-                        <p className="text-white/70 leading-relaxed mb-4">{t("about.history.timeline.today.description")}</p>
-                        <ul className="space-y-2 mb-4">
-                          <li className="flex items-start gap-2 text-sm">
-                            <Award className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-white/80">Standards & recognition (NESA-Africa)</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <Laptop className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-white/80">Digital learning platforms (EOA, eLibrary)</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <Tv className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-white/80">Media advocacy (TV, radio, webinars)</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <Globe className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-white/80">Local chapters with compliance tracking</span>
-                          </li>
-                          <li className="flex items-start gap-2 text-sm">
-                            <Shield className="w-4 h-4 text-scef-gold shrink-0 mt-0.5" />
-                            <span className="text-white/80">Accountability systems aligned with SDG 4 & AU 2063</span>
-                          </li>
-                        </ul>
-                        <p className="text-sm text-scef-gold font-medium italic">
-                          {t("about.history.timeline.today.closing")}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTAs */}
-                <div className="flex flex-wrap justify-center gap-4 mt-12 mb-16">
-                  <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                    <Link to="/governance">
-                      <Shield className="w-4 h-4" />
-                      {t("about.history.ctaGovernance")}
-                    </Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link to="/programs">{t("about.history.ctaPrograms")}</Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link to="/partner-with-us">{t("about.history.ctaPartner")}</Link>
-                  </Button>
-                </div>
-
-                {/* Partners & Relationships Section */}
-                <div className="border-t border-border pt-16">
-                  <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-scef-blue/10 text-scef-blue text-sm font-medium mb-4">
-                      <Handshake className="w-4 h-4" />
-                      {t("about.history.partnersSection.title")}
-                    </div>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
-                      {t("about.history.partnersSection.subtitle")}
-                    </p>
-                  </div>
-
-                  {/* Government & Public Institutions */}
-                  <div className="mb-10">
-                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Building2 className="w-5 h-5 text-scef-blue" />
-                      {t("about.history.partnersSection.categories.government")}
-                    </h4>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {[
-                        { key: "kwaraMoe", icon: Building2 },
-                        { key: "kwaraLib", icon: BookOpen },
-                        { key: "kwaraTourism", icon: MapPin },
-                        { key: "kwaraWomen", icon: Heart },
-                        { key: "kwaraYouth", icon: Users },
-                        { key: "nyscKwara", icon: Users },
-                      ].map((partner) => {
-                        const Icon = partner.icon;
-                        return (
-                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-blue/30 transition-colors">
-                            <div className="flex items-start gap-3">
-                              <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0">
-                                <Icon className="w-5 h-5 text-scef-blue" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
-                                </h5>
-                                <p className="text-xs text-scef-gold font-medium mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
-                                </p>
-                                <p className="text-xs text-muted-foreground line-clamp-2">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.relationship`)}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Development & International Organizations */}
-                  <div className="mb-10">
-                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Globe className="w-5 h-5 text-scef-gold" />
-                      {t("about.history.partnersSection.categories.development")}
-                    </h4>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {[
-                        { key: "esspin", icon: GraduationCap },
-                        { key: "pharmAccess", icon: Heart },
-                        { key: "vso", icon: Users },
-                        { key: "csacefa", icon: Award },
-                        { key: "fawe", icon: Heart },
-                      ].map((partner) => {
-                        const Icon = partner.icon;
-                        return (
-                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-gold/30 transition-colors">
-                            <div className="flex items-start gap-3">
-                              <div className="w-10 h-10 rounded-lg bg-scef-gold/10 flex items-center justify-center shrink-0">
-                                <Icon className="w-5 h-5 text-scef-gold" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
-                                </h5>
-                                <p className="text-xs text-scef-gold font-medium mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
-                                </p>
-                                <p className="text-xs text-muted-foreground line-clamp-2">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.relationship`)}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Media Partners */}
-                  <div className="mb-10">
-                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Tv className="w-5 h-5 text-scef-blue" />
-                      {t("about.history.partnersSection.categories.media")}
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {[
-                        { key: "radioKwara", icon: Radio },
-                        { key: "kwaraTv", icon: Tv },
-                      ].map((partner) => {
-                        const Icon = partner.icon;
-                        return (
-                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-blue/30 transition-colors">
-                            <div className="flex items-start gap-3">
-                              <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0">
-                                <Icon className="w-5 h-5 text-scef-blue" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
-                                </h5>
-                                <p className="text-xs text-scef-gold font-medium mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
-                                </p>
-                                <p className="text-xs text-muted-foreground">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.description`)}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Educational Institutions */}
-                  <div className="mb-10">
-                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <School className="w-5 h-5 text-scef-gold" />
-                      {t("about.history.partnersSection.categories.education")}
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="bg-card rounded-xl p-4 border border-border hover:border-scef-gold/30 transition-colors">
-                        <div className="flex items-start gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-scef-gold/10 flex items-center justify-center shrink-0">
-                            <School className="w-5 h-5 text-scef-gold" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
-                              {t("about.history.partnersSection.partners.collegeIlorin.name")}
-                            </h5>
-                            <p className="text-xs text-scef-gold font-medium mb-1">
-                              {t("about.history.partnersSection.partners.collegeIlorin.period")}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                              {t("about.history.partnersSection.partners.collegeIlorin.description")}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Volunteer & Talent Networks */}
-                  <div className="mb-10">
-                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Users className="w-5 h-5 text-scef-blue" />
-                      {t("about.history.partnersSection.categories.volunteer")}
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {[
-                        { key: "aiesec", icon: Globe },
-                        { key: "volunteerMatch", icon: Users },
-                      ].map((partner) => {
-                        const Icon = partner.icon;
-                        return (
-                          <div key={partner.key} className="bg-card rounded-xl p-4 border border-border hover:border-scef-blue/30 transition-colors">
-                            <div className="flex items-start gap-3">
-                              <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center shrink-0">
-                                <Icon className="w-5 h-5 text-scef-blue" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <h5 className="font-semibold text-foreground text-sm leading-tight mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.name`)}
-                                </h5>
-                                <p className="text-xs text-scef-gold font-medium mb-1">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.period`)}
-                                </p>
-                                <p className="text-xs text-muted-foreground">
-                                  {t(`about.history.partnersSection.partners.${partner.key}.description`)}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Corporate & CSR Partners - Featured */}
-                  <div className="mb-10">
-                    <h4 className="font-display text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Handshake className="w-5 h-5 text-scef-gold" />
-                      {t("about.history.partnersSection.categories.corporate")}
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {/* PKIS - Featured */}
-                      <div className="bg-gradient-to-br from-scef-gold/10 to-scef-gold/5 rounded-2xl p-6 border-2 border-scef-gold/30">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-gold text-scef-blue font-bold">
-                            Founding Partner
-                          </span>
-                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-blue/10 text-scef-blue font-medium">
-                            21+ Years
-                          </span>
-                        </div>
-                        <h5 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.partnersSection.partners.pkis.name")}
-                        </h5>
-                        <p className="text-sm text-scef-gold font-medium mb-2">
-                          {t("about.history.partnersSection.partners.pkis.period")}
-                        </p>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {t("about.history.partnersSection.partners.pkis.description")}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 text-xs rounded-full bg-scef-gold/20 text-scef-gold">CSR Support</span>
-                          <span className="px-2 py-1 text-xs rounded-full bg-scef-gold/20 text-scef-gold">eLibrary Services</span>
-                          <span className="px-2 py-1 text-xs rounded-full bg-scef-gold/20 text-scef-gold">SCEF–FMS</span>
-                        </div>
-                      </div>
-
-                      {/* Get Energy - Featured */}
-                      <div className="bg-gradient-to-br from-scef-blue/10 to-scef-blue/5 rounded-2xl p-6 border-2 border-scef-blue/30">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-blue text-white font-bold">
-                            Founding Partner
-                          </span>
-                          <span className="px-2 py-0.5 text-xs rounded-full bg-scef-gold/10 text-scef-gold font-medium">
-                            New Partnership
-                          </span>
-                        </div>
-                        <h5 className="font-display text-lg font-bold text-foreground mb-2">
-                          {t("about.history.partnersSection.partners.getEnergy.name")}
-                        </h5>
-                        <p className="text-sm text-scef-blue font-medium mb-2">
-                          {t("about.history.partnersSection.partners.getEnergy.period")}
-                        </p>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {t("about.history.partnersSection.partners.getEnergy.description")}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 text-xs rounded-full bg-scef-blue/20 text-scef-blue">CSR Partner</span>
-                          <span className="px-2 py-1 text-xs rounded-full bg-scef-blue/20 text-scef-blue">Energy Sector</span>
-                          <span className="px-2 py-1 text-xs rounded-full bg-scef-blue/20 text-scef-blue">SCEF–FMS</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Partner CTA */}
-                  <div className="bg-scef-blue rounded-2xl p-8 text-center">
-                    <h4 className="font-display text-xl font-bold text-white mb-3">
-                      Join Our Partnership Network
-                    </h4>
-                    <p className="text-white/70 mb-6 max-w-lg mx-auto">
-                      Partner with SCEF to deliver accountable education impact across Africa through CSR, institutional partnerships, or media collaboration.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                      <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
-                        <Link to="/partner-with-us">
-                          <Handshake className="w-4 h-4" />
-                          Partner With Us
-                        </Link>
-                      </Button>
-                      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                        <Link to="/partners">
-                          View All Partners
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="why-we-exist" className="py-20 bg-muted/30 border-y border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  {t("about.whyWeExist.title")}
-                </h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  {t("about.whyWeExist.intro")}
-                </p>
-
-                {/* Expand/Collapse Controls */}
-                <div className="flex justify-end gap-2 mb-4">
-                  <button
-                    onClick={expandAllChallenges}
-                    className="text-sm text-scef-blue hover:text-scef-blue-dark font-medium underline underline-offset-2"
-                  >
-                    {t("about.whyWeExist.expandAll")}
-                  </button>
-                  <span className="text-muted-foreground">|</span>
-                  <button
-                    onClick={collapseAllChallenges}
-                    className="text-sm text-scef-blue hover:text-scef-blue-dark font-medium underline underline-offset-2"
-                  >
-                    {t("about.whyWeExist.collapseAll")}
-                  </button>
-                </div>
-
-                {/* Accordion */}
-                <Accordion
-                  type="multiple"
-                  value={whyWeExistAccordion}
-                  onValueChange={setWhyWeExistAccordion}
-                  className="space-y-3 mb-10"
-                >
-                  {challengeKeys.map((key, i) => (
-                    <AccordionItem
-                      key={key}
-                      value={key}
-                      className="bg-card rounded-xl border border-border overflow-hidden"
-                    >
-                      <AccordionTrigger className="px-5 py-4 hover:no-underline hover:bg-muted/50 [&[data-state=open]>div>.number]:bg-scef-gold [&[data-state=open]>div>.number]:text-scef-blue">
-                        <div className="flex items-start gap-4 text-left w-full">
-                          <div className="number w-8 h-8 rounded-full bg-scef-blue/10 flex items-center justify-center shrink-0 transition-colors">
-                            <span className="text-scef-blue text-sm font-bold">{i + 1}</span>
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="font-display font-bold text-foreground text-base mb-1">
-                              {t(`about.whyWeExist.challenges.${key}.title`)}
-                            </h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              {t(`about.whyWeExist.challenges.${key}.summary`)}
-                            </p>
-                          </div>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-5 pb-5">
-                        <div className="ml-12 space-y-4">
-                          <ul className="space-y-2">
-                            {[0, 1].map((pointIdx) => (
-                              <li key={pointIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                                {t(`about.whyWeExist.challenges.${key}.points.${pointIdx}`)}
-                              </li>
-                            ))}
-                          </ul>
-                          <div className="p-4 bg-scef-blue/5 rounded-lg border border-scef-blue/10">
-                            <p className="text-sm">
-                              <span className="font-semibold text-scef-blue">How SCEF responds: </span>
-                              <span className="text-foreground">{t(`about.whyWeExist.challenges.${key}.response`)}</span>
-                            </p>
-                          </div>
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-
-                {/* Closing Statement */}
-                <div className="bg-scef-blue/5 rounded-2xl p-8 border border-scef-blue/10 mb-10">
-                  <p className="text-lg text-foreground leading-relaxed">
-                    {t("about.whyWeExist.closing")}
-                  </p>
-                </div>
-
-                {/* CTA Row */}
-                <div className="flex flex-wrap justify-center gap-3">
-                  <Button asChild size="lg" className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                    <Link to="/programs">
-                      {t("about.whyWeExist.cta.programs")}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/chapters">
-                      {t("about.whyWeExist.cta.chapters")}
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/partner-with-us">
-                      {t("about.whyWeExist.cta.partner")}
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/donate">
-                      <Heart className="w-4 h-4" />
-                      {t("about.whyWeExist.cta.donate")}
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* WHAT WE DO (PROGRAMS) */}
-          <section id="what-we-do" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("about.whatWeDo.title")}
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {t("about.whatWeDo.intro")}
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                {programs.map((program) => {
-                  const Icon = program.icon;
-                  return (
-                    <Link
-                      key={program.key}
-                      to={program.href}
-                      className="group bg-card rounded-2xl p-6 border border-border hover:border-scef-gold hover:shadow-lg transition-all"
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-scef-gold/10 flex items-center justify-center mb-4 group-hover:bg-scef-gold/20 transition-colors">
-                        <Icon className="w-6 h-6 text-scef-gold" />
-                      </div>
-                      <h3 className="font-display text-base font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors leading-tight">
-                        {program.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {program.desc}
-                      </p>
-                      <div className="mt-4 flex items-center gap-2 text-sm text-scef-blue group-hover:text-scef-gold transition-colors">
-                        {t("about.whatWeDo.learnMore")} <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                  <Link to="/get-involved/apply">{t("about.whatWeDo.ctaApply")}</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/partner-with-us">{t("about.whatWeDo.ctaPartner")}</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/donate?type=program">{t("about.whatWeDo.ctaDonate")}</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* TVET & INCLUSION */}
-          <section id="tvet-inclusion" className="py-20 bg-scef-blue-darker text-white">
-            <div className="container mx-auto px-4">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm mb-6">
-                    <Wrench className="w-4 h-4" />
-                    {t("about.tvetSpotlight.badge")}
-                  </div>
-                  
-                  <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-                    {t("about.tvetSpotlight.title")}
-                  </h2>
-                  
-                  <p className="text-lg text-white/80 leading-relaxed mb-6">
-                    {t("about.tvetSpotlight.intro")}
-                  </p>
-
-                  <ul className="space-y-3 mb-8">
-                    {tvetEmpowerPoints.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
-                        <span className="text-white/90">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Collapsible details on mobile */}
-                  <Collapsible>
-                    <div className="bg-white/10 rounded-xl p-6 mb-8">
-                      <h3 className="font-semibold text-white mb-4">{t("about.tvetSpotlight.whatLooksLike")}</h3>
-                      <CollapsibleContent className="lg:block">
-                        <ul className="space-y-2 text-sm text-white/80">
-                          <li><strong className="text-scef-gold">{t("about.tvetSpotlight.tvetSupport")}</strong> {t("about.tvetSpotlight.tvetSupportDesc")}</li>
-                          <li><strong className="text-scef-gold">{t("about.tvetSpotlight.inclusiveAccess")}</strong> {t("about.tvetSpotlight.inclusiveAccessDesc")}</li>
-                          <li><strong className="text-scef-gold">{t("about.tvetSpotlight.outcomesFocus")}</strong> {t("about.tvetSpotlight.outcomesFocusDesc")}</li>
-                        </ul>
-                      </CollapsibleContent>
-                      <CollapsibleTrigger asChild>
-                        <button className="lg:hidden mt-4 text-scef-gold text-sm font-medium flex items-center gap-1">
-                          {t("about.tvetSpotlight.showDetails")} <ChevronDown className="w-4 h-4" />
-                        </button>
-                      </CollapsibleTrigger>
-                    </div>
-                  </Collapsible>
-
-                  <div className="flex flex-wrap gap-4">
-                    <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
-                      <Link to="/donate?focus=tvet-inclusion">{t("about.tvetSpotlight.ctaTvet")}</Link>
-                    </Button>
-                    <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                      <Link to="/partner-with-us/csr">{t("about.tvetSpotlight.ctaCsr")}</Link>
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
-                    <img 
-                      src={aboutHeroImage}
-                      alt={t("about.tvetSpotlight.imageAlt")}
-                      className="w-full h-full object-cover object-bottom"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker/60 via-transparent to-transparent" />
-                  </div>
-                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-scef-gold/20 rounded-full blur-2xl" />
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* OBJECTIVES */}
-          <section id="objectives" className="py-20 bg-muted/30 border-y border-border">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("about.objectives.title")}
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  {t("about.objectives.subtitle")}
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-10">
-                {objectives.map((objective, index) => (
-                  <div key={index} className="bg-card rounded-xl p-6 border border-border hover:border-scef-gold hover:shadow-md transition-all">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-scef-blue flex items-center justify-center text-white font-bold text-sm shrink-0">
-                        {index + 1}
-                      </div>
-                      <div className="flex-1">
-                        <span className="text-xs font-semibold text-scef-gold uppercase tracking-wide">{objective.shortTitle}</span>
-                        <p className="text-foreground leading-relaxed mt-1 text-sm">{objective.title}</p>
-                      </div>
-                    </div>
-                    <div className={cn("flex flex-wrap gap-2", isRTL ? "pr-14" : "pl-14")}>
-                      {objective.tools.map((tool, i) => (
-                        <span key={i} className="px-2 py-1 text-xs rounded-full bg-scef-gold/10 text-scef-gold border border-scef-gold/20">
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                  <Link to="/about/governance">
-                    <Shield className="w-4 h-4" />
-                    {t("about.objectives.ctaGovernance")}
-                  </Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/about/divisions">
-                    {t("about.objectives.ctaDivisions")}
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* HOW WE WORK (DIVISIONS) */}
-          <section id="divisions" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("about.divisionsSection.title")}
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  {t("about.divisionsSection.subtitle")}
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
-                {divisionsData.map((division, index) => {
-                  const divKey = divisionKeys[index];
-                  const Icon = divisionIcons[divKey];
-                  const link = divisionLinks[divKey];
-                  return (
-                    <Link 
-                      key={divKey} 
-                      to={link}
-                      className="bg-card rounded-2xl p-6 border border-border hover:border-scef-gold hover:shadow-lg transition-all group"
-                    >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center group-hover:bg-scef-gold/10 transition-colors">
-                          <Icon className="w-5 h-5 text-scef-blue group-hover:text-scef-gold transition-colors" />
-                        </div>
-                        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-scef-gold text-scef-blue">
-                          {division.code}
-                        </span>
-                      </div>
-                      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-scef-blue transition-colors">
-                        {division.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-1">
-                        <strong>{division.lead}</strong>
-                      </p>
-                      <p className="text-sm text-muted-foreground">{division.mandate}</p>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild className="bg-scef-blue text-white hover:bg-scef-blue-dark">
-                  <Link to="/chapters/join">{t("about.divisionsSection.ctaChapter")}</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link to="/get-involved/volunteer">{t("about.divisionsSection.ctaVolunteer")}</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* IMPACT & ACCOUNTABILITY - NO FAKE METRICS */}
-          <section id="impact" className="py-20 bg-scef-blue text-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                  {t("about.impact.title")}
-                </h2>
-                <p className="text-white/70 max-w-2xl mx-auto">
-                  {t("about.impact.subtitle")}
-                </p>
-              </div>
-
-              {/* Accountability Framework */}
-              <div className="max-w-4xl mx-auto mb-12">
-                <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
-                  <h3 className="font-display text-xl font-bold text-white mb-6 flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-scef-gold" />
-                    {t("about.impact.frameworkTitle")}
-                  </h3>
-                  <p className="text-white/80 mb-6">
-                    {t("about.impact.frameworkDesc")}
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {impactAccountabilityItems.map((item, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
-                        <span className="text-white/80 text-sm">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Reporting Status */}
-              <div className="max-w-4xl mx-auto mb-12">
-                <div className="bg-scef-gold/20 rounded-2xl p-6 border border-scef-gold/30 text-center">
-                  <BarChart3 className="w-10 h-10 text-scef-gold mx-auto mb-4" />
-                  <h4 className="font-semibold text-white mb-2">{t("about.impact.reportingTitle")}</h4>
-                  <p className="text-white/70 text-sm mb-4">
-                    {t("about.impact.reportingDesc")}
-                  </p>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm">
-                    <Clock className="w-4 h-4" />
-                    {t("about.impact.reportingStatus")}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold" asChild>
-                  <Link to="/resources/organizational-profile">
-                    <Download className="w-4 h-4" />
-                    {t("about.impact.ctaProfile")}
-                  </Link>
-                </Button>
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                  <Link to="/resources/reports">
-                    <FileText className="w-4 h-4" />
-                    {t("about.impact.ctaReports")}
-                  </Link>
-                </Button>
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                  <Link to="/updates">
-                    <BarChart3 className="w-4 h-4" />
-                    {t("about.impact.ctaUpdates")}
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* SUSTAINABILITY & ALIGNMENT */}
-          <section id="sustainability" className="py-20 bg-muted/30 border-y border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  {t("about.sustainability.title")}
-                </h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  {t("about.sustainability.body")}
-                </p>
-
-                <div className="grid md:grid-cols-2 gap-4 mb-10">
-                  {sustainabilityPriorities.map((item, i) => (
-                    <div key={i} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
-                      <Sparkles className="w-5 h-5 text-scef-gold mt-0.5 shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-foreground">{item.label}</h4>
-                        <p className="text-sm text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light">
-                    <Link to="/partner-with-us/csr">{t("about.sustainability.ctaCsr")}</Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link to="/donate?type=sponsor">{t("about.sustainability.ctaSponsor")}</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* GET INVOLVED */}
-          <section id="get-involved" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t("about.getInvolved.title")}
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  {t("about.getInvolved.subtitle")}
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-                {getInvolvedPathways.map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={i}
-                      to={item.href}
-                      className="group bg-card rounded-2xl p-6 border border-border hover:border-scef-gold hover:shadow-lg transition-all text-center"
-                    >
-                      <div className={cn(
-                        "w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors",
-                        item.color === "scef-gold" ? "bg-scef-gold/10 group-hover:bg-scef-gold/20" : "bg-scef-blue/10 group-hover:bg-scef-blue/20"
-                      )}>
-                        <Icon className={cn(
-                          "w-8 h-8",
-                          item.color === "scef-gold" ? "text-scef-gold" : "text-scef-blue"
-                        )} />
-                      </div>
-                      <h3 className="font-display text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-
-          {/* FAQs */}
-          <section id="faqs" className="py-20 bg-muted/30 border-y border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                  {t("about.faqs.title")}
-                </h2>
-
-                <div className="space-y-4">
-                  {faqs.map((faq, i) => (
-                    <div key={i} className="bg-card rounded-xl border border-border overflow-hidden">
-                      <button
-                        onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
-                        className="w-full flex items-center justify-between p-6 text-left hover:bg-muted/50 transition-colors"
-                      >
-                        <h3 className="font-semibold text-foreground pr-4">{faq.q}</h3>
-                        {expandedFaq === i ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground shrink-0" />
-                        )}
-                      </button>
-                      {expandedFaq === i && (
-                        <div className="px-6 pb-6">
-                          <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CSR FUNDS MANAGEMENT (SCEF-FMS) — FEATURED */}
-          <section id="csr-fms" className="py-20 bg-background border-y border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto">
-                <div className="rounded-3xl overflow-hidden border-2 border-scef-gold/40 bg-gradient-to-br from-scef-blue via-scef-blue to-scef-blue-darker shadow-2xl">
-                  <div className="p-8 md:p-12">
-                    <div className="flex flex-wrap items-center gap-3 mb-6">
-                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-scef-gold text-scef-blue text-xs font-bold uppercase tracking-wider">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        {t("about.extras.csrFms.badge")}
-                      </span>
-                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/20">
-                        <Coins className="w-3.5 h-3.5 text-scef-gold" />
-                        SCEF–FMS
-                      </span>
-                    </div>
-                    <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                      {t("about.extras.csrFms.title")}
-                    </h2>
-                    <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-3xl">
-                      {t("about.extras.csrFms.lead")}
-                    </p>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                      {((tRaw<{ title: string; desc: string }[]>("about.extras.csrFms.pillars") ?? []) as { title: string; desc: string }[]).map((p, i) => (
-                        <div key={i} className="bg-white/5 border border-white/15 rounded-2xl p-5 hover:bg-white/10 transition-colors">
-                          <div className="w-10 h-10 rounded-lg bg-scef-gold/20 flex items-center justify-center mb-3">
-                            <CheckCircle2 className="w-5 h-5 text-scef-gold" />
-                          </div>
-                          <h3 className="font-semibold text-white mb-1.5">{p.title}</h3>
-                          <p className="text-sm text-white/70 leading-relaxed">{p.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-6 border-t border-white/15">
-                      <div>
-                        <p className="text-xs uppercase tracking-wider text-scef-gold font-semibold mb-2">
-                          {t("about.extras.csrFms.partnersTitle")}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {((tRaw<string[]>("about.extras.csrFms.partners") ?? []) as string[]).map((name) => (
-                            <span key={name} className="px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm text-white">
-                              {name}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      <Button asChild size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold shrink-0">
-                        <Link to="/csr-fund-management">
-                          {t("about.extras.csrFms.cta")}
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* GOVERNANCE & LEADERSHIP */}
-          <section id="governance" className="py-20 bg-muted/30 border-b border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    {t("about.extras.governance.title")}
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    {t("about.extras.governance.subtitle")}
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-                  {((tRaw<{ code: string; title: string; desc: string }[]>("about.extras.governance.tiers") ?? []) as { code: string; title: string; desc: string }[]).map((tier, i) => {
-                    const Icon = i === 0 ? Shield : i === 1 ? Users : i === 2 ? Briefcase : Crown;
-                    return (
-                      <div key={tier.code} className="relative bg-card rounded-2xl p-6 border-2 border-border hover:border-scef-gold transition-colors">
-                        <div className="absolute -top-3 left-6 px-2.5 py-1 bg-scef-gold text-scef-blue text-xs font-bold rounded-full">
-                          {tier.code}
-                        </div>
-                        <div className="w-12 h-12 rounded-xl bg-scef-blue/10 flex items-center justify-center mb-4 mt-2">
-                          <Icon className="w-6 h-6 text-scef-blue" />
-                        </div>
-                        <h3 className="font-display font-bold text-foreground mb-2">{tier.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{tier.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className="text-center mt-10">
-                  <Button asChild variant="outline" className="border-2 border-scef-blue text-scef-blue hover:bg-scef-blue hover:text-white">
-                    <Link to="/governance">
-                      {t("about.extras.governance.cta")}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* OUR JOURNEY THROUGH PEOPLE, PURPOSE & IMPACT */}
-          <OurJourneySection />
-
-          {/* MEMBERSHIP & AMBASSADOR PROGRAM */}
-          <section id="membership" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    {t("about.extras.membership.title")}
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    {t("about.extras.membership.subtitle")}
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Members */}
-                  <div className="bg-card rounded-2xl border-2 border-border p-6">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-10 h-10 rounded-lg bg-scef-blue/10 flex items-center justify-center">
-                        <Users className="w-5 h-5 text-scef-blue" />
-                      </div>
-                      <h3 className="font-display text-xl font-bold text-foreground">
-                        {t("about.extras.membership.memberTitle")}
-                      </h3>
-                    </div>
-                    <Accordion type="single" collapsible className="w-full">
-                      {((tRaw<{ name: string; desc: string }[]>("about.extras.membership.members") ?? []) as { name: string; desc: string }[]).map((m, i) => (
-                        <AccordionItem key={i} value={`m-${i}`}>
-                          <AccordionTrigger className="text-left">{m.name}</AccordionTrigger>
-                          <AccordionContent className="text-muted-foreground">{m.desc}</AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                    <Button asChild className="w-full mt-6 bg-scef-blue text-white hover:bg-scef-blue-darker">
-                      <Link to="/get-involved/membership">
-                        {t("about.extras.membership.ctaMember")}
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </div>
-
-                  {/* Ambassadors */}
-                  <div className="bg-card rounded-2xl border-2 border-scef-gold/40 p-6">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-10 h-10 rounded-lg bg-scef-gold/15 flex items-center justify-center">
-                        <Award className="w-5 h-5 text-scef-gold" />
-                      </div>
-                      <h3 className="font-display text-xl font-bold text-foreground">
-                        {t("about.extras.membership.ambassadorTitle")}
-                      </h3>
-                    </div>
-                    <Accordion type="single" collapsible className="w-full">
-                      {((tRaw<{ name: string; desc: string }[]>("about.extras.membership.ambassadors") ?? []) as { name: string; desc: string }[]).map((a, i) => (
-                        <AccordionItem key={i} value={`a-${i}`}>
-                          <AccordionTrigger className="text-left">{a.name}</AccordionTrigger>
-                          <AccordionContent className="text-muted-foreground">{a.desc}</AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                    <Button asChild className="w-full mt-6 bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-semibold">
-                      <Link to="/get-involved/ambassador">
-                        {t("about.extras.membership.ctaAmbassador")}
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* SCEF 2035 TARGETS */}
-          <section id="targets-2035" className="py-20 bg-scef-blue text-white">
-            <div className="container mx-auto px-4">
-              <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-scef-gold/20 text-scef-gold text-xs font-bold uppercase tracking-wider mb-4 border border-scef-gold/30">
-                    <Target className="w-3.5 h-3.5" />
-                    2035
-                  </span>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                    {t("about.extras.targets2035.title")}
-                  </h2>
-                  <p className="text-lg text-white/75 max-w-2xl mx-auto">
-                    {t("about.extras.targets2035.subtitle")}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                  {((tRaw<{ value: string; label: string }[]>("about.extras.targets2035.items") ?? []) as { value: string; label: string }[]).map((item, i) => (
-                    <div key={i} className="bg-white/5 backdrop-blur border border-white/15 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
-                      <p className="font-display text-3xl md:text-4xl font-bold text-scef-gold mb-2">
-                        {item.value}
-                      </p>
-                      <p className="text-sm text-white/80">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="text-center">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/70 text-sm border border-white/20">
-                    <Clock className="w-4 h-4" />
-                    {t("about.extras.targets2035.note")}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FINAL CTA */}
-          <section id="final-cta" className="py-20 bg-scef-blue-darker text-white">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                {t("about.final.title")}
+          </div>
+        </section>
+
+        {/* 2. WHO WE ARE */}
+        <section className="container mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Who We Are</p>
+              <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight text-scef-blue-darker">
+                A Pan-African education advocacy and impact organization built on membership and partnership
               </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10">
-                {t("about.final.subtitle")}
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-foreground/80">
+                <p>
+                  SCEF is a Pan-African education advocacy and impact organization built on
+                  membership, community action, and partnership.
+                </p>
+                <p>
+                  We bring together individuals and institutions who believe that every
+                  African child, learner, teacher, school, and community deserves access to
+                  quality education and meaningful opportunities.
+                </p>
+                <p>
+                  Through our members, local chapters, ambassadors, volunteers, and partners,
+                  SCEF supports education advocacy, scholarships, school support, teacher
+                  development, digital learning, girls and women education, career guidance,
+                  and community-led education projects.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-border shadow-sm">
+              <img src={schoolgirlImg} alt="African schoolgirl learning" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </section>
+
+        {/* 3 & 4. VISION + MISSION */}
+        <section className="bg-muted/30 border-y">
+          <div className="container mx-auto max-w-6xl px-6 py-16 md:py-20 grid md:grid-cols-2 gap-6">
+            <Card className="border-border">
+              <CardContent className="p-7 md:p-8">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-blue-darker">
+                    <Eye className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-scef-blue-darker">Our Vision</h3>
+                </div>
+                <p className="mt-4 text-[15px] leading-relaxed text-foreground/80">
+                  To advocate for the achievement of Education for All in Africa by building
+                  a strong Pan-African membership network that mobilizes people, partnerships,
+                  and projects for education impact.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-border">
+              <CardContent className="p-7 md:p-8">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-scef-blue-darker/10 text-scef-blue-darker">
+                    <Target className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-scef-blue-darker">Our Mission</h3>
+                </div>
+                <p className="mt-4 text-[15px] leading-relaxed text-foreground/80">
+                  To connect members, volunteers, ambassadors, local chapters, diaspora
+                  supporters, donors, sponsors, and institutional partners to support
+                  education access, recognition, school transformation, teacher development,
+                  digital learning, and community-led education projects across Africa.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* 5. OUR IDENTITY */}
+        <section className="container mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Our Identity</p>
+            <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight text-scef-blue-darker">
+              SCEF is many things at once — all anchored in membership
+            </h2>
+          </div>
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {identityItems.map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-start gap-3 rounded-xl border border-border bg-white p-5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-scef-blue-darker/5 text-scef-blue-darker ring-1 ring-scef-blue-darker/10">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <p className="text-[14.5px] font-medium text-foreground">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 6. RECOGNITION-TO-IMPACT MODEL */}
+        <section className="bg-scef-blue-darker text-white">
+          <div className="container mx-auto max-w-6xl px-6 py-16 md:py-20">
+            <div className="max-w-3xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-scef-gold">
+                Our Recognition-to-Impact Model
               </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" className="bg-scef-gold text-scef-blue hover:bg-scef-gold-light font-bold" asChild>
-                  <Link to="/get-involved/membership">
-                    <Users className="w-5 h-5" />
-                    {t("about.final.ctaJoin")}
+              <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight">
+                Recognition creates visibility. Visibility unlocks impact.
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-white/85">
+                SCEF believes that recognition can create visibility, and visibility can
+                unlock real support for education.
+              </p>
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-6">
+              <div className="rounded-xl overflow-hidden border border-white/15 bg-white/[0.04]">
+                <img src={nesaImg} alt="NESA-Africa recognition" className="h-44 w-full object-cover" loading="lazy" />
+                <div className="p-6">
+                  <h3 className="font-display text-lg font-bold text-scef-gold">NESA-Africa — Recognition</h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-white/85">
+                    Celebrates educators, schools, leaders, and organizations contributing
+                    to education excellence across Africa.
+                  </p>
+                  <Link to="/programs/nesa-africa" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-scef-gold hover:underline">
+                    Explore NESA-Africa <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
-                </Button>
-                <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
-                  <Link to="/donate">
-                    <Heart className="w-5 h-5" />
-                    {t("about.final.ctaDonate")}
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden border border-white/15 bg-white/[0.04]">
+                <img src={eduaidImg} alt="EduAid-Africa impact" className="h-44 w-full object-cover" loading="lazy" />
+                <div className="p-6">
+                  <h3 className="font-display text-lg font-bold text-scef-gold">EduAid-Africa — Impact</h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-white/85">
+                    Turns visibility into scholarships, school support, teacher training,
+                    digital learning, girls education, school adoption, and community-based
+                    education projects.
+                  </p>
+                  <Link to="/programs/eduaid-africa" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-scef-gold hover:underline">
+                    Explore EduAid-Africa <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
-                </Button>
-                <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
-                  <Link to="/partner-with-us">
-                    <Handshake className="w-5 h-5" />
-                    {t("about.final.ctaPartner")}
-                  </Link>
-                </Button>
-                <Button size="lg" className="bg-white/10 text-white border border-white/30 hover:bg-white/20" asChild>
-                  <Link to="/media">
-                    <Play className="w-5 h-5" />
-                    {t("about.final.ctaMedia")}
-                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-8 text-center text-[15px] font-medium text-white/90">
+              NESA-Africa creates recognition. EduAid-Africa creates impact. Together, they
+              power SCEF's recognition-to-impact model.
+            </p>
+          </div>
+        </section>
+
+        {/* 7. WHAT WE DO */}
+        <section className="container mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">What We Do</p>
+            <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight text-scef-blue-darker">
+              How SCEF advances Education for All in Africa
+            </h2>
+          </div>
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {whatWeDo.map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-start gap-3 rounded-xl border border-border bg-white p-5 hover:shadow-sm transition-shadow">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-blue-darker">
+                  <Icon className="h-4.5 w-4.5" />
+                </span>
+                <p className="text-[14px] font-medium text-foreground">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 8. MEMBERSHIP AT THE HEART */}
+        <section className="bg-muted/30 border-y">
+          <div className="container mx-auto max-w-6xl px-6 py-16 md:py-20 grid md:grid-cols-5 gap-10 items-center">
+            <div className="md:col-span-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Membership at the Heart of SCEF</p>
+              <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight text-scef-blue-darker">
+                SCEF is powered by people
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-foreground/80">
+                Our members are education advocates, teachers, professionals, students,
+                parents, entrepreneurs, diaspora supporters, volunteers, and community
+                leaders who want to contribute to education progress in Africa.
+              </p>
+              <p className="mt-3 text-[15px] leading-relaxed text-foreground/80">
+                Members can participate through local chapters, national activities,
+                regional campaigns, webinars, school projects, mentorship, sponsorship
+                mobilization, and volunteer service.
+              </p>
+              <div className="mt-6">
+                <Button asChild size="lg" className="bg-scef-blue-darker hover:bg-scef-blue-darker/90">
+                  <Link to="/membership">Become a Member <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
                 </Button>
               </div>
             </div>
-          </section>
-          
-          {/* CRS Partners */}
-          <CRSPartnersSection variant="compact" />
-          
-        </main>
-        
-        <Footer />
-      </div>
+            <div className="md:col-span-2 rounded-xl overflow-hidden border border-border shadow-sm">
+              <img src={chaptersImg} alt="SCEF chapters and members" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </section>
+
+        {/* 9. LOCAL CHAPTERS & AMBASSADORS */}
+        <section className="container mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Local Chapters and Ambassadors</p>
+            <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight text-scef-blue-darker">
+              Bringing the mission closer to communities
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground/80">
+              SCEF local chapters bring our mission closer to communities. People can join
+              SCEF in their country, city, school, region, or community as members,
+              ambassadors, volunteers, project leaders, mentors, or partners.
+            </p>
+            <p className="mt-3 text-[15px] leading-relaxed text-foreground/80">
+              Ambassadors help represent SCEF locally, mobilize members, support campaigns,
+              connect schools and partners, and promote the vision of Education for All in Africa.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild className="bg-scef-blue-darker hover:bg-scef-blue-darker/90">
+                <Link to="/chapters/signup">Join a Local Chapter</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link to="/ambassador">Apply as an Ambassador</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* 10. DIASPORA & FRIENDS OF AFRICA */}
+        <section className="bg-muted/30 border-y">
+          <div className="container mx-auto max-w-6xl px-6 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+            <div className="rounded-xl overflow-hidden border border-border shadow-sm order-2 md:order-1">
+              <img src={diasporaImg} alt="Diaspora and global education supporters" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="order-1 md:order-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Diaspora Africa & Friends of Africa</p>
+              <h2 className="mt-3 font-display text-2xl md:text-[32px] font-bold tracking-tight text-scef-blue-darker">
+                Structured pathways for global supporters of African education
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-foreground/80">
+                SCEF creates structured pathways for African diaspora supporters and global
+                friends of African education to contribute to education development across
+                Africa — through donations, mentorship, EduTourism, sponsorship, technical
+                support, school adoption, project funding, advocacy, and partnerships.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button asChild className="bg-scef-blue-darker hover:bg-scef-blue-darker/90">
+                  <Link to="/diaspora-africa">Join Diaspora Africa</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to="/friends-of-africa">Become a Friends of Africa Partner</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* GOVERNANCE LINKS */}
+        <section className="container mx-auto max-w-6xl px-6 py-14">
+          <div className="rounded-xl border border-border bg-white p-6 md:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-scef-blue-darker/5 text-scef-blue-darker ring-1 ring-scef-blue-darker/10">
+                  <Shield className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Governance</p>
+                  <h3 className="font-display text-lg font-bold text-scef-blue-darker">
+                    SCEF Governance Structure
+                  </h3>
+                </div>
+              </div>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/governance">View full governance <ArrowRight className="ml-1.5 h-3.5 w-3.5" /></Link>
+              </Button>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {governanceLinks.map((g) => (
+                <Link
+                  key={g.href}
+                  to={g.href}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/30 px-3.5 py-1.5 text-[12.5px] font-medium text-foreground hover:bg-scef-blue-darker hover:text-white transition"
+                >
+                  <Building2 className="h-3.5 w-3.5" /> {g.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 11. FINAL CTA */}
+        <section className="bg-gradient-to-br from-scef-blue-darker to-scef-blue-darker/90 text-white">
+          <div className="container mx-auto max-w-5xl px-6 py-16 md:py-20 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-scef-gold">
+              Join the Movement
+            </p>
+            <h2 className="mt-3 font-display text-2xl md:text-[34px] font-bold tracking-tight">
+              Join the Movement for Education for All in Africa
+            </h2>
+            <p className="mt-4 text-[15px] md:text-base leading-relaxed text-white/85 max-w-3xl mx-auto">
+              SCEF is more than an organization. It is a Pan-African membership movement
+              connecting people, partnerships, and projects to advance education across
+              Africa. Whether you want to become a member, volunteer, intern, ambassador,
+              donor, sponsor, local chapter leader, diaspora supporter, or Friends of Africa
+              partner, there is a place for you in SCEF.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Button asChild size="lg" className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-darker font-semibold">
+                <Link to="/membership">Become a Member</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/40 text-white hover:bg-white/20 hover:text-white">
+                <Link to="/volunteer">Volunteer With SCEF</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/40 text-white hover:bg-white/20 hover:text-white">
+                <Link to="/wallet/donate">Donate Now</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/40 text-white hover:bg-white/20 hover:text-white">
+                <Link to="/sponsorship">Sponsor a Program</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
     </>
   );
 };
