@@ -148,16 +148,17 @@ export const MasterTimelinesDuo = () => {
           </p>
           <h2
             id="master-timelines-heading"
-            className="mt-2 font-display text-3xl font-bold tracking-tight text-scef-blue-darker md:text-4xl"
+            className="mt-2 font-display text-3xl font-bold tracking-tight text-white md:text-4xl"
           >
             Recognition to Impact — Two Master Timelines
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+          <p className="mt-3 text-base leading-relaxed text-white/80">
             From recognition to impact — NESA-Africa celebrates education
             excellence, while EduAid-Africa turns visibility into scholarships,
             school support, teacher development, and sustainable learning
             opportunities.
           </p>
+
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
