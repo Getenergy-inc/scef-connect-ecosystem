@@ -208,6 +208,8 @@ import WaitlistApply from "./pages/programs/WaitlistApply";
 import GreenHorizonApply from "./pages/apply/GreenHorizonApply";
 import VocationalScholarshipApply from "./pages/apply/VocationalScholarshipApply";
 import AdminVocationalScholarshipWaitlist from "./pages/admin/AdminVocationalScholarshipWaitlist";
+import CapacityTrainingApply from "./pages/apply/CapacityTrainingApply";
+import AdminCapacityTrainingWaitlist from "./pages/admin/AdminCapacityTrainingWaitlist";
 
 // Conversion pages (visitor-pathway pages)
 import Internship from "./pages/conversion/Internship";
