@@ -17,6 +17,7 @@ import { WomenGirlsEmpowerment } from "@/components/sections/WomenGirlsEmpowerme
 import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027WaitingList";
 import { ProgramCardsRow } from "@/components/sections/ProgramCardsRow";
 import { GetInvolvedPathways } from "@/components/sections/GetInvolvedPathways";
+import { RecognitionToImpact } from "@/components/sections/RecognitionToImpact";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
@@ -72,13 +73,16 @@ const Home = () => {
           {/* 1. MASTHEAD — Hero */}
           <LandingHero />
 
-          {/* 2. PROGRAM CARDS — Real logos + photos */}
+          {/* 2. CORE STORY — Recognition → Visibility → Support → Impact */}
+          <RecognitionToImpact />
+
+          {/* 3. PROGRAM CARDS — Real logos + photos */}
           <ProgramCardsRow />
 
-          {/* 2b. VISITOR PATHWAYS — Bounce-reduction gateway */}
+          {/* 4. VISITOR PATHWAYS — Bounce-reduction gateway */}
           <GetInvolvedPathways />
 
-          {/* 3. EDITORIAL OPENING — Who we are + quick actions */}
+          {/* 5. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
           <QuickActionsBar />
 

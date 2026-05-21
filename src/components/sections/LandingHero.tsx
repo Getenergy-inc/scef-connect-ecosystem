@@ -39,9 +39,9 @@ export const LandingHero = () => {
             Connecting People, Partnerships, and Projects to Advance Education Across Africa
           </h1>
           <p className="mt-5 text-[15px] md:text-base leading-relaxed text-white/85 max-w-2xl">
-            SCEF supports education recognition, scholarships, school transformation,
-            teacher development, digital learning, local chapters, diaspora engagement,
-            and community-led education projects across Africa.
+            SCEF connects education recognition, scholarships, school support, teacher
+            development, digital learning, local chapters, diaspora engagement, and
+            community-led projects into one pan-African education-impact ecosystem.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
