@@ -380,6 +380,8 @@ const App = () => (
               <Route path="/programs/waitlist" element={<WaitlistApply />} />
               <Route path="/waitlist" element={<WaitlistApply />} />
               <Route path="/apply/green-horizon" element={<GreenHorizonApply />} />
+              <Route path="/apply/vocational-scholarship" element={<VocationalScholarshipApply />} />
+              <Route path="/admin/vocational-scholarship-waitlist" element={<AdminVocationalScholarshipWaitlist />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
