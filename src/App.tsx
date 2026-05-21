@@ -203,6 +203,8 @@ import MasterTimelinesAdminPage from "./pages/admin/MasterTimelinesAdminPage";
 import SophiaFAQs from "./pages/support/SophiaFAQs";
 import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
+import AdminProgramWaitlist from "./pages/admin/AdminProgramWaitlist";
+import WaitlistApply from "./pages/programs/WaitlistApply";
 
 // Conversion pages (visitor-pathway pages)
 import Internship from "./pages/conversion/Internship";
@@ -371,6 +373,9 @@ const App = () => (
               <Route path="/admin/media-submissions" element={<AdminMediaSubmissions />} />
               <Route path="/admin/master-timelines" element={<MasterTimelinesAdminPage />} />
               <Route path="/admin/waitlist" element={<WaitlistAdmin />} />
+              <Route path="/admin/program-waitlist" element={<AdminProgramWaitlist />} />
+              <Route path="/programs/waitlist" element={<WaitlistApply />} />
+              <Route path="/waitlist" element={<WaitlistApply />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
