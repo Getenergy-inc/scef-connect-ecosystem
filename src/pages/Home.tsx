@@ -19,6 +19,7 @@ import { ProgramCardsRow } from "@/components/sections/ProgramCardsRow";
 import { GetInvolvedPathways } from "@/components/sections/GetInvolvedPathways";
 import { RecognitionToImpact } from "@/components/sections/RecognitionToImpact";
 import { LocalChapterPathways } from "@/components/sections/LocalChapterPathways";
+import { ApplicationsWaitlistsSection } from "@/components/sections/ApplicationsWaitlistsSection";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
