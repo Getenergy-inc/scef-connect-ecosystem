@@ -1,192 +1,68 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, GraduationCap, Users, ShieldCheck, Globe2, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-schoolgirl.jpg";
 import { useLocale } from "@/contexts/LocaleContext";
-import { QuickJumpMenu } from "@/components/layout/QuickJumpMenu";
-
-const pillars = [
-  { icon: BookOpen, title: "Education Advocacy", sub: "Expanding access for every learner" },
-  { icon: GraduationCap, title: "Training & Innovation", sub: "Teachers, leaders & learners" },
-  { icon: Users, title: "Health & Inclusion", sub: "Schools as safe, healthy spaces" },
-  { icon: ShieldCheck, title: "ESG & Sustainability", sub: "Green, accountable schools" },
-  { icon: Globe2, title: "Pan-African Impact", sub: "Local chapters, continental reach" },
-];
 
 /**
- * Split-layout hero: copy left, photograph right, pillar strip beneath.
- * Matches the institutional reference design.
+ * Clean institutional hero — UN-inspired public-sector layout.
+ * Two columns: copy left, real documentary photo right.
+ * No gradients, no orbs, no oversized CTAs.
  */
 export const LandingHero = () => {
   const { t } = useLocale();
 
   return (
-    <section className="relative bg-scef-blue-darker text-white">
-      {/* Subtle pattern wash */}
-      <div className="pointer-events-none absolute inset-0 bg-scef-pattern opacity-[0.05]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(217_91%_25%/0.6),transparent_55%)]" />
-
-      <div className="container relative mx-auto px-6 md:px-8">
-        <div className="grid items-center gap-10 py-12 md:grid-cols-12 md:gap-12 md:py-20 lg:py-24">
+    <section className="relative bg-white border-b border-border">
+      <div className="container mx-auto max-w-6xl px-6 md:px-8">
+        <div className="grid items-center gap-10 py-12 md:grid-cols-12 md:gap-12 md:py-20">
           {/* LEFT — Copy */}
-          <div className="md:col-span-6 lg:col-span-5">
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-gold-light ring-1 ring-white/15">
-              {t("home.heroV2.eyebrow") || "You Are Welcome to SCEF · Reg. IT-41501"}
+          <div className="md:col-span-7">
+            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+              Santos Creations Educational Foundation
             </p>
-            <h1 className="font-display text-[2.25rem] font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.5rem]">
-              Empowering Education.{" "}
-              <span className="text-scef-gold">Advocating Education for All.</span>{" "}
-              <span className="text-scef-gold-light">Sustaining Africa's Future.</span>
+            <h1 className="font-display text-[clamp(2rem,4vw,2.75rem)] font-bold leading-[1.15] tracking-tight text-scef-blue-darker">
+              Connecting Education Recognition to Real Impact Across Africa
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
-              A Pan-African education movement advancing quality learning access, girls and women empowerment,
-              digital education, ESG awareness, teacher development, youth career pathways, local chapter impact,
-              and CSR for Education Fund Management Services across Africa.
-            </p>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/65">
-              SCEF connects schools, donors, corporate sponsors, volunteers, ambassadors, educators, local chapters,
-              and development partners to build inclusive, accountable, and sustainable education impact across Africa.
+            <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground md:text-base">
+              SCEF supports education recognition, scholarships, school transformation,
+              teacher development, digital learning, and community-led education impact
+              across Africa.
             </p>
 
-            {/* Primary CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button
-                size="lg"
-                className="h-12 bg-scef-gold px-7 font-semibold text-scef-blue-darker hover:bg-scef-gold-hover"
-                asChild
-              >
-                <Link to="/auth/sign-up">
-                  Join the Movement
-                  <ArrowRight className="ms-2 h-4 w-4" />
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <Button asChild>
+                <Link to="/programs">
+                  Explore Our Work
+                  <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
-                asChild
-              >
-                <Link to="/donate">Support Education</Link>
-              </Button>
-              <Button
-                size="lg"
-                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
-                asChild
-              >
-                <Link to="/support-us#sponsor-nesa">Sponsor NESA-Africa</Link>
-              </Button>
-              <Button
-                size="lg"
-                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
-                asChild
-              >
-                <Link to="/women-girls-empowerment">Support Girls Education</Link>
-              </Button>
-              <Button
-                size="lg"
-                className="h-12 bg-white px-7 font-semibold text-scef-blue-darker hover:bg-white/90"
-                asChild
-              >
-                <Link to="/wallet">Pay via GFA Wallet</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-12 border-scef-gold/60 bg-transparent px-7 font-semibold text-scef-gold hover:bg-scef-gold/10 hover:text-scef-gold-light"
-                onClick={() => window.dispatchEvent(new CustomEvent("sophia:open"))}
-              >
-                <MessageCircle className="me-2 h-4 w-4" />
-                Chat with Sophia
+              <Button asChild variant="outline">
+                <Link to="/donate">Support Education Impact</Link>
               </Button>
             </div>
 
-            {/* Key message chips */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                "Education for All",
-                "Girls & Women Empowerment",
-                "CSR Education Fund Management",
-                "Teacher Development",
-                "Digital Learning",
-                "ESG & Sustainability",
-                "Local Chapter Impact",
-                "Community Transformation",
-              ].map((chip) => (
-                <span
-                  key={chip}
-                  className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/80"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
-
-            {/* Secondary CTAs */}
-            <div className="mt-3 flex flex-wrap items-center gap-3">
-              <Button
-                size="sm"
-                variant="outline"
-                className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
-                asChild
-              >
-                <Link to="/programs/eduaid-africa">Explore EduAid-Africa</Link>
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
-                asChild
-              >
-                <Link to="/chapters/join-online">Join a Local Chapter</Link>
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="h-10 border-white/40 bg-transparent px-5 font-semibold text-white hover:bg-white/10 hover:text-white"
-                asChild
-              >
-                <Link to="/calendar">View Monthly Calendar</Link>
-              </Button>
-              <QuickJumpMenu variant="dark" />
-            </div>
+            <p className="mt-6 text-xs text-muted-foreground">
+              Registered Pan-African not-for-profit · IT-41501 · Working across SCEF chapters in Africa
+            </p>
           </div>
 
-          {/* RIGHT — Image */}
-          <div className="md:col-span-6 lg:col-span-7">
-            <div className="relative overflow-hidden rounded-2xl bg-scef-blue-darker shadow-2xl shadow-black/40">
-              <img
-                src={heroImg}
-                alt={t("home.heroV2.imageAlt") || "African schoolchildren in green uniforms standing together at school"}
-                width={1920}
-                height={1080}
-                className="h-auto w-full object-contain"
-              />
-            </div>
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-white/55 md:hidden">
-              <span className="h-px w-6 bg-scef-gold/60" />
-              {t("home.heroV2.scrollCue") || "Scroll to explore"}
-              <span className="h-px w-6 bg-scef-gold/60" />
-            </div>
-          </div>
-        </div>
-
-        {/* Pillar strip */}
-        <div className="border-t border-white/10 py-6 md:py-8">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 md:grid-cols-5">
-            {pillars.map(({ icon: Icon, title, sub }) => (
-              <div key={title} className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-scef-gold/15 text-scef-gold ring-1 ring-scef-gold/30">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-sm font-semibold leading-tight text-white">
-                    {t(`home.heroV2.pillars.${title}.title`) || title}
-                  </div>
-                  <div className="text-[11px] leading-tight text-white/60">
-                    {t(`home.heroV2.pillars.${title}.sub`) || sub}
-                  </div>
-                </div>
+          {/* RIGHT — Documentary photo */}
+          <div className="md:col-span-5">
+            <figure className="overflow-hidden rounded-md border border-border bg-muted">
+              <div className="aspect-[4/5] w-full">
+                <img
+                  src={heroImg}
+                  alt={t("home.heroV2.imageAlt") || "Students walking together in an African schoolyard"}
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
-            ))}
+              <figcaption className="bg-scef-blue-darker px-4 py-2.5 text-[11px] font-medium uppercase tracking-wider text-white/85">
+                Field photography · SCEF community programs
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
