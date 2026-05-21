@@ -36,18 +36,19 @@ export const LandingHero = () => {
             Santos Creations Educational Foundation
           </p>
           <h1 className="font-display text-white text-[clamp(2rem,4.6vw,3.1rem)] font-bold leading-[1.1] tracking-tight">
-            Connecting People, Partnerships, and Projects to Advance Education Across Africa
+            Managing CSR Education Funds for Real Impact Across Africa
           </h1>
           <p className="mt-5 text-[15px] md:text-base leading-relaxed text-white/85 max-w-2xl">
-            SCEF connects education recognition, scholarships, school support, teacher
-            development, digital learning, local chapters, diaspora engagement, and
-            community-led projects into one pan-African education-impact ecosystem.
+            SCEF is a membership-based Pan-African NGO helping companies, donors, sponsors, diaspora
+            supporters, and partners channel CSR and education funds into scholarships, school
+            transformation, teacher development, vocational training, digital learning, and
+            community-led projects.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Button asChild size="sm" className="h-10 px-5 text-[13px] rounded-md">
-              <Link to="/programs">
-                Explore Our Work <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
+            <Button asChild size="sm" className="h-10 px-5 text-[13px] rounded-md bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90 font-semibold">
+              <Link to="/partner-with-us">
+                Partner With SCEF <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
               </Link>
             </Button>
             <Button
@@ -56,7 +57,7 @@ export const LandingHero = () => {
               variant="outline"
               className="h-10 px-5 text-[13px] rounded-md bg-white/95 text-scef-blue-darker border-white hover:bg-white"
             >
-              <Link to="/get-involved">Get Involved</Link>
+              <Link to="/donate">Support Education Funds</Link>
             </Button>
           </div>
 
