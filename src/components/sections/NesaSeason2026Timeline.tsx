@@ -277,13 +277,13 @@ const NesaSeason2026Timeline = () => {
               <Link to="/nominate">Nominate Now</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link to="/programs/nesa-africa#categories">View Categories</Link>
+              <Link to="/nesa-africa/categories">View Categories</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/partner-with-us">Partner With Us</Link>
+              <Link to="/csr-partnership">Partner With Us</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/media/nesa-tv">Watch NESA TV</Link>
+              <Link to="/nesa-tv">Watch NESA TV</Link>
             </Button>
           </div>
         </div>
