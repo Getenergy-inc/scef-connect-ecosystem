@@ -119,8 +119,8 @@ const cards: Card[] = [
       "Agriculture livelihood, permaculture training and food security project — piloting in Borno State to support IDPs, farmers, youth, and women.",
     href: "/apply/green-horizon",
     cta: "Join Green Horizon Waitlist",
-    image: classroomPhoto,
-    alt: "Green Horizon Initiative Project — agriculture and livelihood pilot",
+    image: greenHorizonPhoto,
+    alt: "Green Horizon agriculture livelihood and permaculture training project",
     accent: "green",
   },
   {
