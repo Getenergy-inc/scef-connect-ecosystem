@@ -85,22 +85,26 @@ export default function WebinarRegister() {
     setSubmitting(true);
     try {
       const id = crypto.randomUUID();
+      const data = parsed.data;
       const payload = {
         id,
         program_slug: selected.slug,
         program_title: selected.topic,
         program_month: selected.date,
-        ...parsed.data,
-        phone: parsed.data.phone || null,
-        country: parsed.data.country || null,
-        organization: parsed.data.organization || null,
-        role_type: parsed.data.role_type || null,
-        motivation: parsed.data.motivation || null,
+        full_name: data.full_name!,
+        email: data.email!,
+        participation_mode: data.participation_mode,
+        consent_marketing: data.consent_marketing,
+        phone: data.phone || null,
+        country: data.country || null,
+        organization: data.organization || null,
+        role_type: data.role_type || null,
+        motivation: data.motivation || null,
       };
 
       const { error } = await supabase
         .from("webinar_registrations")
-        .insert([payload]);
+        .insert(payload);
       if (error) throw error;
 
       // Fire-and-forget confirmation email (works once email infra is configured)
