@@ -6,11 +6,13 @@ import nesaLogo from "@/assets/nesa-africa-logo.jpg";
 import eduaidLogo from "@/assets/eduaid-africa-logo.jpg";
 import eduaidWebinar from "@/assets/eduaid-webinar-women-girls.jpg";
 import classroomPhoto from "@/assets/hero-classroom.jpg";
-import elibraryPhoto from "@/assets/hero-education.jpg";
-import schoolgirlPhoto from "@/assets/hero-schoolgirl.jpg";
 import mediaVideo from "@/assets/nesa-hero-bg-video.mp4";
 import mediaPoster from "@/assets/hero-media.jpg";
 import greenHorizonPhoto from "@/assets/green-horizon-agriculture.jpg";
+import teacherTrainingPhoto from "@/assets/photos/scef-classroom-teacher.jpg";
+import girlsStemPhoto from "@/assets/photos/scef-girls-stem.jpg";
+import mentorshipPhoto from "@/assets/photos/scef-volunteers-outreach.jpg";
+import sendChildPhoto from "@/assets/photos/scef-school-walk.jpg";
 
 type Accent = "navy" | "green" | "gold" | "blue";
 
