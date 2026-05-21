@@ -132,7 +132,7 @@ const cards: Card[] = [
       "Career guidance, mentorship and youth pathways across SCEF local chapters and partner schools.",
     href: "/programs/my-career-my-life",
     cta: "Explore My Career, My Life",
-    image: schoolgirlPhoto,
+    image: mentorshipPhoto,
     alt: "Youth career guidance and mentorship",
     accent: "blue",
   },
