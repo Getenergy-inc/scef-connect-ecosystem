@@ -64,7 +64,7 @@ const Home = () => {
 
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-14" />
+        <div className="h-[88px]" />
 
 
         <main>
