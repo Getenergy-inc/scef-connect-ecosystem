@@ -199,6 +199,13 @@ import SophiaFAQs from "./pages/support/SophiaFAQs";
 import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
 
+// Dedicated landing-page aliases (refactor: move long sections off Home)
+import NesaAfricaTimeline from "./pages/timelines/NesaAfricaTimeline";
+import EduAidAfricaTimeline from "./pages/timelines/EduAidAfricaTimeline";
+import MonthlyProgramCalendar from "./pages/calendar/MonthlyProgramCalendar";
+import OurImpact from "./pages/OurImpact";
+import FlagshipPrograms from "./pages/FlagshipPrograms";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -219,6 +226,13 @@ const App = () => (
               <Route path="/welcome-classic" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+
+              {/* Dedicated landing-page section aliases */}
+              <Route path="/nesa-africa-timeline" element={<NesaAfricaTimeline />} />
+              <Route path="/eduaid-africa-timeline" element={<EduAidAfricaTimeline />} />
+              <Route path="/monthly-program-calendar" element={<MonthlyProgramCalendar />} />
+              <Route path="/our-impact" element={<OurImpact />} />
+              <Route path="/flagship-programs" element={<FlagshipPrograms />} />
               
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
