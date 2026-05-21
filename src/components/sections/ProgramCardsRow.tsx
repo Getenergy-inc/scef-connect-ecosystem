@@ -62,7 +62,7 @@ const cards: Card[] = [
       "Funding education support through partnerships, scholarships, school aid, teacher development, and community programs.",
     href: "/programs/eduaid-africa",
     cta: "Explore EduAid-Africa",
-    image: eduaidWebinar,
+    image: teacherTrainingPhoto,
     alt: "EduAid-Africa education support and partnership program",
     accent: "green",
     badge: eduaidLogo,
