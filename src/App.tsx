@@ -199,6 +199,15 @@ import SophiaFAQs from "./pages/support/SophiaFAQs";
 import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
 
+// Conversion pages (visitor-pathway pages)
+import Internship from "./pages/conversion/Internship";
+import Sponsorship from "./pages/conversion/Sponsorship";
+import EduTourism from "./pages/conversion/EduTourism";
+import ProjectsPage from "./pages/conversion/Projects";
+import RegionalCoverage from "./pages/conversion/RegionalCoverage";
+import DiasporaAfrica from "./pages/conversion/DiasporaAfrica";
+import FriendsOfAfrica from "./pages/conversion/FriendsOfAfrica";
+
 const queryClient = new QueryClient();
 
 const App = () => (
