@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import eduaidLogo from "@/assets/eduaid-africa-logo.jpg";
-import nesaLogo from "@/assets/nesa-africa-logo.jpg";
 import rmsaPhoto from "@/assets/photos/scef-school-rebuild.jpg";
 import elibraryPhoto from "@/assets/hero-education.jpg";
+import { MotionEduAidLogo } from "@/components/brand/MotionEduAidLogo";
+import { MotionNESALogo } from "@/components/brand/MotionNESALogo";
 
 type Card = {
   title: string;
   description: string;
   href: string;
   cta: string;
-  image: string;
-  alt: string;
-  isLogo?: boolean;
+  /** Either a photo src or a logo brand key */
+  image?: string;
+  alt?: string;
+  logo?: "eduaid" | "nesa";
 };
+
 
 const cards: Card[] = [
   {
@@ -22,9 +24,7 @@ const cards: Card[] = [
       "Scholarships, school transformation, and CSR-backed education support across African communities.",
     href: "/programs/eduaid-africa",
     cta: "Explore EduAid",
-    image: eduaidLogo,
-    alt: "EduAid-Africa official program logo",
-    isLogo: true,
+    logo: "eduaid",
   },
   {
     title: "NESA-Africa",
@@ -32,9 +32,7 @@ const cards: Card[] = [
       "The New Education Standard Award Africa — continental recognition of education excellence.",
     href: "/programs/nesa-africa",
     cta: "Explore NESA",
-    image: nesaLogo,
-    alt: "NESA-Africa official program logo",
-    isLogo: true,
+    logo: "nesa",
   },
   {
     title: "Rebuild My School Africa",
@@ -86,21 +84,23 @@ export const ProgramCardsRow = () => {
             >
               <div
                 className={
-                  card.isLogo
+                  card.logo
                     ? "aspect-[4/3] w-full bg-white flex items-center justify-center p-6 border-b border-border"
                     : "aspect-[4/3] w-full overflow-hidden bg-muted"
                 }
               >
-                <img
-                  src={card.image}
-                  alt={card.alt}
-                  loading="lazy"
-                  className={
-                    card.isLogo
-                      ? "max-h-full max-w-full object-contain"
-                      : "h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  }
-                />
+                {card.logo === "eduaid" ? (
+                  <MotionEduAidLogo className="h-full w-full" imgClassName="max-h-[80%]" />
+                ) : card.logo === "nesa" ? (
+                  <MotionNESALogo className="h-full w-full" imgClassName="max-h-[85%]" />
+                ) : (
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-display text-[15px] font-bold text-scef-blue-darker leading-tight">
