@@ -32,41 +32,43 @@ export const EndorsedBySection = () => {
   if (isLoading || endorsements.length === 0) return null;
 
   return (
-    <section className="bg-background py-16 md:py-20" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="bg-muted/30 py-14 md:py-20" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-6 md:px-8">
-        <div className="mb-10 text-center md:mb-12">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[hsl(145_63%_35%)]">
+        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-scef-gold">
             {t("home.endorsedBy.eyebrow") || "Trust & Recognition"}
           </p>
-          <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight text-scef-blue-darker md:text-[2rem]">
+          <h2 className="mt-3 font-display text-2xl font-semibold leading-tight tracking-tight text-scef-blue-darker md:text-[2rem]">
             {t("home.endorsedBy.title") || "Trusted & Aligned with Leading Institutions"}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          <div className="mx-auto mt-4 h-px w-16 bg-scef-gold/60" />
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-[15px]">
             {t("home.endorsedBy.subtitle") ||
               "SCEF collaborates with regional and global education bodies to ensure that programs and funded initiatives meet international standards and deliver measurable impact."}
           </p>
         </div>
 
-        <div className="grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-4">
           {endorsements.map((e, idx) => (
             <a
               key={e.id}
               href={e.website_url || "#"}
               target={e.website_url ? "_blank" : undefined}
               rel={e.website_url ? "noopener noreferrer" : undefined}
-              className="group flex flex-col items-center gap-2 animate-fade-in"
-              style={{ animationDelay: `${idx * 50}ms` }}
+              className="group flex flex-col items-center justify-center rounded-xl border border-border/60 bg-card px-4 py-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md animate-fade-in"
+              style={{ animationDelay: `${idx * 40}ms` }}
               title={e.name}
+              aria-label={e.name}
             >
-              <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-border bg-card p-2 shadow-sm transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-scef-gold/40 group-hover:shadow-md md:h-20 md:w-20">
+              <div className="flex h-14 w-full items-center justify-center md:h-16">
                 <img
                   src={e.logo_url}
                   alt={e.name}
-                  className="h-full w-full object-contain"
+                  className="max-h-full max-w-[80%] object-contain opacity-75 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                   loading="lazy"
                 />
               </div>
-              <span className="text-center text-[11px] font-medium leading-tight text-muted-foreground transition-colors group-hover:text-scef-blue-darker">
+              <span className="mt-3 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground transition-colors group-hover:text-scef-blue-darker">
                 {e.acronym || e.name}
               </span>
             </a>
