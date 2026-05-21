@@ -36,15 +36,15 @@ export const EndorsedBySection = () => {
       <div className="container mx-auto px-6 md:px-8">
         <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-scef-gold">
-            {t("home.endorsedBy.eyebrow") || "Trust & Recognition"}
+            {t("home.endorsedBy.eyebrow") || "Collaboration"}
           </p>
           <h2 className="mt-3 font-display text-2xl font-semibold leading-tight tracking-tight text-scef-blue-darker md:text-[2rem]">
-            {t("home.endorsedBy.title") || "Trusted & Aligned with Leading Institutions"}
+            {t("home.endorsedBy.title") || "Trusted Education Collaborators"}
           </h2>
           <div className="mx-auto mt-4 h-px w-16 bg-scef-gold/60" />
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-[15px]">
             {t("home.endorsedBy.subtitle") ||
-              "SCEF collaborates with regional and global education bodies to ensure that programs and funded initiatives meet international standards and deliver measurable impact."}
+              "SCEF works with verified education-focused collaborators and networks to support learning access, advocacy, and education impact."}
           </p>
         </div>
 
