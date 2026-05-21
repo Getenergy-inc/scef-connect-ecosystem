@@ -16,21 +16,21 @@ export const TopUtilityNav = () => {
   ];
 
   return (
-    <div className="bg-scef-blue-darker text-white/80 text-xs" dir={isRTL ? "rtl" : "ltr"}>
+    <div className="bg-scef-blue-darker text-white/75 text-[11px] border-b border-white/5" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
         {/* Desktop: Horizontal links */}
-        <div className="hidden md:flex items-center justify-between py-2">
-          <div className="flex items-center gap-1">
+        <div className="hidden md:flex items-center justify-between h-7">
+          <div className="flex items-center">
             {utilityLinks.map((link, index) => (
               <span key={link.name} className="flex items-center">
                 <Link
                   to={link.href}
-                  className="px-3 py-1 hover:text-scef-gold transition-colors font-medium"
+                  className="px-2.5 py-0.5 hover:text-scef-gold transition-colors font-medium tracking-tight"
                 >
                   {link.name}
                 </Link>
                 {index < utilityLinks.length - 1 && (
-                  <span className="text-white/30">|</span>
+                  <span className="text-white/20 select-none">·</span>
                 )}
               </span>
             ))}
@@ -40,7 +40,7 @@ export const TopUtilityNav = () => {
 
         {/* Mobile: Horizontal scroll */}
         <div className="md:hidden overflow-x-auto scrollbar-hide">
-          <div className="flex items-center gap-4 py-2 px-2 whitespace-nowrap">
+          <div className="flex items-center gap-3 py-1.5 px-1 whitespace-nowrap">
             {utilityLinks.map((link) => (
               <Link
                 key={link.name}
