@@ -5,6 +5,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription,
+} from "@/components/ui/dialog";
 import {
   Table, TableHeader, TableBody, TableRow, TableHead, TableCell,
 } from "@/components/ui/table";
@@ -13,9 +18,27 @@ import {
 } from "@/components/ui/select";
 import {
   ArrowDown, ArrowUp, ArrowUpDown, ChevronLeft, ChevronRight,
-  ChevronsLeft, ChevronsRight, Download, Search, Users,
+  ChevronsLeft, ChevronsRight, Download, Search, Users, Pencil,
 } from "lucide-react";
 import { WAITLIST_SOURCE } from "@/config/waitlistConfig";
+import { toast } from "sonner";
+
+type WaitlistStatus = "new" | "reviewed" | "accepted" | "rejected";
+
+const STATUS_OPTIONS: { value: WaitlistStatus | "all"; label: string }[] = [
+  { value: "all", label: "All statuses" },
+  { value: "new", label: "New" },
+  { value: "reviewed", label: "Reviewed" },
+  { value: "accepted", label: "Accepted" },
+  { value: "rejected", label: "Rejected" },
+];
+
+const STATUS_STYLES: Record<WaitlistStatus, string> = {
+  new: "bg-blue-100 text-blue-800 hover:bg-blue-100",
+  reviewed: "bg-amber-100 text-amber-800 hover:bg-amber-100",
+  accepted: "bg-emerald-100 text-emerald-800 hover:bg-emerald-100",
+  rejected: "bg-rose-100 text-rose-800 hover:bg-rose-100",
+};
 
 interface WaitlistRow {
   id: string;
@@ -26,6 +49,9 @@ interface WaitlistRow {
   language: string;
   source: string;
   submission_status: string;
+  admin_notes: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
   created_at: string;
 }
 
@@ -49,14 +75,16 @@ const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
 function toCsv(rows: WaitlistRow[]): string {
   const headers = [
     "Full name", "Country", "Organization", "Role",
-    "Language", "Status", "Source", "Submitted at",
+    "Language", "Status", "Admin notes", "Reviewed at",
+    "Source", "Submitted at",
   ];
-  const esc = (v: string) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const esc = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
   const lines = [headers.join(",")];
   for (const r of rows) {
     lines.push([
       r.full_name, r.country, r.organization, r.role,
-      r.language, r.submission_status, r.source, r.created_at,
+      r.language, r.submission_status, r.admin_notes ?? "",
+      r.reviewed_at ?? "", r.source, r.created_at,
     ].map(esc).join(","));
   }
   return lines.join("\n");
@@ -65,10 +93,16 @@ function toCsv(rows: WaitlistRow[]): string {
 export default function WaitlistAdmin() {
   const [q, setQ] = useState("");
   const [source, setSource] = useState<string>(WAITLIST_SOURCE);
+  const [statusFilter, setStatusFilter] = useState<WaitlistStatus | "all">("all");
   const [sortKey, setSortKey] = useState<SortKey>("created_at");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
+
+  const [editing, setEditing] = useState<WaitlistRow | null>(null);
+  const [editStatus, setEditStatus] = useState<WaitlistStatus>("new");
+  const [editNotes, setEditNotes] = useState("");
+  const [saving, setSaving] = useState(false);
 
   const { data = [], isLoading, refetch, isFetching } = useQuery({
     queryKey: ["waitlist-submissions", source],
@@ -85,12 +119,13 @@ export default function WaitlistAdmin() {
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    if (!needle) return data;
-    return data.filter((r) =>
-      [r.full_name, r.country, r.organization, r.role, r.language, r.submission_status]
-        .some((v) => v?.toLowerCase().includes(needle))
-    );
-  }, [data, q]);
+    return data.filter((r) => {
+      if (statusFilter !== "all" && r.submission_status !== statusFilter) return false;
+      if (!needle) return true;
+      return [r.full_name, r.country, r.organization, r.role, r.language, r.submission_status, r.admin_notes ?? ""]
+        .some((v) => v?.toLowerCase().includes(needle));
+    });
+  }, [data, q, statusFilter]);
 
   const sorted = useMemo(() => {
     const rows = [...filtered];
@@ -98,8 +133,8 @@ export default function WaitlistAdmin() {
       const av = a[sortKey] ?? "";
       const bv = b[sortKey] ?? "";
       if (sortKey === "created_at") {
-        const ad = new Date(av).getTime();
-        const bd = new Date(bv).getTime();
+        const ad = new Date(av as string).getTime();
+        const bd = new Date(bv as string).getTime();
         return sortDir === "asc" ? ad - bd : bd - ad;
       }
       const cmp = String(av).localeCompare(String(bv), undefined, { sensitivity: "base" });
@@ -111,21 +146,23 @@ export default function WaitlistAdmin() {
   const total = sorted.length;
   const pageCount = Math.max(1, Math.ceil(total / pageSize));
 
-  // Reset/clamp page when filters or sort or size change
-  useEffect(() => {
-    setPage(1);
-  }, [q, source, sortKey, sortDir, pageSize]);
-  useEffect(() => {
-    if (page > pageCount) setPage(pageCount);
-  }, [page, pageCount]);
+  useEffect(() => { setPage(1); }, [q, source, statusFilter, sortKey, sortDir, pageSize]);
+  useEffect(() => { if (page > pageCount) setPage(pageCount); }, [page, pageCount]);
 
   const start = (page - 1) * pageSize;
   const paged = sorted.slice(start, start + pageSize);
 
+  const statusCounts = useMemo(() => {
+    const counts: Record<string, number> = { new: 0, reviewed: 0, accepted: 0, rejected: 0 };
+    for (const r of data) {
+      counts[r.submission_status] = (counts[r.submission_status] ?? 0) + 1;
+    }
+    return counts;
+  }, [data]);
+
   const toggleSort = (key: SortKey) => {
-    if (key === sortKey) {
-      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
-    } else {
+    if (key === sortKey) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    else {
       setSortKey(key);
       setSortDir(key === "created_at" ? "desc" : "asc");
     }
@@ -144,6 +181,37 @@ export default function WaitlistAdmin() {
     URL.revokeObjectURL(url);
   };
 
+  const openEditor = (row: WaitlistRow) => {
+    setEditing(row);
+    setEditStatus((["new","reviewed","accepted","rejected"].includes(row.submission_status)
+      ? row.submission_status
+      : "new") as WaitlistStatus);
+    setEditNotes(row.admin_notes ?? "");
+  };
+
+  const saveEditor = async () => {
+    if (!editing) return;
+    setSaving(true);
+    const { data: userData } = await supabase.auth.getUser();
+    const { error } = await supabase
+      .from("waitlist_submissions")
+      .update({
+        submission_status: editStatus,
+        admin_notes: editNotes.trim() ? editNotes : null,
+        reviewed_by: userData.user?.id ?? null,
+        reviewed_at: new Date().toISOString(),
+      })
+      .eq("id", editing.id);
+    setSaving(false);
+    if (error) {
+      toast.error("Could not update submission", { description: error.message });
+      return;
+    }
+    toast.success("Submission updated");
+    setEditing(null);
+    refetch();
+  };
+
   const SortIcon = ({ k }: { k: SortKey }) => {
     if (sortKey !== k) return <ArrowUpDown className="ml-1 inline h-3.5 w-3.5 opacity-50" />;
     return sortDir === "asc"
@@ -151,13 +219,34 @@ export default function WaitlistAdmin() {
       : <ArrowDown className="ml-1 inline h-3.5 w-3.5" />;
   };
 
+  const StatusBadge = ({ status }: { status: string }) => {
+    const s = (["new","reviewed","accepted","rejected"].includes(status)
+      ? status
+      : "new") as WaitlistStatus;
+    return <Badge className={`${STATUS_STYLES[s]} capitalize`} variant="secondary">{s}</Badge>;
+  };
+
   return (
     <AdminPageShell
       title="Seychelles 2027 Waiting List"
-      description="View, search, sort, paginate, and export submissions from the Indian Ocean Islands Edu-Tourism Conference waiting list."
+      description="Review submissions, move them through the workflow (new → reviewed → accepted/rejected), and capture admin notes."
     >
       <Card>
         <CardContent className="space-y-4 pt-6">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {(["new","reviewed","accepted","rejected"] as WaitlistStatus[]).map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setStatusFilter(statusFilter === s ? "all" : s)}
+                className={`rounded-md border p-3 text-left transition ${statusFilter === s ? "border-primary ring-1 ring-primary" : "hover:bg-muted/50"}`}
+              >
+                <div className="text-xs uppercase tracking-wide text-muted-foreground">{s}</div>
+                <div className="mt-1 text-2xl font-semibold">{statusCounts[s] ?? 0}</div>
+              </button>
+            ))}
+          </div>
+
           <div className="flex flex-wrap items-center gap-3">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Users className="h-4 w-4" />
@@ -169,35 +258,28 @@ export default function WaitlistAdmin() {
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
-                  placeholder="Search name, country, organization…"
+                  placeholder="Search name, country, organization, notes…"
                   className="w-72 pl-9"
                   value={q}
                   onChange={(e) => setQ(e.target.value)}
                 />
               </div>
-              <Input
-                value={source}
-                onChange={(e) => setSource(e.target.value)}
-                className="w-64"
-                placeholder="source"
-              />
-              <Select value={sortKey} onValueChange={(v) => setSortKey(v as SortKey)}>
-                <SelectTrigger className="w-44">
-                  <SelectValue placeholder="Sort by" />
+              <Select value={statusFilter} onValueChange={(v) => setStatusFilter(v as WaitlistStatus | "all")}>
+                <SelectTrigger className="w-40">
+                  <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {SORTABLE.map((s) => (
-                    <SelectItem key={s.key} value={s.key}>Sort: {s.label}</SelectItem>
+                  {STATUS_OPTIONS.map((o) => (
+                    <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-              <Button
-                variant="outline"
-                onClick={() => setSortDir((d) => (d === "asc" ? "desc" : "asc"))}
-                title={sortDir === "asc" ? "Ascending" : "Descending"}
-              >
-                {sortDir === "asc" ? <ArrowUp className="h-4 w-4" /> : <ArrowDown className="h-4 w-4" />}
-              </Button>
+              <Input
+                value={source}
+                onChange={(e) => setSource(e.target.value)}
+                className="w-56"
+                placeholder="source"
+              />
               <Button variant="outline" onClick={() => refetch()} disabled={isFetching}>
                 Refresh
               </Button>
@@ -224,13 +306,15 @@ export default function WaitlistAdmin() {
                       </button>
                     </TableHead>
                   ))}
+                  <TableHead>Notes</TableHead>
+                  <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {isLoading ? (
-                  <TableRow><TableCell colSpan={7} className="py-10 text-center text-muted-foreground">Loading…</TableCell></TableRow>
+                  <TableRow><TableCell colSpan={9} className="py-10 text-center text-muted-foreground">Loading…</TableCell></TableRow>
                 ) : paged.length === 0 ? (
-                  <TableRow><TableCell colSpan={7} className="py-10 text-center text-muted-foreground">No submissions found.</TableCell></TableRow>
+                  <TableRow><TableCell colSpan={9} className="py-10 text-center text-muted-foreground">No submissions found.</TableCell></TableRow>
                 ) : (
                   paged.map((r) => (
                     <TableRow key={r.id}>
@@ -242,7 +326,15 @@ export default function WaitlistAdmin() {
                       <TableCell>{r.organization}</TableCell>
                       <TableCell>{r.role}</TableCell>
                       <TableCell className="text-xs uppercase">{r.language}</TableCell>
-                      <TableCell className="text-xs">{r.submission_status}</TableCell>
+                      <TableCell><StatusBadge status={r.submission_status} /></TableCell>
+                      <TableCell className="max-w-[260px] truncate text-xs text-muted-foreground" title={r.admin_notes ?? ""}>
+                        {r.admin_notes || <span className="opacity-50">—</span>}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <Button variant="ghost" size="sm" onClick={() => openEditor(r)}>
+                          <Pencil className="mr-1 h-3.5 w-3.5" /> Review
+                        </Button>
+                      </TableCell>
                     </TableRow>
                   ))
                 )}
@@ -288,6 +380,49 @@ export default function WaitlistAdmin() {
           </div>
         </CardContent>
       </Card>
+
+      <Dialog open={!!editing} onOpenChange={(o) => !o && setEditing(null)}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Review submission</DialogTitle>
+            <DialogDescription>
+              {editing ? `${editing.full_name} · ${editing.organization} · ${editing.country}` : ""}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div>
+              <label className="mb-1 block text-sm font-medium">Status</label>
+              <Select value={editStatus} onValueChange={(v) => setEditStatus(v as WaitlistStatus)}>
+                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="new">New</SelectItem>
+                  <SelectItem value="reviewed">Reviewed</SelectItem>
+                  <SelectItem value="accepted">Accepted</SelectItem>
+                  <SelectItem value="rejected">Rejected</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <label className="mb-1 block text-sm font-medium">Admin notes</label>
+              <Textarea
+                rows={5}
+                value={editNotes}
+                onChange={(e) => setEditNotes(e.target.value)}
+                placeholder="Internal notes (visible to admins only)…"
+              />
+            </div>
+            {editing?.reviewed_at && (
+              <p className="text-xs text-muted-foreground">
+                Last reviewed {new Date(editing.reviewed_at).toLocaleString()}
+              </p>
+            )}
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setEditing(null)} disabled={saving}>Cancel</Button>
+            <Button onClick={saveEditor} disabled={saving}>{saving ? "Saving…" : "Save changes"}</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </AdminPageShell>
   );
 }
