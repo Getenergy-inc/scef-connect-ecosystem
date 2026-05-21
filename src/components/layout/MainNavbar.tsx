@@ -135,6 +135,12 @@ export const MainNavbar = () => {
                     className="relative h-full flex items-center"
                     onMouseEnter={() => hasMenu && setActiveDropdown(item.name)}
                     onMouseLeave={() => setActiveDropdown(null)}
+                    onFocus={() => hasMenu && setActiveDropdown(item.name)}
+                    onBlur={(e) => {
+                      if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                        setActiveDropdown(null);
+                      }
+                    }}
                   >
                     <Link
                       to={item.href}
