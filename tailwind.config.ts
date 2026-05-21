@@ -84,10 +84,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Abhaya Libre"', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-        sans: ['"DM Sans"', 'sans-serif'],
-        serif: ['"Abhaya Libre"', 'serif'],
+        display: ['Inter', 'Source Sans 3', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'Source Sans 3', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'Source Sans 3', 'system-ui', 'sans-serif'],
+        serif: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
