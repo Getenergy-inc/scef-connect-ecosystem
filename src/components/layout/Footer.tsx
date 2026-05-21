@@ -21,6 +21,17 @@ const columns: { title: string; links: ColLink[] }[] = [
     ],
   },
   {
+    title: "CSR & Funding",
+    links: [
+      { name: "CSR Education Funds Management", href: "/csr-education-funds-management" },
+      { name: "Sponsor a Program", href: "/sponsorship" },
+      { name: "Adopt a School", href: "/programs/rebuild-my-school-africa" },
+      { name: "Fund Scholarships", href: "/sponsorship?program=scholarships" },
+      { name: "Request Partnership Proposal", href: "/partner-with-us" },
+      { name: "Impact Reports", href: "/impact" },
+    ],
+  },
+  {
     title: "Get Involved",
     links: [
       { name: "Membership", href: "/membership" },
