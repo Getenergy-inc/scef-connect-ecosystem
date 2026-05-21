@@ -98,6 +98,7 @@ import StaffApprovals from "./pages/admin/StaffApprovals";
 // Resources
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
+import AmbassadorApply from "./pages/ambassador/AmbassadorApply";
 import NRC from "./pages/get-involved/NRC";
 import Judge from "./pages/get-involved/Judge";
 import Volunteer from "./pages/get-involved/Volunteer";
