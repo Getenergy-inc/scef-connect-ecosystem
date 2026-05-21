@@ -42,46 +42,51 @@ export const MainNavbar = () => {
 
   const navItems = siteContent.navLinks as unknown as NavItem[];
 
+  const { pathname } = useLocation();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+
   return (
     <nav
       className={cn(
-        "transition-all duration-300",
+        "transition-colors duration-200 border-b",
         scrolled
-          ? "bg-scef-blue shadow-lg backdrop-blur-md"
-          : "bg-scef-blue/70 backdrop-blur-md"
+          ? "bg-scef-blue-dark/95 backdrop-blur-md border-white/5 shadow-sm"
+          : "bg-scef-blue-dark/85 backdrop-blur-md border-white/5"
       )}
     >
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between gap-6">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between gap-4 h-14">
           {/* Brand Lockup */}
           <Link
             to="/"
-            className="flex items-center gap-3 group shrink-0"
+            className="flex items-center gap-2.5 group shrink-0"
             aria-label={`${siteContent.brand.name} — Home`}
           >
-            <span className="inline-flex items-center justify-center rounded-md bg-white/95 px-2.5 py-1.5 shadow-sm ring-1 ring-white/30 transition-transform group-hover:scale-[1.02]">
+            <span className="inline-flex items-center justify-center rounded bg-white px-1.5 py-1 ring-1 ring-white/20">
               <img
                 src={scefLogo}
                 alt={siteContent.brand.name}
-                className="h-9 md:h-11 w-auto object-contain"
+                className="h-7 md:h-8 w-auto object-contain"
                 loading="eager"
                 decoding="async"
               />
             </span>
             <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-display font-semibold text-[13px] md:text-sm text-white">
-                {siteContent.brand.name}
+              <span className="font-display font-semibold text-[12px] md:text-[13px] text-white tracking-tight">
+                SCEF
               </span>
-              <span className="text-[10px] md:text-xs text-white/70">
-                {siteContent.brand.tagline}
+              <span className="text-[10px] text-white/60 -mt-0.5">
+                Santos Creations Educational Foundation
               </span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1 flex-1 justify-end">
+          <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-end">
             {navItems.map((item) => {
               const hasMenu = !!item.children?.length || !!item.megaMenu;
+              const active = isActive(item.href);
               return (
                 <div
                   key={item.name}
@@ -91,41 +96,49 @@ export const MainNavbar = () => {
                 >
                   <Link
                     to={item.href}
-                    className="px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-1 text-white hover:text-scef-gold"
+                    className={cn(
+                      "relative px-2.5 py-1.5 rounded-md text-[13px] font-medium transition-colors flex items-center gap-1",
+                      active
+                        ? "text-scef-gold"
+                        : "text-white/85 hover:text-white"
+                    )}
                   >
                     {item.name}
-                    {hasMenu && <ChevronDown className="w-3.5 h-3.5 opacity-70" />}
+                    {hasMenu && <ChevronDown className="w-3 h-3 opacity-60" />}
+                    {active && (
+                      <span className="absolute -bottom-0.5 left-2.5 right-2.5 h-[2px] bg-scef-gold rounded-full" />
+                    )}
                   </Link>
 
                   {/* Mega Menu */}
                   {item.megaMenu && item.groups && activeDropdown === item.name && (
-                    <div className="absolute top-full right-0 mt-2 w-[720px] bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-border overflow-hidden animate-fade-in z-50">
+                    <div className="absolute top-full right-0 mt-1 w-[680px] bg-white rounded-lg shadow-xl border border-border overflow-hidden animate-fade-in z-50">
                       <div className="grid grid-cols-3 gap-0">
                         {item.groups.map((group) => (
-                          <div key={group.title} className="p-5 border-r border-border last:border-r-0">
-                            <p className="text-[11px] font-semibold uppercase tracking-wider text-scef-blue/60 mb-3">
+                          <div key={group.title} className="p-4 border-r border-border last:border-r-0">
+                            <p className="text-[10px] font-semibold uppercase tracking-wider text-scef-blue/60 mb-2.5">
                               {group.title}
                             </p>
-                            <ul className="space-y-1">
+                            <ul className="space-y-0.5">
                               {group.items.map((sub) => {
                                 const Icon = sub.icon ? ICONS[sub.icon] : null;
                                 return (
                                   <li key={sub.name}>
                                     <Link
                                       to={sub.href}
-                                      className="group/item flex items-start gap-3 px-2 py-2 rounded-lg hover:bg-scef-blue/5 transition-colors"
+                                      className="group/item flex items-start gap-2.5 px-2 py-1.5 rounded-md hover:bg-scef-blue/5 transition-colors"
                                     >
                                       {Icon && (
-                                        <span className="mt-0.5 shrink-0 w-8 h-8 rounded-md bg-scef-gold/10 text-scef-gold flex items-center justify-center group-hover/item:bg-scef-gold group-hover/item:text-white transition-colors">
-                                          <Icon className="w-4 h-4" />
+                                        <span className="mt-0.5 shrink-0 w-7 h-7 rounded bg-scef-gold/10 text-scef-gold flex items-center justify-center group-hover/item:bg-scef-gold group-hover/item:text-white transition-colors">
+                                          <Icon className="w-3.5 h-3.5" />
                                         </span>
                                       )}
                                       <span className="min-w-0">
-                                        <span className="block text-sm font-semibold text-foreground leading-tight">
+                                        <span className="block text-[13px] font-semibold text-foreground leading-tight">
                                           {sub.name}
                                         </span>
                                         {sub.description && (
-                                          <span className="block text-xs text-muted-foreground leading-snug mt-0.5">
+                                          <span className="block text-[11px] text-muted-foreground leading-snug mt-0.5">
                                             {sub.description}
                                           </span>
                                         )}
@@ -143,8 +156,8 @@ export const MainNavbar = () => {
 
                   {/* Simple Dropdown */}
                   {!item.megaMenu && item.children && activeDropdown === item.name && (
-                    <div className="absolute top-full right-0 mt-2 w-72 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-border overflow-hidden animate-fade-in z-50">
-                      <ul className="py-2">
+                    <div className="absolute top-full right-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-border overflow-hidden animate-fade-in z-50">
+                      <ul className="py-1.5">
                         {item.children.map((child, idx) =>
                           child.divider ? (
                             <li key={idx} className="my-1 border-t border-border" />
@@ -154,30 +167,30 @@ export const MainNavbar = () => {
                                 href={child.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-start justify-between gap-3 px-4 py-2.5 text-sm hover:bg-scef-blue/5 transition-colors"
+                                className="flex items-start justify-between gap-3 px-3.5 py-2 text-sm hover:bg-scef-blue/5 transition-colors"
                               >
                                 <span>
-                                  <span className="block font-semibold text-foreground">{child.name}</span>
+                                  <span className="block text-[13px] font-semibold text-foreground">{child.name}</span>
                                   {child.description && (
-                                    <span className="block text-xs text-muted-foreground mt-0.5">
+                                    <span className="block text-[11px] text-muted-foreground mt-0.5">
                                       {child.description}
                                     </span>
                                   )}
                                 </span>
-                                <ExternalLink className="w-3.5 h-3.5 text-muted-foreground mt-1 shrink-0" />
+                                <ExternalLink className="w-3 h-3 text-muted-foreground mt-1 shrink-0" />
                               </a>
                             </li>
                           ) : (
                             <li key={child.name}>
                               <Link
                                 to={child.href}
-                                className="block px-4 py-2.5 hover:bg-scef-blue/5 transition-colors"
+                                className="block px-3.5 py-2 hover:bg-scef-blue/5 transition-colors"
                               >
-                                <span className="block text-sm font-semibold text-foreground">
+                                <span className="block text-[13px] font-semibold text-foreground">
                                   {child.name}
                                 </span>
                                 {child.description && (
-                                  <span className="block text-xs text-muted-foreground mt-0.5">
+                                  <span className="block text-[11px] text-muted-foreground mt-0.5">
                                     {child.description}
                                   </span>
                                 )}
@@ -193,52 +206,45 @@ export const MainNavbar = () => {
             })}
 
             {/* Right-side primary CTAs */}
-            <div className="ml-2 flex items-center gap-2">
+            <div className="ml-3 flex items-center gap-2">
               <Button
                 asChild
                 variant="outline"
                 size="sm"
-                className="border-white/40 text-white hover:bg-white hover:text-scef-blue-dark font-semibold"
+                className="border-white/30 text-white bg-transparent hover:bg-white hover:text-scef-blue-dark"
               >
                 <Link to="/auth/sign-up">Become a Member</Link>
               </Button>
               <Button
                 asChild
                 size="sm"
-                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark font-semibold shadow-md"
+                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark"
               >
                 <Link to="/donate">
-                  <Heart className="w-4 h-4 mr-1.5" />
-                  Donate Now
+                  <Heart className="w-3.5 h-3.5 mr-1" />
+                  Donate
                 </Link>
-              </Button>
-              <Button
-                asChild
-                size="sm"
-                className="hidden xl:inline-flex bg-white text-scef-blue-dark hover:bg-scef-gold hover:text-scef-blue-dark font-semibold"
-              >
-                <Link to="/support-us#sponsor-nesa">Sponsor NESA-Africa</Link>
               </Button>
             </div>
 
             {/* Search Icon */}
             <button
-              className="p-2 text-white/80 hover:text-scef-gold transition-colors"
+              className="ml-1 p-1.5 text-white/70 hover:text-scef-gold transition-colors"
               aria-label="Search"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4" />
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-1">
             <LanguageSwitcher />
             <button
               className="p-2 text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
