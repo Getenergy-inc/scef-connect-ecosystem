@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Award, CalendarRange, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import nesaRecognition from "@/assets/nesa-africa-recognition.png";
 
 type CTA = { label: string; to: string; variant?: string };
 type Timeline = {
@@ -28,9 +29,8 @@ const FALLBACK: Timeline[] = [
     title: "NESA-Africa 2026 Season Programme Timeline",
     description:
       "Explore the full 2026 season journey from public pre-nomination activation on 20 May 2026 to the Blue Garnet Awards Gala on 22 October 2026, followed by a 12-month Rebuild My School Africa and EduAid-Africa impact phase.",
-    image_url:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=70",
-    image_alt: "NESA-Africa awards gala recognition",
+    image_url: nesaRecognition,
+    image_alt: "NESA-Africa education recognition",
     badge_label: "Recognition",
     highlights: [
       "Public Pre-Nomination Activation — 20 May 2026",
@@ -154,14 +154,12 @@ export const MasterTimelinesDuo = () => {
             className="group flex flex-col overflow-hidden rounded-2xl border border-scef-gold/30 bg-scef-blue-darker text-white shadow-sm"
           >
             <div className="relative h-44 w-full overflow-hidden">
-              {nesa.image_url && (
-                <img
-                  src={nesa.image_url}
-                  alt={nesa.image_alt ?? ""}
-                  loading="lazy"
-                  className="h-full w-full object-cover opacity-80 transition group-hover:scale-[1.02]"
-                />
-              )}
+              <img
+                src={nesaRecognition}
+                alt="NESA-Africa education recognition"
+                loading="lazy"
+                className="h-full w-full object-cover opacity-90 transition group-hover:scale-[1.02]"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-scef-blue-darker via-scef-blue-darker/40 to-transparent" />
               {nesa.badge_label && (
                 <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-scef-gold/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-scef-blue-darker">

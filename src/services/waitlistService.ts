@@ -27,7 +27,7 @@ export async function submitWaitlistEntry(
     role: input.role.trim(),
     language: input.language,
     source: WAITLIST_SOURCE,
-    submission_status: "submitted",
+    submission_status: "new",
   });
 
   if (error) {
