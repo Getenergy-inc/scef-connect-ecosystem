@@ -15,7 +15,6 @@ import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
-import { NesaEventGallery } from "@/components/nesa/NesaEventGallery";
 import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
 import {
   TOTAL_CATEGORIES,
@@ -1272,7 +1271,6 @@ const NESAAfrica = () => {
           description="Sponsor awards, gala tickets, NESA TV and recognition campaigns through the verified NESA-Africa Providus Bank accounts."
           showFilters
         />
-        <NesaEventGallery />
         <Footer />
       </div>
     </>

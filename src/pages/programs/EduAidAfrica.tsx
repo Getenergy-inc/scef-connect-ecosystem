@@ -20,7 +20,6 @@ import EduAidWallOfAchievers from "@/components/eduaid/EduAidWallOfAchievers";
 import EduAidGetInTouch from "@/components/eduaid/EduAidGetInTouch";
 import EduAidFAQs from "@/components/eduaid/EduAidFAQs";
 import EduAidDonationSection from "@/components/eduaid/EduAidDonationSection";
-import EduAidMediaGallery from "@/components/eduaid/EduAidMediaGallery";
 import EduAidIntegratedServices from "@/components/eduaid/EduAidIntegratedServices";
 import EduAidAdvocacyCalendars from "@/components/eduaid/EduAidAdvocacyCalendars";
 import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
@@ -148,11 +147,6 @@ export default function EduAidAfrica() {
         {/* Strategic Partners */}
         <ScrollAnimation animation="fadeUp" delay={0.15}>
           <EduAidPartners />
-        </ScrollAnimation>
-
-        {/* Field Media Gallery */}
-        <ScrollAnimation animation="fadeUp" delay={0.1}>
-          <EduAidMediaGallery />
         </ScrollAnimation>
 
         {/* Wall of Achievers / Success Stories */}

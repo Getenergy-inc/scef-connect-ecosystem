@@ -1,24 +1,30 @@
 import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
-import { LeanHero } from "@/components/landing/LeanHero";
-import { RecognitionToImpact } from "@/components/landing/RecognitionToImpact";
-import { MonthlyCalendarPreview } from "@/components/landing/MonthlyCalendarPreview";
-import { ImpactSnapshot } from "@/components/landing/ImpactSnapshot";
-import { FlagshipPreview } from "@/components/landing/FlagshipPreview";
-import { WomenGirlsPreview } from "@/components/landing/WomenGirlsPreview";
-import { FinalCtaLean } from "@/components/landing/FinalCtaLean";
+import { LandingHero } from "@/components/sections/LandingHero";
+import { HomeSummaryCards } from "@/components/sections/HomeSummaryCards";
+import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
+import { WhoWeAre } from "@/components/home/WhoWeAre";
+import { FinalCTABand } from "@/components/sections/FinalCTABand";
+import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
+import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
+import { MasterTimelinesDuo } from "@/components/sections/MasterTimelinesDuo";
+import { PremiumStorySections } from "@/components/sections/PremiumStorySections";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
+import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
+import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
+import { WomenGirlsEmpowerment } from "@/components/sections/WomenGirlsEmpowerment";
+import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027WaitingList";
 
 const Home = () => {
   return (
     <>
       <Helmet>
-        <title>SCEF — Connecting Recognition to Education Impact Across Africa</title>
+        <title>SCEF — Empowering Education. Advocating Education for All. Sustaining Africa's Future.</title>
         <meta
           name="description"
-          content="SCEF powers education recognition, scholarships, school support, teacher development, digital learning, and community-led education impact across Africa."
+          content="Santos Creations Educational Foundation (SCEF) is a Pan-African not-for-profit NGO advancing education for all in Africa through EduAid-Africa, NESA-Africa, girls and women empowerment, CSR education fund management, digital learning, ESG, scholarships, school support, and community impact."
         />
         <link rel="canonical" href="https://santoscreations.org/" />
       </Helmet>
@@ -28,30 +34,60 @@ const Home = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          <LeanHero />
+          {/* 1. HERO */}
+          <LandingHero />
 
+          {/* 2. WHO WE ARE — 3 short lines */}
+          <WhoWeAre />
+
+          {/* Quick Actions Bar */}
+          <QuickActionsBar />
+
+          {/* NESA-Africa + EduAid-Africa Master Timelines 2026–2027 */}
           <Reveal>
-            <RecognitionToImpact />
+            <MasterTimelinesDuo />
           </Reveal>
 
+          {/* Monthly Advocacy & Training Calendar (12 months) */}
           <Reveal>
-            <MonthlyCalendarPreview />
+            <MonthlyAdvocacyCalendar />
           </Reveal>
 
+          {/* Compact Impact + Programs summary cards (full content lives on /impact and /programs) */}
+          <div id="core-services">
+            <Reveal>
+              <HomeSummaryCards />
+            </Reveal>
+          </div>
+
+          {/* Women & Girls Empowerment — primary continental pillar */}
           <Reveal>
-            <ImpactSnapshot />
+            <WomenGirlsEmpowerment />
           </Reveal>
 
+          {/* Seychelles 2027 Edu-Tourism Conference — Waiting List */}
           <Reveal>
-            <FlagshipPreview />
+            <Seychelles2027WaitingList />
           </Reveal>
 
+          {/* Premium story cards: Journey, Calendar, Support, Chapters, Partners, Training, Channels */}
           <Reveal>
-            <WomenGirlsPreview />
+            <PremiumStorySections />
           </Reveal>
 
+          {/* Powered by Volunteers — documentary storytelling */}
           <Reveal>
-            <FinalCtaLean />
+            <VolunteerStorytelling />
+          </Reveal>
+
+          {/* Hall of Fame appreciation */}
+          <Reveal>
+            <HallOfFameSection />
+          </Reveal>
+
+          {/* 10. FINAL CTA */}
+          <Reveal>
+            <FinalCTABand />
           </Reveal>
         </main>
 

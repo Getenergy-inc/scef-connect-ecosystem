@@ -3399,43 +3399,34 @@ export type Database = {
       }
       waitlist_submissions: {
         Row: {
-          admin_notes: string | null
           country: string
           created_at: string
           full_name: string
           id: string
           language: string
           organization: string
-          reviewed_at: string | null
-          reviewed_by: string | null
           role: string
           source: string
           submission_status: string
         }
         Insert: {
-          admin_notes?: string | null
           country: string
           created_at?: string
           full_name: string
           id?: string
           language?: string
           organization: string
-          reviewed_at?: string | null
-          reviewed_by?: string | null
           role: string
           source?: string
           submission_status?: string
         }
         Update: {
-          admin_notes?: string | null
           country?: string
           created_at?: string
           full_name?: string
           id?: string
           language?: string
           organization?: string
-          reviewed_at?: string | null
-          reviewed_by?: string | null
           role?: string
           source?: string
           submission_status?: string
