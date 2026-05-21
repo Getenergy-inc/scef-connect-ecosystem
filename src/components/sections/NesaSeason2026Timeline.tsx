@@ -114,7 +114,7 @@ const phase1Events: PhaseEvent[] = [
     status: "Upcoming",
     description:
       "The peak event of the season — a live continental recognition ceremony and media moment celebrating Africa's education changemakers.",
-    tags: ["Continental Spotlight", "Live Broadcast", "Main Gala"],
+    tags: ["Continental Spotlight", "Live Broadcast", "Main Gala", "Recognition", "Impact"],
     agc: true,
   },
 ];
