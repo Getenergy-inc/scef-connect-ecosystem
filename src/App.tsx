@@ -208,6 +208,8 @@ import WaitlistApply from "./pages/programs/WaitlistApply";
 import GreenHorizonApply from "./pages/apply/GreenHorizonApply";
 import VocationalScholarshipApply from "./pages/apply/VocationalScholarshipApply";
 import AdminVocationalScholarshipWaitlist from "./pages/admin/AdminVocationalScholarshipWaitlist";
+import CapacityTrainingApply from "./pages/apply/CapacityTrainingApply";
+import AdminCapacityTrainingWaitlist from "./pages/admin/AdminCapacityTrainingWaitlist";
 
 // Conversion pages (visitor-pathway pages)
 import Internship from "./pages/conversion/Internship";
@@ -382,6 +384,8 @@ const App = () => (
               <Route path="/apply/green-horizon" element={<GreenHorizonApply />} />
               <Route path="/apply/vocational-scholarship" element={<VocationalScholarshipApply />} />
               <Route path="/admin/vocational-scholarship-waitlist" element={<AdminVocationalScholarshipWaitlist />} />
+              <Route path="/apply/capacity-training" element={<CapacityTrainingApply />} />
+              <Route path="/admin/capacity-training-waitlist" element={<AdminCapacityTrainingWaitlist />} />
               
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
