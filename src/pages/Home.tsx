@@ -75,6 +75,9 @@ const Home = () => {
           {/* 2. PROGRAM CARDS — Real logos + photos */}
           <ProgramCardsRow />
 
+          {/* 2b. VISITOR PATHWAYS — Bounce-reduction gateway */}
+          <GetInvolvedPathways />
+
           {/* 3. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
           <QuickActionsBar />
