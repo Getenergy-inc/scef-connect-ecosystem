@@ -1,90 +1,69 @@
+# CSR Education Funds Management Rebrand
 
-# UN-Inspired Institutional Redesign
+Reposition SCEF as a **membership-based Pan-African NGO and CSR Education Funds Management organization** without removing any existing programs.
 
-Goal: shift the SCEF site from its current dense/editorial feel to a clean, formal, public-sector aesthetic (white + deep navy + light grey, structured grids, calm typography), without any UN marks or implied affiliation, and without touching backend or business logic.
+## What gets built
 
-## 1. Design tokens (foundational)
+### 1. New page — `/csr-education-funds-management`
+A full institutional page with the 8 sections you specified:
 
-Edit `src/index.css` and `tailwind.config.ts`:
+1. **What We Do** — fund management intro copy.
+2. **Who We Serve** — 9 audience chips (companies, corporate foundations, donors, diaspora, Friends of Africa, schools, local governments, NGOs, SCEF members & chapters).
+3. **How CSR Education Funds Are Used** — 10 use-of-funds cards mapped to existing programs.
+4. **Our Fund Management Process** — 6-step horizontal timeline (inquiry → selection → design → implementation → monitoring → impact report).
+5. **Recognition-to-Impact Model** — NESA-Africa visibility ↔ EduAid-Africa delivery.
+6. **Transparency and Accountability** — exact copy you provided, no audit/UN/AU claims.
+7. **CSR Partnership Options** — 10 sponsor cards (Scholarships, Adopt a School, Teacher Training, Vocational Skills, Girls Education, Digital Learning, Green Horizon, My Career My Life, Local Chapter Projects, NESA-Africa Recognition).
+8. **CTA Section** — "Turn Your CSR Budget Into Measurable Education Impact" with three CTAs to `/csr-partnership`, `/sponsorship`, `/adopt-a-school`.
 
-- Body font: `Inter` (already a safe default). Headings: `Inter` tight tracking — drop any display/serif heading font on institutional pages. Keep existing `font-display` token but remap to Inter with `font-weight: 700` and `letter-spacing: -0.01em`.
-- Add semantic tokens:
-  - `--surface` (white), `--surface-muted` (light grey `hsl(210 20% 98%)`), `--surface-section` (`hsl(210 30% 96%)`)
-  - `--ink` (deep navy `hsl(215 45% 15%)`), `--ink-muted` (`hsl(215 20% 35%)`)
-  - `--accent-blue` (institutional `hsl(212 70% 38%)`), `--accent-blue-hover` (`hsl(212 70% 30%)`)
-  - Rule line `--rule` (`hsl(215 20% 88%)`)
-- Tighter type scale: h1 `clamp(2rem,3.5vw,2.75rem)`, h2 `1.75rem`, h3 `1.25rem`, body `1rem/1.65`.
-- Button sizes shrink: default height 40px, sm 34px, lg 44px. Radius 6px (not pill).
+Route registered in `App.tsx`. Real photos only, `scef-blue-darker` + `scef-gold` tokens.
 
-## 2. Navbar (`src/components/layout/HeaderScreenshot.tsx` or `MainNavbar.tsx`)
+### 2. Homepage hero rewrite (`LandingHero`)
+- Headline: **"Managing CSR Education Funds for Real Impact Across Africa"**
+- Subheadline: the membership-based Pan-African NGO copy.
+- Primary CTA: "Partner With SCEF" → `/csr-partnership`
+- Secondary CTA: "Support Education Funds" → `/donate`
+- Quick-links row under hero: Sponsor a Program · Adopt a School · Fund Scholarships · Join as a Member · Start a Local Chapter
 
-- Slim white nav, 56px tall desktop / 52px mobile (currently 76–84px spacer — reduce).
-- Thin 1px bottom border in `--rule`.
-- Real SCEF logo (existing asset) at 28px height + small wordmark.
-- Primary links (smaller, 14px, medium): About, Programs, Impact, Timelines, Get Involved, Media, Contact. Move governance/leadership into About dropdown.
-- Hover: 2px blue underline, no color shift.
-- CTA: single compact "Become a Member" button, sm size, primary blue.
-- Mobile: hamburger → right-side drawer, white background, large tap targets, sectioned links.
-- Update the spacer in `Home.tsx` from `h-[76px] md:h-[84px]` to `h-14`.
+### 3. New homepage section — "CSR Education Funds Management"
+Inserted after `WhoWeAre`. Short copy + 4 cards (Fund Scholarships, Adopt a School, Sponsor Capacity Training, Support Community Projects) + main CTA → `/csr-education-funds-management`.
 
-## 3. Hero (`src/components/sections/LandingHero.tsx`)
+### 4. Main navigation update
+Replace primary nav with:
+About SCEF · CSR Funds Management · Programs · Impact · Local Chapters · Get Involved · Contact
 
-Rewrite as a two-column UN-style hero:
-- Left (7/12): small kicker "Santos Creations Educational Foundation", H1 "Connecting Education Recognition to Real Impact Across Africa", supporting paragraph as specified, two CTAs ("Explore Our Work" primary, "Support Education Impact" outline secondary), small trust line below.
-- Right (5/12): single real documentary photo in a clean 4/5 frame with subtle navy caption bar.
-- Background: white with a soft `--surface-muted` band at the bottom for visual anchoring. No gradients, no orbs, no animations beyond a subtle fade-in.
+**Get Involved** dropdown items: Become a Member · Volunteer · Internship · Donate · Sponsor a Program · Adopt a School · Join a Project · Start / Join Local Chapter · Diaspora Africa · Friends of Africa.
 
-## 4. Buttons (`src/components/ui/button.tsx`)
+The existing governance navbar (BOT · BOA · BOD · LCPs · Management Team) stays unchanged.
 
-- Update variants:
-  - `default` → solid `--accent-blue`, white text, 6px radius, 40px height, 14px font.
-  - `outline` → 1px `--accent-blue` border, blue text, transparent bg.
-  - `ghost` / `link` → text with arrow `→`.
-- Remove oversized hero CTA variants if any.
+### 5. Footer — new "CSR & Funding" column
+Links: CSR Education Funds Management · Sponsor a Program · Adopt a School · Fund Scholarships · Request Partnership Proposal · Impact Reports.
 
-## 5. Cards / sections
+### 6. Program repositioning intros
+Add a 1–2 sentence CSR-fund framing paragraph at the top of each existing program page (no content removal, no card deletion):
+EduAid-Africa, NESA-Africa, Rebuild My School Africa, Send a Child to School, My Career My Life, eLibrary Africa, Women & Girls Empowerment, Green Horizon Initiative.
 
-- Standardize section padding: `py-16 md:py-20` desktop, `py-10` mobile, `max-w-6xl` container.
-- Card primitive: white bg, 1px `--rule` border, 8px radius, p-6, subtle shadow `0 1px 2px rgba(15,23,42,.04)`, no gradients.
-- Equal-height grids via `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`.
-- Replace `EditorialDivider` magazine kickers in `Home.tsx` with a simpler `SectionHeader` (eyebrow, h2, optional lede, thin rule). Keep section ORDER the same.
+## What I will NOT do
 
-## 6. Footer (`src/components/layout/Footer.tsx`)
-
-Restructure into 5 columns on desktop / 2 on tablet / 1 on mobile:
-1. SCEF brand + short mission (3 lines max)
-2. Explore: About, Programs, Impact, Timelines, Media, Contact
-3. Programs: EduAid-Africa, NESA-Africa, eLibrary Africa, Rebuild My School Africa, Send a Child to School
-4. Get Involved: Become a Member, Sponsor a Program, Adopt a School, Volunteer, Partner With SCEF
-5. Contact: email, phone, WhatsApp, social icons (small, single-row)
-
-Style: deep navy (`--ink`) bg, white headings (13px uppercase tracking), `hsl(215 15% 75%)` link text, 12px small print, copyright "© 2026 Santos Creations Educational Foundation. All rights reserved."
-
-## 7. AI-looking images cleanup
-
-Sweep `src/components/sections/**` for `<img>` and background images. For each:
-- If the asset is in `src/assets/` and looks AI-generated (cartoon learners, glossy fake classrooms, stylized figures) → replace with a neutral institutional photo block: clean documentary-style stock placeholder (`bg-[--surface-muted]` with a small caption "Photo coming soon — SCEF Field Library"), or hide if decorative.
-- Keep real photos and partner logos.
-- Add/verify `alt` on every `<img>`. Wrap with `aspect-[4/5]` or `aspect-video` and `object-cover` so nothing stretches.
-
-Specifically audit: `LandingHero`, `HeroSection`, `CinematicHero`, `WhoWeAreSection`, `PremiumStorySections`, `VolunteerStorytelling`, `WomenGirlsEmpowerment`, `HallOfFameSection`, `StoriesOfTransformation`, `BeforeAfterSection`.
-
-## 8. Accessibility & responsive
-
-- Color contrast: ink on white ≥ 7:1, blue CTA on white ≥ 4.5:1.
-- All interactive elements get `focus-visible:ring-2 ring-accent-blue/60`.
-- Min tap target 44×44 on mobile for nav/footer/CTA.
-- `<main>` already wraps content in `Home.tsx` — leave as-is.
-
-## What I will NOT change
-
-- Section ordering / business content on `Home.tsx` (only the divider component).
-- Endorsements section (already corrected).
-- Backend, RLS, edge functions, supabase config.
-- Inner program pages — this pass focuses on global chrome + landing. Inner pages inherit the new tokens automatically.
+- Will not delete or hide any existing program, section, route, or component.
+- Will not invent partner logos, audited figures, or UN / AU / UNESCO / UNICEF / GPE endorsements.
+- Will not add `/csr-partnership`, `/donate`, `/sponsorship`, `/adopt-a-school` as new pages — I'll reuse whichever routes already exist and only register lightweight redirects/aliases for the ones that don't, so no CTA dead-ends. (Anything missing I'll list back to you.)
+- Will not change the 9-language LocaleContext keys — new strings will be inline English only this round (translation pass can follow).
 
 ## Technical notes
 
-- Files touched (approx 10): `src/index.css`, `tailwind.config.ts`, `src/components/layout/HeaderScreenshot.tsx` (or `MainNavbar.tsx` — confirm during impl), `src/components/layout/Footer.tsx`, `src/components/layout/StickyMobileJoin.tsx` (tighten), `src/components/sections/LandingHero.tsx`, `src/components/ui/button.tsx`, `src/components/ui/card.tsx`, `src/pages/Home.tsx` (replace `EditorialDivider` with `SectionHeader`, shrink spacer), and an image audit pass across 6–10 section files.
-- No new dependencies.
-- Keep all existing translation keys (`LocaleContext`) — only swap classNames and structure.
+- New file: `src/pages/CsrEducationFundsManagement.tsx`
+- New file: `src/components/sections/CsrFundsManagementSection.tsx` (homepage block)
+- Edited: `src/components/sections/LandingHero.tsx`, `src/components/layout/Footer.tsx`, the primary header nav component, `src/App.tsx`, plus the 8 program page intros.
+- Tokens: `bg-scef-blue-darker`, `text-scef-gold`, `bg-scef-pattern` — no hardcoded hex.
+- All metrics on the new page use neutral language ("Reporting in progress" placeholders where numbers would normally appear).
+
+## Open question before I start
+
+Two of the destination routes you named don't clearly exist yet: **`/csr-partnership`** and **`/adopt-a-school`**. Three options:
+
+- (A) Point CTAs to the existing `/partner-with-us` and `/programs/rebuild-my-school-africa` pages (fastest, no dead links, no scope creep).
+- (B) Create thin landing pages at the new URLs that reuse existing content.
+- (C) Create full new pages for each (separate larger task).
+
+I'll default to **(A)** unless you say otherwise — reply with B or C if you want new routes built in this same pass.
