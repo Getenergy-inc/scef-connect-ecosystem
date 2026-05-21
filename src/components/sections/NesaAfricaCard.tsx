@@ -7,11 +7,11 @@ export const NesaAfricaCard = () => {
     <section className="py-12 bg-scef-blue-darker">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 items-center">
-          <div className="rounded-xl overflow-hidden border border-white/10">
+          <div className="flex items-center justify-center rounded-xl bg-scef-blue-dark/40 p-6 border border-white/10">
             <img
-              src="/assets/nesa-africa-2025-card.jpg"
-              alt="NESA Africa 2026"
-              className="w-full h-auto"
+              src="/assets/nesa-africa-logo.jpg"
+              alt="NESA-Africa — New Education Standard Award Africa official emblem"
+              className="w-full max-w-xs h-auto object-contain"
               loading="lazy"
             />
           </div>
