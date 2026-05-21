@@ -362,6 +362,51 @@ export type Database = {
           },
         ]
       }
+      chapter_signups: {
+        Row: {
+          chapter_type: string
+          city: string
+          country: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          motivation: string | null
+          participation_mode: string
+          phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_type: string
+          city: string
+          country: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          motivation?: string | null
+          participation_mode?: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_type?: string
+          city?: string
+          country?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          motivation?: string | null
+          participation_mode?: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       chapter_upgrade_requests: {
         Row: {
           chapter_id: string | null

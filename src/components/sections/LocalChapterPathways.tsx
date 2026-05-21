@@ -158,6 +158,9 @@ export const LocalChapterPathways = () => {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px]">
+          <Link to="/chapters/signup" className="inline-flex items-center rounded-md bg-scef-blue-darker px-4 py-2 font-semibold text-white hover:bg-scef-blue-darker/90">
+            Sign up for a local chapter →
+          </Link>
           <Link to="/local-chapters" className="font-semibold text-primary hover:underline">
             Browse local chapters →
           </Link>
