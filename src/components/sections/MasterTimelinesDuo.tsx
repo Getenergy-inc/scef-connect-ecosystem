@@ -29,9 +29,8 @@ const FALLBACK: Timeline[] = [
     title: "NESA-Africa 2026 Season Programme Timeline",
     description:
       "Explore the full 2026 season journey from public pre-nomination activation on 20 May 2026 to the Blue Garnet Awards Gala on 22 October 2026, followed by a 12-month Rebuild My School Africa and EduAid-Africa impact phase.",
-    image_url:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=70",
-    image_alt: "NESA-Africa awards gala recognition",
+    image_url: nesaRecognition,
+    image_alt: "NESA-Africa education recognition",
     badge_label: "Recognition",
     highlights: [
       "Public Pre-Nomination Activation — 20 May 2026",
