@@ -122,7 +122,7 @@ export default function HallOfFameSubmit() {
       </Helmet>
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         <main className="py-12 md:py-16">
           <div className="container mx-auto max-w-3xl px-6 md:px-8">

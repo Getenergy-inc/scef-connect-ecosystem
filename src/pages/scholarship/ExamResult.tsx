@@ -58,7 +58,7 @@ const ExamResult = () => {
     return (
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <div className="container mx-auto px-6 py-20 text-center">
           <p className="text-lg font-semibold text-scef-blue-darker">Result not found.</p>
           <Button asChild className="mt-6 bg-scef-blue-darker hover:bg-scef-blue">
@@ -82,7 +82,7 @@ const ExamResult = () => {
       </Helmet>
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <main className="container mx-auto px-6 py-16 md:px-8">
           <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center shadow-sm md:p-12">
             <Icon className={`mx-auto h-14 w-14 ${accent}`} strokeWidth={1.6} />

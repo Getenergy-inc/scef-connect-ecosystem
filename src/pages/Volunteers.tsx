@@ -69,7 +69,7 @@ const Volunteers = () => {
 
       <div className="min-h-screen bg-background flex flex-col">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         {/* ============== 1. HERO ============== */}
         <section className="relative isolate overflow-hidden bg-scef-blue-darker text-white">

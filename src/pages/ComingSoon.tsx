@@ -34,7 +34,7 @@ const ComingSoon = ({ title, description }: ComingSoonProps) => {
 
       <div className="min-h-screen bg-background flex flex-col">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         <main className="flex-1 container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-2xl mx-auto text-center">

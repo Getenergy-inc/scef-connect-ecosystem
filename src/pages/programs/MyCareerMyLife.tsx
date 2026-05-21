@@ -21,7 +21,7 @@ const MyCareerMyLifePage = () => {
 
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         {/* Hero */}
         <section className="relative overflow-hidden bg-scef-blue-darker py-20 text-white md:py-28">

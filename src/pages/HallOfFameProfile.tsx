@@ -42,7 +42,7 @@ export default function HallOfFameProfile() {
     return (
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <p className="container mx-auto px-6 py-20 text-center text-muted-foreground">Loading profile…</p>
         <Footer />
       </div>
@@ -53,7 +53,7 @@ export default function HallOfFameProfile() {
     return (
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <div className="container mx-auto px-6 py-20 text-center">
           <h1 className="font-display text-3xl font-bold text-scef-blue-darker">Profile not found</h1>
           <Button asChild className="mt-6"><Link to="/contributors">Back to Contributors</Link></Button>
@@ -98,7 +98,7 @@ export default function HallOfFameProfile() {
 
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         <main>
           <section className="bg-scef-blue-darker py-16 text-white md:py-20">
