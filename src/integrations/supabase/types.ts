@@ -3514,6 +3514,84 @@ export type Database = {
           },
         ]
       }
+      waitlist_applications: {
+        Row: {
+          admin_notes: string | null
+          age_range: string | null
+          applicant_type: string
+          city: string | null
+          consent: boolean
+          country: string
+          created_at: string
+          email: string
+          full_name: string
+          gender: string | null
+          id: string
+          local_chapter_status: string | null
+          motivation: string | null
+          phone: string
+          preferred_african_region: string | null
+          program_interest: string
+          referral_source: string | null
+          region: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          skills_background: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          age_range?: string | null
+          applicant_type: string
+          city?: string | null
+          consent?: boolean
+          country: string
+          created_at?: string
+          email: string
+          full_name: string
+          gender?: string | null
+          id?: string
+          local_chapter_status?: string | null
+          motivation?: string | null
+          phone: string
+          preferred_african_region?: string | null
+          program_interest: string
+          referral_source?: string | null
+          region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          skills_background?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          admin_notes?: string | null
+          age_range?: string | null
+          applicant_type?: string
+          city?: string | null
+          consent?: boolean
+          country?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          gender?: string | null
+          id?: string
+          local_chapter_status?: string | null
+          motivation?: string | null
+          phone?: string
+          preferred_african_region?: string | null
+          program_interest?: string
+          referral_source?: string | null
+          region?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          skills_background?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       waitlist_submissions: {
         Row: {
           admin_notes: string | null
