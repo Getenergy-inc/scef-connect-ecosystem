@@ -163,7 +163,7 @@ const ExamRunner = () => {
     return (
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <div className="container mx-auto px-6 py-16 text-center">
           <AlertTriangle className="mx-auto h-10 w-10 text-destructive" />
           <p className="mt-4 text-lg font-semibold text-scef-blue-darker">
@@ -190,7 +190,7 @@ const ExamRunner = () => {
       </Helmet>
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         {/* Sticky exam bar */}
         <div className="sticky top-[88px] z-30 border-b border-border bg-background/95 backdrop-blur md:top-[96px]">

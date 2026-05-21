@@ -23,7 +23,7 @@ export const PageShell = ({ title, description, eyebrow, heading, intro, childre
 
       <div className="min-h-screen bg-background flex flex-col">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         <header className="bg-scef-pattern border-b border-scef-blue/10">
           <div className="container mx-auto px-4 py-12 md:py-20">

@@ -55,7 +55,7 @@ export default function HallOfFameAdmin() {
       <Helmet><title>Hall of Fame Admin — SCEF</title></Helmet>
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <main className="py-12">
           <div className="container mx-auto px-6 md:px-8">
             <h1 className="font-display text-3xl font-bold text-scef-blue-darker">Hall of Fame Review</h1>

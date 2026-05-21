@@ -85,7 +85,7 @@ const EduAidMasterTimeline = () => {
   return (
     <>
       <HeaderScreenshot />
-      <div className="h-[88px] md:h-[96px]" />
+      <div className="h-[76px] md:h-[84px]" />
       <Helmet>
         <title>EduAid-Africa Master Timeline 2026–2027 | SCEF</title>
         <meta

@@ -107,7 +107,7 @@ const ExamRegister = () => {
       </Helmet>
       <div className="min-h-screen bg-background">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
         <main className="container mx-auto px-6 py-12 md:px-8 md:py-16">
           <div className="mx-auto max-w-4xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-scef-gold-dark">

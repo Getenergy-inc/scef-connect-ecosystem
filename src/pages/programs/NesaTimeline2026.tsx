@@ -24,7 +24,7 @@ const NesaTimeline2026 = () => {
 
       <div className="min-h-screen bg-background flex flex-col">
         <HeaderScreenshot />
-        <div className="h-[88px] md:h-[96px]" />
+        <div className="h-[76px] md:h-[84px]" />
 
         {/* HERO */}
         <header className="relative overflow-hidden bg-scef-blue-darker text-white">

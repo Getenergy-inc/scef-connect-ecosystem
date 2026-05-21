@@ -100,7 +100,7 @@ const Index = () => {
 
         {/* Content */}
         <main className="relative z-10 flex min-h-screen flex-col">
-          <div className="h-[88px] md:h-[96px]" />
+          <div className="h-[76px] md:h-[84px]" />
 
           <div className="container mx-auto flex flex-1 flex-col items-center justify-center px-4 py-12 text-center md:px-8">
             <p

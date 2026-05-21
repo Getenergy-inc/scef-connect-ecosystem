@@ -31,7 +31,7 @@ const Awards = () => (
     </Helmet>
     <div className="min-h-screen bg-background">
       <HeaderScreenshot />
-      <div className="h-[88px] md:h-[96px]" />
+      <div className="h-[76px] md:h-[84px]" />
       <main>
         <section className="bg-scef-blue-darker py-24 text-white md:py-32">
           <div className="container mx-auto px-6 md:px-8">
