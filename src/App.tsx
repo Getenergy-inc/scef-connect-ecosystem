@@ -71,6 +71,7 @@ import NesaTimeline2026 from "./pages/programs/NesaTimeline2026";
 import EduAidAfrica from "./pages/programs/EduAidAfrica";
 import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import WebinarRegister from "./pages/eduaid/WebinarRegister";
+import VolunteerMyCareerMyLife from "./pages/volunteer/MyCareerMyLife";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
 import WomenGirlsEmpowerment from "./pages/WomenGirlsEmpowerment";
