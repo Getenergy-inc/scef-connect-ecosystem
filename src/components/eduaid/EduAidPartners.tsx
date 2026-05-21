@@ -1,54 +1,49 @@
-import { ExternalLink } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Handshake } from "lucide-react";
 
-const partners = [
-  { name: "UNESCO", type: "International", logo: "🇺🇳" },
-  { name: "African Union", type: "Continental", logo: "🌍" },
-  { name: "World Bank", type: "Financial", logo: "🏦" },
-  { name: "USAID", type: "Development", logo: "🇺🇸" },
-  { name: "British Council", type: "Cultural", logo: "🇬🇧" },
-  { name: "GIZ", type: "Development", logo: "🇩🇪" },
-  { name: "DFID", type: "Development", logo: "🇬🇧" },
-  { name: "Mastercard Foundation", type: "Philanthropy", logo: "💳" }
-];
-
+/**
+ * EduAid-Africa Partners section.
+ *
+ * Per SCEF policy, only verified, formally agreed partners may appear here.
+ * Until partner logos and agreements are confirmed, this section shows a
+ * neutral CSR partnership invitation — no unverified UN / AU / UNESCO /
+ * UNICEF / GPE / World Bank / USAID / Mastercard claims.
+ */
 export default function EduAidPartners() {
   const { t, isRTL } = useLocale();
 
   return (
-    <section className="py-20 bg-muted/30" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section className="py-20 bg-muted/30" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container px-4 md:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium mb-4 border border-secondary/30">
-            {t('eduaid.partners.badge') || 'Strategic Alliances'}
+        <div className="text-center mb-10 max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/20 text-secondary-foreground rounded-full text-xs font-semibold uppercase tracking-wider border border-secondary/30">
+            <Handshake className="h-3.5 w-3.5" />
+            {t("eduaid.partners.badge") || "CSR & Strategic Partnerships"}
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {t('eduaid.partners.title') || 'Our Partners'}
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
+            {t("eduaid.partners.title") || "Partner With EduAid-Africa"}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {t('eduaid.partners.subtitle') || 'Collaborating with leading organizations to maximize educational impact across Africa'}
+          <p className="text-muted-foreground text-base leading-relaxed">
+            EduAid-Africa partners with companies, foundations, diaspora supporters, and
+            education-aligned organisations to fund scholarships, school transformation,
+            teacher training, and community education projects across Africa.
+          </p>
+          <p className="text-sm text-muted-foreground italic mt-4">
+            Verified partners are listed only after formal agreement and logo-use confirmation.
+            Reporting in progress.
           </p>
         </div>
 
-        {/* Partners grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-card border border-border rounded-xl p-6 text-center hover:border-[#1F892B]/40 transition-colors"
-            >
-              <div className="text-4xl mb-3">{partner.logo}</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">{partner.name}</h3>
-              <p className="text-xs text-muted-foreground">{partner.type}</p>
-            </div>
-          ))}
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Button asChild>
+            <Link to="/csr-education-funds-management">CSR Education Funds Management</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link to="/partner-with-us">Request Partnership Proposal</Link>
+          </Button>
         </div>
-
-        {/* Disclaimer */}
-        <p className="text-center text-sm text-muted-foreground italic">
-          {t('eduaid.partners.disclaimer') || 'Partnership details are subject to formal agreements and verification'}
-        </p>
       </div>
     </section>
   );

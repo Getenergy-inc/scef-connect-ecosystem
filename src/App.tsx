@@ -211,6 +211,7 @@ import VocationalScholarshipApply from "./pages/apply/VocationalScholarshipApply
 import AdminVocationalScholarshipWaitlist from "./pages/admin/AdminVocationalScholarshipWaitlist";
 import CapacityTrainingApply from "./pages/apply/CapacityTrainingApply";
 import AdminCapacityTrainingWaitlist from "./pages/admin/AdminCapacityTrainingWaitlist";
+import ApplyHub from "./pages/apply/ApplyHub";
 
 // Conversion pages (visitor-pathway pages)
 import Internship from "./pages/conversion/Internship";
@@ -382,6 +383,7 @@ const App = () => (
               <Route path="/admin/program-waitlist" element={<AdminProgramWaitlist />} />
               <Route path="/programs/waitlist" element={<WaitlistApply />} />
               <Route path="/waitlist" element={<WaitlistApply />} />
+              <Route path="/apply" element={<ApplyHub />} />
               <Route path="/apply/green-horizon" element={<GreenHorizonApply />} />
               <Route path="/apply/vocational-scholarship" element={<VocationalScholarshipApply />} />
               <Route path="/admin/vocational-scholarship-waitlist" element={<AdminVocationalScholarshipWaitlist />} />

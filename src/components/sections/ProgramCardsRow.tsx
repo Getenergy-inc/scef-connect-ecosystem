@@ -112,6 +112,39 @@ const cards: Card[] = [
     accent: "green",
   },
   {
+    title: "Green Horizon Initiative Project",
+    label: "Agriculture · Livelihood · Food Security",
+    description:
+      "Agriculture livelihood, permaculture training and food security project — piloting in Borno State to support IDPs, farmers, youth, and women.",
+    href: "/apply/green-horizon",
+    cta: "Join Green Horizon Waitlist",
+    image: classroomPhoto,
+    alt: "Green Horizon Initiative Project — agriculture and livelihood pilot",
+    accent: "green",
+  },
+  {
+    title: "My Career, My Life",
+    label: "Career Guidance & Mentoring",
+    description:
+      "Career guidance, mentorship and youth pathways across SCEF local chapters and partner schools.",
+    href: "/programs/my-career-my-life",
+    cta: "Explore My Career, My Life",
+    image: schoolgirlPhoto,
+    alt: "Youth career guidance and mentorship",
+    accent: "blue",
+  },
+  {
+    title: "Send a Child to School",
+    label: "Scholarships & Access",
+    description:
+      "Sponsor a child's school fees, uniforms, books, and learning support through SCEF chapters and partners.",
+    href: "/programs/send-a-child-to-school",
+    cta: "Sponsor a Child",
+    image: classroomPhoto,
+    alt: "Send a Child to School scholarship program",
+    accent: "navy",
+  },
+  {
     title: "Media & Advocacy",
     label: "Stories & Campaigns",
     description:

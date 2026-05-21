@@ -11,34 +11,13 @@ type ColLink = { name: string; href: string };
 
 const columns: { title: string; links: ColLink[] }[] = [
   {
-    title: "About SCEF",
+    title: "About",
     links: [
-      { name: "About", href: "/about" },
+      { name: "About SCEF", href: "/about" },
       { name: "Mission & Vision", href: "/about#mission" },
       { name: "Governance", href: "/governance" },
-      { name: "Management Team", href: "/governance#management" },
+      { name: "Management Team", href: "/governance?tier=management" },
       { name: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "CSR & Funding",
-    links: [
-      { name: "CSR Education Funds Management", href: "/csr-education-funds-management" },
-      { name: "Sponsor a Program", href: "/sponsorship" },
-      { name: "Adopt a School", href: "/programs/rebuild-my-school-africa" },
-      { name: "Fund Scholarships", href: "/sponsorship?program=scholarships" },
-      { name: "Request Partnership Proposal", href: "/partner-with-us" },
-      { name: "Impact Reports", href: "/impact" },
-    ],
-  },
-  {
-    title: "Get Involved",
-    links: [
-      { name: "Membership", href: "/membership" },
-      { name: "Volunteer", href: "/volunteer" },
-      { name: "Internship", href: "/internship" },
-      { name: "Donate", href: "/donate" },
-      { name: "Sponsor", href: "/sponsorship" },
     ],
   },
   {
@@ -49,27 +28,34 @@ const columns: { title: string; links: ColLink[] }[] = [
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa" },
       { name: "eLibrary Africa", href: "/programs/elibrary-nigeria" },
       { name: "Send a Child to School", href: "/programs/send-a-child-to-school" },
+      { name: "My Career, My Life", href: "/programs/my-career-my-life" },
       { name: "Women & Girls Empowerment", href: "/women-girls-empowerment" },
+      { name: "Green Horizon Initiative", href: "/apply/green-horizon" },
     ],
   },
   {
-    title: "Networks",
+    title: "CSR & Funding",
     links: [
+      { name: "CSR Education Funds Management", href: "/csr-education-funds-management" },
+      { name: "Sponsor a Program", href: "/sponsorship" },
+      { name: "Adopt a School", href: "/programs/rebuild-my-school-africa" },
+      { name: "Fund Scholarships", href: "/sponsorship?program=scholarships" },
+      { name: "Request Partnership Proposal", href: "/csr-partnership" },
+      { name: "Impact Reports", href: "/impact" },
+    ],
+  },
+  {
+    title: "Get Involved",
+    links: [
+      { name: "Become a Member", href: "/membership" },
+      { name: "Volunteer", href: "/volunteer" },
+      { name: "Internship", href: "/internship" },
       { name: "Local Chapters", href: "/local-chapters" },
-      { name: "Regional Coverage", href: "/regional-coverage" },
+      { name: "Ambassadors", href: "/ambassadors" },
       { name: "Diaspora Africa", href: "/diaspora-africa" },
       { name: "Friends of Africa", href: "/friends-of-africa" },
-      { name: "Partners", href: "/partners" },
-    ],
-  },
-  {
-    title: "Applications",
-    links: [
       { name: "EduTourism", href: "/edutourism" },
       { name: "Join a Project", href: "/projects" },
-      { name: "School Support", href: "/programs/rebuild-my-school-africa" },
-      { name: "Sponsorship Inquiry", href: "/sponsorship" },
-      { name: "Partnership Inquiry", href: "/partner-with-us" },
     ],
   },
 ];
@@ -98,8 +84,8 @@ export const Footer = () => {
               </span>
             </Link>
             <p className="mt-3 text-[13px] leading-relaxed text-white/70">
-              A Pan-African educational foundation connecting recognition, funding,
-              partnerships, local chapters, and diaspora support to advance education across Africa.
+              SCEF is a membership-based Pan-African NGO and CSR Education Funds Management
+              organization advocating for Education for All in Africa.
             </p>
           </div>
           <div className="flex items-center gap-1.5">
@@ -119,7 +105,7 @@ export const Footer = () => {
         </div>
 
         {/* Link columns */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white mb-4">
