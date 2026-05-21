@@ -10,6 +10,7 @@ import elibraryPhoto from "@/assets/hero-education.jpg";
 import schoolgirlPhoto from "@/assets/hero-schoolgirl.jpg";
 import mediaVideo from "@/assets/nesa-hero-bg-video.mp4";
 import mediaPoster from "@/assets/hero-media.jpg";
+import greenHorizonPhoto from "@/assets/green-horizon-agriculture.jpg";
 
 type Accent = "navy" | "green" | "gold" | "blue";
 
