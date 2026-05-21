@@ -18,6 +18,7 @@ import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027W
 import { ProgramCardsRow } from "@/components/sections/ProgramCardsRow";
 import { GetInvolvedPathways } from "@/components/sections/GetInvolvedPathways";
 import { RecognitionToImpact } from "@/components/sections/RecognitionToImpact";
+import { LocalChapterPathways } from "@/components/sections/LocalChapterPathways";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
@@ -81,6 +82,9 @@ const Home = () => {
 
           {/* 4. VISITOR PATHWAYS — Bounce-reduction gateway */}
           <GetInvolvedPathways />
+
+          {/* 4b. LOCAL CHAPTER PATHWAYS — Member / Ambassador / Volunteer */}
+          <LocalChapterPathways />
 
           {/* 5. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
