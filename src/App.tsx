@@ -266,6 +266,8 @@ const App = () => (
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/chapters/join-online" element={<JoinOnline />} />
               <Route path="/chapters/join" element={<JoinOnline />} />
+              <Route path="/chapters/signup" element={<ChapterSignup />} />
+              <Route path="/get-involved/join-chapter/signup" element={<ChapterSignup />} />
               <Route path="/chapters/start" element={<StartChapter />} />
               
               {/* Media Routes */}
