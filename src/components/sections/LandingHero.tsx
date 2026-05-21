@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, HandCoins, Award, MapPin, HeartHandshake } from "lucide-react";
+import { ArrowRight, Award, School, GraduationCap, Users, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-classroom.jpg";
 
 const quickActions = [
-  { label: "Become a Member", href: "/membership", Icon: Users },
-  { label: "Donate", href: "/donate", Icon: HandCoins },
   { label: "Sponsor a Program", href: "/sponsorship", Icon: Award },
-  { label: "Join a Local Chapter", href: "/local-chapters", Icon: MapPin },
-  { label: "Volunteer", href: "/volunteer", Icon: HeartHandshake },
+  { label: "Adopt a School", href: "/programs/rebuild-my-school-africa", Icon: School },
+  { label: "Fund Scholarships", href: "/sponsorship?program=scholarships", Icon: GraduationCap },
+  { label: "Join as a Member", href: "/membership", Icon: Users },
+  { label: "Start a Local Chapter", href: "/chapters/start-chapter", Icon: MapPin },
 ];
 
 /**
