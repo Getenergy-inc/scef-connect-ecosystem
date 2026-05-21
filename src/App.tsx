@@ -427,8 +427,11 @@ const App = () => (
               <Route path="/governance" element={<Governance />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/partner-with-us" element={<PartnerWithUs />} />
+              <Route path="/csr-partnership" element={<PartnerWithUs />} />
+              <Route path="/adopt-a-school" element={<RebuildMySchoolAfrica />} />
               <Route path="/csr-fund-management" element={<CsrFundManagement />} />
               <Route path="/csr-funding-intake" element={<CsrFundingIntake />} />
+              <Route path="/csr-education-funds-management" element={<CsrEducationFundsManagement />} />
               
               {/* Divisions Routes */}
               <Route path="/divisions" element={<Divisions />} />
