@@ -97,6 +97,12 @@ const Home = () => {
 
           {/* 5. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
+
+          {/* 4d. CSR EDUCATION FUNDS MANAGEMENT */}
+          <Reveal>
+            <CsrFundsManagementSection />
+          </Reveal>
+
           <QuickActionsBar />
 
 
