@@ -233,6 +233,8 @@ const App = () => (
               <Route path="/monthly-program-calendar" element={<MonthlyProgramCalendar />} />
               <Route path="/our-impact" element={<OurImpact />} />
               <Route path="/flagship-programs" element={<FlagshipPrograms />} />
+              <Route path="/sponsor" element={<SupportUs />} />
+              <Route path="/adopt-a-school" element={<RebuildMySchoolAfrica />} />
               
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
