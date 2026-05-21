@@ -74,6 +74,7 @@ import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import WebinarRegister from "./pages/eduaid/WebinarRegister";
 import VolunteerMyCareerMyLife from "./pages/volunteer/MyCareerMyLife";
 import RebuildMySchoolAfrica from "./pages/programs/RebuildMySchoolAfrica";
+import GreenHorizonInitiative from "./pages/programs/GreenHorizonInitiative";
 import WomenGirlsEducation from "./pages/programs/WomenGirlsEducation";
 import WomenGirlsEmpowerment from "./pages/WomenGirlsEmpowerment";
 import SpecialNeedsEducation from "./pages/programs/SpecialNeedsEducation";
