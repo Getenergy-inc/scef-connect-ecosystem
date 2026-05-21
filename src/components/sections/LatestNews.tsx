@@ -19,10 +19,10 @@ const news = [
   },
   {
     date: "2026-01-28",
-    category: "Partnership",
-    title: "SCEF Signs MoU with African Union ECOSOCC",
-    excerpt: "Strategic partnership to advance Pan-African education standards and youth engagement.",
-    href: "/partner-with-us",
+    category: "CSR & Partnerships",
+    title: "SCEF Opens 2026 CSR Education Funds Management Window",
+    excerpt: "Companies, foundations, and diaspora supporters can now channel CSR education funds through SCEF for scholarships, school transformation, and community education projects.",
+    href: "/csr-education-funds-management",
   },
 ];
 
