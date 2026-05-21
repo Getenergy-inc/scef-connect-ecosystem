@@ -127,9 +127,21 @@ export const MasterTimelinesDuo = () => {
     <section
       id="master-timelines"
       aria-labelledby="master-timelines-heading"
-      className="bg-gradient-to-b from-background to-muted/30 py-16 md:py-20"
+      className="relative py-16 md:py-20 bg-scef-blue-darker"
     >
-      <div className="container mx-auto px-6 md:px-8">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${masterTimelinesBg})` }}
+        aria-hidden="true"
+      />
+      {/* Readability overlay */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-scef-blue-darker/85 via-scef-blue-darker/80 to-scef-blue-darker/90"
+        aria-hidden="true"
+      />
+      <div className="relative container mx-auto px-6 md:px-8">
+
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-scef-gold">
             SCEF 2026–2027
