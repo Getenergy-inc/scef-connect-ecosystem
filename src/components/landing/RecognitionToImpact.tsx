@@ -5,21 +5,27 @@ import { ArrowRight, Award, GraduationCap } from "lucide-react";
 const cards = [
   {
     icon: Award,
+    logo: "/assets/nesa-africa-logo.jpg",
+    logoAlt: "NESA-Africa official emblem",
     title: "NESA-Africa",
     body: "Celebrating educators, schools, leaders, and organizations shaping Africa's education future.",
     cta: "View NESA Timeline",
     to: "/nesa-africa-timeline",
     accent: "bg-scef-blue-darker text-white",
     iconRing: "bg-scef-gold/20 text-scef-gold",
+    logoFrame: "bg-scef-blue-dark/40 border border-white/10",
   },
   {
     icon: GraduationCap,
+    logo: "/assets/eduaid-africa-logo.jpg",
+    logoAlt: "EduAid-Africa — funding through partnerships logo",
     title: "EduAid-Africa",
     body: "Turning education visibility into scholarships, school support, teacher development, digital learning, and community impact.",
     cta: "View EduAid Timeline",
     to: "/eduaid-africa-timeline",
     accent: "bg-card text-foreground border border-border",
     iconRing: "bg-scef-blue-darker/10 text-scef-blue-darker",
+    logoFrame: "bg-muted border border-border",
   },
 ] as const;
 
