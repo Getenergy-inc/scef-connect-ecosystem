@@ -249,6 +249,8 @@ const App = () => (
               <Route path="/eduaid-africa/webinar-register" element={<WebinarRegister />} />
               <Route path="/programs/eduaid-africa/webinar-register" element={<WebinarRegister />} />
               <Route path="/programs/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
+              <Route path="/programs/green-horizon-initiative" element={<GreenHorizonInitiative />} />
+              <Route path="/green-horizon-initiative" element={<GreenHorizonInitiative />} />
               <Route path="/programs/women-girls-education" element={<WomenGirlsEducation />} />
               <Route path="/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
               <Route path="/programs/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
