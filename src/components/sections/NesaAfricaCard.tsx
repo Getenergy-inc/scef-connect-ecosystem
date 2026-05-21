@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import nesaRecognition from "@/assets/nesa-africa-recognition.png";
 
 export const NesaAfricaCard = () => {
   return (
