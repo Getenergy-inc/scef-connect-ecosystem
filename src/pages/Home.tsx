@@ -19,6 +19,7 @@ import { ProgramCardsRow } from "@/components/sections/ProgramCardsRow";
 import { GetInvolvedPathways } from "@/components/sections/GetInvolvedPathways";
 import { RecognitionToImpact } from "@/components/sections/RecognitionToImpact";
 import { LocalChapterPathways } from "@/components/sections/LocalChapterPathways";
+import { ApplicationsWaitlistsSection } from "@/components/sections/ApplicationsWaitlistsSection";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
@@ -85,6 +86,13 @@ const Home = () => {
 
           {/* 4b. LOCAL CHAPTER PATHWAYS — Member / Ambassador / Volunteer */}
           <LocalChapterPathways />
+
+          {/* 4c. 2026–2027 APPLICATIONS & WAITLISTS */}
+          <Reveal>
+            <ApplicationsWaitlistsSection />
+          </Reveal>
+
+
 
           {/* 5. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
