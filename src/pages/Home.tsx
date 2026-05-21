@@ -15,6 +15,7 @@ import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelli
 import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCalendar";
 import { WomenGirlsEmpowerment } from "@/components/sections/WomenGirlsEmpowerment";
 import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027WaitingList";
+import { ProgramCardsRow } from "@/components/sections/ProgramCardsRow";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
@@ -70,9 +71,13 @@ const Home = () => {
           {/* 1. MASTHEAD — Hero */}
           <LandingHero />
 
-          {/* 2. EDITORIAL OPENING — Who we are + quick actions */}
+          {/* 2. PROGRAM CARDS — Real logos + photos */}
+          <ProgramCardsRow />
+
+          {/* 3. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />
           <QuickActionsBar />
+
 
           {/* 3. DEPARTMENT — RECOGNITION & IMPACT */}
           <SectionHeader
