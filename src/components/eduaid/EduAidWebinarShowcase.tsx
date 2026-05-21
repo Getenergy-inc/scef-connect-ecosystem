@@ -6,6 +6,7 @@ import webinarFinancing from "@/assets/eduaid-webinar-financing-education.jpg";
 
 const webinars = [
   {
+    slug: "women-girls-education",
     image: webinarWomenGirls,
     topic: "Women and Girls in Education",
     subtitle: "Removing Barriers",
@@ -14,6 +15,7 @@ const webinars = [
     tag: "Gender Equity",
   },
   {
+    slug: "education-inequality-gap",
     image: webinarInequality,
     topic: "Bridging the Education Inequality Gap in Nigeria",
     subtitle: "Policy · Access · Equity",
@@ -22,6 +24,7 @@ const webinars = [
     tag: "Access & Equity",
   },
   {
+    slug: "financing-education",
     image: webinarFinancing,
     topic: "Financing Education: Public & Private Roles",
     subtitle: "Sustainable Funding Models",

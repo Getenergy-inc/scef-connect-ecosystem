@@ -100,7 +100,7 @@ export default function WebinarRegister() {
 
       const { error } = await supabase
         .from("webinar_registrations")
-        .insert(payload);
+        .insert([payload]);
       if (error) throw error;
 
       // Fire-and-forget confirmation email (works once email infra is configured)
