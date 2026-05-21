@@ -3554,6 +3554,84 @@ export type Database = {
         }
         Relationships: []
       }
+      vocational_scholarship_waitlist: {
+        Row: {
+          admin_notes: string | null
+          age_range: string
+          chapter_connection: string | null
+          community_impact: string
+          consent: boolean
+          country: string
+          created_at: string
+          education_level: string
+          email: string
+          employment_status: string
+          full_name: string
+          id: string
+          is_scef_member: boolean
+          phone: string
+          preferred_african_region: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          scholarship_need: string
+          state_region: string
+          status: string
+          training_category: string
+          updated_at: string
+          why_scholarship: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          age_range: string
+          chapter_connection?: string | null
+          community_impact: string
+          consent?: boolean
+          country: string
+          created_at?: string
+          education_level: string
+          email: string
+          employment_status: string
+          full_name: string
+          id?: string
+          is_scef_member?: boolean
+          phone: string
+          preferred_african_region: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          scholarship_need: string
+          state_region: string
+          status?: string
+          training_category: string
+          updated_at?: string
+          why_scholarship: string
+        }
+        Update: {
+          admin_notes?: string | null
+          age_range?: string
+          chapter_connection?: string | null
+          community_impact?: string
+          consent?: boolean
+          country?: string
+          created_at?: string
+          education_level?: string
+          email?: string
+          employment_status?: string
+          full_name?: string
+          id?: string
+          is_scef_member?: boolean
+          phone?: string
+          preferred_african_region?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          scholarship_need?: string
+          state_region?: string
+          status?: string
+          training_category?: string
+          updated_at?: string
+          why_scholarship?: string
+        }
+        Relationships: []
+      }
       votes: {
         Row: {
           created_at: string
