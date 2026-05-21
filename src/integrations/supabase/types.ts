@@ -299,6 +299,78 @@ export type Database = {
         }
         Relationships: []
       }
+      capacity_training_waitlist: {
+        Row: {
+          admin_notes: string | null
+          applicant_category: string
+          applying_as: string
+          consent: boolean
+          country: string
+          created_at: string
+          delivery_preference: string
+          email: string
+          full_name: string
+          id: string
+          is_scef_member: boolean
+          knowledge_application: string
+          organization_name: string | null
+          phone: string
+          region_state: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          training_area: string
+          updated_at: string
+          why_training: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          applicant_category: string
+          applying_as: string
+          consent?: boolean
+          country: string
+          created_at?: string
+          delivery_preference: string
+          email: string
+          full_name: string
+          id?: string
+          is_scef_member?: boolean
+          knowledge_application: string
+          organization_name?: string | null
+          phone: string
+          region_state: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          training_area: string
+          updated_at?: string
+          why_training: string
+        }
+        Update: {
+          admin_notes?: string | null
+          applicant_category?: string
+          applying_as?: string
+          consent?: boolean
+          country?: string
+          created_at?: string
+          delivery_preference?: string
+          email?: string
+          full_name?: string
+          id?: string
+          is_scef_member?: boolean
+          knowledge_application?: string
+          organization_name?: string | null
+          phone?: string
+          region_state?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          training_area?: string
+          updated_at?: string
+          why_training?: string
+        }
+        Relationships: []
+      }
       certificate_verifications: {
         Row: {
           badge_code: string | null
