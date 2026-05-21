@@ -16,6 +16,7 @@ import { MonthlyAdvocacyCalendar } from "@/components/sections/MonthlyAdvocacyCa
 import { WomenGirlsEmpowerment } from "@/components/sections/WomenGirlsEmpowerment";
 import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027WaitingList";
 import { ProgramCardsRow } from "@/components/sections/ProgramCardsRow";
+import { GetInvolvedPathways } from "@/components/sections/GetInvolvedPathways";
 
 /**
  * Institutional landing layout — clean white, deep navy accents,
@@ -73,6 +74,9 @@ const Home = () => {
 
           {/* 2. PROGRAM CARDS — Real logos + photos */}
           <ProgramCardsRow />
+
+          {/* 2b. VISITOR PATHWAYS — Bounce-reduction gateway */}
+          <GetInvolvedPathways />
 
           {/* 3. EDITORIAL OPENING — Who we are + quick actions */}
           <WhoWeAre />

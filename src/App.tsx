@@ -199,6 +199,15 @@ import SophiaFAQs from "./pages/support/SophiaFAQs";
 import SophiaFAQAdmin from "./pages/admin/SophiaFAQAdmin";
 import WaitlistAdmin from "./pages/admin/WaitlistAdmin";
 
+// Conversion pages (visitor-pathway pages)
+import Internship from "./pages/conversion/Internship";
+import Sponsorship from "./pages/conversion/Sponsorship";
+import EduTourism from "./pages/conversion/EduTourism";
+import ProjectsPage from "./pages/conversion/Projects";
+import RegionalCoverage from "./pages/conversion/RegionalCoverage";
+import DiasporaAfrica from "./pages/conversion/DiasporaAfrica";
+import FriendsOfAfrica from "./pages/conversion/FriendsOfAfrica";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -442,6 +451,21 @@ const App = () => (
               <Route path="/media/gallery" element={<MediaArchive />} />
               <Route path="/media/submit" element={<MediaSubmit />} />
               <Route path="/media/my-submissions" element={<MyMediaSubmissions />} />
+
+              {/* Visitor-pathway conversion routes */}
+              <Route path="/internship" element={<Internship />} />
+              <Route path="/sponsorship" element={<Sponsorship />} />
+              <Route path="/edutourism" element={<EduTourism />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/regional-coverage" element={<RegionalCoverage />} />
+              <Route path="/diaspora-africa" element={<DiasporaAfrica />} />
+              <Route path="/friends-of-africa" element={<FriendsOfAfrica />} />
+
+              {/* Short-link aliases used by pathway CTAs */}
+              <Route path="/eduaid-africa" element={<EduAidAfrica />} />
+              <Route path="/nesa-africa" element={<NESAAfrica />} />
+              <Route path="/rebuild-my-school-africa" element={<RebuildMySchoolAfrica />} />
+              <Route path="/elibrary-africa" element={<ELibraryNigeria />} />
 
               {/* Catch-all 404 */}
               <Route path="*" element={<NotFound />} />
