@@ -49,10 +49,8 @@ export const MainNavbar = () => {
   return (
     <nav
       className={cn(
-        "transition-colors duration-200 border-b",
-        scrolled
-          ? "bg-scef-blue-dark/95 backdrop-blur-md border-white/5 shadow-sm"
-          : "bg-scef-blue-dark/85 backdrop-blur-md border-white/5"
+        "transition-shadow duration-200 border-b border-border bg-white",
+        scrolled ? "shadow-sm" : ""
       )}
     >
       <div className="container mx-auto px-4">
@@ -63,20 +61,18 @@ export const MainNavbar = () => {
             className="flex items-center gap-2.5 group shrink-0"
             aria-label={`${siteContent.brand.name} — Home`}
           >
-            <span className="inline-flex items-center justify-center rounded bg-white px-1.5 py-1 ring-1 ring-white/20">
-              <img
-                src={scefLogo}
-                alt={siteContent.brand.name}
-                className="h-7 md:h-8 w-auto object-contain"
-                loading="eager"
-                decoding="async"
-              />
-            </span>
+            <img
+              src={scefLogo}
+              alt={siteContent.brand.name}
+              className="h-7 w-auto object-contain"
+              loading="eager"
+              decoding="async"
+            />
             <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-display font-semibold text-[12px] md:text-[13px] text-white tracking-tight">
+              <span className="font-display font-bold text-[13px] text-scef-blue-darker tracking-tight">
                 SCEF
               </span>
-              <span className="text-[10px] text-white/60 -mt-0.5">
+              <span className="text-[10px] text-muted-foreground -mt-0.5">
                 Santos Creations Educational Foundation
               </span>
             </span>
@@ -97,18 +93,19 @@ export const MainNavbar = () => {
                   <Link
                     to={item.href}
                     className={cn(
-                      "relative px-2.5 py-1.5 rounded-md text-[13px] font-medium transition-colors flex items-center gap-1",
+                      "relative px-3 py-2 text-[13px] font-medium transition-colors flex items-center gap-1",
                       active
-                        ? "text-scef-gold"
-                        : "text-white/85 hover:text-white"
+                        ? "text-primary"
+                        : "text-scef-blue-darker/85 hover:text-primary"
                     )}
                   >
                     {item.name}
                     {hasMenu && <ChevronDown className="w-3 h-3 opacity-60" />}
                     {active && (
-                      <span className="absolute -bottom-0.5 left-2.5 right-2.5 h-[2px] bg-scef-gold rounded-full" />
+                      <span className="absolute -bottom-px left-3 right-3 h-[2px] bg-primary" />
                     )}
                   </Link>
+
 
                   {/* Mega Menu */}
                   {item.megaMenu && item.groups && activeDropdown === item.name && (
@@ -205,36 +202,129 @@ export const MainNavbar = () => {
               );
             })}
 
-            {/* Right-side primary CTAs */}
+            {/* Right-side primary CTA */}
             <div className="ml-3 flex items-center gap-2">
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="border-white/30 text-white bg-transparent hover:bg-white hover:text-scef-blue-dark"
-              >
+              <Button asChild size="sm">
                 <Link to="/auth/sign-up">Become a Member</Link>
-              </Button>
-              <Button
-                asChild
-                size="sm"
-                className="bg-scef-gold hover:bg-scef-gold-dark text-scef-blue-dark"
-              >
-                <Link to="/donate">
-                  <Heart className="w-3.5 h-3.5 mr-1" />
-                  Donate
-                </Link>
               </Button>
             </div>
 
             {/* Search Icon */}
             <button
-              className="ml-1 p-1.5 text-white/70 hover:text-scef-gold transition-colors"
+              className="ml-1 p-1.5 text-scef-blue-darker/60 hover:text-primary transition-colors"
               aria-label="Search"
             >
               <Search className="w-4 h-4" />
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center gap-1">
+            <LanguageSwitcher />
+            <button
+              className="p-2 text-scef-blue-darker"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-border animate-fade-in max-h-[85vh] overflow-y-auto">
+          <div className="container mx-auto px-4 py-4 space-y-1">
+            {navItems.map((item) => {
+              const hasMenu = !!item.children?.length || !!item.megaMenu;
+              const isOpen = mobileExpanded === item.name;
+              return (
+                <div key={item.name} className="border-b border-border last:border-0">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      to={item.href}
+                      className="flex-1 px-3 py-3 text-scef-blue-darker hover:text-primary transition-colors font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                    {hasMenu && (
+                      <button
+                        onClick={() => setMobileExpanded(isOpen ? null : item.name)}
+                        className="p-3 text-muted-foreground hover:text-primary"
+                        aria-label={`Toggle ${item.name}`}
+                      >
+                        <ChevronDown
+                          className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")}
+                        />
+                      </button>
+                    )}
+                  </div>
+
+                  {isOpen && item.megaMenu && item.groups && (
+                    <div className="pb-3 pl-3 space-y-3">
+                      {item.groups.map((group) => (
+                        <div key={group.title}>
+                          <p className="px-3 pt-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-primary/80">
+                            {group.title}
+                          </p>
+                          <ul className="space-y-0.5">
+                            {group.items.map((sub) => (
+                              <li key={sub.name}>
+                                <Link
+                                  to={sub.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block px-3 py-2 text-sm text-scef-blue-darker/80 hover:text-primary hover:bg-muted rounded-md transition-colors"
+                                >
+                                  {sub.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {isOpen && !item.megaMenu && item.children && (
+                    <ul className="pb-3 pl-3 space-y-0.5">
+                      {item.children.map((child, idx) =>
+                        child.divider ? (
+                          <li key={idx} className="my-1 border-t border-border" />
+                        ) : (
+                          <li key={child.name}>
+                            <Link
+                              to={child.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block px-3 py-2 text-sm text-scef-blue-darker/80 hover:text-primary hover:bg-muted rounded-md transition-colors"
+                            >
+                              {child.name}
+                            </Link>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
+
+            {/* Mobile CTA */}
+            <div className="pt-4">
+              <Button size="sm" className="w-full" asChild>
+                <Link to="/auth/sign-up" onClick={() => setMobileMenuOpen(false)}>
+                  Become a Member
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-1">
