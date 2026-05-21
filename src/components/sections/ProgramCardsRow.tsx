@@ -143,7 +143,7 @@ const cards: Card[] = [
       "Sponsor a child's school fees, uniforms, books, and learning support through SCEF chapters and partners.",
     href: "/programs/send-a-child-to-school",
     cta: "Sponsor a Child",
-    image: classroomPhoto,
+    image: sendChildPhoto,
     alt: "Send a Child to School scholarship program",
     accent: "navy",
   },
