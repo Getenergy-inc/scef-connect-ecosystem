@@ -22,6 +22,7 @@ import EduAidFAQs from "@/components/eduaid/EduAidFAQs";
 import EduAidDonationSection from "@/components/eduaid/EduAidDonationSection";
 import EduAidIntegratedServices from "@/components/eduaid/EduAidIntegratedServices";
 import EduAidAdvocacyCalendars from "@/components/eduaid/EduAidAdvocacyCalendars";
+import EduAidWebinarShowcase from "@/components/eduaid/EduAidWebinarShowcase";
 import { SchoolWashHighlight } from "@/components/sections/SchoolWashHighlight";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 
@@ -102,6 +103,11 @@ export default function EduAidAfrica() {
         {/* Integrated Services (EOA, MCML, RMSA, Training) */}
         <ScrollAnimation animation="fadeUp" delay={0.1}>
           <EduAidIntegratedServices />
+        </ScrollAnimation>
+
+        {/* Monthly Webinar Showcase — official flyer assets */}
+        <ScrollAnimation animation="fadeUp" delay={0.1}>
+          <EduAidWebinarShowcase />
         </ScrollAnimation>
 
         {/* School WASH & Sanitation */}
