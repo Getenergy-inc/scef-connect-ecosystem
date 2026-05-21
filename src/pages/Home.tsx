@@ -1,27 +1,24 @@
 import { Helmet } from "react-helmet-async";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
-import { LandingHero } from "@/components/sections/LandingHero";
-import { JoinUsGetInvolved } from "@/components/sections/JoinUsGetInvolved";
-import { WhoWeAre } from "@/components/home/WhoWeAre";
-import { FinalCTABand } from "@/components/sections/FinalCTABand";
-import { HallOfFameSection } from "@/components/sections/HallOfFameSection";
-import { QuickActionsBar } from "@/components/sections/QuickActionsBar";
-import { LandingSummaryHub } from "@/components/sections/LandingSummaryHub";
-import { PremiumStorySections } from "@/components/sections/PremiumStorySections";
+import { LeanHero } from "@/components/landing/LeanHero";
+import { RecognitionToImpact } from "@/components/landing/RecognitionToImpact";
+import { MonthlyCalendarPreview } from "@/components/landing/MonthlyCalendarPreview";
+import { ImpactSnapshot } from "@/components/landing/ImpactSnapshot";
+import { FlagshipPreview } from "@/components/landing/FlagshipPreview";
+import { WomenGirlsPreview } from "@/components/landing/WomenGirlsPreview";
+import { FinalCtaLean } from "@/components/landing/FinalCtaLean";
 import { StickyMobileJoin } from "@/components/layout/StickyMobileJoin";
 import { Reveal } from "@/components/ui/reveal";
-import { VolunteerStorytelling } from "@/components/sections/VolunteerStorytelling";
-import { Seychelles2027WaitingList } from "@/components/sections/Seychelles2027WaitingList";
 
 const Home = () => {
   return (
     <>
       <Helmet>
-        <title>SCEF — Empowering Education. Advocating Education for All. Sustaining Africa's Future.</title>
+        <title>SCEF — Connecting Recognition to Education Impact Across Africa</title>
         <meta
           name="description"
-          content="Santos Creations Educational Foundation (SCEF) is a Pan-African not-for-profit NGO advancing education for all in Africa through EduAid-Africa, NESA-Africa, girls and women empowerment, CSR education fund management, digital learning, ESG, scholarships, school support, and community impact."
+          content="SCEF powers education recognition, scholarships, school support, teacher development, digital learning, and community-led education impact across Africa."
         />
         <link rel="canonical" href="https://santoscreations.org/" />
       </Helmet>
@@ -31,43 +28,30 @@ const Home = () => {
         <div className="h-[88px] md:h-[96px]" />
 
         <main>
-          {/* 1. HERO */}
-          <LandingHero />
+          <LeanHero />
 
-          {/* 2. WHO WE ARE — 3 short lines */}
-          <WhoWeAre />
-
-          {/* Quick Actions Bar */}
-          <QuickActionsBar />
-
-          {/* Concise summary hub linking to dedicated pages */}
           <Reveal>
-            <LandingSummaryHub />
+            <RecognitionToImpact />
           </Reveal>
 
-          {/* Seychelles 2027 Edu-Tourism Conference — Waiting List */}
           <Reveal>
-            <Seychelles2027WaitingList />
+            <MonthlyCalendarPreview />
           </Reveal>
 
-          {/* Premium story cards: Journey, Calendar, Support, Chapters, Partners, Training, Channels */}
           <Reveal>
-            <PremiumStorySections />
+            <ImpactSnapshot />
           </Reveal>
 
-          {/* Powered by Volunteers — documentary storytelling */}
           <Reveal>
-            <VolunteerStorytelling />
+            <FlagshipPreview />
           </Reveal>
 
-          {/* Hall of Fame appreciation */}
           <Reveal>
-            <HallOfFameSection />
+            <WomenGirlsPreview />
           </Reveal>
 
-          {/* FINAL CTA */}
           <Reveal>
-            <FinalCTABand />
+            <FinalCtaLean />
           </Reveal>
         </main>
 
