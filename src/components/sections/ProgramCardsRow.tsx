@@ -102,7 +102,6 @@ export const ProgramCardsRow = () => {
                   />
                 )}
               </div>
-              </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-display text-[15px] font-bold text-scef-blue-darker leading-tight">
                   {card.title}
