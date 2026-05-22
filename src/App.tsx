@@ -254,6 +254,8 @@ const App = () => (
               <Route path="/programs/nesa-africa/master-timeline" element={<NesaTimeline2026 />} />
               <Route path="/nesa-africa/master-timeline" element={<NesaTimeline2026 />} />
               <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
+              <Route path="/programs/eduaid-africa-teacher-corps" element={<EduAidAfricaTeacherCorps />} />
+              <Route path="/eduaid-africa-teacher-corps" element={<EduAidAfricaTeacherCorps />} />
               <Route path="/programs/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/eduaid-africa/webinar-register" element={<WebinarRegister />} />
