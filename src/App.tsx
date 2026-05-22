@@ -71,6 +71,7 @@ import LCS from "./pages/divisions/LCS";
 import NESAAfrica from "./pages/programs/NESAAfrica";
 import NesaTimeline2026 from "./pages/programs/NesaTimeline2026";
 import EduAidAfrica from "./pages/programs/EduAidAfrica";
+import EduAidAfricaTeacherCorps from "./pages/programs/EduAidAfricaTeacherCorps";
 import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import WebinarRegister from "./pages/eduaid/WebinarRegister";
 import VolunteerMyCareerMyLife from "./pages/volunteer/MyCareerMyLife";
