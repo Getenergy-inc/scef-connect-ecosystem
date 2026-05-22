@@ -1,126 +1,82 @@
-# SCEF Coordinated Refactor — Implementation Plan
+# Programme Pages Revamp Plan
 
-This plan executes the master prompt in one coordinated pass. Items already shipped in prior turns are marked **DONE** and only verified, not rebuilt.
+This is a large, multi-page refactor. To keep quality high and avoid breaking existing routes/content, I'll execute it in phases. You can approve the whole plan, or tell me to start with a specific phase.
 
----
+## Scope summary
 
-## Phase 1 — Audit & verify what already exists
+Bring every programme page up to the structural standard set by `EduAidAfricaTeacherCorps.tsx` (Hero → About → Purpose/Mission → Objectives → Service Tracks → Who Benefits → How It Works → Fees/Grants → Safeguarding → Partnerships → Impact → Final CTA), without redesigning the site, changing the navbar shell, colours, typography, or brand.
 
-Read-only verification pass (no edits) on:
+## Phase 1 — Audit & shared scaffolding
 
-- `src/components/sections/LandingHero.tsx` — DONE last turn (overlay, 600px width, shorter copy, `/csr-partnership` + `/donate` CTAs).
-- `src/components/sections/ApplicationsWaitlistsSection.tsx` — DONE (Capacity, Green Horizon, Vocational, Volunteer cards).
-- `src/pages/apply/GreenHorizonApply.tsx`, `CapacityTrainingApply.tsx`, `VocationalScholarshipApply.tsx` — DONE.
-- `src/pages/admin/AdminVocationalScholarshipWaitlist.tsx`, `AdminCapacityTrainingWaitlist.tsx` — DONE. Confirm a matching `AdminGreenHorizonWaitlist.tsx` exists; if missing, create.
-- `src/pages/CsrEducationFundsManagement.tsx` — DONE.
-- Routes in `src/App.tsx` for `/csr-partnership`, `/adopt-a-school`, `/apply/*` — DONE.
-- `src/components/layout/MainNavbar.tsx`, `Footer.tsx`, `TopUtilityNav.tsx` — review for governance bar + footer columns.
+1. Audit `src/pages/programs/*` and list current structure of each page against the Teacher Corps template.
+2. Create a small set of reusable section components under `src/components/programs/template/`:
+   - `ProgramHero` (eyebrow, title, tagline, intro, primary + secondary CTA)
+   - `ProgramAbout`
+   - `ProgramPurpose` (vision/mission card)
+   - `ProgramObjectives` (3–5 cards)
+   - `ProgramServiceTracks` (icon + title + body + bullets)
+   - `ProgramAudience` (Who can join / who benefits)
+   - `ProgramHowItWorks` (numbered steps)
+   - `ProgramFees` (table + disclaimer)
+   - `ProgramSafeguarding`
+   - `ProgramPartnerships`
+   - `ProgramImpact` (indicators)
+   - `ProgramFinalCTA`
+   These wrap existing tokens (`scef-blue-darker`, `scef-gold`, `bg-scef-pattern`) and `PageShell`, so no design system changes.
+3. Refactor `EduAidAfricaTeacherCorps.tsx` to consume these components (no visual change) so it remains the canonical reference.
 
-Anything already correct is left alone.
+## Phase 2 — Refactor existing programme pages
 
----
+For each page below, preserve original copy, route, and images; restructure into the template; add missing sections; keep tone institutional.
 
-## Phase 2 — Governance navbar (Section 2)
+- `programs/MyCareerMyLife.tsx` — add Purpose, Objectives, Service Tracks (Career guidance, Life skills, Mentorship, Girls' career support, TVET, Digital career clubs, School clubs, Career talks, SEN/vulnerable support), Audience, How it works, Safeguarding, Partnerships, Impact, Final CTA (Become a Career Mentor).
+- `programs/TrainingDevelopment.tsx` → repositioned as **Online Teaching Training Programme** with: Purpose, Who needs it, Free training after volunteer form note, Modules, Assessment, Certification, link to Teacher Corps journey, Apply CTA.
+- `programs/EduAidAfrica.tsx` — verify against template, fill gaps.
+- `programs/NESAAfrica.tsx`, `programs/RebuildMySchoolAfrica.tsx`, `programs/ELibraryNigeria.tsx`, `programs/SendAChildToSchool.tsx`, `programs/WomenGirlsEmpowerment.tsx`, `programs/EducationOnlineAfrica.tsx`, `programs/SpecialNeedsEducation.tsx` (create if missing), `programs/GreenHorizon.tsx` — same treatment.
 
-Edit `src/components/layout/TopUtilityNav.tsx` (or the governance bar component currently rendered above `MainNavbar`):
+## Phase 3 — New programme pages
 
-- Ensure 5 links present: Board of Trustees, Board of Advisors, Board of Directors, Local Chapter Presidents, Management Team.
-- Slim dark navy bar, small text, subtle separators, clean hover.
-- Mobile: collapse into a single "Governance" dropdown.
+Create new pages following the template:
 
-## Phase 3 — Main navbar (Section 2)
+- `programs/SpecialNeedsSchoolsIntervention.tsx` → `/programs/special-needs-schools-intervention` (one SEN school per African region in 2027, teacher/handler training, assistive learning, safeguarding, partner CTA).
+- `programs/EduTourismMissions.tsx` → `/programs/edu-tourism-missions` (education travel, school exchange, cultural learning, Indian Ocean Islands / Seychelles 2027 link, teacher grants).
+- `programs/RegionalWaitingListGrants2027.tsx` → `/programs/2027-regional-waiting-list-grants` (8 regions: West, Central, East, Southern, Sahel, Horn, Islands, Diaspora; waiting-list form via existing `WaitingListForm` component; grant categories).
 
-Edit `src/components/layout/MainNavbar.tsx`:
+Register routes in `src/App.tsx`.
 
-- Primary links: About SCEF · CSR Funds Management · Programs · Impact · Local Chapters · Get Involved · Contact.
-- Get Involved dropdown: Become a Member, Volunteer, Internship, Donate, Sponsor a Program, Adopt a School, Join a Project, EduTourism, Start / Join Local Chapter, Diaspora Africa, Friends of Africa.
-- Slimmer height, smaller text, compact dropdowns, hamburger drawer on mobile.
-- Remove any placeholder logo; fall back to "SCEF — Santos Creations Educational Foundation" text mark if no real logo asset.
-- Keep "Become a Member" as a small CTA button.
+## Phase 4 — Cards & navigation consistency
 
-## Phase 4 — Trust/endorsement cleanup (Section 4)
+1. `MainNavbar.tsx` Programs dropdown: add the three new entries (Online Teaching Training, Special Needs Schools Intervention, Edu-Tourism Missions, 2027 Regional Waiting List & Grants). Preserve existing items. Keep styling untouched.
+2. `ProgramCardsRow.tsx` (Explore Our Programs): audit for duplicate images. Today `EduAid-Africa` and `My Career, My Life` both lean on classroom/mentorship photos that overlap with Teacher Corps. Generate unique, programme-specific images only where there is an actual duplicate, and swap them in. Add cards for the three new programmes if you want them on the landing row (otherwise they live only on `/programs` and in the dropdown — confirm preference).
+3. `pages/Programs.tsx` index — ensure all programmes are listed with unique images, taglines, and correct routes.
 
-Search the codebase for the unverified entities (UNESCO, UNICEF, AU, ADEA, GPE, ANCEFA, Education International Africa) and remove their mentions, logos, or any "Endorsed by" framing.
+## Phase 5 — Image deduplication
 
-Touch points likely include:
-- `src/pages/Partners.tsx`, `src/pages/PartnerWithUs.tsx`
-- `src/components/admin/EndorsementsAdmin.tsx` source data
-- Any homepage trust-bar section.
+Generate only what's needed (each is a cost):
+- `special-needs-classroom.jpg` — inclusive classroom with assistive learning.
+- `edu-tourism-missions.jpg` — students on an educational exchange / cultural learning trip.
+- `online-teaching-training.jpg` — teacher at laptop delivering an online lesson.
+- `regional-grants-map.jpg` — stylised Africa map with regional highlights.
+- Replacement for any confirmed duplicate on existing cards.
 
-If CSACEFA / FAWE Kenya appear and are verified, group them under "Trusted Education Collaborators"; otherwise remove the entire section.
+## Technical notes
 
-## Phase 5 — Homepage flow (Section 5)
+- All new sections use existing semantic tokens; no new colours, fonts, or radii.
+- All copy stays in English in components; i18n keys can be wired later if you want (out of scope unless you ask).
+- No backend, schema, or auth changes.
+- Routes kept stable; only additions for new pages.
 
-Edit `src/pages/Home.tsx` to enforce ordering:
+## Suggested execution order
 
-1. Hero · 2. Who We Are / CSR summary · 3. Get involved · 4. Explore Our Programs · 5. 2026–2027 Applications & Waitlists · 6. Recognition-to-Impact · 7. Impact Areas · 8. Local Chapter · 9. Women & Girls preview · 10. Monthly Calendar preview · 11. Final CTA · 12. Footer.
+Given the size, I recommend shipping in this order so you can review between phases:
 
-Re-order existing imports; do not delete sections.
+1. Phase 1 (scaffolding + Teacher Corps refactor to use it).
+2. Phase 4.1 (dropdown additions) + Phase 3 (three new pages as MVP).
+3. Phase 2 (refactor existing pages, one batch at a time — start with My Career My Life + Online Teaching Training since you called them out).
+4. Phase 5 image dedup + Phase 4.2/4.3 card polish.
 
-## Phase 6 — Explore Our Programs cards (Section 8)
+## Questions before I start
 
-Locate the Programs grid component used on Home and normalize:
-
-- Equal height, 16:9 image ratio, real or approved imagery only.
-- Cards: EduAid-Africa, NESA-Africa, Rebuild My School Africa, eLibrary Africa, My Career My Life, Send a Child to School, Women & Girls Empowerment, **Green Horizon Initiative Project** (new entry), Media & Advocacy (only if asset exists).
-- Small logo badges only; no oversized hero logos inside cards.
-
-## Phase 7 — Green Horizon completeness (Section 9)
-
-- Verify `/apply/green-horizon` page copy uses the safer impact wording; replace any "90% IDP reduction" sentence if present.
-- Verify all form fields listed in Section 9 are present; add any missing fields (permaculture interest, support-needed multi-select, applicant-type expanded list).
-- Confirm admin dashboard route exists; create `AdminGreenHorizonWaitlist.tsx` mirroring the Capacity/Vocational admin pattern if missing.
-
-## Phase 8 — `/apply` hub (Section 10)
-
-Create `src/pages/apply/ApplyHub.tsx` at route `/apply`:
-
-- Title + subheadline from Section 10.
-- 10 application cards listed (Capacity Training, Green Horizon, Vocational, My Career My Life, Local Chapter Membership, Ambassador, Volunteer, Internship, EduTourism, Sponsorship/Partnership Interest).
-- Each card links to its existing apply/conversion page; "coming soon" stub for routes that don't yet exist (no broken links).
-
-Register route in `src/App.tsx`.
-
-## Phase 9 — Local Chapter pathway section (Section 13)
-
-Add/update a homepage section "Join SCEF Through Your Local Chapter" with 3 cards (Member, Ambassador, Volunteer) linking to `/membership`, `/ambassadors`, `/volunteer`.
-
-## Phase 10 — Waitlist admin workflow (Section 14)
-
-Verify the existing `waitlist_submissions` table already has: `submission_status`, `admin_notes`, `reviewed_by`, `reviewed_at`, `created_at`, `updated_at`. Statuses must include: new, reviewed, shortlisted, accepted, rejected, waitlisted.
-
-If `shortlisted` / `waitlisted` are not in the current `validate_waitlist_status` trigger (currently only allows new/reviewed/accepted/rejected per db-functions), run a migration to extend the allowed list.
-
-Confirm RLS keeps admin notes private to admins only.
-
-## Phase 11 — CTA button system (Section 15) & Footer (Section 16)
-
-- Audit `Button` variants in `src/components/ui/button.tsx` and add a smaller default `size="sm"` use across hero/cards if oversized buttons remain.
-- Rewrite `src/components/layout/Footer.tsx` to the 5-column layout exactly as specified, with the 2026 copyright line.
-
-## Phase 12 — Image/logo cleanup (Section 17)
-
-Spot-check program cards and hero for AI-looking or placeholder imagery. Replace with existing real photos under `src/assets/photos/`. No new image generation in this pass — flag any gap to the user instead of inserting AI imagery.
-
-## Phase 13 — Page existence verification (Section 19)
-
-For each route in Section 19, confirm it resolves in `src/App.tsx`. For any missing route, add a minimal `ComingSoon`-style placeholder page so nav links don't 404. Existing rich pages are not modified.
-
----
-
-## What is intentionally NOT in this pass
-
-- No redesign of NESA / EduAid microsites.
-- No new image generation (per "no AI images" rule).
-- No changes to dashboards, wallet, governance content, or NESA categories.
-- No copy rewrites on pages outside the touch list above.
-
----
-
-## Open question before I start
-
-The scope here is very large (~12 files edited, ~3 new pages, 1 migration, governance + main nav + footer rewrites, trust-claim audit across multiple files). To keep this shippable in a single coordinated update without regressions, I propose to execute **Phases 1–7 + 10 + 11 (footer) + 13** in this turn — i.e. everything that directly affects the landing page experience, Green Horizon completeness, navigation, footer, trust cleanup, and waitlist admin integrity.
-
-Phases 8 (`/apply` hub), 9 (local chapter section), and 12 (image audit) would follow in a second turn so each turn stays reviewable.
-
-**Reply "go" to execute as proposed, or tell me to change the split (e.g. "all in one turn" / "only landing + nav this turn").**
+1. Should the three new programmes also appear as cards on the landing `Explore Our Programs` row, or only in the Programs dropdown + `/programs` index?
+2. For Phase 2, do you want me to do **all** existing programme pages in one go, or start with **My Career My Life** and **Online Teaching Training** and pause for review?
+3. Any fee amounts to use for Special Needs Intervention, Edu-Tourism, and Regional Grants pages, or should I show "Fees announced soon" placeholders?

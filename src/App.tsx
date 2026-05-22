@@ -85,6 +85,10 @@ import ELibraryNigeria from "./pages/programs/ELibraryNigeria";
 import InclusionAccess from "./pages/programs/InclusionAccess";
 import TrainingDevelopment from "./pages/programs/TrainingDevelopment";
 import MyCareerMyLifePage from "./pages/programs/MyCareerMyLife";
+import OnlineTeachingTraining from "./pages/programs/OnlineTeachingTraining";
+import SpecialNeedsSchoolsIntervention from "./pages/programs/SpecialNeedsSchoolsIntervention";
+import EduTourismMissions from "./pages/programs/EduTourismMissions";
+import RegionalWaitingListGrants2027 from "./pages/programs/RegionalWaitingListGrants2027";
 import MonthlyProgramPage from "./pages/calendar/MonthlyProgram";
 
 // Admin Pages
@@ -272,6 +276,10 @@ const App = () => (
               <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
               <Route path="/programs/training-development" element={<TrainingDevelopment />} />
               <Route path="/programs/my-career-my-life" element={<MyCareerMyLifePage />} />
+              <Route path="/programs/online-teaching-training" element={<OnlineTeachingTraining />} />
+              <Route path="/programs/special-needs-schools-intervention" element={<SpecialNeedsSchoolsIntervention />} />
+              <Route path="/programs/edu-tourism-missions" element={<EduTourismMissions />} />
+              <Route path="/programs/2027-regional-waiting-list-grants" element={<RegionalWaitingListGrants2027 />} />
               <Route path="/programs/school-wash" element={<SchoolWash />} />
 
               {/* Monthly Advocacy & Training Calendar */}
