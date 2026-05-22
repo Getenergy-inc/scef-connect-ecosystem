@@ -105,6 +105,8 @@ const cards: Card[] = [
     image: classroomPhoto,
     alt: "African classroom and school support program",
     accent: "navy",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa service logo",
   },
   {
     title: "eLibrary Africa",
@@ -116,6 +118,8 @@ const cards: Card[] = [
     image: girlsStemPhoto,
     alt: "Student using digital learning resources",
     accent: "blue",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa service logo",
   },
   {
     title: "Women & Girls Empowerment",
@@ -127,6 +131,8 @@ const cards: Card[] = [
     image: eduaidWebinar,
     alt: "Women and girls education webinar",
     accent: "green",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa service logo",
   },
   {
     title: "Green Horizon Initiative Project",
@@ -138,6 +144,8 @@ const cards: Card[] = [
     image: greenHorizonPhoto,
     alt: "Green Horizon agriculture livelihood and permaculture training project",
     accent: "green",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa service logo",
   },
   {
     title: "My Career, My Life",
@@ -149,6 +157,8 @@ const cards: Card[] = [
     image: mentorshipPhoto,
     alt: "Youth career guidance and mentorship",
     accent: "blue",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa service logo",
   },
   {
     title: "Send a Child to School",
@@ -160,6 +170,8 @@ const cards: Card[] = [
     image: sendChildPhoto,
     alt: "Send a Child to School scholarship program",
     accent: "navy",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa service logo",
   },
   {
     title: "Media & Advocacy",
