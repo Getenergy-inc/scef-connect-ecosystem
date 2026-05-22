@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Shirt, Utensils, GraduationCap } from "lucide-react";
+import { ArrowRight, BookOpen, Shirt, Utensils, GraduationCap, HeartHandshake, School, Users } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/button";
 import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
+import {
+  Section,
+  Prose,
+  CardGrid,
+  Safeguarding,
+  PartnershipBlock,
+  FinalCTA,
+} from "@/components/programs/template/ProgramSections";
+
 
 const includes = [
   { icon: GraduationCap, label: "School fees for one academic year" },
@@ -88,6 +97,96 @@ const SendAChildToSchool = () => (
         </Button>
       </div>
     </section>
+
+    <Section kicker="Purpose" title="Why Send a Child to School">
+      <Prose>
+        <p>
+          Across Africa, millions of children remain out of school because families cannot
+          afford fees, uniforms, books or a daily meal. SCEF's Send a Child to School pathway
+          turns one verified gift into a complete, year-long enrolment package delivered through
+          EduAid-Africa partner schools and chapter networks.
+        </p>
+        <p>
+          Each sponsorship is tracked, reported and tied to a real learner so that donors,
+          partners and chapters can see the impact of every contribution.
+        </p>
+      </Prose>
+    </Section>
+
+    <Section kicker="Service Tracks" title="Three Sponsorship Pathways">
+      <CardGrid
+        items={[
+          {
+            icon: GraduationCap,
+            title: "Individual Sponsorship",
+            body: "Sponsor one learner's full academic year — fees, books, uniform and meals.",
+          },
+          {
+            icon: School,
+            title: "Classroom Sponsorship",
+            body: "Fund an entire classroom of learners through one consolidated annual gift.",
+          },
+          {
+            icon: HeartHandshake,
+            title: "Corporate & CSR Sponsorship",
+            body: "Multi-year corporate sponsorships of cohorts, regions or special-needs learners.",
+          },
+        ]}
+      />
+    </Section>
+
+    <Section kicker="Safeguarding" title="Child Protection Commitment">
+      <Safeguarding
+        intro="Every sponsored learner is enrolled and monitored under SCEF's child safeguarding policy and EduAid-Africa partner-school standards."
+        rules={[
+          "Verified school placement and enrolment records",
+          "No direct donor-to-child contact without chaperone",
+          "Annual welfare and academic reporting",
+          "Confidential handling of learner data",
+          "Photographs only with guardian consent",
+          "Independent chapter-level monitoring",
+        ]}
+      />
+    </Section>
+
+    <Section kicker="Partnerships" title="Partner With Send a Child to School">
+      <PartnershipBlock
+        intro="We work with corporates, diaspora groups, faith communities, foundations and individuals to scale enrolment year on year."
+        categories={[
+          "Corporate & CSR sponsors",
+          "Foundations & philanthropies",
+          "Diaspora and faith networks",
+          "Local chapters and alumni",
+        ]}
+        support={[
+          "Annual sponsorship cohorts",
+          "Classroom and school packages",
+          "Uniform, books and meal drives",
+          "Special-needs learner support",
+        ]}
+      />
+    </Section>
+
+    <Section kicker="Impact Indicators" title="What We Measure">
+      <CardGrid
+        items={[
+          { icon: Users, title: "Learners Sponsored", body: "Annual cohort of fully sponsored primary and secondary learners across chapters." },
+          { icon: School, title: "Partner Schools", body: "Verified EduAid-Africa partner schools receiving sponsored enrolments." },
+          { icon: HeartHandshake, title: "Retention & Completion", body: "Year-on-year retention and completion rates for sponsored learners." },
+        ]}
+      />
+      <p className="mt-4 text-[13px] text-muted-foreground">Verified reporting in progress for the current cohort.</p>
+    </Section>
+
+    <FinalCTA
+      title="Send One Child. Change One Future."
+      body="Choose a sponsorship tier above or partner with SCEF to fund classrooms, schools and special-needs learners across Africa."
+      buttons={[
+        { label: "Sponsor Now", to: "/wallet/donate" },
+        { label: "Partner With Us", to: "/partner-with-us", variant: "secondary" },
+        { label: "Join SCEF", to: "/get-involved/membership", variant: "outline" },
+      ]}
+    />
 
     <ProgramAccountsSection
       groupIds={["eduaid"]}
