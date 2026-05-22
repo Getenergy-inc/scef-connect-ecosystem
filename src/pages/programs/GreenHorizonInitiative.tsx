@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
+import { ProgramTemplateAppendix } from "@/components/programs/template/ProgramTemplateAppendix";
 import { Button } from "@/components/ui/button";
 import {
   Sprout, Users, Leaf, HandCoins, ShieldCheck, MapPin, ArrowRight,
@@ -358,6 +359,7 @@ export default function GreenHorizonInitiative() {
               </div>
             </div>
           </section>
+          <ProgramTemplateAppendix programName="Green Horizon Initiative" />
         </main>
 
         <Footer />

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ProgramTemplateAppendix } from "@/components/programs/template/ProgramTemplateAppendix";
 import { ELibrarySearch } from "@/components/elibrary/ELibrarySearch";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { 
@@ -577,7 +578,8 @@ const ELibraryNigeria = () => {
             </div>
           </div>
         </section>
-      </main>
+          <ProgramTemplateAppendix programName="eLibrary Nigeria" />
+        </main>
 
       <Footer />
     </>
