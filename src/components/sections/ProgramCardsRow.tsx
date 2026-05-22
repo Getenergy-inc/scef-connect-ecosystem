@@ -12,6 +12,7 @@ import greenHorizonPhoto from "@/assets/green-horizon-agriculture.jpg";
 import teacherTrainingPhoto from "@/assets/photos/scef-classroom-teacher.jpg";
 import girlsStemPhoto from "@/assets/photos/scef-girls-stem.jpg";
 import mentorshipPhoto from "@/assets/photos/scef-volunteers-outreach.jpg";
+import teacherCorpsPhoto from "@/assets/photos/eduaid-teacher-corps.jpg";
 import sendChildPhoto from "@/assets/photos/scef-school-walk.jpg";
 
 type Accent = "navy" | "green" | "gold" | "blue";
