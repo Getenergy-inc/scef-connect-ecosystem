@@ -71,6 +71,7 @@ import LCS from "./pages/divisions/LCS";
 import NESAAfrica from "./pages/programs/NESAAfrica";
 import NesaTimeline2026 from "./pages/programs/NesaTimeline2026";
 import EduAidAfrica from "./pages/programs/EduAidAfrica";
+import EduAidAfricaTeacherCorps from "./pages/programs/EduAidAfricaTeacherCorps";
 import EduAidMasterTimeline from "./pages/programs/EduAidMasterTimeline";
 import WebinarRegister from "./pages/eduaid/WebinarRegister";
 import VolunteerMyCareerMyLife from "./pages/volunteer/MyCareerMyLife";
@@ -253,6 +254,8 @@ const App = () => (
               <Route path="/programs/nesa-africa/master-timeline" element={<NesaTimeline2026 />} />
               <Route path="/nesa-africa/master-timeline" element={<NesaTimeline2026 />} />
               <Route path="/programs/eduaid-africa" element={<EduAidAfrica />} />
+              <Route path="/programs/eduaid-africa-teacher-corps" element={<EduAidAfricaTeacherCorps />} />
+              <Route path="/eduaid-africa-teacher-corps" element={<EduAidAfricaTeacherCorps />} />
               <Route path="/programs/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/eduaid-africa/master-timeline" element={<EduAidMasterTimeline />} />
               <Route path="/eduaid-africa/webinar-register" element={<WebinarRegister />} />

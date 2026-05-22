@@ -69,6 +69,19 @@ const cards: Card[] = [
     badgeAlt: "EduAid-Africa logo",
   },
   {
+    title: "EduAid Africa Teacher Corps",
+    label: "Volunteer Movement",
+    description:
+      "Mobilising teachers, mentors, special needs experts, digital volunteers, diaspora professionals and friends of Africa to support schools and learners through physical and online education service.",
+    href: "/programs/eduaid-africa-teacher-corps",
+    cta: "Learn More",
+    image: mentorshipPhoto,
+    alt: "EduAid Africa Teacher Corps volunteers supporting schools",
+    accent: "green",
+    badge: eduaidLogo,
+    badgeAlt: "EduAid-Africa logo",
+  },
+  {
     title: "NESA-Africa",
     label: "Recognition & Awards",
     description:
