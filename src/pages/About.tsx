@@ -236,6 +236,24 @@ const About = () => {
               NESA-Africa creates recognition. EduAid-Africa creates impact. Together, they
               power SCEF's recognition-to-impact model.
             </p>
+
+            <div className="mt-8 rounded-xl border border-white/15 bg-white/[0.04] p-6 max-w-3xl mx-auto">
+              <p className="text-[14.5px] leading-relaxed text-white/85">
+                Through EduAid Africa, Santos Creations Educational Foundation supports initiatives
+                that advance Education for All in Africa. One of these initiatives is the
+                <strong className="text-scef-gold"> EduAid Africa Teacher Corps</strong>, a
+                volunteer teacher and education mentor movement that mobilises teachers, trained
+                volunteers, career mentors, special needs experts, digital learning professionals,
+                Africans in the diaspora and friends of Africa to support schools and learners
+                through safe, verified physical and online education service.
+              </p>
+              <Link
+                to="/programs/eduaid-africa-teacher-corps"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-scef-gold hover:underline"
+              >
+                Explore EduAid Africa Teacher Corps <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
           </div>
         </section>
 
