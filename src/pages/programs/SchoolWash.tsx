@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { HeaderScreenshot } from "@/components/layout/HeaderScreenshot";
 import { Footer } from "@/components/layout/Footer";
+import { ProgramTemplateAppendix } from "@/components/programs/template/ProgramTemplateAppendix";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -121,6 +122,7 @@ export default function SchoolWash() {
               </div>
             </div>
           </section>
+          <ProgramTemplateAppendix programName="School WASH & Sanitation" />
         </main>
 
         <Footer />
