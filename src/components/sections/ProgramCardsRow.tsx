@@ -28,6 +28,7 @@ type Card = {
   accent: Accent;
   badge?: string; // small logo badge overlay
   badgeAlt?: string;
+  badgeText?: string; // optional brand label shown beside the logo
   isVideo?: boolean;
   videoSrc?: string;
 };
