@@ -28,6 +28,7 @@ type Card = {
   accent: Accent;
   badge?: string; // small logo badge overlay
   badgeAlt?: string;
+  badgeText?: string; // optional brand label shown beside the logo
   isVideo?: boolean;
   videoSrc?: string;
 };
@@ -183,6 +184,9 @@ const cards: Card[] = [
     image: mediaPoster,
     alt: "SCEF media and advocacy video",
     accent: "navy",
+    badge: nesaLogo,
+    badgeAlt: "NESA-Africa TV service logo",
+    badgeText: "NESA-Africa TV",
     isVideo: true,
     videoSrc: mediaVideo,
   },
@@ -292,12 +296,19 @@ export const ProgramCardsRow = () => {
 
                   {/* Small brand badge overlay */}
                   {card.badge && (
-                    <div className="absolute top-3 left-3 flex h-10 w-10 items-center justify-center rounded-md bg-white/95 p-1 shadow-md ring-1 ring-black/5">
-                      <img
-                        src={card.badge}
-                        alt={card.badgeAlt ?? ""}
-                        className="h-full w-full object-contain"
-                      />
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-md bg-white/95 p-1 pr-2 shadow-md ring-1 ring-black/5">
+                      <div className="flex h-8 w-8 items-center justify-center">
+                        <img
+                          src={card.badge}
+                          alt={card.badgeAlt ?? ""}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                      {card.badgeText && (
+                        <span className="text-[10.5px] font-semibold uppercase tracking-wider text-scef-blue-darker">
+                          {card.badgeText}
+                        </span>
+                      )}
                     </div>
                   )}
 
