@@ -36,6 +36,7 @@ const NAV: NavItem[] = [
     children: [
       { name: "All Programs", href: "/programs", description: "Browse the full hub" },
       { name: "EduAid-Africa", href: "/programs/eduaid-africa", description: "Scholarships & CSR" },
+      { name: "EduAid Africa Teacher Corps", href: "/programs/eduaid-africa-teacher-corps", description: "Volunteer Teachers for Education for All in Africa" },
       { name: "NESA-Africa", href: "/programs/nesa-africa", description: "Continental awards engine" },
       { name: "Rebuild My School Africa", href: "/programs/rebuild-my-school-africa", description: "Infrastructure renewal" },
       { name: "eLibrary Africa", href: "/programs/elibrary-nigeria", description: "Knowledge hub" },
