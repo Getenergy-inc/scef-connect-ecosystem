@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Shirt, Utensils, GraduationCap } from "lucide-react";
+import { ArrowRight, BookOpen, Shirt, Utensils, GraduationCap, HeartHandshake, School, Users } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/button";
 import ProgramAccountsSection from "@/components/payments/ProgramAccountsSection";
+import {
+  Section,
+  Prose,
+  CardGrid,
+  Safeguarding,
+  PartnershipBlock,
+  FinalCTA,
+} from "@/components/programs/template/ProgramSections";
+
 
 const includes = [
   { icon: GraduationCap, label: "School fees for one academic year" },
