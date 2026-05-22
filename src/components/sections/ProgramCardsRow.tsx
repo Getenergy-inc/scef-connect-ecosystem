@@ -12,6 +12,7 @@ import greenHorizonPhoto from "@/assets/green-horizon-agriculture.jpg";
 import teacherTrainingPhoto from "@/assets/photos/scef-classroom-teacher.jpg";
 import girlsStemPhoto from "@/assets/photos/scef-girls-stem.jpg";
 import mentorshipPhoto from "@/assets/photos/scef-volunteers-outreach.jpg";
+import teacherCorpsPhoto from "@/assets/photos/eduaid-teacher-corps.jpg";
 import sendChildPhoto from "@/assets/photos/scef-school-walk.jpg";
 
 type Accent = "navy" | "green" | "gold" | "blue";
@@ -75,8 +76,8 @@ const cards: Card[] = [
       "Mobilising teachers, mentors, special needs experts, digital volunteers, diaspora professionals and friends of Africa to support schools and learners through physical and online education service.",
     href: "/programs/eduaid-africa-teacher-corps",
     cta: "Learn More",
-    image: mentorshipPhoto,
-    alt: "EduAid Africa Teacher Corps volunteers supporting schools",
+    image: teacherCorpsPhoto,
+    alt: "Volunteer educators mentoring learners through classroom and online education support across Africa.",
     accent: "green",
     badge: eduaidLogo,
     badgeAlt: "EduAid-Africa logo",
