@@ -287,12 +287,13 @@ const App = () => (
               
               {/* Chapters Routes */}
               <Route path="/local-chapters" element={<LocalChapters />} />
-              <Route path="/chapters" element={<Chapters />} />
+              <Route path="/chapters" element={<LocalChapters />} />
               <Route path="/chapters/join-online" element={<JoinOnline />} />
               <Route path="/chapters/join" element={<JoinOnline />} />
               <Route path="/chapters/signup" element={<ChapterSignup />} />
               <Route path="/get-involved/join-chapter/signup" element={<ChapterSignup />} />
               <Route path="/chapters/start" element={<StartChapter />} />
+              <Route path="/chapters/:slug" element={<ChapterDetail />} />
               
               {/* Media Routes */}
               <Route path="/media" element={<Media />} />
