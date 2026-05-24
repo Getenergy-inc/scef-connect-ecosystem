@@ -20,6 +20,7 @@ import LocalChapters from "./pages/LocalChapters";
 import JoinOnline from "./pages/chapters/JoinOnline";
 import ChapterSignup from "./pages/chapters/ChapterSignup";
 import Chapters from "./pages/Chapters";
+import ChapterDetail from "./pages/chapters/ChapterDetail";
 import Media from "./pages/Media";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
