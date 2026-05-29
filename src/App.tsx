@@ -198,6 +198,7 @@ import ComingSoon from "./pages/ComingSoon";
 // Phase 3 pages
 import Vision2037 from "./pages/about/Vision2037";
 import History from "./pages/about/History";
+import HistoryYear from "./pages/about/HistoryYear";
 import SendAChildToSchool from "./pages/programs/SendAChildToSchool";
 import MonthlyAdvocacy from "./pages/advocacy/MonthlyAdvocacy";
 import Volunteers from "./pages/Volunteers";
