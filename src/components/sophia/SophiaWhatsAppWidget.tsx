@@ -210,7 +210,7 @@ export const SophiaWhatsAppWidget = () => {
                         I may need a team member to assist with this. Would you like to connect?
                       </p>
                       <a
-                        href={buildWA(`Hello Sophia, please connect me with the ${m.escalation.department || "SCEF support"} desk. My question: ${messages.findLast?.((x) => x.role === "user")?.content ?? ""}`)}
+                        href={buildWA(`Hello Sophia, please connect me with the ${m.escalation.department || "SCEF support"} desk. My question: ${[...messages].reverse().find((x) => x.role === "user")?.content ?? ""}`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={openWA(
