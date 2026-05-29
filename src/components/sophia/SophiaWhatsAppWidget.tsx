@@ -64,7 +64,7 @@ const openWA = (url: string, meta?: { department?: string; category?: string }) 
   window.location.href = url;
 };
 
-};
+
 
 export const SophiaWhatsAppWidget = () => {
   const { pathname } = useLocation();
