@@ -231,6 +231,11 @@ Deno.serve(async (req) => {
       }
       return json({ error: "ai_error" }, 500);
     }
+
+    const matchedId = parsed.matched_faq_id && faqs.find((f: any) => f.id === parsed.matched_faq_id)
+      ? parsed.matched_faq_id
+      : null;
+
     if (matchedId) {
       const current = (faqs.find((f: any) => f.id === matchedId)?.view_count ?? 0) as number;
       try {
@@ -243,10 +248,6 @@ Deno.serve(async (req) => {
       }
     }
 
-
-    const matchedId = parsed.matched_faq_id && faqs.find((f: any) => f.id === parsed.matched_faq_id)
-      ? parsed.matched_faq_id
-      : null;
 
     const result = {
       answer: parsed.answer || "I don't have enough verified information to answer that yet. Would you like me to connect you to the right SCEF support desk?",
