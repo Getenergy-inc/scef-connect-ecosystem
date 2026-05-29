@@ -216,17 +216,18 @@ export const scefHistoryTimeline: HistoryYear[] = [
     project_types: ["Youth empowerment", "CSR/partnership"],
   }),
   y(2009, {
-    title: "Programme Consolidation",
-    short_summary: "Consolidation of media, tours and youth empowerment programmes.",
+    title: "Programme Consolidation & Naija Youth Tours",
+    short_summary:
+      "Consolidation of media, education advocacy and continued Naija Youth Tours (Nija Youth Tours) educational tourism programmes.",
     detailed_history:
-      "SCEF consolidated its media, youth tours and education advocacy work, refining systems for documentation, reporting and volunteer coordination.",
-    projects: ["Programme documentation", "Volunteer coordination systems"],
+      "SCEF consolidated its media, youth tours and education advocacy work, refining systems for documentation, reporting and volunteer coordination. Naija Youth Tours (Nija Youth Tours) continued as an educational tourism programme connecting young Nigerians with cultural heritage and learning sites.",
+    projects: ["Programme documentation", "Volunteer coordination systems", "Naija Youth Tours"],
     partners: ["AIESEC", "Local schools"],
     funding_support_status: "In-kind partner support",
     notes: "Direct funder not stated.",
-    impact_summary: "Stronger internal systems for SCEF programmes.",
-    related_programs: ["SCEF Operations"],
-    project_types: ["Education advocacy", "Youth empowerment"],
+    impact_summary: "Stronger internal systems and sustained Naija Youth Tours educational tourism reach.",
+    related_programs: ["SCEF Operations", "Naija Youth Tours"],
+    project_types: ["Education advocacy", "Youth empowerment", "Media education"],
   }),
   y(2010, {
     title: "Health-Education Partnership Engagement",
