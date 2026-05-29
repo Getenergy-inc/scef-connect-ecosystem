@@ -15,3 +15,6 @@ verify_jwt = false
 [functions.sophia-chat]
 verify_jwt = false
 
+[functions.sophia-track]
+verify_jwt = false
+

@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Pencil, Trash2, Plus, X, Inbox, MessageSquare } from "lucide-react";
+import { Pencil, Trash2, Plus, X, Inbox, MessageSquare, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SophiaAnalyticsPanel from "@/components/admin/sophia/SophiaAnalyticsPanel";
+
 
 interface Faq {
   id: string;
@@ -51,7 +53,8 @@ const empty: Partial<Faq> = {
   escalation_required: false,
 };
 
-export default function SophiaFAQAdmin() {
+  const [tab, setTab] = useState<"faqs" | "unanswered" | "analytics">("faqs");
+
   const [tab, setTab] = useState<"faqs" | "unanswered">("faqs");
   const [faqs, setFaqs] = useState<Faq[]>([]);
   const [unanswered, setUnanswered] = useState<Unanswered[]>([]);
@@ -143,7 +146,20 @@ export default function SophiaFAQAdmin() {
           <Inbox className="w-4 h-4 inline mr-2" />
           Unanswered ({unanswered.filter((u) => u.status === "pending_review").length})
         </button>
+        <button
+          onClick={() => setTab("analytics")}
+          className={cn(
+            "px-4 py-2 text-sm font-medium border-b-2 -mb-px",
+            tab === "analytics" ? "border-scef-gold text-scef-blue-darker" : "border-transparent text-muted-foreground"
+          )}
+        >
+          <BarChart3 className="w-4 h-4 inline mr-2" />
+          Analytics
+        </button>
       </div>
+
+      {tab === "analytics" && <SophiaAnalyticsPanel />}
+
 
       {tab === "faqs" && (
         <div className="space-y-4">

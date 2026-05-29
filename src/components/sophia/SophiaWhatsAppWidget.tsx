@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { MessageCircle, X, Send, ExternalLink, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
+import { trackSophia } from "@/lib/sophiaTrack";
+
 
 const HIDDEN_PREFIXES = ["/auth", "/dashboard", "/admin", "/staff", "/portal", "/chapter/inbox", "/messages"];
 const WA_NUMBER = "2348109765897";
@@ -40,8 +42,14 @@ const isInIframe = () => {
     return true;
   }
 };
-
-const openWA = (url: string) => (e: React.MouseEvent) => {
+const openWA = (url: string, meta?: { department?: string; category?: string }) => (e: React.MouseEvent) => {
+  trackSophia({
+    event_type: "whatsapp_click",
+    source_channel: "Sophia WhatsApp",
+    whatsapp_clicked: true,
+    escalation_department: meta?.department,
+    faq_category: meta?.category,
+  });
   if (!isInIframe()) return;
   e.preventDefault();
   try {
@@ -56,6 +64,8 @@ const openWA = (url: string) => (e: React.MouseEvent) => {
   window.location.href = url;
 };
 
+
+
 export const SophiaWhatsAppWidget = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
@@ -67,7 +77,6 @@ export const SophiaWhatsAppWidget = () => {
     { id: "welcome", role: "assistant", content: WELCOME },
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const t1 = setTimeout(() => setShowTip(true), 4000);
     const t2 = setTimeout(() => setShowTip(false), 12000);
@@ -84,6 +93,14 @@ export const SophiaWhatsAppWidget = () => {
   }, []);
 
   useEffect(() => {
+    if (open) {
+      trackSophia({ event_type: "chatbot_opened", source_channel: "Sophia Website Chatbot" });
+    }
+  }, [open]);
+
+
+
+  useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, sending]);
 
@@ -96,6 +113,12 @@ export const SophiaWhatsAppWidget = () => {
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setSending(true);
+    trackSophia({
+      event_type: "chatbot_message_sent",
+      source_channel: "Sophia Website Chatbot",
+      question_text: trimmed,
+    });
+
 
     const history = messages
       .filter((m) => m.id !== "welcome")
@@ -129,7 +152,26 @@ export const SophiaWhatsAppWidget = () => {
           : null,
       };
       setMessages((m) => [...m, assistantMsg]);
+
+      const escalate = !!data?.escalation_required;
+      trackSophia({
+        event_type: escalate ? "escalation_requested" : "auto_answer_given",
+        source_channel: "Sophia Website Chatbot",
+        question_text: trimmed,
+        faq_category: data?.matched_category || undefined,
+        matched_faq_id: data?.matched_faq_id || null,
+        escalation_required: escalate,
+        escalation_department: data?.escalation_department || undefined,
+      });
+      if (data?.unanswered) {
+        trackSophia({
+          event_type: "unanswered_question",
+          source_channel: "Sophia Website Chatbot",
+          question_text: trimmed,
+        });
+      }
     } catch (e) {
+
       console.error(e);
       setMessages((m) => [
         ...m,
