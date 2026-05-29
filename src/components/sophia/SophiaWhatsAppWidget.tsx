@@ -140,6 +140,9 @@ export const SophiaWhatsAppWidget = () => {
             : data?.answer || "I'm having trouble right now. Please try again or reach us on WhatsApp.",
         url: data?.related_url || undefined,
         escalation: data?.escalation_required
+          ? { department: data.escalation_department, departments: data.escalation_departments }
+          : null,
+      };
       setMessages((m) => [...m, assistantMsg]);
 
       const escalate = !!data?.escalation_required;
@@ -161,8 +164,6 @@ export const SophiaWhatsAppWidget = () => {
       }
     } catch (e) {
 
-      setMessages((m) => [...m, assistantMsg]);
-    } catch (e) {
       console.error(e);
       setMessages((m) => [
         ...m,
