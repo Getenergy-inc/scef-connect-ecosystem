@@ -146,7 +146,20 @@ const empty: Partial<Faq> = {
           <Inbox className="w-4 h-4 inline mr-2" />
           Unanswered ({unanswered.filter((u) => u.status === "pending_review").length})
         </button>
+        <button
+          onClick={() => setTab("analytics")}
+          className={cn(
+            "px-4 py-2 text-sm font-medium border-b-2 -mb-px",
+            tab === "analytics" ? "border-scef-gold text-scef-blue-darker" : "border-transparent text-muted-foreground"
+          )}
+        >
+          <BarChart3 className="w-4 h-4 inline mr-2" />
+          Analytics
+        </button>
       </div>
+
+      {tab === "analytics" && <SophiaAnalyticsPanel />}
+
 
       {tab === "faqs" && (
         <div className="space-y-4">
