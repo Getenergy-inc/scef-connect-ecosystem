@@ -305,15 +305,8 @@ Deno.serve(async (req) => {
       });
     }
 
-    if (matchedId) {
-      // Bump view counter (best effort)
-      await supabase.rpc("noop").catch(() => undefined);
-      await supabase
-        .from("sophia_faqs")
-        .update({ view_count: (faqs.find((f: any) => f.id === matchedId)?.view_count ?? 0) + 1 } as any)
-        .eq("id", matchedId)
-        .then(() => undefined, () => undefined);
-    }
+    // view_count already bumped above
+
 
     return json({ ...result, conversation_id: convo?.id ?? null });
   } catch (err) {
