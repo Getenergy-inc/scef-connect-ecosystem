@@ -53,7 +53,8 @@ const empty: Partial<Faq> = {
   escalation_required: false,
 };
 
-export default function SophiaFAQAdmin() {
+  const [tab, setTab] = useState<"faqs" | "unanswered" | "analytics">("faqs");
+
   const [tab, setTab] = useState<"faqs" | "unanswered">("faqs");
   const [faqs, setFaqs] = useState<Faq[]>([]);
   const [unanswered, setUnanswered] = useState<Unanswered[]>([]);
