@@ -244,17 +244,18 @@ export const scefHistoryTimeline: HistoryYear[] = [
     project_types: ["Education advocacy", "CSR/partnership", "Youth empowerment"],
   }),
   y(2011, {
-    title: "ESSPIN Programme Engagement Begins",
-    short_summary: "Engagement with ESSPIN as an education programme partner begins.",
+    title: "ESSPIN Programme Engagement & Naija Youth Tours",
+    short_summary:
+      "Engagement with ESSPIN as an education programme partner begins; Naija Youth Tours continues.",
     detailed_history:
-      "SCEF engaged with the Education Sector Support Programme in Nigeria (ESSPIN) as an education programme partner, contributing to advocacy and community education work. ESSPIN remains listed as an education programme partner unless direct grant, payment, contract or MoU evidence is documented.",
-    projects: ["Education sector advocacy"],
-    partners: ["ESSPIN (education programme partner)"],
+      "SCEF engaged with the Education Sector Support Programme in Nigeria (ESSPIN) as an education programme partner, contributing to advocacy and community education work. ESSPIN remains listed as an education programme partner unless direct grant, payment, contract or MoU evidence is documented. Naija Youth Tours (Nija Youth Tours) continued operating as SCEF's educational tourism programme for young Nigerians.",
+    projects: ["Education sector advocacy", "Naija Youth Tours"],
+    partners: ["ESSPIN (education programme partner)", "Local schools"],
     funding_support_status: "Programme partner support",
     notes: "ESSPIN listed as a programme partner, not a direct funder of SCEF.",
-    impact_summary: "Aligned SCEF with national education sector improvement work.",
-    related_programs: ["Education Advocacy"],
-    project_types: ["Education advocacy", "CSR/partnership"],
+    impact_summary: "Aligned SCEF with national education sector work while sustaining Naija Youth Tours.",
+    related_programs: ["Education Advocacy", "Naija Youth Tours"],
+    project_types: ["Education advocacy", "CSR/partnership", "Youth empowerment"],
   }),
   y(2012, {
     title: "Northern Nigeria Education Advocacy",
