@@ -140,9 +140,27 @@ export const SophiaWhatsAppWidget = () => {
             : data?.answer || "I'm having trouble right now. Please try again or reach us on WhatsApp.",
         url: data?.related_url || undefined,
         escalation: data?.escalation_required
-          ? { department: data.escalation_department, departments: data.escalation_departments }
-          : null,
-      };
+      setMessages((m) => [...m, assistantMsg]);
+
+      const escalate = !!data?.escalation_required;
+      trackSophia({
+        event_type: escalate ? "escalation_requested" : "auto_answer_given",
+        source_channel: "Sophia Website Chatbot",
+        question_text: trimmed,
+        faq_category: data?.matched_category || undefined,
+        matched_faq_id: data?.matched_faq_id || null,
+        escalation_required: escalate,
+        escalation_department: data?.escalation_department || undefined,
+      });
+      if (data?.unanswered) {
+        trackSophia({
+          event_type: "unanswered_question",
+          source_channel: "Sophia Website Chatbot",
+          question_text: trimmed,
+        });
+      }
+    } catch (e) {
+
       setMessages((m) => [...m, assistantMsg]);
     } catch (e) {
       console.error(e);
