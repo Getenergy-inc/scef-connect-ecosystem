@@ -11,3 +11,7 @@ verify_jwt = false
 
 [functions.submit-partnership-inquiry]
 verify_jwt = false
+
+[functions.sophia-chat]
+verify_jwt = false
+
