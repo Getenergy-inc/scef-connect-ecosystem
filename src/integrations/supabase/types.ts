@@ -3194,6 +3194,173 @@ export type Database = {
           },
         ]
       }
+      sophia_visitor_analytics: {
+        Row: {
+          audience_type: string | null
+          browser: string | null
+          city: string | null
+          country: string | null
+          country_code: string | null
+          created_at: string
+          device_type: string | null
+          escalation_department: string | null
+          escalation_required: boolean
+          event_label: string | null
+          event_type: string
+          faq_category: string | null
+          id: string
+          ip_hash: string | null
+          matched_faq_id: string | null
+          operating_system: string | null
+          page_title: string | null
+          page_url: string | null
+          question_text: string | null
+          referrer_url: string | null
+          region: string | null
+          related_program: string | null
+          session_id: string
+          source_channel: string | null
+          timezone: string | null
+          user_email: string | null
+          user_id: string | null
+          user_name: string | null
+          user_phone: string | null
+          visitor_id: string
+          whatsapp_clicked: boolean
+        }
+        Insert: {
+          audience_type?: string | null
+          browser?: string | null
+          city?: string | null
+          country?: string | null
+          country_code?: string | null
+          created_at?: string
+          device_type?: string | null
+          escalation_department?: string | null
+          escalation_required?: boolean
+          event_label?: string | null
+          event_type: string
+          faq_category?: string | null
+          id?: string
+          ip_hash?: string | null
+          matched_faq_id?: string | null
+          operating_system?: string | null
+          page_title?: string | null
+          page_url?: string | null
+          question_text?: string | null
+          referrer_url?: string | null
+          region?: string | null
+          related_program?: string | null
+          session_id: string
+          source_channel?: string | null
+          timezone?: string | null
+          user_email?: string | null
+          user_id?: string | null
+          user_name?: string | null
+          user_phone?: string | null
+          visitor_id: string
+          whatsapp_clicked?: boolean
+        }
+        Update: {
+          audience_type?: string | null
+          browser?: string | null
+          city?: string | null
+          country?: string | null
+          country_code?: string | null
+          created_at?: string
+          device_type?: string | null
+          escalation_department?: string | null
+          escalation_required?: boolean
+          event_label?: string | null
+          event_type?: string
+          faq_category?: string | null
+          id?: string
+          ip_hash?: string | null
+          matched_faq_id?: string | null
+          operating_system?: string | null
+          page_title?: string | null
+          page_url?: string | null
+          question_text?: string | null
+          referrer_url?: string | null
+          region?: string | null
+          related_program?: string | null
+          session_id?: string
+          source_channel?: string | null
+          timezone?: string | null
+          user_email?: string | null
+          user_id?: string | null
+          user_name?: string | null
+          user_phone?: string | null
+          visitor_id?: string
+          whatsapp_clicked?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sophia_visitor_analytics_matched_faq_id_fkey"
+            columns: ["matched_faq_id"]
+            isOneToOne: false
+            referencedRelation: "sophia_faqs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sophia_visitor_daily_summary: {
+        Row: {
+          country: string | null
+          country_code: string | null
+          created_at: string
+          id: string
+          summary_date: string
+          total_auto_answers: number
+          total_escalations: number
+          total_faq_views: number
+          total_page_views: number
+          total_questions: number
+          total_sessions: number
+          total_unanswered: number
+          total_visitors: number
+          total_whatsapp_clicks: number
+          unique_visitors: number
+          updated_at: string
+        }
+        Insert: {
+          country?: string | null
+          country_code?: string | null
+          created_at?: string
+          id?: string
+          summary_date: string
+          total_auto_answers?: number
+          total_escalations?: number
+          total_faq_views?: number
+          total_page_views?: number
+          total_questions?: number
+          total_sessions?: number
+          total_unanswered?: number
+          total_visitors?: number
+          total_whatsapp_clicks?: number
+          unique_visitors?: number
+          updated_at?: string
+        }
+        Update: {
+          country?: string | null
+          country_code?: string | null
+          created_at?: string
+          id?: string
+          summary_date?: string
+          total_auto_answers?: number
+          total_escalations?: number
+          total_faq_views?: number
+          total_page_views?: number
+          total_questions?: number
+          total_sessions?: number
+          total_unanswered?: number
+          total_visitors?: number
+          total_whatsapp_clicks?: number
+          unique_visitors?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sponsor_profiles: {
         Row: {
           budget_range: string | null
