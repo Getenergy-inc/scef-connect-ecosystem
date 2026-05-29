@@ -105,6 +105,12 @@ export const SophiaWhatsAppWidget = () => {
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setSending(true);
+    trackSophia({
+      event_type: "chatbot_message_sent",
+      source_channel: "Sophia Website Chatbot",
+      question_text: trimmed,
+    });
+
 
     const history = messages
       .filter((m) => m.id !== "welcome")
