@@ -90,7 +90,7 @@ export const SophiaWhatsAppWidget = () => {
     }
   }, [open]);
 
-  }, []);
+
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
