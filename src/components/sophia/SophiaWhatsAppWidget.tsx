@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { MessageCircle, X, Send, ExternalLink, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
+import { trackSophia } from "@/lib/sophiaTrack";
+
 
 const HIDDEN_PREFIXES = ["/auth", "/dashboard", "/admin", "/staff", "/portal", "/chapter/inbox", "/messages"];
 const WA_NUMBER = "2348109765897";
