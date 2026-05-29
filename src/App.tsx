@@ -481,6 +481,9 @@ const App = () => (
               {/* New IA placeholder routes (2026–2037 work plan) */}
               <Route path="/about/vision-2037" element={<Vision2037 />} />
               <Route path="/about/history" element={<History />} />
+              <Route path="/history" element={<History />} />
+              <Route path="/history/:year" element={<HistoryYear />} />
+              <Route path="/about/history/:year" element={<HistoryYear />} />
               <Route path="/volunteers" element={<Volunteers />} />
               <Route path="/programs/send-a-child-to-school" element={<SendAChildToSchool />} />
               <Route path="/advocacy" element={<ComingSoon title="Advocacy & Training" description="SCEF's monthly advocacy, training and capacity-building programs across Africa." />} />
