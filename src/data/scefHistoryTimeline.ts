@@ -230,17 +230,18 @@ export const scefHistoryTimeline: HistoryYear[] = [
     project_types: ["Education advocacy", "Youth empowerment", "Media education"],
   }),
   y(2010, {
-    title: "Health-Education Partnership Engagement",
-    short_summary: "Early engagement with PharmAccess on health-and-education linkages.",
+    title: "Health-Education Partnership & Naija Youth Tours",
+    short_summary:
+      "Early engagement with PharmAccess on health-and-education linkages, with Naija Youth Tours continuing.",
     detailed_history:
-      "SCEF engaged with PharmAccess on health-and-education linkages, recognising that learner wellbeing is foundational to learning outcomes. PharmAccess is listed as a programme partner.",
-    projects: ["Health-education advocacy"],
-    partners: ["PharmAccess (programme partner)"],
+      "SCEF engaged with PharmAccess on health-and-education linkages, recognising that learner wellbeing is foundational to learning outcomes. PharmAccess is listed as a programme partner. Naija Youth Tours (Nija Youth Tours) continued running educational tourism trips for Nigerian youth.",
+    projects: ["Health-education advocacy", "Naija Youth Tours"],
+    partners: ["PharmAccess (programme partner)", "Local schools"],
     funding_support_status: "Programme partner support",
     notes: "PharmAccess listed as a programme partner, not as a direct funder of SCEF.",
-    impact_summary: "Introduced health-education thinking into SCEF advocacy.",
-    related_programs: ["Health & Education"],
-    project_types: ["Education advocacy", "CSR/partnership"],
+    impact_summary: "Introduced health-education thinking and sustained Naija Youth Tours engagement.",
+    related_programs: ["Health & Education", "Naija Youth Tours"],
+    project_types: ["Education advocacy", "CSR/partnership", "Youth empowerment"],
   }),
   y(2011, {
     title: "ESSPIN Programme Engagement Begins",
