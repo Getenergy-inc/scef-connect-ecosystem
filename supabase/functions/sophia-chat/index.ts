@@ -231,15 +231,18 @@ Deno.serve(async (req) => {
       }
       return json({ error: "ai_error" }, 500);
     }
-
-    const aiJson = await aiResp.json();
-    const toolCall = aiJson.choices?.[0]?.message?.tool_calls?.[0];
-    let parsed: any = {};
-    try {
-      parsed = JSON.parse(toolCall?.function?.arguments ?? "{}");
-    } catch {
-      parsed = {};
+    if (matchedId) {
+      const current = (faqs.find((f: any) => f.id === matchedId)?.view_count ?? 0) as number;
+      try {
+        await supabase
+          .from("sophia_faqs")
+          .update({ view_count: current + 1 } as any)
+          .eq("id", matchedId);
+      } catch (_e) {
+        // best effort
+      }
     }
+
 
     const matchedId = parsed.matched_faq_id && faqs.find((f: any) => f.id === parsed.matched_faq_id)
       ? parsed.matched_faq_id
