@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Pencil, Trash2, Plus, X, Inbox, MessageSquare } from "lucide-react";
+import { Pencil, Trash2, Plus, X, Inbox, MessageSquare, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SophiaAnalyticsPanel from "@/components/admin/sophia/SophiaAnalyticsPanel";
+
 
 interface Faq {
   id: string;
