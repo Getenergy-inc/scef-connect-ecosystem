@@ -42,8 +42,14 @@ const isInIframe = () => {
     return true;
   }
 };
-
-const openWA = (url: string) => (e: React.MouseEvent) => {
+const openWA = (url: string, meta?: { department?: string; category?: string }) => (e: React.MouseEvent) => {
+  trackSophia({
+    event_type: "whatsapp_click",
+    source_channel: "Sophia WhatsApp",
+    whatsapp_clicked: true,
+    escalation_department: meta?.department,
+    faq_category: meta?.category,
+  });
   if (!isInIframe()) return;
   e.preventDefault();
   try {
@@ -56,6 +62,8 @@ const openWA = (url: string) => (e: React.MouseEvent) => {
     }
   } catch {}
   window.location.href = url;
+};
+
 };
 
 export const SophiaWhatsAppWidget = () => {
