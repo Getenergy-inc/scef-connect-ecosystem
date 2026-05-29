@@ -69,7 +69,6 @@ export const SophiaWhatsAppWidget = () => {
     { id: "welcome", role: "assistant", content: WELCOME },
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const t1 = setTimeout(() => setShowTip(true), 4000);
     const t2 = setTimeout(() => setShowTip(false), 12000);
@@ -83,6 +82,14 @@ export const SophiaWhatsAppWidget = () => {
       clearTimeout(t2);
       window.removeEventListener("sophia:open", h);
     };
+  }, []);
+
+  useEffect(() => {
+    if (open) {
+      trackSophia({ event_type: "chatbot_opened", source_channel: "Sophia Website Chatbot" });
+    }
+  }, [open]);
+
   }, []);
 
   useEffect(() => {
