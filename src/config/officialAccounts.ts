@@ -166,6 +166,7 @@ export const paymentPurposes: PaymentPurpose[] = [
   { label: "Send a Child to School", groups: ["eduaid"] },
   { label: "Rebuild My School Africa", groups: ["eduaid"] },
   { label: "Training / Webinar", groups: ["eduaid"] },
+  { label: "EduTourism Mission", groups: ["eduaid"] },
   { label: "NESA-Africa Sponsorship", groups: ["nesa"] },
   { label: "Gala Ticket", groups: ["nesa"] },
   { label: "NESA TV Support", groups: ["nesa"] },
