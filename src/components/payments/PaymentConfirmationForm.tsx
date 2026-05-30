@@ -8,28 +8,33 @@ const schema = z.object({
   fullName: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(255),
   phone: z.string().trim().min(5).max(40),
+  paymentMethod: z.string().min(1),
   purpose: z.string().min(1),
   program: z.string().min(1),
   amount: z.string().min(1).max(20),
   currency: z.string().min(1),
   account: z.string().min(1),
   paidOn: z.string().min(1),
+  bankOrWallet: z.string().min(1),
   notes: z.string().max(800).optional(),
 });
 
+const paymentMethods = ["Providus Bank Direct Transfer", "GFA Wallet"];
+
 const purposes = [
+  "SCEF Donation",
   "Membership",
   "Ambassador Registration",
-  "Donation",
-  "Sponsorship",
-  "Scholarship Support",
+  "Local Chapter Support",
+  "Advocacy Campaign",
+  "EduAid-Africa Scholarship",
   "Send a Child to School",
-  "School Adoption",
+  "Rebuild My School Africa",
+  "Training / Webinar",
   "NESA-Africa Sponsorship",
-  "Award Gala Ticket",
-  "Webinar Registration",
-  "Training Program",
-  "Advocacy Support",
+  "Gala Ticket",
+  "NESA TV Support",
+  "CSR Partnership",
   "Other",
 ];
 
@@ -66,16 +71,18 @@ export default function PaymentConfirmationForm() {
     >
       <Field name="fullName" label="Full Name" />
       <Field name="email" label="Email" type="email" />
-      <Field name="phone" label="Phone" />
+      <Field name="phone" label="Phone / WhatsApp" />
+      <Select name="paymentMethod" label="Payment Method" options={paymentMethods} />
       <Select name="purpose" label="Payment Purpose" options={purposes} />
       <Select
         name="program"
-        label="Program"
+        label="Service Paid For"
         options={officialAccounts.map((g) => g.shortName)}
       />
       <Field name="amount" label="Amount Paid" />
       <Select name="currency" label="Currency" options={["NGN", "USD", "GBP", "EUR"]} />
-      <Field name="account" label="Account Paid Into (last 4 digits)" />
+      <Field name="account" label="Account / Wallet Reference (last 4 digits or ref)" />
+      <Field name="bankOrWallet" label="Bank Used / Wallet Used" />
       <Field name="paidOn" label="Date of Payment" type="date" />
       <div className="sm:col-span-2">
         <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -111,7 +118,7 @@ export default function PaymentConfirmationForm() {
           disabled={submitting}
           className="inline-flex items-center justify-center rounded-lg bg-scef-blue-darker px-6 py-3 text-sm font-semibold text-white hover:bg-scef-blue disabled:opacity-60"
         >
-          {submitting ? "Submitting..." : "I Have Paid — Submit Confirmation"}
+          {submitting ? "Submitting..." : "Submit Payment Confirmation"}
         </button>
         <a
           href="https://wa.me/2348109765897"

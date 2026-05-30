@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Landmark, Eye, MessageCircle, ArrowRight } from "lucide-react";
+import { Heart, Landmark, Eye, MessageCircle, ArrowRight, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
 
@@ -8,23 +8,31 @@ const channels = [
     icon: Heart,
     title: "Donate Now",
     blurb: "One-time or recurring donation to SCEF education programs.",
-    href: "/wallet/donate?fund=scef",
+    href: "/donate",
     cta: "Give Today",
     external: false,
   },
   {
     icon: Landmark,
     title: "Pay via Providus Bank",
-    blurb: "Use verified Providus Bank accounts for SCEF, EduAid-Africa and NESA-Africa.",
+    blurb: "Verified Providus Bank accounts for SCEF, EduAid-Africa and NESA-Africa.",
     href: "/payments#official-accounts",
     cta: "Bank Transfer",
     external: false,
   },
   {
+    icon: Wallet,
+    title: "Pay with GFA Wallet",
+    blurb: "Secure wallet-based donations, memberships, sponsorships and gala tickets.",
+    href: "/wallet",
+    cta: "Open Wallet",
+    external: false,
+  },
+  {
     icon: Eye,
     title: "View Official Accounts",
-    blurb: "See all verified Naira, USD, GBP and EUR accounts by program and purpose.",
-    href: "/payments",
+    blurb: "All verified Naira, USD, GBP and EUR accounts by program and purpose.",
+    href: "/support-us/official-accounts",
     cta: "View Accounts",
     external: false,
   },
@@ -55,7 +63,7 @@ export const DonationChannels = () => {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {channels.map(({ icon: Icon, title, blurb, href, cta, external }) => {
             const inner = (
               <>

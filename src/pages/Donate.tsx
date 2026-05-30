@@ -16,43 +16,34 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLocale } from "@/contexts/LocaleContext";
-import { Heart, Shield, ExternalLink, Wallet, CheckCircle, AlertTriangle, Info } from "lucide-react";
+import { Heart, Shield, ExternalLink, Wallet, CheckCircle, AlertTriangle, Info, Landmark, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 import { toast } from "sonner";
 import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 import { logger } from "@/lib/logger";
+import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
 
 const donationAmounts = [5, 10, 25, 50, 100, 250, 500];
 
+// Only two approved public payment methods. Paystack, Flutterwave, Bancable,
+// and TranscertPay are hidden from public UI until reintroduced as approved gateways.
 const paymentProviders = [
   {
-    id: "paystack",
-    name: "Paystack",
-    description: "Card, Bank, USSD",
-    color: "bg-[#00C3F7]",
-    url: "https://paystack.com/pay/scef-donation",
+    id: "providus",
+    name: "Providus Bank Direct Transfer",
+    description: "Verified SCEF / EduAid-Africa / NESA-Africa accounts",
+    color: "bg-scef-blue-darker hover:bg-scef-blue text-white",
+    url: "/payments#official-accounts",
+    internal: true,
   },
   {
-    id: "flutterwave",
-    name: "Flutterwave",
-    description: "Card, Mobile Money",
-    color: "bg-[#F5A623]",
-    url: "https://flutterwave.com/pay/scef",
-  },
-  {
-    id: "bancable",
-    name: "Bancable",
-    description: "Direct Bank",
-    color: "bg-[#1A237E]",
-    url: "#",
-  },
-  {
-    id: "transcertpay",
-    name: "TranscertPay",
-    description: "International",
-    color: "bg-[#2E7D32]",
-    url: "#",
+    id: "gfa-wallet",
+    name: "Pay with GFA Wallet",
+    description: "Secure wallet-based payments & receipts",
+    color: "bg-scef-gold hover:bg-scef-gold-hover text-scef-blue-darker",
+    url: "/wallet",
+    internal: true,
   },
 ];
 
@@ -110,19 +101,17 @@ const Donate = () => {
       return;
     }
 
-    if (provider.url === "#") {
-      toast.info(`${provider.name} integration coming soon. Please try another payment method.`);
-      return;
-    }
-
     // Store designation for confirmation
     const finalDesignation = designation || "general";
     setConfirmedDesignation(getDesignationLabel(finalDesignation));
 
-    const paymentUrl = `${provider.url}?amount=${amount}&designation=${encodeURIComponent(finalDesignation)}`;
-    window.open(paymentUrl, "_blank");
-    toast.success(`Redirecting to ${provider.name}...`);
+    // Both approved methods are internal routes — pass amount/designation as query.
+    const sep = provider.url.includes("?") ? "&" : "?";
+    const target = `${provider.url}${provider.url.includes("#") ? "" : `${sep}amount=${amount}&designation=${encodeURIComponent(finalDesignation)}`}`;
+    navigate(target);
+    toast.success(`Continuing with ${provider.name}…`);
   };
+
 
   const handleDonate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -425,32 +414,52 @@ const Donate = () => {
                         </p>
                       </div>
 
-                      {/* Payment Provider Buttons */}
+                      {/* Payment Method Selector — 2 approved methods only */}
                       <div className="space-y-4 pt-4 border-t border-border">
-                        <div className="flex items-center gap-2 justify-center">
-                          <img src={gfaWalletLogo} alt="GFA" className="w-6 h-6 rounded object-contain" />
-                          <span className="text-sm font-semibold text-foreground">Pay via GFA Wallet</span>
+                        <div className="text-center">
+                          <p className="text-sm font-semibold text-foreground">How would you like to pay?</p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Choose Providus Bank Direct Transfer or GFA Wallet. All payments route to the
+                            correct verified SCEF, EduAid-Africa, or NESA-Africa account.
+                          </p>
                         </div>
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {paymentProviders.map((provider) => (
                             <button
                               key={provider.id}
                               type="button"
                               onClick={() => handlePaymentProvider(provider)}
                               disabled={loading}
-                              className={`${provider.color} text-white py-3 px-4 rounded-xl font-semibold transition-all hover:opacity-90 hover:shadow-lg active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2`}
-                              aria-label={`Pay with ${provider.name}`}
+                              className={`${provider.color} py-4 px-4 rounded-xl font-semibold transition-all hover:opacity-95 hover:shadow-lg active:scale-[0.98] disabled:opacity-50 flex flex-col items-center justify-center gap-1`}
+                              aria-label={provider.name}
                             >
-                              <span>{provider.name}</span>
-                              <ExternalLink className="w-4 h-4" />
+                              <span className="text-sm">{provider.name}</span>
+                              <span className="text-[11px] font-normal opacity-90">{provider.description}</span>
                             </button>
                           ))}
                         </div>
+                        <div className="flex flex-wrap justify-center gap-2 pt-1">
+                          <Link
+                            to="/payments#official-accounts"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker hover:text-scef-gold-dark"
+                          >
+                            <Landmark className="h-3.5 w-3.5" /> View Official Accounts
+                          </Link>
+                          <a
+                            href={SOPHIA_PAYMENT_WHATSAPP}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1f8f4d] hover:text-[#25D366]"
+                          >
+                            <MessageCircle className="h-3.5 w-3.5" /> Chat with Sophia
+                          </a>
+                        </div>
                         <p className="text-xs text-center text-muted-foreground">
-                          Select a payment provider above to complete your ${selectedAmount || customAmount || 0} donation
-                          {designation && ` for ${getDesignationLabel(designation)}`}
+                          Selected: ${selectedAmount || customAmount || 0}
+                          {designation && ` · ${getDesignationLabel(designation)}`}
                         </p>
                       </div>
+
 
                       {/* Governance Notice */}
                       <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
