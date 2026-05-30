@@ -29,18 +29,18 @@ interface Props {
  * GFA Wallet is the primary CTA. Bank transfer is shown as a secondary, manual option.
  */
 export default function GFAWalletPaySection({
-  primaryLabel = "Pay via GFA Wallet",
+  primaryLabel = "Request GFA Wallet Payment Link",
   fund,
   purpose,
-  title = "Pay Securely via GFA Wallet",
-  description = "GFA Wallet is the recommended payment option for faster tracking, official receipts, and program reporting. Bank transfer remains available for manual, institutional, and corporate payments.",
+  title = "Pay with GFA Wallet",
+  description = "GFA Wallet is available as an official payment option for SCEF, EduAid-Africa, and NESA-Africa donations, sponsorships, scholarships, training, gala tickets, membership payments, and CSR education contributions. The full wallet checkout interface is not yet connected to the website — please contact Sophia to request the correct GFA Wallet payment link or instruction.",
   bankAnchor,
   bare = false,
 }: Props) {
-  const params = new URLSearchParams();
-  if (fund) params.set("fund", fund);
-  if (purpose) params.set("purpose", purpose);
-  const donateHref = `/wallet/donate${params.toString() ? `?${params.toString()}` : ""}`;
+  const sophiaPurposeMsg = purpose
+    ? `Hello Sophia, I want to pay via GFA Wallet for ${purpose}${fund ? ` (${fund})` : ""}. Please send me the payment link.`
+    : `Hello Sophia, I want to pay via GFA Wallet${fund ? ` for ${fund}` : ""}. Please send me the payment link.`;
+  const donateHref = `https://wa.me/2348109765897?text=${encodeURIComponent(sophiaPurposeMsg)}`;
   const bankHref = bankAnchor ? `/payments#account-${bankAnchor}` : "/payments#official-accounts";
   const sophiaHref = `https://wa.me/2348109765897?text=${encodeURIComponent(
     "Hello Sophia, I need help with GFA Wallet payment.",
