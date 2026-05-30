@@ -155,25 +155,20 @@ export interface PaymentPurpose {
 }
 
 export const paymentPurposes: PaymentPurpose[] = [
+  { label: "SCEF Donation", groups: ["scef"] },
   { label: "Membership", groups: ["scef"] },
   { label: "Ambassador Registration", groups: ["scef"] },
-  { label: "Webinar Registration", groups: ["eduaid", "scef"] },
-  { label: "Training Program", groups: ["eduaid", "scef"] },
-  { label: "Donation", groups: ["scef", "eduaid", "nesa"] },
-  { label: "Sponsorship", groups: ["nesa", "scef"] },
-  { label: "Scholarship Support", groups: ["eduaid"] },
+  { label: "Local Chapter Support", groups: ["scef"] },
+  { label: "Advocacy Campaign", groups: ["scef"] },
+  { label: "EduAid-Africa Scholarship", groups: ["eduaid"] },
   { label: "Send a Child to School", groups: ["eduaid"] },
   { label: "Rebuild My School Africa", groups: ["eduaid"] },
-  { label: "School Adoption", groups: ["eduaid"] },
+  { label: "Training / Webinar", groups: ["eduaid"] },
   { label: "NESA-Africa Sponsorship", groups: ["nesa"] },
-  { label: "Award Gala Ticket", groups: ["nesa"] },
+  { label: "Gala Ticket", groups: ["nesa"] },
   { label: "NESA TV Support", groups: ["nesa"] },
-  { label: "ESG Advocacy", groups: ["scef"] },
-  { label: "Health Education Advocacy", groups: ["scef"] },
-  { label: "Local Chapter Support", groups: ["scef"] },
-  { label: "Teacher Wellbeing", groups: ["scef"] },
-  { label: "Girls Education Support", groups: ["eduaid"] },
-  { label: "Digital Learning Support", groups: ["eduaid", "gfa"] },
-  { label: "GFA Wallet / Technology Support", groups: ["gfa"] },
   { label: "CSR Partnership", groups: ["nesa", "scef"] },
 ];
+
+export const SOPHIA_PAYMENT_WHATSAPP =
+  "https://wa.me/2348109765897?text=Hello%20Sophia%2C%20I%20need%20help%20with%20payment%20on%20santoscreations.org";
