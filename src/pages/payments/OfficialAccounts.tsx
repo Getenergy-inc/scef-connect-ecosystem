@@ -26,13 +26,15 @@ import {
   Wallet,
   Landmark,
   Upload,
+  MessageCircle,
 } from "lucide-react";
 
 const heroCtas = [
-  { label: "Pay via GFA Wallet", to: "/wallet/donate", primary: true, icon: Wallet },
-  { label: "Donate via GFA Wallet", to: "/wallet/donate?fund=scef", icon: Wallet },
-  { label: "View Bank Transfer Details", to: "#official-accounts", icon: Landmark },
+  { label: "Donate Now", to: "/wallet/donate?fund=scef", primary: true, icon: Wallet },
+  { label: "Pay via Providus Bank", to: "#official-accounts", icon: Landmark },
+  { label: "View Official Accounts", to: "#official-accounts", icon: Landmark },
   { label: "Upload Proof of Payment", to: "#confirm-payment", icon: Upload },
+  { label: "Chat with Sophia", to: SOPHIA_PAYMENT_WHATSAPP, icon: MessageCircle, external: true },
 ];
 
 const categoryCards = [
