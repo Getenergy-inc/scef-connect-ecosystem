@@ -13,8 +13,10 @@ on:
       - "src/config/officialAccounts.ts"
       - "scripts/check-payment-routes.mjs"
       - "scripts/check-payment-routes.test.mjs"
-      - "scripts/edutourism-routing.test.mjs"
-      - ".github/workflows/payment-routes-guard.yml"
+      - "e2e/**"
+      - "playwright.config.ts"
+      - "package.json"
+      - "package-lock.json"
   push:
     branches: [main]
 
