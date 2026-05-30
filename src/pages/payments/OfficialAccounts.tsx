@@ -132,10 +132,12 @@ export default function OfficialAccountsPage() {
           </section>
 
           {/* GFA Wallet primary payment block */}
-          <GFAWalletPaySection
-            title="Pay Securely via GFA Wallet"
-            description="GFA Wallet is the recommended payment option for faster tracking, official receipts, and program reporting. Manual bank transfer remains available below for institutional and corporate payments."
-          />
+          <div id="gfa-wallet" className="scroll-mt-28">
+            <GFAWalletPaySection
+              title="Pay with GFA Wallet"
+              description="GFA Wallet is available as an official payment option for SCEF, EduAid-Africa, and NESA-Africa donations, sponsorships, scholarships, training payments, gala tickets, membership payments, and CSR education contributions. The full wallet checkout interface is not yet connected to the website — please contact Sophia to request the correct GFA Wallet payment link or instruction."
+            />
+          </div>
 
           {/* Section 1: Purpose Selector */}
           <section className="py-16">
