@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import OfficialAccountsTable from "@/components/payments/OfficialAccountsTable";
-import PaymentConfirmationForm from "@/components/payments/PaymentConfirmationForm";
+
 import GFAWalletPaySection from "@/components/payments/GFAWalletPaySection";
 import {
   AccountGroupId,
