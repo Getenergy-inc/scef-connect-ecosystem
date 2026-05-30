@@ -309,20 +309,41 @@ export default function OfficialAccountsPage() {
             </div>
           </section>
 
-          {/* Payment Confirmation Form */}
+          {/* Manual Payment Confirmation via Sophia */}
           <section id="confirm-payment" className="py-16">
-            <div className="container mx-auto px-4 max-w-4xl">
-              <div className="text-center mb-8">
-                <h2 className="font-display text-3xl font-bold text-scef-blue-darker">
-                  I Have Paid — Confirm Your Payment
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="rounded-2xl border-2 border-scef-gold/30 bg-scef-gold/5 p-8 md:p-10">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-scef-blue-darker">
+                  After Making Payment
                 </h2>
-                <p className="text-muted-foreground mt-3">
-                  Submit your details and upload your receipt so our team can issue
-                  confirmation, receipts, or sponsorship documentation.
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  After payment, please send your proof of payment to Sophia through WhatsApp for
+                  confirmation. Please include:
                 </p>
-              </div>
-              <div className="rounded-2xl border-2 border-border bg-card p-6 md:p-8">
-                <PaymentConfirmationForm />
+                <ul className="mt-4 space-y-2 text-sm text-foreground list-disc pl-5">
+                  <li>Your full name or organization name</li>
+                  <li>Payment purpose</li>
+                  <li>Service paid for: SCEF, EduAid-Africa, or NESA-Africa</li>
+                  <li>Amount paid</li>
+                  <li>Currency</li>
+                  <li>Account paid into or GFA Wallet reference</li>
+                  <li>Date of payment</li>
+                  <li>Proof of payment screenshot or receipt</li>
+                </ul>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  Receipts, sponsorship documentation, membership confirmation, and impact reports
+                  may be requested after payment confirmation.
+                </p>
+                <div className="mt-6">
+                  <a
+                    href={SOPHIA_PAYMENT_WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Confirm Payment with Sophia
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -340,21 +361,32 @@ export default function OfficialAccountsPage() {
                 across Africa.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                {[
-                  { label: "Donate Now", to: "/wallet/donate" },
-                  { label: "Become a Partner", to: "/partner-with-us" },
-                  { label: "Sponsor NESA-Africa", to: "/wallet/donate?fund=nesa-africa" },
-                  { label: "Support EduAid-Africa", to: "/wallet/donate?fund=eduaid" },
-                  { label: "Join the Movement", to: "/get-involved/membership" },
-                ].map((c) => (
-                  <Link
-                    key={c.label}
-                    to={c.to}
-                    className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
-                  >
-                    {c.label} <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
+                <Link
+                  to="/donate"
+                  className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
+                >
+                  Donate Now <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/get-involved/partner-with-scef"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10"
+                >
+                  Partner with SCEF <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/membership"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10"
+                >
+                  Become a Member <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={SOPHIA_PAYMENT_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] text-white px-5 py-3 text-sm font-semibold hover:bg-[#1ebe57]"
+                >
+                  <MessageCircle className="h-4 w-4" /> Chat with Sophia
+                </a>
               </div>
             </div>
           </section>
