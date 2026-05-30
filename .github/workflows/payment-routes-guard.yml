@@ -1,0 +1,28 @@
+name: Payment Routes Guard
+
+on:
+  pull_request:
+    paths:
+      - "src/pages/Donate.tsx"
+      - "src/pages/DonationSuccess.tsx"
+      - "src/pages/SupportUs.tsx"
+      - "src/pages/payments/**"
+      - "src/components/payments/**"
+      - "src/components/sections/DonationChannels.tsx"
+      - "src/components/eduaid/EduAidDonationSection.tsx"
+      - "scripts/check-payment-routes.mjs"
+      - ".github/workflows/payment-routes-guard.yml"
+  push:
+    branches: [main]
+
+jobs:
+  guard:
+    name: Block forms, uploads & DB writes on payment routes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run payment-routes static guard
+        run: node scripts/check-payment-routes.mjs
