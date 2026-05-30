@@ -85,10 +85,10 @@ export default function OfficialAccountsPage() {
   return (
     <>
       <Helmet>
-        <title>Support SCEF Through GFA Wallet — Payments & Bank Transfer</title>
+        <title>Official Donation, Sponsorship & Payment Channels — SCEF</title>
         <meta
           name="description"
-          content="Make secure payments, donations, sponsorships, registrations, memberships, and program contributions through GFA Wallet. Verified Providus Bank transfer details remain available for manual and institutional payments."
+          content="Support SCEF, EduAid-Africa, and NESA-Africa through verified Providus Bank accounts for donations, memberships, sponsorships, scholarships, training, advocacy, awards, and education impact programs."
         />
         <link rel="canonical" href="https://santoscreations.org/payments" />
       </Helmet>
