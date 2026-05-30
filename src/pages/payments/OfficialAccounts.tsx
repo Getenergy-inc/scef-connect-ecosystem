@@ -242,11 +242,13 @@ export default function OfficialAccountsPage() {
                 </p>
               </div>
               <div className="space-y-8">
-                {officialAccounts.map((g) => (
-                  <div id={`account-${g.id}`} key={g.id} className="scroll-mt-28">
-                    <OfficialAccountsTable groupIds={[g.id]} showFilters={false} />
-                  </div>
-                ))}
+                {officialAccounts
+                  .filter((g) => g.id !== "gfa")
+                  .map((g) => (
+                    <div id={`account-${g.id}`} key={g.id} className="scroll-mt-28">
+                      <OfficialAccountsTable groupIds={[g.id]} showFilters={false} />
+                    </div>
+                  ))}
               </div>
             </div>
           </section>
