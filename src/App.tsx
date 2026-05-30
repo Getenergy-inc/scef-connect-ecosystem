@@ -105,6 +105,7 @@ import StaffApprovals from "./pages/admin/StaffApprovals";
 // Resources
 import OrganizationalProfile from "./pages/resources/OrganizationalProfile";
 import Ambassador from "./pages/get-involved/Ambassador";
+import PartnerWithScef from "./pages/get-involved/PartnerWithScef";
 import AmbassadorApply from "./pages/ambassador/AmbassadorApply";
 import NRC from "./pages/get-involved/NRC";
 import Judge from "./pages/get-involved/Judge";
@@ -412,6 +413,8 @@ const App = () => (
               <Route path="/get-involved/judge" element={<Judge />} />
               <Route path="/get-involved/volunteer" element={<Volunteer />} />
               <Route path="/get-involved/join-chapter" element={<JoinOnline />} />
+              <Route path="/get-involved/partner-with-scef" element={<PartnerWithScef />} />
+              <Route path="/partner-with-scef" element={<PartnerWithScef />} />
               <Route path="/volunteer" element={<Volunteer />} />
               <Route path="/ambassador" element={<Ambassador />} />
               <Route path="/ambassadors" element={<Ambassador />} />
