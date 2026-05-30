@@ -106,7 +106,7 @@ const SupportUs = () => {
                   View Bank Transfer Details
                 </Link>
                 <Link to="/payments#confirm-payment" className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 text-white px-5 py-3 text-sm font-semibold hover:bg-white/10">
-                  Upload Proof of Payment
+                  Confirm Payment with Sophia
                 </Link>
               </div>
             </div>
