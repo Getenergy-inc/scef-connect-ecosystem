@@ -118,7 +118,7 @@ export default function PaymentConfirmationForm() {
           disabled={submitting}
           className="inline-flex items-center justify-center rounded-lg bg-scef-blue-darker px-6 py-3 text-sm font-semibold text-white hover:bg-scef-blue disabled:opacity-60"
         >
-          {submitting ? "Submitting..." : "I Have Paid — Submit Confirmation"}
+          {submitting ? "Submitting..." : "Submit Payment Confirmation"}
         </button>
         <a
           href="https://wa.me/2348109765897"
