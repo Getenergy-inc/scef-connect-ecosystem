@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import {
   Wallet,
   Landmark,
-  Upload,
-  FileCheck2,
   ShieldCheck,
   MessageCircle,
   ArrowRight,
@@ -31,18 +29,18 @@ interface Props {
  * GFA Wallet is the primary CTA. Bank transfer is shown as a secondary, manual option.
  */
 export default function GFAWalletPaySection({
-  primaryLabel = "Pay via GFA Wallet",
+  primaryLabel = "Request GFA Wallet Payment Link",
   fund,
   purpose,
-  title = "Pay Securely via GFA Wallet",
-  description = "GFA Wallet is the recommended payment option for faster tracking, official receipts, and program reporting. Bank transfer remains available for manual, institutional, and corporate payments.",
+  title = "Pay with GFA Wallet",
+  description = "GFA Wallet is available as an official payment option for SCEF, EduAid-Africa, and NESA-Africa donations, sponsorships, scholarships, training, gala tickets, membership payments, and CSR education contributions. The full wallet checkout interface is not yet connected to the website — please contact Sophia to request the correct GFA Wallet payment link or instruction.",
   bankAnchor,
   bare = false,
 }: Props) {
-  const params = new URLSearchParams();
-  if (fund) params.set("fund", fund);
-  if (purpose) params.set("purpose", purpose);
-  const donateHref = `/wallet/donate${params.toString() ? `?${params.toString()}` : ""}`;
+  const sophiaPurposeMsg = purpose
+    ? `Hello Sophia, I want to pay via GFA Wallet for ${purpose}${fund ? ` (${fund})` : ""}. Please send me the payment link.`
+    : `Hello Sophia, I want to pay via GFA Wallet${fund ? ` for ${fund}` : ""}. Please send me the payment link.`;
+  const donateHref = `https://wa.me/2348109765897?text=${encodeURIComponent(sophiaPurposeMsg)}`;
   const bankHref = bankAnchor ? `/payments#account-${bankAnchor}` : "/payments#official-accounts";
   const sophiaHref = `https://wa.me/2348109765897?text=${encodeURIComponent(
     "Hello Sophia, I need help with GFA Wallet payment.",
@@ -110,27 +108,18 @@ export default function GFAWalletPaySection({
             >
               <Landmark className="h-4 w-4" /> View Bank Transfer Details
             </Link>
-            <Link
-              to="/payments#confirm-payment"
-              className={`inline-flex items-center gap-2 rounded-lg border-2 px-5 py-3 text-sm font-semibold ${
-                bare
-                  ? "border-border text-scef-blue-darker hover:bg-muted"
-                  : "border-white/30 text-white hover:bg-white/10"
-              }`}
-              data-analytics="proof_upload_click"
-            >
-              <Upload className="h-4 w-4" /> Upload Proof of Payment
-            </Link>
             <a
-              href="mailto:support@santoscreations.org?subject=Request%20Payment%20Confirmation"
+              href={sophiaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 rounded-lg border-2 px-5 py-3 text-sm font-semibold ${
                 bare
                   ? "border-border text-scef-blue-darker hover:bg-muted"
                   : "border-white/30 text-white hover:bg-white/10"
               }`}
-              data-analytics="payment_confirmation_request"
+              data-analytics="sophia_wallet_support"
             >
-              <FileCheck2 className="h-4 w-4" /> Request Payment Confirmation
+              <MessageCircle className="h-4 w-4" /> Chat with Sophia for Wallet Payment Support
             </a>
           </div>
 

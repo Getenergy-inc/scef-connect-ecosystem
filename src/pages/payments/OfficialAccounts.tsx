@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import OfficialAccountsTable from "@/components/payments/OfficialAccountsTable";
-import PaymentConfirmationForm from "@/components/payments/PaymentConfirmationForm";
+
 import GFAWalletPaySection from "@/components/payments/GFAWalletPaySection";
 import {
   AccountGroupId,
@@ -19,21 +19,19 @@ import {
   HeartHandshake,
   GraduationCap,
   Award,
-  Cpu,
   FileCheck2,
   Receipt,
   ClipboardList,
   Wallet,
   Landmark,
-  Upload,
   MessageCircle,
 } from "lucide-react";
 
 const heroCtas = [
-  { label: "Donate Now", to: "/wallet/donate?fund=scef", primary: true, icon: Wallet },
+  { label: "Donate Now", to: "/donate", primary: true, icon: Wallet },
   { label: "Pay via Providus Bank", to: "#official-accounts", icon: Landmark },
+  { label: "Pay with GFA Wallet", to: "#gfa-wallet", icon: Wallet },
   { label: "View Official Accounts", to: "#official-accounts", icon: Landmark },
-  { label: "Upload Proof of Payment", to: "#confirm-payment", icon: Upload },
   { label: "Chat with Sophia", to: SOPHIA_PAYMENT_WHATSAPP, icon: MessageCircle, external: true },
 ];
 
@@ -55,12 +53,6 @@ const categoryCards = [
     icon: Award,
     title: "NESA-Africa",
     cta: "Sponsor NESA-Africa",
-  },
-  {
-    id: "gfa" as AccountGroupId,
-    icon: Cpu,
-    title: "GFA Wallet / Technology",
-    cta: "Support Digital Innovation",
   },
 ];
 
@@ -140,10 +132,12 @@ export default function OfficialAccountsPage() {
           </section>
 
           {/* GFA Wallet primary payment block */}
-          <GFAWalletPaySection
-            title="Pay Securely via GFA Wallet"
-            description="GFA Wallet is the recommended payment option for faster tracking, official receipts, and program reporting. Manual bank transfer remains available below for institutional and corporate payments."
-          />
+          <div id="gfa-wallet" className="scroll-mt-28">
+            <GFAWalletPaySection
+              title="Pay with GFA Wallet"
+              description="GFA Wallet is available as an official payment option for SCEF, EduAid-Africa, and NESA-Africa donations, sponsorships, scholarships, training payments, gala tickets, membership payments, and CSR education contributions. The full wallet checkout interface is not yet connected to the website — please contact Sophia to request the correct GFA Wallet payment link or instruction."
+            />
+          </div>
 
           {/* Section 1: Purpose Selector */}
           <section className="py-16">
@@ -179,12 +173,16 @@ export default function OfficialAccountsPage() {
                     {recommended.length > 1 ? "s" : ""}: {recommended.map((g) => g.shortName).join(", ")}.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <Link
-                      to={`/wallet/donate?purpose=${encodeURIComponent(purpose)}&fund=${recommended[0].id}`}
+                    <a
+                      href={`https://wa.me/2348109765897?text=${encodeURIComponent(
+                        `Hello Sophia, I want to pay via GFA Wallet for ${purpose}. Please send me the payment link.`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker text-sm font-semibold px-5 py-2.5 hover:bg-scef-gold-hover"
                     >
                       <Wallet className="h-4 w-4" /> Pay via GFA Wallet
-                    </Link>
+                    </a>
                     {recommended.map((g) => (
                       <a
                         key={g.id}
@@ -250,11 +248,13 @@ export default function OfficialAccountsPage() {
                 </p>
               </div>
               <div className="space-y-8">
-                {officialAccounts.map((g) => (
-                  <div id={`account-${g.id}`} key={g.id} className="scroll-mt-28">
-                    <OfficialAccountsTable groupIds={[g.id]} showFilters={false} />
-                  </div>
-                ))}
+                {officialAccounts
+                  .filter((g) => g.id !== "gfa")
+                  .map((g) => (
+                    <div id={`account-${g.id}`} key={g.id} className="scroll-mt-28">
+                      <OfficialAccountsTable groupIds={[g.id]} showFilters={false} />
+                    </div>
+                  ))}
               </div>
             </div>
           </section>
@@ -315,20 +315,41 @@ export default function OfficialAccountsPage() {
             </div>
           </section>
 
-          {/* Payment Confirmation Form */}
+          {/* Manual Payment Confirmation via Sophia */}
           <section id="confirm-payment" className="py-16">
-            <div className="container mx-auto px-4 max-w-4xl">
-              <div className="text-center mb-8">
-                <h2 className="font-display text-3xl font-bold text-scef-blue-darker">
-                  I Have Paid — Confirm Your Payment
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="rounded-2xl border-2 border-scef-gold/30 bg-scef-gold/5 p-8 md:p-10">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-scef-blue-darker">
+                  After Making Payment
                 </h2>
-                <p className="text-muted-foreground mt-3">
-                  Submit your details and upload your receipt so our team can issue
-                  confirmation, receipts, or sponsorship documentation.
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  After payment, please send your proof of payment to Sophia through WhatsApp for
+                  confirmation. Please include:
                 </p>
-              </div>
-              <div className="rounded-2xl border-2 border-border bg-card p-6 md:p-8">
-                <PaymentConfirmationForm />
+                <ul className="mt-4 space-y-2 text-sm text-foreground list-disc pl-5">
+                  <li>Your full name or organization name</li>
+                  <li>Payment purpose</li>
+                  <li>Service paid for: SCEF, EduAid-Africa, or NESA-Africa</li>
+                  <li>Amount paid</li>
+                  <li>Currency</li>
+                  <li>Account paid into or GFA Wallet reference</li>
+                  <li>Date of payment</li>
+                  <li>Proof of payment screenshot or receipt</li>
+                </ul>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  Receipts, sponsorship documentation, membership confirmation, and impact reports
+                  may be requested after payment confirmation.
+                </p>
+                <div className="mt-6">
+                  <a
+                    href={SOPHIA_PAYMENT_WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Confirm Payment with Sophia
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -346,21 +367,32 @@ export default function OfficialAccountsPage() {
                 across Africa.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                {[
-                  { label: "Donate Now", to: "/wallet/donate" },
-                  { label: "Become a Partner", to: "/partner-with-us" },
-                  { label: "Sponsor NESA-Africa", to: "/wallet/donate?fund=nesa-africa" },
-                  { label: "Support EduAid-Africa", to: "/wallet/donate?fund=eduaid" },
-                  { label: "Join the Movement", to: "/get-involved/membership" },
-                ].map((c) => (
-                  <Link
-                    key={c.label}
-                    to={c.to}
-                    className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
-                  >
-                    {c.label} <ArrowRight className="h-4 w-4" />
-                  </Link>
-                ))}
+                <Link
+                  to="/donate"
+                  className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
+                >
+                  Donate Now <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/get-involved/partner-with-scef"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10"
+                >
+                  Partner with SCEF <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/membership"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10"
+                >
+                  Become a Member <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={SOPHIA_PAYMENT_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] text-white px-5 py-3 text-sm font-semibold hover:bg-[#1ebe57]"
+                >
+                  <MessageCircle className="h-4 w-4" /> Chat with Sophia
+                </a>
               </div>
             </div>
           </section>
