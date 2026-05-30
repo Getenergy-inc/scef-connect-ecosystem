@@ -3,7 +3,7 @@ import assert from "node:assert";
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { scanPaymentRoutes, RULES } from "./check-payment-routes.mjs";
+import { scanPaymentRoutes } from "./check-payment-routes.mjs";
 
 // ---------------------------------------------------------------------------
 // Helpers
