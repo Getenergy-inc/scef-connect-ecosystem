@@ -413,6 +413,8 @@ const App = () => (
               <Route path="/get-involved/judge" element={<Judge />} />
               <Route path="/get-involved/volunteer" element={<Volunteer />} />
               <Route path="/get-involved/join-chapter" element={<JoinOnline />} />
+              <Route path="/get-involved/partner-with-scef" element={<PartnerWithScef />} />
+              <Route path="/partner-with-scef" element={<PartnerWithScef />} />
               <Route path="/volunteer" element={<Volunteer />} />
               <Route path="/ambassador" element={<Ambassador />} />
               <Route path="/ambassadors" element={<Ambassador />} />
