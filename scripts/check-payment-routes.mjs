@@ -88,47 +88,59 @@ function walk(p, out = []) {
   return out;
 }
 
-const files = TARGETS.flatMap((t) => walk(join(ROOT, t)));
-const violations = [];
+export function scanPaymentRoutes(root, targets) {
+  const files = targets.flatMap((t) => walk(join(root, t)));
+  const violations = [];
 
-for (const file of files) {
-  const src = readFileSync(file, "utf8");
-  // Strip line/block comments to avoid false positives in documentation.
-  const stripped = src
-    .replace(/\/\*[\s\S]*?\*\//g, "")
-    .replace(/(^|[^:])\/\/.*$/gm, "$1");
+  for (const file of files) {
+    const src = readFileSync(file, "utf8");
+    // Strip line/block comments to avoid false positives in documentation.
+    const stripped = src
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/(^|[^:])\/\/.*$/gm, "$1");
 
-  const lines = stripped.split("\n");
-  for (const rule of RULES) {
-    lines.forEach((line, i) => {
-      if (rule.regex.test(line)) {
-        violations.push({
-          file: relative(ROOT, file),
-          line: i + 1,
-          rule: rule.id,
-          label: rule.label,
-          snippet: line.trim().slice(0, 160),
-        });
-      }
-    });
+    const lines = stripped.split("\n");
+    for (const rule of RULES) {
+      lines.forEach((line, i) => {
+        if (rule.regex.test(line)) {
+          violations.push({
+            file: relative(root, file),
+            line: i + 1,
+            rule: rule.id,
+            label: rule.label,
+            snippet: line.trim().slice(0, 160),
+          });
+        }
+      });
+    }
   }
+
+  return { files, violations };
 }
 
-if (violations.length === 0) {
-  console.log(
-    `✅ payment-routes guard: ${files.length} file(s) scanned — no forbidden ` +
-      `forms, uploads, or DB writes detected.`
+function reportAndExit({ files, violations }) {
+  if (violations.length === 0) {
+    console.log(
+      `✅ payment-routes guard: ${files.length} file(s) scanned — no forbidden ` +
+        `forms, uploads, or DB writes detected.`
+    );
+    process.exit(0);
+  }
+
+  console.error(
+    `❌ payment-routes guard: ${violations.length} violation(s) found.\n` +
+      `Payment surfaces must stay static (Providus + GFA Wallet + Sophia WhatsApp only).\n`
   );
-  process.exit(0);
+  for (const v of violations) {
+    console.error(`  • [${v.rule}] ${v.file}:${v.line}`);
+    console.error(`      ${v.label}`);
+    console.error(`      → ${v.snippet}`);
+  }
+  process.exit(1);
 }
 
-console.error(
-  `❌ payment-routes guard: ${violations.length} violation(s) found.\n` +
-    `Payment surfaces must stay static (Providus + GFA Wallet + Sophia WhatsApp only).\n`
-);
-for (const v of violations) {
-  console.error(`  • [${v.rule}] ${v.file}:${v.line}`);
-  console.error(`      ${v.label}`);
-  console.error(`      → ${v.snippet}`);
+const isMain = import.meta.url === new URL(process.argv[1], "file://").href;
+
+if (isMain) {
+  reportAndExit(scanPaymentRoutes(ROOT, TARGETS));
 }
-process.exit(1);
