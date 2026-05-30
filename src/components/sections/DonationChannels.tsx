@@ -1,35 +1,40 @@
 import { Link } from "react-router-dom";
-import { Heart, Landmark, UserPlus, Sparkles, ArrowRight } from "lucide-react";
+import { Heart, Landmark, Eye, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
 
 const channels = [
   {
     icon: Heart,
     title: "Donate Now",
-    blurb: "One-time or recurring donation to general SCEF programs.",
-    href: "/donate",
+    blurb: "One-time or recurring donation to SCEF education programs.",
+    href: "/wallet/donate?fund=scef",
     cta: "Give Today",
+    external: false,
   },
   {
     icon: Landmark,
-    title: "Official Bank Accounts",
-    blurb: "Verified SCEF accounts for transfers, sponsorships and CSR funding.",
-    href: "/support-us/bank-accounts",
+    title: "Pay via Providus Bank",
+    blurb: "Use verified Providus Bank accounts for SCEF, EduAid-Africa and NESA-Africa.",
+    href: "/payments#official-accounts",
+    cta: "Bank Transfer",
+    external: false,
+  },
+  {
+    icon: Eye,
+    title: "View Official Accounts",
+    blurb: "See all verified Naira, USD, GBP and EUR accounts by program and purpose.",
+    href: "/payments",
     cta: "View Accounts",
+    external: false,
   },
   {
-    icon: UserPlus,
-    title: "Pay Membership Fee",
-    blurb: "Renew or activate your SCEF membership securely via the GFA Wallet.",
-    href: "/membership",
-    cta: "Pay Membership",
-  },
-  {
-    icon: Sparkles,
-    title: "Sponsor a Program",
-    blurb: "Direct your support to NESA-Africa, EduAid, RMSA, MCML or eLibrary.",
-    href: "/support-us",
-    cta: "Choose a Program",
+    icon: MessageCircle,
+    title: "Chat with Sophia",
+    blurb: "Get payment help, receipts, and sponsorship guidance on WhatsApp.",
+    href: SOPHIA_PAYMENT_WHATSAPP,
+    cta: "Open WhatsApp",
+    external: true,
   },
 ];
 
@@ -51,27 +56,36 @@ export const DonationChannels = () => {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {channels.map(({ icon: Icon, title, blurb, href, cta }) => (
-            <Link
-              key={title}
-              to={href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md"
-            >
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
-              </div>
-              <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker">
-                {title}
-              </h3>
-              <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">
-                {blurb}
-              </p>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker group-hover:text-scef-gold-dark">
-                {cta}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-          ))}
+          {channels.map(({ icon: Icon, title, blurb, href, cta, external }) => {
+            const inner = (
+              <>
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker">
+                  {title}
+                </h3>
+                <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">
+                  {blurb}
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker group-hover:text-scef-gold-dark">
+                  {cta}
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </>
+            );
+            const cls =
+              "group flex flex-col rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md";
+            return external ? (
+              <a key={title} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+                {inner}
+              </a>
+            ) : (
+              <Link key={title} to={href} className={cls}>
+                {inner}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="mt-8 text-center">
