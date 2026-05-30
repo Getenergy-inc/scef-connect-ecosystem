@@ -108,27 +108,18 @@ export default function GFAWalletPaySection({
             >
               <Landmark className="h-4 w-4" /> View Bank Transfer Details
             </Link>
-            <Link
-              to="/payments#confirm-payment"
-              className={`inline-flex items-center gap-2 rounded-lg border-2 px-5 py-3 text-sm font-semibold ${
-                bare
-                  ? "border-border text-scef-blue-darker hover:bg-muted"
-                  : "border-white/30 text-white hover:bg-white/10"
-              }`}
-              data-analytics="proof_upload_click"
-            >
-              <Upload className="h-4 w-4" /> Upload Proof of Payment
-            </Link>
             <a
-              href="mailto:support@santoscreations.org?subject=Request%20Payment%20Confirmation"
+              href={sophiaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 rounded-lg border-2 px-5 py-3 text-sm font-semibold ${
                 bare
                   ? "border-border text-scef-blue-darker hover:bg-muted"
                   : "border-white/30 text-white hover:bg-white/10"
               }`}
-              data-analytics="payment_confirmation_request"
+              data-analytics="sophia_wallet_support"
             >
-              <FileCheck2 className="h-4 w-4" /> Request Payment Confirmation
+              <MessageCircle className="h-4 w-4" /> Chat with Sophia for Wallet Payment Support
             </a>
           </div>
 
