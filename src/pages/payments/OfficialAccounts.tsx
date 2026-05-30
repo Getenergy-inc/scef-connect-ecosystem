@@ -11,6 +11,7 @@ import {
   accountGroupById,
   paymentPurposes,
   officialAccounts,
+  SOPHIA_PAYMENT_WHATSAPP,
 } from "@/config/officialAccounts";
 import {
   ArrowRight,
