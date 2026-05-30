@@ -8,28 +8,33 @@ const schema = z.object({
   fullName: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(255),
   phone: z.string().trim().min(5).max(40),
+  paymentMethod: z.string().min(1),
   purpose: z.string().min(1),
   program: z.string().min(1),
   amount: z.string().min(1).max(20),
   currency: z.string().min(1),
   account: z.string().min(1),
   paidOn: z.string().min(1),
+  bankOrWallet: z.string().min(1),
   notes: z.string().max(800).optional(),
 });
 
+const paymentMethods = ["Providus Bank Direct Transfer", "GFA Wallet"];
+
 const purposes = [
+  "SCEF Donation",
   "Membership",
   "Ambassador Registration",
-  "Donation",
-  "Sponsorship",
-  "Scholarship Support",
+  "Local Chapter Support",
+  "Advocacy Campaign",
+  "EduAid-Africa Scholarship",
   "Send a Child to School",
-  "School Adoption",
+  "Rebuild My School Africa",
+  "Training / Webinar",
   "NESA-Africa Sponsorship",
-  "Award Gala Ticket",
-  "Webinar Registration",
-  "Training Program",
-  "Advocacy Support",
+  "Gala Ticket",
+  "NESA TV Support",
+  "CSR Partnership",
   "Other",
 ];
 
