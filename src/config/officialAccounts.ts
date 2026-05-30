@@ -81,6 +81,7 @@ export const officialAccounts: AccountGroup[] = [
       { label: "Send a Child to School", to: "/wallet/donate?fund=scholarships" },
       { label: "Adopt a School", to: "/wallet/donate?fund=rmsa" },
       { label: "Sponsor Teacher Training", to: "/wallet/donate?fund=training" },
+      { label: "Join an EduTourism Mission", to: "/programs/edutourism-missions" },
     ],
     accounts: [
       { currency: "NGN", currencyLabel: "NGN / Naira", accountNumber: "1305744507", purpose: "Scholarships & Education Support" },
