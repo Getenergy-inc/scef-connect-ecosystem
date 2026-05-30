@@ -74,6 +74,7 @@ export const officialAccounts: AccountGroup[] = [
       "TVET & vocational support",
       "My Career, My Life",
       "EduAid webinars & training",
+      "EduTourism Missions",
     ],
     ctas: [
       { label: "Support EduAid-Africa", to: "/wallet/donate?fund=eduaid" },
