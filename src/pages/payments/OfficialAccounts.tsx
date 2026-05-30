@@ -173,12 +173,16 @@ export default function OfficialAccountsPage() {
                     {recommended.length > 1 ? "s" : ""}: {recommended.map((g) => g.shortName).join(", ")}.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <Link
-                      to={`/wallet/donate?purpose=${encodeURIComponent(purpose)}&fund=${recommended[0].id}`}
+                    <a
+                      href={`https://wa.me/2348109765897?text=${encodeURIComponent(
+                        `Hello Sophia, I want to pay via GFA Wallet for ${purpose}. Please send me the payment link.`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker text-sm font-semibold px-5 py-2.5 hover:bg-scef-gold-hover"
                     >
                       <Wallet className="h-4 w-4" /> Pay via GFA Wallet
-                    </Link>
+                    </a>
                     {recommended.map((g) => (
                       <a
                         key={g.id}
