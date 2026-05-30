@@ -302,6 +302,14 @@ export default function OfficialAccountsPage() {
                   >
                     Request Impact Report
                   </a>
+                  <a
+                    href={SOPHIA_PAYMENT_WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-4 py-2 text-sm font-semibold hover:bg-scef-gold-hover"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Chat with Sophia
+                  </a>
                 </div>
               </div>
             </div>
