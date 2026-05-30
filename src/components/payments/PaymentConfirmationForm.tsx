@@ -71,16 +71,18 @@ export default function PaymentConfirmationForm() {
     >
       <Field name="fullName" label="Full Name" />
       <Field name="email" label="Email" type="email" />
-      <Field name="phone" label="Phone" />
+      <Field name="phone" label="Phone / WhatsApp" />
+      <Select name="paymentMethod" label="Payment Method" options={paymentMethods} />
       <Select name="purpose" label="Payment Purpose" options={purposes} />
       <Select
         name="program"
-        label="Program"
+        label="Service Paid For"
         options={officialAccounts.map((g) => g.shortName)}
       />
       <Field name="amount" label="Amount Paid" />
       <Select name="currency" label="Currency" options={["NGN", "USD", "GBP", "EUR"]} />
-      <Field name="account" label="Account Paid Into (last 4 digits)" />
+      <Field name="account" label="Account / Wallet Reference (last 4 digits or ref)" />
+      <Field name="bankOrWallet" label="Bank Used / Wallet Used" />
       <Field name="paidOn" label="Date of Payment" type="date" />
       <div className="sm:col-span-2">
         <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
