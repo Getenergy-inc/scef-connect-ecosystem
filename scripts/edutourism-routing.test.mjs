@@ -84,3 +84,22 @@ test("No other account group claims the EduTourism Mission purpose", () => {
   );
   assert.equal(others.length, 0);
 });
+
+test("Non-EduTourism Mission purposes that do not belong to eduaid do not route to EduAid-Africa", () => {
+  const nonEduaidPurposes = paymentPurposes.filter(
+    (p) => p.label !== "EduTourism Mission" && !p.groups.includes("eduaid"),
+  );
+  assert.ok(
+    nonEduaidPurposes.length > 0,
+    "There must be at least one non-eduaid purpose to validate",
+  );
+  for (const purpose of nonEduaidPurposes) {
+    for (const groupId of purpose.groups) {
+      assert.notEqual(
+        groupId,
+        "eduaid",
+        `Purpose "${purpose.label}" must not route to EduAid-Africa`,
+      );
+    }
+  }
+});
