@@ -7,7 +7,7 @@ import {
   Building2, Megaphone, Leaf, Stethoscope, HandHeart, Radio, Laptop,
   ArrowRight, MessageCircle, FileText, CreditCard,
 } from "lucide-react";
-import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
+
 
 const SOPHIA_PARTNER_WHATSAPP =
   "https://wa.me/2348109765897?text=Hello%20Sophia%2C%20I%20want%20to%20partner%20with%20SCEF";
