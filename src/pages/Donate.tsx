@@ -16,43 +16,34 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLocale } from "@/contexts/LocaleContext";
-import { Heart, Shield, ExternalLink, Wallet, CheckCircle, AlertTriangle, Info } from "lucide-react";
+import { Heart, Shield, ExternalLink, Wallet, CheckCircle, AlertTriangle, Info, Landmark, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
 import { toast } from "sonner";
 import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
 import { logger } from "@/lib/logger";
+import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
 
 const donationAmounts = [5, 10, 25, 50, 100, 250, 500];
 
+// Only two approved public payment methods. Paystack, Flutterwave, Bancable,
+// and TranscertPay are hidden from public UI until reintroduced as approved gateways.
 const paymentProviders = [
   {
-    id: "paystack",
-    name: "Paystack",
-    description: "Card, Bank, USSD",
-    color: "bg-[#00C3F7]",
-    url: "https://paystack.com/pay/scef-donation",
+    id: "providus",
+    name: "Providus Bank Direct Transfer",
+    description: "Verified SCEF / EduAid-Africa / NESA-Africa accounts",
+    color: "bg-scef-blue-darker hover:bg-scef-blue text-white",
+    url: "/payments#official-accounts",
+    internal: true,
   },
   {
-    id: "flutterwave",
-    name: "Flutterwave",
-    description: "Card, Mobile Money",
-    color: "bg-[#F5A623]",
-    url: "https://flutterwave.com/pay/scef",
-  },
-  {
-    id: "bancable",
-    name: "Bancable",
-    description: "Direct Bank",
-    color: "bg-[#1A237E]",
-    url: "#",
-  },
-  {
-    id: "transcertpay",
-    name: "TranscertPay",
-    description: "International",
-    color: "bg-[#2E7D32]",
-    url: "#",
+    id: "gfa-wallet",
+    name: "Pay with GFA Wallet",
+    description: "Secure wallet-based payments & receipts",
+    color: "bg-scef-gold hover:bg-scef-gold-hover text-scef-blue-darker",
+    url: "/wallet",
+    internal: true,
   },
 ];
 
