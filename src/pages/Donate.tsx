@@ -101,19 +101,17 @@ const Donate = () => {
       return;
     }
 
-    if (provider.url === "#") {
-      toast.info(`${provider.name} integration coming soon. Please try another payment method.`);
-      return;
-    }
-
     // Store designation for confirmation
     const finalDesignation = designation || "general";
     setConfirmedDesignation(getDesignationLabel(finalDesignation));
 
-    const paymentUrl = `${provider.url}?amount=${amount}&designation=${encodeURIComponent(finalDesignation)}`;
-    window.open(paymentUrl, "_blank");
-    toast.success(`Redirecting to ${provider.name}...`);
+    // Both approved methods are internal routes — pass amount/designation as query.
+    const sep = provider.url.includes("?") ? "&" : "?";
+    const target = `${provider.url}${provider.url.includes("#") ? "" : `${sep}amount=${amount}&designation=${encodeURIComponent(finalDesignation)}`}`;
+    navigate(target);
+    toast.success(`Continuing with ${provider.name}…`);
   };
+
 
   const handleDonate = async (e: React.FormEvent) => {
     e.preventDefault();
