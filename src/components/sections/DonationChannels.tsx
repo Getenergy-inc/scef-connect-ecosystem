@@ -1,35 +1,40 @@
 import { Link } from "react-router-dom";
-import { Heart, Landmark, UserPlus, Sparkles, ArrowRight } from "lucide-react";
+import { Heart, Landmark, Eye, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
 
 const channels = [
   {
     icon: Heart,
     title: "Donate Now",
-    blurb: "One-time or recurring donation to general SCEF programs.",
-    href: "/donate",
+    blurb: "One-time or recurring donation to SCEF education programs.",
+    href: "/wallet/donate?fund=scef",
     cta: "Give Today",
+    external: false,
   },
   {
     icon: Landmark,
-    title: "Official Bank Accounts",
-    blurb: "Verified SCEF accounts for transfers, sponsorships and CSR funding.",
-    href: "/support-us/bank-accounts",
+    title: "Pay via Providus Bank",
+    blurb: "Use verified Providus Bank accounts for SCEF, EduAid-Africa and NESA-Africa.",
+    href: "/payments#official-accounts",
+    cta: "Bank Transfer",
+    external: false,
+  },
+  {
+    icon: Eye,
+    title: "View Official Accounts",
+    blurb: "See all verified Naira, USD, GBP and EUR accounts by program and purpose.",
+    href: "/payments",
     cta: "View Accounts",
+    external: false,
   },
   {
-    icon: UserPlus,
-    title: "Pay Membership Fee",
-    blurb: "Renew or activate your SCEF membership securely via the GFA Wallet.",
-    href: "/membership",
-    cta: "Pay Membership",
-  },
-  {
-    icon: Sparkles,
-    title: "Sponsor a Program",
-    blurb: "Direct your support to NESA-Africa, EduAid, RMSA, MCML or eLibrary.",
-    href: "/support-us",
-    cta: "Choose a Program",
+    icon: MessageCircle,
+    title: "Chat with Sophia",
+    blurb: "Get payment help, receipts, and sponsorship guidance on WhatsApp.",
+    href: SOPHIA_PAYMENT_WHATSAPP,
+    cta: "Open WhatsApp",
+    external: true,
   },
 ];
 
