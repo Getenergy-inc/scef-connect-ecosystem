@@ -81,7 +81,7 @@ describe("scanPaymentRoutes — forbidden patterns (violations)", () => {
 
   it("detects file input", () => {
     const dir = makeFixture("file-input", {
-      "src/pages/Donate.tsx": `<input type="file" onChange={onUpload} />`,
+      "src/pages/Donate.tsx": `<input type="file" onChange={handleChange} />`,
     });
     const { violations } = scanPaymentRoutes(dir, ["src/pages/Donate.tsx"]);
     assert.strictEqual(violations.length, 1);
