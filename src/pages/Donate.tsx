@@ -1,524 +1,296 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import OfficialAccountsTable from "@/components/payments/OfficialAccountsTable";
+import GFAWalletPaySection from "@/components/payments/GFAWalletPaySection";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useLocale } from "@/contexts/LocaleContext";
-import { Heart, Shield, ExternalLink, Wallet, CheckCircle, AlertTriangle, Info, Landmark, MessageCircle } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
-import { toast } from "sonner";
-import gfaWalletLogo from "@/assets/gfa-wallet-logo.jpg";
-import { logger } from "@/lib/logger";
-import { SOPHIA_PAYMENT_WHATSAPP } from "@/config/officialAccounts";
-
-const donationAmounts = [5, 10, 25, 50, 100, 250, 500];
-
-// Only two approved public payment methods. Paystack, Flutterwave, Bancable,
-// and TranscertPay are hidden from public UI until reintroduced as approved gateways.
-const paymentProviders = [
-  {
-    id: "providus",
-    name: "Providus Bank Direct Transfer",
-    description: "Verified SCEF / EduAid-Africa / NESA-Africa accounts",
-    color: "bg-scef-blue-darker hover:bg-scef-blue text-white",
-    url: "/payments#official-accounts",
-    internal: true,
-  },
-  {
-    id: "gfa-wallet",
-    name: "Pay with GFA Wallet",
-    description: "Secure wallet-based payments & receipts",
-    color: "bg-scef-gold hover:bg-scef-gold-hover text-scef-blue-darker",
-    url: "/wallet",
-    internal: true,
-  },
-];
-
-const designationOptions = [
-  {
-    id: "general",
-    label: "General Support (SCEF)",
-    description: "Apply where needed most across programmes.",
-  },
-  {
-    id: "eduaid-scholarship",
-    label: "EduAid-Africa — Scholarship Africa Fund",
-    description: "Direct education access support (scholarships/learning support).",
-  },
-  {
-    id: "nesa-2026",
-    label: "NESA-Africa 2026 — Standards & Awards Delivery",
-    description: "Supports verification, public education, and programme delivery (no influence on outcomes).",
-  },
-  {
-    id: "nesa-tv",
-    label: "NESA Africa TV — Education Broadcasting",
-    description: "Supports production and public education programming.",
-  },
-  {
-    id: "rmsa-2026",
-    label: "Rebuild My School Africa (2026–2027) — Special Needs Focus",
-    description: "Supports renovation of special needs education facilities across African regions.",
-  },
-];
+  officialAccounts,
+  paymentPurposes,
+  accountGroupById,
+  AccountGroupId,
+  SOPHIA_PAYMENT_WHATSAPP,
+} from "@/config/officialAccounts";
+import {
+  Landmark,
+  Wallet,
+  MessageCircle,
+  ShieldCheck,
+  ArrowRight,
+  Heart,
+} from "lucide-react";
 
 const Donate = () => {
-  const { t } = useLocale();
-  const navigate = useNavigate();
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(25);
-  const [customAmount, setCustomAmount] = useState("");
-  const [designation, setDesignation] = useState("");
-  const [donorName, setDonorName] = useState("");
-  const [donorEmail, setDonorEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [isAnonymous, setIsAnonymous] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [confirmedDesignation, setConfirmedDesignation] = useState("");
-
-  const getDesignationLabel = (designationId: string) => {
-    const option = designationOptions.find(opt => opt.id === designationId);
-    return option ? option.label : "General Support (SCEF)";
-  };
-
-  const handlePaymentProvider = (provider: typeof paymentProviders[0]) => {
-    const amount = selectedAmount || parseFloat(customAmount);
-    if (!amount || amount <= 0) {
-      toast.error("Please select or enter a donation amount");
-      return;
-    }
-
-    // Store designation for confirmation
-    const finalDesignation = designation || "general";
-    setConfirmedDesignation(getDesignationLabel(finalDesignation));
-
-    // Both approved methods are internal routes — pass amount/designation as query.
-    const sep = provider.url.includes("?") ? "&" : "?";
-    const target = `${provider.url}${provider.url.includes("#") ? "" : `${sep}amount=${amount}&designation=${encodeURIComponent(finalDesignation)}`}`;
-    navigate(target);
-    toast.success(`Continuing with ${provider.name}…`);
-  };
-
-
-  const handleDonate = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const amount = selectedAmount || parseFloat(customAmount);
-    if (!amount || amount <= 0) {
-      toast.error(t("donate.errors.invalidAmount") || "Please enter a valid donation amount");
-      setLoading(false);
-      return;
-    }
-
-    const finalDesignation = designation || "general";
-    const designationLabel = getDesignationLabel(finalDesignation);
-
-    try {
-      const { error } = await supabase.from("donations").insert({
-        amount,
-        donor_name: isAnonymous ? "Anonymous" : donorName,
-        donor_email: donorEmail,
-        message: `${message}${message ? '\n\n' : ''}Designation: ${designationLabel}`,
-        is_anonymous: isAnonymous,
-        payment_status: "pending",
-      });
-
-      if (error) throw error;
-
-      setConfirmedDesignation(designationLabel);
-      setShowConfirmation(true);
-      
-      // Reset form
-      setSelectedAmount(25);
-      setCustomAmount("");
-      setDesignation("");
-      setDonorName("");
-      setDonorEmail("");
-      setMessage("");
-    } catch (error: unknown) {
-      logger.error("Donation error:", error);
-      toast.error(t("donate.errors.failed") || "Failed to process donation. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (showConfirmation) {
-    return (
-      <>
-        <Helmet>
-          <title>Thank You - SCEF</title>
-        </Helmet>
-        <div className="min-h-screen bg-background">
-          <Header />
-          <main className="pt-24 pb-20">
-            <section className="py-20">
-              <div className="container mx-auto px-4">
-                <div className="max-w-lg mx-auto text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
-                    <CheckCircle className="w-10 h-10 text-green-600" />
-                  </div>
-                  <h1 className="font-display text-3xl font-bold text-foreground mb-4">
-                    Thank You for Your Generosity!
-                  </h1>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    Your donation has been received. A confirmation email will be sent to your inbox shortly.
-                  </p>
-                  <Card className="text-left mb-8">
-                    <CardContent className="pt-6">
-                      <div className="space-y-3">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Designation:</span>
-                          <span className="font-medium text-foreground">{confirmedDesignation}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button onClick={() => setShowConfirmation(false)}>
-                      <Heart className="w-4 h-4 mr-2" />
-                      Make Another Donation
-                    </Button>
-                    <Button variant="outline" onClick={() => navigate("/")}>
-                      Return Home
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </main>
-          <Footer />
-        </div>
-      </>
-    );
-  }
+  const [purpose, setPurpose] = useState<string>("");
+  const recommendedGroups = (() => {
+    const p = paymentPurposes.find((x) => x.label === purpose);
+    return p?.groups.filter((id) => id !== "gfa").map((id) => accountGroupById(id)) ?? [];
+  })();
 
   return (
     <>
       <Helmet>
-        <title>{t("nav.top.donate")} - SCEF</title>
-        <meta name="description" content={t("donate.hero.subtitle") || "Make a donation to SCEF and help transform education across Africa."} />
+        <title>Donate to SCEF — Official Donation Channels</title>
+        <meta
+          name="description"
+          content="Support Santos Creations Educational Foundation, EduAid-Africa, and NESA-Africa through verified Providus Bank accounts and GFA Wallet payment options."
+        />
+        <link rel="canonical" href="https://santoscreations.org/donate" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
         <Header />
-        
+
         <main className="pt-24 pb-20">
-          <MasterTimelineCTA />
-          {/* Hero — cinematic */}
-          <section className="relative bg-gradient-to-br from-scef-blue-darker via-scef-blue to-scef-blue-dark text-white py-24 md:py-32 overflow-hidden">
+          {/* Hero */}
+          <section className="relative bg-gradient-to-br from-scef-blue-darker via-scef-blue to-scef-blue-dark text-white py-20 md:py-28 overflow-hidden">
             <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-scef-blue-darker/40 rounded-full blur-3xl" />
-            <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
-              <div className="w-20 h-20 mx-auto rounded-2xl overflow-hidden mb-8 shadow-2xl ring-1 ring-white/10">
-                <img src={gfaWalletLogo} alt="GFA Wallet" className="w-full h-full object-contain" />
+            <div className="container mx-auto px-4 relative z-10 max-w-4xl text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-6">
+                <Heart className="h-3.5 w-3.5" /> Donate
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-8">
-                Donate
-              </div>
-              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] tracking-tight">
+              <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
                 Fund education. <span className="text-scef-gold">Change lives.</span>
               </h1>
-              <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed mb-3">
-                {t("donate.hero.subtitle") || "Your donation directly supports scholarships, school infrastructure, and education programs across African regions."}
+              <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed mb-8">
+                Support SCEF, EduAid-Africa, and NESA-Africa through verified Providus Bank
+                accounts and GFA Wallet payment options for donations, memberships,
+                sponsorships, scholarships, training, advocacy, awards, and education impact
+                programs.
               </p>
-              <p className="text-sm text-scef-gold/90 font-medium max-w-2xl mx-auto mb-3">
-                Fueling our membership-run NGO advocating Achieving Education for All in Africa.
-              </p>
-              <p className="text-xs uppercase tracking-widest text-scef-gold/80 font-semibold">
-                Powered by GFA Wallet · GetFinance Africa
-              </p>
-              <div className="mt-8">
-                <Link
-                  to="/support-us"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-scef-gold text-scef-blue-darker font-semibold hover:bg-scef-gold/90 transition-colors"
+              <div className="flex flex-wrap justify-center gap-3">
+                <a
+                  href="#official-accounts"
+                  className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
                 >
-                  Explore all Support & Payment Options →
-                </Link>
+                  <Landmark className="h-4 w-4" /> Pay via Providus Bank
+                </a>
+                <a
+                  href="#gfa-wallet"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10"
+                >
+                  <Wallet className="h-4 w-4" /> Pay with GFA Wallet
+                </a>
+                <a
+                  href={SOPHIA_PAYMENT_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] text-white px-5 py-3 text-sm font-semibold hover:bg-[#1ebe57]"
+                >
+                  <MessageCircle className="h-4 w-4" /> Chat with Sophia
+                </a>
               </div>
             </div>
           </section>
 
-          {/* Donation Form */}
-          <section className="py-16">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">{t("donate.formTitle") || "Make a Donation"}</CardTitle>
-                    <CardDescription>{t("donate.formDesc") || "All donations are tax-deductible where applicable."}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleDonate} className="space-y-6">
-                      {/* Amount Selection */}
-                      <div className="space-y-3">
-                        <Label className="text-base font-semibold">
-                          Select Amount (USD) <span className="text-destructive">*</span>
-                        </Label>
-                        <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
-                          {donationAmounts.map((amount) => (
-                            <button
-                              key={amount}
-                              type="button"
-                              onClick={() => {
-                                setSelectedAmount(amount);
-                                setCustomAmount("");
-                              }}
-                              className={`py-3 rounded-lg font-medium transition-all text-sm ${
-                                selectedAmount === amount
-                                  ? "bg-primary text-primary-foreground"
-                                  : "bg-muted text-foreground hover:bg-primary/20"
-                              }`}
-                            >
-                              ${amount}
-                            </button>
-                          ))}
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setSelectedAmount(null);
-                              document.getElementById('customAmount')?.focus();
-                            }}
-                            className={`py-3 rounded-lg font-medium transition-all text-sm ${
-                              selectedAmount === null && customAmount
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-muted text-foreground hover:bg-primary/20"
-                            }`}
-                          >
-                            Custom
-                          </button>
-                        </div>
-                        <div className="relative">
-                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
-                          <Input
-                            id="customAmount"
-                            type="number"
-                            min="1"
-                            placeholder={t("donate.customAmount") || "Enter custom amount"}
-                            value={customAmount}
-                            onChange={(e) => {
-                              setCustomAmount(e.target.value);
-                              setSelectedAmount(null);
-                            }}
-                            className="pl-8"
-                            aria-label="Custom donation amount"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Designation Dropdown */}
-                      <div className="space-y-2">
-                        <Label htmlFor="designation" className="text-base font-semibold">
-                          Designate my donation (optional)
-                        </Label>
-                        <Select value={designation} onValueChange={setDesignation}>
-                          <SelectTrigger 
-                            id="designation" 
-                            className="w-full bg-background"
-                            aria-label="Select donation designation"
-                          >
-                            <SelectValue placeholder="Select a programme to support..." />
-                          </SelectTrigger>
-                          <SelectContent className="bg-background border border-border z-50">
-                            {designationOptions.map((option) => (
-                              <SelectItem 
-                                key={option.id} 
-                                value={option.id}
-                                className="cursor-pointer"
-                              >
-                                <div className="flex flex-col py-1">
-                                  <span className="font-medium">{option.label}</span>
-                                  <span className="text-xs text-muted-foreground">{option.description}</span>
-                                </div>
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <p className="text-sm text-muted-foreground flex items-start gap-2">
-                          <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          If you do not select a designation, your donation will be used for the highest priority needs across SCEF programmes.
-                        </p>
-                      </div>
-
-                      {/* Donor Info */}
-                      <div className="space-y-4">
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="donorName">{t("donate.yourName") || "Your Name"}</Label>
-                            <Input
-                              id="donorName"
-                              value={donorName}
-                              onChange={(e) => setDonorName(e.target.value)}
-                              placeholder="John Doe"
-                              disabled={isAnonymous}
-                              aria-label="Donor name"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="donorEmail">
-                              {t("donate.email") || "Email Address"} <span className="text-destructive">*</span>
-                            </Label>
-                            <Input
-                              id="donorEmail"
-                              type="email"
-                              value={donorEmail}
-                              onChange={(e) => setDonorEmail(e.target.value)}
-                              placeholder="john@example.com"
-                              required
-                              aria-label="Donor email address"
-                            />
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="message">{t("donate.message") || "Message (Optional)"}</Label>
-                          <Textarea
-                            id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder={t("donate.messagePlaceholder") || "Leave a message of support..."}
-                            rows={3}
-                            aria-label="Donation message"
-                          />
-                        </div>
-                        <label className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={isAnonymous}
-                            onChange={(e) => setIsAnonymous(e.target.checked)}
-                            className="rounded border-border"
-                            aria-label="Make donation anonymous"
-                          />
-                          <span className="text-sm text-muted-foreground">{t("donate.anonymous") || "Make my donation anonymous"}</span>
-                        </label>
-                      </div>
-
-                      {/* Transparency Notice */}
-                      <div className="flex items-start gap-3 p-4 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
-                        <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-blue-800 dark:text-blue-200">
-                          <strong>Transparency Note:</strong> Donations do not influence award verification, voting, jury review, or results.
-                        </p>
-                      </div>
-
-                      {/* Payment Method Selector — 2 approved methods only */}
-                      <div className="space-y-4 pt-4 border-t border-border">
-                        <div className="text-center">
-                          <p className="text-sm font-semibold text-foreground">How would you like to pay?</p>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            Choose Providus Bank Direct Transfer or GFA Wallet. All payments route to the
-                            correct verified SCEF, EduAid-Africa, or NESA-Africa account.
-                          </p>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {paymentProviders.map((provider) => (
-                            <button
-                              key={provider.id}
-                              type="button"
-                              onClick={() => handlePaymentProvider(provider)}
-                              disabled={loading}
-                              className={`${provider.color} py-4 px-4 rounded-xl font-semibold transition-all hover:opacity-95 hover:shadow-lg active:scale-[0.98] disabled:opacity-50 flex flex-col items-center justify-center gap-1`}
-                              aria-label={provider.name}
-                            >
-                              <span className="text-sm">{provider.name}</span>
-                              <span className="text-[11px] font-normal opacity-90">{provider.description}</span>
-                            </button>
-                          ))}
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-2 pt-1">
-                          <Link
-                            to="/payments#official-accounts"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker hover:text-scef-gold-dark"
-                          >
-                            <Landmark className="h-3.5 w-3.5" /> View Official Accounts
-                          </Link>
-                          <a
-                            href={SOPHIA_PAYMENT_WHATSAPP}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1f8f4d] hover:text-[#25D366]"
-                          >
-                            <MessageCircle className="h-3.5 w-3.5" /> Chat with Sophia
-                          </a>
-                        </div>
-                        <p className="text-xs text-center text-muted-foreground">
-                          Selected: ${selectedAmount || customAmount || 0}
-                          {designation && ` · ${getDesignationLabel(designation)}`}
-                        </p>
-                      </div>
-
-
-                      {/* Governance Notice */}
-                      <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
-                        <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-amber-800 dark:text-amber-200">
-                          <strong>Important:</strong> Donations and sponsorship payments are processed only via the official GFA Wallet channel. SCEF staff/volunteers will never request payment to personal accounts.
-                        </p>
-                      </div>
-
-                      {/* Security Notice */}
-                      <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50 border border-border">
-                        <Shield className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <div className="text-xs text-muted-foreground">
-                          <p className="font-semibold text-foreground mb-1">Secure & Transparent</p>
-                          <p>All transactions are encrypted and auditable. You'll receive a receipt for your records.</p>
-                        </div>
-                      </div>
-
-                      {/* Use Wallet CTA */}
-                      <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
-                        <div className="flex items-center gap-3 mb-3">
-                          <img src={gfaWalletLogo} alt="GFA" className="w-8 h-8 rounded-lg object-contain" />
-                          <span className="font-semibold text-foreground">Have a GFA Wallet?</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-3">Donate directly from your wallet balance for faster processing.</p>
-                        <Button variant="outline" size="sm" className="w-full" onClick={() => navigate("/wallet")}>
-                          <Wallet className="w-4 h-4 mr-2" />
-                          Open My Wallet
-                        </Button>
-                      </div>
-
-                      <p className="text-xs text-center text-muted-foreground">
-                        {t("donate.terms") || "By donating, you agree to our terms and privacy policy."}
-                      </p>
-                    </form>
-                  </CardContent>
-                </Card>
-              </div>
+          {/* Trust note */}
+          <section className="py-10 bg-scef-gold/5 border-y border-scef-gold/20">
+            <div className="container mx-auto px-4 max-w-4xl flex items-start gap-3">
+              <ShieldCheck className="h-6 w-6 text-scef-gold-dark shrink-0 mt-0.5" />
+              <p className="text-sm md:text-base text-scef-blue-darker">
+                All payments should be made only through the verified Providus Bank accounts and
+                approved GFA Wallet payment options listed on this page. Donors, sponsors, members,
+                and partners may request receipts, payment confirmation, sponsorship documentation,
+                and impact reports.
+              </p>
             </div>
           </section>
 
-          {/* Impact Stats */}
-          <section className="py-16 bg-muted/50">
-            <div className="container mx-auto px-4">
-              <h2 className="font-display text-3xl font-bold text-center text-foreground mb-12">
-                {t("home.impact.title") || "Your Impact"}
+          {/* How would you like to support us? */}
+          <section className="py-14">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-scef-blue-darker mb-2">
+                How would you like to support us?
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                {[
-                  { value: "$2M+", label: t("donate.stats.raised") || "Raised" },
-                  { value: "5,000+", label: t("home.impact.metrics.scholarships") || "Scholarships" },
-                  { value: "150+", label: t("home.impact.metrics.schools") || "Schools" },
-                  { value: "25+", label: t("home.impact.metrics.chapters") || "Chapters" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center p-6 bg-background rounded-xl">
-                    <p className="font-display text-3xl font-bold text-primary">{stat.value}</p>
-                    <p className="text-muted-foreground">{stat.label}</p>
+              <p className="text-muted-foreground mb-6">
+                Choose one of the official payment options below.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <a
+                  href="#official-accounts"
+                  className="flex items-start gap-4 rounded-xl border-2 border-border bg-card p-5 hover:border-scef-gold/60 transition"
+                >
+                  <div className="w-11 h-11 rounded-lg bg-scef-blue/10 text-scef-blue-darker flex items-center justify-center shrink-0">
+                    <Landmark className="h-5 w-5" />
                   </div>
+                  <div>
+                    <h3 className="font-semibold text-scef-blue-darker">
+                      Providus Bank Direct Transfer
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Verified Naira, USD, EUR and GBP accounts for SCEF, EduAid-Africa and
+                      NESA-Africa.
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="#gfa-wallet"
+                  className="flex items-start gap-4 rounded-xl border-2 border-border bg-card p-5 hover:border-scef-gold/60 transition"
+                >
+                  <div className="w-11 h-11 rounded-lg bg-scef-gold/15 text-scef-gold-dark flex items-center justify-center shrink-0">
+                    <Wallet className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-scef-blue-darker">GFA Wallet</h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Request your GFA Wallet payment link from Sophia for donations,
+                      sponsorships, memberships and CSR contributions.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* Payment purpose guide */}
+          <section className="py-14 bg-muted/30 border-y border-border">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-scef-blue-darker mb-2">
+                What are you paying for?
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Please select the correct service and purpose before making payment.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {paymentPurposes.map((p) => (
+                  <button
+                    key={p.label}
+                    onClick={() => setPurpose(p.label)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-semibold ring-1 transition-colors ${
+                      purpose === p.label
+                        ? "bg-scef-blue-darker text-white ring-scef-blue-darker"
+                        : "bg-background text-scef-blue-darker ring-border hover:bg-muted"
+                    }`}
+                  >
+                    {p.label}
+                  </button>
                 ))}
+              </div>
+              {recommendedGroups.length > 0 && (
+                <div className="mt-6 rounded-2xl border-2 border-scef-gold/30 bg-scef-gold/5 p-5">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    For <strong className="text-scef-blue-darker">{purpose}</strong>, please pay
+                    into the {recommendedGroups.map((g) => g.shortName).join(" or ")} account
+                    {recommendedGroups.length > 1 ? "s" : ""} below.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {recommendedGroups.map((g) => (
+                      <a
+                        key={g.id}
+                        href={`#account-${g.id}`}
+                        className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-blue-darker text-scef-blue-darker text-sm font-semibold px-4 py-2 hover:bg-scef-blue-darker hover:text-white"
+                      >
+                        <Landmark className="h-4 w-4" /> {g.shortName} Bank
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* Official Providus Bank Accounts (3 groups) */}
+          <section id="official-accounts" className="py-14">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-scef-blue/10 ring-1 ring-scef-blue/20 text-scef-blue-darker text-[11px] font-semibold uppercase tracking-widest mb-3">
+                  <Landmark className="h-3.5 w-3.5" /> Providus Bank — Verified Accounts
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-scef-blue-darker">
+                  Official Providus Bank Accounts
+                </h2>
+              </div>
+              <div className="space-y-8">
+                {officialAccounts
+                  .filter((g) => g.id !== "gfa")
+                  .map((g) => (
+                    <div id={`account-${g.id}`} key={g.id} className="scroll-mt-28">
+                      <OfficialAccountsTable groupIds={[g.id as AccountGroupId]} showFilters={false} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </section>
+
+          {/* GFA Wallet */}
+          <div id="gfa-wallet" className="scroll-mt-28">
+            <GFAWalletPaySection
+              title="Pay with GFA Wallet"
+              description="GFA Wallet is available as an official payment option for SCEF, EduAid-Africa, and NESA-Africa donations, sponsorships, scholarships, training payments, gala tickets, membership payments, and CSR education contributions. The full wallet checkout interface is not yet connected to the website — please contact Sophia to request the correct GFA Wallet payment link or instruction."
+            />
+          </div>
+
+          {/* Manual confirmation */}
+          <section className="py-14">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="rounded-2xl border-2 border-scef-gold/30 bg-scef-gold/5 p-8 md:p-10">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-scef-blue-darker">
+                  After Making Payment
+                </h2>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  After payment, please send your proof of payment to Sophia through WhatsApp for
+                  confirmation. Please include:
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-foreground list-disc pl-5">
+                  <li>Your full name or organization name</li>
+                  <li>Payment purpose</li>
+                  <li>Service paid for: SCEF, EduAid-Africa, or NESA-Africa</li>
+                  <li>Amount paid</li>
+                  <li>Currency</li>
+                  <li>Account paid into or GFA Wallet reference</li>
+                  <li>Date of payment</li>
+                  <li>Proof of payment screenshot or receipt</li>
+                </ul>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  Receipts, sponsorship documentation, membership confirmation, and impact reports
+                  may be requested after payment confirmation.
+                </p>
+                <div className="mt-6">
+                  <a
+                    href={SOPHIA_PAYMENT_WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Confirm Payment with Sophia
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA */}
+          <section className="py-14 bg-scef-blue-darker text-white">
+            <div className="container mx-auto px-4 text-center max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                Support SCEF Today
+              </h2>
+              <p className="text-white/80 mb-8">
+                Every contribution funds scholarships, school transformation, teacher training,
+                digital learning, advocacy, and education impact across Africa.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link
+                  to="/get-involved/partner-with-scef"
+                  className="inline-flex items-center gap-2 rounded-lg bg-scef-gold text-scef-blue-darker px-5 py-3 text-sm font-semibold hover:bg-scef-gold-hover"
+                >
+                  Partner with SCEF <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/membership"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-gold/50 text-white px-5 py-3 text-sm font-semibold hover:bg-scef-gold/10"
+                >
+                  Become a Member
+                </Link>
+                <a
+                  href={SOPHIA_PAYMENT_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] text-white px-5 py-3 text-sm font-semibold hover:bg-[#1ebe57]"
+                >
+                  <MessageCircle className="h-4 w-4" /> Chat with Sophia
+                </a>
               </div>
             </div>
           </section>
