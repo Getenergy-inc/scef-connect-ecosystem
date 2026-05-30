@@ -101,35 +101,41 @@ export default function OfficialAccountsPage() {
             <div className="absolute top-0 right-0 w-[36rem] h-[36rem] bg-scef-gold/10 rounded-full blur-3xl" />
             <div className="container mx-auto px-4 relative z-10 max-w-5xl text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-scef-gold text-xs font-semibold uppercase tracking-widest mb-6">
-                <Wallet className="h-3.5 w-3.5" /> Powered by GFA Wallet
+                <ShieldCheck className="h-3.5 w-3.5" /> Verified Providus Bank Channels
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
-                Support SCEF Through{" "}
-                <span className="text-scef-gold">GFA Wallet</span>
+                Official Donation, Sponsorship &{" "}
+                <span className="text-scef-gold">Payment Channels</span>
               </h1>
               <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                Make secure payments, donations, sponsorships, registrations, memberships, and
-                program contributions through the GFA Wallet. Bank transfer details remain
-                available for manual payments and institutional partners.
+                Support SCEF, EduAid-Africa, and NESA-Africa through verified Providus Bank
+                accounts for donations, memberships, sponsorships, scholarships, training,
+                advocacy, awards, and education impact programs.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 {heroCtas.map((c) => {
                   const Icon = c.icon;
-                  return (
-                    <Link
-                      key={c.label}
-                      to={c.to}
-                      className={`inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
-                        c.primary
-                          ? "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover"
-                          : "border-2 border-scef-gold/50 text-white hover:bg-scef-gold/10"
-                      }`}
-                    >
+                  const cls = `inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
+                    c.primary
+                      ? "bg-scef-gold text-scef-blue-darker hover:bg-scef-gold-hover"
+                      : "border-2 border-scef-gold/50 text-white hover:bg-scef-gold/10"
+                  }`;
+                  return c.external ? (
+                    <a key={c.label} href={c.to} target="_blank" rel="noopener noreferrer" className={cls}>
+                      <Icon className="h-4 w-4" /> {c.label}
+                    </a>
+                  ) : (
+                    <Link key={c.label} to={c.to} className={cls}>
                       <Icon className="h-4 w-4" /> {c.label}
                     </Link>
                   );
                 })}
               </div>
+              <p className="mt-6 text-xs text-white/70 max-w-2xl mx-auto">
+                All payments should be made only through verified Providus Bank accounts listed
+                on this page. Donors, sponsors, members, and partners may request receipts,
+                payment confirmation, sponsorship documentation, and impact reports.
+              </p>
             </div>
           </section>
 
