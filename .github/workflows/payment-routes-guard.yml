@@ -10,8 +10,10 @@ on:
       - "src/components/payments/**"
       - "src/components/sections/DonationChannels.tsx"
       - "src/components/eduaid/EduAidDonationSection.tsx"
+      - "src/config/officialAccounts.ts"
       - "scripts/check-payment-routes.mjs"
       - "scripts/check-payment-routes.test.mjs"
+      - "scripts/edutourism-routing.test.mjs"
       - ".github/workflows/payment-routes-guard.yml"
   push:
     branches: [main]
@@ -36,5 +38,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Run unit tests
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Run guard unit tests
         run: node --test scripts/check-payment-routes.test.mjs
+      - name: Run EduTourism routing test
+        run: node --test scripts/edutourism-routing.test.mjs
