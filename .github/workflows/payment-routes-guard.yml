@@ -11,6 +11,7 @@ on:
       - "src/components/sections/DonationChannels.tsx"
       - "src/components/eduaid/EduAidDonationSection.tsx"
       - "scripts/check-payment-routes.mjs"
+      - "scripts/check-payment-routes.test.mjs"
       - ".github/workflows/payment-routes-guard.yml"
   push:
     branches: [main]
@@ -26,3 +27,14 @@ jobs:
           node-version: "20"
       - name: Run payment-routes static guard
         run: node scripts/check-payment-routes.mjs
+
+  test:
+    name: Run payment-routes unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run unit tests
+        run: node --test scripts/check-payment-routes.test.mjs
