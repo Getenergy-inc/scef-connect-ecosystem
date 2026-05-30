@@ -48,18 +48,6 @@ const categoryCards = [
     title: "EduAid-Africa",
     cta: "Support EduAid-Africa",
   },
-  {
-    id: "nesa" as AccountGroupId,
-    icon: Award,
-    title: "NESA-Africa",
-    cta: "Sponsor NESA-Africa",
-  },
-  {
-    id: "gfa" as AccountGroupId,
-    icon: Cpu,
-    title: "GFA Wallet / Technology",
-    cta: "Support Digital Innovation",
-  },
 ];
 
 const trustItems = [
