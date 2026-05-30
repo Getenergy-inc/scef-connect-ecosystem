@@ -74,12 +74,14 @@ export const officialAccounts: AccountGroup[] = [
       "TVET & vocational support",
       "My Career, My Life",
       "EduAid webinars & training",
+      "EduTourism Missions",
     ],
     ctas: [
       { label: "Support EduAid-Africa", to: "/wallet/donate?fund=eduaid" },
       { label: "Send a Child to School", to: "/wallet/donate?fund=scholarships" },
       { label: "Adopt a School", to: "/wallet/donate?fund=rmsa" },
       { label: "Sponsor Teacher Training", to: "/wallet/donate?fund=training" },
+      { label: "Join an EduTourism Mission", to: "/programs/edutourism-missions" },
     ],
     accounts: [
       { currency: "NGN", currencyLabel: "NGN / Naira", accountNumber: "1305744507", purpose: "Scholarships & Education Support" },
@@ -164,6 +166,7 @@ export const paymentPurposes: PaymentPurpose[] = [
   { label: "Send a Child to School", groups: ["eduaid"] },
   { label: "Rebuild My School Africa", groups: ["eduaid"] },
   { label: "Training / Webinar", groups: ["eduaid"] },
+  { label: "EduTourism Mission", groups: ["eduaid"] },
   { label: "NESA-Africa Sponsorship", groups: ["nesa"] },
   { label: "Gala Ticket", groups: ["nesa"] },
   { label: "NESA TV Support", groups: ["nesa"] },
