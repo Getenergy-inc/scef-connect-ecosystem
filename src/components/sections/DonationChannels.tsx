@@ -56,27 +56,36 @@ export const DonationChannels = () => {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {channels.map(({ icon: Icon, title, blurb, href, cta }) => (
-            <Link
-              key={title}
-              to={href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md"
-            >
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
-              </div>
-              <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker">
-                {title}
-              </h3>
-              <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">
-                {blurb}
-              </p>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker group-hover:text-scef-gold-dark">
-                {cta}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-          ))}
+          {channels.map(({ icon: Icon, title, blurb, href, cta, external }) => {
+            const inner = (
+              <>
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-scef-gold/15 text-scef-gold-dark ring-1 ring-scef-gold/30">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-display text-base font-bold leading-tight text-scef-blue-darker">
+                  {title}
+                </h3>
+                <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">
+                  {blurb}
+                </p>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-scef-blue-darker group-hover:text-scef-gold-dark">
+                  {cta}
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </>
+            );
+            const cls =
+              "group flex flex-col rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-scef-gold/50 hover:shadow-md";
+            return external ? (
+              <a key={title} href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+                {inner}
+              </a>
+            ) : (
+              <Link key={title} to={href} className={cls}>
+                {inner}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="mt-8 text-center">
