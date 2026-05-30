@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import {
   Wallet,
   Landmark,
-  Upload,
-  FileCheck2,
   ShieldCheck,
   MessageCircle,
   ArrowRight,
