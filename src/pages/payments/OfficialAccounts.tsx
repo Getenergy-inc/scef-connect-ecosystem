@@ -19,21 +19,19 @@ import {
   HeartHandshake,
   GraduationCap,
   Award,
-  Cpu,
   FileCheck2,
   Receipt,
   ClipboardList,
   Wallet,
   Landmark,
-  Upload,
   MessageCircle,
 } from "lucide-react";
 
 const heroCtas = [
-  { label: "Donate Now", to: "/wallet/donate?fund=scef", primary: true, icon: Wallet },
+  { label: "Donate Now", to: "/donate", primary: true, icon: Wallet },
   { label: "Pay via Providus Bank", to: "#official-accounts", icon: Landmark },
+  { label: "Pay with GFA Wallet", to: "#gfa-wallet", icon: Wallet },
   { label: "View Official Accounts", to: "#official-accounts", icon: Landmark },
-  { label: "Upload Proof of Payment", to: "#confirm-payment", icon: Upload },
   { label: "Chat with Sophia", to: SOPHIA_PAYMENT_WHATSAPP, icon: MessageCircle, external: true },
 ];
 
