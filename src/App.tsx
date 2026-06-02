@@ -34,6 +34,7 @@ import SupportUs from "./pages/SupportUs";
 import OfficialAccountsPage from "./pages/payments/OfficialAccounts";
 import Join from "./pages/Join";
 import Membership from "./pages/Membership";
+import MembershipAmbassadors from "./pages/get-involved/MembershipAmbassadors";
 import Governance from "./pages/Governance";
 import Certifications from "./pages/Certifications";
 import Partners from "./pages/Partners";
