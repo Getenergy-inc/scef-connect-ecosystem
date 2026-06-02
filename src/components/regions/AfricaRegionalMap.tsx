@@ -211,34 +211,50 @@ export const AfricaRegionalMap = ({
         <div className="lg:hidden space-y-3">
           {/* Simplified SVG also on mobile */}
           <div
-            className="rounded-2xl p-4 border"
+            className="rounded-2xl p-4 border overflow-hidden"
             style={{
-              backgroundColor: "#FFFFFF",
-              borderColor: `${SCEF_BRAND.navy}14`,
+              background: `radial-gradient(120% 90% at 30% 20%, ${SCEF_BRAND.navy} 0%, ${SCEF_BRAND.navyDeep} 70%)`,
+              borderColor: `${SCEF_BRAND.gold}33`,
             }}
           >
             <svg
               viewBox="0 0 100 100"
               role="img"
-              aria-label="Map of Africa highlighting ten SCEF regions"
-              className="w-full h-auto max-h-72"
+              aria-label="Map of Africa highlighting 8 SCEF regions"
+              className="w-full h-auto max-h-80"
             >
-              <path
-                d={AFRICA_PATH}
-                fill={SCEF_BRAND.navy}
-                stroke={SCEF_BRAND.gold}
-                strokeOpacity="0.45"
-                strokeWidth="0.4"
-              />
-              {onContinent.map((r) => (
-                <g
-                  key={r.slug}
-                  transform={`translate(${r.mapX} ${r.mapY})`}
-                  onClick={() => setOpenSlug(r.slug)}
-                >
-                  <circle r="2.6" fill={SCEF_BRAND.gold} />
-                </g>
-              ))}
+              {onContinent.map((r) => {
+                const poly = REGION_POLYGONS[r.slug];
+                if (!poly) return null;
+                const isOpen = openSlug === r.slug;
+                return (
+                  <g
+                    key={r.slug}
+                    onClick={() => setOpenSlug(isOpen ? null : r.slug)}
+                    className="cursor-pointer"
+                  >
+                    <polygon
+                      points={poly.points}
+                      fill={isOpen ? SCEF_BRAND.gold : `${SCEF_BRAND.navy}E6`}
+                      stroke={SCEF_BRAND.gold}
+                      strokeOpacity={isOpen ? 1 : 0.55}
+                      strokeWidth="0.4"
+                    />
+                    <text
+                      x={poly.cx}
+                      y={poly.cy}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      fontSize="2.8"
+                      fontWeight={600}
+                      fill={isOpen ? SCEF_BRAND.navy : "#FFFFFF"}
+                      pointerEvents="none"
+                    >
+                      {r.shortName}
+                    </text>
+                  </g>
+                );
+              })}
             </svg>
           </div>
 
