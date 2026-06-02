@@ -124,10 +124,7 @@ const CountryDetailPage = () => {
                 {primary.walletStatus}
               </Badge>
               <p className="text-xs text-muted-foreground mt-2">
-                Regional chapter: <span className="font-medium">{regionStatus.label}</span>
-              </Badge>
-              <p className="text-xs text-muted-foreground mt-2">
-                Routed via {primary.name} wallet.
+                Regional chapter: <span className="font-medium">{regionStatus.label}</span> · Routed via {primary.name} wallet.
               </p>
             </CardContent>
           </Card>
