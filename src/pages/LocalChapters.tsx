@@ -14,8 +14,80 @@ import { SCEF_BRAND } from "@/data/africaRegions";
 const TYPE_ICON = { online: Wifi, hybrid: Globe, physical: Building } as const;
 
 const REGION_ORDER = [
-  "North Africa", "West Africa", "East Africa", "Central Africa", "Southern Africa", "Diaspora",
+  "North Africa", "West Africa", "Central Africa", "East Africa", "Southern Africa",
+  "Sahel Region", "Horn of Africa", "Indian Ocean",
+  "Diaspora / Global Africa", "Friends of Africa",
+  "Europe", "North America", "Latin America & Caribbean", "Middle East", "Asia-Pacific", "Oceania",
 ];
+
+type OnlineChapter = { name: string; coverage: string; status: "Active" | "Forming" | "Open" };
+type OnlineRegion = { region: string; scope: "African Region" | "Global Network" | "Other Continent"; chapters: OnlineChapter[] };
+
+const ONLINE_CHAPTERS_NETWORK: OnlineRegion[] = [
+  // 8 African regions
+  { region: "North Africa", scope: "African Region", chapters: [
+    { name: "North Africa Online Chapter", coverage: "Egypt · Libya · Tunisia · Algeria · Morocco · Western Sahara", status: "Forming" },
+  ]},
+  { region: "West Africa", scope: "African Region", chapters: [
+    { name: "West Africa Online Chapter", coverage: "Nigeria · Ghana · Senegal · Côte d'Ivoire · Liberia · Sierra Leone · The Gambia · Guinea · Guinea-Bissau · Togo · Benin · Cabo Verde", status: "Active" },
+  ]},
+  { region: "Central Africa", scope: "African Region", chapters: [
+    { name: "Central Africa Online Chapter", coverage: "Cameroon · DR Congo · Republic of Congo · Gabon · CAR · Equatorial Guinea · São Tomé & Príncipe · Chad", status: "Forming" },
+  ]},
+  { region: "East Africa", scope: "African Region", chapters: [
+    { name: "East Africa Online Chapter", coverage: "Kenya · Uganda · Tanzania · Rwanda · Burundi · South Sudan", status: "Active" },
+  ]},
+  { region: "Southern Africa", scope: "African Region", chapters: [
+    { name: "Southern Africa Online Chapter", coverage: "South Africa · Namibia · Botswana · Zimbabwe · Zambia · Malawi · Mozambique · Lesotho · Eswatini · Angola", status: "Active" },
+  ]},
+  { region: "Sahel Region", scope: "African Region", chapters: [
+    { name: "Sahel Online Chapter", coverage: "Mali · Burkina Faso · Niger · Mauritania · Chad (Sahel belt)", status: "Forming" },
+  ]},
+  { region: "Horn of Africa", scope: "African Region", chapters: [
+    { name: "Horn of Africa Online Chapter", coverage: "Ethiopia · Eritrea · Djibouti · Somalia · Somaliland", status: "Forming" },
+  ]},
+  { region: "Indian Ocean", scope: "African Region", chapters: [
+    { name: "Indian Ocean Islands Online Chapter", coverage: "Madagascar · Mauritius · Seychelles · Comoros", status: "Forming" },
+  ]},
+  // Global African networks
+  { region: "Diaspora / Global Africa", scope: "Global Network", chapters: [
+    { name: "African Diaspora Online Chapter", coverage: "African heritage communities worldwide", status: "Active" },
+  ]},
+  { region: "Friends of Africa", scope: "Global Network", chapters: [
+    { name: "Friends of Africa Online Chapter", coverage: "Global allies supporting African education", status: "Open" },
+  ]},
+  // Other continents
+  { region: "Europe", scope: "Other Continent", chapters: [
+    { name: "Europe Online Chapter", coverage: "UK · Ireland · France · Germany · Belgium · Netherlands · Italy · Spain · Portugal · Nordics · Eastern Europe", status: "Forming" },
+  ]},
+  { region: "North America", scope: "Other Continent", chapters: [
+    { name: "North America Online Chapter", coverage: "United States · Canada · Mexico", status: "Forming" },
+  ]},
+  { region: "Latin America & Caribbean", scope: "Other Continent", chapters: [
+    { name: "Latin America & Caribbean Online Chapter", coverage: "Brazil · Argentina · Colombia · Jamaica · Trinidad & Tobago · Haiti · Cuba · wider LAC", status: "Open" },
+  ]},
+  { region: "Middle East", scope: "Other Continent", chapters: [
+    { name: "Middle East Online Chapter", coverage: "UAE · Saudi Arabia · Qatar · Kuwait · Bahrain · Oman · Jordan · Lebanon · Türkiye", status: "Open" },
+  ]},
+  { region: "Asia-Pacific", scope: "Other Continent", chapters: [
+    { name: "Asia-Pacific Online Chapter", coverage: "China · India · Japan · South Korea · Singapore · Malaysia · Indonesia · Philippines · Thailand", status: "Open" },
+  ]},
+  { region: "Oceania", scope: "Other Continent", chapters: [
+    { name: "Oceania Online Chapter", coverage: "Australia · New Zealand · Pacific Islands", status: "Open" },
+  ]},
+];
+
+const SCOPE_TONE: Record<OnlineRegion["scope"], string> = {
+  "African Region": "bg-scef-gold/15 text-scef-blue-darker border-scef-gold/40",
+  "Global Network": "bg-emerald-50 text-emerald-800 border-emerald-300",
+  "Other Continent": "bg-sky-50 text-sky-800 border-sky-300",
+};
+
+const STATUS_TONE: Record<OnlineChapter["status"], string> = {
+  Active: "bg-emerald-100 text-emerald-800",
+  Forming: "bg-amber-100 text-amber-800",
+  Open: "bg-slate-100 text-slate-700",
+};
 
 const LocalChapters = () => {
   const { data: chapters = [], isLoading } = useChapters();
@@ -157,6 +229,93 @@ const LocalChapters = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Global Online Chapters Network — 8 African regions + global networks + other continents */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="mb-8 max-w-3xl">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-3"
+                      style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
+                  <Wifi className="w-3.5 h-3.5" /> Global Online Chapters Network
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-3" style={{ color: SCEF_BRAND.navy }}>
+                  Online Local Chapters Across Every Region
+                </h2>
+                <p className="text-slate-600">
+                  Every SCEF supporter can join an online chapter — across the 8 African regions,
+                  the African Diaspora and Friends of Africa networks, and on every other continent.
+                  Online chapters are the entry stage of the SCEF chapter development pathway and
+                  feed directly into EduAid-Africa, NESA-Africa, Special Needs School nominations,
+                  regional voting and Rebuild My School Africa.
+                </p>
+              </div>
+
+              {(["African Region", "Global Network", "Other Continent"] as const).map((scope) => {
+                const groups = ONLINE_CHAPTERS_NETWORK.filter((g) => g.scope === scope);
+                const heading =
+                  scope === "African Region" ? "8 African Regions"
+                  : scope === "Global Network" ? "Global African Networks"
+                  : "Other Continents";
+                return (
+                  <div key={scope} className="mb-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <h3 className="font-display text-xl font-bold" style={{ color: SCEF_BRAND.navy }}>{heading}</h3>
+                      <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full border ${SCOPE_TONE[scope]}`}>
+                        {groups.length} {groups.length === 1 ? "region" : "regions"}
+                      </span>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {groups.flatMap((g) =>
+                        g.chapters.map((c) => (
+                          <div key={c.name}
+                               className="rounded-xl border bg-card p-5 hover:border-scef-gold/50 hover:shadow-sm transition-all flex flex-col"
+                               style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+                            <div className="flex items-start justify-between gap-3 mb-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                                     style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
+                                  <Wifi className="w-4 h-4" />
+                                </div>
+                                <div>
+                                  <p className="text-[11px] font-semibold uppercase tracking-wider"
+                                     style={{ color: SCEF_BRAND.goldDeep }}>{g.region}</p>
+                                  <h4 className="font-display text-base font-bold leading-snug"
+                                      style={{ color: SCEF_BRAND.navy }}>{c.name}</h4>
+                                </div>
+                              </div>
+                              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${STATUS_TONE[c.status]}`}>
+                                {c.status}
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-600 mb-4 line-clamp-3">{c.coverage}</p>
+                            <div className="mt-auto flex items-center justify-between">
+                              <span className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
+                                <Users className="w-3 h-3" /> Reporting in progress
+                              </span>
+                              <Button size="sm" variant="ghost" asChild className="text-scef-blue-darker hover:text-scef-gold-dark h-7 px-2">
+                                <Link to="/chapters/join-online">
+                                  Join <ArrowRight className="w-3 h-3 ml-1" />
+                                </Link>
+                              </Button>
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Button asChild className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                  <Link to="/chapters/join-online"><Wifi className="w-4 h-4 mr-2" />Join an online chapter</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to="/chapters/start"><Plus className="w-4 h-4 mr-2" />Start a chapter in your region</Link>
+                </Button>
+              </div>
             </div>
           </section>
 
