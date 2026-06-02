@@ -130,6 +130,7 @@ import EducationTourism from "./pages/media/EducationTourism";
 // Auth Pages
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
+import Register from "./pages/auth/Register";
 
 // Dashboard Pages
 import DashboardWelcome from "./pages/dashboard/Welcome";
@@ -363,6 +364,9 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/auth/sign-in" element={<SignIn />} />
               <Route path="/auth/sign-up" element={<SignUp />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/get-involved/register" element={<Register />} />
+              <Route path="/auth/register" element={<Register />} />
               
               {/* Dashboard Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
