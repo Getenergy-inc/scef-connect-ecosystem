@@ -940,6 +940,9 @@ const NESAAfrica = () => {
             </div>
           </section>
 
+          {/* Unified SCEF / NESA-Africa Ten-Region Map */}
+          <AfricaRegionalMap detailBase="/regions" variant="light" />
+
           {/* Legacy Phase - Rebuild My School Africa */}
           <section className="py-20" style={{ backgroundColor: nesaColors.dark }}>
             <div className="container mx-auto px-4">
