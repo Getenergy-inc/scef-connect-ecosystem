@@ -16,6 +16,7 @@ import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { EventCountdown } from "@/components/ui/event-countdown";
 import { Vision2035Section } from "@/components/nesa/Vision2035Section";
 import { MasterTimelineCTA } from "@/components/nesa/MasterTimelineCTA";
+import AfricaRegionalMap from "@/components/regions/AfricaRegionalMap";
 import nesaHeroBgVideo from "@/assets/nesa-hero-bg-video.mp4";
 import {
   TOTAL_CATEGORIES,
@@ -938,6 +939,9 @@ const NESAAfrica = () => {
               </div>
             </div>
           </section>
+
+          {/* Unified SCEF / NESA-Africa Ten-Region Map */}
+          <AfricaRegionalMap detailBase="/regions" variant="light" />
 
           {/* Legacy Phase - Rebuild My School Africa */}
           <section className="py-20" style={{ backgroundColor: nesaColors.dark }}>

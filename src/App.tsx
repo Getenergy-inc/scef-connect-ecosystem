@@ -17,6 +17,7 @@ import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import LocalChapters from "./pages/LocalChapters";
+import RegionDetail from "./pages/regions/RegionDetail";
 import JoinOnline from "./pages/chapters/JoinOnline";
 import ChapterSignup from "./pages/chapters/ChapterSignup";
 import ChapterDetail from "./pages/chapters/ChapterDetail";
@@ -297,6 +298,8 @@ const App = () => (
               <Route path="/get-involved/join-chapter/signup" element={<ChapterSignup />} />
               <Route path="/chapters/start" element={<StartChapter />} />
               <Route path="/chapters/:slug" element={<ChapterDetail />} />
+              <Route path="/local-chapter-services" element={<LocalChapters />} />
+              <Route path="/regions/:slug" element={<RegionDetail />} />
               
               {/* Media Routes */}
               <Route path="/media" element={<Media />} />
