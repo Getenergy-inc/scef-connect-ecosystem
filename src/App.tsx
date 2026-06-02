@@ -364,6 +364,9 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/auth/sign-in" element={<SignIn />} />
               <Route path="/auth/sign-up" element={<SignUp />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/get-involved/register" element={<Register />} />
+              <Route path="/auth/register" element={<Register />} />
               
               {/* Dashboard Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
