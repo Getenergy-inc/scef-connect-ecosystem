@@ -135,14 +135,19 @@ export const AfricaRegionalMap = ({
                   return (
                     <g
                       key={r.slug}
-                      className="cursor-pointer"
+                      className="cursor-pointer outline-none group"
                       onClick={() => setActive(r)}
                       onMouseEnter={() => setActive(r)}
+                      onFocus={() => setActive(r)}
                       tabIndex={0}
                       role="button"
                       aria-label={`${r.name} region`}
+                      aria-pressed={isActive}
                       onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") setActive(r);
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setActive(r);
+                        }
                       }}
                     >
                       <polygon
@@ -153,7 +158,7 @@ export const AfricaRegionalMap = ({
                         strokeOpacity={isActive ? 1 : 0.55}
                         strokeWidth={isActive ? 0.6 : 0.4}
                         filter={isActive ? "url(#regionGlow)" : undefined}
-                        className="transition-all duration-300"
+                        className="transition-all duration-300 group-hover:[fill:hsl(45_92%_52%)] group-hover:[stroke-width:0.7] group-focus-visible:[stroke:#ffffff] group-focus-visible:[stroke-width:0.9]"
                       />
                       <text
                         x={poly.cx}
@@ -164,6 +169,7 @@ export const AfricaRegionalMap = ({
                         fontWeight={isActive ? 700 : 600}
                         fill={isActive ? SCEF_BRAND.navy : "#FFFFFF"}
                         pointerEvents="none"
+                        className="transition-colors duration-300 group-hover:[fill:hsl(221_53%_12%)]"
                         style={{ letterSpacing: "0.04em" }}
                       >
                         {r.shortName}
