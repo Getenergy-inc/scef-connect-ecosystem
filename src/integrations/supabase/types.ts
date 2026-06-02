@@ -3812,6 +3812,7 @@ export type Database = {
           portfolio_url: string | null
           preferred_division: string
           preferred_role: string
+          reference_number: string | null
           relevant_experience: string
           short_intro: string
           status: string
@@ -3837,6 +3838,7 @@ export type Database = {
           portfolio_url?: string | null
           preferred_division: string
           preferred_role: string
+          reference_number?: string | null
           relevant_experience: string
           short_intro: string
           status?: string
@@ -3862,6 +3864,7 @@ export type Database = {
           portfolio_url?: string | null
           preferred_division?: string
           preferred_role?: string
+          reference_number?: string | null
           relevant_experience?: string
           short_intro?: string
           status?: string
