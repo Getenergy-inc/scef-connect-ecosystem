@@ -232,6 +232,93 @@ const LocalChapters = () => {
             </div>
           </section>
 
+          {/* Global Online Chapters Network — 8 African regions + global networks + other continents */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="mb-8 max-w-3xl">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-3"
+                      style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
+                  <Wifi className="w-3.5 h-3.5" /> Global Online Chapters Network
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-3" style={{ color: SCEF_BRAND.navy }}>
+                  Online Local Chapters Across Every Region
+                </h2>
+                <p className="text-slate-600">
+                  Every SCEF supporter can join an online chapter — across the 8 African regions,
+                  the African Diaspora and Friends of Africa networks, and on every other continent.
+                  Online chapters are the entry stage of the SCEF chapter development pathway and
+                  feed directly into EduAid-Africa, NESA-Africa, Special Needs School nominations,
+                  regional voting and Rebuild My School Africa.
+                </p>
+              </div>
+
+              {(["African Region", "Global Network", "Other Continent"] as const).map((scope) => {
+                const groups = ONLINE_CHAPTERS_NETWORK.filter((g) => g.scope === scope);
+                const heading =
+                  scope === "African Region" ? "8 African Regions"
+                  : scope === "Global Network" ? "Global African Networks"
+                  : "Other Continents";
+                return (
+                  <div key={scope} className="mb-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <h3 className="font-display text-xl font-bold" style={{ color: SCEF_BRAND.navy }}>{heading}</h3>
+                      <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full border ${SCOPE_TONE[scope]}`}>
+                        {groups.length} {groups.length === 1 ? "region" : "regions"}
+                      </span>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {groups.flatMap((g) =>
+                        g.chapters.map((c) => (
+                          <div key={c.name}
+                               className="rounded-xl border bg-card p-5 hover:border-scef-gold/50 hover:shadow-sm transition-all flex flex-col"
+                               style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+                            <div className="flex items-start justify-between gap-3 mb-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                                     style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
+                                  <Wifi className="w-4 h-4" />
+                                </div>
+                                <div>
+                                  <p className="text-[11px] font-semibold uppercase tracking-wider"
+                                     style={{ color: SCEF_BRAND.goldDeep }}>{g.region}</p>
+                                  <h4 className="font-display text-base font-bold leading-snug"
+                                      style={{ color: SCEF_BRAND.navy }}>{c.name}</h4>
+                                </div>
+                              </div>
+                              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${STATUS_TONE[c.status]}`}>
+                                {c.status}
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-600 mb-4 line-clamp-3">{c.coverage}</p>
+                            <div className="mt-auto flex items-center justify-between">
+                              <span className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
+                                <Users className="w-3 h-3" /> Reporting in progress
+                              </span>
+                              <Button size="sm" variant="ghost" asChild className="text-scef-blue-darker hover:text-scef-gold-dark h-7 px-2">
+                                <Link to="/chapters/join-online">
+                                  Join <ArrowRight className="w-3 h-3 ml-1" />
+                                </Link>
+                              </Button>
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Button asChild className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                  <Link to="/chapters/join-online"><Wifi className="w-4 h-4 mr-2" />Join an online chapter</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to="/chapters/start"><Plus className="w-4 h-4 mr-2" />Start a chapter in your region</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+
           {/* How Local Chapters Work */}
           <section className="py-16 bg-white">
             <div className="container mx-auto px-4 max-w-5xl">
