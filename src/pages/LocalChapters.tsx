@@ -95,6 +95,45 @@ const LocalChapters = () => {
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [regionFilter, setRegionFilter] = useState<string>("all");
 
+  // Filters scoped to the Global Online Chapters Network
+  const [onlineSearch, setOnlineSearch] = useState("");
+  const [onlineScope, setOnlineScope] = useState<"all" | OnlineRegion["scope"]>("all");
+  const [onlineRegion, setOnlineRegion] = useState<string>("all");
+  const [onlineStatus, setOnlineStatus] = useState<"all" | OnlineChapter["status"]>("all");
+
+  const onlineRegionOptions = useMemo(
+    () =>
+      ONLINE_CHAPTERS_NETWORK
+        .filter((g) => onlineScope === "all" || g.scope === onlineScope)
+        .map((g) => g.region),
+    [onlineScope],
+  );
+
+  const filteredOnlineNetwork = useMemo(() => {
+    const q = onlineSearch.trim().toLowerCase();
+    return ONLINE_CHAPTERS_NETWORK
+      .filter((g) => onlineScope === "all" || g.scope === onlineScope)
+      .filter((g) => onlineRegion === "all" || g.region === onlineRegion)
+      .map((g) => ({
+        ...g,
+        chapters: g.chapters.filter((c) => {
+          const matchesStatus = onlineStatus === "all" || c.status === onlineStatus;
+          const matchesSearch = !q ||
+            c.name.toLowerCase().includes(q) ||
+            c.coverage.toLowerCase().includes(q) ||
+            g.region.toLowerCase().includes(q) ||
+            g.scope.toLowerCase().includes(q);
+          return matchesStatus && matchesSearch;
+        }),
+      }))
+      .filter((g) => g.chapters.length > 0);
+  }, [onlineSearch, onlineScope, onlineRegion, onlineStatus]);
+
+  const totalOnlineMatches = useMemo(
+    () => filteredOnlineNetwork.reduce((n, g) => n + g.chapters.length, 0),
+    [filteredOnlineNetwork],
+  );
+
   const filtered = useMemo(() => {
     return chapters.filter((c) => {
       const q = searchQuery.toLowerCase();
