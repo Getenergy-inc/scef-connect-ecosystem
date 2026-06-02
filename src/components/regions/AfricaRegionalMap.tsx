@@ -18,9 +18,18 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-// Simplified Africa silhouette path (decorative, donor-ready outline).
-const AFRICA_PATH =
-  "M50 6 L62 8 L72 14 L78 22 L82 30 L80 38 L84 46 L82 56 L78 64 L74 72 L70 80 L62 88 L54 92 L46 90 L40 82 L36 74 L32 66 L28 58 L24 50 L22 42 L24 34 L28 26 L34 18 L42 10 Z";
+// Tessellated region polygons (decorative, donor-ready). Coordinates in a
+// 0–100 viewBox approximating the African continent silhouette.
+const REGION_POLYGONS: Record<string, { points: string; cx: number; cy: number }> = {
+  "north-africa":   { points: "30,6 70,6 80,16 76,26 30,26 22,18", cx: 50, cy: 16 },
+  "sahel-region":   { points: "30,28 64,28 66,40 58,46 36,46 26,38", cx: 46, cy: 37 },
+  "west-africa":    { points: "6,40 24,32 30,44 28,56 16,62 4,52",  cx: 16, cy: 47 },
+  "horn-of-africa": { points: "76,28 92,30 94,42 84,46 76,40",       cx: 84, cy: 37 },
+  "central-africa": { points: "32,48 58,48 60,60 50,68 38,68 30,58", cx: 45, cy: 58 },
+  "east-africa":    { points: "62,48 76,48 80,58 74,68 64,66 60,58", cx: 70, cy: 58 },
+  "southern-africa":{ points: "30,70 62,70 70,82 56,94 38,94 24,82", cx: 46, cy: 82 },
+  "indian-ocean":   { points: "84,74 94,74 96,82 90,90 82,84",       cx: 89, cy: 82 },
+};
 
 const STATUS_TONE: Record<string, string> = {
   active: "bg-[#0F8A5F] text-white",
@@ -98,10 +107,10 @@ export const AfricaRegionalMap = ({
           {/* Map */}
           <div className="col-span-7">
             <div
-              className="relative rounded-3xl p-6 shadow-sm border"
+              className="relative rounded-3xl p-6 shadow-lg border overflow-hidden"
               style={{
-                backgroundColor: "#FFFFFF",
-                borderColor: `${SCEF_BRAND.navy}14`,
+                background: `radial-gradient(120% 90% at 30% 20%, ${SCEF_BRAND.navy} 0%, ${SCEF_BRAND.navyDeep} 70%)`,
+                borderColor: `${SCEF_BRAND.gold}33`,
               }}
             >
               <svg
@@ -111,24 +120,21 @@ export const AfricaRegionalMap = ({
                 className="w-full h-auto"
               >
                 <defs>
-                  <linearGradient id="africaFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor={SCEF_BRAND.navy} stopOpacity="0.92" />
-                    <stop offset="100%" stopColor={SCEF_BRAND.navyDeep} stopOpacity="1" />
-                  </linearGradient>
+                  <filter id="regionGlow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="1.6" result="b" />
+                    <feMerge>
+                      <feMergeNode in="b" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
                 </defs>
-                <path
-                  d={AFRICA_PATH}
-                  fill="url(#africaFill)"
-                  stroke={SCEF_BRAND.gold}
-                  strokeOpacity="0.45"
-                  strokeWidth="0.4"
-                />
                 {onContinent.map((r) => {
+                  const poly = REGION_POLYGONS[r.slug];
+                  if (!poly) return null;
                   const isActive = r.slug === active.slug;
                   return (
                     <g
                       key={r.slug}
-                      transform={`translate(${r.mapX} ${r.mapY})`}
                       className="cursor-pointer"
                       onClick={() => setActive(r)}
                       onMouseEnter={() => setActive(r)}
@@ -139,27 +145,26 @@ export const AfricaRegionalMap = ({
                         if (e.key === "Enter" || e.key === " ") setActive(r);
                       }}
                     >
-                      <circle
-                        r={isActive ? 3.2 : 2.4}
-                        fill={isActive ? SCEF_BRAND.gold : SCEF_BRAND.white}
-                        stroke={isActive ? SCEF_BRAND.gold : SCEF_BRAND.navy}
-                        strokeWidth="0.5"
+                      <polygon
+                        points={poly.points}
+                        fill={isActive ? SCEF_BRAND.gold : `${SCEF_BRAND.navy}E6`}
+                        fillOpacity={isActive ? 1 : 0.92}
+                        stroke={SCEF_BRAND.gold}
+                        strokeOpacity={isActive ? 1 : 0.55}
+                        strokeWidth={isActive ? 0.6 : 0.4}
+                        filter={isActive ? "url(#regionGlow)" : undefined}
+                        className="transition-all duration-300"
                       />
-                      {isActive && (
-                        <circle
-                          r="5"
-                          fill="none"
-                          stroke={SCEF_BRAND.gold}
-                          strokeOpacity="0.45"
-                          strokeWidth="0.6"
-                        />
-                      )}
                       <text
-                        y="-4"
+                        x={poly.cx}
+                        y={poly.cy}
                         textAnchor="middle"
-                        fontSize="2.6"
-                        fontWeight={isActive ? 700 : 500}
-                        fill={isActive ? SCEF_BRAND.gold : SCEF_BRAND.white}
+                        dominantBaseline="middle"
+                        fontSize="3"
+                        fontWeight={isActive ? 700 : 600}
+                        fill={isActive ? SCEF_BRAND.navy : "#FFFFFF"}
+                        pointerEvents="none"
+                        style={{ letterSpacing: "0.04em" }}
                       >
                         {r.shortName}
                       </text>
@@ -181,10 +186,10 @@ export const AfricaRegionalMap = ({
                       style={{
                         backgroundColor: isActive
                           ? SCEF_BRAND.gold
-                          : `${SCEF_BRAND.navy}10`,
-                        color: isActive ? SCEF_BRAND.navy : SCEF_BRAND.navy,
+                          : "transparent",
+                        color: isActive ? SCEF_BRAND.navy : SCEF_BRAND.gold,
                         border: `1px solid ${
-                          isActive ? SCEF_BRAND.gold : `${SCEF_BRAND.navy}20`
+                          isActive ? SCEF_BRAND.gold : `${SCEF_BRAND.gold}66`
                         }`,
                       }}
                     >
@@ -206,34 +211,50 @@ export const AfricaRegionalMap = ({
         <div className="lg:hidden space-y-3">
           {/* Simplified SVG also on mobile */}
           <div
-            className="rounded-2xl p-4 border"
+            className="rounded-2xl p-4 border overflow-hidden"
             style={{
-              backgroundColor: "#FFFFFF",
-              borderColor: `${SCEF_BRAND.navy}14`,
+              background: `radial-gradient(120% 90% at 30% 20%, ${SCEF_BRAND.navy} 0%, ${SCEF_BRAND.navyDeep} 70%)`,
+              borderColor: `${SCEF_BRAND.gold}33`,
             }}
           >
             <svg
               viewBox="0 0 100 100"
               role="img"
-              aria-label="Map of Africa highlighting ten SCEF regions"
-              className="w-full h-auto max-h-72"
+              aria-label="Map of Africa highlighting 8 SCEF regions"
+              className="w-full h-auto max-h-80"
             >
-              <path
-                d={AFRICA_PATH}
-                fill={SCEF_BRAND.navy}
-                stroke={SCEF_BRAND.gold}
-                strokeOpacity="0.45"
-                strokeWidth="0.4"
-              />
-              {onContinent.map((r) => (
-                <g
-                  key={r.slug}
-                  transform={`translate(${r.mapX} ${r.mapY})`}
-                  onClick={() => setOpenSlug(r.slug)}
-                >
-                  <circle r="2.6" fill={SCEF_BRAND.gold} />
-                </g>
-              ))}
+              {onContinent.map((r) => {
+                const poly = REGION_POLYGONS[r.slug];
+                if (!poly) return null;
+                const isOpen = openSlug === r.slug;
+                return (
+                  <g
+                    key={r.slug}
+                    onClick={() => setOpenSlug(isOpen ? null : r.slug)}
+                    className="cursor-pointer"
+                  >
+                    <polygon
+                      points={poly.points}
+                      fill={isOpen ? SCEF_BRAND.gold : `${SCEF_BRAND.navy}E6`}
+                      stroke={SCEF_BRAND.gold}
+                      strokeOpacity={isOpen ? 1 : 0.55}
+                      strokeWidth="0.4"
+                    />
+                    <text
+                      x={poly.cx}
+                      y={poly.cy}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      fontSize="2.8"
+                      fontWeight={600}
+                      fill={isOpen ? SCEF_BRAND.navy : "#FFFFFF"}
+                      pointerEvents="none"
+                    >
+                      {r.shortName}
+                    </text>
+                  </g>
+                );
+              })}
             </svg>
           </div>
 
