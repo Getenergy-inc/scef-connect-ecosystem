@@ -923,12 +923,16 @@ const OurDivisionsVacancies = () => {
                     <td className="px-4 py-3 text-muted-foreground">{v.location}</td>
                     <td className="px-4 py-3 text-muted-foreground">{v.deadline}</td>
                     <td className="px-4 py-3">
-                      <Button asChild size="sm" variant="outline" className="h-8 px-3 text-[12px]">
-                        <a href={SOPHIA_WA} target="_blank" rel="noopener noreferrer">
-                          Apply
-                        </a>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-8 px-3 text-[12px]"
+                        onClick={() => handleApplyClick(v)}
+                      >
+                        Apply
                       </Button>
                     </td>
+
                   </tr>
                 ))}
               </tbody>
