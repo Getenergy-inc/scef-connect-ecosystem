@@ -188,25 +188,95 @@ const LocalChapters = () => {
           {/* Hero */}
           <section className="relative pt-32 pb-16 bg-scef-blue-darker overflow-hidden">
             <div className="absolute inset-0 bg-scef-pattern opacity-10" />
-            <div className="container mx-auto px-4 relative z-10 max-w-4xl">
+            <div className="container mx-auto px-4 relative z-10 max-w-5xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-5">
                 <MapPin className="w-3.5 h-3.5" /> SCEF Local Chapter Services
               </div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5">
-                Local Chapter <span className="text-scef-gold">Services</span>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
+                Explore Africa's <span className="text-scef-gold">Regions</span>
               </h1>
-              <p className="text-lg text-white/80 leading-relaxed max-w-3xl">
-                SCEF Local Chapter Services is the grassroots execution arm of Santos Creations
-                Educational Foundation. Local chapters support EduAid-Africa, NESA-Africa,
-                Rebuild My School Africa, eLibrary Nigeria, Education Online Africa, Women &amp;
-                Girls Education, Special Needs Education Support, training programmes, media
-                advocacy, school nominations, regional voting, and community-based education impact.
+              <p className="text-scef-gold font-semibold tracking-wide uppercase text-sm mb-4">
+                One Continent · Ten Regions
               </p>
+              <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl mb-7">
+                Discover SCEF's regional and country-based local chapter system connecting
+                education champions, cultural heritage, edu-tourism opportunities, school
+                support, Special Needs School nominations, regional voting, GFA Wallet
+                regional funding, Rebuild My School Africa interventions, EduAid-Africa
+                activities, NESA-Africa legacy impact, eLibrary Nigeria access, Education
+                Online Africa access, and local community action across Africa and the diaspora.
+              </p>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5">
+                <Button asChild size="sm" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                  <Link to="/chapters/join-online"><Users className="w-4 h-4 mr-1.5" />Join a Local Chapter</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <Link to="/chapters/start"><Plus className="w-4 h-4 mr-1.5" />Start an Online Chapter</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <a href="#regions"><Globe className="w-4 h-4 mr-1.5" />Explore Regions</a>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <Link to="/nominate"><GraduationCap className="w-4 h-4 mr-1.5" />Nominate a School</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <Link to="/donate"><Heart className="w-4 h-4 mr-1.5" />Support a Region</Link>
+                </Button>
+                <Button asChild size="sm" className="bg-emerald-500 text-white hover:bg-emerald-600">
+                  <a href={SOPHIA_WHATSAPP_LOCAL_CHAPTER} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-1.5" />Chat with Sophia
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Positioning — licensed grassroots, not franchises */}
+          <section className="py-12 bg-white border-b">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+                    Positioning
+                  </span>
+                  <h2 className="font-display text-2xl font-bold mt-1" style={{ color: SCEF_BRAND.navy }}>
+                    One SCEF. One Local Chapter system.
+                  </h2>
+                </div>
+                <p className="md:col-span-2 text-sm leading-relaxed text-slate-600">
+                  SCEF Local Chapter Services is the grassroots execution arm of Santos
+                  Creations Educational Foundation. Local chapters are <strong>licensed</strong>{" "}
+                  country, regional, diaspora and community-based implementation platforms
+                  governed by SCEF through Local Chapter Services and compliance oversight.
+                  They are <strong>not independent franchises</strong>: they do not own SCEF
+                  assets, operate separate wallets, sign contracts, fundraise independently or
+                  represent SCEF outside approved governance procedures. All programs,
+                  nominations, voting, school interventions, media coverage, digital learning
+                  and regional funding connect back to the central SCEF Local Chapter Services
+                  system.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Shared ten-region map */}
-          <AfricaRegionalMap detailBase="/regions" variant="light" />
+          <div id="regions">
+            <AfricaRegionalMap detailBase="/regions" variant="light" />
+          </div>
+
+          {/* Ten approved regions — country chip browser */}
+          <RegionCountryBrowser />
+
+          {/* Unified Project Synchronization */}
+          <UnifiedProjectSyncSection />
+
+          {/* 2026–2027 NESA-Africa Legacy Impact Pathway */}
+          <NesaLegacyPathwaySection />
+
+          {/* Regional Wallet & Funding Structure */}
+          <RegionalWalletSection />
+
+
 
 
           {/* Filters */}
