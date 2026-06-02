@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { VacancyApplicationForm } from "@/components/vacancies/VacancyApplicationForm";
 import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/button";
 import {
@@ -505,6 +507,20 @@ const SectionHeading = ({
 );
 
 const OurDivisionsVacancies = () => {
+  const [prefill, setPrefill] = useState<{ role: string; division: string; type: string }>({
+    role: "",
+    division: "",
+    type: "",
+  });
+
+  const handleApplyClick = (v: { title: string; division: string; type: string }) => {
+    setPrefill({ role: v.title, division: v.division, type: v.type });
+    if (typeof window !== "undefined") {
+      const el = document.getElementById("apply");
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <PageShell
       title="Our Divisions, Governance Structure & Vacancies"
@@ -907,12 +923,16 @@ const OurDivisionsVacancies = () => {
                     <td className="px-4 py-3 text-muted-foreground">{v.location}</td>
                     <td className="px-4 py-3 text-muted-foreground">{v.deadline}</td>
                     <td className="px-4 py-3">
-                      <Button asChild size="sm" variant="outline" className="h-8 px-3 text-[12px]">
-                        <a href={SOPHIA_WA} target="_blank" rel="noopener noreferrer">
-                          Apply
-                        </a>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-8 px-3 text-[12px]"
+                        onClick={() => handleApplyClick(v)}
+                      >
+                        Apply
                       </Button>
                     </td>
+
                   </tr>
                 ))}
               </tbody>
@@ -927,7 +947,7 @@ const OurDivisionsVacancies = () => {
       </section>
 
       {/* Application process & form */}
-      <section className="bg-background border-b border-border">
+      <section id="apply" className="bg-background border-b border-border scroll-mt-24">
         <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
@@ -945,55 +965,40 @@ const OurDivisionsVacancies = () => {
                   </li>
                 ))}
               </ol>
+
+              <div className="mt-8 rounded-xl border border-border bg-muted/30 p-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-scef-blue-darker mb-2">
+                  Prefer WhatsApp?
+                </p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  You can also reach Sophia Support directly to apply or ask questions.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <a href={SOPHIA_WA} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4" />
+                    Contact Sophia Support
+                  </a>
+                </Button>
+              </div>
             </div>
 
             <div>
               <SectionHeading
                 eyebrow="Application Form"
-                title="What we'll collect"
-                intro="Backend onboarding is being prepared. While we finalize it, applications are accepted via Sophia Support on WhatsApp."
+                title="Submit your application"
+                intro="Complete the form below. Your CV and supporting documents are uploaded securely and only accessible to authorized SCEF staff."
               />
-              <div className="bg-card rounded-xl border border-border p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-scef-blue-darker mb-3">
-                  Required Fields
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-muted-foreground mb-5">
-                  {[
-                    "Full name",
-                    "Email",
-                    "Phone / WhatsApp",
-                    "Country & City",
-                    "Preferred division",
-                    "Preferred role",
-                    "Volunteer / intern / staff / consultant",
-                    "Weekly availability",
-                    "Relevant experience",
-                    "Tools you can use",
-                    "CV upload",
-                    "Portfolio / LinkedIn / GitHub / website",
-                    "Short introduction",
-                    "Why you want to support SCEF",
-                    "Consent to SCEF Code of Conduct",
-                    "Safeguarding acknowledgment",
-                    "Data privacy consent",
-                  ].map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-scef-gold shrink-0 mt-1" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild className="w-full">
-                  <a href={SOPHIA_WA} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4" />
-                    Apply through Sophia Support
-                  </a>
-                </Button>
-              </div>
+              <VacancyApplicationForm
+                defaultRole={prefill.role}
+                defaultDivision={prefill.division}
+                defaultType={prefill.type}
+                key={`${prefill.role}-${prefill.division}-${prefill.type}`}
+              />
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Compliance & safeguarding */}
       <section className="bg-scef-blue-darker text-white">

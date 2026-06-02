@@ -3793,6 +3793,84 @@ export type Database = {
         }
         Relationships: []
       }
+      vacancy_applications: {
+        Row: {
+          application_type: string
+          city: string | null
+          consent_code_of_conduct: boolean
+          consent_data_privacy: boolean
+          consent_safeguarding: boolean
+          country: string
+          created_at: string
+          cv_path: string
+          email: string
+          full_name: string
+          id: string
+          motivation: string
+          phone: string
+          portfolio_file_path: string | null
+          portfolio_url: string | null
+          preferred_division: string
+          preferred_role: string
+          relevant_experience: string
+          short_intro: string
+          status: string
+          tools: string | null
+          updated_at: string
+          weekly_availability: string
+        }
+        Insert: {
+          application_type: string
+          city?: string | null
+          consent_code_of_conduct?: boolean
+          consent_data_privacy?: boolean
+          consent_safeguarding?: boolean
+          country: string
+          created_at?: string
+          cv_path: string
+          email: string
+          full_name: string
+          id?: string
+          motivation: string
+          phone: string
+          portfolio_file_path?: string | null
+          portfolio_url?: string | null
+          preferred_division: string
+          preferred_role: string
+          relevant_experience: string
+          short_intro: string
+          status?: string
+          tools?: string | null
+          updated_at?: string
+          weekly_availability: string
+        }
+        Update: {
+          application_type?: string
+          city?: string | null
+          consent_code_of_conduct?: boolean
+          consent_data_privacy?: boolean
+          consent_safeguarding?: boolean
+          country?: string
+          created_at?: string
+          cv_path?: string
+          email?: string
+          full_name?: string
+          id?: string
+          motivation?: string
+          phone?: string
+          portfolio_file_path?: string | null
+          portfolio_url?: string | null
+          preferred_division?: string
+          preferred_role?: string
+          relevant_experience?: string
+          short_intro?: string
+          status?: string
+          tools?: string | null
+          updated_at?: string
+          weekly_availability?: string
+        }
+        Relationships: []
+      }
       vocational_scholarship_waitlist: {
         Row: {
           admin_notes: string | null
