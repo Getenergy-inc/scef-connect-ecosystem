@@ -299,6 +299,8 @@ const App = () => (
               <Route path="/chapters/start" element={<StartChapter />} />
               <Route path="/chapters/:slug" element={<ChapterDetail />} />
               <Route path="/local-chapter-services" element={<LocalChapters />} />
+              <Route path="/local-chapters/region/:regionSlug" element={<LocalChapterRegionDetail />} />
+              <Route path="/local-chapters/country/:countrySlug" element={<LocalChapterCountryDetail />} />
               <Route path="/regions/:slug" element={<RegionDetail />} />
               
               {/* Media Routes */}
