@@ -161,6 +161,8 @@ export const VacancyApplicationForm = ({
         ? await uploadFile(portfolioFile, "portfolio")
         : null;
 
+      const newRef = generateReferenceNumber();
+
       const { error } = await supabase.from("vacancy_applications").insert({
         full_name: parsed.data.full_name,
         email: parsed.data.email,
@@ -181,13 +183,29 @@ export const VacancyApplicationForm = ({
         consent_code_of_conduct: parsed.data.consent_code_of_conduct,
         consent_safeguarding: parsed.data.consent_safeguarding,
         consent_data_privacy: parsed.data.consent_data_privacy,
+        reference_number: newRef,
       });
       if (error) throw error;
 
+      // Fire-and-forget confirmation email; do not block success state if it fails.
+      supabase.functions
+        .invoke("send-vacancy-confirmation", {
+          body: {
+            recipient_email: parsed.data.email,
+            full_name: parsed.data.full_name,
+            reference_number: newRef,
+            preferred_role: parsed.data.preferred_role,
+            preferred_division: parsed.data.preferred_division,
+            application_type: parsed.data.application_type,
+          },
+        })
+        .catch((e) => console.error("Confirmation email failed", e));
+
+      setReferenceNumber(newRef);
       setSuccess(true);
       toast({
         title: "Application received",
-        description: "Thank you. The SCEF team will review your application and reach out.",
+        description: `Reference ${newRef}. A confirmation email has been sent to ${parsed.data.email}.`,
       });
     } catch (err: any) {
       toast({
