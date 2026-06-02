@@ -6,12 +6,24 @@ import { Link } from "react-router-dom";
 import { useMemo, useState } from "react";
 import {
   MapPin, Users, Search, Filter, Globe, Building, Wifi, ArrowRight, Plus, ShieldCheck, CheckCircle2,
+  Heart, MessageCircle, Wallet, GraduationCap, Trophy, ChevronDown,
 } from "lucide-react";
 import { useChapters, CHAPTER_TYPE_LABEL, type ChapterRow } from "@/hooks/useChapters";
 import AfricaRegionalMap from "@/components/regions/AfricaRegionalMap";
 import { SCEF_BRAND } from "@/data/africaRegions";
+import {
+  SCEF_REGIONS, countriesForRegion, countrySlug, SOPHIA_WHATSAPP_LOCAL_CHAPTER,
+  type ScefRegion,
+} from "@/data/scefRegions";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const TYPE_ICON = { online: Wifi, hybrid: Globe, physical: Building } as const;
+
+const SCOPE_BADGE: Record<ScefRegion["scope"], string> = {
+  "African Region": "bg-scef-gold/20 text-scef-blue-darker border-scef-gold/40",
+  "Cross-Regional": "bg-emerald-50 text-emerald-800 border-emerald-300",
+  "Global Network": "bg-sky-50 text-sky-800 border-sky-300",
+};
 
 const REGION_ORDER = [
   "North Africa", "West Africa", "Central Africa", "East Africa", "Southern Africa",
