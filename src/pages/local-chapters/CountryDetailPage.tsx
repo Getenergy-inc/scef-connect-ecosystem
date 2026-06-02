@@ -28,7 +28,9 @@ const PROGRAM_ROUTES: Record<string, string> = {
   "SCEF General": "/about",
 };
 
-const STATUS_VARIANT: Record<string, string> = {
+import { getCountryStatus, getRegionStatus } from "@/data/chapterStatus";
+
+const WALLET_VARIANT: Record<string, string> = {
   Active: "bg-emerald-500/10 text-emerald-700 border-emerald-500/30",
   Forming: "bg-amber-500/10 text-amber-700 border-amber-500/30",
   "Pending Setup": "bg-muted text-muted-foreground border-border",
@@ -48,6 +50,8 @@ const CountryDetailPage = () => {
   const allPrograms = Array.from(
     new Set([primary, ...secondary].flatMap((r) => r.linkedPrograms)),
   );
+  const countryStatus = getCountryStatus(country);
+  const regionStatus = getRegionStatus(primary);
 
   return (
     <div className="min-h-screen bg-background">
@@ -100,11 +104,12 @@ const CountryDetailPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/30">
-                Online · Forming
+              <Badge className={countryStatus.badgeClass}>
+                <span className={`inline-block h-2 w-2 rounded-full mr-2 ${countryStatus.dotClass}`} />
+                Online · {countryStatus.label}
               </Badge>
-              <p className="text-xs text-muted-foreground mt-2 italic">
-                Member counts: Reporting in progress
+              <p className="text-xs text-muted-foreground mt-2">
+                {countryStatus.description}
               </p>
             </CardContent>
           </Card>
@@ -115,11 +120,11 @@ const CountryDetailPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Badge className={STATUS_VARIANT[primary.walletStatus]}>
+              <Badge className={WALLET_VARIANT[primary.walletStatus]}>
                 {primary.walletStatus}
               </Badge>
               <p className="text-xs text-muted-foreground mt-2">
-                Routed via {primary.name} wallet.
+                Regional chapter: <span className="font-medium">{regionStatus.label}</span> · Routed via {primary.name} wallet.
               </p>
             </CardContent>
           </Card>
