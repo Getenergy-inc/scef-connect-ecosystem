@@ -416,8 +416,11 @@ const App = () => (
               {/* Get Involved Routes */}
               <Route path="/join" element={<Join />} />
               <Route path="/get-involved" element={<GetInvolved />} />
-              <Route path="/get-involved/membership" element={<Membership />} />
-              <Route path="/get-involved/ambassador" element={<Ambassador />} />
+              <Route path="/get-involved/membership-ambassadors" element={<MembershipAmbassadors />} />
+              <Route path="/join-scef" element={<MembershipAmbassadors />} />
+              <Route path="/volunteer-ambassador" element={<MembershipAmbassadors />} />
+              <Route path="/get-involved/membership" element={<MembershipAmbassadors />} />
+              <Route path="/get-involved/ambassador" element={<MembershipAmbassadors />} />
               <Route path="/get-involved/nrc" element={<NRC />} />
               <Route path="/get-involved/judge" element={<Judge />} />
               <Route path="/get-involved/volunteer" element={<Volunteer />} />
@@ -425,12 +428,13 @@ const App = () => (
               <Route path="/get-involved/partner-with-scef" element={<PartnerWithScef />} />
               <Route path="/partner-with-scef" element={<PartnerWithScef />} />
               <Route path="/volunteer" element={<Volunteer />} />
-              <Route path="/ambassador" element={<Ambassador />} />
-              <Route path="/ambassadors" element={<Ambassador />} />
+              <Route path="/ambassador" element={<MembershipAmbassadors />} />
+              <Route path="/ambassadors" element={<MembershipAmbassadors />} />
               <Route path="/ambassador/apply" element={<AmbassadorApply />} />
               <Route path="/get-involved/ambassador/apply" element={<AmbassadorApply />} />
               <Route path="/volunteer/my-career-my-life" element={<VolunteerMyCareerMyLife />} />
-              <Route path="/membership" element={<Membership />} />
+              <Route path="/membership" element={<MembershipAmbassadors />} />
+              <Route path="/membership/legacy" element={<Membership />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/donation-success" element={<DonationSuccess />} />
               <Route path="/wallet" element={<Wallet />} />
