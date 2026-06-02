@@ -298,6 +298,8 @@ const App = () => (
               <Route path="/get-involved/join-chapter/signup" element={<ChapterSignup />} />
               <Route path="/chapters/start" element={<StartChapter />} />
               <Route path="/chapters/:slug" element={<ChapterDetail />} />
+              <Route path="/local-chapter-services" element={<LocalChapters />} />
+              <Route path="/regions/:slug" element={<RegionDetail />} />
               
               {/* Media Routes */}
               <Route path="/media" element={<Media />} />
