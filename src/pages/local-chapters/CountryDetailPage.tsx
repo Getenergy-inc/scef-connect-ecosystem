@@ -1,7 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -59,7 +59,7 @@ const CountryDetailPage = () => {
         />
         <link rel="canonical" href={`/local-chapters/country/${country.slug}`} />
       </Helmet>
-      <Navbar />
+      <Header />
 
       <main className="container mx-auto px-4 py-10 max-w-5xl">
         <Link
