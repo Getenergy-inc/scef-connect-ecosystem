@@ -107,7 +107,7 @@ export const AfricaRegionalMap = ({
               <svg
                 viewBox="0 0 100 100"
                 role="img"
-                aria-label="Map of Africa highlighting ten SCEF regions"
+                aria-label="Map of Africa highlighting 8 SCEF regions and 2 global networks"
                 className="w-full h-auto"
               >
                 <defs>
