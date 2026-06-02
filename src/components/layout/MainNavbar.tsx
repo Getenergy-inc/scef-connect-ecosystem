@@ -16,6 +16,7 @@ const NAV: NavItem[] = [
       { name: "Vision 2037", href: "/about/vision-2037", description: "Our continental agenda" },
       { name: "History", href: "/about/history", description: "Our journey since 1997" },
       { name: "Governance", href: "/governance", description: "Leadership & structure" },
+      { name: "Our Divisions & Governance", href: "/our-divisions-vacancies", description: "Divisions, chapters, staffing & vacancies" },
     ],
   },
   {
@@ -79,6 +80,7 @@ const NAV: NavItem[] = [
       { name: "Internship Opportunities", href: "/internship", description: "Hands-on placements" },
       { name: "Partner with SCEF", href: "/get-involved/partner-with-scef", description: "Organizations, CSR & institutions" },
       { name: "Support a Local Chapter", href: "/local-chapters", description: "Community-led chapters" },
+      { name: "Divisions & Vacancies", href: "/our-divisions-vacancies", description: "Open roles across SCEF divisions" },
       { name: "Donate / Support Us", href: "/donate", description: "Fund education impact" },
     ],
   },

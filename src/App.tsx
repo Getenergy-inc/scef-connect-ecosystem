@@ -39,6 +39,7 @@ import Updates from "./pages/Updates";
 import Reports from "./pages/Reports";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
+import OurDivisionsVacancies from "./pages/OurDivisionsVacancies";
 import Sitemap from "./pages/Sitemap";
 import Vacancies from "./pages/Vacancies";
 import PartnerWithUs from "./pages/PartnerWithUs";
@@ -523,6 +524,8 @@ const App = () => (
               <Route path="/elibrary-africa" element={<ELibraryNigeria />} />
 
               {/* Catch-all 404 */}
+              <Route path="/our-divisions-vacancies" element={<OurDivisionsVacancies />} />
+              <Route path="/about/divisions" element={<OurDivisionsVacancies />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <SophiaWhatsAppWidget />
