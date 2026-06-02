@@ -14,8 +14,80 @@ import { SCEF_BRAND } from "@/data/africaRegions";
 const TYPE_ICON = { online: Wifi, hybrid: Globe, physical: Building } as const;
 
 const REGION_ORDER = [
-  "North Africa", "West Africa", "East Africa", "Central Africa", "Southern Africa", "Diaspora",
+  "North Africa", "West Africa", "Central Africa", "East Africa", "Southern Africa",
+  "Sahel Region", "Horn of Africa", "Indian Ocean",
+  "Diaspora / Global Africa", "Friends of Africa",
+  "Europe", "North America", "Latin America & Caribbean", "Middle East", "Asia-Pacific", "Oceania",
 ];
+
+type OnlineChapter = { name: string; coverage: string; status: "Active" | "Forming" | "Open" };
+type OnlineRegion = { region: string; scope: "African Region" | "Global Network" | "Other Continent"; chapters: OnlineChapter[] };
+
+const ONLINE_CHAPTERS_NETWORK: OnlineRegion[] = [
+  // 8 African regions
+  { region: "North Africa", scope: "African Region", chapters: [
+    { name: "North Africa Online Chapter", coverage: "Egypt · Libya · Tunisia · Algeria · Morocco · Western Sahara", status: "Forming" },
+  ]},
+  { region: "West Africa", scope: "African Region", chapters: [
+    { name: "West Africa Online Chapter", coverage: "Nigeria · Ghana · Senegal · Côte d'Ivoire · Liberia · Sierra Leone · The Gambia · Guinea · Guinea-Bissau · Togo · Benin · Cabo Verde", status: "Active" },
+  ]},
+  { region: "Central Africa", scope: "African Region", chapters: [
+    { name: "Central Africa Online Chapter", coverage: "Cameroon · DR Congo · Republic of Congo · Gabon · CAR · Equatorial Guinea · São Tomé & Príncipe · Chad", status: "Forming" },
+  ]},
+  { region: "East Africa", scope: "African Region", chapters: [
+    { name: "East Africa Online Chapter", coverage: "Kenya · Uganda · Tanzania · Rwanda · Burundi · South Sudan", status: "Active" },
+  ]},
+  { region: "Southern Africa", scope: "African Region", chapters: [
+    { name: "Southern Africa Online Chapter", coverage: "South Africa · Namibia · Botswana · Zimbabwe · Zambia · Malawi · Mozambique · Lesotho · Eswatini · Angola", status: "Active" },
+  ]},
+  { region: "Sahel Region", scope: "African Region", chapters: [
+    { name: "Sahel Online Chapter", coverage: "Mali · Burkina Faso · Niger · Mauritania · Chad (Sahel belt)", status: "Forming" },
+  ]},
+  { region: "Horn of Africa", scope: "African Region", chapters: [
+    { name: "Horn of Africa Online Chapter", coverage: "Ethiopia · Eritrea · Djibouti · Somalia · Somaliland", status: "Forming" },
+  ]},
+  { region: "Indian Ocean", scope: "African Region", chapters: [
+    { name: "Indian Ocean Islands Online Chapter", coverage: "Madagascar · Mauritius · Seychelles · Comoros", status: "Forming" },
+  ]},
+  // Global African networks
+  { region: "Diaspora / Global Africa", scope: "Global Network", chapters: [
+    { name: "African Diaspora Online Chapter", coverage: "African heritage communities worldwide", status: "Active" },
+  ]},
+  { region: "Friends of Africa", scope: "Global Network", chapters: [
+    { name: "Friends of Africa Online Chapter", coverage: "Global allies supporting African education", status: "Open" },
+  ]},
+  // Other continents
+  { region: "Europe", scope: "Other Continent", chapters: [
+    { name: "Europe Online Chapter", coverage: "UK · Ireland · France · Germany · Belgium · Netherlands · Italy · Spain · Portugal · Nordics · Eastern Europe", status: "Forming" },
+  ]},
+  { region: "North America", scope: "Other Continent", chapters: [
+    { name: "North America Online Chapter", coverage: "United States · Canada · Mexico", status: "Forming" },
+  ]},
+  { region: "Latin America & Caribbean", scope: "Other Continent", chapters: [
+    { name: "Latin America & Caribbean Online Chapter", coverage: "Brazil · Argentina · Colombia · Jamaica · Trinidad & Tobago · Haiti · Cuba · wider LAC", status: "Open" },
+  ]},
+  { region: "Middle East", scope: "Other Continent", chapters: [
+    { name: "Middle East Online Chapter", coverage: "UAE · Saudi Arabia · Qatar · Kuwait · Bahrain · Oman · Jordan · Lebanon · Türkiye", status: "Open" },
+  ]},
+  { region: "Asia-Pacific", scope: "Other Continent", chapters: [
+    { name: "Asia-Pacific Online Chapter", coverage: "China · India · Japan · South Korea · Singapore · Malaysia · Indonesia · Philippines · Thailand", status: "Open" },
+  ]},
+  { region: "Oceania", scope: "Other Continent", chapters: [
+    { name: "Oceania Online Chapter", coverage: "Australia · New Zealand · Pacific Islands", status: "Open" },
+  ]},
+];
+
+const SCOPE_TONE: Record<OnlineRegion["scope"], string> = {
+  "African Region": "bg-scef-gold/15 text-scef-blue-darker border-scef-gold/40",
+  "Global Network": "bg-emerald-50 text-emerald-800 border-emerald-300",
+  "Other Continent": "bg-sky-50 text-sky-800 border-sky-300",
+};
+
+const STATUS_TONE: Record<OnlineChapter["status"], string> = {
+  Active: "bg-emerald-100 text-emerald-800",
+  Forming: "bg-amber-100 text-amber-800",
+  Open: "bg-slate-100 text-slate-700",
+};
 
 const LocalChapters = () => {
   const { data: chapters = [], isLoading } = useChapters();
