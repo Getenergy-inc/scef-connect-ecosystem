@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useMemo, useState } from "react";
 import {
-  MapPin, Users, Search, Filter, Globe, Building, Wifi, ArrowRight, Plus,
+  MapPin, Users, Search, Filter, Globe, Building, Wifi, ArrowRight, Plus, ShieldCheck, CheckCircle2,
 } from "lucide-react";
 import { useChapters, CHAPTER_TYPE_LABEL, type ChapterRow } from "@/hooks/useChapters";
+import AfricaRegionalMap from "@/components/regions/AfricaRegionalMap";
+import { SCEF_BRAND } from "@/data/africaRegions";
 
 const TYPE_ICON = { online: Wifi, hybrid: Globe, physical: Building } as const;
 
