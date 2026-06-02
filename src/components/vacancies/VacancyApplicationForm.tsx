@@ -71,6 +71,7 @@ export const VacancyApplicationForm = ({
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [referenceNumber, setReferenceNumber] = useState<string>("");
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [portfolioFile, setPortfolioFile] = useState<File | null>(null);
   const [division, setDivision] = useState<string>(defaultDivision);
@@ -78,6 +79,12 @@ export const VacancyApplicationForm = ({
   const [consentCoC, setConsentCoC] = useState(false);
   const [consentSG, setConsentSG] = useState(false);
   const [consentDP, setConsentDP] = useState(false);
+
+  const generateReferenceNumber = (): string => {
+    const year = new Date().getFullYear();
+    const rand = crypto.randomUUID().replace(/-/g, "").slice(0, 8).toUpperCase();
+    return `SCEF-VAC-${year}-${rand}`;
+  };
 
   const uploadFile = async (file: File, folder: string): Promise<string> => {
     const path = generateSecureFileName(file.name, folder);
