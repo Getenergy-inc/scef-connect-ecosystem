@@ -225,9 +225,20 @@ export const VacancyApplicationForm = ({
           <CheckCircle2 className="h-5 w-5" />
           <h4 className="font-display text-lg font-bold">Application received</h4>
         </div>
-        <p className="mt-2 text-sm">
-          Your application has been securely submitted to the SCEF team. We review applications on
-          a rolling basis and will contact you by email if you are shortlisted.
+        {referenceNumber && (
+          <div className="mt-3 rounded-lg border border-emerald-300 bg-white/70 p-3">
+            <p className="text-xs uppercase tracking-wide text-emerald-700">
+              Your reference number
+            </p>
+            <p className="mt-0.5 font-mono text-base font-bold text-emerald-900">
+              {referenceNumber}
+            </p>
+          </div>
+        )}
+        <p className="mt-3 text-sm">
+          A confirmation email with your reference number has been sent to the address you
+          provided. Please keep this reference for all future correspondence. We review
+          applications on a rolling basis and will contact you by email if you are shortlisted.
         </p>
       </div>
     );
