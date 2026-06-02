@@ -173,12 +173,12 @@ const LocalChapters = () => {
   return (
     <>
       <Helmet>
-        <title>Local Chapter Services | SCEF Regional Chapters Across Africa and the Diaspora</title>
+        <title>SCEF Local Chapter Services | Regional and Country Chapters Across Africa and the Diaspora</title>
         <meta
           name="description"
-          content="Explore SCEF Local Chapter Services across 8 African regions plus the African Diaspora and Friends of Africa networks, connecting EduAid-Africa, NESA-Africa, Special Needs School nominations, regional voting, GFA Wzip wallets, Rebuild My School Africa, and edu-tourism opportunities."
+          content="Explore Santos Creations Educational Foundation Local Chapter Services across Africa's ten regions and global diaspora communities. Join country chapters, support EduAid-Africa, NESA-Africa, Rebuild My School Africa, eLibrary Nigeria, regional voting, GFA Wallet wallets, and education impact projects."
         />
-        <link rel="canonical" href="https://santoscreations.org/chapters" />
+        <link rel="canonical" href="https://santoscreations.org/local-chapters" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
