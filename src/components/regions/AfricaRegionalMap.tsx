@@ -68,7 +68,7 @@ export const AfricaRegionalMap = ({
                 color: SCEF_BRAND.goldDeep,
               }}
             >
-              <MapPin className="w-3.5 h-3.5" /> One Continent · Ten Regions
+              <MapPin className="w-3.5 h-3.5" /> 8 African Regions · 2 Global Networks
             </div>
             <h2
               id="africa-regions-heading"
@@ -81,10 +81,13 @@ export const AfricaRegionalMap = ({
               className="mt-4 text-base md:text-lg leading-relaxed"
               style={{ color: subColor }}
             >
-              Discover the education champions, cultural heritage, local chapter
-              activities, edu-tourism opportunities, Special Needs School
+              SCEF and NESA-Africa organise the continent into{" "}
+              <strong>8 approved African regions</strong> — North, West, Central,
+              East, Southern, Sahel, Horn of Africa, and Indian Ocean — extended
+              by <strong>2 global networks</strong>: the African Diaspora and
+              Friends of Africa. Each region connects to Special Needs School
               nominations, regional voting, GFA Wzip regional wallets, and
-              Rebuild My School Africa interventions connected to the 2026–2027
+              Rebuild My School Africa interventions across the 2026–2027
               NESA-Africa Legacy Impact pathway.
             </p>
           </div>
@@ -104,7 +107,7 @@ export const AfricaRegionalMap = ({
               <svg
                 viewBox="0 0 100 100"
                 role="img"
-                aria-label="Map of Africa highlighting ten SCEF regions"
+                aria-label="Map of Africa highlighting 8 SCEF regions and 2 global networks"
                 className="w-full h-auto"
               >
                 <defs>
