@@ -130,6 +130,7 @@ import EducationTourism from "./pages/media/EducationTourism";
 // Auth Pages
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
+import Register from "./pages/auth/Register";
 
 // Dashboard Pages
 import DashboardWelcome from "./pages/dashboard/Welcome";
