@@ -44,6 +44,14 @@ const RegionDetailPage = () => {
   if (!region) return null;
 
   const countries = useMemo(() => countriesForRegion(region.slug), [region.slug]);
+  const regionStatus = useMemo(() => getRegionStatus(region), [region]);
+  const countryStatuses = useMemo(
+    () => Object.fromEntries(countries.map((c) => [c.slug, getCountryStatus(c)])),
+    [countries],
+  );
+  const activeCountryCount = Object.values(countryStatuses).filter(
+    (s) => s.status === "active",
+  ).length;
 
   return (
     <div className="min-h-screen bg-background">
@@ -68,9 +76,11 @@ const RegionDetailPage = () => {
         <header className="mb-10">
           <div className="flex flex-wrap items-center gap-2 mb-3">
             <Badge variant="outline">{region.scope}</Badge>
-            <Badge className={STATUS_VARIANT[region.walletStatus]}>
-              GFA Wallet · {region.walletStatus}
+            <Badge className={regionStatus.badgeClass}>
+              <span className={`inline-block h-2 w-2 rounded-full mr-2 ${regionStatus.dotClass}`} />
+              Chapter · {regionStatus.label}
             </Badge>
+            <Badge variant="outline">GFA Wallet · {region.walletStatus}</Badge>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-scef-blue-darker mb-3">
             {region.name}
@@ -98,11 +108,23 @@ const RegionDetailPage = () => {
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-semibold flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> Active Chapters
+                <MapPin className="h-4 w-4" /> Active Country Chapters
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground italic">
-              Reporting in progress
+            <CardContent>
+              <p className="text-2xl font-bold">{activeCountryCount}</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Of {countries.length} countries — remainder pending activation reporting.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="mb-8">
+          <Card className="border-l-4" style={{ borderLeftColor: "hsl(var(--scef-gold))" }}>
+            <CardContent className="pt-5 pb-5 text-sm">
+              <span className="font-semibold mr-2">Status rule:</span>
+              <span className="text-muted-foreground">{regionStatus.description}</span>
             </CardContent>
           </Card>
         </section>
@@ -143,32 +165,36 @@ const RegionDetailPage = () => {
             <p className="text-sm text-muted-foreground">No countries listed for this region yet.</p>
           ) : (
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {countries.map((c) => (
-                <Link
-                  key={c.slug}
-                  to={`/local-chapters/country/${c.slug}`}
-                  className="group"
-                >
-                  <Card className="h-full transition-colors hover:border-scef-gold">
-                    <CardContent className="pt-5 pb-4">
-                      <div className="flex items-start justify-between mb-1">
-                        <div>
-                          <p className="font-semibold text-scef-blue-darker group-hover:text-scef-gold">
-                            {c.name}
-                          </p>
-                          {c.code && (
-                            <p className="text-xs text-muted-foreground">{c.code}</p>
-                          )}
+              {countries.map((c) => {
+                const cs = countryStatuses[c.slug];
+                return (
+                  <Link
+                    key={c.slug}
+                    to={`/local-chapters/country/${c.slug}`}
+                    className="group"
+                  >
+                    <Card className="h-full transition-colors hover:border-scef-gold">
+                      <CardContent className="pt-5 pb-4">
+                        <div className="flex items-start justify-between mb-1">
+                          <div>
+                            <p className="font-semibold text-scef-blue-darker group-hover:text-scef-gold">
+                              {c.name}
+                            </p>
+                            {c.code && (
+                              <p className="text-xs text-muted-foreground">{c.code}</p>
+                            )}
+                          </div>
+                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-scef-gold" />
                         </div>
-                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-scef-gold" />
-                      </div>
-                      <p className="text-xs italic text-muted-foreground mt-2">
-                        Online chapter · Reporting in progress
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+                        <Badge className={`mt-2 ${cs.badgeClass}`}>
+                          <span className={`inline-block h-2 w-2 rounded-full mr-2 ${cs.dotClass}`} />
+                          {cs.label}
+                        </Badge>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
             </div>
           )}
         </section>
