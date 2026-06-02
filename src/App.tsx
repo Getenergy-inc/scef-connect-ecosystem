@@ -21,6 +21,8 @@ import RegionDetail from "./pages/regions/RegionDetail";
 import JoinOnline from "./pages/chapters/JoinOnline";
 import ChapterSignup from "./pages/chapters/ChapterSignup";
 import ChapterDetail from "./pages/chapters/ChapterDetail";
+import LocalChapterRegionDetail from "./pages/local-chapters/RegionDetailPage";
+import LocalChapterCountryDetail from "./pages/local-chapters/CountryDetailPage";
 import Media from "./pages/Media";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
