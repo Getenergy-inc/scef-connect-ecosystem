@@ -95,6 +95,45 @@ const LocalChapters = () => {
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [regionFilter, setRegionFilter] = useState<string>("all");
 
+  // Filters scoped to the Global Online Chapters Network
+  const [onlineSearch, setOnlineSearch] = useState("");
+  const [onlineScope, setOnlineScope] = useState<"all" | OnlineRegion["scope"]>("all");
+  const [onlineRegion, setOnlineRegion] = useState<string>("all");
+  const [onlineStatus, setOnlineStatus] = useState<"all" | OnlineChapter["status"]>("all");
+
+  const onlineRegionOptions = useMemo(
+    () =>
+      ONLINE_CHAPTERS_NETWORK
+        .filter((g) => onlineScope === "all" || g.scope === onlineScope)
+        .map((g) => g.region),
+    [onlineScope],
+  );
+
+  const filteredOnlineNetwork = useMemo(() => {
+    const q = onlineSearch.trim().toLowerCase();
+    return ONLINE_CHAPTERS_NETWORK
+      .filter((g) => onlineScope === "all" || g.scope === onlineScope)
+      .filter((g) => onlineRegion === "all" || g.region === onlineRegion)
+      .map((g) => ({
+        ...g,
+        chapters: g.chapters.filter((c) => {
+          const matchesStatus = onlineStatus === "all" || c.status === onlineStatus;
+          const matchesSearch = !q ||
+            c.name.toLowerCase().includes(q) ||
+            c.coverage.toLowerCase().includes(q) ||
+            g.region.toLowerCase().includes(q) ||
+            g.scope.toLowerCase().includes(q);
+          return matchesStatus && matchesSearch;
+        }),
+      }))
+      .filter((g) => g.chapters.length > 0);
+  }, [onlineSearch, onlineScope, onlineRegion, onlineStatus]);
+
+  const totalOnlineMatches = useMemo(
+    () => filteredOnlineNetwork.reduce((n, g) => n + g.chapters.length, 0),
+    [filteredOnlineNetwork],
+  );
+
   const filtered = useMemo(() => {
     return chapters.filter((c) => {
       const q = searchQuery.toLowerCase();
@@ -252,61 +291,144 @@ const LocalChapters = () => {
                 </p>
               </div>
 
-              {(["African Region", "Global Network", "Other Continent"] as const).map((scope) => {
-                const groups = ONLINE_CHAPTERS_NETWORK.filter((g) => g.scope === scope);
-                const heading =
-                  scope === "African Region" ? "8 African Regions"
-                  : scope === "Global Network" ? "Global African Networks"
-                  : "Other Continents";
-                return (
-                  <div key={scope} className="mb-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <h3 className="font-display text-xl font-bold" style={{ color: SCEF_BRAND.navy }}>{heading}</h3>
-                      <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full border ${SCOPE_TONE[scope]}`}>
-                        {groups.length} {groups.length === 1 ? "region" : "regions"}
-                      </span>
-                    </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {groups.flatMap((g) =>
-                        g.chapters.map((c) => (
-                          <div key={c.name}
-                               className="rounded-xl border bg-card p-5 hover:border-scef-gold/50 hover:shadow-sm transition-all flex flex-col"
-                               style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
-                            <div className="flex items-start justify-between gap-3 mb-2">
-                              <div className="flex items-center gap-2">
-                                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                                     style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
-                                  <Wifi className="w-4 h-4" />
-                                </div>
-                                <div>
-                                  <p className="text-[11px] font-semibold uppercase tracking-wider"
-                                     style={{ color: SCEF_BRAND.goldDeep }}>{g.region}</p>
-                                  <h4 className="font-display text-base font-bold leading-snug"
-                                      style={{ color: SCEF_BRAND.navy }}>{c.name}</h4>
-                                </div>
-                              </div>
-                              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${STATUS_TONE[c.status]}`}>
-                                {c.status}
-                              </span>
-                            </div>
-                            <p className="text-xs text-slate-600 mb-4 line-clamp-3">{c.coverage}</p>
-                            <div className="mt-auto flex items-center justify-between">
-                              <span className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
-                                <Users className="w-3 h-3" /> Reporting in progress
-                              </span>
-                              <Button size="sm" variant="ghost" asChild className="text-scef-blue-darker hover:text-scef-gold-dark h-7 px-2">
-                                <Link to="/chapters/join-online">
-                                  Join <ArrowRight className="w-3 h-3 ml-1" />
-                                </Link>
-                              </Button>
-                            </div>
-                          </div>
-                        ))
-                      )}
-                    </div>
+              {/* Filter bar */}
+              <div className="mb-8 rounded-2xl border bg-card p-4 md:p-5"
+                   style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+                <div className="grid gap-3 md:grid-cols-12">
+                  <div className="relative md:col-span-5">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <input
+                      type="text"
+                      value={onlineSearch}
+                      onChange={(e) => setOnlineSearch(e.target.value)}
+                      placeholder="Search online chapters, regions or countries…"
+                      className="w-full pl-10 pr-3 py-2.5 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-scef-gold/40"
+                      aria-label="Search online chapters"
+                    />
                   </div>
-                );
-              })}
+                  <div className="md:col-span-3 flex items-center gap-2">
+                    <Globe className="w-4 h-4 text-muted-foreground shrink-0" />
+                    <select
+                      value={onlineScope}
+                      onChange={(e) => { setOnlineScope(e.target.value as typeof onlineScope); setOnlineRegion("all"); }}
+                      className="w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm"
+                      aria-label="Filter by network type"
+                    >
+                      <option value="all">All networks</option>
+                      <option value="African Region">African Regions (8)</option>
+                      <option value="Global Network">Diaspora & Friends of Africa</option>
+                      <option value="Other Continent">Other Continents</option>
+                    </select>
+                  </div>
+                  <div className="md:col-span-2 flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-muted-foreground shrink-0" />
+                    <select
+                      value={onlineRegion}
+                      onChange={(e) => setOnlineRegion(e.target.value)}
+                      className="w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm"
+                      aria-label="Filter by region"
+                    >
+                      <option value="all">All regions</option>
+                      {onlineRegionOptions.map((r) => <option key={r} value={r}>{r}</option>)}
+                    </select>
+                  </div>
+                  <div className="md:col-span-2 flex items-center gap-2">
+                    <Filter className="w-4 h-4 text-muted-foreground shrink-0" />
+                    <select
+                      value={onlineStatus}
+                      onChange={(e) => setOnlineStatus(e.target.value as typeof onlineStatus)}
+                      className="w-full px-3 py-2.5 rounded-md border border-input bg-background text-sm"
+                      aria-label="Filter by status"
+                    >
+                      <option value="all">All status</option>
+                      <option value="Active">Active</option>
+                      <option value="Forming">Forming</option>
+                      <option value="Open">Open</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-xs text-muted-foreground">
+                    {totalOnlineMatches} online chapter{totalOnlineMatches !== 1 ? "s" : ""} match
+                    {(onlineSearch || onlineScope !== "all" || onlineRegion !== "all" || onlineStatus !== "all") && " your filters"}
+                  </p>
+                  {(onlineSearch || onlineScope !== "all" || onlineRegion !== "all" || onlineStatus !== "all") && (
+                    <Button variant="ghost" size="sm" className="h-7"
+                            onClick={() => { setOnlineSearch(""); setOnlineScope("all"); setOnlineRegion("all"); setOnlineStatus("all"); }}>
+                      Clear filters
+                    </Button>
+                  )}
+                </div>
+              </div>
+
+              {totalOnlineMatches === 0 ? (
+                <div className="text-center py-12 rounded-xl border border-dashed"
+                     style={{ borderColor: `${SCEF_BRAND.navy}33` }}>
+                  <p className="text-muted-foreground mb-3">No online chapters match your filters.</p>
+                  <Button variant="outline" size="sm"
+                          onClick={() => { setOnlineSearch(""); setOnlineScope("all"); setOnlineRegion("all"); setOnlineStatus("all"); }}>
+                    Clear filters
+                  </Button>
+                </div>
+              ) : (
+                (["African Region", "Global Network", "Other Continent"] as const).map((scope) => {
+                  const groups = filteredOnlineNetwork.filter((g) => g.scope === scope);
+                  if (groups.length === 0) return null;
+                  const heading =
+                    scope === "African Region" ? "8 African Regions"
+                    : scope === "Global Network" ? "Global African Networks"
+                    : "Other Continents";
+                  const count = groups.reduce((n, g) => n + g.chapters.length, 0);
+                  return (
+                    <div key={scope} className="mb-10">
+                      <div className="flex items-center gap-3 mb-4">
+                        <h3 className="font-display text-xl font-bold" style={{ color: SCEF_BRAND.navy }}>{heading}</h3>
+                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full border ${SCOPE_TONE[scope]}`}>
+                          {count} chapter{count !== 1 ? "s" : ""}
+                        </span>
+                      </div>
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {groups.flatMap((g) =>
+                          g.chapters.map((c) => (
+                            <div key={c.name}
+                                 className="rounded-xl border bg-card p-5 hover:border-scef-gold/50 hover:shadow-sm transition-all flex flex-col"
+                                 style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+                              <div className="flex items-start justify-between gap-3 mb-2">
+                                <div className="flex items-center gap-2">
+                                  <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                                       style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
+                                    <Wifi className="w-4 h-4" />
+                                  </div>
+                                  <div>
+                                    <p className="text-[11px] font-semibold uppercase tracking-wider"
+                                       style={{ color: SCEF_BRAND.goldDeep }}>{g.region}</p>
+                                    <h4 className="font-display text-base font-bold leading-snug"
+                                        style={{ color: SCEF_BRAND.navy }}>{c.name}</h4>
+                                  </div>
+                                </div>
+                                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${STATUS_TONE[c.status]}`}>
+                                  {c.status}
+                                </span>
+                              </div>
+                              <p className="text-xs text-slate-600 mb-4 line-clamp-3">{c.coverage}</p>
+                              <div className="mt-auto flex items-center justify-between">
+                                <span className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
+                                  <Users className="w-3 h-3" /> Reporting in progress
+                                </span>
+                                <Button size="sm" variant="ghost" asChild className="text-scef-blue-darker hover:text-scef-gold-dark h-7 px-2">
+                                  <Link to="/chapters/join-online">
+                                    Join <ArrowRight className="w-3 h-3 ml-1" />
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  );
+                })
+              )}
 
               <div className="mt-4 flex flex-wrap gap-3">
                 <Button asChild className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
