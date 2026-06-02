@@ -71,6 +71,7 @@ export const VacancyApplicationForm = ({
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [referenceNumber, setReferenceNumber] = useState<string>("");
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [portfolioFile, setPortfolioFile] = useState<File | null>(null);
   const [division, setDivision] = useState<string>(defaultDivision);
@@ -78,6 +79,12 @@ export const VacancyApplicationForm = ({
   const [consentCoC, setConsentCoC] = useState(false);
   const [consentSG, setConsentSG] = useState(false);
   const [consentDP, setConsentDP] = useState(false);
+
+  const generateReferenceNumber = (): string => {
+    const year = new Date().getFullYear();
+    const rand = crypto.randomUUID().replace(/-/g, "").slice(0, 8).toUpperCase();
+    return `SCEF-VAC-${year}-${rand}`;
+  };
 
   const uploadFile = async (file: File, folder: string): Promise<string> => {
     const path = generateSecureFileName(file.name, folder);
@@ -154,6 +161,8 @@ export const VacancyApplicationForm = ({
         ? await uploadFile(portfolioFile, "portfolio")
         : null;
 
+      const newRef = generateReferenceNumber();
+
       const { error } = await supabase.from("vacancy_applications").insert({
         full_name: parsed.data.full_name,
         email: parsed.data.email,
@@ -174,13 +183,29 @@ export const VacancyApplicationForm = ({
         consent_code_of_conduct: parsed.data.consent_code_of_conduct,
         consent_safeguarding: parsed.data.consent_safeguarding,
         consent_data_privacy: parsed.data.consent_data_privacy,
+        reference_number: newRef,
       });
       if (error) throw error;
 
+      // Fire-and-forget confirmation email; do not block success state if it fails.
+      supabase.functions
+        .invoke("send-vacancy-confirmation", {
+          body: {
+            recipient_email: parsed.data.email,
+            full_name: parsed.data.full_name,
+            reference_number: newRef,
+            preferred_role: parsed.data.preferred_role,
+            preferred_division: parsed.data.preferred_division,
+            application_type: parsed.data.application_type,
+          },
+        })
+        .catch((e) => console.error("Confirmation email failed", e));
+
+      setReferenceNumber(newRef);
       setSuccess(true);
       toast({
         title: "Application received",
-        description: "Thank you. The SCEF team will review your application and reach out.",
+        description: `Reference ${newRef}. A confirmation email has been sent to ${parsed.data.email}.`,
       });
     } catch (err: any) {
       toast({
@@ -200,9 +225,20 @@ export const VacancyApplicationForm = ({
           <CheckCircle2 className="h-5 w-5" />
           <h4 className="font-display text-lg font-bold">Application received</h4>
         </div>
-        <p className="mt-2 text-sm">
-          Your application has been securely submitted to the SCEF team. We review applications on
-          a rolling basis and will contact you by email if you are shortlisted.
+        {referenceNumber && (
+          <div className="mt-3 rounded-lg border border-emerald-300 bg-white/70 p-3">
+            <p className="text-xs uppercase tracking-wide text-emerald-700">
+              Your reference number
+            </p>
+            <p className="mt-0.5 font-mono text-base font-bold text-emerald-900">
+              {referenceNumber}
+            </p>
+          </div>
+        )}
+        <p className="mt-3 text-sm">
+          A confirmation email with your reference number has been sent to the address you
+          provided. Please keep this reference for all future correspondence. We review
+          applications on a rolling basis and will contact you by email if you are shortlisted.
         </p>
       </div>
     );
