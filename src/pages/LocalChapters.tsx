@@ -6,12 +6,24 @@ import { Link } from "react-router-dom";
 import { useMemo, useState } from "react";
 import {
   MapPin, Users, Search, Filter, Globe, Building, Wifi, ArrowRight, Plus, ShieldCheck, CheckCircle2,
+  Heart, MessageCircle, Wallet, GraduationCap, Trophy, ChevronDown,
 } from "lucide-react";
 import { useChapters, CHAPTER_TYPE_LABEL, type ChapterRow } from "@/hooks/useChapters";
 import AfricaRegionalMap from "@/components/regions/AfricaRegionalMap";
 import { SCEF_BRAND } from "@/data/africaRegions";
+import {
+  SCEF_REGIONS, countriesForRegion, countrySlug, SOPHIA_WHATSAPP_LOCAL_CHAPTER,
+  type ScefRegion,
+} from "@/data/scefRegions";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const TYPE_ICON = { online: Wifi, hybrid: Globe, physical: Building } as const;
+
+const SCOPE_BADGE: Record<ScefRegion["scope"], string> = {
+  "African Region": "bg-scef-gold/20 text-scef-blue-darker border-scef-gold/40",
+  "Cross-Regional": "bg-emerald-50 text-emerald-800 border-emerald-300",
+  "Global Network": "bg-sky-50 text-sky-800 border-sky-300",
+};
 
 const REGION_ORDER = [
   "North Africa", "West Africa", "Central Africa", "East Africa", "Southern Africa",
@@ -161,12 +173,12 @@ const LocalChapters = () => {
   return (
     <>
       <Helmet>
-        <title>Local Chapter Services | SCEF Regional Chapters Across Africa and the Diaspora</title>
+        <title>SCEF Local Chapter Services | Regional and Country Chapters Across Africa and the Diaspora</title>
         <meta
           name="description"
-          content="Explore SCEF Local Chapter Services across 8 African regions plus the African Diaspora and Friends of Africa networks, connecting EduAid-Africa, NESA-Africa, Special Needs School nominations, regional voting, GFA Wzip wallets, Rebuild My School Africa, and edu-tourism opportunities."
+          content="Explore Santos Creations Educational Foundation Local Chapter Services across Africa's ten regions and global diaspora communities. Join country chapters, support EduAid-Africa, NESA-Africa, Rebuild My School Africa, eLibrary Nigeria, regional voting, GFA Wallet wallets, and education impact projects."
         />
-        <link rel="canonical" href="https://santoscreations.org/chapters" />
+        <link rel="canonical" href="https://santoscreations.org/local-chapters" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -176,25 +188,95 @@ const LocalChapters = () => {
           {/* Hero */}
           <section className="relative pt-32 pb-16 bg-scef-blue-darker overflow-hidden">
             <div className="absolute inset-0 bg-scef-pattern opacity-10" />
-            <div className="container mx-auto px-4 relative z-10 max-w-4xl">
+            <div className="container mx-auto px-4 relative z-10 max-w-5xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-5">
                 <MapPin className="w-3.5 h-3.5" /> SCEF Local Chapter Services
               </div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5">
-                Local Chapter <span className="text-scef-gold">Services</span>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
+                Explore Africa's <span className="text-scef-gold">Regions</span>
               </h1>
-              <p className="text-lg text-white/80 leading-relaxed max-w-3xl">
-                SCEF Local Chapter Services is the grassroots execution arm of Santos Creations
-                Educational Foundation. Local chapters support EduAid-Africa, NESA-Africa,
-                Rebuild My School Africa, eLibrary Nigeria, Education Online Africa, Women &amp;
-                Girls Education, Special Needs Education Support, training programmes, media
-                advocacy, school nominations, regional voting, and community-based education impact.
+              <p className="text-scef-gold font-semibold tracking-wide uppercase text-sm mb-4">
+                One Continent · Ten Regions
               </p>
+              <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl mb-7">
+                Discover SCEF's regional and country-based local chapter system connecting
+                education champions, cultural heritage, edu-tourism opportunities, school
+                support, Special Needs School nominations, regional voting, GFA Wallet
+                regional funding, Rebuild My School Africa interventions, EduAid-Africa
+                activities, NESA-Africa legacy impact, eLibrary Nigeria access, Education
+                Online Africa access, and local community action across Africa and the diaspora.
+              </p>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5">
+                <Button asChild size="sm" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                  <Link to="/chapters/join-online"><Users className="w-4 h-4 mr-1.5" />Join a Local Chapter</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <Link to="/chapters/start"><Plus className="w-4 h-4 mr-1.5" />Start an Online Chapter</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <a href="#regions"><Globe className="w-4 h-4 mr-1.5" />Explore Regions</a>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <Link to="/nominate"><GraduationCap className="w-4 h-4 mr-1.5" />Nominate a School</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+                  <Link to="/donate"><Heart className="w-4 h-4 mr-1.5" />Support a Region</Link>
+                </Button>
+                <Button asChild size="sm" className="bg-emerald-500 text-white hover:bg-emerald-600">
+                  <a href={SOPHIA_WHATSAPP_LOCAL_CHAPTER} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-1.5" />Chat with Sophia
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Positioning — licensed grassroots, not franchises */}
+          <section className="py-12 bg-white border-b">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+                    Positioning
+                  </span>
+                  <h2 className="font-display text-2xl font-bold mt-1" style={{ color: SCEF_BRAND.navy }}>
+                    One SCEF. One Local Chapter system.
+                  </h2>
+                </div>
+                <p className="md:col-span-2 text-sm leading-relaxed text-slate-600">
+                  SCEF Local Chapter Services is the grassroots execution arm of Santos
+                  Creations Educational Foundation. Local chapters are <strong>licensed</strong>{" "}
+                  country, regional, diaspora and community-based implementation platforms
+                  governed by SCEF through Local Chapter Services and compliance oversight.
+                  They are <strong>not independent franchises</strong>: they do not own SCEF
+                  assets, operate separate wallets, sign contracts, fundraise independently or
+                  represent SCEF outside approved governance procedures. All programs,
+                  nominations, voting, school interventions, media coverage, digital learning
+                  and regional funding connect back to the central SCEF Local Chapter Services
+                  system.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Shared ten-region map */}
-          <AfricaRegionalMap detailBase="/regions" variant="light" />
+          <div id="regions">
+            <AfricaRegionalMap detailBase="/regions" variant="light" />
+          </div>
+
+          {/* Ten approved regions — country chip browser */}
+          <RegionCountryBrowser />
+
+          {/* Unified Project Synchronization */}
+          <UnifiedProjectSyncSection />
+
+          {/* 2026–2027 NESA-Africa Legacy Impact Pathway */}
+          <NesaLegacyPathwaySection />
+
+          {/* Regional Wallet & Funding Structure */}
+          <RegionalWalletSection />
+
+
 
 
           {/* Filters */}
@@ -638,4 +720,326 @@ function ChapterCard({ chapter }: { chapter: ChapterRow }) {
   );
 }
 
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Ten approved regions — collapsible country chip browser.
+   Mobile: each region collapses. Desktop: open by default.
+   ────────────────────────────────────────────────────────────────────────── */
+function RegionCountryBrowser() {
+  return (
+    <section className="py-14 bg-white border-b" aria-label="SCEF ten approved regions">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="mb-8 max-w-3xl">
+          <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+            Section 3 · Ten Approved Regions
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mt-1 mb-3" style={{ color: SCEF_BRAND.navy }}>
+            Browse every SCEF region and country chapter
+          </h2>
+          <p className="text-slate-600 text-sm md:text-base">
+            Each region groups its country chapters under one structure. Cross-regional
+            countries (Sahel, Horn of Africa, Indian Ocean) appear via secondary tags —
+            never duplicated. Country chapters that are not yet verified show as
+            <em> To Be Activated</em>.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {SCEF_REGIONS.map((region) => (
+            <RegionAccordion key={region.slug} region={region} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RegionAccordion({ region }: { region: ScefRegion }) {
+  const [open, setOpen] = useState(false);
+  const countries = countriesForRegion(region.slug);
+
+  return (
+    <Collapsible open={open} onOpenChange={setOpen}>
+      <div className="rounded-2xl border bg-card overflow-hidden"
+           style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+        <CollapsibleTrigger
+          className="w-full flex items-center justify-between gap-3 p-4 md:p-5 text-left hover:bg-muted/30 transition-colors"
+          aria-label={`Toggle ${region.name} countries`}
+        >
+          <div className="flex items-start gap-3 min-w-0">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                 style={{ backgroundColor: `${SCEF_BRAND.gold}22`, color: SCEF_BRAND.navy }}>
+              <Globe className="w-5 h-5" />
+            </div>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="font-display text-lg md:text-xl font-bold" style={{ color: SCEF_BRAND.navy }}>
+                  {region.name}
+                </h3>
+                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${SCOPE_BADGE[region.scope]}`}>
+                  {region.scope}
+                </span>
+                <span className="text-[11px] font-medium text-muted-foreground">
+                  {countries.length} {countries.length === 1 ? "country" : "countries"}
+                </span>
+              </div>
+              <p className="text-xs md:text-sm text-slate-600 mt-1 line-clamp-2">{region.shortDescription}</p>
+            </div>
+          </div>
+          <ChevronDown className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
+        </CollapsibleTrigger>
+
+        <CollapsibleContent>
+          <div className="px-4 md:px-5 pb-5 space-y-5">
+            {/* Country chips */}
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-wider mb-2 text-muted-foreground">
+                Countries covered
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {countries.map((c) => (
+                  <Link
+                    key={c.slug}
+                    to={`/local-chapters/${c.slug}`}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border bg-background text-xs font-medium hover:border-scef-gold hover:text-scef-blue-darker transition-colors"
+                    style={{ borderColor: `${SCEF_BRAND.navy}22`, color: SCEF_BRAND.navy }}
+                  >
+                    {c.name}
+                    {c.secondaryTags && c.secondaryTags.length > 0 && (
+                      <span className="text-[9px] uppercase tracking-wide text-emerald-700">×-reg</span>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Linked programs */}
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-wider mb-2 text-muted-foreground">
+                Linked SCEF programs
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {region.linkedPrograms.map((p) => (
+                  <span key={p}
+                        className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-scef-gold/15 text-scef-blue-darker">
+                    {p}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <StatPill label="Active" value="Reporting in progress" />
+              <StatPill label="Pending" value="Reporting in progress" />
+              <StatPill label="Hybrid" value="Reporting in progress" />
+              <StatPill label="Physical" value="Reporting in progress" />
+            </div>
+
+            {/* Wallet + pathway */}
+            <div className="grid md:grid-cols-2 gap-3">
+              <div className="rounded-lg border p-3 flex items-start gap-2"
+                   style={{ borderColor: `${SCEF_BRAND.navy}1f`, backgroundColor: SCEF_BRAND.lightBg }}>
+                <Wallet className="w-4 h-4 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.goldDeep }} />
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+                    Regional Wallet
+                  </p>
+                  <p className="text-xs text-slate-600">GFA Wallet status: <strong>{region.walletStatus}</strong></p>
+                </div>
+              </div>
+              <div className="rounded-lg border p-3 flex items-start gap-2"
+                   style={{ borderColor: `${SCEF_BRAND.navy}1f`, backgroundColor: SCEF_BRAND.lightBg }}>
+                <Trophy className="w-4 h-4 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.green }} />
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+                    Impact pathway
+                  </p>
+                  <p className="text-xs text-slate-600">{region.impactPathway}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-2">
+              <Button asChild size="sm" className="bg-scef-blue-darker text-white hover:bg-scef-blue-darker/90">
+                <Link to={`/regions/${region.slug}`}>View Region</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline">
+                <Link to="/nominate">Nominate a School</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline">
+                <Link to="/vote">Vote for Intervention</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline">
+                <Link to="/donate">Support Regional Wallet</Link>
+              </Button>
+              <Button asChild size="sm" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                <Link to="/chapters/join-online">Join Local Chapter</Link>
+              </Button>
+            </div>
+
+            <p className="text-[11px] italic text-muted-foreground border-t pt-3">
+              Local Chapter Services compliance: all regional activity, fundraising,
+              voting and school interventions are governed by SCEF HQ. Chapters cannot
+              raise funds or sign contracts independently.
+            </p>
+          </div>
+        </CollapsibleContent>
+      </div>
+    </Collapsible>
+  );
+}
+
+function StatPill({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-md border bg-background px-2.5 py-1.5"
+         style={{ borderColor: `${SCEF_BRAND.navy}1a` }}>
+      <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{label}</p>
+      <p className="text-[11px] italic text-slate-600 truncate">{value}</p>
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Unified Project Synchronization
+   ────────────────────────────────────────────────────────────────────────── */
+function UnifiedProjectSyncSection() {
+  const examples = [
+    "NESA-Africa regional voting in Nigeria → attaches to the Nigeria SCEF Chapter record.",
+    "EduAid-Africa school support in Ghana → attaches to the Ghana SCEF Chapter record.",
+    "Rebuild My School Africa selection in Kenya → attaches to the Kenya SCEF Chapter record.",
+    "eLibrary Nigeria / Education Online Africa learner access in Uganda → attaches to the Uganda SCEF Chapter record.",
+    "Santos Media regional coverage → attaches to the relevant SCEF chapter and region.",
+  ];
+  return (
+    <section className="py-14" style={{ backgroundColor: SCEF_BRAND.lightBg }}>
+      <div className="container mx-auto px-4 max-w-5xl">
+        <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+          Section 8 · Unified Project Synchronization
+        </span>
+        <h2 className="font-display text-3xl md:text-4xl font-bold mt-1 mb-3" style={{ color: SCEF_BRAND.navy }}>
+          All SCEF projects are delivered through one Local Chapter system
+        </h2>
+        <p className="text-slate-600 mb-6 max-w-3xl text-sm md:text-base">
+          NESA-Africa, EduAid-Africa, Rebuild My School Africa, eLibrary Nigeria,
+          Education Online Africa, Women &amp; Girls Education, Special Needs Education
+          Support, Santos Media, Sophia Support, NESA Africa TV and It's In Me Radio
+          do not operate separate chapter systems. Every project is synchronized into
+          the main SCEF Local Chapter Services structure for governance, reporting,
+          compliance, safeguarding, fundraising control and measurable impact.
+        </p>
+        <ul className="space-y-2">
+          {examples.map((e) => (
+            <li key={e} className="flex items-start gap-2 text-sm text-slate-700">
+              <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.green }} />
+              <span>{e}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2026–2027 NESA-Africa Legacy Impact Pathway
+   ────────────────────────────────────────────────────────────────────────── */
+function NesaLegacyPathwaySection() {
+  const steps = [
+    "NESA-Africa recognition pathway",
+    "Special Needs School nomination",
+    "Regional school verification",
+    "Regional public voting",
+    "GFA Wallet regional wallet activation",
+    "EduAid-Africa regional fundraising",
+    "EduAid-Africa Edu-Tourism Conference / advocacy event",
+    "Rebuild My School Africa intervention",
+    "Impact reporting & media documentation",
+    "Regional donor & CSR partner visibility",
+    "Chapter-led monitoring and follow-up",
+  ];
+  return (
+    <section className="py-14 bg-white">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+          Section 9 · 2026–2027 NESA-Africa Legacy Impact Pathway
+        </span>
+        <h2 className="font-display text-3xl md:text-4xl font-bold mt-1 mb-3" style={{ color: SCEF_BRAND.navy }}>
+          Recognition turned into measurable intervention
+        </h2>
+        <p className="text-slate-600 mb-6 max-w-3xl text-sm md:text-base">
+          Each region connects to the 2026–2027 NESA-Africa Legacy Impact pathway
+          — turning recognition into measurable school and community intervention
+          across Africa and the diaspora.
+        </p>
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          {steps.map((s, i) => (
+            <li key={s}
+                className="flex items-start gap-2.5 rounded-lg border bg-card p-3"
+                style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+              <span className="w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0"
+                    style={{ backgroundColor: SCEF_BRAND.navy, color: SCEF_BRAND.gold }}>
+                {i + 1}
+              </span>
+              <span className="text-sm" style={{ color: SCEF_BRAND.navy }}>{s}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Regional Wallet & Funding Structure
+   ────────────────────────────────────────────────────────────────────────── */
+function RegionalWalletSection() {
+  return (
+    <section className="py-14" style={{ backgroundColor: SCEF_BRAND.lightBg }}>
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="grid md:grid-cols-3 gap-6 items-start">
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SCEF_BRAND.goldDeep }}>
+              Section 10 · Regional Wallet
+            </span>
+            <h2 className="font-display text-3xl font-bold mt-1" style={{ color: SCEF_BRAND.navy }}>
+              GFA Wallet regional funding
+            </h2>
+          </div>
+          <div className="md:col-span-2 space-y-3 text-sm leading-relaxed text-slate-700">
+            <p>
+              Each region may have a dedicated <strong>GFA Wallet regional wallet</strong>{" "}
+              for transparent fundraising, donation tracking, school intervention funding,
+              regional sponsorships and impact reporting. Country-level wallet tracking is
+              available where approved by SCEF HQ.
+            </p>
+            <div className="rounded-lg border p-4 flex items-start gap-3 bg-white"
+                 style={{ borderColor: `${SCEF_BRAND.gold}55` }}>
+              <ShieldCheck className="w-5 h-5 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.goldDeep }} />
+              <p className="text-xs md:text-sm">
+                <strong>Compliance:</strong> all regional fundraising, sponsorship,
+                donation, wallet activity, school nominations, regional voting, project
+                implementation, media reporting and community outreach are governed by
+                SCEF Local Chapter Services and SCEF compliance standards. Local chapters
+                cannot independently raise funds, sign contracts, use the SCEF name or
+                operate wallets outside approved SCEF governance procedures.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <Button asChild size="sm" className="bg-scef-gold text-scef-blue-darker hover:bg-scef-gold/90">
+                <Link to="/donate"><Heart className="w-4 h-4 mr-1.5" />Support a Regional Wallet</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline">
+                <Link to="/wallet">View GFA Wallet</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default LocalChapters;
+
