@@ -507,6 +507,20 @@ const SectionHeading = ({
 );
 
 const OurDivisionsVacancies = () => {
+  const [prefill, setPrefill] = useState<{ role: string; division: string; type: string }>({
+    role: "",
+    division: "",
+    type: "",
+  });
+
+  const handleApplyClick = (v: { title: string; division: string; type: string }) => {
+    setPrefill({ role: v.title, division: v.division, type: v.type });
+    if (typeof window !== "undefined") {
+      const el = document.getElementById("apply");
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <PageShell
       title="Our Divisions, Governance Structure & Vacancies"
