@@ -28,7 +28,9 @@ const PROGRAM_ROUTES: Record<string, string> = {
   "SCEF General": "/about",
 };
 
-const STATUS_VARIANT: Record<string, string> = {
+import { getCountryStatus, getRegionStatus } from "@/data/chapterStatus";
+
+const WALLET_VARIANT: Record<string, string> = {
   Active: "bg-emerald-500/10 text-emerald-700 border-emerald-500/30",
   Forming: "bg-amber-500/10 text-amber-700 border-amber-500/30",
   "Pending Setup": "bg-muted text-muted-foreground border-border",
