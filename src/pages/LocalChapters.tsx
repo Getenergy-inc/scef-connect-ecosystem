@@ -160,6 +160,132 @@ const LocalChapters = () => {
             </div>
           </section>
 
+          {/* How Local Chapters Work */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-3" style={{ color: SCEF_BRAND.navy }}>
+                How Local Chapters Work
+              </h2>
+              <p className="text-slate-600 mb-8 max-w-3xl">
+                SCEF local chapters are not independent franchises. They are licensed local
+                execution platforms governed by SCEF through Local Chapter Services and
+                compliance oversight.
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {[
+                  "Membership onboarding",
+                  "Ambassador coordination",
+                  "School nominations",
+                  "Community outreach",
+                  "EduAid-Africa fundraising support",
+                  "NESA-Africa regional advocacy",
+                  "Special Needs School identification",
+                  "Rebuild My School Africa project follow-up",
+                  "eLibrary Nigeria access promotion",
+                  "Education Online Africa promotion",
+                  "Women & Girls Education advocacy",
+                  "Local reporting & impact documentation",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2 p-3 rounded-lg border"
+                       style={{ borderColor: `${SCEF_BRAND.navy}1f`, backgroundColor: SCEF_BRAND.lightBg }}>
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.green }} />
+                    <span className="text-sm" style={{ color: SCEF_BRAND.navy }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Chapter Development Pathway */}
+          <section className="py-16" style={{ backgroundColor: SCEF_BRAND.lightBg }}>
+            <div className="container mx-auto px-4 max-w-5xl">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-8" style={{ color: SCEF_BRAND.navy }}>
+                Local Chapter Development Pathway
+              </h2>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  {
+                    stage: "Stage 1",
+                    title: "Online Local Chapter",
+                    items: [
+                      "Minimum 5 verified core members",
+                      "1 Local Chapter President nominee",
+                      "1 Compliance Focal Person",
+                      "Verified digital registration",
+                      "At least 3 documented activities",
+                      "Participation in 1+ SCEF programme",
+                      "Governance, safeguarding, ethics & reporting orientation",
+                      "Min. 6 months active performance before hybrid upgrade",
+                    ],
+                  },
+                  {
+                    stage: "Stage 2",
+                    title: "Hybrid Local Chapter",
+                    items: [
+                      "Minimum 25 active members",
+                      "Minimum 5 trained ambassadors",
+                      "3-member Chapter Advisory Panel",
+                      "Verified physical meeting space or shared office",
+                      "Clean reporting and compliance history",
+                      "1+ completed and verified local education project",
+                      "Approval from SCEF HQ via LCS and SOBCD compliance review",
+                    ],
+                  },
+                  {
+                    stage: "Stage 3",
+                    title: "Full Physical Local Chapter",
+                    items: [
+                      "Sustained performance",
+                      "Clean audits",
+                      "Stable leadership",
+                      "Verified community impact",
+                      "Strong membership base",
+                      "Capacity to manage multi-programme projects",
+                      "Approval by SCEF governance structure",
+                    ],
+                  },
+                ].map((s) => (
+                  <div key={s.title} className="rounded-2xl bg-white border p-5"
+                       style={{ borderColor: `${SCEF_BRAND.navy}1f` }}>
+                    <span className="text-[11px] font-bold uppercase tracking-wider"
+                          style={{ color: SCEF_BRAND.goldDeep }}>{s.stage}</span>
+                    <h3 className="font-display text-lg font-bold mt-1 mb-3" style={{ color: SCEF_BRAND.navy }}>
+                      {s.title}
+                    </h3>
+                    <ul className="space-y-1.5">
+                      {s.items.map((i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                          <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.green }} />
+                          <span>{i}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Compliance note */}
+          <section className="py-12">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <div className="rounded-2xl p-6 border flex items-start gap-3"
+                   style={{ backgroundColor: SCEF_BRAND.navy, borderColor: `${SCEF_BRAND.gold}55` }}>
+                <ShieldCheck className="w-5 h-5 mt-0.5 shrink-0" style={{ color: SCEF_BRAND.gold }} />
+                <p className="text-sm text-white/85 leading-relaxed">
+                  All regional fundraising, sponsorship, donation, wallet activity,
+                  school nominations, regional voting, and local chapter activities are
+                  governed by SCEF/NESA-Africa compliance, safeguarding, data protection,
+                  and financial accountability standards. Local chapters cannot
+                  independently raise funds, sign contracts, use the SCEF name, or operate
+                  wallets outside approved SCEF governance and compliance procedures.
+                </p>
+              </div>
+            </div>
+          </section>
+
+
+
           {/* Start a chapter CTA */}
           <section className="py-16 bg-scef-blue-darker">
             <div className="container mx-auto px-4 max-w-3xl text-center">
