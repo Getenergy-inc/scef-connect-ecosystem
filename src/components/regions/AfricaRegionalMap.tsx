@@ -120,24 +120,21 @@ export const AfricaRegionalMap = ({
                 className="w-full h-auto"
               >
                 <defs>
-                  <linearGradient id="africaFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor={SCEF_BRAND.navy} stopOpacity="0.92" />
-                    <stop offset="100%" stopColor={SCEF_BRAND.navyDeep} stopOpacity="1" />
-                  </linearGradient>
+                  <filter id="regionGlow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="1.6" result="b" />
+                    <feMerge>
+                      <feMergeNode in="b" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
                 </defs>
-                <path
-                  d={AFRICA_PATH}
-                  fill="url(#africaFill)"
-                  stroke={SCEF_BRAND.gold}
-                  strokeOpacity="0.45"
-                  strokeWidth="0.4"
-                />
                 {onContinent.map((r) => {
+                  const poly = REGION_POLYGONS[r.slug];
+                  if (!poly) return null;
                   const isActive = r.slug === active.slug;
                   return (
                     <g
                       key={r.slug}
-                      transform={`translate(${r.mapX} ${r.mapY})`}
                       className="cursor-pointer"
                       onClick={() => setActive(r)}
                       onMouseEnter={() => setActive(r)}
@@ -148,27 +145,26 @@ export const AfricaRegionalMap = ({
                         if (e.key === "Enter" || e.key === " ") setActive(r);
                       }}
                     >
-                      <circle
-                        r={isActive ? 3.2 : 2.4}
-                        fill={isActive ? SCEF_BRAND.gold : SCEF_BRAND.white}
-                        stroke={isActive ? SCEF_BRAND.gold : SCEF_BRAND.navy}
-                        strokeWidth="0.5"
+                      <polygon
+                        points={poly.points}
+                        fill={isActive ? SCEF_BRAND.gold : `${SCEF_BRAND.navy}E6`}
+                        fillOpacity={isActive ? 1 : 0.92}
+                        stroke={SCEF_BRAND.gold}
+                        strokeOpacity={isActive ? 1 : 0.55}
+                        strokeWidth={isActive ? 0.6 : 0.4}
+                        filter={isActive ? "url(#regionGlow)" : undefined}
+                        className="transition-all duration-300"
                       />
-                      {isActive && (
-                        <circle
-                          r="5"
-                          fill="none"
-                          stroke={SCEF_BRAND.gold}
-                          strokeOpacity="0.45"
-                          strokeWidth="0.6"
-                        />
-                      )}
                       <text
-                        y="-4"
+                        x={poly.cx}
+                        y={poly.cy}
                         textAnchor="middle"
-                        fontSize="2.6"
-                        fontWeight={isActive ? 700 : 500}
-                        fill={isActive ? SCEF_BRAND.gold : SCEF_BRAND.white}
+                        dominantBaseline="middle"
+                        fontSize="3"
+                        fontWeight={isActive ? 700 : 600}
+                        fill={isActive ? SCEF_BRAND.navy : "#FFFFFF"}
+                        pointerEvents="none"
+                        style={{ letterSpacing: "0.04em" }}
                       >
                         {r.shortName}
                       </text>
