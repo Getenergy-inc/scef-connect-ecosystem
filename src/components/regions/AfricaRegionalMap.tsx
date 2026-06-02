@@ -18,9 +18,18 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-// Simplified Africa silhouette path (decorative, donor-ready outline).
-const AFRICA_PATH =
-  "M50 6 L62 8 L72 14 L78 22 L82 30 L80 38 L84 46 L82 56 L78 64 L74 72 L70 80 L62 88 L54 92 L46 90 L40 82 L36 74 L32 66 L28 58 L24 50 L22 42 L24 34 L28 26 L34 18 L42 10 Z";
+// Tessellated region polygons (decorative, donor-ready). Coordinates in a
+// 0–100 viewBox approximating the African continent silhouette.
+const REGION_POLYGONS: Record<string, { points: string; cx: number; cy: number }> = {
+  "north-africa":   { points: "30,6 70,6 80,16 76,26 30,26 22,18", cx: 50, cy: 16 },
+  "sahel-region":   { points: "30,28 64,28 66,40 58,46 36,46 26,38", cx: 46, cy: 37 },
+  "west-africa":    { points: "6,40 24,32 30,44 28,56 16,62 4,52",  cx: 16, cy: 47 },
+  "horn-of-africa": { points: "76,28 92,30 94,42 84,46 76,40",       cx: 84, cy: 37 },
+  "central-africa": { points: "32,48 58,48 60,60 50,68 38,68 30,58", cx: 45, cy: 58 },
+  "east-africa":    { points: "62,48 76,48 80,58 74,68 64,66 60,58", cx: 70, cy: 58 },
+  "southern-africa":{ points: "30,70 62,70 70,82 56,94 38,94 24,82", cx: 46, cy: 82 },
+  "indian-ocean":   { points: "84,74 94,74 96,82 90,90 82,84",       cx: 89, cy: 82 },
+};
 
 const STATUS_TONE: Record<string, string> = {
   active: "bg-[#0F8A5F] text-white",
