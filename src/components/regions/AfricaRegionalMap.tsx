@@ -237,7 +237,17 @@ export const AfricaRegionalMap = ({
                   <g
                     key={r.slug}
                     onClick={() => setOpenSlug(isOpen ? null : r.slug)}
-                    className="cursor-pointer"
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setOpenSlug(isOpen ? null : r.slug);
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`${r.name} region`}
+                    aria-pressed={isOpen}
+                    className="cursor-pointer outline-none group"
                   >
                     <polygon
                       points={poly.points}
@@ -245,6 +255,7 @@ export const AfricaRegionalMap = ({
                       stroke={SCEF_BRAND.gold}
                       strokeOpacity={isOpen ? 1 : 0.55}
                       strokeWidth="0.4"
+                      className="transition-all duration-300 group-hover:[fill:hsl(45_92%_52%)] group-hover:[stroke-width:0.7] group-focus-visible:[stroke:#ffffff] group-focus-visible:[stroke-width:0.9] active:[fill:hsl(45_92%_52%)]"
                     />
                     <text
                       x={poly.cx}
@@ -255,6 +266,7 @@ export const AfricaRegionalMap = ({
                       fontWeight={600}
                       fill={isOpen ? SCEF_BRAND.navy : "#FFFFFF"}
                       pointerEvents="none"
+                      className="transition-colors duration-300 group-hover:[fill:hsl(221_53%_12%)]"
                     >
                       {r.shortName}
                     </text>
