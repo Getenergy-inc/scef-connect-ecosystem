@@ -107,10 +107,10 @@ export const AfricaRegionalMap = ({
           {/* Map */}
           <div className="col-span-7">
             <div
-              className="relative rounded-3xl p-6 shadow-sm border"
+              className="relative rounded-3xl p-6 shadow-lg border overflow-hidden"
               style={{
-                backgroundColor: "#FFFFFF",
-                borderColor: `${SCEF_BRAND.navy}14`,
+                background: `radial-gradient(120% 90% at 30% 20%, ${SCEF_BRAND.navy} 0%, ${SCEF_BRAND.navyDeep} 70%)`,
+                borderColor: `${SCEF_BRAND.gold}33`,
               }}
             >
               <svg
