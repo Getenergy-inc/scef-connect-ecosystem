@@ -50,10 +50,10 @@ const LocalChapters = () => {
   return (
     <>
       <Helmet>
-        <title>Local Chapters — SCEF | Join a Community Near You</title>
+        <title>Local Chapter Services | SCEF Regional Chapters Across Africa and the Diaspora</title>
         <meta
           name="description"
-          content="Find and join a SCEF local chapter near you. Country and regional chapters coordinate education advocacy, NESA-Africa, EduAid-Africa, RMSA, eLibrary Nigeria and more."
+          content="Explore SCEF Local Chapter Services across ten regions of Africa and the diaspora, connecting EduAid-Africa, NESA-Africa, Special Needs School nominations, regional voting, GFA Wzip wallets, Rebuild My School Africa, and edu-tourism opportunities."
         />
         <link rel="canonical" href="https://santoscreations.org/chapters" />
       </Helmet>
@@ -67,18 +67,24 @@ const LocalChapters = () => {
             <div className="absolute inset-0 bg-scef-pattern opacity-10" />
             <div className="container mx-auto px-4 relative z-10 max-w-4xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-5">
-                <MapPin className="w-3.5 h-3.5" /> SCEF Local Chapters
+                <MapPin className="w-3.5 h-3.5" /> SCEF Local Chapter Services
               </div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5">
-                Local execution. <span className="text-scef-gold">Continental governance.</span>
+                Local Chapter <span className="text-scef-gold">Services</span>
               </h1>
-              <p className="text-lg text-white/80 leading-relaxed max-w-2xl">
-                Country and regional chapters are the operational backbone of SCEF. They run school
-                nominations, deliver training, coordinate NESA-Africa, EduAid-Africa, RMSA and
-                eLibrary Nigeria activities, and report quarterly into continental governance.
+              <p className="text-lg text-white/80 leading-relaxed max-w-3xl">
+                SCEF Local Chapter Services is the grassroots execution arm of Santos Creations
+                Educational Foundation. Local chapters support EduAid-Africa, NESA-Africa,
+                Rebuild My School Africa, eLibrary Nigeria, Education Online Africa, Women &amp;
+                Girls Education, Special Needs Education Support, training programmes, media
+                advocacy, school nominations, regional voting, and community-based education impact.
               </p>
             </div>
           </section>
+
+          {/* Shared ten-region map */}
+          <AfricaRegionalMap detailBase="/regions" variant="light" />
+
 
           {/* Filters */}
           <section className="border-b bg-background py-6 sticky top-16 z-30">
