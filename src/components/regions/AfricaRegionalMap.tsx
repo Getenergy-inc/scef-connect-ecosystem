@@ -186,10 +186,10 @@ export const AfricaRegionalMap = ({
                       style={{
                         backgroundColor: isActive
                           ? SCEF_BRAND.gold
-                          : `${SCEF_BRAND.navy}10`,
-                        color: isActive ? SCEF_BRAND.navy : SCEF_BRAND.navy,
+                          : "transparent",
+                        color: isActive ? SCEF_BRAND.navy : SCEF_BRAND.gold,
                         border: `1px solid ${
-                          isActive ? SCEF_BRAND.gold : `${SCEF_BRAND.navy}20`
+                          isActive ? SCEF_BRAND.gold : `${SCEF_BRAND.gold}66`
                         }`,
                       }}
                     >
