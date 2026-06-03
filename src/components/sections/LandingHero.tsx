@@ -38,13 +38,12 @@ export const LandingHero = () => {
               Santos Creations Educational Foundation
             </p>
             <h1 className="font-display text-white text-[clamp(1.6rem,6vw,3.1rem)] font-bold leading-[1.15] tracking-tight">
-              Managing CSR Education Funds for Real Impact Across Africa
+              Advocating Education for All. Managing CSR Education Funds. Delivering Real Impact Across Africa.
             </h1>
-            <p className="mt-5 text-[16px] sm:text-base md:text-lg leading-[1.65] text-white max-w-[600px]">
-              SCEF is a membership-based Pan-African NGO and CSR Education Funds Management
-              organization helping partners fund scholarships, school transformation, teacher
-              development, vocational training, digital learning, and community-led education
-              projects across Africa.
+            <p className="mt-5 text-[16px] sm:text-base md:text-lg leading-[1.65] text-white max-w-[620px]">
+              Santos Creations Educational Foundation (SCEF) is a membership-based Pan-African NGO
+              and CSR Education Funds Management organization committed to advancing Education for All,
+              sustainability, advocacy, and community transformation across Africa and the diaspora.
             </p>
 
             <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
