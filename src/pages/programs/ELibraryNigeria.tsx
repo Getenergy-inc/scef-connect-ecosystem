@@ -7,6 +7,7 @@ import { ProgramTemplateAppendix } from "@/components/programs/template/ProgramT
 import { ELibrarySearch } from "@/components/elibrary/ELibrarySearch";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
 import { 
+import { PENDING_METRIC } from "@/data/impactEvidence";
   BookOpen, 
   Download, 
   Globe, 
@@ -45,25 +46,25 @@ const ELibraryNigeria = () => {
       icon: BookOpen,
       title: "Local Content E-Books",
       description: "Nigerian authored books across all subjects and educational levels",
-      count: "50,000+"
+      count: PENDING_METRIC
     },
     {
       icon: FileText,
       title: "International Content",
       description: "Global academic journals and research publications",
-      count: "25,000+"
+      count: PENDING_METRIC
     },
     {
       icon: Video,
       title: "Video Tutorials",
       description: "Educational video content for visual learners",
-      count: "10,000+"
+      count: PENDING_METRIC
     },
     {
       icon: Headphones,
       title: "Audio Books",
       description: "Listen and learn with our audio book collection",
-      count: "5,000+"
+      count: PENDING_METRIC
     }
   ];
 
@@ -140,9 +141,9 @@ const ELibraryNigeria = () => {
   ];
 
   const stats = [
-    { value: "100,000+", label: "Active Users" },
-    { value: "90,000+", label: "Digital Resources" },
-    { value: "36", label: "States Covered" },
+    { value: PENDING_METRIC, label: "Active Users" },
+    { value: PENDING_METRIC, label: "Digital Resources" },
+    { value: PENDING_METRIC, label: "States Covered" },
     { value: "Free", label: "Access for Students" }
   ];
 

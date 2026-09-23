@@ -5,7 +5,7 @@ const platforms = [
   {
     name: "eLibrary Nigeria",
     href: "https://www.elibrarynigeria.com.ng",
-    description: "Nigeria's largest free digital library with over 90,000 e-books, research papers, and educational resources for students and educators.",
+    description: "A free digital library providing e-books, research papers, and educational resources for students and educators. Catalogue and usage figures are under verification.",
     icon: BookOpen,
     color: "#0000CD",
     localPage: "/programs/elibrary-nigeria"

@@ -122,7 +122,7 @@ const TDSD = () => {
                 Digital <span className="text-gradient-gold">Platforms</span>
               </h2>
               <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-                Enterprise-grade platforms designed for continental scale, serving millions of users across education, finance, and administration.
+                Platforms designed for continental scale across education, finance, and administration. Several are in development; usage figures are under verification.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {platforms.map((platform) => (

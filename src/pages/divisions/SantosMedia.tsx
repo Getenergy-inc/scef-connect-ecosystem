@@ -121,7 +121,7 @@ const SantosMedia = () => {
                 Media <span className="text-gradient-gold">Properties</span>
               </h2>
               <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-                Four distinct media platforms reaching millions of viewers, listeners, and participants across Africa and the diaspora.
+                Four distinct media platforms serving viewers, listeners, and participants across Africa and the diaspora. Audience reporting is under verification.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {channels.map((channel) => (
@@ -170,7 +170,7 @@ const SantosMedia = () => {
                 Engage with Santos Media
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Explore our media library, partner on content production, or advertise with Africa's leading education media network.
+                Explore our media library, partner on content production, or advertise with SCEF’s education media network.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
