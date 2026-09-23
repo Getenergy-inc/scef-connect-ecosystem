@@ -296,7 +296,13 @@ const WomenGirlsEducation = () => {
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
                   Voices of <span className="text-scef-gold">Change</span>
                 </h2>
+                <p className="mx-auto max-w-2xl text-xs leading-relaxed text-white/60">
+                  Illustrative programme narratives. Named beneficiary stories,
+                  consent records and supporting documentation are under
+                  verification before publication.
+                </p>
               </div>
+
               
               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {successStories.map((story) => (
