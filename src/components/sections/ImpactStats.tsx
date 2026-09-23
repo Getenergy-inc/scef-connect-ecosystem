@@ -1,33 +1,34 @@
-import { useEffect, useState } from "react";
 import { GraduationCap, School, Users, Eye, TrendingUp } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
+import { PENDING_METRIC, PENDING_METRIC_NOTE } from "@/data/impactEvidence";
 
+/**
+ * Impact counters. Numeric beneficiary, school, chapter and reach figures are
+ * withheld until the corresponding verified records exist in `impact_metrics`.
+ */
 const getStats = (t: (key: string) => string) => [
   {
     icon: GraduationCap,
-    value: 15000,
-    suffix: "+",
+    value: null as string | null,
     label: t("home.impact.metrics.scholarships"),
   },
   {
     icon: School,
-    value: 250,
-    suffix: "+",
+    value: null as string | null,
     label: t("home.impact.metrics.schools"),
   },
   {
     icon: Users,
-    value: 45,
-    suffix: "",
+    value: null as string | null,
     label: t("home.impact.metrics.chapters"),
   },
   {
     icon: Eye,
-    value: 2,
-    suffix: "M+",
+    value: null as string | null,
     label: t("home.impact.metrics.partners"),
   },
 ];
+
 
 const CountUp = ({ end, suffix, duration = 2000 }: { end: number; suffix: string; duration?: number }) => {
   const [count, setCount] = useState(0);

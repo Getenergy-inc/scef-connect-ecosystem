@@ -204,11 +204,19 @@ const DigitalLearning = () => {
                       className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border-2 border-black"
                     >
                       <stat.icon className="w-6 h-6 text-scef-gold mx-auto mb-2" />
-                      <p className="font-display text-2xl md:text-3xl font-bold text-scef-gold">{stat.value}</p>
+                      {stat.value ? (
+                        <p className="font-display text-2xl md:text-3xl font-bold text-scef-gold">{stat.value}</p>
+                      ) : (
+                        <p className="text-xs font-semibold italic text-white/70">{PENDING_METRIC}</p>
+                      )}
                       <p className="text-white/80 text-sm">{stat.label}</p>
                     </div>
                   ))}
                 </div>
+                <p className="mx-auto mt-4 max-w-3xl text-xs leading-relaxed text-white/60">
+                  {PENDING_METRIC_NOTE}
+                </p>
+
                 
                 <div className="mt-12 animate-bounce">
                   <ChevronDown className="w-8 h-8 text-scef-gold/60 mx-auto" />
