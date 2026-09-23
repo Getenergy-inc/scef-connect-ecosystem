@@ -458,13 +458,59 @@ const ImpactEvidenceAdmin = () => {
           </Card>
         </TabsContent>
 
-        <TabsContent value="register" className="mt-6">
+        <TabsContent value="register" className="mt-6 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Internal audit summary (admin only)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-sm text-muted-foreground">
+              <p>
+                Site-wide claims scan covering home, about, impact, programme,
+                division, partnership, membership and chapter pages plus reusable
+                components and translation files.
+              </p>
+              <ul className="list-disc space-y-1 pl-5">
+                <li>
+                  Claims reviewed and registered: {register.length}; critical (financial
+                  or institutional) risk items:{" "}
+                  {register.filter((r) => r.risk_level === "CRITICAL").length}; high
+                  risk: {register.filter((r) => r.risk_level === "HIGH").length}.
+                </li>
+                <li>
+                  Figures withdrawn from public display pending evidence: Women &amp;
+                  Girls beneficiary, completion-rate and annual investment figures;
+                  digital learning platform usage; eLibrary users, resources and state
+                  coverage; partnership totals and programmes-funded amount; EduAid
+                  beneficiary and chapter membership counts; home impact counters.
+                </li>
+                <li>
+                  Unsupported superlatives reworded on Santos Media, OMBDD, TDSD, Join
+                  and the featured platforms component.
+                </li>
+                <li>
+                  Documents required from management: audited financial statements,
+                  annual report, programme M&amp;E records, partnership and endorsement
+                  agreements, chapter membership registry, platform analytics exports.
+                </li>
+                <li>
+                  Recommended next steps: register verified figures here with reporting
+                  periods and sources, then publish them so public pages read from this
+                  record instead of hard-coded values; confirm each endorsement listing
+                  against a signed document.
+                </li>
+              </ul>
+              <p className="pt-2">
+                This summary is internal and is not exposed on any public page.
+              </p>
+            </CardContent>
+          </Card>
           <Card>
             <CardHeader>
               <CardTitle className="text-base">
                 Internal claims &amp; evidence register ({register.length})
               </CardTitle>
             </CardHeader>
+
             <CardContent className="overflow-x-auto">
               <Table>
                 <TableHeader>
