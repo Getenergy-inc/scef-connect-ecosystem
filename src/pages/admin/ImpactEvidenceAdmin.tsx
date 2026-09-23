@@ -269,7 +269,7 @@ const ImpactEvidenceAdmin = () => {
                             <SelectContent>
                               {WORKFLOW_STATES.map((s) => (
                                 <SelectItem key={s} value={s}>
-                                  {s.replaceAll("_", " ")}
+                                  {s.split("_").join(" ")}
                                 </SelectItem>
                               ))}
                             </SelectContent>
