@@ -29,30 +29,6 @@ const getStats = (t: (key: string) => string) => [
   },
 ];
 
-
-const CountUp = ({ end, suffix, duration = 2000 }: { end: number; suffix: string; duration?: number }) => {
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    let startTime: number;
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = (currentTime - startTime) / duration;
-      
-      if (progress < 1) {
-        setCount(Math.floor(end * progress));
-        requestAnimationFrame(animate);
-      } else {
-        setCount(end);
-      }
-    };
-    
-    requestAnimationFrame(animate);
-  }, [end, duration]);
-  
-  return <>{count.toLocaleString()}{suffix}</>;
-};
-
 export const ImpactStats = () => {
   const { t, isRTL } = useLocale();
   const stats = getStats(t);
