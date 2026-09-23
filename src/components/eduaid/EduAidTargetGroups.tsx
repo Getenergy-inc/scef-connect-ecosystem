@@ -7,43 +7,44 @@ import {
   School
 } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
+import { PENDING_METRIC } from "@/data/impactEvidence";
 
 const targetGroups = [
   {
     icon: Baby,
     title: "Early Childhood (3-6 years)",
     description: "Foundation programs for pre-primary education, early literacy, and child development support.",
-    stats: "12,000+ children reached"
+    stats: PENDING_METRIC
   },
   {
     icon: School,
     title: "Primary School Students",
     description: "Scholarships, school supplies, and infrastructure support for children aged 6-12.",
-    stats: "45,000+ students supported"
+    stats: PENDING_METRIC
   },
   {
     icon: Users,
     title: "Secondary School Students",
     description: "Full tuition support, career guidance, and STEM education programs for teenagers.",
-    stats: "28,000+ scholarships awarded"
+    stats: PENDING_METRIC
   },
   {
     icon: GraduationCap,
     title: "University Students",
     description: "Higher education scholarships, research grants, and mentorship programs.",
-    stats: "8,500+ tertiary scholars"
+    stats: PENDING_METRIC
   },
   {
     icon: Briefcase,
     title: "Educators & Teachers",
     description: "Professional development, ICT training, and teaching methodology workshops.",
-    stats: "5,000+ teachers trained"
+    stats: PENDING_METRIC
   },
   {
     icon: Heart,
     title: "Vulnerable Communities",
     description: "Special focus on refugees, girls, orphans, and children with disabilities.",
-    stats: "15,000+ vulnerable learners"
+    stats: PENDING_METRIC
   }
 ];
 

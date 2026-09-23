@@ -91,7 +91,7 @@ const Join = () => {
         <title>Join SCEF — Three Paths to Be Part of the Movement</title>
         <meta
           name="description"
-          content="Become a Member, join a local Chapter, or apply as an Ambassador. Three clear paths into Africa's leading membership-run education NGO."
+          content="Become a Member, join a local Chapter, or apply as an Ambassador. Three clear paths into SCEF, a Pan-African membership-based education foundation."
         />
         <link rel="canonical" href="https://santoscreations.org/join" />
       </Helmet>

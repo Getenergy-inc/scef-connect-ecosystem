@@ -1,56 +1,33 @@
-import { useEffect, useState } from "react";
 import { GraduationCap, School, Users, Eye, TrendingUp } from "lucide-react";
 import { useLocale } from "@/contexts/LocaleContext";
+import { PENDING_METRIC, PENDING_METRIC_NOTE } from "@/data/impactEvidence";
 
+/**
+ * Impact counters. Numeric beneficiary, school, chapter and reach figures are
+ * withheld until the corresponding verified records exist in `impact_metrics`.
+ */
 const getStats = (t: (key: string) => string) => [
   {
     icon: GraduationCap,
-    value: 15000,
-    suffix: "+",
+    value: null as string | null,
     label: t("home.impact.metrics.scholarships"),
   },
   {
     icon: School,
-    value: 250,
-    suffix: "+",
+    value: null as string | null,
     label: t("home.impact.metrics.schools"),
   },
   {
     icon: Users,
-    value: 45,
-    suffix: "",
+    value: null as string | null,
     label: t("home.impact.metrics.chapters"),
   },
   {
     icon: Eye,
-    value: 2,
-    suffix: "M+",
+    value: null as string | null,
     label: t("home.impact.metrics.partners"),
   },
 ];
-
-const CountUp = ({ end, suffix, duration = 2000 }: { end: number; suffix: string; duration?: number }) => {
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    let startTime: number;
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = (currentTime - startTime) / duration;
-      
-      if (progress < 1) {
-        setCount(Math.floor(end * progress));
-        requestAnimationFrame(animate);
-      } else {
-        setCount(end);
-      }
-    };
-    
-    requestAnimationFrame(animate);
-  }, [end, duration]);
-  
-  return <>{count.toLocaleString()}{suffix}</>;
-};
 
 export const ImpactStats = () => {
   const { t, isRTL } = useLocale();
@@ -93,17 +70,29 @@ export const ImpactStats = () => {
               </div>
               
               {/* Value */}
-              <div className="font-display text-4xl lg:text-5xl font-bold mb-2 text-scef-gold">
-                <CountUp end={stat.value} suffix={stat.suffix} />
-              </div>
+              {stat.value ? (
+                <div className="font-display text-4xl lg:text-5xl font-bold mb-2 text-scef-gold">
+                  {stat.value}
+                </div>
+              ) : (
+                <div className="mb-2 text-sm font-semibold italic text-white/70">
+                  {PENDING_METRIC}
+                </div>
+              )}
               
               {/* Label */}
               <p className="text-white/80 font-medium">
                 {stat.label}
               </p>
+
             </div>
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-white/60">
+          {PENDING_METRIC_NOTE}
+        </p>
+
       </div>
     </section>
   );

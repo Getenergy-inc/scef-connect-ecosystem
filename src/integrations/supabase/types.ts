@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.1"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
@@ -790,6 +790,75 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      claims_evidence_register: {
+        Row: {
+          approved_public_wording: string | null
+          claim_ref: string | null
+          claim_type: string | null
+          created_at: string
+          current_figure: string | null
+          evidence_available: boolean
+          evidence_location: string | null
+          exact_claim: string
+          id: string
+          next_review_date: string | null
+          page_path: string
+          programme: string | null
+          recommended_correction: string | null
+          reporting_period: string | null
+          review_date: string | null
+          reviewer: string | null
+          risk_level: Database["public"]["Enums"]["claim_risk_level"]
+          source: string | null
+          updated_at: string
+          verification_status: Database["public"]["Enums"]["evidence_status"]
+        }
+        Insert: {
+          approved_public_wording?: string | null
+          claim_ref?: string | null
+          claim_type?: string | null
+          created_at?: string
+          current_figure?: string | null
+          evidence_available?: boolean
+          evidence_location?: string | null
+          exact_claim: string
+          id?: string
+          next_review_date?: string | null
+          page_path: string
+          programme?: string | null
+          recommended_correction?: string | null
+          reporting_period?: string | null
+          review_date?: string | null
+          reviewer?: string | null
+          risk_level?: Database["public"]["Enums"]["claim_risk_level"]
+          source?: string | null
+          updated_at?: string
+          verification_status?: Database["public"]["Enums"]["evidence_status"]
+        }
+        Update: {
+          approved_public_wording?: string | null
+          claim_ref?: string | null
+          claim_type?: string | null
+          created_at?: string
+          current_figure?: string | null
+          evidence_available?: boolean
+          evidence_location?: string | null
+          exact_claim?: string
+          id?: string
+          next_review_date?: string | null
+          page_path?: string
+          programme?: string | null
+          recommended_correction?: string | null
+          reporting_period?: string | null
+          review_date?: string | null
+          reviewer?: string | null
+          risk_level?: Database["public"]["Enums"]["claim_risk_level"]
+          source?: string | null
+          updated_at?: string
+          verification_status?: Database["public"]["Enums"]["evidence_status"]
+        }
+        Relationships: []
       }
       contributors: {
         Row: {
@@ -1897,6 +1966,81 @@ export type Database = {
           user_id?: string | null
           year_end?: number | null
           year_start?: number | null
+        }
+        Relationships: []
+      }
+      impact_metrics: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          display_key: string | null
+          evidence_document: string | null
+          evidence_source: string | null
+          evidence_status: Database["public"]["Enums"]["evidence_status"]
+          geographic_scope: string | null
+          id: string
+          methodology: string | null
+          metric_name: string
+          metric_type: Database["public"]["Enums"]["metric_type"]
+          metric_value: string | null
+          notes: string | null
+          programme: string
+          public_display: boolean
+          reporting_period: string | null
+          source_url: string | null
+          unit: string | null
+          updated_at: string
+          verification_date: string | null
+          verified_by: string | null
+          workflow_state: Database["public"]["Enums"]["evidence_workflow_state"]
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          display_key?: string | null
+          evidence_document?: string | null
+          evidence_source?: string | null
+          evidence_status?: Database["public"]["Enums"]["evidence_status"]
+          geographic_scope?: string | null
+          id?: string
+          methodology?: string | null
+          metric_name: string
+          metric_type?: Database["public"]["Enums"]["metric_type"]
+          metric_value?: string | null
+          notes?: string | null
+          programme: string
+          public_display?: boolean
+          reporting_period?: string | null
+          source_url?: string | null
+          unit?: string | null
+          updated_at?: string
+          verification_date?: string | null
+          verified_by?: string | null
+          workflow_state?: Database["public"]["Enums"]["evidence_workflow_state"]
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          display_key?: string | null
+          evidence_document?: string | null
+          evidence_source?: string | null
+          evidence_status?: Database["public"]["Enums"]["evidence_status"]
+          geographic_scope?: string | null
+          id?: string
+          methodology?: string | null
+          metric_name?: string
+          metric_type?: Database["public"]["Enums"]["metric_type"]
+          metric_value?: string | null
+          notes?: string | null
+          programme?: string
+          public_display?: boolean
+          reporting_period?: string | null
+          source_url?: string | null
+          unit?: string | null
+          updated_at?: string
+          verification_date?: string | null
+          verified_by?: string | null
+          workflow_state?: Database["public"]["Enums"]["evidence_workflow_state"]
         }
         Relationships: []
       }
@@ -4476,6 +4620,22 @@ export type Database = {
         | "lcp"
       chapter_status: "pending" | "active" | "suspended"
       chapter_type: "online" | "hybrid" | "physical"
+      claim_risk_level: "CRITICAL" | "HIGH" | "MEDIUM" | "LOW"
+      evidence_status:
+        | "VERIFIED"
+        | "EXTERNAL_VERIFIED"
+        | "SELF_REPORTED"
+        | "VERIFICATION_IN_PROGRESS"
+        | "UNVERIFIED"
+      evidence_workflow_state:
+        | "DRAFT"
+        | "EVIDENCE_UPLOADED"
+        | "UNDER_REVIEW"
+        | "VERIFIED"
+        | "APPROVED_FOR_PUBLICATION"
+        | "PUBLISHED"
+        | "WITHDRAWN"
+      metric_type: "ACHIEVED" | "TARGET" | "PROJECTED" | "ESTIMATED"
       room_type:
         | "staff_management"
         | "division"
@@ -4499,12 +4659,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -4528,11 +4688,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -4553,11 +4713,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -4578,11 +4738,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -4595,11 +4755,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -4630,6 +4790,24 @@ export const Constants = {
       ],
       chapter_status: ["pending", "active", "suspended"],
       chapter_type: ["online", "hybrid", "physical"],
+      claim_risk_level: ["CRITICAL", "HIGH", "MEDIUM", "LOW"],
+      evidence_status: [
+        "VERIFIED",
+        "EXTERNAL_VERIFIED",
+        "SELF_REPORTED",
+        "VERIFICATION_IN_PROGRESS",
+        "UNVERIFIED",
+      ],
+      evidence_workflow_state: [
+        "DRAFT",
+        "EVIDENCE_UPLOADED",
+        "UNDER_REVIEW",
+        "VERIFIED",
+        "APPROVED_FOR_PUBLICATION",
+        "PUBLISHED",
+        "WITHDRAWN",
+      ],
+      metric_type: ["ACHIEVED", "TARGET", "PROJECTED", "ESTIMATED"],
       room_type: [
         "staff_management",
         "division",

@@ -11,57 +11,62 @@ import {
   ChevronDown, HandHeart, Monitor, Database, Code, Cloud
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
+import { PENDING_METRIC, PENDING_METRIC_NOTE } from "@/data/impactEvidence";
 
 const platforms = [
   {
     icon: Monitor,
     title: "SCEF Learning Hub",
     desc: "Comprehensive online learning platform with interactive courses, video lessons, and self-paced modules for all education levels.",
-    users: "50,000+ learners",
+    users: PENDING_METRIC,
     features: ["Video courses", "Quizzes", "Certificates"],
   },
   {
     icon: Smartphone,
     title: "EduMobile App",
     desc: "Mobile-first learning application optimized for low-bandwidth environments, enabling learning on basic smartphones.",
-    users: "75,000+ downloads",
+    users: PENDING_METRIC,
     features: ["Offline mode", "SMS lessons", "Data-light"],
   },
   {
     icon: Database,
     title: "eLibrary Africa",
     desc: "Digital library with textbooks, research papers, educational resources, and open educational materials.",
-    users: "100,000+ resources",
+    users: PENDING_METRIC,
     features: ["Free textbooks", "Research access", "Multi-language"],
   },
   {
     icon: Play,
     title: "Virtual Classroom",
     desc: "Live streaming platform for real-time classes, webinars, and interactive sessions with educators across Africa.",
-    users: "5,000+ classes/month",
+    users: PENDING_METRIC,
     features: ["Live classes", "Recording", "Q&A sessions"],
   },
   {
     icon: Code,
     title: "Tech Skills Academy",
     desc: "Specialized programs teaching coding, digital literacy, and technology skills for the future workforce.",
-    users: "12,000+ enrolled",
+    users: PENDING_METRIC,
     features: ["Coding courses", "Projects", "Job placement"],
   },
   {
     icon: Cloud,
     title: "Teacher Digital Hub",
     desc: "Resources and training platform for educators to develop digital teaching skills and access lesson materials.",
-    users: "8,000+ teachers",
+    users: PENDING_METRIC,
     features: ["Lesson plans", "Training", "Community"],
   },
 ];
 
-const impactStats = [
-  { value: "250,000+", label: "Active Learners", icon: Users },
-  { value: "5+", label: "African Regions", icon: Globe },
-  { value: "15,000+", label: "Courses Available", icon: BookOpen },
-  { value: "85%", label: "Completion Rate", icon: TrendingUp },
+/**
+ * Learner, catalogue and completion-rate figures are withheld pending
+ * verification of platform reporting. Only the structural regional count shows.
+ */
+const impactStats: { value?: string; label: string; icon: typeof Users }[] = [
+  { label: "Active Learners", icon: Users },
+  { value: "8", label: "Approved SCEF Regions", icon: Globe },
+  { label: "Courses Available", icon: BookOpen },
+  { label: "Completion Rate", icon: TrendingUp },
 ];
 
 const features = [
@@ -199,11 +204,19 @@ const DigitalLearning = () => {
                       className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border-2 border-black"
                     >
                       <stat.icon className="w-6 h-6 text-scef-gold mx-auto mb-2" />
-                      <p className="font-display text-2xl md:text-3xl font-bold text-scef-gold">{stat.value}</p>
+                      {stat.value ? (
+                        <p className="font-display text-2xl md:text-3xl font-bold text-scef-gold">{stat.value}</p>
+                      ) : (
+                        <p className="text-xs font-semibold italic text-white/70">{PENDING_METRIC}</p>
+                      )}
                       <p className="text-white/80 text-sm">{stat.label}</p>
                     </div>
                   ))}
                 </div>
+                <p className="mx-auto mt-4 max-w-3xl text-xs leading-relaxed text-white/60">
+                  {PENDING_METRIC_NOTE}
+                </p>
+
                 
                 <div className="mt-12 animate-bounce">
                   <ChevronDown className="w-8 h-8 text-scef-gold/60 mx-auto" />

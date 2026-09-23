@@ -2,6 +2,7 @@ import { MapPin, Calendar, Users, Building, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLocale } from "@/contexts/LocaleContext";
+import { PENDING_METRIC } from "@/data/impactEvidence";
 
 const projects = [
   {
@@ -10,7 +11,7 @@ const projects = [
     type: "Digital Learning Center",
     status: "In Progress",
     progress: 75,
-    beneficiaries: "2,500+ students",
+    beneficiaries: PENDING_METRIC,
     timeline: "Q2 2025"
   },
   {
@@ -19,7 +20,7 @@ const projects = [
     type: "Educator Development",
     status: "Active",
     progress: 60,
-    beneficiaries: "800+ teachers",
+    beneficiaries: PENDING_METRIC,
     timeline: "Ongoing"
   },
   {
@@ -28,7 +29,7 @@ const projects = [
     type: "Infrastructure",
     status: "In Progress",
     progress: 45,
-    beneficiaries: "1,200+ students",
+    beneficiaries: PENDING_METRIC,
     timeline: "Q3 2025"
   },
   {
@@ -37,7 +38,7 @@ const projects = [
     type: "Scholarships",
     status: "Active",
     progress: 90,
-    beneficiaries: "500+ scholars",
+    beneficiaries: PENDING_METRIC,
     timeline: "2025 Cycle"
   }
 ];

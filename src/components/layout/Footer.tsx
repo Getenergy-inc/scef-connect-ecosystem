@@ -42,6 +42,7 @@ const columns: { title: string; links: ColLink[] }[] = [
       { name: "Fund Scholarships", href: "/sponsorship?program=scholarships" },
       { name: "Request Partnership Proposal", href: "/csr-partnership" },
       { name: "Impact Reports", href: "/impact" },
+      { name: "Transparency & Evidence", href: "/transparency" },
     ],
   },
   {

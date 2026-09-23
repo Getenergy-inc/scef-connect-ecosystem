@@ -2,14 +2,15 @@ import { MapPin, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
+import { PENDING_METRIC } from "@/data/impactEvidence";
 
 const chapters = [
-  { country: "Nigeria", city: "Lagos", members: "500+", status: "Active" },
-  { country: "Kenya", city: "Nairobi", members: "350+", status: "Active" },
-  { country: "Ghana", city: "Accra", members: "280+", status: "Active" },
-  { country: "South Africa", city: "Johannesburg", members: "400+", status: "Active" },
-  { country: "Tanzania", city: "Dar es Salaam", members: "200+", status: "Growing" },
-  { country: "Rwanda", city: "Kigali", members: "150+", status: "Growing" }
+  { country: "Nigeria", city: "Lagos", members: PENDING_METRIC, status: "Active" },
+  { country: "Kenya", city: "Nairobi", members: PENDING_METRIC, status: "Active" },
+  { country: "Ghana", city: "Accra", members: PENDING_METRIC, status: "Active" },
+  { country: "South Africa", city: "Johannesburg", members: PENDING_METRIC, status: "Active" },
+  { country: "Tanzania", city: "Dar es Salaam", members: PENDING_METRIC, status: "Growing" },
+  { country: "Rwanda", city: "Kigali", members: PENDING_METRIC, status: "Growing" }
 ];
 
 export default function EduAidLocalChapters() {
@@ -42,7 +43,7 @@ export default function EduAidLocalChapters() {
                 <div className="w-10 h-10 bg-scef-gold/20 rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-scef-gold-dark" />
                 </div>
-                <span className="text-foreground font-medium">{t('eduaid.chapters.point2') || '2,000+ active chapter members'}</span>
+                <span className="text-foreground font-medium">{t('eduaid.chapters.point2') || 'Active chapter membership reporting in progress'}</span>
               </div>
             </div>
 

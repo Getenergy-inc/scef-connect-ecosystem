@@ -11,52 +11,68 @@ import {
   ChevronDown, HandHeart, School
 } from "lucide-react";
 import { ProgramVideoSection } from "@/components/programs/ProgramVideoSection";
+import {
+  PENDING_METRIC,
+  PENDING_METRIC_SHORT,
+  PENDING_METRIC_NOTE,
+} from "@/data/impactEvidence";
 
 const programPillars = [
   {
     icon: GraduationCap,
     title: "Access to Education",
     desc: "Breaking barriers that prevent girls from attending school through scholarships, transportation, and community advocacy.",
-    stats: "12,000+ girls enrolled",
+    stats: PENDING_METRIC_SHORT,
   },
   {
     icon: Shield,
     title: "Safe Learning Spaces",
     desc: "Creating secure, girl-friendly school environments with proper facilities and trained support staff.",
-    stats: "500+ schools supported",
+    stats: PENDING_METRIC_SHORT,
   },
   {
     icon: Lightbulb,
     title: "STEM Empowerment",
     desc: "Encouraging girls to pursue science, technology, engineering, and mathematics through specialized programs.",
-    stats: "3,000+ in STEM tracks",
+    stats: PENDING_METRIC_SHORT,
   },
   {
     icon: Users,
     title: "Leadership Development",
     desc: "Building confidence and leadership skills through mentorship, public speaking, and community projects.",
-    stats: "800+ leaders trained",
+    stats: PENDING_METRIC_SHORT,
   },
   {
     icon: Heart,
     title: "Health & Wellbeing",
     desc: "Addressing health needs including menstrual hygiene management, nutrition, and mental health support.",
-    stats: "25,000+ reached",
+    stats: PENDING_METRIC_SHORT,
   },
   {
     icon: Award,
     title: "Career Pathways",
     desc: "Connecting educated women with employment opportunities, entrepreneurship training, and professional networks.",
-    stats: "2,500+ employed",
+    stats: PENDING_METRIC_SHORT,
   },
 ];
 
-const impactStats = [
-  { value: "45,000+", label: "Girls & Women Supported", icon: Users },
-  { value: "5+", label: "African Regions", icon: Globe },
-  { value: "89%", label: "Completion Rate", icon: TrendingUp },
-  { value: "$3.2M", label: "Invested Annually", icon: Target },
+/**
+ * Impact counters. Beneficiary, completion-rate and financial figures previously
+ * shown here ("45,000+ supported", "89% completion", "$3.2M invested annually")
+ * had no identified supporting documentation and are withheld from public display
+ * pending verification. Only the structural regional figure is displayed.
+ */
+const impactStats: {
+  value?: string;
+  label: string;
+  icon: typeof Users;
+}[] = [
+  { label: "Girls & Women Supported", icon: Users },
+  { value: "8", label: "Approved SCEF Regions", icon: Globe },
+  { label: "Completion Rate", icon: TrendingUp },
+  { label: "Annual Programme Investment", icon: Target },
 ];
+
 
 const successStories = [
   {
@@ -169,11 +185,19 @@ const WomenGirlsEducation = () => {
                       className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border-2 border-black"
                     >
                       <stat.icon className="w-6 h-6 text-scef-gold mx-auto mb-2" />
-                      <p className="font-display text-2xl md:text-3xl font-bold text-scef-gold">{stat.value}</p>
+                      {stat.value ? (
+                        <p className="font-display text-2xl md:text-3xl font-bold text-scef-gold">{stat.value}</p>
+                      ) : (
+                        <p className="text-xs font-semibold italic text-white/70">{PENDING_METRIC}</p>
+                      )}
                       <p className="text-white/80 text-sm">{stat.label}</p>
                     </div>
                   ))}
                 </div>
+                <p className="mx-auto mt-4 max-w-3xl text-xs leading-relaxed text-white/60">
+                  {PENDING_METRIC_NOTE}
+                </p>
+
                 
                 <div className="mt-12 animate-bounce">
                   <ChevronDown className="w-8 h-8 text-scef-gold/60 mx-auto" />
@@ -272,7 +296,13 @@ const WomenGirlsEducation = () => {
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
                   Voices of <span className="text-scef-gold">Change</span>
                 </h2>
+                <p className="mx-auto max-w-2xl text-xs leading-relaxed text-white/60">
+                  Illustrative programme narratives. Named beneficiary stories,
+                  consent records and supporting documentation are under
+                  verification before publication.
+                </p>
               </div>
+
               
               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {successStories.map((story) => (

@@ -9,6 +9,7 @@ import {
   CheckCircle2, Users, Heart, Award, Briefcase
 } from "lucide-react";
 import { CRSPartnersSection } from "@/components/sections/CRSPartnersSection";
+import { PENDING_METRIC } from "@/data/impactEvidence";
 
 
 const colorClasses = {
@@ -88,10 +89,10 @@ const Partners = () => {
   ];
 
   const impactStats = [
-    { value: "50K+", label: t("home.impact.metrics.scholarships") },
-    { value: "5+", label: t("home.impact.metrics.chapters") },
-    { value: "100+", label: t("home.impact.metrics.partners") },
-    { value: "$2M+", label: "Programs Funded" },
+    { value: PENDING_METRIC, label: t("home.impact.metrics.scholarships") },
+    { value: PENDING_METRIC, label: t("home.impact.metrics.chapters") },
+    { value: PENDING_METRIC, label: t("home.impact.metrics.partners") },
+    { value: PENDING_METRIC, label: "Programs Funded" },
   ];
 
   return (
@@ -147,7 +148,15 @@ const Partners = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {impactStats.map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-4xl font-display font-bold text-primary mb-2">{stat.value}</div>
+                    <div
+                      className={
+                        stat.value === PENDING_METRIC
+                          ? "mb-2 text-sm font-semibold italic text-muted-foreground"
+                          : "text-4xl font-display font-bold text-primary mb-2"
+                      }
+                    >
+                      {stat.value}
+                    </div>
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                   </div>
                 ))}
@@ -236,7 +245,7 @@ const Partners = () => {
                       <Globe className="w-5 h-5 text-terracotta shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-foreground">Continental Scale</h4>
-                        <p className="text-sm text-muted-foreground">Reach across 5+ African regions and the diaspora</p>
+                        <p className="text-sm text-muted-foreground">Reach across SCEF’s 8 approved African regions and 2 global networks</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
