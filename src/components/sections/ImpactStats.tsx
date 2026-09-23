@@ -88,6 +88,11 @@ export const ImpactStats = () => {
             </div>
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-white/60">
+          {PENDING_METRIC_NOTE}
+        </p>
+
       </div>
     </section>
   );
