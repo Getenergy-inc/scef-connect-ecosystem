@@ -1,67 +1,77 @@
-# Unified SCEF Local Chapter Services — Delivery Plan
+# SCEF Phase 2 — Full Content Review and Red-Flag Removal
 
-This is a large, multi-surface initiative (22 sections, 4 new DB tables, 30+ routes, signup automation across nesa.africa + SCEF + all program platforms, admin dashboards, Sophia logic, NESA-Africa map refactor). It cannot be safely shipped in a single change. I'll deliver it in phases so each layer is reviewable, testable, and donor-ready.
+## Goal
+Complete a donor-due-diligence audit without redesigning the website. Preserve SCEF’s visual identity and programme architecture while correcting unsupported claims, centralising statuses and regional structure, strengthening evidence controls, and keeping all audit material admin-only.
 
-## Guiding rules (locked-in across all phases)
-- One SCEF, one Local Chapter system, one member profile, one region taxonomy.
-- 10 regions only: North Africa, West Africa, Central Africa, East Africa, Southern Africa, Sahel, Horn of Africa, Indian Ocean, Diaspora / Global Africa, Friends of Africa.
-- No project-specific chapters or memberships. Cross-region countries use `secondary_region_tags`, never duplicate rows.
-- Free Online Membership auto-assignment on every signup (SCEF + all program sites).
-- Chapters are licensed, not franchised: no independent fundraising, contracts, or wallets.
-- SCEF brand tokens only (navy `scef-blue-darker`, gold `scef-gold`, green impact accent, white). No hardcoded hex in components.
-- All copy translatable via LocaleContext (9 languages). No hardcoded strings in new UI.
-- Unverified metrics use "Reporting in progress" placeholders.
+## Delivery approach
+This is a site-wide change across more than 100 routes, nine languages, database content, storage, automated emails, and the Sophia assistant. Work will follow the requested risk order, with each tranche validated before the next. Safe corrections will be applied directly; matters requiring documentary proof will be withheld or marked for management action rather than guessed.
 
-## Phase 1 — Data foundation & taxonomy (this phase, code-only, no DB yet)
-Frontend-only refactor of `/local-chapters` so the page already reflects the unified 10-region, country-card model while the DB layer is being designed.
+## 1. Authoritative regional structure and immediate contradictions
+- Replace the competing region datasets with one canonical 10-region source containing number, exact existing name/slug, type, description, status, and display order.
+- Define Regions 1–8 as geographic African regions; Region 9 as **Africans in the Diaspora**; Region 10 as **Friends of Africa**. Global networks will have no country lists, capitals, or map polygons.
+- Update maps, chapter pages, region pages, filters, membership forms, Edu-tourism content, metadata, translations, and Sophia knowledge to match the source.
+- Show only Regions 1–8 on the geographic map and list Regions 9–10 separately.
+- Replace conflicting “5+”, “8 approved”, “54 countries”, and reach-implying language with the approved organisational wording. Region and chapter activity remain separately labelled Active, Forming, or Planned.
+- Publish the management-confirmed `scef_regions_count = 10` metric, explicitly noting that it describes organisational structure—not programme reach.
+- Register and resolve the former regional contradiction starting at claim reference `SCEF-CL-018`.
 
-1. Create `src/data/scefRegions.ts` — canonical taxonomy:
-   - 10 regions with id, name, slug, description, primary countries, secondary-tag countries (Sahel, Horn, Indian Ocean overlaps), linked programs, regional wallet status placeholder, impact pathway summary.
-   - Country master list with: name, ISO code, primary region, secondary region tags, default chapter status (`To Be Activated` until verified).
-2. Refactor `src/pages/LocalChapters.tsx`:
-   - New Hero: "Explore Africa's Regions / One Continent, Ten Regions" + 6 CTAs (Join, Start Online, Explore Regions, Nominate School, Support Region, Chat with Sophia w/ WhatsApp deep-link).
-   - Positioning section (Section 2 copy — licensed grassroots, not franchises).
-   - Search + filters bar (region, country dynamic, chapter type, program, status) — reuse current filter pattern, extend program list to full SCEF program set.
-   - Ten region sections (accordion on mobile, full sections desktop), each with: country chips, chapter count, country chapter cards grid, region CTAs, linked program tags, wallet status, compliance note.
-   - Country chapter card component (`src/components/chapters/CountryChapterCard.tsx`) with all fields from Section 6 (counts show "Reporting in progress" until DB lands).
-   - Unified Project Synchronization section (Section 8) + 2026–2027 NESA-Africa Legacy Pathway section (Section 9) + Regional Wallet & Funding section (Section 10) + Chapter Development Pathway (Section 11, 3 stages).
-3. SEO: Helmet meta title/description per Section 20.
-4. Accessibility: aria-labels on region accordions and cards, alt text, keyboard nav.
+## 2. Highest-risk public content
+- Audit every donation, wallet, bank-account, scholarship-cost, and payment flow. Identify the legal recipient, purpose, refund/contact position, and operational status. Remove tax-benefit or return language unless documented. Flag personal recipients as CRITICAL.
+- Audit every child image, testimonial, named story, portrait, and event image. Replace unsupported identity claims with “Representative image” or “Illustrative”; record consent requirements. Identifiable children without referenced guardian consent become SAFEGUARDING—CRITICAL and will be removed, replaced, or made non-identifiable.
+- Audit partner, endorsement, sponsor, donor, collaborator, and engagement claims. Keep only documented classifications; otherwise use “Organisations SCEF has engaged with” or “Under discussion.” Remove unauthorised institutional logos and endorsement-implying SDG artwork.
 
-## Phase 2 — Region & country routes
-- `src/pages/regions/RegionDetail.tsx` already exists — extend to cover all 10 region slugs from taxonomy.
-- Add `/local-chapters/:regionSlug` route → reuses region detail with chapter focus.
-- Add `/local-chapters/:countrySlug` country chapter pages with the field set from Section 15.
-- Update `src/routes.ts` and `App.tsx` routing.
+## 3. Governance and legal identity
+- Review all governance records and public renderers. Add personal-capacity wording where an external employer could imply institutional endorsement.
+- Replace vacancy names shown as “TBD” with “Position open,” include open seats for Regions 9 and 10, add a neutral role description for Emmanuel Faleti, and correct duplicate management ordering.
+- Register consent-to-list and employer-name permissions as management actions for every named governance member.
+- Standardise the legal name as **Santos Creations Educational Foundation (SCEF), Nigeria** across pages, metadata, schema, donations, footer, and emails.
+- Remove inconsistent or undocumented registration/tax/charity details; use “Registration details available on request” where approved details are absent.
+- Describe programme brands as SCEF programmes, not separate legal entities. Correct Organization schema and `areaServed` so it describes the structure without claiming continent-wide operations.
 
-## Phase 3 — Database & signup automation (requires migration approval)
-New tables (with GRANTs + RLS in same migration):
-- `scef_local_chapters`
-- `scef_chapter_program_links`
-- `scef_members` (or extend `profiles`)
-- `scef_member_program_links`
-- Update `handle_new_user` trigger to: detect country, match primary region, create/update SCEF member, assign Free Online Membership, attach to country online chapter (create placeholder `To Be Activated` if missing), record signup source. Youth (13–17) flow with guardian consent.
-- Update all program signup edge functions / forms to call the same path.
+## 4. Evidence storage and enforced workflow
+- Create a private evidence bucket with admin-only access.
+- Add an evidence-files table so each metric can hold multiple PDF, image, DOCX, and XLSX files; store paths and uploader metadata, never public URLs.
+- Replace the text evidence field with real multi-file upload, file listing, and controlled download in the admin panel.
+- Enforce sequential transitions in the database: DRAFT → EVIDENCE_UPLOADED → UNDER_REVIEW → VERIFIED → APPROVED_FOR_PUBLICATION → PUBLISHED; permit WITHDRAWN from any stage.
+- Require a file or source URL before EVIDENCE_UPLOADED. Require verified evidence before later publication stages.
+- Automatically stamp verifier user ID, verifier name, and verification date at VERIFIED. Show a same-person creator/verifier warning.
+- Add an immutable stage-change audit table recording actor, timestamp, old stage, and new stage. Keep all evidence and logs admin-only with grants and RLS.
 
-## Phase 4 — Admin dashboard
-Extend `src/pages/admin/AdminChapters.tsx` and add member admin views per Section 17 (totals by region/country/status/type/source, upgrade eligibility, duplicate detection, exports).
+## 5. Impact page and central status systems
+- Refactor `/impact` to use published `impact_metrics` only, with verified achievements and strategic targets in distinct sections matching `/transparency`.
+- Remove hard-coded impact counters and obsolete counter logic so unsupported numbers cannot return.
+- Create one central programme/platform status source. Every programme card and detail page will show Active, Pilot, In Development, Planned, Upcoming, Paused, or Completed.
+- Default unconfirmed digital platforms/programmes to In Development and create management actions for confirmation. Green Horizon remains pilot/waitlist unless evidence confirms otherwise.
+- Centralise region and chapter status. Unconfirmed regions/chapters default to Forming, not Active.
 
-## Phase 5 — NESA-Africa map refactor + Sophia
-- Refactor `src/components/regions/AfricaRegionalMap.tsx` to the 10-region clickable model with SCEF brand palette and region cards (Section 16).
-- Sophia knowledge update for chapter/membership Q&A (Section 18).
+## 6. Complete route, content, locale, and automation audit
+Review every route and reusable surface listed in the application, including mobile-only UI, nine locale files, SEO/Open Graph/JSON-LD, public text files, database-driven CMS records, downloads, email templates, and Sophia prompts/knowledge.
 
-## Phase 6 — QA, compliance, localization
-- Add new strings to all 9 locale files.
-- Run accessibility + SEO audit.
-- Verify no project-specific chapters, no duplicate countries, no hardcoded colors, no horizontal overflow at 360–414px.
+Corrections cover:
+- unsupported superlatives, achievements, accreditations, awards, geographic reach, founding/service-duration contradictions, and programme-status claims;
+- expired events, deadlines and countdowns; undated or unsourced news/media claims;
+- placeholders, sample content, dead links/buttons, wrong domains, inconsistent contact details, and unverified social accounts;
+- privacy, terms, cookies, safeguarding and data-protection pages. Where adopted text is unavailable, pages will show “Document pending publication,” not invented legal policy;
+- consent checkboxes and privacy links on personal-data forms; age and guardian-consent handling for potentially under-18 forms;
+- Sophia instructions to use the canonical regions, never state unverified figures/relationships, say “Verification in progress,” and direct due-diligence queries to the transparency contact;
+- vacancy, membership, donation and other automated messages for the same identity and evidence rules.
+
+## 7. Internal register, live audit summary, and management actions
+- Add every finding to `claims_evidence_register` with page, exact text, A/B category, risk, action, approved wording, and resolution state. Claim references continue sequentially from `SCEF-CL-018`.
+- Extend the register schema only where required for category/action/resolution fields.
+- Replace the static admin audit narrative with live totals grouped by category, risk, status, and action.
+- Add an admin-only management-action table and panel tab with item, category, requested decision/document, owner, due date, priority, status, and related claim.
+- Seed required actions for region/chapter statuses, registration details, partnership agreements, board consents, child-photo consents, programme statuses, audited accounts, policies, and other evidence uncovered by the audit.
+- Do not expose the register, summary, files, workflow log, or action list publicly.
+
+## 8. Validation and completion report
+- Search source, translations, metadata, schema, assistant content, and database-managed copy for every banned/withdrawn phrase and conflicting regional count.
+- Test representative public and admin flows at desktop (1280px), tablet, and mobile sizes, including region navigation, map/global-network separation, metric publishing controls, file upload, management actions, and forms.
+- Verify admin authorization and private-file access boundaries.
+- Report pages/routes reviewed, changes by A1–A4 and B1–B12, resolved/open findings, all remaining CRITICAL items, and exact management inputs required.
 
 ## Technical notes
-- All copy goes through `LocaleContext` `t()`; new keys added under `localChapters.*`.
-- Card metrics that are not yet wired to DB render "Reporting in progress" — never fake numbers.
-- Mobile (< 640px): region sections become `<Collapsible>` accordions; CTAs full-width; bottom padding `pb-24` to clear Sophia FAB.
-- WhatsApp Sophia link reused from existing `SophiaWhatsAppWidget` config.
-
-## What I'd like to confirm before starting Phase 1
-1. Approve phased delivery (Phase 1 ships this turn, Phases 2–6 in follow-up turns)?
-2. For Phase 3 DB work — extend existing `profiles` + `chapters` tables, or create the new `scef_*` tables in parallel and migrate later? (Recommend extend existing to avoid duplication, since `chapters` and `profiles` already exist with overlapping fields.)
-3. Should the country chapter cards show real counts from the existing `chapters` table where available, with "Reporting in progress" only as fallback?
+- Database schema changes use additive migrations with grants and RLS in the same migration.
+- Existing records are updated through data queries, not schema migrations.
+- Existing SCEF tokens/components and page structures remain authoritative; this is a content, governance, and control-system correction—not a redesign.
+- Existing documentary history is retained with dates and context where valid. No figures, agreements, consent, legal identifiers, people, or outcomes will be invented.
