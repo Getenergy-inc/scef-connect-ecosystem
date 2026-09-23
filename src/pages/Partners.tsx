@@ -148,7 +148,15 @@ const Partners = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {impactStats.map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-4xl font-display font-bold text-primary mb-2">{stat.value}</div>
+                    <div
+                      className={
+                        stat.value === PENDING_METRIC
+                          ? "mb-2 text-sm font-semibold italic text-muted-foreground"
+                          : "text-4xl font-display font-bold text-primary mb-2"
+                      }
+                    >
+                      {stat.value}
+                    </div>
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                   </div>
                 ))}

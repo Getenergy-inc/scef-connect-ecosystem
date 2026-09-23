@@ -315,9 +315,18 @@ const ELibraryNigeria = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div 
-                    className="font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold"
-                    style={{ color: elibraryColors.primary }}
+                  <div
+                    className={
+                      stat.value === PENDING_METRIC
+                        ? "text-sm font-semibold italic"
+                        : "font-['Abhaya_Libre'] text-3xl md:text-4xl font-bold"
+                    }
+                    style={{
+                      color:
+                        stat.value === PENDING_METRIC
+                          ? elibraryColors.textMuted
+                          : elibraryColors.primary,
+                    }}
                   >
                     {stat.value}
                   </div>
