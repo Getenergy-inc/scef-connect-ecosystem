@@ -194,6 +194,8 @@ import AdminContributors from "./pages/admin/AdminContributors";
 import AdminSchoolNominations from "./pages/admin/AdminSchoolNominations";
 import AdminCsrPartners from "./pages/admin/AdminCsrPartners";
 import AdminReports from "./pages/admin/AdminReports";
+import ImpactEvidenceAdmin from "./pages/admin/ImpactEvidenceAdmin";
+import Transparency from "./pages/Transparency";
 import VerifyCertificate from "./pages/VerifyCertificate";
 
 // School WASH
@@ -259,6 +261,7 @@ const App = () => (
               {/* Programs Routes */}
               <Route path="/programs" element={<Programs />} />
               <Route path="/impact" element={<Impact />} />
+              <Route path="/transparency" element={<Transparency />} />
               <Route path="/programs/nesa-africa" element={<NESAAfrica />} />
               <Route path="/programs/nesa-africa/timeline" element={<NesaTimeline2026 />} />
               <Route path="/nesa-africa/timeline" element={<NesaTimeline2026 />} />
@@ -359,6 +362,7 @@ const App = () => (
               <Route path="/admin/school-nominations" element={<AdminSchoolNominations />} />
               <Route path="/admin/csr" element={<AdminCsrPartners />} />
               <Route path="/admin/reports" element={<AdminReports />} />
+              <Route path="/admin/impact-evidence" element={<ImpactEvidenceAdmin />} />
 
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
