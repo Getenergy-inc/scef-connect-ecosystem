@@ -70,14 +70,21 @@ export const ImpactStats = () => {
               </div>
               
               {/* Value */}
-              <div className="font-display text-4xl lg:text-5xl font-bold mb-2 text-scef-gold">
-                <CountUp end={stat.value} suffix={stat.suffix} />
-              </div>
+              {stat.value ? (
+                <div className="font-display text-4xl lg:text-5xl font-bold mb-2 text-scef-gold">
+                  {stat.value}
+                </div>
+              ) : (
+                <div className="mb-2 text-sm font-semibold italic text-white/70">
+                  {PENDING_METRIC}
+                </div>
+              )}
               
               {/* Label */}
               <p className="text-white/80 font-medium">
                 {stat.label}
               </p>
+
             </div>
           ))}
         </div>
