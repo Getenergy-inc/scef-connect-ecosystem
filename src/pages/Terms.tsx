@@ -45,8 +45,10 @@ const Terms = () => {
                 <section className="mb-8">
                   <h2 className="font-display text-2xl font-semibold mb-4">Donations</h2>
                   <p className="text-muted-foreground mb-4">
-                    All donations made through our platform are voluntary and non-refundable 
-                    unless otherwise stated. We provide receipts for all donations for tax purposes.
+                    All donations made through our platform are voluntary and non-refundable
+                    unless otherwise stated. Donation receipts are issued for payment and
+                    record-keeping purposes. SCEF does not currently claim that donations are
+                    tax-deductible in any jurisdiction.
                   </p>
                 </section>
                 

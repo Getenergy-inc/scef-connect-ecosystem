@@ -12,28 +12,28 @@ const goals = [
     description: "Through scholarships, e-learning platforms, and vocational training programs across all 54 African nations.",
     target: "10,000,000",
     deadline: "2032",
-    milestone: "To be verified"
+    milestone: "Strategic Target — 2032"
   },
   {
     title: "Renovate or Build 10,000 Schools",
     description: "Creating safe, modern learning environments with libraries, laboratories, and digital facilities.",
     target: "10,000",
     deadline: "2032",
-    milestone: "To be verified"
+    milestone: "Strategic Target — 2032"
   },
   {
     title: "Train 500,000 Teachers in ICT",
     description: "Comprehensive professional development in modern teaching methodologies and digital literacy.",
     target: "500,000",
     deadline: "2032",
-    milestone: "To be verified"
+    milestone: "Strategic Target — 2032"
   },
   {
     title: "Establish 1,000 Digital Learning Centers",
     description: "Bridging the digital divide with computer labs, internet access, and e-learning resources.",
     target: "1,000",
     deadline: "2032",
-    milestone: "To be verified"
+    milestone: "Strategic Target — 2032"
   }
 ];
 
@@ -92,7 +92,7 @@ export default function EduAidSmartGoals() {
                     <p className="text-2xl font-bold text-[#FFD700] font-display">{goal.target}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Current</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Classification</p>
                     <p className="text-sm text-slate-400 italic flex items-center gap-2">
                       <TrendingUp className="w-4 h-4 text-[#1F892B]" />
                       {goal.milestone}

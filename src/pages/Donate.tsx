@@ -200,6 +200,9 @@ const Donate = () => {
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-scef-blue-darker">
                   Official Providus Bank Accounts
                 </h2>
+                <p className="mx-auto mt-3 max-w-3xl text-sm text-muted-foreground">
+                  All donations support programmes of Santos Creations Educational Foundation (SCEF), Nigeria (CAC Reg. IT-41501).
+                </p>
               </div>
               <div className="space-y-8">
                 {officialAccounts

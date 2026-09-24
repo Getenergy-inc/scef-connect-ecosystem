@@ -74,7 +74,7 @@ export const LandingHero = () => {
             </div>
 
             <p className="mt-6 text-[11px] text-white/85 tracking-wide">
-              Registered Pan-African not-for-profit · IT-41501 · SCEF chapters across Africa
+              Registered Pan-African not-for-profit · IT-41501 · Organised across 10 regions — 8 African regions, Africans in the Diaspora and Friends of Africa
             </p>
           </div>
         </div>

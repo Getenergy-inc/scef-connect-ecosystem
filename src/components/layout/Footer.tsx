@@ -88,6 +88,9 @@ export const Footer = () => {
               SCEF is a membership-based Pan-African NGO and CSR Education Funds Management
               organization advocating for Education for All in Africa.
             </p>
+            <p className="mt-2 text-[12px] text-white/55">
+              Founded 1997 · Incorporated in Nigeria 28 October 2010 · CAC Reg. IT-41501
+            </p>
           </div>
           <div className="flex items-center gap-1.5">
             {socialLinks.map((social) => (
