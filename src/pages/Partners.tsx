@@ -244,8 +244,8 @@ const Partners = () => {
                     <li className="flex items-start gap-3">
                       <Globe className="w-5 h-5 text-terracotta shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-foreground">Continental Scale</h4>
-                        <p className="text-sm text-muted-foreground">Reach across SCEF’s 8 approved African regions and 2 global networks</p>
+                        <h4 className="font-semibold text-foreground">10-Region Structure</h4>
+                        <p className="text-sm text-muted-foreground">Organised across SCEF's 10-region structure: 8 African regions, Africans in the Diaspora (Region 9) and Friends of Africa (Region 10).</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">

@@ -64,7 +64,7 @@ const platforms = [
  */
 const impactStats: { value?: string; label: string; icon: typeof Users }[] = [
   { label: "Active Learners", icon: Users },
-  { value: "8", label: "Approved SCEF Regions", icon: Globe },
+  { value: "10", label: "SCEF Organisational Regions", icon: Globe },
   { label: "Courses Available", icon: BookOpen },
   { label: "Completion Rate", icon: TrendingUp },
 ];

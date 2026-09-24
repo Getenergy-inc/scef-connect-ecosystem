@@ -86,6 +86,9 @@ const About = () => {
               advance education access, recognition, school transformation, teacher
               development, digital learning, and sustainable education impact across Africa.
             </p>
+            <p className="mt-3 text-sm font-medium text-scef-gold">
+              Founded 1997 · Incorporated in Nigeria 28 October 2010 · CAC Reg. IT-41501
+            </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-scef-gold hover:bg-scef-gold/90 text-scef-blue-darker font-semibold">
                 <Link to="/membership">Become a Member <ArrowRight className="ml-1.5 h-4 w-4" /></Link>

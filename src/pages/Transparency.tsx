@@ -178,7 +178,8 @@ const Transparency = () => {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Santos Creations Educational Foundation (SCEF), a not-for-profit
-                  foundation registered in Nigeria. Programme names such as
+                   foundation founded in 1997 and incorporated in Nigeria on 28 October
+                   2010 (CAC Reg. IT-41501). Programme names such as
                   NESA-Africa, EduAid-Africa and Rebuild My School Africa are
                   programme brands of SCEF, not separate legal entities.
                 </p>

@@ -16,7 +16,7 @@ const OrganizationalProfile = () => {
 
   const quickFacts = [
     { labelKey: "organizationalProfile.facts.founded", value: "1997", icon: Calendar },
-    { labelKey: "organizationalProfile.facts.registered", value: "2010", icon: FileText },
+    { labelKey: "organizationalProfile.facts.registered", value: "28 October 2010 · IT-41501", icon: FileText },
     { labelKey: "organizationalProfile.facts.headquarters", value: "Lagos, Nigeria", icon: MapPin },
     { labelKey: "organizationalProfile.facts.alignment", value: "SDG 4 + AU 2063", icon: Globe },
   ];
@@ -81,6 +81,9 @@ const OrganizationalProfile = () => {
           {/* Quick Facts */}
           <section className="py-12 bg-muted/30 border-b-2 border-black">
             <div className="container mx-auto px-4">
+              <p className="mb-6 text-center text-sm font-semibold text-scef-blue-darker">
+                Founded 1997 · Incorporated in Nigeria 28 October 2010 (CAC Reg. IT-41501).
+              </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {quickFacts.map((fact) => (
                   <Card key={fact.labelKey} className="border-2 border-black text-center">
