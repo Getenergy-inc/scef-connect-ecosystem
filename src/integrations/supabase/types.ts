@@ -167,6 +167,97 @@ export type Database = {
         }
         Relationships: []
       }
+      application_approvals: {
+        Row: {
+          application_id: string
+          approval_step: string
+          approver_id: string
+          approver_name: string | null
+          comments: string | null
+          decided_at: string
+          decision: string
+          id: string
+          version_approved: string | null
+        }
+        Insert: {
+          application_id: string
+          approval_step: string
+          approver_id?: string
+          approver_name?: string | null
+          comments?: string | null
+          decided_at?: string
+          decision: string
+          id?: string
+          version_approved?: string | null
+        }
+        Update: {
+          application_id?: string
+          approval_step?: string
+          approver_id?: string
+          approver_name?: string | null
+          comments?: string | null
+          decided_at?: string
+          decision?: string
+          id?: string
+          version_approved?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "application_approvals_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "funding_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      application_requirements: {
+        Row: {
+          application_id: string
+          created_at: string
+          due_date: string | null
+          file_path: string | null
+          id: string
+          mandatory: boolean | null
+          notes: string | null
+          requirement: string
+          responsible_person: string | null
+          status: string
+        }
+        Insert: {
+          application_id: string
+          created_at?: string
+          due_date?: string | null
+          file_path?: string | null
+          id?: string
+          mandatory?: boolean | null
+          notes?: string | null
+          requirement: string
+          responsible_person?: string | null
+          status?: string
+        }
+        Update: {
+          application_id?: string
+          created_at?: string
+          due_date?: string | null
+          file_path?: string | null
+          id?: string
+          mandatory?: boolean | null
+          notes?: string | null
+          requirement?: string
+          responsible_person?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "application_requirements_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "funding_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       applications: {
         Row: {
           application_type: string
@@ -1715,6 +1806,260 @@ export type Database = {
           },
         ]
       }
+      funders: {
+        Row: {
+          country: string | null
+          created_at: string
+          funder_type: string | null
+          funding_themes: string[] | null
+          id: string
+          last_researched: string | null
+          notes: string | null
+          organisation: string
+          primary_contact: string | null
+          region: string | null
+          relationship_status: string | null
+          typical_applicants: string | null
+          typical_funding_range: string | null
+          typical_geography: string | null
+          typical_instruments: string | null
+          updated_at: string
+          verification_status: string
+          website: string | null
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          funder_type?: string | null
+          funding_themes?: string[] | null
+          id?: string
+          last_researched?: string | null
+          notes?: string | null
+          organisation: string
+          primary_contact?: string | null
+          region?: string | null
+          relationship_status?: string | null
+          typical_applicants?: string | null
+          typical_funding_range?: string | null
+          typical_geography?: string | null
+          typical_instruments?: string | null
+          updated_at?: string
+          verification_status?: string
+          website?: string | null
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          funder_type?: string | null
+          funding_themes?: string[] | null
+          id?: string
+          last_researched?: string | null
+          notes?: string | null
+          organisation?: string
+          primary_contact?: string | null
+          region?: string | null
+          relationship_status?: string | null
+          typical_applicants?: string | null
+          typical_funding_range?: string | null
+          typical_geography?: string | null
+          typical_instruments?: string | null
+          updated_at?: string
+          verification_status?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
+      funding_applications: {
+        Row: {
+          amount_requested: number | null
+          created_at: string
+          created_by: string | null
+          currency: string | null
+          id: string
+          lead_applicant: string | null
+          notes: string | null
+          opportunity_id: string | null
+          owner: string | null
+          project_id: string | null
+          stage: Database["public"]["Enums"]["application_stage"]
+          submission_evidence: string | null
+          submitted_at: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          amount_requested?: number | null
+          created_at?: string
+          created_by?: string | null
+          currency?: string | null
+          id?: string
+          lead_applicant?: string | null
+          notes?: string | null
+          opportunity_id?: string | null
+          owner?: string | null
+          project_id?: string | null
+          stage?: Database["public"]["Enums"]["application_stage"]
+          submission_evidence?: string | null
+          submitted_at?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          amount_requested?: number | null
+          created_at?: string
+          created_by?: string | null
+          currency?: string | null
+          id?: string
+          lead_applicant?: string | null
+          notes?: string | null
+          opportunity_id?: string | null
+          owner?: string | null
+          project_id?: string | null
+          stage?: Database["public"]["Enums"]["application_stage"]
+          submission_evidence?: string | null
+          submitted_at?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "funding_applications_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "funding_opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "funding_applications_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      funding_opportunities: {
+        Row: {
+          application_method: string | null
+          call_title: string
+          cofinancing_percentage: number | null
+          cofinancing_required: boolean | null
+          consortium_required: boolean | null
+          created_at: string
+          currency: string | null
+          deadline: string | null
+          deadline_timezone: string | null
+          description: string | null
+          duration_max: number | null
+          duration_min: number | null
+          eligibility: Json
+          eligible_activities: string | null
+          eligible_applicants: string | null
+          eligible_countries: string[] | null
+          evaluation_criteria: string | null
+          funder_id: string | null
+          funding_max: number | null
+          funding_min: number | null
+          id: string
+          ineligible_activities: string | null
+          instrument: string | null
+          last_verified: string | null
+          lead_applicant_rules: string | null
+          management_decision: string | null
+          official_url: string | null
+          opening_date: string | null
+          overall_eligibility: Database["public"]["Enums"]["eligibility_status"]
+          programme: string | null
+          reference_number: string | null
+          required_documents: string | null
+          source_date: string | null
+          updated_at: string
+          verification_status: Database["public"]["Enums"]["opportunity_verification"]
+        }
+        Insert: {
+          application_method?: string | null
+          call_title: string
+          cofinancing_percentage?: number | null
+          cofinancing_required?: boolean | null
+          consortium_required?: boolean | null
+          created_at?: string
+          currency?: string | null
+          deadline?: string | null
+          deadline_timezone?: string | null
+          description?: string | null
+          duration_max?: number | null
+          duration_min?: number | null
+          eligibility?: Json
+          eligible_activities?: string | null
+          eligible_applicants?: string | null
+          eligible_countries?: string[] | null
+          evaluation_criteria?: string | null
+          funder_id?: string | null
+          funding_max?: number | null
+          funding_min?: number | null
+          id?: string
+          ineligible_activities?: string | null
+          instrument?: string | null
+          last_verified?: string | null
+          lead_applicant_rules?: string | null
+          management_decision?: string | null
+          official_url?: string | null
+          opening_date?: string | null
+          overall_eligibility?: Database["public"]["Enums"]["eligibility_status"]
+          programme?: string | null
+          reference_number?: string | null
+          required_documents?: string | null
+          source_date?: string | null
+          updated_at?: string
+          verification_status?: Database["public"]["Enums"]["opportunity_verification"]
+        }
+        Update: {
+          application_method?: string | null
+          call_title?: string
+          cofinancing_percentage?: number | null
+          cofinancing_required?: boolean | null
+          consortium_required?: boolean | null
+          created_at?: string
+          currency?: string | null
+          deadline?: string | null
+          deadline_timezone?: string | null
+          description?: string | null
+          duration_max?: number | null
+          duration_min?: number | null
+          eligibility?: Json
+          eligible_activities?: string | null
+          eligible_applicants?: string | null
+          eligible_countries?: string[] | null
+          evaluation_criteria?: string | null
+          funder_id?: string | null
+          funding_max?: number | null
+          funding_min?: number | null
+          id?: string
+          ineligible_activities?: string | null
+          instrument?: string | null
+          last_verified?: string | null
+          lead_applicant_rules?: string | null
+          management_decision?: string | null
+          official_url?: string | null
+          opening_date?: string | null
+          overall_eligibility?: Database["public"]["Enums"]["eligibility_status"]
+          programme?: string | null
+          reference_number?: string | null
+          required_documents?: string | null
+          source_date?: string | null
+          updated_at?: string
+          verification_status?: Database["public"]["Enums"]["opportunity_verification"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "funding_opportunities_funder_id_fkey"
+            columns: ["funder_id"]
+            isOneToOne: false
+            referencedRelation: "funders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       governance_profiles: {
         Row: {
           bio: string | null
@@ -2515,6 +2860,84 @@ export type Database = {
         }
         Relationships: []
       }
+      partners: {
+        Row: {
+          agreement_expiry: string | null
+          agreement_start: string | null
+          agreement_status: string | null
+          contact_email: string | null
+          contact_name: string | null
+          contact_phone: string | null
+          country: string | null
+          created_at: string
+          engagement_history: string | null
+          id: string
+          interest_areas: string[] | null
+          logo_url: string | null
+          organisation: string
+          partner_type: string | null
+          public_display_permission: boolean
+          relationship_owner: string | null
+          relevant_programmes: string[] | null
+          source_id: string | null
+          source_table: string | null
+          stage: Database["public"]["Enums"]["partner_stage"]
+          updated_at: string
+          verification: string
+          website: string | null
+        }
+        Insert: {
+          agreement_expiry?: string | null
+          agreement_start?: string | null
+          agreement_status?: string | null
+          contact_email?: string | null
+          contact_name?: string | null
+          contact_phone?: string | null
+          country?: string | null
+          created_at?: string
+          engagement_history?: string | null
+          id?: string
+          interest_areas?: string[] | null
+          logo_url?: string | null
+          organisation: string
+          partner_type?: string | null
+          public_display_permission?: boolean
+          relationship_owner?: string | null
+          relevant_programmes?: string[] | null
+          source_id?: string | null
+          source_table?: string | null
+          stage?: Database["public"]["Enums"]["partner_stage"]
+          updated_at?: string
+          verification?: string
+          website?: string | null
+        }
+        Update: {
+          agreement_expiry?: string | null
+          agreement_start?: string | null
+          agreement_status?: string | null
+          contact_email?: string | null
+          contact_name?: string | null
+          contact_phone?: string | null
+          country?: string | null
+          created_at?: string
+          engagement_history?: string | null
+          id?: string
+          interest_areas?: string[] | null
+          logo_url?: string | null
+          organisation?: string
+          partner_type?: string | null
+          public_display_permission?: boolean
+          relationship_owner?: string | null
+          relevant_programmes?: string[] | null
+          source_id?: string | null
+          source_table?: string | null
+          stage?: Database["public"]["Enums"]["partner_stage"]
+          updated_at?: string
+          verification?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
       partnership_inquiries: {
         Row: {
           company_name: string
@@ -2681,6 +3104,554 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      project_activities: {
+        Row: {
+          activity_code: string | null
+          budget_line: string | null
+          completion_date: string | null
+          created_at: string
+          description: string | null
+          due_date: string | null
+          evidence_required: boolean | null
+          id: string
+          location: string | null
+          project_id: string
+          responsible_person: string | null
+          start_date: string | null
+          status: string
+          title: string
+          verification_required: boolean | null
+          work_package_id: string | null
+        }
+        Insert: {
+          activity_code?: string | null
+          budget_line?: string | null
+          completion_date?: string | null
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          evidence_required?: boolean | null
+          id?: string
+          location?: string | null
+          project_id: string
+          responsible_person?: string | null
+          start_date?: string | null
+          status?: string
+          title: string
+          verification_required?: boolean | null
+          work_package_id?: string | null
+        }
+        Update: {
+          activity_code?: string | null
+          budget_line?: string | null
+          completion_date?: string | null
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          evidence_required?: boolean | null
+          id?: string
+          location?: string | null
+          project_id?: string
+          responsible_person?: string | null
+          start_date?: string | null
+          status?: string
+          title?: string
+          verification_required?: boolean | null
+          work_package_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_activities_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_activities_work_package_id_fkey"
+            columns: ["work_package_id"]
+            isOneToOne: false
+            referencedRelation: "project_work_packages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_budget_lines: {
+        Row: {
+          activity_id: string | null
+          category: string
+          contribution_type: string | null
+          created_at: string
+          currency: string | null
+          description: string | null
+          eligibility_status: string
+          funding_source: string | null
+          id: string
+          notes: string | null
+          project_id: string
+          quantity: number | null
+          subcategory: string | null
+          total: number | null
+          unit: string | null
+          unit_cost: number | null
+          work_package_id: string | null
+        }
+        Insert: {
+          activity_id?: string | null
+          category: string
+          contribution_type?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          eligibility_status?: string
+          funding_source?: string | null
+          id?: string
+          notes?: string | null
+          project_id: string
+          quantity?: number | null
+          subcategory?: string | null
+          total?: number | null
+          unit?: string | null
+          unit_cost?: number | null
+          work_package_id?: string | null
+        }
+        Update: {
+          activity_id?: string | null
+          category?: string
+          contribution_type?: string | null
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          eligibility_status?: string
+          funding_source?: string | null
+          id?: string
+          notes?: string | null
+          project_id?: string
+          quantity?: number | null
+          subcategory?: string | null
+          total?: number | null
+          unit?: string | null
+          unit_cost?: number | null
+          work_package_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_budget_lines_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "project_activities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_budget_lines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_budget_lines_work_package_id_fkey"
+            columns: ["work_package_id"]
+            isOneToOne: false
+            referencedRelation: "project_work_packages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_funder_matches: {
+        Row: {
+          applicant_match: string | null
+          budget_match: string | null
+          created_at: string
+          duration_match: string | null
+          eligibility_status: Database["public"]["Enums"]["eligibility_status"]
+          geography_match: string | null
+          id: string
+          notes: string | null
+          opportunity_id: string
+          partner_match: string | null
+          project_id: string
+          recommended_project_configuration: string | null
+          strategic_match: string | null
+          theme_match: string | null
+        }
+        Insert: {
+          applicant_match?: string | null
+          budget_match?: string | null
+          created_at?: string
+          duration_match?: string | null
+          eligibility_status?: Database["public"]["Enums"]["eligibility_status"]
+          geography_match?: string | null
+          id?: string
+          notes?: string | null
+          opportunity_id: string
+          partner_match?: string | null
+          project_id: string
+          recommended_project_configuration?: string | null
+          strategic_match?: string | null
+          theme_match?: string | null
+        }
+        Update: {
+          applicant_match?: string | null
+          budget_match?: string | null
+          created_at?: string
+          duration_match?: string | null
+          eligibility_status?: Database["public"]["Enums"]["eligibility_status"]
+          geography_match?: string | null
+          id?: string
+          notes?: string | null
+          opportunity_id?: string
+          partner_match?: string | null
+          project_id?: string
+          recommended_project_configuration?: string | null
+          strategic_match?: string | null
+          theme_match?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_funder_matches_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "funding_opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_funder_matches_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_milestones: {
+        Row: {
+          actual_date: string | null
+          corrective_action: string | null
+          created_at: string
+          delay_reason: string | null
+          evidence: string | null
+          expected_date: string | null
+          id: string
+          milestone: string
+          owner: string | null
+          project_id: string
+          status: string | null
+        }
+        Insert: {
+          actual_date?: string | null
+          corrective_action?: string | null
+          created_at?: string
+          delay_reason?: string | null
+          evidence?: string | null
+          expected_date?: string | null
+          id?: string
+          milestone: string
+          owner?: string | null
+          project_id: string
+          status?: string | null
+        }
+        Update: {
+          actual_date?: string | null
+          corrective_action?: string | null
+          created_at?: string
+          delay_reason?: string | null
+          evidence?: string | null
+          expected_date?: string | null
+          id?: string
+          milestone?: string
+          owner?: string | null
+          project_id?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_milestones_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_risks: {
+        Row: {
+          category: string | null
+          created_at: string
+          id: string
+          impact: number | null
+          mitigation: string | null
+          owner: string | null
+          probability: number | null
+          project_id: string
+          review_date: string | null
+          risk: string
+          risk_rating: number | null
+          status: string | null
+          trigger_event: string | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          id?: string
+          impact?: number | null
+          mitigation?: string | null
+          owner?: string | null
+          probability?: number | null
+          project_id: string
+          review_date?: string | null
+          risk: string
+          risk_rating?: number | null
+          status?: string | null
+          trigger_event?: string | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          id?: string
+          impact?: number | null
+          mitigation?: string | null
+          owner?: string | null
+          probability?: number | null
+          project_id?: string
+          review_date?: string | null
+          risk?: string
+          risk_rating?: number | null
+          status?: string | null
+          trigger_event?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_risks_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_work_packages: {
+        Row: {
+          budget: number | null
+          created_at: string
+          description: string | null
+          end_date: string | null
+          id: string
+          lead: string | null
+          objective: string | null
+          project_id: string
+          start_date: string | null
+          status: string | null
+          title: string
+          wp_number: number | null
+        }
+        Insert: {
+          budget?: number | null
+          created_at?: string
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          lead?: string | null
+          objective?: string | null
+          project_id: string
+          start_date?: string | null
+          status?: string | null
+          title: string
+          wp_number?: number | null
+        }
+        Update: {
+          budget?: number | null
+          created_at?: string
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          lead?: string | null
+          objective?: string | null
+          project_id?: string
+          start_date?: string | null
+          status?: string | null
+          title?: string
+          wp_number?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_work_packages_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          beneficiary_description: string | null
+          climate_relevance: string | null
+          country: string | null
+          created_at: string
+          created_by: string | null
+          currency: string | null
+          duration_months: number | null
+          end_date: string | null
+          funding_gap: number | null
+          funding_secured: number | null
+          funding_status: Database["public"]["Enums"]["funding_status"]
+          gender_strategy: string | null
+          id: string
+          location: string | null
+          objectives: string | null
+          pillar: string | null
+          problem_statement: string | null
+          programme_id: string | null
+          project_code: string
+          project_lead: string | null
+          project_status: Database["public"]["Enums"]["project_status"]
+          proposed_solution: string | null
+          public_visibility: boolean
+          readiness: Json
+          risk_rating: string | null
+          safeguarding_requirements: string | null
+          scalability_strategy: string | null
+          slug: string | null
+          start_date: string | null
+          state_region: string | null
+          summary: string | null
+          sustainability_strategy: string | null
+          theory_of_change: string | null
+          title: string
+          total_budget: number | null
+          updated_at: string
+          youth_strategy: string | null
+        }
+        Insert: {
+          beneficiary_description?: string | null
+          climate_relevance?: string | null
+          country?: string | null
+          created_at?: string
+          created_by?: string | null
+          currency?: string | null
+          duration_months?: number | null
+          end_date?: string | null
+          funding_gap?: number | null
+          funding_secured?: number | null
+          funding_status?: Database["public"]["Enums"]["funding_status"]
+          gender_strategy?: string | null
+          id?: string
+          location?: string | null
+          objectives?: string | null
+          pillar?: string | null
+          problem_statement?: string | null
+          programme_id?: string | null
+          project_code: string
+          project_lead?: string | null
+          project_status?: Database["public"]["Enums"]["project_status"]
+          proposed_solution?: string | null
+          public_visibility?: boolean
+          readiness?: Json
+          risk_rating?: string | null
+          safeguarding_requirements?: string | null
+          scalability_strategy?: string | null
+          slug?: string | null
+          start_date?: string | null
+          state_region?: string | null
+          summary?: string | null
+          sustainability_strategy?: string | null
+          theory_of_change?: string | null
+          title: string
+          total_budget?: number | null
+          updated_at?: string
+          youth_strategy?: string | null
+        }
+        Update: {
+          beneficiary_description?: string | null
+          climate_relevance?: string | null
+          country?: string | null
+          created_at?: string
+          created_by?: string | null
+          currency?: string | null
+          duration_months?: number | null
+          end_date?: string | null
+          funding_gap?: number | null
+          funding_secured?: number | null
+          funding_status?: Database["public"]["Enums"]["funding_status"]
+          gender_strategy?: string | null
+          id?: string
+          location?: string | null
+          objectives?: string | null
+          pillar?: string | null
+          problem_statement?: string | null
+          programme_id?: string | null
+          project_code?: string
+          project_lead?: string | null
+          project_status?: Database["public"]["Enums"]["project_status"]
+          proposed_solution?: string | null
+          public_visibility?: boolean
+          readiness?: Json
+          risk_rating?: string | null
+          safeguarding_requirements?: string | null
+          scalability_strategy?: string | null
+          slug?: string | null
+          start_date?: string | null
+          state_region?: string | null
+          summary?: string | null
+          sustainability_strategy?: string | null
+          theory_of_change?: string | null
+          title?: string
+          total_budget?: number | null
+          updated_at?: string
+          youth_strategy?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "projects_programme_id_fkey"
+            columns: ["programme_id"]
+            isOneToOne: false
+            referencedRelation: "programs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      proposal_versions: {
+        Row: {
+          application_id: string
+          approval_status: string | null
+          change_summary: string | null
+          created_at: string
+          editor_id: string | null
+          id: string
+          sections: Json
+          version: string
+        }
+        Insert: {
+          application_id: string
+          approval_status?: string | null
+          change_summary?: string | null
+          created_at?: string
+          editor_id?: string | null
+          id?: string
+          sections?: Json
+          version: string
+        }
+        Update: {
+          application_id?: string
+          approval_status?: string | null
+          change_summary?: string | null
+          created_at?: string
+          editor_id?: string | null
+          id?: string
+          sections?: Json
+          version?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "proposal_versions_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "funding_applications"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       room_members: {
         Row: {
@@ -4618,9 +5589,34 @@ export type Database = {
         | "board_boa"
         | "board_bod"
         | "lcp"
+      application_stage:
+        | "DISCOVERY"
+        | "VERIFICATION"
+        | "ELIGIBILITY"
+        | "PROJECT_MATCHING"
+        | "MANAGEMENT_REVIEW"
+        | "GO_NO_GO"
+        | "PROPOSAL"
+        | "BUDGET"
+        | "DOCUMENTATION"
+        | "INTERNAL_REVIEW"
+        | "APPROVAL"
+        | "SUBMISSION_READY"
+        | "SUBMITTED"
+        | "ACKNOWLEDGED"
+        | "DUE_DILIGENCE"
+        | "SHORTLISTED"
+        | "AWARDED"
+        | "UNSUCCESSFUL"
+        | "CLOSED"
       chapter_status: "pending" | "active" | "suspended"
       chapter_type: "online" | "hybrid" | "physical"
       claim_risk_level: "CRITICAL" | "HIGH" | "MEDIUM" | "LOW"
+      eligibility_status:
+        | "ELIGIBLE"
+        | "LIKELY_ELIGIBLE"
+        | "REQUIRES_CONFIRMATION"
+        | "NOT_ELIGIBLE"
       evidence_status:
         | "VERIFIED"
         | "EXTERNAL_VERIFIED"
@@ -4635,7 +5631,53 @@ export type Database = {
         | "APPROVED_FOR_PUBLICATION"
         | "PUBLISHED"
         | "WITHDRAWN"
+      funding_status:
+        | "NOT_ASSESSED"
+        | "FUNDING_NEEDED"
+        | "FUNDER_MATCHING"
+        | "APPLICATION_IN_PROGRESS"
+        | "APPLICATION_SUBMITTED"
+        | "PARTIALLY_FUNDED"
+        | "FULLY_FUNDED"
+        | "SELF_FUNDED"
+        | "CLOSED"
       metric_type: "ACHIEVED" | "TARGET" | "PROJECTED" | "ESTIMATED"
+      opportunity_verification:
+        | "VERIFIED_ACTIVE"
+        | "VERIFIED_UPCOMING"
+        | "VERIFIED_CLOSED"
+        | "UNVERIFIED"
+        | "CONFLICT_REQUIRES_RESOLUTION"
+        | "SUSPICIOUS"
+        | "DUPLICATE"
+      partner_stage:
+        | "PROSPECT"
+        | "RESEARCHED"
+        | "CONTACT_PLANNED"
+        | "CONTACTED"
+        | "RESPONDED"
+        | "MEETING"
+        | "DUE_DILIGENCE"
+        | "PROPOSAL"
+        | "NEGOTIATION"
+        | "MOU_REVIEW"
+        | "FORMAL_PARTNER"
+        | "INACTIVE"
+        | "DECLINED"
+      project_status:
+        | "IDEA"
+        | "CONCEPT"
+        | "DESIGN"
+        | "FUNDING_READY"
+        | "FUNDRAISING"
+        | "PARTIALLY_FUNDED"
+        | "FUNDED"
+        | "PRE_IMPLEMENTATION"
+        | "ACTIVE"
+        | "PAUSED"
+        | "COMPLETED"
+        | "CLOSED"
+        | "ARCHIVED"
       room_type:
         | "staff_management"
         | "division"
@@ -4788,9 +5830,36 @@ export const Constants = {
         "board_bod",
         "lcp",
       ],
+      application_stage: [
+        "DISCOVERY",
+        "VERIFICATION",
+        "ELIGIBILITY",
+        "PROJECT_MATCHING",
+        "MANAGEMENT_REVIEW",
+        "GO_NO_GO",
+        "PROPOSAL",
+        "BUDGET",
+        "DOCUMENTATION",
+        "INTERNAL_REVIEW",
+        "APPROVAL",
+        "SUBMISSION_READY",
+        "SUBMITTED",
+        "ACKNOWLEDGED",
+        "DUE_DILIGENCE",
+        "SHORTLISTED",
+        "AWARDED",
+        "UNSUCCESSFUL",
+        "CLOSED",
+      ],
       chapter_status: ["pending", "active", "suspended"],
       chapter_type: ["online", "hybrid", "physical"],
       claim_risk_level: ["CRITICAL", "HIGH", "MEDIUM", "LOW"],
+      eligibility_status: [
+        "ELIGIBLE",
+        "LIKELY_ELIGIBLE",
+        "REQUIRES_CONFIRMATION",
+        "NOT_ELIGIBLE",
+      ],
       evidence_status: [
         "VERIFIED",
         "EXTERNAL_VERIFIED",
@@ -4807,7 +5876,57 @@ export const Constants = {
         "PUBLISHED",
         "WITHDRAWN",
       ],
+      funding_status: [
+        "NOT_ASSESSED",
+        "FUNDING_NEEDED",
+        "FUNDER_MATCHING",
+        "APPLICATION_IN_PROGRESS",
+        "APPLICATION_SUBMITTED",
+        "PARTIALLY_FUNDED",
+        "FULLY_FUNDED",
+        "SELF_FUNDED",
+        "CLOSED",
+      ],
       metric_type: ["ACHIEVED", "TARGET", "PROJECTED", "ESTIMATED"],
+      opportunity_verification: [
+        "VERIFIED_ACTIVE",
+        "VERIFIED_UPCOMING",
+        "VERIFIED_CLOSED",
+        "UNVERIFIED",
+        "CONFLICT_REQUIRES_RESOLUTION",
+        "SUSPICIOUS",
+        "DUPLICATE",
+      ],
+      partner_stage: [
+        "PROSPECT",
+        "RESEARCHED",
+        "CONTACT_PLANNED",
+        "CONTACTED",
+        "RESPONDED",
+        "MEETING",
+        "DUE_DILIGENCE",
+        "PROPOSAL",
+        "NEGOTIATION",
+        "MOU_REVIEW",
+        "FORMAL_PARTNER",
+        "INACTIVE",
+        "DECLINED",
+      ],
+      project_status: [
+        "IDEA",
+        "CONCEPT",
+        "DESIGN",
+        "FUNDING_READY",
+        "FUNDRAISING",
+        "PARTIALLY_FUNDED",
+        "FUNDED",
+        "PRE_IMPLEMENTATION",
+        "ACTIVE",
+        "PAUSED",
+        "COMPLETED",
+        "CLOSED",
+        "ARCHIVED",
+      ],
       room_type: [
         "staff_management",
         "division",

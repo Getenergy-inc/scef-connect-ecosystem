@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790939146275,
+      "tag": "0000_project_bank_funding_partners_foundation",
+      "breakpoints": true
+    }
+  ]
+}
