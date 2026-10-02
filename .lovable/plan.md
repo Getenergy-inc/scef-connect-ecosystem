@@ -1,77 +1,87 @@
-# SCEF Phase 2 — Full Content Review and Red-Flag Removal
+# SCEF Institutional Operating Platform — Audit, Gap Analysis and Phased Build
 
-## Goal
-Complete a donor-due-diligence audit without redesigning the website. Preserve SCEF’s visual identity and programme architecture while correcting unsupported claims, centralising statuses and regional structure, strengthening evidence controls, and keeping all audit material admin-only.
+## A. Current system audit
+- **Pages:** about 240 pages, including 29 admin screens (users, chapters, donations, finance/bank accounts/disbursements, CSR funding funnel, impact evidence, waitlists, scholarships, vacancies, endorsements, CRS partners, digital board, Sophia FAQs, reports) and a small set of dashboard pages.
+- **Sign-in and roles:** email and Google sign-in. Roles are stored in a separate table. There are 15 roles (member through super admin, staff, division lead, board roles, chapter presidents). Admin checks happen on the server.
+- **Database:** 87 tables, all with row-level security turned on. Existing tables that already match parts of this brief:
+  - Programmes: programs, services
+  - Funding: csr_projects, csr_milestones, csr_project_reports, csr_inquiries, donations, donation_receipts, disbursement_requests, wallets/transactions, bank_accounts
+  - Partners: crs_partners, endorsements, endorser_profiles, sponsor_profiles, partnership_inquiries
+  - Impact: impact_metrics, claims_evidence_register
+  - Certificates: certificate_verifications, scholarship exams
+  - People: governance_profiles, staff_*, chapters, volunteers/ambassadors
+  - Other: events, webinar_registrations, elibrary_resources, media_items, audit_logs
+- **Storage:** 12 file buckets. Private buckets: chapter-documents, receipts, scholarship-docs, school-documents, vacancy-applications.
+- **Server functions:** payment webhooks, Sophia chat and tracking, vacancy email, scholarship exam, partnership inquiry, public chapters, voiceover, YouTube live status, staff AI assistant.
 
-## Delivery approach
-This is a site-wide change across more than 100 routes, nine languages, database content, storage, automated emails, and the Sophia assistant. Work will follow the requested risk order, with each tranche validated before the next. Safe corrections will be applied directly; matters requiring documentary proof will be withheld or marked for management action rather than guessed.
+## B. Gap analysis (summary)
+| Area | Status |
+|---|---|
+| Programmes (s5–6) | EXTEND `programs` (code, status, pillar, lead, visibility, SEO) |
+| Project bank, work packages, activities, milestones, budgets, budget lines, risks (s7–15) | NEW — reuse `csr_projects`/`csr_milestones` as funded-project links (MERGE later) |
+| Funders, opportunities, verification, eligibility, matching, applications, requirements, approvals, versions, deadlines (s16–27, 80–83, 91) | NEW |
+| Partnership CRM, partner contacts/engagements/agreements, logo control (s28–31) | NEW `partners`; MIGRATE `crs_partners` and `endorsements` into it as classified records |
+| Beneficiaries and safeguarding (s32–33, 102) | NEW, with restricted access |
+| Impact engine (s34–43) | EXTEND `impact_metrics`; NEW `impact_records`, `impact_evidence`, logframe, theory of change |
+| Policy outcomes, research, publications, E-Journal (s44–45, 51–53) | NEW |
+| Training, certificates, employment (s46–50) | NEW courses/cohorts/enrolments/attendance/assessments; EXTEND `certificate_verifications` into a certificates register with a mandatory certification type |
+| Events and It's In Me (s54–55) | EXTEND `events`, `media_items` (separate registered, attended, viewed and estimated counts) |
+| Opportunities hub (s56–57) | NEW |
+| Donations and expenses (s58–59) | EXTEND `donations`; NEW `expenses` linked to project, activity and budget line |
+| Documents, data room, policy register, expiry (s60–64, 97) | NEW, with a private bucket and version history |
+| Granular roles and permissions, separation of duties (s65–67) | EXTEND roles enum; NEW permissions and role-permission tables |
+| Audit log (s68) | EXTEND `audit_logs` with automatic logging on sensitive tables |
+| Command centre, dashboards, alerts, search, export, reports (s69–79, 84, 92–93) | NEW admin area reading the tables above |
+| Content approval and claim checker (s85–87) | NEW workflow plus a phrase checker |
+| AI admin assistant (s88–89) | EXTEND staff AI assistant (read-only, outputs labelled "AI draft — human review required") |
 
-## 1. Authoritative regional structure and immediate contradictions
-- Replace the competing region datasets with one canonical 10-region source containing number, exact existing name/slug, type, description, status, and display order.
-- Define Regions 1–8 as geographic African regions; Region 9 as **Africans in the Diaspora**; Region 10 as **Friends of Africa**. Global networks will have no country lists, capitals, or map polygons.
-- Update maps, chapter pages, region pages, filters, membership forms, Edu-tourism content, metadata, translations, and Sophia knowledge to match the source.
-- Show only Regions 1–8 on the geographic map and list Regions 9–10 separately.
-- Replace conflicting “5+”, “8 approved”, “54 countries”, and reach-implying language with the approved organisational wording. Region and chapter activity remain separately labelled Active, Forming, or Planned.
-- Publish the management-confirmed `scef_regions_count = 10` metric, explicitly noting that it describes organisational structure—not programme reach.
-- Register and resolve the former regional contradiction starting at claim reference `SCEF-CL-018`.
+## C. Database migration plan
+- **Keep:** auth, user_roles, profiles, governance, chapters, chat, wallets, scholarships, waitlists.
+- **Extend:** programs, impact_metrics, events, media_items, donations, certificate_verifications, audit_logs, app_role.
+- **Merge or migrate (copy only; originals stay):** crs_partners and endorsements go into partners; csr_projects links to projects.
+- **Create:** about 45 new tables, as listed in section B.
+- **Archive:** none. Old tables get a "deprecated" note once nothing uses them. No tables are dropped and no data is deleted.
 
-## 2. Highest-risk public content
-- Audit every donation, wallet, bank-account, scholarship-cost, and payment flow. Identify the legal recipient, purpose, refund/contact position, and operational status. Remove tax-benefit or return language unless documented. Flag personal recipients as CRITICAL.
-- Audit every child image, testimonial, named story, portrait, and event image. Replace unsupported identity claims with “Representative image” or “Illustrative”; record consent requirements. Identifiable children without referenced guardian consent become SAFEGUARDING—CRITICAL and will be removed, replaced, or made non-identifiable.
-- Audit partner, endorsement, sponsor, donor, collaborator, and engagement claims. Keep only documented classifications; otherwise use “Organisations SCEF has engaged with” or “Under discussion.” Remove unauthorised institutional logos and endorsement-implying SDG artwork.
+## D. Security review
+- **Public inserts:** these tables accept public form submissions: ambassador_applications, certificate_verifications, chapter_signups, csr_inquiries, sophia_visitor_analytics. Each needs length checks and a check that the submitter is real.
+- **programs:** public read is fully open. This is acceptable for now, but it will be limited to rows marked public once new fields are added.
+- **Public file buckets:** profile-photos, contributor-photos and hall-of-fame may hold photos of children. Child-safety review required.
+- **certificates bucket:** public. Move to verification-code access only.
+- **Admin role check:** the admin page shell trusts hq_admin, but the server-side `is_admin` check does not. This needs to be aligned.
+- **Leaked-password protection:** still to be turned on manually.
+- **New sensitive data:** all new sensitive tables (beneficiaries, safeguarding, finance, data room, partner contacts) will be readable only by named roles. No anonymous access.
 
-## 3. Governance and legal identity
-- Review all governance records and public renderers. Add personal-capacity wording where an external employer could imply institutional endorsement.
-- Replace vacancy names shown as “TBD” with “Position open,” include open seats for Regions 9 and 10, add a neutral role description for Emmanuel Faleti, and correct duplicate management ordering.
-- Register consent-to-list and employer-name permissions as management actions for every named governance member.
-- Standardise the legal name as **Santos Creations Educational Foundation (SCEF), Nigeria** across pages, metadata, schema, donations, footer, and emails.
-- Remove inconsistent or undocumented registration/tax/charity details; use “Registration details available on request” where approved details are absent.
-- Describe programme brands as SCEF programmes, not separate legal entities. Correct Organization schema and `areaServed` so it describes the structure without claiming continent-wide operations.
+## E. Implementation phases (each one tested before the next)
+1. **Foundation:** granular roles and permissions, automatic audit logging, data classification types, document register, private buckets.
+2. **Project Bank:** programmes extension, projects, work packages, activities, milestones, budgets, risks, readiness checklist, admin screens.
+3. **Funding Command Centre:** funders, opportunities, verification, eligibility, matching, application workspace, approval gate, deadline engine, version history, decision centre.
+4. **Partnership Command Centre:** partners migration and logo control so public partner sections read only formal, verified, permitted rows.
+5. **Impact and M&E:** impact records and evidence, logframe, theory of change visual, policy outcomes, public counters fed only by verified records.
+6. **Training, certificates and employment, opportunities hub,** public certificate verification.
+7. **Research, publications, E-Journal, events and media reach.**
+8. **Data room, policy register, expiry alerts, safeguarding workflow.**
+9. **Executive command centre:** dashboards, alerts, global search, exports, reports, content approval, claim checker, AI assistant.
+10. **Acceptance test:** confirm every question in section 112 can be answered from records.
 
-## 4. Evidence storage and enforced workflow
-- Create a private evidence bucket with admin-only access.
-- Add an evidence-files table so each metric can hold multiple PDF, image, DOCX, and XLSX files; store paths and uploader metadata, never public URLs.
-- Replace the text evidence field with real multi-file upload, file listing, and controlled download in the admin panel.
-- Enforce sequential transitions in the database: DRAFT → EVIDENCE_UPLOADED → UNDER_REVIEW → VERIFIED → APPROVED_FOR_PUBLICATION → PUBLISHED; permit WITHDRAWN from any stage.
-- Require a file or source URL before EVIDENCE_UPLOADED. Require verified evidence before later publication stages.
-- Automatically stamp verifier user ID, verifier name, and verification date at VERIFIED. Show a same-person creator/verifier warning.
-- Add an immutable stage-change audit table recording actor, timestamp, old stage, and new stage. Keep all evidence and logs admin-only with grants and RLS.
+## F. Dependencies (management or third party)
+- Legal documents: CAC certificate IT-41501, tax/TIN, audited accounts, approved policies.
+- Partner agreements and logo permissions; board consent letters; child-photo consents.
+- Programme and project lists with real statuses, budgets and leads.
+- Funding opportunities: entered and verified by staff. No automatic web scraping without separate approval.
+- Email: the existing vacancy-confirmation email setup is reused; other email types need approval.
+- Payment providers (Paystack/Flutterwave): existing; account ownership to be confirmed (EduAid Africa Ltd).
+- Two-step login (MFA): needs a decision on which roles must use it.
 
-## 5. Impact page and central status systems
-- Refactor `/impact` to use published `impact_metrics` only, with verified achievements and strategic targets in distinct sections matching `/transparency`.
-- Remove hard-coded impact counters and obsolete counter logic so unsupported numbers cannot return.
-- Create one central programme/platform status source. Every programme card and detail page will show Active, Pilot, In Development, Planned, Upcoming, Paused, or Completed.
-- Default unconfirmed digital platforms/programmes to In Development and create management actions for confirmation. Green Horizon remains pilot/waitlist unless evidence confirms otherwise.
-- Centralise region and chapter status. Unconfirmed regions/chapters default to Forming, not Active.
+## G. Data requiring verification
+- **Impact and beneficiary figures:** all public figures are already withheld ("Verification in progress"). The 17 existing claim records (SCEF-CL-001–017) plus Phase 2 items will be linked to impact records.
+- **Partner claims:** FAWE, CSACEFA, GetEnergy, PKIS, every row in crs_partners and endorsements.
+- **Accreditation:** AEPC/EOA certifications, the ACDL/AWPC 24-month cycle, any "certified" wording.
+- **Funding:** CSR funding funnel figures, EduAid Africa Ltd receiving account, scholarship cost-per-child.
+- **Geographic:** region and chapter statuses (default Forming); the Borno State reference for Green Horizon.
+- **Targets:** EduAid 2032 targets and Vision 2035, to be stored as TARGET.
 
-## 6. Complete route, content, locale, and automation audit
-Review every route and reusable surface listed in the application, including mobile-only UI, nine locale files, SEO/Open Graph/JSON-LD, public text files, database-driven CMS records, downloads, email templates, and Sophia prompts/knowledge.
-
-Corrections cover:
-- unsupported superlatives, achievements, accreditations, awards, geographic reach, founding/service-duration contradictions, and programme-status claims;
-- expired events, deadlines and countdowns; undated or unsourced news/media claims;
-- placeholders, sample content, dead links/buttons, wrong domains, inconsistent contact details, and unverified social accounts;
-- privacy, terms, cookies, safeguarding and data-protection pages. Where adopted text is unavailable, pages will show “Document pending publication,” not invented legal policy;
-- consent checkboxes and privacy links on personal-data forms; age and guardian-consent handling for potentially under-18 forms;
-- Sophia instructions to use the canonical regions, never state unverified figures/relationships, say “Verification in progress,” and direct due-diligence queries to the transparency contact;
-- vacancy, membership, donation and other automated messages for the same identity and evidence rules.
-
-## 7. Internal register, live audit summary, and management actions
-- Add every finding to `claims_evidence_register` with page, exact text, A/B category, risk, action, approved wording, and resolution state. Claim references continue sequentially from `SCEF-CL-018`.
-- Extend the register schema only where required for category/action/resolution fields.
-- Replace the static admin audit narrative with live totals grouped by category, risk, status, and action.
-- Add an admin-only management-action table and panel tab with item, category, requested decision/document, owner, due date, priority, status, and related claim.
-- Seed required actions for region/chapter statuses, registration details, partnership agreements, board consents, child-photo consents, programme statuses, audited accounts, policies, and other evidence uncovered by the audit.
-- Do not expose the register, summary, files, workflow log, or action list publicly.
-
-## 8. Validation and completion report
-- Search source, translations, metadata, schema, assistant content, and database-managed copy for every banned/withdrawn phrase and conflicting regional count.
-- Test representative public and admin flows at desktop (1280px), tablet, and mobile sizes, including region navigation, map/global-network separation, metric publishing controls, file upload, management actions, and forms.
-- Verify admin authorization and private-file access boundaries.
-- Report pages/routes reviewed, changes by A1–A4 and B1–B12, resolved/open findings, all remaining CRITICAL items, and exact management inputs required.
-
-## Technical notes
-- Database schema changes use additive migrations with grants and RLS in the same migration.
-- Existing records are updated through data queries, not schema migrations.
-- Existing SCEF tokens/components and page structures remain authoritative; this is a content, governance, and control-system correction—not a redesign.
-- Existing documentary history is retained with dates and context where valid. No figures, agreements, consent, legal identifiers, people, or outcomes will be invented.
+## Rules applied throughout
+- Additive migrations only.
+- Grants and row-level security in the same step as each new table.
+- No invented records.
+- The AI assistant never publishes, approves, verifies or submits anything.
