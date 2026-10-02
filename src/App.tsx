@@ -195,6 +195,7 @@ import AdminSchoolNominations from "./pages/admin/AdminSchoolNominations";
 import AdminCsrPartners from "./pages/admin/AdminCsrPartners";
 import AdminReports from "./pages/admin/AdminReports";
 import ImpactEvidenceAdmin from "./pages/admin/ImpactEvidenceAdmin";
+import CommandCentre from "./pages/admin/CommandCentre";
 import Transparency from "./pages/Transparency";
 import VerifyCertificate from "./pages/VerifyCertificate";
 
@@ -363,6 +364,7 @@ const App = () => (
               <Route path="/admin/csr" element={<AdminCsrPartners />} />
               <Route path="/admin/reports" element={<AdminReports />} />
               <Route path="/admin/impact-evidence" element={<ImpactEvidenceAdmin />} />
+              <Route path="/admin/command-centre" element={<CommandCentre />} />
 
               {/* Auth Routes */}
               <Route path="/auth" element={<Auth />} />
