@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { MessageCircle, X, Send, ExternalLink, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send, ExternalLink, Loader2, Mail } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
 import { trackSophia } from "@/lib/sophiaTrack";
@@ -11,6 +11,11 @@ const WA_NUMBER = "2348109765897";
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;
 const buildWA = (text: string) => `${WA_BASE}?text=${encodeURIComponent(text)}`;
 const WELCOME_WA = buildWA("Hello Sophia, I need support with SCEF.");
+const SUPPORT_EMAIL = "media.santoscreations@gmail.com";
+const buildMail = (subject: string, body: string) =>
+  `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+const trackEmail = (department?: string) =>
+  trackSophia({ event_type: "email_click", source_channel: "Sophia Email", escalation_department: department });
 
 const WELCOME =
   "Welcome to Santos Creations Educational Foundation (SCEF). I am Sophia, your support assistant. I can help you with membership, EduAid-Africa, NESA-Africa, donations, payments, local chapters, webinars, volunteering, partnerships, and general support. How may I help you today?";
@@ -145,7 +150,7 @@ export const SophiaWhatsAppWidget = () => {
         content:
           data?.clarifying_question?.length > 0
             ? `${data.answer}\n\n${data.clarifying_question}`
-            : data?.answer || "I'm having trouble right now. Please try again or reach us on WhatsApp.",
+            : data?.answer || "I'm having trouble right now. Please try again or email us at media.santoscreations@gmail.com.",
         url: data?.related_url || undefined,
         escalation: data?.escalation_required
           ? { department: data.escalation_department, departments: data.escalation_departments }
@@ -267,6 +272,17 @@ export const SophiaWhatsAppWidget = () => {
                           ? `Continue with ${m.escalation.department} on WhatsApp`
                           : "Continue on WhatsApp"}
                       </a>
+                      <a
+                        href={buildMail(
+                          `Sophia support request${m.escalation.department ? ` – ${m.escalation.department}` : ""}`,
+                          `Hello SCEF team,\n\n${[...messages].reverse().find((x) => x.role === "user")?.content ?? ""}\n\nThank you.`,
+                        )}
+                        onClick={() => trackEmail(m.escalation?.department)}
+                        className="inline-flex items-center gap-1.5 border border-scef-blue-darker/40 text-scef-blue-darker dark:text-foreground hover:bg-muted text-xs font-semibold px-3 py-1.5 rounded-md ml-1.5"
+                      >
+                        <Mail className="w-3 h-3" />
+                        Email the team
+                      </a>
                     </div>
                   )}
                 </div>
@@ -304,6 +320,13 @@ export const SophiaWhatsAppWidget = () => {
                     className="col-span-2 text-[11px] font-semibold text-center px-2 py-1.5 rounded-md bg-[#25D366] text-white hover:bg-[#1EBE5B]"
                   >
                     🟢 Speak with Support on WhatsApp
+                  </a>
+                  <a
+                    href={buildMail("SCEF support request", "Hello SCEF team,\n\nI need support with: ")}
+                    onClick={() => trackEmail()}
+                    className="col-span-2 text-[11px] font-semibold text-center px-2 py-1.5 rounded-md border border-scef-blue-darker/40 text-scef-blue-darker dark:text-foreground hover:bg-muted"
+                  >
+                    ✉️ Email Support
                   </a>
                 </div>
               </div>
