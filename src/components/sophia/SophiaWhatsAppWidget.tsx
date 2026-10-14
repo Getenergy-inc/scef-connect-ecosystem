@@ -15,7 +15,7 @@ const SUPPORT_EMAIL = "media.santoscreations@gmail.com";
 const buildMail = (subject: string, body: string) =>
   `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 const trackEmail = (department?: string) =>
-  trackSophia({ event_type: "email_click", source_channel: "Sophia Email", escalation_department: department });
+  trackSophia({ event_type: "escalation_requested", source_channel: "Sophia Email", escalation_department: department });
 
 const WELCOME =
   "Welcome to Santos Creations Educational Foundation (SCEF). I am Sophia, your support assistant. I can help you with membership, EduAid-Africa, NESA-Africa, donations, payments, local chapters, webinars, volunteering, partnerships, and general support. How may I help you today?";
