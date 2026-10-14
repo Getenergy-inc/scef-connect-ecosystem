@@ -53,8 +53,8 @@ const Privacy = () => {
                   <h2 className="font-display text-2xl font-semibold mb-4">Contact Us</h2>
                   <p className="text-muted-foreground">
                     If you have questions about this Privacy Policy, please contact us at{" "}
-                    <a href="mailto:info@santoscreations.org" className="text-primary hover:underline">
-                      info@santoscreations.org
+                    <a href="mailto:media.santoscreations@gmail.com" className="text-primary hover:underline">
+                      media.santoscreations@gmail.com
                     </a>
                   </p>
                 </section>

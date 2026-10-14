@@ -152,7 +152,7 @@ const Help = () => {
               
               <div className="flex flex-wrap justify-center gap-4">
                 <Button size="lg" asChild>
-                  <a href="mailto:support@santoscreations.org">
+                  <a href="mailto:media.santoscreations@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
                     Email Support
                   </a>

@@ -55,8 +55,8 @@ const Accessibility = () => {
                   <h2 className="font-display text-2xl font-semibold mb-4">Feedback</h2>
                   <p className="text-muted-foreground">
                     We welcome your feedback on the accessibility of our website. Please contact us at{" "}
-                    <a href="mailto:accessibility@santoscreations.org" className="text-primary hover:underline">
-                      accessibility@santoscreations.org
+                    <a href="mailto:media.santoscreations@gmail.com" className="text-primary hover:underline">
+                      media.santoscreations@gmail.com
                     </a>
                   </p>
                 </section>

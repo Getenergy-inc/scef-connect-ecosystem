@@ -21,18 +21,9 @@ export const EmailDirectory = ({
           <Mail className="w-4 h-4 text-primary" />
           Contact Us
         </h4>
-        <div className="grid grid-cols-2 gap-2 text-sm">
-          <a href={getMailtoLink("info@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            info@santoscreations.org
-          </a>
-          <a href={getMailtoLink("partnership@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            partnership@santoscreations.org
-          </a>
-          <a href={getMailtoLink("membership@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            membership@santoscreations.org
-          </a>
-          <a href={getMailtoLink("support@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            support@santoscreations.org
+        <div className="text-sm">
+          <a href={getMailtoLink("media.santoscreations@gmail.com")} className="text-muted-foreground hover:text-primary transition-colors">
+            media.santoscreations@gmail.com
           </a>
         </div>
       </div>

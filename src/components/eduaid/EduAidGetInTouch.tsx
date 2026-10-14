@@ -50,8 +50,8 @@ export default function EduAidGetInTouch() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">{t('eduaid.contact.email') || 'Email'}</h3>
-                  <a href="mailto:info@eduaid.africa" className="text-muted-foreground hover:text-[#1F892B] transition-colors">
-                    info@eduaid.africa
+                  <a href="mailto:media.santoscreations@gmail.com" className="text-muted-foreground hover:text-[#1F892B] transition-colors">
+                    media.santoscreations@gmail.com
                   </a>
                 </div>
               </div>

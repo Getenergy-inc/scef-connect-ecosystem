@@ -37,7 +37,7 @@ export const ConversionPageTemplate = ({
   kicker, headline, subheadline, heroImage, heroImageAlt,
   primaryCta, secondaryCta,
   audience, whyItMatters, whatYouGet, steps, requirements, trustPoints,
-  faqs, contactEmail = "info@santoscreations.org",
+  faqs, contactEmail = "media.santoscreations@gmail.com",
 }: ConversionPageProps) => {
   return (
     <>

@@ -22,7 +22,7 @@ export const DashboardTrustBanner = () => {
               SCEF — Registered Nonprofit Educational Foundation (NG)
             </p>
             <p className="text-xs text-white/70">
-              Reg. No. <span className="font-mono text-white">IT-41501</span> · admin@santoscreations.org
+              Reg. No. <span className="font-mono text-white">IT-41501</span> · media.santoscreations@gmail.com
             </p>
           </div>
         </div>
