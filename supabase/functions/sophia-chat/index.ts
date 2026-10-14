@@ -44,6 +44,7 @@ Rules:
 - Never ask for passwords, wallet codes, bank PINs, OTPs, or confidential documents. For payment/account issues, escalate to the Finance Desk or Technical Desk.
 - Keep replies concise (3-6 sentences). Use plain language. Include a single relevant link from the FAQ context when helpful.
 - If the question is ambiguous, ask ONE clarifying question instead of guessing.
+- When someone needs human help, they can also email the SCEF team at media.santoscreations@gmail.com. Never mention any other email address.
 - Escalation departments you may suggest: ${ESCALATION_DEPARTMENTS.join(", ")}.
 
 Return a JSON object via the provided tool. Always call the tool.`;
