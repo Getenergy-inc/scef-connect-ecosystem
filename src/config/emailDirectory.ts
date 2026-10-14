@@ -3,128 +3,128 @@
 
 export const emailDirectory = {
   // Executive Office
-  executive: "babashola@santoscreations.org",
-  office: "office@santoscreations.org",
-  admin: "admin@santoscreations.org",
+  executive: "media.santoscreations@gmail.com",
+  office: "media.santoscreations@gmail.com",
+  admin: "media.santoscreations@gmail.com",
 
   // General Inquiries
-  info: "info@santoscreations.org",
-  infoNg: "info@santoscreations.com.ng",
-  support: "support@santoscreations.org",
-  donation: "donation@santoscreations.org",
+  info: "media.santoscreations@gmail.com",
+  infoNg: "media.santoscreations@gmail.com",
+  support: "media.santoscreations@gmail.com",
+  donation: "media.santoscreations@gmail.com",
 
   // Get Involved
-  membership: "membership@santoscreations.org",
-  internship: "internship@santoscreations.org",
-  volunteer: "volunteer@santoscreations.org",
+  membership: "media.santoscreations@gmail.com",
+  internship: "media.santoscreations@gmail.com",
+  volunteer: "media.santoscreations@gmail.com",
 
   // Partnerships & Business
-  partnership: "partnership@santoscreations.org",
-  partnerships: "partnerships@santoscreations.org",
-  businessDevelopment: "businessdevelopment@santoscreations.org",
+  partnership: "media.santoscreations@gmail.com",
+  partnerships: "media.santoscreations@gmail.com",
+  businessDevelopment: "media.santoscreations@gmail.com",
 
   // Programs
-  nesa: "nesa.africa@santoscreations.org",
-  eoa: "eon@santoscreations.org",
-  elibrary: "elibrarynigeria@santoscreations.org",
-  certificate: "certificate@santoscreations.org",
+  nesa: "media.santoscreations@gmail.com",
+  eoa: "media.santoscreations@gmail.com",
+  elibrary: "media.santoscreations@gmail.com",
+  certificate: "media.santoscreations@gmail.com",
 
   // HR & Leadership
-  hr: "hr@santoscreations.org",
-  adminHr: "admin.hr@santoscreations.org",
+  hr: "media.santoscreations@gmail.com",
+  adminHr: "media.santoscreations@gmail.com",
 
   // Operations & Finance (SOBCD)
-  sobcd: "sobcd@santoscreations.org",
-  reportsSobcd: "reports.sobcd@santoscreations.org",
-  finance: "finance@santoscreations.org",
-  legal: "legal@santoscreations.org",
-  wallet: "wallet@santoscreations.org",
+  sobcd: "media.santoscreations@gmail.com",
+  reportsSobcd: "media.santoscreations@gmail.com",
+  finance: "media.santoscreations@gmail.com",
+  legal: "media.santoscreations@gmail.com",
+  wallet: "media.santoscreations@gmail.com",
 
   // Technology & Digital Services (TDSD)
-  tdsd: "tdsd@santoscreations.org",
-  reportsTdsd: "reports.tdsd@santoscreations.org",
-  devteam: "devteam@santoscreations.org",
-  tech: "tech@santoscreations.org",
-  techsupport: "techsupport@santoscreations.org",
-  uxui: "uxui@santoscreations.org",
-  security: "security@santoscreations.org",
-  data: "data@santoscreations.org",
+  tdsd: "media.santoscreations@gmail.com",
+  reportsTdsd: "media.santoscreations@gmail.com",
+  devteam: "media.santoscreations@gmail.com",
+  tech: "media.santoscreations@gmail.com",
+  techsupport: "media.santoscreations@gmail.com",
+  uxui: "media.santoscreations@gmail.com",
+  security: "media.santoscreations@gmail.com",
+  data: "media.santoscreations@gmail.com",
 
   // Outreach, Media & Business Dev (OMBDD)
-  ombdd: "ombdd@santoscreations.org",
-  reportsOmbdd: "reports.ombdd@santoscreations.org",
-  media: "media@santoscreations.org",
-  social: "social@santoscreations.org",
-  pr: "pr@santoscreations.org",
-  graphics: "graphics@santoscreations.org",
-  events: "events@santoscreations.org",
+  ombdd: "media.santoscreations@gmail.com",
+  reportsOmbdd: "media.santoscreations@gmail.com",
+  media: "media.santoscreations@gmail.com",
+  social: "media.santoscreations@gmail.com",
+  pr: "media.santoscreations@gmail.com",
+  graphics: "media.santoscreations@gmail.com",
+  events: "media.santoscreations@gmail.com",
 
   // Chapters
-  chapters: "chapters@santoscreations.org",
+  chapters: "media.santoscreations@gmail.com",
 
   // Named Staff
-  folashade: "folashade@santoscreations.org",
-  funmi: "Funmi.Omitowoju@santoscreations.com.ng",
-  vincesantos: "vincesantos@santoscreations.com.ng",
+  folashade: "media.santoscreations@gmail.com",
+  funmi: "media.santoscreations@gmail.com",
+  vincesantos: "media.santoscreations@gmail.com",
 
   // External / Gmail
   mediaGmail: "media.santoscreations@gmail.com",
-  reportGmail: "report.santoscreations1@gmail.com",
+  reportGmail: "media.santoscreations@gmail.com",
 };
 
 // Categorized email list for display (public-facing categories)
 export const emailCategories = {
   executive: [
-    { label: "Executive Office (CVO)", email: "babashola@santoscreations.org" },
-    { label: "Office", email: "office@santoscreations.org" },
-    { label: "Admin", email: "admin@santoscreations.org" },
+    { label: "Executive Office (CVO)", email: "media.santoscreations@gmail.com" },
+    { label: "Office", email: "media.santoscreations@gmail.com" },
+    { label: "Admin", email: "media.santoscreations@gmail.com" },
   ],
   general: [
-    { label: "General Inquiries", email: "info@santoscreations.org" },
-    { label: "Support", email: "support@santoscreations.org" },
-    { label: "Donations", email: "donation@santoscreations.org" },
+    { label: "General Inquiries", email: "media.santoscreations@gmail.com" },
+    { label: "Support", email: "media.santoscreations@gmail.com" },
+    { label: "Donations", email: "media.santoscreations@gmail.com" },
   ],
   getInvolved: [
-    { label: "Membership", email: "membership@santoscreations.org" },
-    { label: "Internship", email: "internship@santoscreations.org" },
-    { label: "Volunteer", email: "volunteer@santoscreations.org" },
+    { label: "Membership", email: "media.santoscreations@gmail.com" },
+    { label: "Internship", email: "media.santoscreations@gmail.com" },
+    { label: "Volunteer", email: "media.santoscreations@gmail.com" },
   ],
   partnerships: [
-    { label: "Partnership", email: "partnership@santoscreations.org" },
-    { label: "Business Development", email: "businessdevelopment@santoscreations.org" },
-    { label: "Chapters", email: "chapters@santoscreations.org" },
-    { label: "Events", email: "events@santoscreations.org" },
+    { label: "Partnership", email: "media.santoscreations@gmail.com" },
+    { label: "Business Development", email: "media.santoscreations@gmail.com" },
+    { label: "Chapters", email: "media.santoscreations@gmail.com" },
+    { label: "Events", email: "media.santoscreations@gmail.com" },
   ],
   programs: [
-    { label: "NESA Africa", email: "nesa.africa@santoscreations.org" },
-    { label: "Education Online Africa", email: "eon@santoscreations.org" },
-    { label: "eLibrary Nigeria", email: "elibrarynigeria@santoscreations.org" },
-    { label: "Certifications", email: "certificate@santoscreations.org" },
+    { label: "NESA Africa", email: "media.santoscreations@gmail.com" },
+    { label: "Education Online Africa", email: "media.santoscreations@gmail.com" },
+    { label: "eLibrary Nigeria", email: "media.santoscreations@gmail.com" },
+    { label: "Certifications", email: "media.santoscreations@gmail.com" },
   ],
   hr: [
-    { label: "Human Resources", email: "hr@santoscreations.org" },
-    { label: "HR Admin", email: "admin.hr@santoscreations.org" },
+    { label: "Human Resources", email: "media.santoscreations@gmail.com" },
+    { label: "HR Admin", email: "media.santoscreations@gmail.com" },
   ],
   operations: [
-    { label: "SOBCD Division", email: "sobcd@santoscreations.org" },
-    { label: "Finance", email: "finance@santoscreations.org" },
-    { label: "Legal", email: "legal@santoscreations.org" },
-    { label: "Wallet / Payments", email: "wallet@santoscreations.org" },
+    { label: "SOBCD Division", email: "media.santoscreations@gmail.com" },
+    { label: "Finance", email: "media.santoscreations@gmail.com" },
+    { label: "Legal", email: "media.santoscreations@gmail.com" },
+    { label: "Wallet / Payments", email: "media.santoscreations@gmail.com" },
   ],
   technology: [
-    { label: "TDSD Division", email: "tdsd@santoscreations.org" },
-    { label: "Dev Team", email: "devteam@santoscreations.org" },
-    { label: "Tech Support", email: "techsupport@santoscreations.org" },
-    { label: "Security", email: "security@santoscreations.org" },
-    { label: "UX/UI", email: "uxui@santoscreations.org" },
-    { label: "Data", email: "data@santoscreations.org" },
+    { label: "TDSD Division", email: "media.santoscreations@gmail.com" },
+    { label: "Dev Team", email: "media.santoscreations@gmail.com" },
+    { label: "Tech Support", email: "media.santoscreations@gmail.com" },
+    { label: "Security", email: "media.santoscreations@gmail.com" },
+    { label: "UX/UI", email: "media.santoscreations@gmail.com" },
+    { label: "Data", email: "media.santoscreations@gmail.com" },
   ],
   media: [
-    { label: "OMBDD Division", email: "ombdd@santoscreations.org" },
-    { label: "Media", email: "media@santoscreations.org" },
-    { label: "Social Media", email: "social@santoscreations.org" },
-    { label: "PR", email: "pr@santoscreations.org" },
-    { label: "Graphics", email: "graphics@santoscreations.org" },
+    { label: "OMBDD Division", email: "media.santoscreations@gmail.com" },
+    { label: "Media", email: "media.santoscreations@gmail.com" },
+    { label: "Social Media", email: "media.santoscreations@gmail.com" },
+    { label: "PR", email: "media.santoscreations@gmail.com" },
+    { label: "Graphics", email: "media.santoscreations@gmail.com" },
   ],
 };
 

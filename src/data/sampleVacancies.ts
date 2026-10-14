@@ -35,7 +35,7 @@ export const sampleVacancies: VacancyData[] = [
       "Coordinate with program teams on partner engagement",
       "Prepare impact reports for partners"
     ],
-    applicationEmail: "partnership@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Grants & Proposal Writer",
@@ -58,7 +58,7 @@ export const sampleVacancies: VacancyData[] = [
       "Maintain grants calendar and tracking system",
       "Prepare funder reports"
     ],
-    applicationEmail: "businessdevelopment@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Program Coordinator — EduAid-Africa",
@@ -81,7 +81,7 @@ export const sampleVacancies: VacancyData[] = [
       "Prepare program reports and impact assessments",
       "Support beneficiary communications"
     ],
-    applicationEmail: "hr@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Project Coordinator — Rebuild My School Africa",
@@ -104,7 +104,7 @@ export const sampleVacancies: VacancyData[] = [
       "Track project budgets and timelines",
       "Document and report on project progress"
     ],
-    applicationEmail: "hr@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Media Producer — NESA Africa TV",
@@ -127,7 +127,7 @@ export const sampleVacancies: VacancyData[] = [
       "Manage live stream productions",
       "Coordinate with media volunteers"
     ],
-    applicationEmail: "nesa.africa@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Chapter Support Officer",
@@ -150,7 +150,7 @@ export const sampleVacancies: VacancyData[] = [
       "Coordinate inter-chapter collaboration",
       "Prepare chapter performance reports"
     ],
-    applicationEmail: "hr@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "UI/Frontend Developer",
@@ -173,7 +173,7 @@ export const sampleVacancies: VacancyData[] = [
       "Collaborate with design and backend teams",
       "Optimize performance and user experience"
     ],
-    applicationEmail: "hr@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Localization / i18n Coordinator",
@@ -196,7 +196,7 @@ export const sampleVacancies: VacancyData[] = [
       "Maintain translation glossaries",
       "Support RTL implementation for Arabic"
     ],
-    applicationEmail: "hr@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   },
   {
     title: "Volunteer Coordinator",
@@ -219,6 +219,6 @@ export const sampleVacancies: VacancyData[] = [
       "Track volunteer hours and impact",
       "Recognize and retain volunteer talent"
     ],
-    applicationEmail: "volunteer@santoscreations.org"
+    applicationEmail: "media.santoscreations@gmail.com"
   }
 ];

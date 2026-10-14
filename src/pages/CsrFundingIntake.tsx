@@ -87,7 +87,7 @@ const CsrFundingIntake = () => {
       toast.success("Inquiry submitted. Our partnerships team will be in touch.");
     } catch (err) {
       logger.error("CSR inquiry submission failed", err);
-      toast.error("Submission failed. Please try again or email partners@santoscreations.org.");
+      toast.error("Submission failed. Please try again or email media.santoscreations@gmail.com.");
     } finally {
       setIsSubmitting(false);
     }
@@ -150,7 +150,7 @@ const CsrFundingIntake = () => {
                   </h2>
                   <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
                     A SCEF partnerships lead will reach out within 5 business days to begin scoping.
-                    For urgent inquiries, email <strong>partners@santoscreations.org</strong>.
+                    For urgent inquiries, email <strong>media.santoscreations@gmail.com</strong>.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Button asChild variant="outline">

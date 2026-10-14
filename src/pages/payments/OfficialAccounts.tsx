@@ -285,19 +285,19 @@ export default function OfficialAccountsPage() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href="mailto:support@santoscreations.org?subject=Request%20Payment%20Confirmation"
+                    href="mailto:media.santoscreations@gmail.com?subject=Request%20Payment%20Confirmation"
                     className="inline-flex items-center gap-2 rounded-lg bg-scef-blue-darker text-white px-4 py-2 text-sm font-semibold hover:bg-scef-blue"
                   >
                     Request Payment Confirmation
                   </a>
                   <a
-                    href="mailto:partnerships@santoscreations.org?subject=Sponsorship%20Documentation"
+                    href="mailto:media.santoscreations@gmail.com?subject=Sponsorship%20Documentation"
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-scef-blue-darker text-scef-blue-darker px-4 py-2 text-sm font-semibold hover:bg-scef-blue-darker hover:text-white"
                   >
                     Request Sponsorship Documentation
                   </a>
                   <a
-                    href="mailto:impact@santoscreations.org?subject=Impact%20Report%20Request"
+                    href="mailto:media.santoscreations@gmail.com?subject=Impact%20Report%20Request"
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-border text-scef-blue-darker px-4 py-2 text-sm font-semibold hover:bg-muted"
                   >
                     Request Impact Report

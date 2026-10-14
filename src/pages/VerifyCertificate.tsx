@@ -240,10 +240,10 @@ export default function VerifyCertificate() {
                     No active SCEF certificate matches <span className="font-mono">{code}</span>.
                     Double-check the code, or contact{" "}
                     <a
-                      href="mailto:admin@santoscreations.org"
+                      href="mailto:media.santoscreations@gmail.com"
                       className="text-scef-blue-darker underline"
                     >
-                      admin@santoscreations.org
+                      media.santoscreations@gmail.com
                     </a>{" "}
                     if you believe this is an error.
                   </p>
@@ -378,8 +378,8 @@ export default function VerifyCertificate() {
                   <li>Only approved, publicly-listed contributors can be verified here.</li>
                   <li>
                     For institutional verification letters, email{" "}
-                    <a className="underline" href="mailto:admin@santoscreations.org">
-                      admin@santoscreations.org
+                    <a className="underline" href="mailto:media.santoscreations@gmail.com">
+                      media.santoscreations@gmail.com
                     </a>
                     .
                   </li>

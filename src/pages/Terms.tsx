@@ -65,8 +65,8 @@ const Terms = () => {
                   <h2 className="font-display text-2xl font-semibold mb-4">Contact</h2>
                   <p className="text-muted-foreground">
                     For questions about these Terms, contact us at{" "}
-                    <a href="mailto:legal@santoscreations.org" className="text-primary hover:underline">
-                      legal@santoscreations.org
+                    <a href="mailto:media.santoscreations@gmail.com" className="text-primary hover:underline">
+                      media.santoscreations@gmail.com
                     </a>
                   </p>
                 </section>

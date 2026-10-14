@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "How can my organization partner with EduAid?",
-    answer: "Contact our partnerships team at partnerships@eduaid.africa or visit the Partner With Us page to explore CSR, sponsorship, and collaboration opportunities."
+    answer: "Contact our partnerships team at media.santoscreations@gmail.com or visit the Partner With Us page to explore CSR, sponsorship, and collaboration opportunities."
   },
   {
     question: "Can I volunteer with EduAid?",

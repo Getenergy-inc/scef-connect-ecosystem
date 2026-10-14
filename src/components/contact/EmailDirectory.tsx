@@ -22,17 +22,17 @@ export const EmailDirectory = ({
           Contact Us
         </h4>
         <div className="grid grid-cols-2 gap-2 text-sm">
-          <a href={getMailtoLink("info@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            info@santoscreations.org
+          <a href={getMailtoLink("media.santoscreations@gmail.com")} className="text-muted-foreground hover:text-primary transition-colors">
+            media.santoscreations@gmail.com
           </a>
-          <a href={getMailtoLink("partnership@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            partnership@santoscreations.org
+          <a href={getMailtoLink("media.santoscreations@gmail.com")} className="text-muted-foreground hover:text-primary transition-colors">
+            media.santoscreations@gmail.com
           </a>
-          <a href={getMailtoLink("membership@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            membership@santoscreations.org
+          <a href={getMailtoLink("media.santoscreations@gmail.com")} className="text-muted-foreground hover:text-primary transition-colors">
+            media.santoscreations@gmail.com
           </a>
-          <a href={getMailtoLink("support@santoscreations.org")} className="text-muted-foreground hover:text-primary transition-colors">
-            support@santoscreations.org
+          <a href={getMailtoLink("media.santoscreations@gmail.com")} className="text-muted-foreground hover:text-primary transition-colors">
+            media.santoscreations@gmail.com
           </a>
         </div>
       </div>

@@ -57,7 +57,7 @@ const emptyForm: VacancyFormData = {
   requirements: "",
   responsibilities: "",
   salary_range: "",
-  application_email: "hr@santoscreations.org",
+  application_email: "media.santoscreations@gmail.com",
   application_deadline: "",
   is_active: true,
   is_featured: false,
@@ -366,7 +366,7 @@ export const VacanciesAdmin = () => {
                     type="email"
                     value={formData.application_email}
                     onChange={(e) => setFormData({ ...formData, application_email: e.target.value })}
-                    placeholder="hr@santoscreations.org"
+                    placeholder="media.santoscreations@gmail.com"
                   />
                 </div>
                 <div className="space-y-2">
