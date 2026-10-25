@@ -24,7 +24,7 @@ export const emailDirectory = {
   businessDevelopment: "media.santoscreations@gmail.com",
 
   // Programs
-  nesa: "media.santoscreations@gmail.com",
+  nesa: "nesa.africa@gmail.com",
   eoa: "media.santoscreations@gmail.com",
   elibrary: "media.santoscreations@gmail.com",
   certificate: "media.santoscreations@gmail.com",
@@ -96,7 +96,7 @@ export const emailCategories = {
     { label: "Events", email: "media.santoscreations@gmail.com" },
   ],
   programs: [
-    { label: "NESA Africa", email: "media.santoscreations@gmail.com" },
+    { label: "NESA Africa", email: "nesa.africa@gmail.com" },
     { label: "Education Online Africa", email: "media.santoscreations@gmail.com" },
     { label: "eLibrary Nigeria", email: "media.santoscreations@gmail.com" },
     { label: "Certifications", email: "media.santoscreations@gmail.com" },
