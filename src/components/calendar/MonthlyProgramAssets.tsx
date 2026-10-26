@@ -80,7 +80,7 @@ export const MonthlyProgramAssets = ({ programSlug, programMonth }: Props) => {
         .from("user_roles")
         .select("role")
         .eq("user_id", user.id);
-      setIsAdmin(!!roles?.some((r) => r.role === "admin" || r.role === "super_admin"));
+      setIsAdmin(!!roles?.some((r) => r.role === "admin" || r.role === "super_admin" || (r.role as string) === "hq_admin"));
     })();
   }, []);
 
