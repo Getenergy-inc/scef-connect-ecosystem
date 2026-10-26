@@ -59,7 +59,10 @@ export const useUserRole = (userId: string | null): UseUserRoleResult => {
   ];
 
   const primaryRole: AppRole = rolePriority.find((r) => roles.includes(r)) || "member";
-  const isAdmin = roles.includes("admin") || roles.includes("super_admin");
+  // Single admin definition shared with the database is_admin() and edge functions.
+  const isAdmin = (["admin", "super_admin", "hq_admin"] as string[]).some((r) =>
+    (roles as string[]).includes(r)
+  );
   const isSuperAdmin = roles.includes("super_admin");
   const hasRole = (role: AppRole) => roles.includes(role);
 
