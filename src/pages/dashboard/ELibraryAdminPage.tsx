@@ -25,7 +25,7 @@ const ELibraryAdminPage = () => {
         .eq('user_id', user.id);
 
       const hasAdminAccess = roles?.some(r => 
-        r.role === 'admin' || r.role === 'super_admin'
+        r.role === 'admin' || r.role === 'super_admin' || r.role === 'hq_admin'
       );
 
       if (!hasAdminAccess) {
