@@ -19,3 +19,16 @@
 - [ ] Phase 7 research/events/media
 - [ ] Phase 8 data room/policies/safeguarding
 - [ ] Phase 9 executive dashboards/reports/claim checker
+
+## Content phase (Phase 3 — structure and content, code only)
+- [ ] scefStructure.ts single source; used on Home + About (core objectives + pillars/platforms)
+- [ ] Tagline update (locales, siteContent, index.html title/description)
+- [ ] Region wording in 9 locales (8 African groupings + Diaspora + Friends of Africa)
+- [ ] Remove public voting UI/text; /vote redirect
+- [ ] Lagos gala → NESA-Africa 2026 Online Awards Programme; gala redirects; no ticket CTAs
+- [ ] Partners/testimonials hidden behind flags; FAWE/CSACEFA permission-pending
+- [ ] Funders disclosure on /governance and /transparency
+- [ ] Six divisions wording
+- [ ] Contact form: validation, mailto, honeypot, honest wording
+- [ ] Naming consistency
+- [ ] Pending (blocked on database resume): remaining Phase 2 security items

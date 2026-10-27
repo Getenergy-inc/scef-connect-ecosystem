@@ -61,7 +61,7 @@
         "platinumShow": "Platinum Recognition Show",
         "africaIcon": "Africa Icon Blue Garnet Awards",
         "goldCertificate": "Gold Certificate Awards",
-        "blueGarnetGala": "Blue Garnet Gala",
+        "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme",
         "radio": "It's In Me Radio",
         "webinars": "EduAid Webinare & Podcast",
         "tourism": "Bildungstourismus-Show",
@@ -95,7 +95,7 @@
     "learnMore": "Mehr erfahren",
     "details": "Details",
     "nominate": "Nominieren",
-    "vote": "Jetzt abstimmen",
+    "vote": "Nominieren",
     "getTickets": "Tickets holen",
     "donate": "Spenden",
     "partner": "Partner werden",
@@ -158,7 +158,7 @@
     "hero": {
       "eyebrow": "Regionales Afrika • Afrikanische Diaspora",
       "title": "Einen kontinuierlich wachsenden Bildungsstandard in Afrika aufbauen",
-      "summary": "Die Santos Creations Educational Foundation (SCEF) ist eine mitgliedergetriebene panafrikanische Bildungsstiftung, die Bildung für alle in den fünf Regionen Afrikas (Nord, West, Zentral, Ost, Süd) liefert, mit strategischer Unterstützung der afrikanischen Diaspora (sechste Region) durch vertrauenswürdige Partnerschaften, lokale Ortsverbände und digitale Liefersysteme.",
+      "summary": "Die Santos Creations Educational Foundation (SCEF) ist eine mitgliedergetragene panafrikanische Bildungsstiftung, die Bildung für alle in acht afrikanischen Regionalgruppen sowie mit Afrikanerinnen und Afrikanern in der Diaspora und Friends of Africa voranbringt – durch vertrauenswürdige Partnerschaften, lokale Ortsverbände und digitale Liefersysteme.",
       "imageAlt": "Afrikanische Schüler lernen gemeinsam im Klassenzimmer",
       "expanded": {
         "p1": "SCEF arbeitet durch mehrschichtige Governance, lokale Ortsverbände, digitales Lernen, TVET-Arbeitsmarktbereitschaft, inklusive Bildung und transparente Partnerschaften — konzipiert für messbare Ergebnisse über Länder und Regionen hinweg.",
@@ -289,9 +289,9 @@
   },
   "about": {
     "hero": {
-      "title": "Afrika stärken durch Bildung, Innovation und Chancen",
+      "title": "Bildung für alle. Kompetenzen für die Zukunft. Widerstandsfähige Gemeinschaften.",
       "subtitle": "Eine mitgliedergetragene Stiftung, die Bildung in den Regionen durch Advocacy, digitalen Zugang und strategische Partnerschaften voranbringt.",
-      "tagline": "Aufbau eines kontinuierlichen, stetig wachsenden Bildungsstandards in Afrika.",
+      "tagline": "Bildung für alle. Kompetenzen für die Zukunft. Widerstandsfähige Gemeinschaften.",
       "description": "SCEF verbindet Programme, Chapter, Partner, Plattformen und Medien, um messbare Ergebnisse in Zugang, Qualität, Inklusion und Kompetenzen zu liefern.",
       "regionBadge": "Regionales Afrika • Diaspora Afrika",
       "trustLine": "Gegründet 1997 • Registriert 2010 • Ausgerichtet an SDG 4 + AU Agenda 2063 • HQ-geführte Governance + ortsverbandsgetriebene Umsetzung",
@@ -677,7 +677,7 @@
   "eduaid": {
     "reporting": "Bericht wird verifiziert",
     "hero": {
-      "welcome": "Willkommen bei EduAid Africa",
+      "welcome": "Willkommen bei EduAid-Africa",
       "title": "Bildung stärken, Zukunft in Afrika ermöglichen.",
       "description": "Schließen Sie sich uns an, um die Bildungslandschaft durch Stipendien, Spenden, CSR-Initiativen, Gemeinschaftsprojekte und globale Bildungsmessen zu transformieren.",
       "stat1": {
@@ -825,15 +825,15 @@
           "title": "NESA Afrika",
           "subtitle": "Neuer Bildungsstandard-Preis Afrika",
           "description": "Kontinentale Standards, Anerkennung und Rechenschaftspflicht für Bildungsexzellenz.",
-          "clarityLine": "NESA Afrika wird vom NESA.Africa Nominierungs- und Abstimmungsportal betrieben und durch NESA Africa TV / NESA Awards TV verstärkt.",
+          "clarityLine": "Nominierungen, Bewertung und Verwaltung von NESA-Africa laufen über nesa.africa, mit Sendungen auf NESA-Africa TV. Die Anerkennung ist evidenzbasiert und wird von unabhängigen Jurorinnen und Juroren entschieden. 2026 gibt es keine öffentliche Abstimmung.",
           "bullets": [
-            "Nominierung und Abstimmung (offizielles Portal)",
+            "Nominierungen (offizielles Portal)",
             "Jury, Kategorien und Anerkennung",
             "Übertragung, Countdowns, Wiederholungen (Awards TV)"
           ],
           "cta": {
-            "primary": "Nominieren / Abstimmen (NESA.Africa)",
-            "secondary1": "NESA Africa TV ansehen",
+            "primary": "Nominieren (NESA.Africa)",
+            "secondary1": "NESA-Africa TV ansehen",
             "secondary2": "Preissaison anzeigen"
           }
         },
@@ -959,7 +959,7 @@
     "options": {
       "member": {
         "title": "Mitglied werden",
-        "description": "Greifen Sie auf Programme zu, stimmen Sie bei NESA ab und verbinden Sie sich mit Chaptern in Afrika."
+        "description": "Greifen Sie auf Programme zu, verfolgen Sie NESA-Africa und verbinden Sie sich mit Chaptern in Afrika."
       },
       "ambassador": {
         "title": "Botschafter werden",

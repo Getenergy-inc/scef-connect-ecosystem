@@ -30,7 +30,7 @@
       },
       "work": {
         "nesa": "New Education Standard Award Africa (NESA Africa)",
-        "eduaid": "Education Aid Africa (EduAid Africa)",
+        "eduaid": "Education Aid Africa (EduAid-Africa)",
         "rmsa": "Rebuild My School Africa (RMSA)",
         "eoa": "Education Online Africa (EOA) — Aprendizagem e Certificação",
         "awpc": "Africa Workplace Productivity Certification (AWPC)",
@@ -56,12 +56,12 @@
       },
       "media": {
         "hub": "Central de Mídia",
-        "nesaTv": "NESA Africa TV",
+        "nesaTv": "NESA-Africa TV",
         "nesaAwardsTv": "NESA Awards TV",
         "platinumShow": "Platinum Recognition Show",
         "africaIcon": "Africa Icon Blue Garnet Awards",
         "goldCertificate": "Gold Certificate Awards",
-        "blueGarnetGala": "Blue Garnet Gala",
+        "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme",
         "radio": "It's In Me Radio",
         "webinars": "Webinars & Podcast EduAid",
         "tourism": "Programa de Turismo Educacional",
@@ -95,7 +95,7 @@
     "learnMore": "Saiba Mais",
     "details": "Detalhes",
     "nominate": "Nomear",
-    "vote": "Votar Agora",
+    "vote": "Nomear",
     "getTickets": "Obter Bilhetes",
     "donate": "Doar",
     "partner": "Seja Parceiro",
@@ -179,7 +179,7 @@
     "hero": {
       "eyebrow": "África Regional • Diáspora Africana",
       "title": "Construindo um padrão de educação em constante crescimento em África",
-      "summary": "A Santos Creations Educational Foundation (SCEF) é uma fundação educacional pan-africana orientada por membros, entregando Educação para Todos nas cinco regiões de África (Norte, Oeste, Centro, Leste, Sul), com apoio estratégico da diáspora africana (sexta região) através de parcerias confiáveis, capítulos locais e sistemas de entrega digitais.",
+      "summary": "A Santos Creations Educational Foundation (SCEF) é uma fundação educacional pan-africana orientada por membros, que promove a Educação para Todos em oito agrupamentos regionais africanos, além dos africanos na diáspora e dos Friends of Africa, através de parcerias de confiança, capítulos locais e sistemas de entrega digitais.",
       "imageAlt": "Estudantes africanos aprendendo juntos na sala de aula",
       "expanded": {
         "p1": "A SCEF opera através de governança em camadas, capítulos locais, aprendizagem digital, preparação para o mercado de trabalho TVET, educação inclusiva e parcerias transparentes — projetadas para resultados mensuráveis em países e regiões.",
@@ -350,9 +350,9 @@
   },
   "about": {
     "hero": {
-      "title": "Capacitando a África através da Educação, Inovação e Oportunidade",
+      "title": "Educação para Todos. Competências para o Futuro. Comunidades Resilientes.",
       "subtitle": "Uma fundação impulsionada por membros que avança a educação nas regiões por meio de defesa, acesso digital e parcerias estratégicas.",
-      "tagline": "Construindo um padrão contínuo e em crescimento de educação na África.",
+      "tagline": "Educação para Todos. Competências para o Futuro. Comunidades Resilientes.",
       "description": "A SCEF conecta programas, capítulos, parceiros, plataformas e mídia para entregar resultados mensuráveis em acesso, qualidade, inclusão e competências.",
       "regionBadge": "África Regional • Diáspora Africana",
       "trustLine": "Fundada 1997 • Registada 2010 • Alinhada com ODS 4 + Agenda 2063 • Governança HQ + entrega por capítulos",
@@ -612,7 +612,7 @@
       "intro": "A SCEF entrega impacto através de seis programas-chave concebidos para funcionar juntos em acesso, qualidade, inclusão, competências e reconhecimento.",
       "cards": {
         "nesa": "New Education Standard Award Africa (NESA Africa) — Reconhecer e ampliar a excelência educacional.",
-        "eduaid": "Education Aid Africa (EduAid Africa) — Bolsas e caminhos de apoio com financiamento.",
+        "eduaid": "Education Aid Africa (EduAid-Africa) — Bolsas e caminhos de apoio com financiamento.",
         "rmsa": "Rebuild My School Africa (RMSA) — Renovação de escolas e melhoria do ambiente de aprendizagem.",
         "eoa": "Education Online Africa (EOA) — Aprendizagem digital e certificação verificável.",
         "womenGirls": "Educação de Mulheres e Raparigas — Intervenções focadas em acesso e resultados.",
@@ -907,7 +907,7 @@
         "code": "Santos Media",
         "title": "Divisão Santos Media",
         "lead": "Diretor de Santos Media",
-        "mandate": "NESA Africa TV, It's In Me Radio, webinars/podcasts, programa de turismo educativo, operações de conteúdo, padrões editoriais, distribuição de media."
+        "mandate": "NESA-Africa TV, It's In Me Radio, webinars/podcasts, programa de turismo educativo, operações de conteúdo, padrões editoriais, distribuição de media."
       },
       "lcs": {
         "code": "LCS",
@@ -931,15 +931,15 @@
           "title": "NESA África",
           "subtitle": "Novo Prémio Padrão Educacional África",
           "description": "Padrões continentais, reconhecimento e responsabilidade para a excelência educacional.",
-          "clarityLine": "O NESA África é alimentado pelo Portal de Nomeação e Votação NESA.Africa e amplificado através da NESA Africa TV / NESA Awards TV.",
+          "clarityLine": "As nomeações, a avaliação e a administração da NESA-Africa decorrem em nesa.africa, com programação na NESA-Africa TV. O reconhecimento baseia-se em evidências e é decidido por júris independentes. Não há votação pública em 2026.",
           "bullets": [
-            "Nomeação e votação (portal oficial)",
+            "Nomeações (portal oficial)",
             "Júri, categorias e reconhecimento",
             "Transmissão, contagens regressivas, repetições (Awards TV)"
           ],
           "cta": {
-            "primary": "Nomear / Votar (NESA.Africa)",
-            "secondary1": "Assistir NESA Africa TV",
+            "primary": "Nomear (NESA.Africa)",
+            "secondary1": "Assistir NESA-Africa TV",
             "secondary2": "Ver Temporada de Prémios"
           }
         },
@@ -1253,7 +1253,7 @@
     "platforms": {
       "title": "Nossas Plataformas",
       "nesaTv": {
-        "title": "NESA Africa TV",
+        "title": "NESA-Africa TV",
         "description": "Transmitindo excelência educacional, cerimónias de prémios e conteúdo educacional em África."
       },
       "radio": {
@@ -1261,7 +1261,7 @@
         "description": "Conteúdo áudio apresentando histórias educacionais, entrevistas e programação de advocacia."
       },
       "webinars": {
-        "title": "Webinars e Podcast EduAid Africa",
+        "title": "Webinars e Podcast EduAid-Africa",
         "description": "Webinars educacionais, painéis de especialistas e séries de podcast sobre temas educacionais."
       },
       "tourism": {
@@ -1274,7 +1274,7 @@
       "body": "Junte-se à nossa equipa de media como criador de conteúdo voluntário, apresentador ou suporte técnico."
     },
     "cta": {
-      "watch": "Ver NESA TV",
+      "watch": "Ver NESA-Africa TV",
       "listen": "Ouvir Rádio",
       "volunteer": "Tornar-se Voluntário de Media"
     }
@@ -1288,7 +1288,7 @@
     "options": {
       "member": {
         "title": "Tornar-se Membro",
-        "description": "Aceda aos programas, vote nos NESA e conecte-se com capítulos em África."
+        "description": "Aceda aos programas, acompanhe a NESA-Africa e conecte-se com capítulos em África."
       },
       "ambassador": {
         "title": "Tornar-se Embaixador",
@@ -1423,7 +1423,7 @@
       },
       "scale": {
         "title": "Escala Pan-Africana",
-        "description": "Entrega orientada por capítulos nas cinco regiões de África mais a rede da diáspora."
+        "description": "Entrega orientada por capítulos em oito agrupamentos regionais africanos, além dos africanos na diáspora e dos Friends of Africa."
       }
     },
     "pathways": {
@@ -1750,7 +1750,7 @@
   "eduaid": {
     "reporting": "Relatório em verificação",
     "hero": {
-      "welcome": "Bem-vindo ao EduAid Africa",
+      "welcome": "Bem-vindo ao EduAid-Africa",
       "title": "Capacitando a Educação, Possibilitando Futuros em toda a África.",
       "description": "Junte-se a nós na transformação do cenário educacional através de bolsas de estudo, doações, iniciativas de RSC, projetos comunitários e exposições educacionais globais.",
       "stat1": {
@@ -1927,7 +1927,7 @@
     "submit": "Entrar na lista de espera",
     "submitting": "A enviar…",
     "successTitle": "Obrigado por se juntar à lista de espera",
-    "successMessage": "O seu interesse no programa EduAid Africa Seychelles 2027 foi recebido. Receberá atualizações sobre candidaturas, bolsas, parcerias, patrocínios e oportunidades de voluntariado.",
+    "successMessage": "O seu interesse no programa EduAid-Africa Seychelles 2027 foi recebido. Receberá atualizações sobre candidaturas, bolsas, parcerias, patrocínios e oportunidades de voluntariado.",
     "statusLabel": "Estado da submissão",
     "statusValue": "Submetido",
     "returnHome": "Voltar à página inicial",
@@ -1950,6 +1950,36 @@
       "countryRequired": "Por favor selecione o seu país.",
       "organizationRequired": "A organização é obrigatória (mín 2 caracteres).",
       "roleRequired": "Por favor selecione a sua função."
+    }
+  },
+  "scef": {
+    "cta": {
+      "join": "Junte-se à SCEF",
+      "ambassador": "Torne-se Embaixador",
+      "chapters": "Ver Capítulos",
+      "partner": "Seja Nosso Parceiro",
+      "donate": "Doar / Financiar uma Escola",
+      "verify": "Verificar Certificado"
+    },
+    "structure": {
+      "kicker": "A Nossa Estrutura",
+      "title": "Três pilares + plataformas permanentes",
+      "lede": "A SCEF é a instituição-mãe. O seu trabalho organiza-se em três pilares estratégicos, executados através de plataformas permanentes.",
+      "pillarsLabel": "Pilares estratégicos",
+      "platformsLabel": "Plataformas permanentes",
+      "initiativesLabel": "Outras iniciativas",
+      "pathwaysLabel": "Vias de participação",
+      "pillar": "Pilar",
+      "proposed": "Proposto",
+      "active": "Ativo"
+    },
+    "objectives": {
+      "kicker": "Os Nossos Objetivos Fundamentais",
+      "title": "Seis objetivos fundamentais",
+      "objective": "Objetivo"
+    },
+    "funders": {
+      "title": "Declaração de financiadores"
     }
   }
 }

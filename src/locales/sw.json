@@ -30,7 +30,7 @@
       },
       "work": {
         "nesa": "New Education Standard Award Africa (NESA Africa)",
-        "eduaid": "Education Aid Africa (EduAid Africa)",
+        "eduaid": "Education Aid Africa (EduAid-Africa)",
         "rmsa": "Rebuild My School Africa (RMSA)",
         "eoa": "Education Online Africa (EOA) — Mafunzo & Vyeti",
         "awpc": "Africa Workplace Productivity Certification (AWPC)",
@@ -56,12 +56,12 @@
       },
       "media": {
         "hub": "Kituo cha Vyombo vya Habari",
-        "nesaTv": "NESA Africa TV",
+        "nesaTv": "NESA-Africa TV",
         "nesaAwardsTv": "NESA Awards TV",
         "platinumShow": "Platinum Recognition Show",
         "africaIcon": "Africa Icon Blue Garnet Awards",
         "goldCertificate": "Gold Certificate Awards",
-        "blueGarnetGala": "Blue Garnet Gala",
+        "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme",
         "radio": "It's In Me Radio",
         "webinars": "Webinars & Podcast za EduAid",
         "tourism": "Kipindi cha Utalii wa Elimu",
@@ -95,7 +95,7 @@
     "learnMore": "Jifunze Zaidi",
     "details": "Maelezo",
     "nominate": "Teua",
-    "vote": "Piga Kura Sasa",
+    "vote": "Teua",
     "getTickets": "Pata Tiketi",
     "donate": "Changia",
     "partner": "Kuwa Mshirika",
@@ -179,7 +179,7 @@
     "hero": {
       "eyebrow": "Afrika ya Kikanda • Diaspora ya Afrika",
       "title": "Kujenga kiwango cha elimu kinachoendelea kukua barani Afrika",
-      "summary": "Santos Creations Educational Foundation (SCEF) ni taasisi ya elimu ya Ki-Afrika inayoendeshwa na wanachama, inayotoa Elimu kwa Wote katika kanda tano za Afrika (Kaskazini, Magharibi, Kati, Mashariki, Kusini), kwa msaada wa kimkakati kutoka diaspora ya Afrika (kanda ya sita) kupitia ushirikiano wa kuaminika, sura za mitaa na mifumo ya utoaji wa kidijitali.",
+      "summary": "Santos Creations Educational Foundation (SCEF) ni taasisi ya elimu ya Ki-Afrika inayoendeshwa na wanachama, inayoendeleza Elimu kwa Wote katika makundi manane ya kikanda ya Afrika, pamoja na Waafrika walio Diaspora na Friends of Africa, kupitia ushirikiano wa kuaminika, sura za mitaa na mifumo ya utoaji wa kidijitali.",
       "imageAlt": "Wanafunzi wa Afrika wakijifunza pamoja darasani",
       "expanded": {
         "p1": "SCEF inafanya kazi kupitia utawala wa tabaka, sura za mitaa, ujifunzaji wa kidijitali, utayari wa wafanyakazi wa TVET, elimu jumuishi, na ushirikiano wa uwazi — uliobuniwa kwa matokeo yanayoweza kupimika katika nchi na kanda.",
@@ -350,9 +350,9 @@
   },
   "about": {
     "hero": {
-      "title": "Kuwawezesha Afrika kupitia Elimu, Ubunifu, na Fursa",
+      "title": "Elimu kwa Wote. Ujuzi kwa Ajili ya Baadaye. Jamii Imara.",
       "subtitle": "Msingi unaoendeshwa na wanachama unaoendeleza elimu katika maeneo kupitia utetezi, ufikiaji wa kidijitali, na ushirikiano wa kimkakati.",
-      "tagline": "Kujenga kiwango endelevu na kinachokua cha elimu Afrika.",
+      "tagline": "Elimu kwa Wote. Ujuzi kwa Ajili ya Baadaye. Jamii Imara.",
       "description": "SCEF inaunganisha programu, matawi, washirika, mifumo, na vyombo vya habari kutoa matokeo yanayoweza kupimika.",
       "regionBadge": "Afrika ya Kikanda • Diaspora ya Afrika",
       "trustLine": "Ilianzishwa 1997 • Ilisajiliwa 2010 • Inafuatana na SDG 4 + Ajenda 2063 • Utawala wa HQ + utekelezaji wa sura",
@@ -612,7 +612,7 @@
       "intro": "SCEF huleta athari kupitia programu sita kuu zilizoundwa kufanya kazi pamoja juu ya upatikanaji, ubora, ujumuishi, ujuzi, na utambuzi.",
       "cards": {
         "nesa": "New Education Standard Award Africa (NESA Africa) — Kutambua na kukuza ubora wa elimu.",
-        "eduaid": "Education Aid Africa (EduAid Africa) — Ufadhili wa masomo na njia za msaada.",
+        "eduaid": "Education Aid Africa (EduAid-Africa) — Ufadhili wa masomo na njia za msaada.",
         "rmsa": "Rebuild My School Africa (RMSA) — Uboreshaji wa shule na mazingira ya kujifunzia.",
         "eoa": "Education Online Africa (EOA) — Mafunzo ya kidijitali na vyeti vinavyothibitishwa.",
         "womenGirls": "Elimu ya Wanawake na Wasichana — Msaada maalum kwa upatikanaji na matokeo.",
@@ -907,7 +907,7 @@
         "code": "Santos Media",
         "title": "Idara ya Santos Media",
         "lead": "Mkurugenzi wa Santos Media",
-        "mandate": "NESA Africa TV, It's In Me Radio, webinar/podcast, kipindi cha utalii wa elimu, shughuli za maudhui, viwango vya uhariri, usambazaji wa vyombo vya habari."
+        "mandate": "NESA-Africa TV, It's In Me Radio, webinar/podcast, kipindi cha utalii wa elimu, shughuli za maudhui, viwango vya uhariri, usambazaji wa vyombo vya habari."
       },
       "lcs": {
         "code": "LCS",
@@ -931,15 +931,15 @@
           "title": "NESA Afrika",
           "subtitle": "Tuzo ya Kiwango Kipya cha Elimu Afrika",
           "description": "Viwango vya bara, utambuzi, na uwajibikaji kwa ubora wa elimu.",
-          "clarityLine": "NESA Afrika inaendeshwa na Tovuti ya Uteuzi na Kupiga Kura ya NESA.Africa na kuenezwa kupitia NESA Africa TV / NESA Awards TV.",
+          "clarityLine": "Uteuzi, utathmini na usimamizi wa NESA-Africa hufanyika kwenye nesa.africa, pamoja na vipindi kwenye NESA-Africa TV. Utambuzi unategemea ushahidi na huamuliwa na majaji huru. Hakuna upigaji kura wa umma mwaka 2026.",
           "bullets": [
-            "Uteuzi na kupiga kura (tovuti rasmi)",
+            "Uteuzi (tovuti rasmi)",
             "Uhukumu, kategoria, na utambuzi",
             "Utangazaji, kuhesabu kurudi, kurudia (Awards TV)"
           ],
           "cta": {
-            "primary": "Teua / Piga Kura (NESA.Africa)",
-            "secondary1": "Tazama NESA Africa TV",
+            "primary": "Teua (NESA.Africa)",
+            "secondary1": "Tazama NESA-Africa TV",
             "secondary2": "Tazama Msimu wa Tuzo"
           }
         },
@@ -1253,7 +1253,7 @@
     "platforms": {
       "title": "Majukwaa Yetu",
       "nesaTv": {
-        "title": "NESA Africa TV",
+        "title": "NESA-Africa TV",
         "description": "Kutangaza ubora wa elimu, sherehe za tuzo na maudhui ya elimu kote Afrika."
       },
       "radio": {
@@ -1261,7 +1261,7 @@
         "description": "Maudhui ya sauti yanayoonyesha hadithi za elimu, mahojiano na programu za utetezi."
       },
       "webinars": {
-        "title": "Webinar na Podcast za EduAid Africa",
+        "title": "Webinar na Podcast za EduAid-Africa",
         "description": "Webinar za elimu, paneli za wataalam na mfululizo wa podcast kuhusu mada za elimu."
       },
       "tourism": {
@@ -1274,7 +1274,7 @@
       "body": "Jiunge na timu yetu ya media kama mtengenezaji wa maudhui wa kujitolea, mtangazaji au msaada wa kiufundi."
     },
     "cta": {
-      "watch": "Tazama NESA TV",
+      "watch": "Tazama NESA-Africa TV",
       "listen": "Sikiliza Radio",
       "volunteer": "Kuwa Mwanaojitolea wa Media"
     }
@@ -1288,7 +1288,7 @@
     "options": {
       "member": {
         "title": "Kuwa Mwanachama",
-        "description": "Pata programu, piga kura katika NESA, na ungana na matawi Afrika."
+        "description": "Pata programu, fuatilia NESA-Africa, na ungana na matawi Afrika."
       },
       "ambassador": {
         "title": "Kuwa Balozi",
@@ -1423,7 +1423,7 @@
       },
       "scale": {
         "title": "Upeo wa Kiafrika",
-        "description": "Utoaji unaoongozwa na sura katika kanda tano za Afrika pamoja na mtandao wa diaspora."
+        "description": "Utoaji unaoongozwa na sura katika makundi manane ya kikanda ya Afrika, pamoja na Waafrika walio Diaspora na Friends of Africa."
       }
     },
     "pathways": {
@@ -1750,7 +1750,7 @@
   "eduaid": {
     "reporting": "Ripoti inaendelea kuthibitishwa",
     "hero": {
-      "welcome": "Karibu EduAid Africa",
+      "welcome": "Karibu EduAid-Africa",
       "title": "Kuwezesha Elimu, Kuwezesha Mustakabali Kote Afrika.",
       "description": "Jiunge nasi kubadilisha mandhari ya elimu kupitia ufadhili, michango, mipango ya CSR, miradi ya jamii, na maonyesho ya elimu ya kimataifa.",
       "stat1": {

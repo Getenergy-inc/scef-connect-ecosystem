@@ -30,7 +30,7 @@
       },
       "work": {
         "nesa": "New Education Standard Award Africa (NESA Africa)",
-        "eduaid": "Education Aid Africa (EduAid Africa)",
+        "eduaid": "Education Aid Africa (EduAid-Africa)",
         "rmsa": "Rebuild My School Africa (RMSA)",
         "eoa": "Education Online Africa (EOA) — Learning & Certification",
         "awpc": "Africa Workplace Productivity Certification (AWPC)",
@@ -56,12 +56,12 @@
       },
       "media": {
         "hub": "Media Hub",
-        "nesaTv": "NESA Africa TV",
+        "nesaTv": "NESA-Africa TV",
         "nesaAwardsTv": "NESA Awards TV",
         "platinumShow": "Platinum Recognition Show",
         "africaIcon": "Africa Icon Blue Garnet Awards",
         "goldCertificate": "Gold Certificate Awards",
-        "blueGarnetGala": "Blue Garnet Gala",
+        "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme",
         "radio": "It's In Me Radio",
         "webinars": "EduAid Webinars & Podcast",
         "tourism": "Education Tourism Show",
@@ -95,7 +95,7 @@
     "learnMore": "Learn More",
     "details": "Details",
     "nominate": "Nominate",
-    "vote": "Vote Now",
+    "vote": "Nominate",
     "getTickets": "Get Tickets",
     "donate": "Donate",
     "partner": "Partner With Us",
@@ -212,7 +212,7 @@
     "hero": {
       "eyebrow": "Regional Africa • Diaspora Africa",
       "title": "Building a continuous, ever-growing standard of education in Africa",
-      "summary": "Santos Creations Educational Foundation (SCEF) is a membership-driven Pan-African education foundation delivering Education for All across Africa's five regions (North, West, Central, East, Southern), with strategic support from the African diaspora (sixth region) through trusted partnerships, local chapters, and digital delivery systems.",
+      "summary": "Santos Creations Educational Foundation (SCEF) is a membership-driven Pan-African education foundation advancing Education for All across eight African regional groupings, plus Africans in the Diaspora and Friends of Africa, through trusted partnerships, local chapters, and digital delivery systems.",
       "imageAlt": "African students in classroom learning together",
       "expanded": {
         "p1": "SCEF operates through layered governance, local chapters, digital learning, TVET workforce readiness, inclusive education, and transparent partnerships—designed for measurable outcomes across countries and regions.",
@@ -383,9 +383,9 @@
   },
   "about": {
     "hero": {
-      "title": "Empowering Education. Advocating Education for All. Sustaining Africa's Future.",
+      "title": "Education for All. Skills for the Future. Resilient Communities.",
       "subtitle": "A Pan-African membership-based not-for-profit NGO advancing education for all in Africa through advocacy, school support, digital learning, teacher development, girls and women empowerment, ESG education, youth career pathways, and CSR for Education Fund Management Services.",
-      "tagline": "Empowering Education. Advocating Education for All. Sustaining Africa's Future.",
+      "tagline": "Education for All. Skills for the Future. Resilient Communities.",
       "description": "Through its ecosystem of initiatives — EduAid-Africa, NESA-Africa, Education Online Africa, eLibrary Africa, Rebuild My School Africa, My Career My Life, and SCEF Local Chapters — SCEF works with schools, donors, corporate sponsors, volunteers, ambassadors, and communities to make education more inclusive, accessible, sustainable, accountable, and impactful.",
       "regionBadge": "Regional Africa • Diaspora Africa",
       "trustLine": "Founded 1997 • Registered 2010 • SDG 4 + AU Agenda 2063 aligned • HQ-led governance + chapter-driven delivery",
@@ -534,7 +534,7 @@
           "desc": "Recognizing and amplifying educational excellence"
         },
         "eduaid": {
-          "title": "Education Aid Africa (EduAid Africa)",
+          "title": "Education Aid Africa (EduAid-Africa)",
           "desc": "Scholarships, support pathways, and education funding"
         },
         "rmsa": {
@@ -558,7 +558,7 @@
           "desc": "Free and curated learning resources"
         },
         "nesaTv": {
-          "title": "NESA Africa TV",
+          "title": "NESA-Africa TV",
           "desc": "Education media, stories, and live coverage"
         }
       }
@@ -593,7 +593,7 @@
         "To strengthen education advocacy and knowledge dissemination by developing media channels (TV, radio, webinars, podcasts, publications) that promote adoption of quality and inclusion practices.",
         "To establish and monitor compliant delivery networks by onboarding, supporting, and auditing local chapters (physical and online) to implement programs with measurable reporting.",
         "To mobilize and manage education funding with accountability—including CSR for Education Funds Management Services—using verified project pipelines, tracked disbursement, and ESG/SDG-aligned reporting.",
-        "To scale Education for All across Africa's five regions (North, West, Central, East, Southern) with support from a sixth region: the African diaspora, by building renewable multi-year partnerships with institutions, multilaterals, and global education funders."
+        "To scale Education for All across eight African regional groupings, plus Africans in the Diaspora and Friends of Africa, by building renewable multi-year partnerships with institutions, multilaterals, and global education funders."
       ],
       "shortTitles": [
         "Standards & Recognition",
@@ -736,7 +736,7 @@
       "intro": "SCEF delivers impact through six flagship programs designed to work together on access, quality, inclusion, skills, and recognition.",
       "cards": {
         "nesa": "New Education Standard Award Africa (NESA Africa) — Recognizing and amplifying educational excellence.",
-        "eduaid": "Education Aid Africa (EduAid Africa) — Scholarships, support pathways, and education funding.",
+        "eduaid": "Education Aid Africa (EduAid-Africa) — Scholarships, support pathways, and education funding.",
         "rmsa": "Rebuild My School Africa (RMSA) — School renewal and learning environment improvement.",
         "eoa": "Education Online Africa (EOA) — Digital learning and verifiable certification.",
         "womenGirls": "Women & Girls Education — Targeted interventions for access and outcomes.",
@@ -777,7 +777,7 @@
     "history": {
       "title": "Our History",
       "badge": "1997 – Present",
-      "intro": "Santos Creations Educational Foundation (SCEF) has evolved from a personal initiative into a structured, membership-driven Pan-African education foundation focused on improving learning access, quality, inclusion, skills, and accountability—across Africa's five regions (North, West, Central, East, Southern) with additional support from a sixth region: the African diaspora.",
+      "intro": "Santos Creations Educational Foundation (SCEF) has evolved from a personal initiative into a structured, membership-driven Pan-African education foundation focused on improving learning access, quality, inclusion, skills, and accountability—across eight African regional groupings, plus Africans in the Diaspora and Friends of Africa.",
       "ctaGovernance": "View Governance",
       "ctaPrograms": "Explore Programs",
       "ctaPartner": "Partner With Us",
@@ -891,7 +891,7 @@
             "Local chapters (physical and online) with compliance tracking",
             "Partner-ready accountability systems aligned with SDG 4 and AU Agenda 2063"
           ],
-          "closing": "This history informs SCEF's current direction: building renewable, multi-year partnerships and scaling Education for All across Africa's five regions—with active contribution from the diaspora as a sixth region of support."
+          "closing": "This history informs SCEF's current direction: building renewable, multi-year partnerships and scaling Education for All across eight African regional groupings, plus Africans in the Diaspora and Friends of Africa."
         }
       },
       "partnersSection": {
@@ -1127,7 +1127,7 @@
         "members": [
           {
             "name": "Standard Member",
-            "desc": "Open access to chapters, voting in AGC processes, and member newsletters."
+            "desc": "Open access to chapters, programme updates, and member newsletters."
           },
           {
             "name": "Patron Member",
@@ -1426,7 +1426,7 @@
         "code": "Santos Media",
         "title": "Santos Media Division",
         "lead": "Director of Santos Media",
-        "mandate": "NESA Africa TV, It's In Me Radio, webinars/podcasts, education tourism show, content operations, editorial standards, media distribution."
+        "mandate": "NESA-Africa TV, It's In Me Radio, webinars/podcasts, education tourism show, content operations, editorial standards, media distribution."
       },
       "lcs": {
         "code": "LCS",
@@ -1450,20 +1450,20 @@
           "title": "NESA Africa",
           "subtitle": "New Education Standard Award Africa",
           "description": "Continental standards, recognition, and accountability for education excellence.",
-          "clarityLine": "NESA Africa is powered by the NESA.Africa Nomination & Voting Portal and amplified through NESA Africa TV / NESA Awards TV.",
+          "clarityLine": "NESA-Africa nominations, judging and administration run on nesa.africa, with programming on NESA-Africa TV. Recognition is evidence-led and decided by independent judges. There is no public voting in 2026.",
           "bullets": [
-            "Nomination & voting (official portal)",
+            "Nominations (official portal)",
             "Judging, categories, and recognition",
             "Broadcast, countdowns, replays (Awards TV)"
           ],
           "cta": {
-            "primary": "Nominate / Vote (NESA.Africa)",
-            "secondary1": "Watch NESA Africa TV",
+            "primary": "Nominate (NESA.Africa)",
+            "secondary1": "Watch NESA-Africa TV",
             "secondary2": "View Awards Season"
           }
         },
         "eduaid": {
-          "title": "EduAid Africa",
+          "title": "EduAid-Africa",
           "subtitle": "Education Aid Africa",
           "description": "Direct education support for learners and schools—access, equity, inclusion, and infrastructure.",
           "bullets": [
@@ -1507,9 +1507,9 @@
         }
       },
       "tracks": {
-        "title": "EduAid Africa Tracks (Sub-Programs)",
-        "oneline": "These tracks sit under EduAid Africa to keep the portfolio focused and easy to navigate.",
-        "note": "RMSA, Women & Girls Education, and Special Needs Support are EduAid Africa tracks—not separate programs.",
+        "title": "EduAid-Africa Tracks (Sub-Programs)",
+        "oneline": "These tracks sit under EduAid-Africa to keep the portfolio focused and easy to navigate.",
+        "note": "RMSA, Women & Girls Education, and Special Needs Support are EduAid-Africa tracks—not separate programs.",
         "rmsa": {
           "title": "RMSA: Rebuild My School Africa",
           "tag": "Infrastructure Track",
@@ -1772,7 +1772,7 @@
     "platforms": {
       "title": "Our Platforms",
       "nesaTv": {
-        "title": "NESA Africa TV",
+        "title": "NESA-Africa TV",
         "description": "Broadcasting education excellence, award ceremonies, and educational content across Africa."
       },
       "nesaAwardsTv": {
@@ -1782,7 +1782,7 @@
           "platinum": "Platinum Recognition Show",
           "africaIcon": "Africa Icon Blue Garnet Awards",
           "goldCertificate": "Gold Certificate Awards",
-          "blueGarnetGala": "Blue Garnet Gala"
+          "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme"
         }
       },
       "radio": {
@@ -1804,7 +1804,7 @@
     },
     "cta": {
       "hub": "Media Hub",
-      "watch": "Watch NESA TV",
+      "watch": "Watch NESA-Africa TV",
       "watchAwards": "Watch NESA Awards TV",
       "listen": "Listen to Radio",
       "volunteer": "Become Media Volunteer",
@@ -1820,7 +1820,7 @@
     "options": {
       "member": {
         "title": "Become a Member",
-        "description": "Access programs, vote in NESA, and connect with chapters across Africa."
+        "description": "Access programs, follow NESA-Africa, and connect with chapters across Africa."
       },
       "ambassador": {
         "title": "Become an Ambassador",
@@ -1951,7 +1951,7 @@
       },
       "scale": {
         "title": "Pan-African Scale",
-        "description": "Chapter-driven delivery across Africa's five regions plus the diaspora network."
+        "description": "Chapter-driven delivery across eight African regional groupings, plus Africans in the Diaspora and Friends of Africa."
       }
     },
     "pathways": {
@@ -2278,7 +2278,7 @@
   "eduaid": {
     "reporting": "Verified reporting in progress",
     "hero": {
-      "welcome": "Welcome to EduAid Africa",
+      "welcome": "Welcome to EduAid-Africa",
       "title": "Empowering Education, Enabling Futures Across Africa.",
       "description": "Join us in transforming the educational landscape through scholarships, donations, CSR initiatives, community projects, and global education expos.",
       "stat1": {
@@ -2475,7 +2475,7 @@
   "waitingList": {
     "badge": "EduAid-Africa · Edu-Tourism Conference · Hybrid",
     "title": "Seychelles 2027 — Join the Waiting List",
-    "subtitle": "Be the first to secure a seat at the EduAid Africa Indian Ocean Islands Edu-Tourism Conference 2027 — Seychelles Regional Edition.",
+    "subtitle": "Be the first to secure a seat at the EduAid-Africa Indian Ocean Islands Edu-Tourism Conference 2027 — Seychelles Regional Edition.",
     "description": "Join the waiting list to receive early updates on applications, grants, sponsorship, volunteer opportunities, travel packages and programme announcements.",
     "dates": "Dates",
     "datesValue": "15–24 October 2027",
@@ -2507,7 +2507,7 @@
     "submit": "Join the Waiting List",
     "submitting": "Submitting…",
     "successTitle": "Thank you for joining the waiting list",
-    "successMessage": "Your interest in the EduAid Africa Seychelles 2027 programme has been received. You will receive updates on applications, grants, partnerships, sponsorships and volunteer opportunities.",
+    "successMessage": "Your interest in the EduAid-Africa Seychelles 2027 programme has been received. You will receive updates on applications, grants, partnerships, sponsorships and volunteer opportunities.",
     "statusLabel": "Submission status",
     "statusValue": "Submitted",
     "returnHome": "Return to home",
@@ -2530,6 +2530,36 @@
       "countryRequired": "Please select your country.",
       "organizationRequired": "Organisation is required (min 2 characters).",
       "roleRequired": "Please select your role."
+    }
+  },
+  "scef": {
+    "cta": {
+      "join": "Join SCEF",
+      "ambassador": "Become an Ambassador",
+      "chapters": "Browse Chapters",
+      "partner": "Partner With Us",
+      "donate": "Donate / Fund a School",
+      "verify": "Verify Certificate"
+    },
+    "structure": {
+      "kicker": "Our Structure",
+      "title": "Three pillars + permanent platforms",
+      "lede": "SCEF is the umbrella institution. Its work is organised into three strategic pillars, delivered through permanent platforms.",
+      "pillarsLabel": "Strategic pillars",
+      "platformsLabel": "Permanent delivery platforms",
+      "initiativesLabel": "Other initiatives",
+      "pathwaysLabel": "Participation pathways",
+      "pillar": "Pillar",
+      "proposed": "Proposed",
+      "active": "Active"
+    },
+    "objectives": {
+      "kicker": "Our Core Objectives",
+      "title": "Six core objectives",
+      "objective": "Objective"
+    },
+    "funders": {
+      "title": "Funders disclosure"
     }
   }
 }

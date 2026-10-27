@@ -61,7 +61,7 @@
         "platinumShow": "白金认可秀",
         "africaIcon": "非洲偶像蓝石榴奖",
         "goldCertificate": "金证书奖",
-        "blueGarnetGala": "蓝石榴晚会",
+        "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme",
         "radio": "It's In Me 广播",
         "webinars": "EduAid 网络研讨会与播客",
         "tourism": "教育旅游节目",
@@ -95,7 +95,7 @@
     "learnMore": "了解更多",
     "details": "详情",
     "nominate": "提名",
-    "vote": "立即投票",
+    "vote": "提名",
     "getTickets": "获取门票",
     "donate": "捐赠",
     "partner": "成为合作伙伴",
@@ -158,7 +158,7 @@
     "hero": {
       "eyebrow": "非洲地区 • 非洲侨民",
       "title": "在非洲建立持续增长的教育标准",
-      "summary": "桑托斯创作教育基金会 (SCEF) 是一个由会员驱动的泛非教育基金会，在非洲五个地区（北部、西部、中部、东部、南部）提供全民教育，并通过可信赖的合作伙伴关系、地方分会和数字交付系统获得非洲侨民（第六地区）的战略支持。",
+      "summary": "桑托斯创作教育基金会 (SCEF) 是一个由会员驱动的泛非教育基金会，通过可信赖的合作伙伴关系、地方分会和数字交付系统，在非洲八个区域集团以及海外非洲侨民和“非洲之友”（Friends of Africa）中推动全民教育。",
       "imageAlt": "非洲学生在教室里一起学习",
       "expanded": {
         "p1": "SCEF 通过分层治理、地方分会、数字学习、职业技术教育就业准备、包容性教育和透明合作伙伴关系运作——旨在实现跨国家和地区的可衡量成果。",
@@ -289,9 +289,9 @@
   },
   "about": {
     "hero": {
-      "title": "通过教育、创新和机会赋能非洲",
+      "title": "全民教育。面向未来的技能。有韧性的社区。",
       "subtitle": "由会员驱动的基金会,通过倡导、数字化访问和战略合作伙伴关系推动各地区的教育发展。",
-      "tagline": "在非洲建立持续不断、不断提升的教育标准。",
+      "tagline": "全民教育。面向未来的技能。有韧性的社区。",
       "description": "SCEF 连接项目、分会、合作伙伴、平台和媒体,在准入、质量、包容性和技能方面提供可衡量的成果。",
       "regionBadge": "非洲地区 • 非洲侨民",
       "trustLine": "成立于1997年 • 注册于2010年 • 与SDG 4 + 非盟2063议程一致 • 总部主导的治理 + 分会驱动的交付",
@@ -677,7 +677,7 @@
   "eduaid": {
     "reporting": "报告验证中",
     "hero": {
-      "welcome": "欢迎来到 EduAid Africa",
+      "welcome": "欢迎来到 EduAid-Africa",
       "title": "赋能教育，成就非洲未来。",
       "description": "加入我们，通过奖学金、捐赠、企业社会责任倡议、社区项目和全球教育展览来改变教育格局。",
       "stat1": {
@@ -825,15 +825,15 @@
           "title": "NESA 非洲",
           "subtitle": "非洲新教育标准奖",
           "description": "大陆标准、认可和教育卓越的问责制。",
-          "clarityLine": "NESA非洲由NESA.Africa提名和投票门户提供支持，并通过NESA Africa TV / NESA Awards TV进行放大。",
+          "clarityLine": "NESA-Africa 的提名、评审和管理均在 nesa.africa 上进行，相关节目在 NESA-Africa TV 播出。表彰以证据为基础，由独立评委决定。2026 年不设公众投票。",
           "bullets": [
-            "提名和投票（官方门户）",
+            "提名（官方门户）",
             "评审、类别和认可",
             "广播、倒计时、重播（Awards TV）"
           ],
           "cta": {
-            "primary": "提名 / 投票 (NESA.Africa)",
-            "secondary1": "观看 NESA Africa TV",
+            "primary": "提名 (NESA.Africa)",
+            "secondary1": "观看 NESA-Africa TV",
             "secondary2": "查看颁奖季"
           }
         },
@@ -959,7 +959,7 @@
     "options": {
       "member": {
         "title": "成为会员",
-        "description": "参与项目,在 NESA 投票,并与非洲各地分会建立联系。"
+        "description": "参与项目，关注 NESA-Africa，并与非洲各地分会建立联系。"
       },
       "ambassador": {
         "title": "成为大使",
