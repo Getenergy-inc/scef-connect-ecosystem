@@ -30,7 +30,7 @@
       },
       "work": {
         "nesa": "New Education Standard Award Africa (NESA Africa)",
-        "eduaid": "Education Aid Africa (EduAid Africa)",
+        "eduaid": "Education Aid Africa (EduAid-Africa)",
         "rmsa": "Rebuild My School Africa (RMSA)",
         "eoa": "Education Online Africa (EOA) — Apprentissage & Certification",
         "awpc": "Africa Workplace Productivity Certification (AWPC)",
@@ -56,12 +56,12 @@
       },
       "media": {
         "hub": "Hub Médias",
-        "nesaTv": "NESA Africa TV",
+        "nesaTv": "NESA-Africa TV",
         "nesaAwardsTv": "NESA Awards TV",
         "platinumShow": "Platinum Recognition Show",
         "africaIcon": "Africa Icon Blue Garnet Awards",
         "goldCertificate": "Gold Certificate Awards",
-        "blueGarnetGala": "Blue Garnet Gala",
+        "blueGarnetGala": "NESA-Africa 2026 Online Awards Programme",
         "radio": "It's In Me Radio",
         "webinars": "Webinaires & Podcast EduAid",
         "tourism": "Émission Tourisme Éducatif",
@@ -95,7 +95,7 @@
     "learnMore": "En savoir plus",
     "details": "Détails",
     "nominate": "Nominer",
-    "vote": "Voter maintenant",
+    "vote": "Nommer",
     "getTickets": "Obtenir des billets",
     "donate": "Faire un don",
     "partner": "Devenir partenaire",
@@ -179,7 +179,7 @@
     "hero": {
       "eyebrow": "Afrique Régionale • Diaspora Africaine",
       "title": "Construire un standard éducatif en constante croissance en Afrique",
-      "summary": "Santos Creations Educational Foundation (SCEF) est une fondation éducative panafricaine axée sur l'adhésion, offrant l'Éducation pour Tous dans les cinq régions d'Afrique (Nord, Ouest, Centre, Est, Sud), avec le soutien stratégique de la diaspora africaine (sixième région) à travers des partenariats de confiance, des chapitres locaux et des systèmes de livraison numériques.",
+      "summary": "Santos Creations Educational Foundation (SCEF) est une fondation éducative panafricaine fondée sur l'adhésion, qui fait progresser l'Éducation pour Tous dans huit regroupements régionaux africains, ainsi qu'auprès des Africains de la diaspora et de Friends of Africa, à travers des partenariats de confiance, des chapitres locaux et des systèmes de prestation numériques.",
       "imageAlt": "Étudiants africains apprenant ensemble en classe",
       "expanded": {
         "p1": "SCEF fonctionne à travers une gouvernance en couches, des chapitres locaux, l'apprentissage numérique, la préparation à l'emploi TVET, l'éducation inclusive et des partenariats transparents — conçus pour des résultats mesurables à travers les pays et les régions.",
@@ -350,9 +350,9 @@
   },
   "about": {
     "hero": {
-      "title": "Autonomiser l'Afrique par l'éducation, l'innovation et l'opportunité",
+      "title": "L'éducation pour tous. Des compétences pour l'avenir. Des communautés résilientes.",
       "subtitle": "Une fondation portée par ses membres qui fait progresser l'éducation à travers les régions par le plaidoyer, l'accès numérique et des partenariats stratégiques.",
-      "tagline": "Construire une norme d'éducation continue et toujours croissante en Afrique.",
+      "tagline": "L'éducation pour tous. Des compétences pour l'avenir. Des communautés résilientes.",
       "description": "SCEF connecte programmes, sections, partenaires, plateformes et médias pour livrer des résultats mesurables en accès, qualité, inclusion et compétences.",
       "regionBadge": "Afrique régionale • Diaspora africaine",
       "trustLine": "Fondée 1997 • Enregistrée 2010 • Alignée ODD 4 + Agenda 2063 • Gouvernance HQ + livraison par chapitres",
@@ -612,7 +612,7 @@
       "intro": "SCEF délivre l'impact à travers six programmes phares conçus pour fonctionner ensemble sur l'accès, la qualité, l'inclusion, les compétences et la reconnaissance.",
       "cards": {
         "nesa": "New Education Standard Award Africa (NESA Africa) — Reconnaissance et amplification de l'excellence éducative.",
-        "eduaid": "Education Aid Africa (EduAid Africa) — Bourses, parcours de soutien et financement éducatif.",
+        "eduaid": "Education Aid Africa (EduAid-Africa) — Bourses, parcours de soutien et financement éducatif.",
         "rmsa": "Rebuild My School Africa (RMSA) — Renouvellement des écoles et amélioration des environnements d'apprentissage.",
         "eoa": "Education Online Africa (EOA) — Apprentissage numérique et certification vérifiable.",
         "womenGirls": "Éducation des femmes et des filles — Interventions ciblées pour l'accès et les résultats.",
@@ -907,7 +907,7 @@
         "code": "Santos Media",
         "title": "Division Santos Media",
         "lead": "Directeur de Santos Media",
-        "mandate": "NESA Africa TV, It's In Me Radio, webinaires/podcasts, émission tourisme éducatif, opérations de contenu, normes éditoriales, distribution média."
+        "mandate": "NESA-Africa TV, It's In Me Radio, webinaires/podcasts, émission tourisme éducatif, opérations de contenu, normes éditoriales, distribution média."
       },
       "lcs": {
         "code": "LCS",
@@ -931,15 +931,15 @@
           "title": "NESA Afrique",
           "subtitle": "Nouveau Prix Standard Éducatif Afrique",
           "description": "Normes continentales, reconnaissance et responsabilité pour l'excellence éducative.",
-          "clarityLine": "NESA Afrique est alimenté par le Portail de Nomination & Vote NESA.Africa et amplifié par NESA Africa TV / NESA Awards TV.",
+          "clarityLine": "Les nominations, l'évaluation et l'administration de NESA-Africa se déroulent sur nesa.africa, avec des programmes diffusés sur NESA-Africa TV. La reconnaissance repose sur des preuves et est décidée par des juges indépendants. Il n'y a pas de vote public en 2026.",
           "bullets": [
-            "Nomination & vote (portail officiel)",
+            "Nominations (portail officiel)",
             "Jury, catégories et reconnaissance",
             "Diffusion, comptes à rebours, replays (Awards TV)"
           ],
           "cta": {
-            "primary": "Nommer / Voter (NESA.Africa)",
-            "secondary1": "Regarder NESA Africa TV",
+            "primary": "Nommer (NESA.Africa)",
+            "secondary1": "Regarder NESA-Africa TV",
             "secondary2": "Voir la Saison des Prix"
           }
         },
@@ -1253,7 +1253,7 @@
     "platforms": {
       "title": "Nos plateformes",
       "nesaTv": {
-        "title": "NESA Africa TV",
+        "title": "NESA-Africa TV",
         "description": "Diffusion de l'excellence éducative, cérémonies de remise de prix et contenu éducatif à travers l'Afrique."
       },
       "radio": {
@@ -1261,7 +1261,7 @@
         "description": "Contenu audio présentant des histoires éducatives, interviews et programmes de plaidoyer."
       },
       "webinars": {
-        "title": "Webinaires et Podcast EduAid Africa",
+        "title": "Webinaires et Podcast EduAid-Africa",
         "description": "Webinaires éducatifs, panels d'experts et séries de podcasts sur des sujets éducatifs."
       },
       "tourism": {
@@ -1274,7 +1274,7 @@
       "body": "Rejoignez notre équipe média en tant que créateur de contenu bénévole, présentateur ou support technique."
     },
     "cta": {
-      "watch": "Regarder NESA TV",
+      "watch": "Regarder NESA-Africa TV",
       "listen": "Écouter la Radio",
       "volunteer": "Devenir bénévole média"
     }
@@ -1288,7 +1288,7 @@
     "options": {
       "member": {
         "title": "Devenir membre",
-        "description": "Accédez aux programmes, votez aux NESA et connectez-vous aux sections en Afrique."
+        "description": "Accédez aux programmes, suivez NESA-Africa et connectez-vous aux sections en Afrique."
       },
       "ambassador": {
         "title": "Devenir ambassadeur",
@@ -1423,7 +1423,7 @@
       },
       "scale": {
         "title": "Échelle panafricaine",
-        "description": "Livraison pilotée par les chapitres à travers les cinq régions d'Afrique plus le réseau diaspora."
+        "description": "Une mise en œuvre portée par les chapitres dans huit regroupements régionaux africains, ainsi qu'auprès des Africains de la diaspora et de Friends of Africa."
       }
     },
     "pathways": {
@@ -1750,7 +1750,7 @@
   "eduaid": {
     "reporting": "Rapport en cours de vérification",
     "hero": {
-      "welcome": "Bienvenue chez EduAid Africa",
+      "welcome": "Bienvenue chez EduAid-Africa",
       "title": "Autonomiser l'éducation, permettre des avenirs à travers l'Afrique.",
       "description": "Rejoignez-nous pour transformer le paysage éducatif grâce aux bourses, dons, initiatives RSE, projets communautaires et expositions éducatives mondiales.",
       "stat1": {
@@ -1979,7 +1979,7 @@
     "submit": "Rejoindre la liste d'attente",
     "submitting": "Envoi en cours…",
     "successTitle": "Merci d'avoir rejoint la liste d'attente",
-    "successMessage": "Votre intérêt pour le programme EduAid Africa Seychelles 2027 a été enregistré. Vous recevrez des mises à jour sur les candidatures, bourses, partenariats, parrainages et opportunités de bénévolat.",
+    "successMessage": "Votre intérêt pour le programme EduAid-Africa Seychelles 2027 a été enregistré. Vous recevrez des mises à jour sur les candidatures, bourses, partenariats, parrainages et opportunités de bénévolat.",
     "statusLabel": "Statut de la soumission",
     "statusValue": "Soumis",
     "returnHome": "Retour à l'accueil",
@@ -2002,6 +2002,36 @@
       "countryRequired": "Veuillez sélectionner votre pays.",
       "organizationRequired": "L'organisation est requise (min 2 caractères).",
       "roleRequired": "Veuillez sélectionner votre rôle."
+    }
+  },
+  "scef": {
+    "cta": {
+      "join": "Rejoindre SCEF",
+      "ambassador": "Devenir ambassadeur",
+      "chapters": "Parcourir les chapitres",
+      "partner": "Devenir partenaire",
+      "donate": "Faire un don / Financer une école",
+      "verify": "Vérifier un certificat"
+    },
+    "structure": {
+      "kicker": "Notre structure",
+      "title": "Trois piliers + plateformes permanentes",
+      "lede": "SCEF est l'institution faîtière. Son action est organisée en trois piliers stratégiques, mis en œuvre par des plateformes permanentes.",
+      "pillarsLabel": "Piliers stratégiques",
+      "platformsLabel": "Plateformes permanentes",
+      "initiativesLabel": "Autres initiatives",
+      "pathwaysLabel": "Voies de participation",
+      "pillar": "Pilier",
+      "proposed": "Proposé",
+      "active": "Actif"
+    },
+    "objectives": {
+      "kicker": "Nos objectifs fondamentaux",
+      "title": "Six objectifs fondamentaux",
+      "objective": "Objectif"
+    },
+    "funders": {
+      "title": "Déclaration des financeurs"
     }
   }
 }
