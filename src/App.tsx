@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { SophiaWhatsAppWidget } from "@/components/sophia/SophiaWhatsAppWidget";
 import RouteIndicator from "@/components/dev/RouteIndicator";
 import { LocaleProvider } from "@/contexts/LocaleContext";
@@ -123,7 +123,6 @@ import NesaAwardsTv from "./pages/media/NesaAwardsTv";
 import NesaAwardsPlatinum from "./pages/media/NesaAwardsPlatinum";
 import NesaAwardsAfricaIcon from "./pages/media/NesaAwardsAfricaIcon";
 import NesaAwardsGoldCertificate from "./pages/media/NesaAwardsGoldCertificate";
-import NesaAwardsBlueGarnetGala from "./pages/media/NesaAwardsBlueGarnetGala";
 import ItsInMeRadio from "./pages/media/ItsInMeRadio";
 import EducationTourism from "./pages/media/EducationTourism";
 
@@ -172,7 +171,6 @@ import StaffAI from "./pages/staff/AI";
 import StaffReview from "./pages/staff/Review";
 
 // Vote & Nominate Pages
-import Vote from "./pages/Vote";
 import Nominate from "./pages/Nominate";
 import Calendar from "./pages/Calendar";
 
@@ -284,6 +282,7 @@ const App = () => (
               <Route path="/programs/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
               <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
+              <Route path="/programs/education-online-africa" element={<Navigate to="/programs/digital-learning" replace />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />
               <Route path="/programs/inclusion-access" element={<InclusionAccess />} />
               <Route path="/programs/training-development" element={<TrainingDevelopment />} />
@@ -318,9 +317,10 @@ const App = () => (
               <Route path="/media/nesa-awards-tv/platinum" element={<NesaAwardsPlatinum />} />
               <Route path="/media/nesa-awards-tv/africa-icon" element={<NesaAwardsAfricaIcon />} />
               <Route path="/media/nesa-awards-tv/gold-certificate" element={<NesaAwardsGoldCertificate />} />
-              <Route path="/media/nesa-awards-tv/blue-garnet-gala" element={<NesaAwardsBlueGarnetGala />} />
+              <Route path="/media/nesa-awards-tv/blue-garnet-gala" element={<Navigate to="/media/nesa-tv" replace />} />
               <Route path="/media/its-in-me-radio" element={<ItsInMeRadio />} />
               <Route path="/media/eduaid-webinars" element={<EduAidWebinars />} />
+              <Route path="/media/webinars" element={<Navigate to="/media/eduaid-webinars" replace />} />
               <Route path="/media/education-tourism-show" element={<EducationTourism />} />
               
               {/* Updates & Reports */}
@@ -336,7 +336,8 @@ const App = () => (
               <Route path="/awards/blue-garnet" element={<BlueGarnetAward />} />
               
               {/* Vote, Nominate & Calendar Routes */}
-              <Route path="/vote" element={<Vote />} />
+              {/* No public voting in 2026 — legacy /vote links go to NESA-Africa */}
+              <Route path="/vote" element={<Navigate to="/programs/nesa-africa" replace />} />
               <Route path="/nominate" element={<Nominate />} />
               <Route path="/calendar" element={<Calendar />} />
               
@@ -350,6 +351,7 @@ const App = () => (
               <Route path="/contributors/submit" element={<HallOfFameSubmit />} />
               <Route path="/contributors/:slug" element={<HallOfFameProfile />} />
               <Route path="/verify-certificate" element={<VerifyCertificate />} />
+              <Route path="/resources/verification" element={<Navigate to="/verify-certificate" replace />} />
               {/* Legacy redirects (keep mounted under old paths so external links don't break) */}
               <Route path="/hall-of-fame" element={<HallOfFame />} />
               <Route path="/hall-of-fame/submit" element={<HallOfFameSubmit />} />
@@ -524,7 +526,7 @@ const App = () => (
               <Route path="/support-us/bid-to-host" element={<ComingSoon title="Bid to Host Next Event" description="Host an SCEF gala, summit or training week in your city or country." />} />
               
               <Route path="/support-us/merchandise" element={<ComingSoon title="Buy Merchandise" description="Branded SCEF apparel and education-positive merchandise." />} />
-              <Route path="/support-us/gala-tickets" element={<ComingSoon title="Award Gala Tickets" description="Reserve your seat at the next NESA-Africa awards gala." />} />
+              <Route path="/support-us/gala-tickets" element={<Navigate to="/support-us" replace />} />
               <Route path="/media/archive" element={<MediaArchive />} />
               <Route path="/media/gallery" element={<MediaArchive />} />
               <Route path="/media/submit" element={<MediaSubmit />} />
