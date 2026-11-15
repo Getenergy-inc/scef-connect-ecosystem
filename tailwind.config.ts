@@ -14,6 +14,20 @@ export default {
     },
     extend: {
       colors: {
+        eduaid: {
+          green: "hsl(var(--ea-green))",
+          logo: "hsl(var(--ea-logo-green))",
+          dark: "hsl(var(--ea-dark-green))",
+          deep: "hsl(var(--ea-deep-green))",
+          brown: "hsl(var(--ea-brown))",
+          tan: "hsl(var(--ea-tan))",
+          cream: "hsl(var(--ea-cream))",
+          sand: "hsl(var(--ea-sand))",
+          ink: "hsl(var(--ea-ink))",
+          muted: "hsl(var(--ea-muted))",
+          line: "hsl(var(--ea-line))",
+          paper: "hsl(var(--ea-paper))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -88,6 +102,8 @@ export default {
         body: ['Inter', 'Source Sans 3', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'Source Sans 3', 'system-ui', 'sans-serif'],
         serif: ['Inter', 'system-ui', 'sans-serif'],
+        fraunces: ['Fraunces', 'Georgia', 'serif'],
+        jakarta: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

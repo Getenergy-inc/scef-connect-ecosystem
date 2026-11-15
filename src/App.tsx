@@ -92,7 +92,7 @@ import TrainingDevelopment from "./pages/programs/TrainingDevelopment";
 import MyCareerMyLifePage from "./pages/programs/MyCareerMyLife";
 import OnlineTeachingTraining from "./pages/programs/OnlineTeachingTraining";
 import SpecialNeedsSchoolsIntervention from "./pages/programs/SpecialNeedsSchoolsIntervention";
-import SpecialNeedsSupportFund2027 from "./pages/programs/SpecialNeedsSupportFund2027";
+import SupportSpecialNeedsSchool from "./pages/programmes/SupportSpecialNeedsSchool";
 import EduTourismMissions from "./pages/programs/EduTourismMissions";
 import RegionalWaitingListGrants2027 from "./pages/programs/RegionalWaitingListGrants2027";
 import MonthlyProgramPage from "./pages/calendar/MonthlyProgram";
@@ -282,8 +282,9 @@ const App = () => (
               <Route path="/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
               <Route path="/programs/women-girls-empowerment" element={<WomenGirlsEmpowerment />} />
               <Route path="/programs/special-needs-education" element={<SpecialNeedsEducation />} />
-              <Route path="/support-a-special-needs-school" element={<SpecialNeedsSupportFund2027 />} />
-              <Route path="/programs/special-needs-education/support-fund-2027" element={<SpecialNeedsSupportFund2027 />} />
+              <Route path="/programmes/support-a-special-needs-school" element={<SupportSpecialNeedsSchool />} />
+              <Route path="/support-a-special-needs-school" element={<Navigate to="/programmes/support-a-special-needs-school" replace />} />
+              <Route path="/programs/special-needs-education/support-fund-2027" element={<Navigate to="/programmes/support-a-special-needs-school" replace />} />
               <Route path="/programs/digital-learning" element={<DigitalLearning />} />
               <Route path="/programs/education-online-africa" element={<Navigate to="/programs/digital-learning" replace />} />
               <Route path="/programs/elibrary-nigeria" element={<ELibraryNigeria />} />

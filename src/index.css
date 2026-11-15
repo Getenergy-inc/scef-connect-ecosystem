@@ -325,3 +325,45 @@
   background: hsl(var(--scef-gold) / 0.3);
   color: hsl(var(--foreground));
 }
+
+/* EduAid-Africa page scope (Support a Special-Needs School). Tokens apply only inside .eduaid-scope. */
+.eduaid-scope {
+  --ea-green: 123 46% 33%;
+  --ea-logo-green: 120 44% 42%;
+  --ea-dark-green: 123 50% 24%;
+  --ea-deep-green: 126 53% 15%;
+  --ea-brown: 29 53% 27%;
+  --ea-tan: 38 63% 66%;
+  --ea-cream: 44 52% 94%;
+  --ea-sand: 43 49% 88%;
+  --ea-ink: 90 24% 11%;
+  --ea-muted: 90 11% 35%;
+  --ea-line: 45 30% 80%;
+  --ea-paper: 0 0% 100%;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  color: hsl(var(--ea-ink));
+  background: hsl(var(--ea-cream));
+}
+.eduaid-scope h1, .eduaid-scope h2, .eduaid-scope h3, .eduaid-scope .ea-heading {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 650;
+}
+.eduaid-scope :focus-visible {
+  outline: 3px solid hsl(var(--ea-tan));
+  outline-offset: 2px;
+  box-shadow: none;
+}
+.eduaid-scope.ea-text-lg { zoom: 1.125; }
+.eduaid-scope.ea-text-xl { zoom: 1.25; }
+.eduaid-scope.ea-contrast {
+  --ea-muted: 90 24% 11%;
+  --ea-line: 90 24% 11%;
+  --ea-logo-green: 123 60% 20%;
+  --ea-green: 123 60% 20%;
+  --ea-tan: 45 100% 70%;
+  --ea-cream: 0 0% 100%;
+  --ea-sand: 0 0% 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .eduaid-scope * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}

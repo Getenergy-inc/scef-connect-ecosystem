@@ -4745,6 +4745,150 @@ export type Database = {
         }
         Relationships: []
       }
+      support_fund_pledges: {
+        Row: {
+          acknowledged: boolean
+          amount: number | null
+          anonymous_public: boolean
+          category: string | null
+          contributions: string[]
+          country: string | null
+          created_at: string
+          currency: string | null
+          donating_as: string | null
+          email: string
+          frequency: string | null
+          id: string
+          in_kind_description: string | null
+          message: string | null
+          name: string
+          no_recognition: boolean
+          organisation: string | null
+          organisation_type: string | null
+          phone: string | null
+          pledge_type: string
+          preferred_contact: string | null
+          projects: string[]
+          recognition_name: string | null
+          reference: string
+          region: string | null
+          regions_of_interest: string[]
+          role: string | null
+          site: string
+          sponsor_scope: string | null
+          status: string
+          updated_at: string
+          website: string | null
+        }
+        Insert: {
+          acknowledged: boolean
+          amount?: number | null
+          anonymous_public?: boolean
+          category?: string | null
+          contributions?: string[]
+          country?: string | null
+          created_at?: string
+          currency?: string | null
+          donating_as?: string | null
+          email: string
+          frequency?: string | null
+          id?: string
+          in_kind_description?: string | null
+          message?: string | null
+          name: string
+          no_recognition?: boolean
+          organisation?: string | null
+          organisation_type?: string | null
+          phone?: string | null
+          pledge_type: string
+          preferred_contact?: string | null
+          projects?: string[]
+          recognition_name?: string | null
+          reference: string
+          region?: string | null
+          regions_of_interest?: string[]
+          role?: string | null
+          site?: string
+          sponsor_scope?: string | null
+          status?: string
+          updated_at?: string
+          website?: string | null
+        }
+        Update: {
+          acknowledged?: boolean
+          amount?: number | null
+          anonymous_public?: boolean
+          category?: string | null
+          contributions?: string[]
+          country?: string | null
+          created_at?: string
+          currency?: string | null
+          donating_as?: string | null
+          email?: string
+          frequency?: string | null
+          id?: string
+          in_kind_description?: string | null
+          message?: string | null
+          name?: string
+          no_recognition?: boolean
+          organisation?: string | null
+          organisation_type?: string | null
+          phone?: string | null
+          pledge_type?: string
+          preferred_contact?: string | null
+          projects?: string[]
+          recognition_name?: string | null
+          reference?: string
+          region?: string | null
+          regions_of_interest?: string[]
+          role?: string | null
+          site?: string
+          sponsor_scope?: string | null
+          status?: string
+          updated_at?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
+      support_fund_transfer_reports: {
+        Row: {
+          amount_sent: number
+          bank_transaction_id: string | null
+          created_at: string
+          currency: string | null
+          date_paid: string
+          id: string
+          reference: string
+          sender_account_name: string
+          site: string
+          status: string
+        }
+        Insert: {
+          amount_sent: number
+          bank_transaction_id?: string | null
+          created_at?: string
+          currency?: string | null
+          date_paid: string
+          id?: string
+          reference: string
+          sender_account_name: string
+          site?: string
+          status?: string
+        }
+        Update: {
+          amount_sent?: number
+          bank_transaction_id?: string | null
+          created_at?: string
+          currency?: string | null
+          date_paid?: string
+          id?: string
+          reference?: string
+          sender_account_name?: string
+          site?: string
+          status?: string
+        }
+        Relationships: []
+      }
       transactions: {
         Row: {
           agc_amount: number | null
